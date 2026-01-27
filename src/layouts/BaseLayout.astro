@@ -273,21 +273,16 @@ const { description, title, preloadedImage } = Astro.props;
 
             <!-- Sitewide Scripts -->
             <script src="../assets/js/nav.js"></script>
-             <!-- Matomo -->
+             <!-- Matomo Tag Manager -->
             <script>
-                var _paq = window._paq = window._paq || [];
-                /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-                _paq.push(['trackPageView']);
-                _paq.push(['enableLinkTracking']);
+                var _mtm = window._mtm = window._mtm || [];
+                _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
                 (function() {
-                var u="https://remediationrestorationmarketing.matomo.cloud/";
-                _paq.push(['setTrackerUrl', u+'matomo.php']);
-                _paq.push(['setSiteId', '1']);
-                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.async=true; g.src='https://cdn.matomo.cloud/remediationrestorationmarketing.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.async=true; g.src='https://cdn.matomo.cloud/remediationrestorationmarketing.matomo.cloud/container_RZcEK7fz.js'; s.parentNode.insertBefore(g,s);
                 })();
             </script>
-            <!-- End Matomo Code -->
+            <!-- End Matomo Tag Manager -->
         
         </head>
         <body>
@@ -307,4 +302,9 @@ const { description, title, preloadedImage } = Astro.props;
                 data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" >
             </script>
         </body>
+        <noscript>
+            <!-- Matomo Image Tracker-->
+            <img referrerpolicy="no-referrer-when-downgrade" src="https://remediationrestorationmarketing.matomo.cloud/matomo.php?idsite=1&amp;rec=1" style="border:0" alt="" />
+            <!-- End Matomo -->
+        </noscript>
 </html>
