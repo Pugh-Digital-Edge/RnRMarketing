@@ -30,6 +30,38 @@ const { Content } = await post.render();
   description={description}
   preloadedImage = {optimizedImage}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": description,
+    "datePublished": new Date(date).toISOString(),
+    "dateModified": new Date(date).toISOString(),
+    "author": {
+      "@type": "Person",
+      "name": author,
+      "url": "https://remediationrestorationmarketing.com/about/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Remediation & Restoration Marketing",
+      "@id": "https://remediationrestorationmarketing.com/#localbusiness",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://remediationrestorationmarketing.com/assets/images/logo-small.jpg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://remediationrestorationmarketing.com/resources/${post.slug}/`
+    },
+    "url": `https://remediationrestorationmarketing.com/resources/${post.slug}/`,
+    "inLanguage": "en-US",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://remediationrestorationmarketing.com/#website"
+    }
+  })} />
 
   <Landing 
     title="Article"

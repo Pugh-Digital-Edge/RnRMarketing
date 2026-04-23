@@ -8,6 +8,15 @@ import "@styles/dark.less";
 
 const { description, title, preloadedImage } = Astro.props;
 
+const pathSegments = Astro.url.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+const breadcrumbItems: { name: string; url: string }[] = [
+  { name: 'Home', url: 'https://remediationrestorationmarketing.com/' },
+  ...pathSegments.map((seg: string, i: number) => ({
+    name: seg.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+    url: `https://remediationrestorationmarketing.com/${pathSegments.slice(0, i + 1).join('/')}/`
+  }))
+];
+
 ---
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
 <html lang="en">
@@ -30,7 +39,7 @@ const { description, title, preloadedImage } = Astro.props;
                     "@type": "LocalBusiness",
                     "name": "Remediation & Restoration Marketing",
                     "image": "https://remediationrestorationmarketing.com/assets/images/logo-small.jpg",
-                    "@id": "",
+                    "@id": "https://remediationrestorationmarketing.com/#localbusiness",
                     "url": "https://remediationrestorationmarketing.com",
                     "telephone": "17174201766",
                     "priceRange": "$$",
@@ -218,6 +227,39 @@ const { description, title, preloadedImage } = Astro.props;
                     ]
                 }
                 </script>
+                <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "WebSite",
+                    "@id": "https://remediationrestorationmarketing.com/#website",
+                    "url": "https://remediationrestorationmarketing.com",
+                    "name": "Remediation & Restoration Marketing",
+                    "description": "Specialized marketing agency helping restoration companies generate more emergency service leads through SEO, PPC, web design, and digital marketing.",
+                    "publisher": {
+                        "@id": "https://remediationrestorationmarketing.com/#localbusiness"
+                    },
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": {
+                            "@type": "EntryPoint",
+                            "urlTemplate": "https://remediationrestorationmarketing.com/resources/?search={search_term_string}"
+                        },
+                        "query-input": "required name=search_term_string"
+                    }
+                }
+                </script>
+            {pathSegments.length > 0 && (
+                <script type="application/ld+json" is:inline set:html={JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": breadcrumbItems.map((item, idx) => ({
+                        "@type": "ListItem",
+                        "position": idx + 1,
+                        "name": item.name,
+                        "item": item.url
+                    }))
+                })} />
+            )}
             <!-- Preloads the image passed as a prop -->
             <link rel="preload" href={preloadedImage.src} as="image" />
             <meta name="google-site-verification" content="Uhclxmf6JyErwpzjc2QhHZuENaQhwtR-TNMMiQVTT6o" />

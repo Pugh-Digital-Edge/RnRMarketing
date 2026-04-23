@@ -52,7 +52,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
     <picture class="cs-background" style={`--bg-image: url(${optimizedImage.src});`}>
       <source media="(max-width: 600px)" srcset={optimizedImageMobile.src}>
       <source media="(min-width: 601px)" srcset={optimizedImage.src}>
-      <img decoding="async" src={optimizedImage.src} alt="web designer" width="2250" height="1500" aria-hidden="true">
+      <img decoding="async" src={optimizedImage.src} alt="restoration marketing professionals" width="2250" height="1500" aria-hidden="true">
   </picture>
   
 </section>
@@ -141,7 +141,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
           </h2>
           <Image
             src={restorationGraphic}
-            alt="room" 
+            alt="restoration company marketing results"
             width="1280" 
             height="603"
            />
@@ -171,6 +171,33 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
       </ul>
   </div>
 </section>
+
+<script type="application/ld+json" is:inline>{`{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Get Started with Restoration Marketing",
+  "description": "Get more restoration leads in three simple steps with Remediation & Restoration Marketing.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Connect With Us",
+      "text": "Speak with a remediation and restoration marketing specialist to discuss your goals and service area."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Launch Your Marketing Plan",
+      "text": "Have your remediation and restoration marketing plan executed and launched without the stress or guesswork, and start landing more profitable job opportunities within 72 hours of launch."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Get Results",
+      "text": "Grow and scale profitably with a predictable system that helps you get more leads, book more estimates, and sell more jobs."
+    }
+  ]
+}`}</script>
 
 <Contact />
             

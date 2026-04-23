@@ -26,6 +26,27 @@ const optimizedImage = await getOptimizedImage(landingImage);
   description="Learn how SEO can help your restoration company capture more emergency calls and grow your business through organic search visibility."
   preloadedImage={optimizedImage}
 >
+  <script type="application/ld+json" is:inline>{`{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SEO for Restoration Companies",
+    "description": "Restoration-focused SEO strategies helping companies dominate local searches for water damage, fire restoration, mold remediation, and other emergency services. Includes local SEO, strategic content creation, and technical optimization.",
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://remediationrestorationmarketing.com/#localbusiness",
+      "name": "Remediation & Restoration Marketing"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "serviceType": "Search Engine Optimization",
+    "url": "https://remediationrestorationmarketing.com/services/seo/",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://remediationrestorationmarketing.com/services/seo/"
+    }
+  }`}</script>
 <Landing 
     title="Restoration SEO"
     image={optimizedImage}
