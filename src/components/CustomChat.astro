@@ -1,0 +1,308 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<div class="custom-chat" data-custom-chat>
+  <button class="custom-chat__toggle" type="button" aria-expanded="false" aria-controls="custom-chat-panel">
+    <span class="custom-chat__toggle-text">Chat</span>
+    <span class="custom-chat__toggle-dot" aria-hidden="true"></span>
+  </button>
+
+  <section class="custom-chat__panel" id="custom-chat-panel" aria-label="Send us a message" hidden>
+    <div class="custom-chat__header">
+      <div>
+        <strong>How can we help?</strong>
+        <span>Ask a question or request a lead review.</span>
+      </div>
+      <button class="custom-chat__close" type="button" aria-label="Close chat">×</button>
+    </div>
+
+    <form
+      class="custom-chat__form"
+      name="Chat Widget Submission"
+      method="post"
+      data-netlify="true"
+      netlify-honeypot="chat-bot-field"
+    >
+      <input type="hidden" name="form-name" value="Chat Widget Submission" />
+      <input type="hidden" name="page" value={currentPath} />
+      <p hidden>
+        <label>
+          Do not fill this out if you are human:
+          <input name="chat-bot-field" />
+        </label>
+      </p>
+
+      <label>
+        Name
+        <input type="text" name="name" autocomplete="name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+      <label>
+        Phone
+        <input type="tel" name="phone" autocomplete="tel" />
+      </label>
+      <label>
+        Message
+        <textarea
+          name="message"
+          rows="4"
+          placeholder="Tell us what you want to improve..."
+          required
+        ></textarea>
+      </label>
+
+      <button class="custom-chat__submit" type="submit">Send Message</button>
+      <p class="custom-chat__notice">We usually reply within one business day.</p>
+      <p class="custom-chat__status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</div>
+
+<style lang="less">
+  .custom-chat {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 950;
+    font-family: "Poppins", Arial, sans-serif;
+  }
+
+  .custom-chat__toggle {
+    min-width: 6.5rem;
+    min-height: 3.25rem;
+    border: 0;
+    border-radius: 999px;
+    padding: 0 1.25rem;
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 1rem 2rem rgba(7, 11, 71, 0.24);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .custom-chat.is-open .custom-chat__toggle {
+    display: none;
+  }
+
+  .custom-chat__toggle-dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+    background: #63f08d;
+    box-shadow: 0 0 0 0.25rem rgba(99, 240, 141, 0.18);
+  }
+
+  .custom-chat__panel {
+    width: min(calc(100vw - 2rem), 23rem);
+    margin-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    background: #fff;
+    box-shadow: 0 1.5rem 3rem rgba(7, 11, 71, 0.28);
+    overflow: hidden;
+  }
+
+  .custom-chat__header {
+    padding: 1rem;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+
+    strong,
+    span {
+      display: block;
+    }
+
+    strong {
+      font-size: 1rem;
+      line-height: 1.25em;
+    }
+
+    span {
+      margin-top: 0.25rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.875rem;
+      line-height: 1.4em;
+      opacity: 0.9;
+    }
+  }
+
+  .custom-chat__close {
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .custom-chat__form {
+    padding: 1rem;
+    display: grid;
+    gap: 0.75rem;
+
+    label {
+      display: grid;
+      gap: 0.375rem;
+      color: var(--headerColor);
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #c6ccd6;
+      border-radius: 0.375rem;
+      padding: 0.75rem;
+      color: #1a1a1a;
+      background: #fff;
+      font: 1rem Arial, sans-serif;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  .custom-chat__submit {
+    min-height: 3rem;
+    border: 0;
+    border-radius: 0.375rem;
+    background: var(--primary);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .custom-chat__notice,
+  .custom-chat__status {
+    margin: 0;
+    color: #565b65;
+    font-family: Arial, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.4em;
+    text-align: center;
+  }
+
+  .custom-chat__status {
+    min-height: 1.25rem;
+    font-weight: 700;
+  }
+
+  @media only screen and (max-width: 47.999rem) {
+    .custom-chat {
+      bottom: 5.25rem;
+    }
+  }
+
+  body.dark-mode {
+    .custom-chat__panel {
+      background: var(--medium);
+    }
+
+    .custom-chat__form {
+      label {
+        color: var(--bodyTextColorWhite);
+      }
+
+      input,
+      textarea {
+        color: var(--bodyTextColorWhite);
+        background: var(--accent);
+        border-color: rgba(255, 255, 255, 0.22);
+      }
+    }
+
+    .custom-chat__notice,
+    .custom-chat__status {
+      color: var(--bodyTextColorWhite);
+    }
+  }
+</style>
+
+<script>
+  const chatRoot = document.querySelector("[data-custom-chat]");
+  const chatToggle = chatRoot?.querySelector(".custom-chat__toggle");
+  const chatPanel = chatRoot?.querySelector(".custom-chat__panel");
+  const chatClose = chatRoot?.querySelector(".custom-chat__close");
+  const chatForm = chatRoot?.querySelector(".custom-chat__form");
+  const chatStatus = chatRoot?.querySelector(".custom-chat__status");
+
+  const setChatOpen = (isOpen) => {
+    if (!(chatToggle instanceof HTMLButtonElement) || !(chatPanel instanceof HTMLElement)) {
+      return;
+    }
+
+    chatPanel.hidden = !isOpen;
+    chatToggle.setAttribute("aria-expanded", String(isOpen));
+    chatRoot?.classList.toggle("is-open", isOpen);
+  };
+
+  chatToggle?.addEventListener("click", () => {
+    setChatOpen(chatPanel instanceof HTMLElement ? chatPanel.hidden : true);
+  });
+
+  chatClose?.addEventListener("click", () => {
+    setChatOpen(false);
+  });
+
+  chatForm?.addEventListener("submit", async (event) => {
+    if (!(chatForm instanceof HTMLFormElement)) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const submitButton = chatForm.querySelector("button[type='submit']");
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
+    if (chatStatus instanceof HTMLElement) {
+      chatStatus.textContent = "";
+    }
+
+    try {
+      const body = new URLSearchParams(new FormData(chatForm));
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      chatForm.reset();
+      if (chatStatus instanceof HTMLElement) {
+        chatStatus.textContent = "Thanks. Your message was sent.";
+      }
+    } catch {
+      if (chatStatus instanceof HTMLElement) {
+        chatStatus.textContent = "Something went wrong. Please try again.";
+      }
+    } finally {
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message";
+      }
+    }
+  });
+</script>

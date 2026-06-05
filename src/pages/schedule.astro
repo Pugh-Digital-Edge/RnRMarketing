@@ -1,0 +1,801 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import { getOptimizedImage } from "@libs/utils";
+import landingImage from "@assets/images/landing/blue-abstract.jpeg";
+
+const optimizedImage = await getOptimizedImage(landingImage);
+
+const proofImages = [
+  {
+    src: "/assets/images/schedule/leadflow-proof-3.png",
+    alt: "Restoration marketing client proof",
+  },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Leadflow Acceleration Session",
+  description:
+    "Free market analysis session for restoration contractors looking to generate more qualified restoration leads through focused digital marketing.",
+  url: "https://remediationrestorationmarketing.com/schedule/",
+  provider: {
+    "@type": "Organization",
+    name: "Remediation & Restoration Marketing",
+    url: "https://remediationrestorationmarketing.com/",
+  },
+  areaServed: {
+    "@type": "Audience",
+    audienceType: "Restoration contractors, USA",
+  },
+};
+---
+
+<BaseLayout
+  title="Schedule Your Leadflow Acceleration Session"
+  description="Request a free Leadflow Acceleration Session for your restoration company. Share your market, services, and goals so our team can review your lead opportunities."
+  preloadedImage={optimizedImage}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)}></script>
+
+  <section id="schedule-hero">
+    <div class="cs-container">
+      <h1>Schedule Your Leadflow Acceleration Session</h1>
+      <p>
+        Free Leadflow Acceleration Session reveals how restoration contractors can dominate their local market,
+        increase their leads via the internet, and take their business to the next level.
+      </p>
+    </div>
+  </section>
+
+  <section id="schedule-main">
+    <div class="cs-container">
+      <div class="cs-media">
+        <h2>Learn How To Generate More Restoration Leads In Your Market</h2>
+        <p class="cs-video-intro">This quick video reveals how you can accelerate your lead flow online.</p>
+        <div class="cs-video" aria-label="Leadflow acceleration session video">
+          <iframe
+            src="https://www.youtube.com/embed/SA49vYXmCM0?si=pjQUB2d5nFgiG6gd"
+            title="YouTube video player"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <img
+          src="/assets/images/schedule/apply-now.png"
+          alt="Schedule your Lead Flow Acceleration Session now"
+          class="cs-brand-card"
+          loading="lazy"
+        />
+      </div>
+
+      <form id="lead-form" name="Schedule Lead Form" method="post" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="Schedule Lead Form" />
+        <p hidden>
+          <label>
+            Do not fill this out if you are human:
+            <input name="bot-field" />
+          </label>
+        </p>
+        <span class="cs-topper">Request Your Session</span>
+        <h2>Tell Us Where You Want More Jobs</h2>
+        <p>
+          We will review your service area, current online presence, and lead goals before reaching out with next steps.
+        </p>
+        <ul class="cs-form-outcomes" aria-label="Session outcomes">
+          <li>Know which services to prioritize</li>
+          <li>See where competitors are outranking you</li>
+          <li>Leave with a lead growth plan</li>
+        </ul>
+
+        <label>
+          Name
+          <input required type="text" name="name" placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input required type="email" name="email" placeholder="you@example.com" />
+        </label>
+        <label>
+          Phone
+          <input required type="tel" name="phone" placeholder="(555) 555-5555" />
+        </label>
+        <label>
+          Service Area
+          <input required type="text" name="service-area" placeholder="City, state, or ZIP codes" />
+        </label>
+
+        <button class="cs-button-solid cs-form-continue" type="button">Continue &rarr;</button>
+
+        <div class="cs-form-step" data-step="2" hidden>
+          <label>
+            Company
+            <input required type="text" name="company" placeholder="Company name" />
+          </label>
+          <label>
+            Primary Service
+            <select name="primary-service" required>
+              <option value="">Select a service</option>
+              <option>Water Damage Restoration</option>
+              <option>Fire Damage Restoration</option>
+              <option>Mold Remediation</option>
+              <option>Storm Damage Cleanup</option>
+              <option>Commercial Restoration</option>
+              <option>Multiple Restoration Services</option>
+            </select>
+          </label>
+          <label class="cs-full">
+            What are you trying to improve?
+            <textarea
+              name="goals"
+              placeholder="Example: more emergency water calls, better Google rankings, lower cost per lead..."
+            ></textarea>
+          </label>
+
+          <button class="cs-button-solid" type="submit">Request My Free Session</button>
+          <small>Privacy protected. No spam. No obligation. Built specifically for restoration contractors.</small>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="schedule-results">
+    <div class="cs-container">
+      <div class="cs-copy">
+        <span class="cs-topper">Client Proof</span>
+        <h2 class="cs-title">See What Focused Restoration Marketing Can Change</h2>
+        <p class="cs-text">
+          By targeting the correct keywords and implementing a focused online marketing program, restoration companies
+          can turn their website and campaigns into a more predictable source of leads, estimates, and booked jobs.
+        </p>
+      </div>
+      <div class="cs-gallery">
+        {proofImages.map((image) => (
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        ))}
+      </div>
+      <blockquote hidden>
+        “Thank you for your time this morning Matt! I was concerned that this would be a sales pitch or a waste of
+        time, but I can honestly say that you exceeded my expectations.”
+        <cite>Jason Fogus, TRW Contracting</cite>
+      </blockquote>
+      <blockquote>
+        "Thank you for your time this morning Matt! I was concerned that this would be a sales pitch or a waste of
+        time, but I can honestly say that you exceeded my expectations. You came prepared with details on our website,
+        our rankings, and actionable insights. It was refreshing to talk with a real expert without feeling like I was
+        getting the hard sale."
+        <cite>Jason Fogus, TRW Contracting</cite>
+      </blockquote>
+      <a href="#lead-form" class="cs-button-solid">Request Your Lead Flow Acceleration Session</a>
+    </div>
+  </section>
+
+  <section id="schedule-proof">
+    <div class="cs-container">
+      <div class="cs-content">
+        <span class="cs-topper">Real Strategy, Not A Generic Sales Call</span>
+        <h2 class="cs-title">What We Review On Your Leadflow Session</h2>
+        <p class="cs-text">
+          A specific blueprint for your business, your website, and your particular service area.
+        </p>
+      </div>
+      <ul>
+        <li>
+          <strong>Your market opportunity</strong>
+          We look at where restoration demand is strongest in your service area and where competitors are winning.
+        </li>
+        <li>
+          <strong>Your online visibility</strong>
+          We review website, search, and paid advertising gaps that may be holding back emergency lead flow.
+        </li>
+        <li>
+          <strong>Your next best growth moves</strong>
+          You leave with practical recommendations for capturing more qualified restoration jobs.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="schedule-faq">
+    <div class="cs-container">
+      <span class="cs-topper">FAQ</span>
+      <h2 class="cs-title">Leadflow Session Questions</h2>
+      <div class="cs-faq-list">
+        <details open>
+          <summary>What happens after I request a session?</summary>
+          <p>
+            We review your service area, online visibility, and lead goals, then reach out with the next steps for your
+            free Leadflow Acceleration Session.
+          </p>
+        </details>
+        <details>
+          <summary>What will you review before the call?</summary>
+          <p>
+            We look at your website, local search presence, service area, restoration keywords, and visible competitor
+            activity so the session is specific to your market.
+          </p>
+        </details>
+        <details>
+          <summary>Is this just a sales pitch?</summary>
+          <p>
+            No. The session is designed to give you practical observations about where restoration leads may be leaking
+            and which growth moves are worth prioritizing.
+          </p>
+        </details>
+        <details>
+          <summary>Who is this best for?</summary>
+          <p>
+            It is built for restoration contractors who want more water damage, fire damage, mold remediation, storm
+            cleanup, or commercial restoration leads in a defined service area.
+          </p>
+        </details>
+        <details>
+          <summary>Do I need to prepare anything?</summary>
+          <p>
+            Just share accurate contact details, your company name, service area, and the services you want to grow. If
+            there is a specific challenge you want reviewed, include it in the goals field.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <button class="schedule-mobile-cta" type="button">Get Your Free Market Analysis</button>
+</BaseLayout>
+
+<style lang="less">
+  @media only screen and (min-width: 0rem) {
+    #schedule-hero {
+      padding: clamp(9rem, 16vw, 13rem) 1rem clamp(2rem, 5vw, 4rem);
+      background:
+        linear-gradient(rgba(0, 72, 124, 0.9), rgba(0, 72, 124, 0.9)),
+        url("/assets/images/hero.webp") center/cover;
+      color: #fff;
+
+      .cs-container {
+        width: 100%;
+        max-width: 73.125rem;
+        margin: auto;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: clamp(2.125rem, 6vw, 3rem);
+        line-height: 1.15em;
+        max-width: 16ch;
+        margin: 0 auto 1rem;
+        color: #fff;
+      }
+
+      p {
+        font-size: clamp(1.0625rem, 2vw, 1.25rem);
+        max-width: 48rem;
+        margin: auto;
+        color: #fff;
+      }
+    }
+
+    #schedule-main {
+      padding: clamp(2.5rem, 6vw, 5rem) 1rem;
+
+      .cs-container {
+        width: 100%;
+        max-width: 73.125rem;
+        margin: auto;
+        display: grid;
+        gap: clamp(2rem, 5vw, 4rem);
+      }
+
+      .cs-media h2,
+      #lead-form h2 {
+        font-size: clamp(1.5625rem, 3vw, 1.8125rem);
+        line-height: 1.3em;
+        text-align: center;
+        margin: 0 0 1.5rem;
+      }
+
+      .cs-video-intro {
+        max-width: 34rem;
+        margin: -0.75rem auto 1.25rem;
+        text-align: center;
+        color: #353535;
+      }
+
+      .cs-video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #111;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.18);
+
+        iframe {
+          width: 100%;
+          height: 100%;
+          border: 0;
+          display: block;
+        }
+      }
+
+      .cs-brand-card {
+        width: min(100%, 28rem);
+        height: auto;
+        margin: 2rem auto 0;
+        display: block;
+        border-radius: 0.5rem;
+      }
+
+      #lead-form {
+        padding: clamp(1.25rem, 3vw, 2rem);
+        border-top: 0.375rem solid var(--primary);
+        border-radius: 0.5rem;
+        background: #fff;
+        box-shadow: 0 1.25rem 3rem rgba(7, 11, 71, 0.12);
+        display: grid;
+        gap: 1rem;
+
+        .cs-topper {
+          text-align: center;
+        }
+
+        p {
+          text-align: center;
+          margin: -0.75rem 0 0.5rem;
+          color: #353535;
+        }
+
+        .cs-form-outcomes {
+          grid-column: 1 / -1;
+          padding: 0;
+          margin: 0 0 0.25rem;
+          display: grid;
+          gap: 0.625rem;
+        }
+
+        .cs-form-outcomes li {
+          list-style: none;
+          padding-left: 1.625rem;
+          position: relative;
+          color: var(--headerColor);
+          font-size: 0.95rem;
+          line-height: 1.35em;
+          font-weight: 700;
+        }
+
+        .cs-form-outcomes li::before {
+          content: "";
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          background: var(--primary);
+          position: absolute;
+          top: 0.42rem;
+          left: 0.25rem;
+        }
+
+        label {
+          font-weight: 700;
+          color: var(--headerColor);
+          display: grid;
+          gap: 0.375rem;
+        }
+
+        input,
+        select,
+        textarea {
+          width: 100%;
+          min-height: 3.5rem;
+          border: 1px solid #c6ccd6;
+          border-radius: 0.375rem;
+          padding: 0 1rem;
+          font: inherit;
+          color: #1a1a1a;
+          background: #fff;
+        }
+
+        textarea {
+          min-height: 7rem;
+          padding-top: 1rem;
+          resize: vertical;
+        }
+
+        .cs-button-solid {
+          width: 100%;
+          border: 0;
+          height: auto;
+          min-height: 3.5rem;
+          line-height: 1.2em;
+          padding: 1rem;
+        }
+
+        .cs-form-continue {
+          grid-column: 1 / -1;
+        }
+
+        .cs-form-step {
+          display: grid;
+          gap: 1rem;
+          grid-column: 1 / -1;
+        }
+
+        .cs-form-step[hidden] {
+          display: none;
+        }
+
+        small {
+          text-align: center;
+          color: #565b65;
+        }
+      }
+    }
+
+    .schedule-mobile-cta {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      left: 1rem;
+      z-index: 900;
+      min-height: 3.5rem;
+      border: 0;
+      border-radius: 0.5rem;
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 1rem 2rem rgba(7, 11, 71, 0.22);
+      font-family: "Poppins", Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+    }
+
+    .schedule-mobile-cta.is-hidden {
+      opacity: 0;
+      transform: translateY(1rem);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    #schedule-proof {
+      padding: var(--sectionPadding);
+      background: #f3f3f4;
+
+      .cs-container {
+        width: 100%;
+        max-width: 73.125rem;
+        margin: auto;
+      }
+
+      .cs-content {
+        text-align: center;
+        max-width: 48rem;
+        margin: 0 auto clamp(2rem, 4vw, 3rem);
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 1rem;
+      }
+
+      li {
+        list-style: none;
+        padding: 1.5rem;
+        border-left: 0.25rem solid var(--primary);
+        background: #fff;
+        border-radius: 0.5rem;
+      }
+
+      strong {
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 1.125rem;
+        color: var(--headerColor);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    #schedule-results {
+      padding: var(--sectionPadding);
+
+      .cs-container {
+        width: 100%;
+        max-width: 73.125rem;
+        margin: auto;
+        text-align: center;
+      }
+
+      .cs-copy {
+        max-width: 48rem;
+        margin: 0 auto 2rem;
+      }
+
+      .cs-gallery {
+        display: grid;
+        justify-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      img {
+        width: 100%;
+        max-width: 64rem;
+        height: auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 1rem 2rem rgba(7, 11, 71, 0.12);
+      }
+
+      blockquote {
+        max-width: 52rem;
+        margin: 0 auto 2rem;
+        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        line-height: 1.45em;
+        color: var(--headerColor);
+        font-weight: 700;
+      }
+
+      cite {
+        font-size: 1rem;
+        font-style: normal;
+        color: var(--primary);
+        display: block;
+        margin-top: 1rem;
+      }
+    }
+
+    #schedule-faq {
+      padding: var(--sectionPadding);
+      background: #f3f3f4;
+
+      .cs-container {
+        width: 100%;
+        max-width: 52rem;
+        margin: auto;
+        text-align: center;
+      }
+
+      .cs-title {
+        margin-bottom: 2rem;
+      }
+
+      .cs-faq-list {
+        display: grid;
+        gap: 0.75rem;
+        text-align: left;
+      }
+
+      details {
+        border: 1px solid #d7dce5;
+        border-radius: 0.5rem;
+        background: #fff;
+        box-shadow: 0 0.75rem 1.5rem rgba(7, 11, 71, 0.06);
+      }
+
+      summary {
+        padding: 1.125rem 3rem 1.125rem 1.25rem;
+        color: var(--headerColor);
+        cursor: pointer;
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.35em;
+        font-weight: 700;
+        list-style: none;
+        position: relative;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary::after {
+        content: "+";
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 50%;
+        background: var(--primary);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        font-size: 1.125rem;
+        line-height: 1;
+      }
+
+      details[open] summary::after {
+        content: "-";
+      }
+
+      details p {
+        padding: 0 1.25rem 1.25rem;
+        margin: -0.25rem 0 0;
+        color: #353535;
+        line-height: 1.6em;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 48rem) {
+    .schedule-mobile-cta {
+      display: none;
+    }
+
+    #schedule-main {
+      #lead-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        .cs-topper,
+        h2,
+        p,
+        .cs-form-outcomes,
+        .cs-full,
+        button,
+        small,
+        .cs-form-step {
+          grid-column: 1 / -1;
+        }
+
+        .cs-form-step {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    }
+
+    #schedule-proof ul {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #schedule-results .cs-gallery {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media only screen and (min-width: 64rem) {
+    #schedule-main {
+      .cs-container {
+        grid-template-columns: 1fr 0.9fr;
+        align-items: start;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 0rem) {
+    body.dark-mode {
+      #schedule-main,
+      #schedule-results {
+        background: var(--dark);
+      }
+
+      #schedule-main {
+        .cs-media h2,
+        .cs-video-intro,
+        #lead-form h2,
+        #lead-form label,
+        #lead-form p,
+        #lead-form .cs-form-outcomes li {
+          color: var(--bodyTextColorWhite);
+        }
+
+        #lead-form {
+          background: var(--medium);
+          box-shadow: none;
+
+          input,
+          select,
+          textarea {
+            color: var(--bodyTextColorWhite);
+            background: var(--accent);
+            border-color: rgba(255, 255, 255, 0.22);
+          }
+
+          small {
+            color: var(--bodyTextColorWhite);
+            opacity: 0.8;
+          }
+        }
+      }
+
+      #schedule-proof {
+        background: var(--medium);
+
+        .cs-title,
+        li,
+        strong {
+          color: var(--bodyTextColorWhite);
+        }
+
+        li {
+          background: var(--accent);
+        }
+      }
+
+      #schedule-results {
+        .cs-title,
+        .cs-text,
+        blockquote {
+          color: var(--bodyTextColorWhite);
+        }
+      }
+
+      #schedule-faq {
+        background: var(--medium);
+
+        .cs-title,
+        summary,
+        details p {
+          color: var(--bodyTextColorWhite);
+        }
+
+        details {
+          background: var(--accent);
+          border-color: rgba(255, 255, 255, 0.16);
+          box-shadow: none;
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  const leadForm = document.querySelector("#lead-form");
+  const continueButton = leadForm?.querySelector(".cs-form-continue");
+  const secondStep = leadForm?.querySelector("[data-step='2']");
+  const mobileCta = document.querySelector(".schedule-mobile-cta");
+
+  const showSecondStep = () => {
+    if (!(leadForm instanceof HTMLFormElement) || !(secondStep instanceof HTMLElement)) {
+      return false;
+    }
+
+    const firstStepFields = leadForm.querySelectorAll(
+      "input[name='name'], input[name='email'], input[name='phone'], input[name='service-area']",
+    );
+    const isFirstStepValid = Array.from(firstStepFields).every((field) => {
+      return field instanceof HTMLInputElement && field.reportValidity();
+    });
+
+    if (!isFirstStepValid) {
+      return false;
+    }
+
+    secondStep.hidden = false;
+    if (continueButton instanceof HTMLElement) {
+      continueButton.hidden = true;
+    }
+    secondStep.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    return true;
+  };
+
+  continueButton?.addEventListener("click", () => {
+    showSecondStep();
+  });
+
+  leadForm?.addEventListener("submit", (event) => {
+    if (secondStep instanceof HTMLElement && secondStep.hidden) {
+      event.preventDefault();
+      showSecondStep();
+    }
+  });
+
+  mobileCta?.addEventListener("click", () => {
+    leadForm?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  if (leadForm && mobileCta && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        mobileCta.classList.toggle("is-hidden", entry.isIntersecting);
+      },
+      { threshold: 0.15 },
+    );
+
+    observer.observe(leadForm);
+  }
+</script>
