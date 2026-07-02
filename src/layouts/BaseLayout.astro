@@ -318,12 +318,34 @@ const breadcrumbItems: { name: string; url: string }[] = [
             <script src="../assets/js/nav.js"></script>
              <!-- Google tag (gtag.js) -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K4H62DJ77"></script>
-            <script>
+            <script is:inline>
                 window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
+                window.gtag = function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
                 gtag('config', 'G-4K4H62DJ77');
+            </script>
+            <script is:inline>
+                document.addEventListener('click', (event) => {
+                    if (!(event.target instanceof Element)) {
+                        return;
+                    }
+
+                    const phoneLink = event.target.closest('a[href^="tel:"]');
+
+                    if (!phoneLink || typeof window.gtag !== 'function') {
+                        return;
+                    }
+
+                    window.gtag('event', 'phone_call_click', {
+                        event_category: 'engagement',
+                        event_label: phoneLink.textContent.trim(),
+                        link_url: phoneLink.href,
+                        link_text: phoneLink.textContent.trim(),
+                        page_location: window.location.href,
+                        transport_type: 'beacon',
+                    });
+                });
             </script>
         
         </head>
