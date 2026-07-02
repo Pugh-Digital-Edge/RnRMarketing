@@ -316,16 +316,15 @@ const breadcrumbItems: { name: string; url: string }[] = [
 
             <!-- Sitewide Scripts -->
             <script src="../assets/js/nav.js"></script>
-             <!-- Matomo Tag Manager -->
+             <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K4H62DJ77"></script>
             <script>
-                var _mtm = window._mtm = window._mtm || [];
-                _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-                (function() {
-                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                    g.async=true; g.src='https://cdn.matomo.cloud/remediationrestorationmarketing.matomo.cloud/container_RZcEK7fz.js'; s.parentNode.insertBefore(g,s);
-                })();
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-4K4H62DJ77');
             </script>
-            <!-- End Matomo Tag Manager -->
         
         </head>
         <body>
