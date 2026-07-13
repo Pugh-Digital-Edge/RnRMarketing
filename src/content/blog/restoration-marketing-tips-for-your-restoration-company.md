@@ -10,8 +10,6 @@ tags:
   - post
   - featured
 ---
-# Restoration Marketing Tips for Your Restoration Company
-
 ## Key Takeaways
 
 * Restoration marketing is about finding the areas of distinction and promoting them so that you can stand out in a sea of sameness. Understand what’s unique about you and try to find ways to explain this to your audience.

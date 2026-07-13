@@ -15,6 +15,7 @@ import { Icon } from 'astro-icon/components';
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
+import ServiceSchema from "@components/ServiceSchema.astro";
 
 // Optimize the landing image
 const optimizedImage = await getOptimizedImage(landingImage);
@@ -25,6 +26,13 @@ const optimizedImage = await getOptimizedImage(landingImage);
   description="Grow your restoration company with targeted social media marketing. We create content that builds trust, showcases your work, and keeps your brand top-of-mind when property owners need emergency services."
   preloadedImage={optimizedImage}
 >
+<ServiceSchema
+  name="Social Media Management for Restoration Companies"
+  description="Social media management for restoration companies that showcases completed projects, customer testimonials, and professional certifications to build trust with property owners and insurance partners."
+  path="/services/social-media-marketing/"
+  serviceType="Social Media Marketing"
+/>
+
 <Landing 
     title="Restoration Social Media Marketing"
     image={optimizedImage}
@@ -138,7 +146,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             </ul>
         </div>
 
-  <h3>The Power of Visual Content</h2>
+  <h2>The Power of Visual Content</h2>
   <p class="cs-text">Social media offers unique advantages for restoration companies:</p>
   <ul>
       <li class="cs-text"><strong>Before/After Showcases:</strong> Demonstrate your restoration expertise visually.</li>
@@ -147,7 +155,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
       <li class="cs-text"><strong>Team Expertise:</strong> Highlight certifications and professional training.</li>
   </ul>
 
-  <h3>Platform-Specific Strategies</h2>
+  <h2>Platform-Specific Strategies</h2>
   <p class="cs-text">Each social platform serves a unique purpose in restoration marketing:</p>
   <ul>
       <li class="cs-text"><strong>Facebook:</strong> Build community presence and share detailed project stories.</li>
@@ -156,7 +164,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
       <li class="cs-text"><strong>Twitter:</strong> Share emergency updates and respond to community needs.</li>
   </ul>
 
-  <h3>Emergency Response Communication</h2>
+  <h2>Emergency Response Communication</h2>
   <p class="cs-text">Social media is crucial during disaster response:</p>
   <ul>
       <li class="cs-text"><strong>Real-Time Updates:</strong> Keep community informed during weather events.</li>
@@ -165,7 +173,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
       <li class="cs-text"><strong>Safety Tips:</strong> Provide valuable emergency preparedness content.</li>
   </ul>
 
-  <h3>Building Industry Relationships</h2>
+  <h2>Building Industry Relationships</h2>
   <p class="cs-text">Strategic social media helps connect with key partners:</p>
   <ul>
       <li class="cs-text"><strong>Insurance Networks:</strong> Build relationships with adjusters and companies.</li>
@@ -175,7 +183,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
       <li class="cs-text"><strong>Community Leaders:</strong> Establish local authority status.</li>
   </ul>
 
-  <h3>The Social Media Management Process</h2>
+  <h2>The Social Media Management Process</h2>
   <ul>
       <li class="cs-text"><strong>Strategy Development:</strong> Creating a platform-specific content plan.</li>
       <li class="cs-text"><strong>Content Creation:</strong> Developing engaging visual and written content.</li>
@@ -187,7 +195,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
       <li class="cs-text"><strong>Crisis Communication:</strong> Managing emergency response messaging.</li>
   </ul>
 
-  <h3>Conclusion</h2>
+  <h2>Conclusion</h2>
   <p class="cs-text">Strategic social media marketing is essential for restoration companies looking to build trust, showcase expertise, and maintain community connections. By implementing a comprehensive social strategy across platforms, your restoration company can effectively demonstrate its capabilities, respond to emergencies, and build valuable relationships with property owners and insurance partners. When combined with your other digital marketing efforts, social media becomes a powerful tool for generating leads and establishing your restoration company as the trusted local expert.</p>
 </div>
 </div>

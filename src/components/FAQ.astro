@@ -1,6 +1,28 @@
+---
+import faqs from "@data/faqData.json";
+
+// The FAQPage schema is emitted here rather than in BaseLayout so it only ever
+// appears on pages that actually render these questions. Both the visible
+// markup and the schema below read from faqData.json, so they cannot drift.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+---
+
 <!-- ============================================ -->
 <!--                    FAQ                       -->
 <!-- ============================================ -->
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 
 <section id="faq-254">
   <div class="cs-container">
@@ -13,37 +35,12 @@
     </div>
       <div class="cs-flex-group">
         <ul class="cs-faq-group">
-          <!-- Active class added as default -->
-          <li class="cs-faq-item active">
-              <button class="cs-button">What type of leads can I expect from your marketing?</button>
-              <p class="cs-item-p">
-                  We focus on generating high-value commercial and residential restoration leads including water damage, fire restoration, and mold remediation. We specifically target property owners and managers - not renters who can't authorize work.
-              </p>
-          </li>
-          <li class="cs-faq-item">
-              <button class="cs-button">How quickly can I expect to see results?</button>
-              <p class="cs-item-p">
-                  Most clients start seeing qualified leads within 72 hours of launching paid campaigns. For organic growth (SEO), you'll typically see significant improvements within 2-3 months. During your discovery call, we'll analyze your market and provide a detailed timeline based on your specific situation and goals.
-              </p>
-          </li>
-          <li class="cs-faq-item">
-              <button class="cs-button">What makes you different from other marketing agencies?</button>
-              <p class="cs-item-p">
-                  We exclusively serve the restoration industry - it's all we do. Our team understands the unique challenges of restoration marketing, from emergency service messaging to insurance work requirements. We've developed proven strategies specifically for restoration companies, including targeting decision-makers, optimizing for emergency searches, and highlighting insurance/certification credentials.
-              </p>
-          </li>
-          <li class="cs-faq-item">
-              <button class="cs-button">What's included in your marketing services?</button>
-              <p class="cs-item-p">
-                  Our comprehensive service includes 24/7 emergency PPC campaigns, local SEO optimization, review management, website optimization for conversions, and detailed performance tracking. Everything is handled in-house by our USA-based team who understands the restoration industry. You'll receive regular reports showing exactly how your marketing budget is performing.
-              </p>
-          </li>
-          <li class="cs-faq-item">
-              <button class="cs-button">Do you require long-term contracts?</button>
-              <p class="cs-item-p">
-                  We believe in earning your business every month. While we require a minimum 3-month commitment to see optimal results (especially for SEO), we don't lock you into lengthy contracts.
-              </p>
-          </li>
+          {faqs.map((faq, i) => (
+            <li class:list={["cs-faq-item", { active: i === 0 }]}>
+                <button class="cs-button">{faq.question}</button>
+                <p class="cs-item-p">{faq.answer}</p>
+            </li>
+          ))}
       </ul>
         <div class="cs-cta">
             <h3 class="cs-h3">Don’t see the answer you need?</h3>
@@ -106,15 +103,24 @@ document.addEventListener('astro:page-load', () => { // Makes the script availab
             padding: 0;
             margin: 0;
             margin-bottom: (48/16rem);
+            display: flex;
+            flex-direction: column;
+            gap: (12/16rem);
         }
 
         .cs-faq-item {
             list-style: none;
-            border-bottom: 1px solid #dad9e3;
-            transition: border-bottom 0.3s;
+            background-color: #fff;
+            border: 1px solid var(--borderColor);
+            border-radius: var(--radiusS);
+            box-shadow: var(--shadowS);
+            padding: 0 (20/16rem);
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
 
             &.active {
-                border-bottom: 1px solid var(--primary);
+                border-color: rgba(10, 102, 194, 0.45);
+                box-shadow: var(--shadowM);
                 .cs-button {
                     &:before {
                         transform: rotate(180deg);
@@ -139,8 +145,8 @@ document.addEventListener('astro:page-load', () => { // Makes the script availab
             line-height: 1.2em;
             text-align: left;
             font-weight: bold;
-            /* 12px - 16px */
-            padding: clamp(0.75rem, 1.3vw, 1rem) 0;
+            /* 14px - 18px */
+            padding: clamp(0.875rem, 1.5vw, 1.125rem) 0;
             background: transparent;
             border: none;
             color: var(--headerColor);
@@ -206,8 +212,9 @@ document.addEventListener('astro:page-load', () => { // Makes the script availab
             /* 48px - 64px top & bottom */
             /* 40px - 56px left & right */
             padding: clamp(3rem, 4.9vw, 4rem) clamp(2.5rem, 4vw, 3.5rem);
-            background: var(--secondary);
-            border-radius: (16/16rem);
+            background: linear-gradient(135deg, #12203c 0%, #0a66c2 130%);
+            border-radius: var(--radiusM);
+            box-shadow: var(--shadowM);
             /* prevents padding from adding to width and height */
             box-sizing: border-box;
         }
@@ -220,7 +227,7 @@ document.addEventListener('astro:page-load', () => { // Makes the script availab
             text-align: center;
             margin: 0;
             margin-bottom: (16/16rem);
-            color: var(--headerColor);
+            color: #fff;
         }
 
         .cs-cta-p {
@@ -229,6 +236,7 @@ document.addEventListener('astro:page-load', () => { // Makes the script availab
             text-align: center;
             line-height: 1.5em;
             margin: 0;
+            color: rgba(255, 255, 255, 0.8);
             /* 32px - 48px */
             margin-bottom: clamp(2rem, 3.9vw, 3rem);
         }

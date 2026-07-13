@@ -13,6 +13,10 @@ const blogsCollection = defineCollection({
 			description: z.string(),
 			author: z.string(),
 			date: z.date(),
+			// Set when a post is materially revised. AI search engines weight
+			// recency heavily, so a reviewed post should say so. Falls back to
+			// `date` when absent.
+			updated: z.date().optional(),
             tags: z.array(z.string()),
 			image: image(),
 			imageAlt: z.string(),

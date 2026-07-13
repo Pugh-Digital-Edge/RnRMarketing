@@ -1,0 +1,149 @@
+---
+/**
+ * Client results, stated as specific figures.
+ *
+ * Concrete, attributable numbers are the single strongest driver of citation in
+ * AI search — a bare "we get great results" is unquotable, while "cut cost per
+ * lead by more than half" is a passage an AI Overview can lift verbatim. Each
+ * stat therefore names the service line and timeframe it came from.
+ */
+const stats = [
+  {
+    figure: "50%+",
+    label: "Lower cost per lead",
+    detail:
+      "We cut one restoration client's cost per lead by more than half, paying less for every lead their campaigns generated.",
+  },
+  {
+    figure: "500%",
+    label: "Traffic growth in one month",
+    detail:
+      "Another restoration client saw website traffic grow 500% — a six-fold increase — within a single month.",
+  },
+  {
+    figure: "72 hrs",
+    label: "To first qualified leads",
+    detail:
+      "Most clients start receiving qualified restoration leads within 72 hours of launching paid campaigns.",
+  },
+];
+---
+
+<section id="results-stats" aria-labelledby="results-stats-heading">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Real Client Results</span>
+      <h2 class="cs-title" id="results-stats-heading">
+        The numbers behind our restoration marketing
+      </h2>
+      <p class="cs-text">
+        We measure success in leads and cost per lead, not impressions. Here is
+        what our restoration marketing has produced for real clients.
+      </p>
+    </div>
+
+    <dl class="stat-group">
+      {stats.map((stat) => (
+        <div class="stat">
+          <dt class="stat__figure">{stat.figure}</dt>
+          <dd class="stat__body">
+            <span class="stat__label">{stat.label}</span>
+            <p class="stat__detail">{stat.detail}</p>
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<style lang="less">
+  #results-stats {
+    padding: var(--sectionPadding);
+    background-color: var(--surfaceMuted);
+  }
+
+  #results-stats .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+
+  #results-stats .cs-content {
+    text-align: center;
+    width: 100%;
+    max-width: 46rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .stat {
+    padding: clamp(1.5rem, 3vw, 2rem);
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid var(--borderColor);
+    border-radius: var(--radiusM);
+    box-shadow: var(--shadowS);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .stat:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadowM);
+  }
+
+  .stat__figure {
+    /* 39px - 55px */
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: clamp(2.4375rem, 5vw, 3.4375rem);
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.5rem 0;
+    background: var(--gradientPrimary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: block;
+  }
+
+  .stat__body {
+    margin: 0;
+  }
+
+  .stat__label {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin: 0 0 0.5rem 0;
+    color: var(--headerColor);
+    display: block;
+  }
+
+  .stat__detail {
+    font-size: 0.9375rem;
+    line-height: 1.6em;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    .stat-group {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

@@ -128,14 +128,14 @@ import { Image } from 'astro:assets';
             z-index: -1;
 
             &:before {
-                /* black color overlay */
+                /* navy gradient overlay */
                 content: "";
                 position: absolute;
                 display: block;
                 height: 100%;
                 width: 100%;
-                background: #000;
-                opacity: 0.8;
+                background: linear-gradient(120deg, rgba(6, 17, 36, 0.96) 0%, rgba(10, 60, 120, 0.85) 100%);
+                opacity: 1;
                 top: 0;
                 left: 0;
                 z-index: 1;

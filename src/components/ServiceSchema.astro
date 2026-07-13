@@ -1,0 +1,50 @@
+---
+/**
+ * Emits Service schema for a single service page.
+ *
+ * Search and AI crawlers use this to connect the page to the business entity
+ * and understand what is actually being offered, which is what makes the page
+ * eligible to be cited for "who does X" and "best X for Y" style queries.
+ */
+interface Props {
+  /** Human-readable service name, e.g. "PPC & LSA Campaigns". */
+  name: string;
+  /** One-to-two sentence plain-language description of the service. */
+  description: string;
+  /** Path of the page, e.g. "/services/ppc/". */
+  path: string;
+  /** Schema.org serviceType, e.g. "Search Engine Optimization". */
+  serviceType: string;
+}
+
+const { name, description, path, serviceType } = Astro.props;
+const url = `https://remediationrestorationmarketing.com${path}`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name,
+  description,
+  serviceType,
+  url,
+  provider: {
+    "@type": "Organization",
+    "@id": "https://remediationrestorationmarketing.com/#localbusiness",
+    name: "Remediation & Restoration Marketing",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "United States",
+  },
+  audience: {
+    "@type": "BusinessAudience",
+    name: "Restoration and remediation companies",
+  },
+  offers: {
+    "@type": "Offer",
+    url,
+  },
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

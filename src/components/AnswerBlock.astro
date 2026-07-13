@@ -1,0 +1,61 @@
+---
+/**
+ * A self-contained, extractable answer to a single question.
+ *
+ * AI search engines lift passages, not pages. Keeping the answer to roughly
+ * 40-60 words and making it readable without any surrounding context is what
+ * makes it quotable in an AI Overview or a Perplexity citation. The question
+ * is rendered as a heading so it matches the phrasing of a real query.
+ */
+interface Props {
+  question: string;
+  /** Heading level. Use h2 when this is a top-level section of the page. */
+  as?: "h2" | "h3";
+}
+
+const { question, as: Heading = "h2" } = Astro.props;
+---
+
+<div class="answer-block">
+  <Heading class="answer-block__q">{question}</Heading>
+  <div class="answer-block__a">
+    <slot />
+  </div>
+</div>
+
+<style lang="less">
+  .answer-block {
+    width: 100%;
+    max-width: 46.125rem;
+    margin: 0 0 2rem 0;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    box-sizing: border-box;
+    background-color: var(--surfaceMuted);
+    border: 1px solid var(--borderColor);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radiusS);
+  }
+
+  .answer-block__q {
+    font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.25em;
+    margin: 0 0 0.75rem 0;
+    color: var(--headerColor);
+  }
+
+  .answer-block__a :global(p) {
+    font-size: 1rem;
+    line-height: 1.6em;
+    margin: 0 0 0.75rem 0;
+    color: var(--bodyTextColor);
+  }
+
+  .answer-block__a :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .answer-block__a :global(strong) {
+    color: var(--headerColor);
+  }
+</style>

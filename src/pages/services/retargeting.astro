@@ -16,6 +16,7 @@ import { Icon } from 'astro-icon/components';
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
+import ServiceSchema from "@components/ServiceSchema.astro";
 
 
 // Optimize the landing image
@@ -27,6 +28,13 @@ const optimizedImage = await getOptimizedImage(landingImage);
  description="Keep your restoration company visible to website visitors during their research and decision-making process."
  preloadedImage={optimizedImage}
 >
+<ServiceSchema
+  name="Retargeting for Restoration Companies"
+  description="Retargeting campaigns that keep your restoration company visible to previous website visitors across the web, so you stay top of mind while property owners research and compare contractors."
+  path="/services/retargeting/"
+  serviceType="Display Advertising"
+/>
+
 <Landing 
    title="Restoration Retargeting"
    image={optimizedImage}
@@ -89,7 +97,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
          <p class="cs-text">Retargeting lets you display ads to people who've visited your restoration website. When property owners are researching restoration services, your company stays visible through targeted ads as they browse other websites and social media platforms.</p>
        </div>
 
-       <h3>How Retargeting Works</h2>
+       <h2>How Retargeting Works</h2>
        <p class="cs-text">Retargeting uses a simple but powerful process:</p>
        <ul>
            <li class="cs-text"><strong>Website Tracking:</strong> A small code snippet on your website identifies visitors</li>
@@ -98,7 +106,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
            <li class="cs-text"><strong>Targeted Messaging:</strong> Custom ads highlight your restoration services</li>
        </ul>
 
-       <h3>Key Retargeting Platforms</h2>
+       <h2>Key Retargeting Platforms</h2>
        <p class="cs-text">Your ads appear across major networks:</p>
        <ul>
            <li class="cs-text"><strong>Google Display Network:</strong> Millions of websites, news pages, and blogs</li>
@@ -106,7 +114,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
            <li class="cs-text"><strong>Instagram:</strong> Image-based social platform</li>
        </ul>
 
-       <h3>Strategic Ad Messaging</h2>
+       <h2>Strategic Ad Messaging</h2>
        <p class="cs-text">Retargeting ads focus on key decision factors:</p>
        <ul>
            <li class="cs-text"><strong>Emergency Response:</strong> Highlight your rapid response capabilities</li>
@@ -115,7 +123,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
            <li class="cs-text"><strong>Contact Options:</strong> Make it easy to reach your team</li>
        </ul>
 
-       <h3>Campaign Setup Process</h2>
+       <h2>Campaign Setup Process</h2>
        <p class="cs-text">Launching your retargeting campaign:</p>
        <ul>
            <li class="cs-text"><strong>Pixel Installation:</strong> Adding tracking code to your website</li>
@@ -124,7 +132,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
            <li class="cs-text"><strong>Campaign Launch:</strong> Activating your retargeting campaign</li>
        </ul>
 
-       <h3>Performance Tracking</h2>
+       <h2>Performance Tracking</h2>
        <p class="cs-text">Monitor campaign effectiveness:</p>
        <ul>
            <li class="cs-text"><strong>Impression Data:</strong> How often your ads are shown</li>
@@ -133,7 +141,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
            <li class="cs-text"><strong>ROI Measurement:</strong> Assess campaign value</li>
        </ul>
 
-       <h3>Campaign Management</h2>
+       <h2>Campaign Management</h2>
        <p class="cs-text">Ongoing optimization ensures effectiveness:</p>
        <ul>
            <li class="cs-text"><strong>Ad Rotation:</strong> Prevent message fatigue</li>
@@ -142,7 +150,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
            <li class="cs-text"><strong>Performance Review:</strong> Regular campaign analysis</li>
        </ul>
 
-       <h3>Conclusion</h2>
+       <h2>Conclusion</h2>
        <p class="cs-text">Retargeting helps your restoration company stay visible to property owners who've shown interest in your services. By displaying targeted ads across major platforms, you maintain awareness with potential customers throughout their decision-making process.</p>
      </div>
    </div>

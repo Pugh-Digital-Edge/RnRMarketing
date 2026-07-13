@@ -8,13 +8,26 @@
 @media only screen and (min-width: 0em) {
   // Website colors
   :root {
-    --primary: #00487c;
-    --primaryLight: #2b5b7e;
-    --secondary: #999999;
-    --secondaryLight: #c5c5c5;
-    --headerColor: #070B47;
-    --bodyTextColor: #000000;
+    --primary: #0a66c2;
+    --primaryLight: #3b8ede;
+    --primaryDark: #00487c;
+    --secondary: #64748b;
+    --secondaryLight: #cbd5e1;
+    --headerColor: #0f172a;
+    --bodyTextColor: #3f4a5f;
     --bodyTextColorWhite: #FFF;
+
+    /* Modern surface + depth tokens */
+    --surface: #ffffff;
+    --surfaceMuted: #f5f7fa;
+    --borderColor: rgba(15, 23, 42, 0.08);
+    --radiusS: 0.5rem;
+    --radiusM: 1rem;
+    --radiusL: 1.5rem;
+    --shadowS: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.08);
+    --shadowM: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 10px -6px rgba(15, 23, 42, 0.06);
+    --shadowL: 0 25px 50px -12px rgba(15, 23, 42, 0.18);
+    --gradientPrimary: linear-gradient(135deg, var(--primary) 0%, var(--primaryDark) 100%);
 
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -32,8 +45,8 @@
     font-weight: 700;
     line-height: 1.2em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--secondary);
+    letter-spacing: 0.14em;
+    color: var(--primary);
     display: block;
   }
   #my-breadcrumbs li{
@@ -41,8 +54,10 @@
   }
   .cs-title {
     font-size: var(--headerFontSize);
-    font-weight: 900;
-    line-height: 1.2em;
+    font-weight: 700;
+    line-height: 1.15em;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
     margin: 0 auto (16/16rem);
     color: var(--headerColor);
     position: relative;
@@ -50,55 +65,62 @@
 
   .cs-text {
     font-size: var(--bodyFontSize);
-    line-height: 1.5em;
+    line-height: 1.6em;
     width: 100%;
     margin: 0 auto;
     color: var(--bodyTextColor);
   }
 
-  // Button - can be replaced using CodeStitch's "Button" Stitches
+  // Button - modern sitewide style. The !important flags intentionally
+  // override the many per-component (scoped) button variants so every
+  // .cs-button-solid across the site shares one consistent look.
   .cs-button-solid {
     font-size: (16/16rem);
-    font-weight: bold;
-    line-height: (50/16em);
+    font-weight: 700 !important;
+    line-height: (52/16em);
     text-align: center;
-    text-transform: uppercase;
+    text-transform: none !important;
     text-decoration: none;
+    letter-spacing: 0.01em;
     width: auto;
-    height: (50/16rem);
-    padding: 0 (30/16rem);
+    height: auto;
+    padding: 0 (36/16rem) !important;
 
-    // Transition Properties
-    color: #fff;
-    background-color: var(--primary);
+    color: #fff !important;
+    background: var(--gradientPrimary) !important;
+    border-radius: (50/16rem) !important;
+    box-shadow: 0 4px 14px rgba(10, 102, 194, 0.35);
     display: inline-block;
     position: relative;
     z-index: 1;
-    transition: color 0.3s;
-    transition-delay: 0.1s;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease !important;
 
     &:hover {
-      color: #fff;
-      &:before {
-        width: 100%;
-      }
+      color: #fff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(10, 102, 194, 0.45);
+      filter: brightness(1.08);
     }
 
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 3px 10px rgba(10, 102, 194, 0.35);
+    }
+
+    /* disable the legacy black "wipe" effect used by per-component styles */
     &:before {
-      content: "";
-
-      //Transition properties
-      width: 0;
-      height: 100%;
-      background-color: #000;
-      opacity: 1;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      transition: width 0.3s;
+      display: none !important;
     }
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
   }
 }
 
@@ -106,14 +128,19 @@
 @media only screen and (min-width: 0em) {
   // Grab your fonts to locally host from https://google-webfonts-helper.herokuapp.com/fonts
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body,
   html {
-    font-family: "Lora", Arial, sans-serif;
+    font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-size: 100%;
     margin: 0;
     padding: 0;
     color: var(--bodyTextColor);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 
   *,
@@ -143,19 +170,20 @@
     margin: 0;
     color: var(--headerColor);
     font-family: 'Poppins', Arial, sans-serif !important;
+    letter-spacing: -0.02em;
   }
 
   p,
   li,
   a {
     font-size: (16/16rem);
-    line-height: 1.5em;
+    line-height: 1.6em;
     margin: 0;
   }
 
   p,
   li {
-    color: #353535;
+    color: var(--bodyTextColor);
   }
 
   a,

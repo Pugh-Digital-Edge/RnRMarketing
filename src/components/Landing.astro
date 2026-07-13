@@ -14,9 +14,16 @@ interface Props {
     }
   };
   isIndustryByService?: boolean;
+  /**
+   * Render the banner title as the page's <h1>. Only set this on pages whose
+   * body has no heading of its own — most pages carry a descriptive <h1> in
+   * their content, and a second one here would split the page's topic signal
+   * for search and AI crawlers.
+   */
+  isPageHeading?: boolean;
 }
 
-const { title, image, isIndustryByService } = Astro.props;
+const { title, image, isIndustryByService, isPageHeading = false } = Astro.props;
 
 // Get current path segments
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
@@ -46,7 +53,9 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
 ] : undefined;
 ---
 <section id="int-hero">
-<h1 id="home-h">{title}</h1>
+{isPageHeading
+  ? <h1 id="home-h">{title}</h1>
+  : <p id="home-h" class="banner-title">{title}</p>}
 <div class="margin-bread">
 <Breadcrumbs linkTextFormat="capitalized" id="my-breadcrumbs" crumbs={isIndustryByService ? customCrumbs : undefined}> 
     <Icon height="10" width="10" name="chevron-right" slot="separator"/>
@@ -95,8 +104,8 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
                 content: "";
                 width: 100%;
                 height: 100%;
-                background: #000;
-                opacity: 0.7;
+                background: linear-gradient(120deg, rgba(6, 17, 36, 0.92) 0%, rgba(9, 30, 66, 0.78) 60%, rgba(10, 102, 194, 0.55) 100%);
+                opacity: 1;
                 display: block;
                 position: absolute;
                 top: 0;
@@ -122,8 +131,13 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
                 }
             }
     
-            h1 {
+            h1,
+            .banner-title {
+                font-family: 'Poppins', Arial, sans-serif;
                 font-size: var(--headerFontSize);
+                font-weight: 700;
+                line-height: 1.15em;
+                letter-spacing: -0.02em;
                 text-align: center;
                 width: 96%;
                 max-width: (500/16rem);
@@ -132,7 +146,7 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
                 color: #fff;
                 position: relative;
             }
-    
+
             p {
                 text-align: center;
                 width: 96%;
@@ -141,6 +155,13 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
                 margin-bottom: (30/16rem);
                 color: #fff;
                 display: block;
+            }
+
+            /* the banner title is a <p> when the page supplies its own <h1>, so
+               it must not inherit the narrower body-copy width above */
+            .banner-title {
+                max-width: (500/16rem);
+                margin-bottom: 0;
             }
         }
     }
@@ -155,7 +176,8 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
             padding-block-end: (100/16rem);            
         }
 
-        h1 {
+        h1,
+        .banner-title {
             margin-top: (160/16rem) !important;
             margin-bottom: 1rem !important;
         }

@@ -14,6 +14,7 @@ import { Icon } from 'astro-icon/components';
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
+import ServiceSchema from "@components/ServiceSchema.astro";
 
 // Optimize the landing image
 const optimizedImage = await getOptimizedImage(landingImage);
@@ -24,6 +25,13 @@ const optimizedImage = await getOptimizedImage(landingImage);
   description="Protect and grow your restoration company's online reputation. We automate review collection, monitor mentions, and help you maintain 5-star ratings across Google, Facebook, and industry platforms."
   preloadedImage={optimizedImage}
 >
+<ServiceSchema
+  name="Reputation Management for Restoration Companies"
+  description="Review generation, monitoring, and response management for restoration companies across Google, Facebook, and industry platforms, building the trust property owners and insurance partners look for."
+  path="/services/reputation-management/"
+  serviceType="Reputation Management"
+/>
+
 <Landing 
     title="Restoration Reputation Management"
     image={optimizedImage}
@@ -137,7 +145,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             </ul>
           </div>
       
-          <h3>The Power of Online Reviews</h2>
+          <h2>The Power of Online Reviews</h2>
           <p class="cs-text">Reviews are crucial for restoration company success:</p>
           <ul>
               <li class="cs-text"><strong>Trust Building:</strong> Positive reviews demonstrate reliability and expertise.</li>
@@ -146,7 +154,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
               <li class="cs-text"><strong>Lead Generation:</strong> High ratings drive more customer inquiries.</li>
           </ul>
       
-          <h3>Review Generation & Management</h2>
+          <h2>Review Generation & Management</h2>
           <p class="cs-text">Professional review management includes:</p>
           <ul>
               <li class="cs-text"><strong>Automated Collection:</strong> Systematic approach to gathering customer feedback.</li>
@@ -155,7 +163,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
               <li class="cs-text"><strong>Platform Management:</strong> Consistent presence across all review sites.</li>
           </ul>
       
-          <h3>Brand Monitoring & Protection</h2>
+          <h2>Brand Monitoring & Protection</h2>
           <p class="cs-text">Proactive reputation management includes:</p>
           <ul>
               <li class="cs-text"><strong>24/7 Monitoring:</strong> Constant tracking of online mentions and reviews.</li>
@@ -164,7 +172,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
               <li class="cs-text"><strong>Competitive Analysis:</strong> Tracking industry standards and competition.</li>
           </ul>
       
-          <h3>Building Insurance Relationships</h2>
+          <h2>Building Insurance Relationships</h2>
           <p class="cs-text">Strong reputation management supports insurance partnerships:</p>
           <ul>
               <li class="cs-text"><strong>Quality Documentation:</strong> Showcasing consistent service excellence.</li>
@@ -174,7 +182,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
               <li class="cs-text"><strong>Performance Metrics:</strong> Tracking and improving key indicators.</li>
           </ul>
       
-          <h3>The Reputation Management Process</h2>
+          <h2>The Reputation Management Process</h2>
           <ul>
               <li class="cs-text"><strong>Initial Assessment:</strong> Evaluating current online presence and ratings.</li>
               <li class="cs-text"><strong>Strategy Development:</strong> Creating a custom reputation management plan.</li>
@@ -186,7 +194,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
               <li class="cs-text"><strong>Continuous Improvement:</strong> Ongoing optimization of reputation strategies.</li>
           </ul>
       
-          <h3>Conclusion</h2>
+          <h2>Conclusion</h2>
           <p class="cs-text">Professional reputation management is essential for restoration companies looking to build trust, secure partnerships, and maintain a competitive edge. By implementing comprehensive review management and brand monitoring strategies, your restoration company can establish and maintain the strong online reputation needed to thrive in today's digital marketplace. When combined with other digital marketing efforts, reputation management becomes a powerful tool for generating leads and establishing your company as the trusted local expert in restoration services.</p>
         </div>
       </div>

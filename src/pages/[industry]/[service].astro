@@ -44,10 +44,11 @@ const optimizedImage = await getOptimizedImage(landingImage);
   description={`Specialized ${service.data.FormalName} services designed specifically for ${industry.data.FormalName} companies. Drive more emergency restoration leads and grow your ${industry.data.Name} business.`}
   preloadedImage={optimizedImage}
 >
-<Landing 
+<Landing
     title={`${service.data.FormalName} for ${industry.data.FormalName}`}
     image={optimizedImage}
     isIndustryByService="true"
+    isPageHeading
 />
 
 <!-- Primary Service Section -->

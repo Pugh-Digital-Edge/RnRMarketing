@@ -21,8 +21,13 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { title, date, description, image, imageAlt, author } = post.data;
+const { title, date, description, image, imageAlt, author, updated } = post.data;
 const { Content } = await post.render();
+
+const publishedDate = new Date(date);
+const modifiedDate = updated ? new Date(updated) : publishedDate;
+const wasUpdated = modifiedDate.getTime() > publishedDate.getTime();
+const postUrl = `https://remediationrestorationmarketing.com/resources/${post.slug}/`;
 ---
 
 <BaseLayout
@@ -35,12 +40,24 @@ const { Content } = await post.render();
     "@type": "BlogPosting",
     "headline": title,
     "description": description,
-    "datePublished": new Date(date).toISOString(),
-    "dateModified": new Date(date).toISOString(),
+    "datePublished": publishedDate.toISOString(),
+    "dateModified": modifiedDate.toISOString(),
     "author": {
       "@type": "Person",
+      "@id": "https://remediationrestorationmarketing.com/about/#matt-pugh",
       "name": author,
-      "url": "https://remediationrestorationmarketing.com/about/"
+      "url": "https://remediationrestorationmarketing.com/about/",
+      "jobTitle": "Founder",
+      "knowsAbout": [
+        "Restoration Marketing",
+        "Local SEO",
+        "Pay Per Click Advertising",
+        "Water Damage Restoration Marketing",
+        "Fire Damage Restoration Marketing"
+      ],
+      "worksFor": {
+        "@id": "https://remediationrestorationmarketing.com/#localbusiness"
+      }
     },
     "publisher": {
       "@type": "Organization",
@@ -53,10 +70,15 @@ const { Content } = await post.render();
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://remediationrestorationmarketing.com/resources/${post.slug}/`
+      "@id": postUrl
     },
-    "url": `https://remediationrestorationmarketing.com/resources/${post.slug}/`,
+    "url": postUrl,
     "inLanguage": "en-US",
+    "isAccessibleForFree": true,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".blog-h1", "#blog-content"]
+    },
     "isPartOf": {
       "@type": "WebSite",
       "@id": "https://remediationrestorationmarketing.com/#website"
@@ -108,7 +130,17 @@ const { Content } = await post.render();
             <span class="blog-author">{author}</span>
             <span aria-hidden="true" class="blog-dot"></span>
             <!--Blog Date-->
-            <span class="blog-date">{formatDate(date)}</span>
+            <time class="blog-date" datetime={publishedDate.toISOString()}>
+              {formatDate(date)}
+            </time>
+            {wasUpdated && (
+              <>
+                <span aria-hidden="true" class="blog-dot"></span>
+                <time class="blog-date" datetime={modifiedDate.toISOString()}>
+                  Last updated {formatDate(updated)}
+                </time>
+              </>
+            )}
           </div>
         </div>
         <section id="blog-content">

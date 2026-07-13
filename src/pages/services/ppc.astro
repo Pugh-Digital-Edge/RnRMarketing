@@ -14,6 +14,8 @@ import { Icon } from "astro-icon/components";
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
+import AnswerBlock from "@components/AnswerBlock.astro";
+import ServiceSchema from "@components/ServiceSchema.astro";
 
 
 ---
@@ -23,6 +25,13 @@ import Newsletter from "@components/Newsletter.astro";
   description="Discover how strategic PPC and LSA campaigns can help your restoration company capture emergency leads and grow your business."
   preloadedImage = {optimizedImage}
 >
+
+<ServiceSchema
+  name="PPC & Local Service Ads for Restoration Companies"
+  description="Google Ads and Local Service Ads campaigns built for emergency restoration, including 24/7 emergency targeting, weather-triggered campaigns, and location-specific bidding for water, fire, and mold damage leads."
+  path="/services/ppc/"
+  serviceType="Pay Per Click Advertising"
+/>
 
 <Landing 
     title="Restoration Paid Digital Advertising"
@@ -75,8 +84,15 @@ import Newsletter from "@components/Newsletter.astro";
         <div class="cs-content">
             <h1 class="cs-title">PPC and Local Service Ads: Capturing Emergency Restoration Leads</h1>
 
+            <AnswerBlock question="What is the difference between PPC and Local Service Ads?" as="h2">
+                <p>
+                    <strong>PPC ads</strong> charge you each time someone clicks your ad, and appear above organic search results. <strong>Local Service Ads (LSAs)</strong> sit above PPC ads, carry a Google Guaranteed badge, and charge per lead rather than per click. Restoration companies typically run both: LSAs for trust and cost-per-lead control, PPC for reach and message control.
+                </p>
+            </AnswerBlock>
+
             <div class="intro">
                 <p class="cs-text">In the restoration industry, being found quickly during emergencies is crucial for success. Pay-Per-Click (PPC) advertising and Local Service Ads (LSA) provide powerful tools for restoration companies to capture urgent leads, build trust with property owners, and grow their business through strategic digital advertising.</p>
+                <p class="cs-text"><strong>Our results:</strong> we have cut a restoration client's cost per lead by more than half, meaning the same ad budget produced more than twice as many qualified leads. Most clients begin receiving qualified leads within 72 hours of campaign launch.</p>
             </div>
 
             <div class="cs-image-group d-block d-lg-none">
@@ -124,14 +140,14 @@ import Newsletter from "@components/Newsletter.astro";
             <h2>Emergency Response PPC Strategies</h2>
             <p class="cs-text">Restoration companies need specialized PPC strategies that respond to emergency situations and disaster events. Our approach ensures your ads appear exactly when and where property owners need restoration services.</p>
 
-            <h3>Advanced Targeting Capabilities</h3>
+            <h2>Advanced Targeting Capabilities</h2>
             <ul>
                 <li class="cs-text">Weather-triggered ad campaigns that activate during storms and floods</li>
                 <li class="cs-text">Location-based targeting for precise service area coverage</li>
                 <li class="cs-text">Emergency keyword targeting for immediate response needs</li>
                 <li class="cs-text">Device targeting optimized for mobile emergency searches</li>
             </ul>
-            <h3>Benefits of PPC for Restoration Companies</h3>
+            <h2>Benefits of PPC for Restoration Companies</h2>
             <ol>
                 <li class="cs-text"><strong>Instant Emergency Visibility:</strong> Appear immediately when property owners search for urgent restoration services.</li>
                 <li class="cs-text"><strong>Disaster Response:</strong> Activate specialized campaigns during natural disasters and severe weather events.</li>
@@ -143,7 +159,7 @@ import Newsletter from "@components/Newsletter.astro";
             <h2>Local Service Ads for Restoration Success</h2>
             <p class="cs-text">Local Service Ads are particularly valuable for restoration companies, providing premium placement and instant credibility through the Google Guaranteed badge.</p>
 
-            <h3>LSA Advantages for Restoration</h3>
+            <h2>LSA Advantages for Restoration</h2>
             <ul>
                 <li class="cs-text">Top placement for emergency restoration searches</li>
                 <li class="cs-text">Google Guaranteed badge builds instant trust during emergencies</li>
@@ -152,7 +168,7 @@ import Newsletter from "@components/Newsletter.astro";
                 <li class="cs-text">Mobile-first design for emergency situations</li>
             </ul>
 
-            <h3>Benefits of LSA for Restoration Companies</h3>
+            <h2>Benefits of LSA for Restoration Companies</h2>
             <ol>
                 <li class="cs-text"><strong>Emergency Trust:</strong> The Google Guaranteed badge provides instant credibility when property owners need immediate help.</li>
                 <li class="cs-text"><strong>Quality Lead Screening:</strong> Only pay for relevant restoration leads within your service area.</li>

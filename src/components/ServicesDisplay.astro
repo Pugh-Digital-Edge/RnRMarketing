@@ -105,7 +105,10 @@ const getServiceUrl = (serviceName: string) => {
         padding: 0 1rem;
         /* prevents padding and border from affecting height and width */
         background-color: #fff;
-        box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--borderColor);
+        border-radius: var(--radiusM);
+        overflow: hidden;
+        box-shadow: var(--shadowM);
         box-sizing: border-box;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -116,7 +119,7 @@ const getServiceUrl = (serviceName: string) => {
         text-align: left;
         list-style: none;
         width: 100%;
-        border-bottom: 1px solid #e8e8e8;
+        border-bottom: 1px solid var(--borderColor);
         box-sizing: border-box;
         grid-column: span 12;
         transition:
@@ -199,11 +202,11 @@ const getServiceUrl = (serviceName: string) => {
     }
     #services-1304 .cs-item {
         grid-column: span 3;
-        border-right: 1px solid #e8e8e8;
+        border-right: 1px solid var(--borderColor);
     }
     #services-1304 .cs-item:hover {
-        background-color: #1a1a1a;
-        border-color: #1a1a1a;
+        background-color: var(--headerColor);
+        border-color: var(--headerColor);
     }
     #services-1304 .cs-item:hover .cs-h3,
     #services-1304 .cs-item:hover .cs-item-text {

@@ -16,6 +16,8 @@ import { Icon } from 'astro-icon/components';
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
+import AnswerBlock from "@components/AnswerBlock.astro";
+import ServiceSchema from "@components/ServiceSchema.astro";
 
 
 // Optimize the landing image
@@ -27,6 +29,13 @@ const optimizedImage = await getOptimizedImage(landingImage);
   description="Discover how custom web design can help your restoration company convert more emergency calls and build trust with property owners."
   preloadedImage={optimizedImage}
 >
+<ServiceSchema
+  name="Web Design for Restoration Companies"
+  description="Fast, mobile-first restoration websites built to convert emergency calls, featuring tap-to-call buttons, service area maps, before/after galleries, and certification displays."
+  path="/services/web-design/"
+  serviceType="Web Design"
+/>
+
 <Landing 
     title="Restoration Web Design"
     image={optimizedImage}
@@ -89,6 +98,12 @@ const optimizedImage = await getOptimizedImage(landingImage);
       <div class="cs-content">
         <h1 class="cs-title">Restoration Web Design: Converting Emergency Calls 24/7</h1>
 
+        <AnswerBlock question="What makes a good restoration company website?" as="h2">
+          <p>
+            A good restoration website loads fast on mobile, puts a tap-to-call button above the fold, and states your service area and 24/7 availability immediately. It should display IICRC certifications, insurance-partner logos, and before/after project photos, because property owners in an emergency decide in seconds whether a company is legitimate and reachable right now.
+          </p>
+        </AnswerBlock>
+
         <div class="intro">
           <p class="cs-text">In the restoration industry, your website needs to do more than look good—it needs to convert emergency calls into jobs while building trust with property owners and insurance partners. Our custom restoration websites combine emergency response features with professional design to help you capture more leads and grow your restoration company.</p>
         </div>
@@ -146,7 +161,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             </ul>
           </div>
 
-        <h3>Emergency-Ready Website Features</h2>
+        <h2>Emergency-Ready Website Features</h2>
         <p class="cs-text">Custom restoration websites need specialized features for emergency response:</p>
         <ul>
             <li class="cs-text"><strong>24/7 Emergency Call Button:</strong> Prominent click-to-call buttons that follow users through the site.</li>
@@ -155,7 +170,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             <li class="cs-text"><strong>Insurance Information:</strong> Clear details about insurance cooperation and claims process.</li>
         </ul>
 
-        <h3>Mobile-First Design for Emergency Response</h2>
+        <h2>Mobile-First Design for Emergency Response</h2>
         <p class="cs-text">With over 70% of emergency searches happening on mobile devices, responsive design is critical:</p>
         <ul>
             <li class="cs-text"><strong>One-Touch Calling:</strong> Instant phone access during emergencies.</li>
@@ -164,7 +179,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             <li class="cs-text"><strong>Location Services:</strong> Integration with mapping for immediate response.</li>
         </ul>
 
-        <h3>Trust-Building Elements</h2>
+        <h2>Trust-Building Elements</h2>
         <p class="cs-text">Showcase your restoration expertise and build confidence:</p>
         <ul>
             <li class="cs-text"><strong>Before/After Galleries:</strong> Visual proof of your restoration success stories.</li>
@@ -173,7 +188,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             <li class="cs-text"><strong>Insurance Partners:</strong> Display relationships with major carriers.</li>
         </ul>
 
-        <h3>Comprehensive Service Integration</h2>
+        <h2>Comprehensive Service Integration</h2>
         <p class="cs-text">Your website needs to effectively present all restoration services:</p>
         <ul>
             <li class="cs-text"><strong>Water Damage Section:</strong> Emergency water extraction and drying services.</li>
@@ -183,7 +198,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             <li class="cs-text"><strong>Commercial Services:</strong> Dedicated section for business restoration needs.</li>
         </ul>
 
-        <h3>The Restoration Website Process</h2>
+        <h2>The Restoration Website Process</h2>
         <ul>
             <li class="cs-text"><strong>Emergency Analysis:</strong> Understanding your response capabilities and service areas.</li>
             <li class="cs-text"><strong>Service Planning:</strong> Organizing your restoration services for clear presentation.</li>
@@ -195,7 +210,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             <li class="cs-text"><strong>Continuous Updates:</strong> Regular updates to services and coverage areas.</li>
         </ul>
 
-        <h3>Conclusion</h2>
+        <h2>Conclusion</h2>
         <p class="cs-text">A custom-designed restoration website is essential for converting emergency calls and building long-term growth. By combining emergency response features with professional design and mobile optimization, your website becomes a powerful tool for generating restoration leads 24/7. When integrated with your broader digital marketing strategy, your website helps establish your restoration company as the trusted local expert while ensuring property owners can easily reach you during disasters.</p>
       </div>
     </div>

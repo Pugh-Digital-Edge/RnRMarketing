@@ -16,6 +16,7 @@ import piggyBankIcon from "@assets/images/svg/piggy-bank.svg";
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
+import AnswerBlock from "@components/AnswerBlock.astro";
 
 // Optimize the landing image
 const optimizedImage = await getOptimizedImage(landingImage);
@@ -26,7 +27,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
   description="Learn how SEO can help your restoration company capture more emergency calls and grow your business through organic search visibility."
   preloadedImage={optimizedImage}
 >
-  <script type="application/ld+json" is:inline>{`{
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "SEO for Restoration Companies",
@@ -46,7 +47,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
       "@type": "Offer",
       "url": "https://remediationrestorationmarketing.com/services/seo/"
     }
-  }`}</script>
+  })} />
 <Landing 
     title="Restoration SEO"
     image={optimizedImage}
@@ -113,8 +114,22 @@ const optimizedImage = await getOptimizedImage(landingImage);
         <div class="cs-content">
             <h1 class="cs-title">SEO for Restoration Companies: Dominating Local Emergency Searches</h1>
 
+            <AnswerBlock question="What is restoration SEO?" as="h2">
+                <p>
+                    <strong>Restoration SEO</strong> is the practice of optimizing a water damage, fire, or mold remediation company's website so it ranks in local search results when property owners search for emergency help. It combines local SEO, emergency-intent keywords, and service-area pages to capture calls at the moment disaster strikes.
+                </p>
+            </AnswerBlock>
+
             <p class="cs-text">
                 In the restoration industry, being found quickly during emergencies is crucial for success. Search Engine Optimization (SEO) helps ensure your restoration company appears at the top of search results when property owners need immediate help. By implementing restoration-specific SEO strategies, you can capture more emergency calls while building long-term visibility for your services.
+            </p>
+
+            <p class="cs-text">
+                Speed matters more here than in almost any other industry. Restoration is a distress purchase: property owners search on a phone, in a flooded basement, and call one of the first companies they see. Ranking below the fold often means the job is gone before your page is ever opened.
+            </p>
+
+            <p class="cs-text">
+                <strong>Our results:</strong> we grew one restoration client's website traffic by 500% — a six-fold increase — within a single month, putting their services in front of dramatically more property owners searching for emergency help.
             </p>
 
             <div class="cs-image-group d-lg-none d-block">
@@ -173,7 +188,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
                   </li>
                 </ul>
               </div>
-            <h3>Restoration SEO Fundamentals</h3>
+            <h2>Restoration SEO Fundamentals</h2>
             <p class="cs-text">
                 Restoration SEO requires a specialized approach focused on emergency response and local visibility:
             </p>
@@ -184,7 +199,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
                 <li class="cs-text"><strong>Mobile Optimization:</strong> Ensuring visibility on devices used during emergencies</li>
             </ul>
 
-            <h3>Local SEO for Restoration Companies</h3>
+            <h2>Local SEO for Restoration Companies</h2>
             <p class="cs-text">
                 Local visibility is critical for restoration success:
             </p>
@@ -195,7 +210,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
                 <li class="cs-text"><strong>Review Management:</strong> Gathering and showcasing customer testimonials</li>
             </ul>
 
-            <h3>Benefits of Restoration SEO</h3>
+            <h2>Benefits of Restoration SEO</h2>
             <p class="cs-text">
                 Strategic SEO provides numerous advantages for restoration companies:
             </p>
@@ -209,7 +224,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
                 <li class="cs-text"><strong>Quality Leads:</strong> Attract property owners actively seeking restoration services</li>
             </ol>
 
-            <h3>Critical SEO Elements for Restoration</h3>
+            <h2>Critical SEO Elements for Restoration</h2>
             <p class="cs-text">
                 Success in restoration SEO requires attention to specific factors:
             </p>
@@ -221,7 +236,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
                 <li class="cs-text"><strong>Emergency Resources:</strong> Providing valuable disaster response information</li>
             </ul>
 
-            <h3>Building Authority in Restoration</h3>
+            <h2>Building Authority in Restoration</h2>
             <p class="cs-text">
                 Establishing expertise requires specific content strategies:
             </p>
@@ -232,7 +247,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
                 <li class="cs-text"><strong>Local Disaster Updates:</strong> Current information during weather events</li>
             </ul>
 
-            <h3>Conclusion</h3>
+            <h2>Conclusion</h2>
             <p class="cs-text">
                 For restoration companies, effective SEO is essential for capturing emergency calls and building long-term growth. By implementing restoration-specific strategies and focusing on local emergency visibility, your company can establish itself as the trusted local expert in property restoration. When combined with other digital marketing efforts, SEO creates a powerful foundation for generating consistent restoration leads while building valuable relationships with insurance partners and property managers.
             </p>

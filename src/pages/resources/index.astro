@@ -29,9 +29,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
-    title="Resources"
+  <Landing
+    title="Restoration Marketing Resources & Insights"
     image={optimizedImage}
+    isPageHeading
   />
 
   <!-- ============================================ -->
@@ -44,7 +45,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <!-- ============================================ -->
       <!--                 Blog Articles                -->
       <!-- ============================================ -->
-      {posts.length === 0 && <h1>No Recent Posts</h1>}
+      {posts.length === 0 && <p>No Recent Posts</p>}
       {
         posts.length >= 1 &&
           posts.map((post) => (

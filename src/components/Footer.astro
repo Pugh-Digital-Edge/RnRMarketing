@@ -84,7 +84,7 @@ const currentYear = getCurrentYear()
 @media only screen and (min-width: 0rem) {
     #footer-1390 {
         padding: var(--sectionPadding);
-        background-color: #1a1a1a;
+        background: linear-gradient(180deg, #0d1526 0%, #0a101d 100%);
         position: relative;
         z-index: 1;
 
@@ -102,7 +102,7 @@ const currentYear = getCurrentYear()
             margin-bottom: (40/16rem);
             /* 24px - 64px */
             padding-bottom: clamp(1.5rem, 5vw, 4rem);
-            border-bottom: 1px solid #484848;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -133,12 +133,12 @@ const currentYear = getCurrentYear()
             line-height: 1.5em;
             text-decoration: none;
             margin: 0;
-            color: #bababa;
+            color: rgba(255, 255, 255, 0.7);
             display: block;
             transition: color 0.3s;
 
             &:hover {
-                color: var(--primary);
+                color: var(--primaryLight);
             }
         }
 
@@ -177,16 +177,18 @@ const currentYear = getCurrentYear()
         }
 
         .cs-social-link {
-            width: (32/16rem);
-            height: (32/16rem);
-            background-color: #484848;
-            border-radius: 50%;
+            width: (36/16rem);
+            height: (36/16rem);
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: (10/16rem);
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
             &:hover {
                 background-color: var(--primary);
+                transform: translateY(-2px);
 
                 .cs-social-icon {
                     filter: grayscale(1) brightness(1000%);
@@ -204,8 +206,8 @@ const currentYear = getCurrentYear()
         }
 
         .cs-copyright {
-            font-size: (16/16rem);
-            color: #bababa;
+            font-size: (15/16rem);
+            color: rgba(255, 255, 255, 0.55);
             line-height: 1.5em;
             margin: 0;
             display: block;
@@ -213,13 +215,13 @@ const currentYear = getCurrentYear()
 
         .cs-copyright-link,
         .cs-separater {
-            font-size: (16/16rem);
+            font-size: (15/16rem);
             text-decoration: none;
-            color: #bababa;
+            color: rgba(255, 255, 255, 0.55);
             transition: color 0.3s;
 
             &:hover {
-                color: var(--primary);
+                color: var(--primaryLight);
             }
         }
 

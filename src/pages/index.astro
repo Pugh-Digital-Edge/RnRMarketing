@@ -16,6 +16,7 @@ import landingImageMobile from "@assets/images/landing/blue-abstract.jpeg" // <-
 import restorationGraphic from "@assets/images/results.jpg"
 import number1 from "@assets/images/number 1.jpeg"
 import Newsletter from "@components/Newsletter.astro";
+import ResultsStats from "@components/ResultsStats.astro";
 
 const optimizedImage = await getOptimizedImage(landingImage)
 const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
@@ -172,7 +173,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
   </div>
 </section>
 
-<script type="application/ld+json" is:inline>{`{
+<script type="application/ld+json" is:inline set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Get Started with Restoration Marketing",
@@ -197,11 +198,13 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
       "text": "Grow and scale profitably with a predictable system that helps you get more leads, book more estimates, and sell more jobs."
     }
   ]
-}`}</script>
+})} />
 
 <Contact />
             
     
+  <ResultsStats />
+
   <!-- ============================================ -->
   <!--                 Why Choose                   -->
   <!-- ============================================ -->
@@ -211,7 +214,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
             <span class="cs-topper">TRUSTED BY LEADING RESTORATION COMPANIES</span>
             <h2 class="cs-title">Our Strategy Works</h2>
             <p class="cs-text">
-                We've combined our proven SEO expertise with specialized restoration industry knowledge to create winning digital strategies. Our commitment to excellence and laser focus on restoration marketing ensures your marketing dollars generate maximum returns.
+                We've combined our proven SEO expertise with specialized restoration industry knowledge to create winning digital strategies. In practice that means measurable outcomes: we've cut a restoration client's cost per lead by more than half, and grown another client's website traffic by 500% in a single month.
             </p>
         </div>
         <ul class="cs-card-group">
@@ -315,8 +318,8 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
             );
             background: linear-gradient(
                 to bottom,
-                rgba(0, 0, 0, 1) 0%,
-                rgba(0, 0, 0, 0) 100%
+                rgba(6, 17, 36, 0.85) 0%,
+                rgba(6, 17, 36, 0) 100%
             );
             opacity: 1;
             position: absolute;
@@ -442,7 +445,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
                 width: (622/16em);
                 height: (622/16em);
                 background: transparent;
-                border: 1px solid #fff;
+                border: 1px solid rgba(255, 255, 255, 0.35);
                 border-radius: 50%;
                 opacity: 1;
                 position: absolute;
@@ -457,12 +460,12 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
             }
 
             &:after {
-                /* orange bubble */
+                /* soft blue glow */
                 content: "";
                 width: (546/16em);
                 height: (546/16em);
-                background: var(--primary);
-                opacity: 0.8;
+                background: radial-gradient(circle, rgba(59, 142, 222, 0.55) 0%, rgba(10, 102, 194, 0) 70%);
+                opacity: 1;
                 border-radius: 50%;
                 display: block;
                 position: absolute;
@@ -491,7 +494,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
                 width: (330/16rem);
                 height: (330/16rem);
                 background: transparent;
-                border: 1px solid #fff;
+                border: 1px solid rgba(255, 255, 255, 0.35);
                 border-radius: 50%;
                 opacity: 1;
                 position: absolute;
@@ -506,12 +509,12 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
             }
 
             &:after {
-                /* orange bubble */
+                /* soft blue glow */
                 content: "";
                 width: (260/16rem);
                 height: (260/16rem);
-                background: var(--primary);
-                opacity: 0.8;
+                background: radial-gradient(circle, rgba(59, 142, 222, 0.55) 0%, rgba(10, 102, 194, 0) 70%);
+                opacity: 1;
                 border-radius: 50%;
                 display: block;
                 position: absolute;
@@ -536,12 +539,17 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
             z-index: -2;
 
             &:before {
-                /* Overlay */
+                /* Overlay - deep navy gradient for a modern, branded feel */
                 content: "";
                 width: 100%;
                 height: 100%;
-                background: #000;
-                opacity: 0.4;
+                background: linear-gradient(
+                    120deg,
+                    rgba(6, 17, 36, 0.9) 0%,
+                    rgba(9, 30, 66, 0.72) 45%,
+                    rgba(10, 102, 194, 0.35) 100%
+                );
+                opacity: 1;
                 position: absolute;
                 display: block;
                 top: 0;
@@ -650,10 +658,12 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
       margin-top: (-167/16em);
       margin-bottom: (50/16em);
       padding: (50/16em) (20/16em);
-      background: #fff;
-      box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
-      border-top: (6/16em) solid var(--primary);
-      border-radius: (5/16em);
+      background: rgba(255, 255, 255, 0.95);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadowL);
+      border: 1px solid var(--borderColor);
+      border-radius: var(--radiusL);
       position: relative;
       z-index: 100;
       .card {
@@ -667,34 +677,42 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
         }
 
         picture {
-          width: (88/16em);
-          height: (88/16em);
+          width: (80/16em);
+          height: (80/16em);
           margin: auto;
           margin-bottom: (23/16em);
-          background: var(--primary);
-          border-radius: 50%;
+          background: var(--gradientPrimary);
+          border-radius: (24/16em);
+          box-shadow: 0 8px 20px rgba(10, 102, 194, 0.3);
           display: flex;
           justify-content: center;
           align-items: center;
+          transition: transform 0.3s;
 
-          img {
-            width: (48/16em);
-            height: (48/16em);
+          img,
+          svg {
+            width: (44/16em);
+            height: (44/16em);
           }
         }
+
+        &:hover picture {
+          transform: translateY(-4px) scale(1.05);
+        }
+
         h2 {
-          font-size: (32/16em);
+          font-size: (25/16em);
           font-weight: 700;
-          line-height: 27/20em;
+          line-height: 1.25em;
           text-align: center;
-          margin-bottom: 13/20em;
-          color: #1a1a1a;
+          margin-bottom: (12/25em);
+          color: var(--headerColor);
         }
         p {
-          line-height: 24/18em;
+          line-height: 1.6em;
           text-align: center;
           width: 100%;
-          opacity: 0.7;
+          opacity: 0.85;
         }
       }
     }
@@ -985,7 +1003,14 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
             /* 28px - 40px */
             margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
         }
-        
+
+        .cs-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radiusM);
+            box-shadow: var(--shadowM);
+        }
+
         .cs-picture {
             width: 100%;
             /* 320px - 600px */
@@ -1087,7 +1112,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
 @media only screen and (min-width: 0rem) {
     #why-choose-1658 {
         padding: var(--sectionPadding);
-        background-color: #F3F3F4;
+        background-color: var(--surfaceMuted);
         overflow: hidden;
         position: relative;
         z-index: 1;
@@ -1189,6 +1214,9 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
             width: 100%;
             height: 70vw;
             max-height: (400/16rem);
+            border-radius: var(--radiusM);
+            overflow: hidden;
+            box-shadow: var(--shadowM);
             display: block;
             position: relative;
             z-index: 1;
@@ -1345,13 +1373,15 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
             height: clamp(4.25rem, 7vw, 5.5rem);
             margin: auto;
             margin-bottom: (32/16rem);
-            border-radius: 50%;
-            background-color: var(--primary);
+            border-radius: (24/16rem);
+            background: var(--gradientPrimary);
+            box-shadow: 0 8px 20px rgba(10, 102, 194, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
 
-            img {
+            img,
+            svg {
                 width: auto;
                 height: (42/16rem);
                 display: block;

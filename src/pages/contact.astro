@@ -21,9 +21,10 @@ const optimizedImage = await getOptimizedImage(landingImage);
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
-    title="Contact"
+  <Landing
+    title="Contact Our Restoration Marketing Team"
     image={optimizedImage}
+    isPageHeading
   />
 
   <!-- ============================================ -->
@@ -32,7 +33,12 @@ const optimizedImage = await getOptimizedImage(landingImage);
 
   <section id="cs-contact">
     <div class="cs-container">
-      <form id="cs-form" name="Contact Form" method="post" netlify>
+      <form id="cs-form" name="Contact Form" method="post" netlify netlify-honeypot="bot-field">
+          <p hidden aria-hidden="true">
+              <label>Do not fill this out if you are human:
+                  <input name="bot-field" tabindex="-1" autocomplete="off">
+              </label>
+          </p>
         <div class="cs-content">
           <span class="cs-topper">Contact Us</span>
           <h2 class="cs-title m-0">Is Your Area Available?</h2>
@@ -54,7 +60,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
           Email
           <input
             required
-            type="text"
+            type="email"
             id="email"
             name="email"
             placeholder="Email"
@@ -64,7 +70,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
           Phone
           <input
             required
-            type="text"
+            type="tel"
+            inputmode="tel"
             id="phone"
             name="phone"
             placeholder="Phone"
@@ -74,6 +81,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
           ZIP Code
           <input
             type="text"
+            inputmode="numeric"
             id="find"
             name="zip-code"
             placeholder="ZIP Code"
@@ -147,7 +155,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
     }
 
     #cs-contact {
-      font-family: "Luna", "Arial", sans-serif;
       padding: var(--sectionPadding);
 
       .cs-container {
@@ -205,17 +212,25 @@ const optimizedImage = await getOptimizedImage(landingImage);
         textarea {
           font-size: (16/16rem);
           width: 100%;
-          height: (64/16rem);
+          height: (56/16rem);
           margin-top: (4/16rem);
           /* prevents border & padding from affecting height */
           box-sizing: border-box;
           padding-left: (20/16rem);
-          border: 1px solid #b4b2c7;
-          border-radius: (8/16rem);
-          transition: border 0.3s;
+          background-color: var(--surfaceMuted);
+          border: 1px solid var(--borderColor);
+          border-radius: (10/16rem);
+          transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
 
           &:hover {
-            border: 1px solid var(--primary);
+            border-color: var(--primary);
+          }
+
+          &:focus {
+            outline: none;
+            background-color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15);
           }
         }
 
@@ -236,7 +251,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
         /* 24px - 40px top & bottom */
         /* 20px - 40px left & right */
         padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
-        border-radius: (8/16rem);
+        border-radius: var(--radiusM);
+        box-shadow: var(--shadowM);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;

@@ -30,8 +30,29 @@ const breadcrumbItems: { name: string; url: string }[] = [
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content={description}>
-            <meta name="keywords" content="">
             <link rel="canonical" href={`https://${client.domain}${Astro.url.pathname}`}>
+
+            <!-- WebPage node ties each URL to the site + business entity and marks the
+                 primary content region, giving AI crawlers a clear extraction target. -->
+            <script type="application/ld+json" is:inline set:html={JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "@id": `https://${client.domain}${Astro.url.pathname}#webpage`,
+                "url": `https://${client.domain}${Astro.url.pathname}`,
+                "name": title,
+                "description": description,
+                "inLanguage": "en-US",
+                "isPartOf": { "@id": "https://remediationrestorationmarketing.com/#website" },
+                "about": { "@id": "https://remediationrestorationmarketing.com/#localbusiness" },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://remediationrestorationmarketing.com/assets/images/logo-small.jpg"
+                },
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": ["h1", ".cs-title", ".cs-text"]
+                }
+            })} />
 
 
             <script type="application/ld+json">
@@ -73,7 +94,7 @@ const breadcrumbItems: { name: string; url: string }[] = [
                             "Friday"
                         ],
                         "opens": "09:00",
-                        "closes": "10:00"
+                        "closes": "22:00"
                     },
                     "offers": [
                         {
@@ -144,54 +165,6 @@ const breadcrumbItems: { name: string; url: string }[] = [
                 }
             </script>
 
-            <script type="application/ld+json">
-                {
-                    "@context": "https://schema.org",
-                    "@type": "FAQPage",
-                    "mainEntity": [
-                        {
-                            "@type": "Question",
-                            "name": "What type of leads can I expect from your marketing?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "We focus on generating high-value commercial and residential restoration leads including water damage, fire restoration, and mold remediation. We specifically target property owners and managers - not renters who can't authorize work."
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": "How quickly can I expect to see results?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "Most clients start seeing qualified leads within 72 hours of launching paid campaigns. For organic growth (SEO), you'll typically see significant improvements within 2-3 months. During your discovery call, we'll analyze your market and provide a detailed timeline based on your specific situation and goals."
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": "What makes you different from other marketing agencies?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "We exclusively serve the restoration industry - it's all we do. Our team understands the unique challenges of restoration marketing, from emergency service messaging to insurance work requirements. We've developed proven strategies specifically for restoration companies, including targeting decision-makers, optimizing for emergency searches, and highlighting insurance/certification credentials."
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": "What's included in your marketing services?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "Our comprehensive service includes 24/7 emergency PPC campaigns, local SEO optimization, review management, website optimization for conversions, and detailed performance tracking. Everything is handled in-house by our USA-based team who understands the restoration industry. You'll receive regular reports showing exactly how your marketing budget is performing."
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": "Do you require long-term contracts?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "We believe in earning your business every month. While we require a minimum 3-month commitment to see optimal results (especially for SEO), we don't lock you into lengthy contracts."
-                            }
-                        }
-                        ]
-                    }
-                </script>
                 <script type="application/ld+json">
                 {
                     "@context": "https://schema.org",

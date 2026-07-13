@@ -45,7 +45,12 @@ import { Icon } from "astro-icon/components";
             </ul>
         </div>
         <!--Form-->
-        <form class="cs-form" id="cs-form-1388" name="Contact Form" method="post" netlify>
+        <form class="cs-form" id="cs-form-1388" name="Contact Form" method="post" netlify netlify-honeypot="bot-field">
+            <p hidden aria-hidden="true">
+                <label>Do not fill this out if you are human:
+                    <input name="bot-field" tabindex="-1" autocomplete="off">
+                </label>
+            </p>
             <h3 class="cs-h3">Check Availability</h3>
             <label class="cs-label">
                 Name
@@ -57,11 +62,11 @@ import { Icon } from "astro-icon/components";
             </label>
             <label class="cs-label cs-phone">
                 Phone
-                <input class="cs-input" required type="number" id="phone-1388" name="phone" placeholder="Phone">
+                <input class="cs-input" required type="tel" inputmode="tel" id="phone-1388" name="phone" placeholder="Phone">
             </label>
             <label class="cs-label cs-phone">
                 ZIP Code
-                <input class="cs-input" required type="number" id="phone-1388" name="zip" placeholder="ZIP">
+                <input class="cs-input" required type="text" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" id="zip-1388" name="zip" placeholder="ZIP">
             </label>
             <label class="cs-label">
                 Message
@@ -81,7 +86,7 @@ import { Icon } from "astro-icon/components";
 @media only screen and (min-width: 0rem) {
     #contact-1388 {
         padding: var(--sectionPadding);
-        background-color: #f7f7f7;
+        background-color: var(--surfaceMuted);
         position: relative;
         z-index: 1;
 
@@ -136,6 +141,8 @@ import { Icon } from "astro-icon/components";
 
         .cs-li {
             list-style: none;
+            width: 100%;
+            box-sizing: border-box;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
@@ -146,6 +153,11 @@ import { Icon } from "astro-icon/components";
                     transform: scale(1.1);
                 }
             }
+        }
+
+        .cs-flex-group {
+            /* allows flex children to shrink below their content width */
+            min-width: 0;
         }
 
         .cs-header {
@@ -164,6 +176,7 @@ import { Icon } from "astro-icon/components";
             color: #767676;
             display: block;
             position: relative;
+            overflow-wrap: anywhere;
 
             &:hover {
                 text-decoration: underline;
@@ -171,11 +184,12 @@ import { Icon } from "astro-icon/components";
         }
 
         .cs-icon-wrapper {
-            width: (60/16rem);
-            height: (60/16rem);
+            width: (56/16rem);
+            height: (56/16rem);
             margin: 0;
-            border-radius: 50%;
-            border: 1px solid #bababa;
+            border-radius: (16/16rem);
+            background-color: rgba(10, 102, 194, 0.1);
+            border: 1px solid rgba(10, 102, 194, 0.15);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -199,7 +213,9 @@ import { Icon } from "astro-icon/components";
             /* prevents flexbox from affecting height and width */
             box-sizing: border-box;
             background-color: #fff;
-            border-radius: (16/16rem);
+            border: 1px solid var(--borderColor);
+            border-radius: var(--radiusM);
+            box-shadow: var(--shadowM);
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -231,18 +247,25 @@ import { Icon } from "astro-icon/components";
         .cs-input {
             font-size: (16/16rem);
             width: 100%;
-            height: (56/16rem);
+            height: (54/16rem);
             padding: 0;
-            padding-left: (24/16rem);
+            padding-left: (20/16rem);
             color: var(--headerColor);
-            background-color: #f7f7f7;
-            border-radius: (8/16rem);
-            border: none;
+            background-color: var(--surfaceMuted);
+            border-radius: (10/16rem);
+            border: 1px solid var(--borderColor);
             /* prevents padding from adding to height and width */
             box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
             &::placeholder {
-                color: #7d799c;
-                opacity: 0.6;
+                color: #8b94a3;
+                opacity: 1;
+            }
+            &:focus {
+                outline: none;
+                background-color: #fff;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15);
             }
         }
 
