@@ -33,6 +33,7 @@ const postUrl = `https://remediationrestorationmarketing.com/resources/${post.sl
 <BaseLayout
   title={title}
   description={description}
+  dateModified={modifiedDate.toISOString()}
   preloadedImage = {optimizedImage}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify({

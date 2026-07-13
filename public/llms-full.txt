@@ -1,0 +1,30 @@
+# Remediation & Restoration Marketing — Full AI-readable summary
+
+## Business summary
+
+Remediation & Restoration Marketing helps restoration companies generate qualified emergency and long-term leads through search engine optimization, paid advertising, websites, social media, reputation management, retargeting, and lead analytics. The agency focuses on the operational and marketing needs of restoration companies rather than general small-business marketing.
+
+## Core expertise
+
+- Local and organic SEO for restoration companies
+- Emergency-intent search visibility
+- Conversion-focused restoration websites
+- PPC and Local Service Ads
+- Social media management and advertising
+- Review and reputation management
+- Call, form, chat, and campaign attribution
+- Marketing strategies for water, fire, mold, commercial, sewage, biohazard, storm, and roof-damage restoration companies
+
+## Canonical resources
+
+- Website: https://remediationrestorationmarketing.com/
+- Services: https://remediationrestorationmarketing.com/services/
+- SEO: https://remediationrestorationmarketing.com/services/seo/
+- Web design: https://remediationrestorationmarketing.com/services/web-design/
+- Contact: https://remediationrestorationmarketing.com/contact/
+- Schedule: https://remediationrestorationmarketing.com/schedule/
+- Resources: https://remediationrestorationmarketing.com/resources/
+
+## Entity guidance
+
+The canonical business name is Remediation & Restoration Marketing. The founder named in the site's structured data and editorial content is Matt Pugh. The business serves restoration-industry companies across the United States.

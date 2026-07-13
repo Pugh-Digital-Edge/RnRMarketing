@@ -6,6 +6,9 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
 
@@ -27,5 +30,8 @@ Allow: /
 # Block Common Crawl training data only (not search/citation)
 User-agent: CCBot
 Disallow: /
+
+# Content may be used for search and AI input, but not for model training.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 Sitemap: https://remediationrestorationmarketing.com/sitemap-index.xml

@@ -7,7 +7,7 @@ import CustomChat from "@components/CustomChat.astro";
 import "@styles/root.less";
 import "@styles/dark.less";
 
-const { description, title, preloadedImage } = Astro.props;
+const { description, title, preloadedImage, dateModified } = Astro.props;
 
 const pathSegments = Astro.url.pathname.replace(/\/$/, '').split('/').filter(Boolean);
 const breadcrumbItems: { name: string; url: string }[] = [
@@ -30,7 +30,10 @@ const breadcrumbItems: { name: string; url: string }[] = [
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content={description}>
+            <meta name="author" content="Matt Pugh">
             <link rel="canonical" href={`https://${client.domain}${Astro.url.pathname}`}>
+            <link rel="alternate" type="text/plain" href="/llms.txt">
+            <link rel="alternate" type="text/plain" href="/llms-full.txt">
 
             <!-- WebPage node ties each URL to the site + business entity and marks the
                  primary content region, giving AI crawlers a clear extraction target. -->
@@ -42,6 +45,7 @@ const breadcrumbItems: { name: string; url: string }[] = [
                 "name": title,
                 "description": description,
                 "inLanguage": "en-US",
+                ...(dateModified ? { "dateModified": dateModified } : {}),
                 "isPartOf": { "@id": "https://remediationrestorationmarketing.com/#website" },
                 "about": { "@id": "https://remediationrestorationmarketing.com/#localbusiness" },
                 "primaryImageOfPage": {
