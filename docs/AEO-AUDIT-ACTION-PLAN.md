@@ -78,11 +78,53 @@ The audit found no crawl errors. These are optimization and discoverability issu
 
 - [x] Implement Priority 1 shared fixes.
 - [x] Rebuild and confirm the production sitemap, robots.txt, and rendered JSON-LD.
-- [ ] Run a new technical audit and compare the score/factor deltas.
+- [x] Run a new technical audit and compare the score/factor deltas.
+  - Latest live audit completed 2026-07-14: `01a27e4d-174a-4891-8bb0-f25c3a0d24d0`.
+  - The installed CLI exposes completion and indexing status but not the factor-level score payload for this run; retain the 57/100 baseline until the detailed audit report is available.
 - [x] Re-check the lowest-scoring URLs, especially `/admin/` and generated service pages.
-- [ ] Run a real visibility sweep after the site changes have had time to be indexed; use probes only for isolated verification.
+- [x] Run a real visibility sweep after the site changes had time to be indexed.
+  - Completed 2026-07-14 as run `8f42f5eb-3157-4877-b903-2c722711a8dd` across Gemini, OpenAI, and Claude.
+  - Result: **Mention Coverage 83% (10/12)**; **Citation Coverage 42% (5/12)**. These are separate signals; citation is the trailing opportunity.
 
-  **Deployment gate:** the public site still serves the pre-change build (verified 2026-07-14: `/services/seo/` still has two `BreadcrumbList` blocks and no `dateModified`; live sitemap has no `<lastmod>` values). Deploy the current build before running the new audit or visibility sweep.
+  **Deployment gate cleared:** live verification now shows the new `dateModified`, one breadcrumb block on `/services/seo/`, and 92 sitemap `<lastmod>` entries.
+
+## Latest live Canonry findings — 2026-07-14
+
+### Visibility sweep findings
+
+- [x] **Close the lead-generation visibility gap — content update complete**
+  - Added a direct, brand-attributed lead tracking and ROI answer to `/services/lead-tracking/` and reusable specialized-service answer blocks to generated industry/service pages.
+  - Re-run the sweep after deployment/indexing to measure whether `restoration lead generation services` moves from 0/3 providers.
+- [x] **Turn citations into mentions for ROI content — content update complete**
+  - Added a visible opening answer that explicitly identifies Remediation & Restoration Marketing and explains how booked-job attribution measures ROI.
+  - Local build contains the answer, but live verification on `/services/lead-tracking/` does not yet; deploy the current content before re-running the sweep.
+- [x] **Improve cross-provider retrieval for core service queries — content update complete**
+  - `water damage restoration marketing` was mentioned by OpenAI but not Gemini or Claude; `fire damage restoration marketing` was mentioned/cited by OpenAI only; `digital marketing for restoration companies` was mentioned by Claude only.
+  - Added reusable direct-answer blocks with named-entity associations to generated industry/service pages; re-run after deployment/indexing.
+- [x] **Increase domain citation coverage — authority content update complete**
+  - Five of 12 queries cited the domain: restoration marketing agency, restoration SEO services, fire damage restoration marketing, restoration marketing ROI, and restoration website design.
+  - Added descriptive links to official Google Analytics key-event and Google Ads conversion-tracking documentation on the lead-tracking page, alongside a clearer booked-job attribution explanation.
+  - Deploy and re-run the sweep to measure whether the six mentioned-but-uncited queries gain citations.
+
+- [ ] **Raise indexing coverage before expanding content**
+  - Latest GSC coverage evidence: 43 of 94 URLs indexed (45.7%); 51 URLs are `URL is unknown to Google`, with the remainder primarily `Crawled - currently not indexed`.
+  - Corrected Canonry’s configured sitemap to `https://remediationrestorationmarketing.com/sitemap-index.xml` and completed a full GSC sync (`ec23363a-4acf-4655-a649-11dc4248d934`).
+  - Priority indexing requests were submitted for the water damage, fire damage, and mold remediation industry pages and lead-tracking pages; Google’s request-indexing wait timed out, so acceptance must be verified in the next inspection.
+  - Export the remaining unknown/not-indexed URL list from GSC, prioritize core industry/service pages, and resubmit after confirming sitemap discovery.
+  - Success target: more than 80% of tracked URLs indexed, with all priority money pages eligible.
+- [x] **Create a real visibility baseline — query basket created**
+  - Canonry currently has zero tracked queries and no completed provider checks, so mention coverage and citation coverage are unavailable—not zero performance.
+  - Added 12 relevant high-intent queries: `restoration marketing agency`, `restoration SEO services`, `water damage restoration marketing`, `fire damage restoration marketing`, `mold remediation marketing`, `restoration website design`, `Google Ads for restoration companies`, `local SEO for restoration companies`, `how to generate restoration leads`, `restoration lead generation services`, `restoration marketing ROI`, and `digital marketing for restoration companies`.
+  - The discovery session was reviewed; low-fit software, directory, coupon, and competitor-comparison queries were not promoted.
+  - Next: run the first real multi-provider sweep after confirming indexing priorities.
+- [x] **Connect Google Search Console**
+  - GSC is now connected to the Canonry project; use its coverage data to diagnose the 50 non-indexed URLs and correlate query/page performance.
+- [x] **Keep sitemap discovery resilient**
+  - An initial scheduled inspection attempted `/sitemap.xml` and received 404 before a later manual inspection followed the robots.txt sitemap index successfully.
+  - Canonry’s GSC sitemap configuration now points directly to `sitemap-index.xml`; added a Netlify compatibility redirect from `/sitemap.xml` to `/sitemap-index.xml` for crawlers that use the default path.
+- [ ] **Deploy the visibility-gap content update**
+  - Live `/services/lead-tracking/` currently lacks the new “How does restoration lead tracking improve marketing ROI?” answer even though the local build contains it.
+  - Deploy the current working tree, verify the answer and generated industry/service blocks live, then rerun the visibility sweep.
 
 ## Separate discovery finding
 
@@ -98,3 +140,11 @@ Promote only queries that match the business's services and audience; do not exp
 |---|---|---|
 | 2026-07-13 | Reviewed Canonry technical AEO audit | Baseline recorded: 57/100, 93 pages, no crawl errors |
 | 2026-07-14 | Implemented shared AEO fixes | Added freshness dates and sitemap lastmod, removed duplicate breadcrumbs, standardized inline JSON-LD, and improved descriptive links |
+| 2026-07-14 | Re-audited live deployment | New site audit completed; indexing is 43/93 (46%), with zero tracked visibility queries at audit time; GSC was subsequently connected |
+| 2026-07-14 | Added initial Canonry query basket | Added 12 commercial, service-aligned queries; excluded low-fit discovery candidates; verified project list |
+| 2026-07-14 | Ran first real visibility sweep | 83% mention coverage (10/12), 42% citation coverage (5/12); prioritized lead-generation, ROI, and cross-provider retrieval gaps |
+| 2026-07-14 | Implemented visibility-gap content updates | Added brand-attributed ROI/lead-tracking answer and reusable specialized service answer blocks; build passed across 93 pages |
+| 2026-07-14 | Corrected GSC sitemap and synced coverage | Set Canonry/GSC sitemap to `sitemap-index.xml`, completed full sync, and submitted six priority indexing requests |
+| 2026-07-14 | Rechecked live content and GSC | Live ROI answer is not deployed; GSC now reports 43/94 indexed (45.7%) and 51 URLs unknown to Google |
+| 2026-07-14 | Added sitemap compatibility redirect | Added `public/_redirects` rule from `/sitemap.xml` to the canonical sitemap index |
+| 2026-07-14 | Added authority citations to lead tracking | Linked to official GA4 and Google Ads conversion documentation and tied the guidance to booked-job attribution |

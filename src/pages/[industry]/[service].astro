@@ -5,6 +5,7 @@ import Articles from "@components/Articles.astro";
 import Contact from "@components/Contact.astro";
 import Landing from "@components/Landing.astro";
 import CTA from "@components/CTA.astro";
+import AnswerBlock from "@components/AnswerBlock.astro";
 import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
@@ -93,6 +94,11 @@ const optimizedImage = await getOptimizedImage(landingImage);
         <div class="cs-content">
             <span class="cs-topper">SPECIALIZED SOLUTIONS</span>
             <h2 class="cs-title">{service.data.Title2}</h2>
+            <AnswerBlock question="What is specialized restoration marketing for this service?" as="h3">
+                <p>
+                    <strong>{service.data.FormalName} marketing for {industry.data.FormalName} companies</strong> combines specialized search visibility, paid promotion, and conversion-focused content to help restoration contractors reach property owners and commercial partners when they need qualified help. Remediation & Restoration Marketing builds these campaigns around the service, emergency intent, and market being served.
+                </p>
+            </AnswerBlock>
             <p class="cs-text">
                 <div set:html={service.data.Description2}></div>
             </p>   

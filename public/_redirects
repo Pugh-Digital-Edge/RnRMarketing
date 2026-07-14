@@ -1,1 +1,2 @@
-
+# Compatibility for crawlers and tools that assume the default sitemap path.
+/sitemap.xml  /sitemap-index.xml  301
