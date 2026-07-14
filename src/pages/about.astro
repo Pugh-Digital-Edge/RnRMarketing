@@ -23,6 +23,25 @@ const optimizedImage = await getOptimizedImage(landingImage)
   description="Learn how we help restoration companies generate more emergency leads. With deep industry expertise and proven marketing strategies, we've helped water damage, fire restoration, and mold remediation companies scale their businesses."
   preloadedImage={optimizedImage}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://remediationrestorationmarketing.com/about/#matt-pugh",
+    "name": "Matt Pugh",
+    "jobTitle": "Founder and Restoration Marketing Specialist",
+    "url": "https://remediationrestorationmarketing.com/about/#matt-pugh",
+    "worksFor": {
+      "@id": "https://remediationrestorationmarketing.com/#localbusiness"
+    },
+    "knowsAbout": [
+      "Restoration Marketing",
+      "Local SEO",
+      "Pay Per Click Advertising",
+      "Water Damage Restoration Marketing",
+      "Fire Damage Restoration Marketing",
+      "Mold Remediation Marketing"
+    ]
+  })} />
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
@@ -61,7 +80,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
           <p class="cs-text">
               From emergency-focused PPC campaigns to long-term SEO strategies, we help restoration companies dominate their local markets. Our comprehensive approach includes everything from weather-triggered advertising to social media marketing to maximize your ROI.
           </p>
-          <div class="cs-quote">
+          <div class="cs-quote" id="matt-pugh">
               <span class="cs-quote-text">
                   We understand that in restoration, every emergency call matters. Our marketing strategies ensure you're found first when property owners need immediate help.
               </span>

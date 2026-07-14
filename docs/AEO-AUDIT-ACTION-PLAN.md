@@ -29,7 +29,7 @@ The audit found no crawl errors. These are optimization and discoverability issu
 
 - [x] **Add authorship and trust signals** (avg. 22/100; all 93 pages affected)
   - Added a site-wide author meta tag for the identified site founder/editor, Matt Pugh.
-  - Add Person schema for key team members only when the site has real profile/about content to support it.
+  - Added a visible Matt Pugh profile anchor and linked Person schema on the About page.
   - Add Review/AggregateRating schema only if genuine, visible customer review data exists; do not manufacture ratings.
 
 - [ ] **Repair duplicate BreadcrumbList schema** (schema validity affected 77 pages)
