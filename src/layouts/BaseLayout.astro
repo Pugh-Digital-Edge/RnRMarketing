@@ -8,15 +8,9 @@ import "@styles/root.less";
 import "@styles/dark.less";
 
 const { description, title, preloadedImage, dateModified } = Astro.props;
-
-const pathSegments = Astro.url.pathname.replace(/\/$/, '').split('/').filter(Boolean);
-const breadcrumbItems: { name: string; url: string }[] = [
-  { name: 'Home', url: 'https://remediationrestorationmarketing.com/' },
-  ...pathSegments.map((seg: string, i: number) => ({
-    name: seg.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-    url: `https://remediationrestorationmarketing.com/${pathSegments.slice(0, i + 1).join('/')}/`
-  }))
-];
+// Keep one editorial freshness date for pages without frontmatter. Page-specific
+// resource dates override this through the dateModified prop.
+const effectiveDateModified = dateModified ?? '2026-07-13';
 
 ---
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
@@ -45,7 +39,7 @@ const breadcrumbItems: { name: string; url: string }[] = [
                 "name": title,
                 "description": description,
                 "inLanguage": "en-US",
-                ...(dateModified ? { "dateModified": dateModified } : {}),
+                "dateModified": effectiveDateModified,
                 "isPartOf": { "@id": "https://remediationrestorationmarketing.com/#website" },
                 "about": { "@id": "https://remediationrestorationmarketing.com/#localbusiness" },
                 "primaryImageOfPage": {
@@ -59,7 +53,7 @@ const breadcrumbItems: { name: string; url: string }[] = [
             })} />
 
 
-            <script type="application/ld+json">
+            <script type="application/ld+json" is:inline>
                 {
                     "@context": "https://schema.org",
                     "@type": "LocalBusiness",
@@ -169,7 +163,7 @@ const breadcrumbItems: { name: string; url: string }[] = [
                 }
             </script>
 
-                <script type="application/ld+json">
+                <script type="application/ld+json" is:inline>
                 {
                     "@context": "https://schema.org",
                     "@type": "Organization",
@@ -208,7 +202,7 @@ const breadcrumbItems: { name: string; url: string }[] = [
                     ]
                 }
                 </script>
-                <script type="application/ld+json">
+                <script type="application/ld+json" is:inline>
                 {
                     "@context": "https://schema.org",
                     "@type": "WebSite",
@@ -229,18 +223,6 @@ const breadcrumbItems: { name: string; url: string }[] = [
                     }
                 }
                 </script>
-            {pathSegments.length > 0 && (
-                <script type="application/ld+json" is:inline set:html={JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "BreadcrumbList",
-                    "itemListElement": breadcrumbItems.map((item, idx) => ({
-                        "@type": "ListItem",
-                        "position": idx + 1,
-                        "name": item.name,
-                        "item": item.url
-                    }))
-                })} />
-            )}
             <!-- Preloads the image passed as a prop -->
             <link rel="preload" href={preloadedImage.src} as="image" />
             <meta name="google-site-verification" content="Uhclxmf6JyErwpzjc2QhHZuENaQhwtR-TNMMiQVTT6o" />

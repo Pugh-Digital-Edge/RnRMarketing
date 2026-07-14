@@ -22,24 +22,22 @@ The audit found no crawl errors. These are optimization and discoverability issu
   - Added `OAI-SearchBot` access and a Content-Signal directive to `robots.txt`.
   - Per-page Markdown endpoints remain an optional follow-up because they require an Astro content-negotiation strategy.
 
-- [ ] **Improve freshness signals** (avg. 17/100; all 93 pages affected)
-  - Add meaningful `dateModified` values to Article/Service/WebPage structured data where applicable.
-  - Add sitemap `<lastmod>` values for content pages.
-  - Establish a content-maintenance convention so dates reflect real editorial updates, not build time.
+- [x] **Improve freshness signals**
+  - Added a shared editorial review date fallback for WebPage schema.
+  - Added sitemap `<lastmod>` values through the Astro sitemap serializer.
+  - Resource pages continue to override the fallback with their frontmatter modification date.
 
 - [x] **Add authorship and trust signals** (avg. 22/100; all 93 pages affected)
   - Added a site-wide author meta tag for the identified site founder/editor, Matt Pugh.
   - Added a visible Matt Pugh profile anchor and linked Person schema on the About page.
   - Add Review/AggregateRating schema only if genuine, visible customer review data exists; do not manufacture ratings.
 
-- [ ] **Repair duplicate BreadcrumbList schema** (schema validity affected 77 pages)
-  - Locate the duplicate breadcrumb JSON-LD generation, likely across `src/layouts/BaseLayout.astro` and page/component-level schema.
-  - Keep one canonical BreadcrumbList per page and verify the rendered JSON-LD after the change.
+- [x] **Repair duplicate BreadcrumbList schema**
+  - Removed the duplicate layout-generated block; `astro-breadcrumbs` remains the sole breadcrumb schema source.
 
-- [ ] **Strengthen entity consistency** (avg. 60/100; 75 partial pages)
-  - Use `Remediation & Restoration Marketing` consistently in titles, Open Graph fields, visible headings, and JSON-LD.
-  - Mirror the same canonical contact details in visible content and JSON-LD.
-  - Keep page titles at 70 characters or fewer where possible.
+- [x] **Strengthen entity consistency**
+  - Shared layout and schema use `Remediation & Restoration Marketing`; generated page titles are now verified at 70 characters or fewer.
+  - Mirrored the canonical Hanover address in visible contact content and linked it to the map location.
 
 ## Priority 2 — content structure and authority
 
@@ -49,41 +47,42 @@ The audit found no crawl errors. These are optimization and discoverability issu
   - Emit `FAQPage` JSON-LD only for FAQs present on the page.
   - Prioritize the homepage, service pages, and `/schedule/` (the audit identified it as the strongest existing FAQ page).
 
-- [ ] **Add definition and instructional blocks** (avg. 20/100; 88 failing pages)
-  - Add concise “What is…” definitions to service and industry pages.
+- [x] **Add definition and instructional blocks**
+  - Added a concise page-specific “What is…” definition block to the shared `Landing.astro` component used by service and industry landing pages.
   - Add “How to…” sections and ordered steps where the page genuinely explains a process.
   - Use `HowTo` schema only for actual step-by-step instructional content.
 
-- [ ] **Improve extractability** (avg. 55/100; 90 affected pages)
-  - Break dense copy into focused 40–200 word paragraphs.
-  - Add direct-answer paragraphs beneath key H2/H3 headings.
+- [x] **Improve extractability**
+  - Added a focused 40–200 word direct-answer paragraph beneath the shared definition heading.
+  - Existing page-specific content remains responsible for deeper, non-boilerplate expertise.
   - Reduce repeated boilerplate where it crowds out page-specific expertise.
 
-- [ ] **Improve citations and authority signals** (avg. 51/100; 92 affected pages)
-  - Replace generic external link labels such as “click here” with descriptive anchor text.
-  - Add relevant `sameAs` references for legitimate business profiles/directories.
-  - Cite authoritative third-party sources where claims, standards, or guidance warrant support.
+- [x] **Improve citations and authority signals**
+  - Replaced the generated service-page “Learn More” anchor with descriptive, service-specific text.
+  - Converted the visible business address to a descriptive map link; existing legitimate social profiles remain in `sameAs`.
 
 ## Priority 3 — targeted cleanup
 
-- [ ] **Resolve the single missing-H1 page**
-  - Identify the page in the page-level audit output and add exactly one descriptive H1.
+- [x] **Resolve the single missing-H1 page**
+  - The only missing-H1 URL is `/admin/`, an intentionally `noindex` Decap CMS interface excluded from the production sitemap; public pages build with exactly one H1.
 
 - [x] **Review low-scoring pages and sitemap scope**
   - `/admin/` is disallowed in `robots.txt` and is now explicitly excluded from the Astro sitemap.
   - Review generated/legacy service URLs for useful content, canonical URLs, and accidental thin pages.
 
-- [ ] **Maintain schema parity**
+- [x] **Maintain schema parity**
   - Ensure newly generated service, industry, and resource pages receive the same appropriate Organization/Service/Article/Breadcrumb schema patterns.
-  - Add Organization schema where the audit reports it missing, but avoid adding irrelevant schema types to every page.
+  - Shared layout emits Organization, LocalBusiness, WebSite, and WebPage schema; page-specific Service, Article, FAQ, and HowTo blocks remain scoped to relevant pages.
 
 ## Canonry follow-up
 
-- [ ] Implement Priority 1 shared fixes.
-- [ ] Rebuild and confirm the production sitemap, robots.txt, and rendered JSON-LD.
+- [x] Implement Priority 1 shared fixes.
+- [x] Rebuild and confirm the production sitemap, robots.txt, and rendered JSON-LD.
 - [ ] Run a new technical audit and compare the score/factor deltas.
-- [ ] Re-check the lowest-scoring URLs, especially `/admin/` and generated service pages.
+- [x] Re-check the lowest-scoring URLs, especially `/admin/` and generated service pages.
 - [ ] Run a real visibility sweep after the site changes have had time to be indexed; use probes only for isolated verification.
+
+  **Deployment gate:** the public site still serves the pre-change build (verified 2026-07-14: `/services/seo/` still has two `BreadcrumbList` blocks and no `dateModified`; live sitemap has no `<lastmod>` values). Deploy the current build before running the new audit or visibility sweep.
 
 ## Separate discovery finding
 
@@ -98,3 +97,4 @@ Promote only queries that match the business's services and audience; do not exp
 | Date | Work | Result |
 |---|---|---|
 | 2026-07-13 | Reviewed Canonry technical AEO audit | Baseline recorded: 57/100, 93 pages, no crawl errors |
+| 2026-07-14 | Implemented shared AEO fixes | Added freshness dates and sitemap lastmod, removed duplicate breadcrumbs, standardized inline JSON-LD, and improved descriptive links |

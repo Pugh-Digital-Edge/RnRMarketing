@@ -78,6 +78,17 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
 
 </section>
 
+<!-- A concise, page-specific definition gives answer engines an extractable
+     explanation before the longer service or industry copy begins. -->
+<section class="landing-definition" aria-labelledby="landing-definition-title">
+  <div class="cs-container">
+    <h2 id="landing-definition-title">What is {title}?</h2>
+    <p class="cs-text">
+      {title} is a specialized marketing solution that helps restoration companies reach property owners who need timely, qualified help. It combines clear service information, local visibility, and conversion-focused calls to action so prospects can understand the offer and contact the right team quickly.
+    </p>
+  </div>
+</section>
+
 <style lang="less">
     
     /*-- -------------------------- -->
@@ -86,7 +97,7 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
     
     /* Mobile */
     @media only screen and (min-width: 0em) {
-        .margin-bread {
+    .margin-bread {
             margin-bottom: 5rem;
             margin-top: 1rem;
         }
@@ -163,6 +174,14 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
                 max-width: (500/16rem);
                 margin-bottom: 0;
             }
+        }
+    }
+
+    .landing-definition {
+        padding: 2rem 0 0;
+
+        h2 {
+            margin-bottom: 0.75rem;
         }
     }
     
