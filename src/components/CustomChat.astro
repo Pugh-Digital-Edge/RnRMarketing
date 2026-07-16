@@ -2,19 +2,18 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<div class="custom-chat" data-custom-chat>
-  <button class="custom-chat__toggle" type="button" aria-expanded="false" aria-controls="custom-chat-panel">
+<details class="custom-chat" data-custom-chat>
+  <summary class="custom-chat__toggle" aria-label="Open or close chat" aria-controls="custom-chat-panel">
     <span class="custom-chat__toggle-text">Chat</span>
     <span class="custom-chat__toggle-dot" aria-hidden="true"></span>
-  </button>
+  </summary>
 
-  <section class="custom-chat__panel" id="custom-chat-panel" aria-label="Send us a message" hidden>
+  <section class="custom-chat__panel" id="custom-chat-panel" aria-label="Send us a message">
     <div class="custom-chat__header">
       <div>
         <strong>How can we help?</strong>
         <span>Ask a question or request a lead review.</span>
       </div>
-      <button class="custom-chat__close" type="button" aria-label="Close chat">×</button>
     </div>
 
     <form
@@ -60,14 +59,15 @@ const currentPath = Astro.url.pathname;
       <p class="custom-chat__status" role="status" aria-live="polite"></p>
     </form>
   </section>
-</div>
+</details>
 
 <style lang="less">
   .custom-chat {
     position: fixed;
     right: 1rem;
     bottom: 1rem;
-    z-index: 950;
+    /* Keep the widget above the sticky site header at every scroll position. */
+    z-index: 11000;
     font-family: "Poppins", Arial, sans-serif;
   }
 
@@ -89,8 +89,37 @@ const currentPath = Astro.url.pathname;
     cursor: pointer;
   }
 
-  .custom-chat.is-open .custom-chat__toggle {
+  .custom-chat[open] .custom-chat__toggle {
+    width: 2rem;
+    min-width: 2rem;
+    height: 2rem;
+    min-height: 2rem;
+    padding: 0;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: none;
+    font-size: 0;
+  }
+
+  .custom-chat[open] .custom-chat__toggle::before {
+    content: "×";
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .custom-chat[open] .custom-chat__toggle-text,
+  .custom-chat[open] .custom-chat__toggle-dot {
     display: none;
+  }
+
+  .custom-chat__toggle::marker,
+  .custom-chat__toggle::-webkit-details-marker {
+    display: none;
+    content: "";
   }
 
   .custom-chat__toggle-dot {
@@ -111,7 +140,7 @@ const currentPath = Astro.url.pathname;
   }
 
   .custom-chat__header {
-    padding: 1rem;
+    padding: 1rem 3.5rem 1rem 1rem;
     background: var(--primary);
     color: #fff;
     display: flex;
@@ -136,18 +165,6 @@ const currentPath = Astro.url.pathname;
       line-height: 1.4em;
       opacity: 0.9;
     }
-  }
-
-  .custom-chat__close {
-    width: 2rem;
-    height: 2rem;
-    border: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.16);
-    color: #fff;
-    font-size: 1.5rem;
-    line-height: 1;
-    cursor: pointer;
   }
 
   .custom-chat__form {
@@ -239,27 +256,14 @@ const currentPath = Astro.url.pathname;
 <script>
   const chatRoot = document.querySelector("[data-custom-chat]");
   const chatToggle = chatRoot?.querySelector(".custom-chat__toggle");
-  const chatPanel = chatRoot?.querySelector(".custom-chat__panel");
-  const chatClose = chatRoot?.querySelector(".custom-chat__close");
   const chatForm = chatRoot?.querySelector(".custom-chat__form");
   const chatStatus = chatRoot?.querySelector(".custom-chat__status");
 
-  const setChatOpen = (isOpen) => {
-    if (!(chatToggle instanceof HTMLButtonElement) || !(chatPanel instanceof HTMLElement)) {
-      return;
+  chatToggle?.addEventListener("click", (event) => {
+    if (chatRoot instanceof HTMLDetailsElement && chatRoot.open) {
+      event.preventDefault();
+      chatRoot.open = false;
     }
-
-    chatPanel.hidden = !isOpen;
-    chatToggle.setAttribute("aria-expanded", String(isOpen));
-    chatRoot?.classList.toggle("is-open", isOpen);
-  };
-
-  chatToggle?.addEventListener("click", () => {
-    setChatOpen(chatPanel instanceof HTMLElement ? chatPanel.hidden : true);
-  });
-
-  chatClose?.addEventListener("click", () => {
-    setChatOpen(false);
   });
 
   chatForm?.addEventListener("submit", async (event) => {
@@ -279,7 +283,10 @@ const currentPath = Astro.url.pathname;
     }
 
     try {
-      const body = new URLSearchParams(new FormData(chatForm));
+      const body = new URLSearchParams();
+      new FormData(chatForm).forEach((value, key) => {
+        if (typeof value === "string") body.append(key, value);
+      });
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },

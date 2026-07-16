@@ -7,7 +7,7 @@
     "decap": "npx decap-server",
     "dev": "npm-run-all --parallel astro decap",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/postbuild-aeo.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

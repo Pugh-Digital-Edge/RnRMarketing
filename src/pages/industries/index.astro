@@ -43,7 +43,7 @@ const secondHalf = industries.slice(midPoint);
       <div class="cs-wrapper">
         <ul class="cs-card-group">
           {firstHalf.map((industry, index) => (
-            <li class="cs-item" key={industry.data.Name}>
+            <li class="cs-item">
               <span class="cs-item-number">{index + 1}</span>
               <div class="cs-item-wrapper">
                 <h3 class="cs-h3">
@@ -58,7 +58,7 @@ const secondHalf = industries.slice(midPoint);
         </ul>
         <ul class="cs-card-group">
           {secondHalf.map((industry, index) => (
-            <li class="cs-item" key={industry.data.Name}>
+            <li class="cs-item">
               <span class="cs-item-number">{index + midPoint + 1}</span>
               <div class="cs-item-wrapper">
                 <h3 class="cs-h3 text-black">

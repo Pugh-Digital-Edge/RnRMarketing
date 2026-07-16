@@ -2,7 +2,7 @@ User-agent: *
 Disallow: /admin/
 Allow: /
 
-# AI search crawlers — allow citation and indexing
+# AI search crawlers: allow citation and indexing
 User-agent: GPTBot
 Allow: /
 

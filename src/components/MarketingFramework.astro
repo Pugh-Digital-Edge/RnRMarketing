@@ -1,0 +1,203 @@
+---
+interface Props {
+  serviceName: string;
+  industryName: string;
+  path: string;
+}
+
+const { serviceName, industryName, path } = Astro.props;
+const pageUrl = `https://remediationrestorationmarketing.com${path}`;
+
+const steps = [
+  {
+    name: `Start with the right ${industryName} jobs`,
+    text: `Start with the jobs you want, the areas you serve, and how much work your crew can handle. We also look at customer type and typical job value.`,
+  },
+  {
+    name: `Build a practical ${serviceName} plan`,
+    text: `Match the message, targeting, landing page, and tracking to the way people actually search for ${industryName.toLowerCase()} help.`,
+  },
+  {
+    name: 'Use booked jobs to guide the next move',
+    text: `Follow qualified calls and forms through to booked jobs and revenue. That tells us what to improve and what is not worth the budget.`,
+  },
+];
+
+const faqs = [
+  {
+    question: `How is ${serviceName} measured for ${industryName} companies?`,
+    answer: `We measure qualified calls and forms, appointment rate, booked-job rate, attributed revenue, and cost per acquired customer. Channel metrics matter, but they are evaluated against restoration work the company can actually serve profitably.`,
+  },
+  {
+    question: `What makes this different from general agency marketing?`,
+    answer: `The strategy accounts for emergency search behavior, service-area limits, insurance-related decision paths, response capacity, and the difference between an inquiry and a qualified restoration opportunity.`,
+  },
+  {
+    question: `What information is needed before work begins?`,
+    answer: `We start with priority services, service areas, ideal job types, average job values, current lead sources, response procedures, and recent performance data. That context keeps the plan tied to operational goals.`,
+  },
+];
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  '@id': `${pageUrl}#marketing-framework`,
+  name: `How to build ${serviceName} for ${industryName} companies`,
+  description: `A three-step framework for aligning ${serviceName} with qualified ${industryName} demand and booked-job outcomes.`,
+  step: steps.map((step) => ({ '@type': 'HowToStep', ...step })),
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${pageUrl}#framework-faq`,
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(howToSchema)} />
+<script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+
+<section class="framework" aria-labelledby="framework-title">
+  <div class="framework__container">
+    <div class="framework__heading">
+      <span class="cs-topper">A MEASURABLE APPROACH</span>
+      <h2 id="framework-title">How We Build {serviceName} for {industryName} Companies</h2>
+      <p>
+        More traffic is not the goal by itself. We start with the jobs your team wants and can handle, then build the marketing around those priorities.
+      </p>
+    </div>
+
+    <ol class="framework__steps">
+      {steps.map((step, index) => (
+        <li>
+          <span class="framework__number">0{index + 1}</span>
+          <h3>{step.name}</h3>
+          <p>{step.text}</p>
+        </li>
+      ))}
+    </ol>
+
+    <div class="framework__details">
+      <div>
+        <h3>Metrics We Use</h3>
+        <dl>
+          <dt>Qualified lead</dt>
+          <dd>A property owner, manager, or referral partner who needs a service you provide in an area you cover.</dd>
+          <dt>Booked-job attribution</dt>
+          <dd>The connection between a sold job and the campaign, page, call, form, or chat that initiated it.</dd>
+          <dt>Marketing ROI</dt>
+          <dd>Attributed revenue or profit compared with the total cost of the marketing that produced it.</dd>
+        </dl>
+      </div>
+
+      <div>
+        <h3>Common Questions</h3>
+        <div class="framework__faq">
+          {faqs.map(({ question, answer }) => (
+            <details>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <p class="framework__sources">
+      Measurement follows primary platform guidance from
+      <a href="https://support.google.com/analytics/answer/9267568">Google Analytics key events</a>,
+      <a href="https://support.google.com/google-ads/answer/6095821">Google Ads conversion tracking</a>, and
+      <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide">Google Search Central</a>.
+    </p>
+  </div>
+</section>
+
+<style lang="less">
+  .framework {
+    padding: var(--sectionPadding);
+    background: #f7f7f7;
+  }
+
+  .framework__container {
+    width: 100%;
+    max-width: (1280/16rem);
+    margin: auto;
+  }
+
+  .framework__heading {
+    max-width: (760/16rem);
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+
+    h2 {
+      font-size: var(--headerFontSize);
+      line-height: 1.2em;
+      margin: 0 0 (16/16rem);
+      color: var(--headerColor);
+    }
+
+    p { margin: 0; line-height: 1.6em; color: var(--bodyTextColor); }
+  }
+
+  .framework__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding: clamp(1.5rem, 3vw, 2rem);
+      background: #fff;
+      border: 1px solid var(--borderColor);
+      border-radius: var(--radiusM);
+      box-shadow: var(--shadowS);
+    }
+
+    h3 { margin: (14/16rem) 0 (10/16rem); font-size: (20/16rem); line-height: 1.25em; color: var(--headerColor); }
+    p { margin: 0; line-height: 1.6em; color: var(--bodyTextColor); }
+  }
+
+  .framework__number { font-size: (14/16rem); font-weight: 800; letter-spacing: .12em; color: var(--primary); }
+
+  .framework__details {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    background: #fff;
+    border-radius: var(--radiusM);
+    border: 1px solid var(--borderColor);
+
+    h3 { margin: 0 0 (20/16rem); font-size: (24/16rem); color: var(--headerColor); }
+    dl { margin: 0; }
+    dt { margin-top: (16/16rem); font-weight: 700; color: var(--headerColor); }
+    dt:first-child { margin-top: 0; }
+    dd { margin: (4/16rem) 0 0; line-height: 1.55em; color: var(--bodyTextColor); }
+  }
+
+  .framework__faq {
+    details { border-top: 1px solid var(--borderColor); }
+    details:first-child { border-top: 0; }
+    summary { padding: (16/16rem) (32/16rem) (16/16rem) 0; font-weight: 700; line-height: 1.35em; color: var(--headerColor); cursor: pointer; }
+    p { margin: 0 0 (16/16rem); line-height: 1.6em; color: var(--bodyTextColor); }
+  }
+
+  .framework__sources {
+    margin: (24/16rem) 0 0;
+    font-size: (14/16rem);
+    line-height: 1.6em;
+    color: var(--bodyTextColor);
+
+    a { color: var(--primary); font-weight: 700; }
+  }
+
+  @media only screen and (max-width: 63.9375rem) {
+    .framework__steps, .framework__details { grid-template-columns: 1fr; }
+  }
+</style>

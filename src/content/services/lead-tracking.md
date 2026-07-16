@@ -1,13 +1,13 @@
 ---
 FormalName: "Lead Tracking & Analytics"
 Name: "lead-tracking"
-Title1: "Track Every Marketing Dollar's Performance"
-Description1: "<p class=\"cs-text\">Know exactly which marketing channels are delivering your best restoration leads. Our advanced tracking system monitors calls, form submissions, and chat interactions to measure true ROI from each campaign. Get detailed insights on lead quality, conversion rates, and cost per acquisition.</p>"
-Title2: "Data-Driven Decisions for Maximum ROI"
-Description2: "<p class=\"cs-text\">Our comprehensive analytics dashboard provides real-time visibility into your marketing performance. Track emergency vs. non-emergency leads, monitor call handling efficiency, and measure booking rates. We integrate call recording, form tracking, and revenue data to show the complete journey from click to completed job. Regular performance reviews help optimize campaigns for maximum return on your marketing investment.</p>"
+Title1: "See Which Marketing Produces Real Jobs"
+Description1: "<p class=\"cs-text\">Connect calls, forms, and chats to the campaigns that produced them. Then follow each qualified lead through booking and revenue so you can see which channels earn their budget.</p>"
+Title2: "Make Decisions With Booked-Job Data"
+Description2: "<p class=\"cs-text\">Track urgent and non-urgent leads, response time, booking rates, and revenue in one place. Regular reviews show where good opportunities are coming from and where the strategy needs to change.</p>"
 Image: "src/assets/images/services/tracking1.jpg"
 Image2: "src/assets/images/services/tracking2.jpg"
-ShortDescription: "Get complete visibility into your marketing performance with detailed tracking of leads, calls, and ROI across all channels."
+ShortDescription: "Connect calls, forms, booked jobs, and revenue to the marketing that produced them."
 IconName: "growth"
 ---
 image: /src/assets/images/blog/blog-cover.jpg

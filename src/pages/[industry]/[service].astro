@@ -6,6 +6,8 @@ import Contact from "@components/Contact.astro";
 import Landing from "@components/Landing.astro";
 import CTA from "@components/CTA.astro";
 import AnswerBlock from "@components/AnswerBlock.astro";
+import MarketingFramework from "@components/MarketingFramework.astro";
+import ServiceSchema from "@components/ServiceSchema.astro";
 import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
@@ -38,6 +40,7 @@ import landingImage from "@assets/images/landing/oregan.jpg";
 import ServicesDisplay from "@components/ServicesDisplay.astro";
 import Icon from "node_modules/astro-icon/components/Icon.astro";
 const optimizedImage = await getOptimizedImage(landingImage);
+const pagePath = `/${industry.data.Name}/${service.data.Name}/`;
 ---
 
 <BaseLayout
@@ -45,10 +48,16 @@ const optimizedImage = await getOptimizedImage(landingImage);
   description={`Specialized ${service.data.FormalName} services designed specifically for ${industry.data.FormalName} companies. Drive more emergency restoration leads and grow your ${industry.data.Name} business.`}
   preloadedImage={optimizedImage}
 >
+<ServiceSchema
+    name={`${service.data.FormalName} for ${industry.data.FormalName}`}
+    description={`Specialized ${service.data.FormalName} for ${industry.data.FormalName} companies, aligned with qualified leads and booked restoration jobs.`}
+    path={pagePath}
+    serviceType={service.data.FormalName}
+/>
 <Landing
     title={`${service.data.FormalName} for ${industry.data.FormalName}`}
     image={optimizedImage}
-    isIndustryByService="true"
+    isIndustryByService={true}
     isPageHeading
 />
 
@@ -139,7 +148,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             <span class="cs-topper">COMPLETE SOLUTION</span>
             <h2 class="cs-title">Get More {industry.data.FormalName} Jobs</h2>
             <p class="cs-text">
-                Our comprehensive {service.data.FormalName} solution is designed specifically for {industry.data.Name} companies. We understand the unique challenges of marketing emergency restoration services and have developed proven strategies to help you:
+                We build {service.data.FormalName} around the way {industry.data.Name} companies actually operate. The plan accounts for urgent searches, your service area, the jobs you want, and how quickly your team can respond. It is designed to help you:
             </p>            
             <ul id="list-1405" class="cs-ul">
                 <li class="cs-li">
@@ -165,6 +174,12 @@ const optimizedImage = await getOptimizedImage(landingImage);
     </div>
     <div class="cs-bubbles" aria-hidden="true"></div>
 </section>
+
+<MarketingFramework
+    serviceName={service.data.FormalName}
+    industryName={industry.data.FormalName}
+    path={pagePath}
+/>
 
 <CTA />
 <ServicesDisplay industry={industry}/>

@@ -3,20 +3,15 @@ import Picture from "astro/components/Picture.astro"
 import { Breadcrumbs } from "astro-breadcrumbs";
 import "astro-breadcrumbs/breadcrumbs.css";
 import { Icon } from "astro-icon/components";
+import type { GetImageResult } from "astro";
 
 interface Props {
   title: string;
-  image: {
-    src: string;
-    attributes: {
-      width: number;
-      height: number;
-    }
-  };
+  image: GetImageResult;
   isIndustryByService?: boolean;
   /**
    * Render the banner title as the page's <h1>. Only set this on pages whose
-   * body has no heading of its own — most pages carry a descriptive <h1> in
+   * body has no heading of its own. Most pages carry a descriptive <h1> in
    * their content, and a second one here would split the page's topic signal
    * for search and AI crawlers.
    */
@@ -69,24 +64,12 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
     width={image.attributes.width}
     height={image.attributes.height}
     formats={['avif', 'webp']} 
-    alt="A description of my image."
     aria-hidden="true" 
     decoding="async"
-    alt="kitchen cabinets"
+    alt=""
     loading="eager"
 />
 
-</section>
-
-<!-- A concise, page-specific definition gives answer engines an extractable
-     explanation before the longer service or industry copy begins. -->
-<section class="landing-definition" aria-labelledby="landing-definition-title">
-  <div class="cs-container">
-    <h2 id="landing-definition-title">What is {title}?</h2>
-    <p class="cs-text">
-      {title} is a specialized marketing solution that helps restoration companies reach property owners who need timely, qualified help. It combines clear service information, local visibility, and conversion-focused calls to action so prospects can understand the offer and contact the right team quickly.
-    </p>
-  </div>
 </section>
 
 <style lang="less">

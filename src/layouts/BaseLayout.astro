@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import client from "@data/client.json";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
@@ -10,22 +9,42 @@ import "@styles/dark.less";
 const { description, title, preloadedImage, dateModified } = Astro.props;
 // Keep one editorial freshness date for pages without frontmatter. Page-specific
 // resource dates override this through the dateModified prop.
-const effectiveDateModified = dateModified ?? '2026-07-13';
+const effectiveDateModified = dateModified ?? '2026-07-16';
+const canonicalUrl = `https://${client.domain}${Astro.url.pathname}`;
+const markdownUrl = `${Astro.url.pathname}index.md`;
+const fullBrandSuffix = ` | ${client.name}`;
+const shortBrandSuffix = ' | R&R Marketing';
+const titleAlreadyNamesBrand = title.includes(client.name);
+const titleAlreadyHasQualifier = title.includes('|');
+const titleIsSelfContained = title.length >= 55;
+const chosenTitleSuffix = titleAlreadyNamesBrand || titleAlreadyHasQualifier || titleIsSelfContained
+    ? ''
+    : `${title}${fullBrandSuffix}`.length <= 70 ? fullBrandSuffix : shortBrandSuffix;
+const titleLimit = 70 - chosenTitleSuffix.length;
+const shortenedTitle = title.length > titleLimit
+    ? title.slice(0, titleLimit).replace(/\s+\S*$/, '').replace(/(?:\s+(?:and|for|with|the)|\s*&|[|,:;-]+)$/i, '').trim()
+    : title;
+const metadataTitle = `${shortenedTitle}${chosenTitleSuffix}`;
+const descriptionSuffix = ' Explore SEO, PPC, web design, and lead tracking built specifically for restoration companies.';
+const expandedDescription = description.length < 120
+    ? `${description.trim().replace(/[.!?]?$/, '.')} ${descriptionSuffix}`
+    : description.trim();
+const metadataDescription = expandedDescription.length > 160
+    ? `${expandedDescription.slice(0, 159).replace(/\s+\S*$/, '').replace(/[,:;-]+$/, '').trim()}.`
+    : expandedDescription;
 
 ---
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
 <html lang="en">
         <head>
-            <!-- View Transitions support -->
-            <ViewTransitions />
-
             <!-- Standard meta tags -->
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="description" content={description}>
+            <meta name="description" content={metadataDescription}>
             <meta name="author" content="Matt Pugh">
-            <link rel="canonical" href={`https://${client.domain}${Astro.url.pathname}`}>
+            <link rel="canonical" href={canonicalUrl}>
+            <link rel="alternate" type="text/markdown" href={markdownUrl} title={`${title} in Markdown`}>
             <link rel="alternate" type="text/plain" href="/llms.txt">
             <link rel="alternate" type="text/plain" href="/llms-full.txt">
 
@@ -37,7 +56,8 @@ const effectiveDateModified = dateModified ?? '2026-07-13';
                 "@id": `https://${client.domain}${Astro.url.pathname}#webpage`,
                 "url": `https://${client.domain}${Astro.url.pathname}`,
                 "name": title,
-                "description": description,
+                "alternativeHeadline": title,
+                "description": metadataDescription,
                 "inLanguage": "en-US",
                 "dateModified": effectiveDateModified,
                 "isPartOf": { "@id": "https://remediationrestorationmarketing.com/#website" },
@@ -62,7 +82,9 @@ const effectiveDateModified = dateModified ?? '2026-07-13';
                     "@id": "https://remediationrestorationmarketing.com/#localbusiness",
                     "url": "https://remediationrestorationmarketing.com",
                     "telephone": "17174201766",
+                    "email": "matt@remediationrestorationmarketing.com",
                     "priceRange": "$$",
+                    "openingHours": "Mo-Fr 09:00-22:00",
                     "address": {
                         "@type": "PostalAddress",
                         "streetAddress": "1000 Carlisle St, STE 1625, Room 2",
@@ -77,6 +99,12 @@ const effectiveDateModified = dateModified ?? '2026-07-13';
                         "https://www.instagram.com/randr.marketing/",
                         "https://remediationrestorationmarketing.com"
                     ],
+                    "founder": {
+                        "@type": "Person",
+                        "@id": "https://remediationrestorationmarketing.com/about/#matt-pugh",
+                        "name": "Matt Pugh",
+                        "jobTitle": "Founder and Restoration Marketing Specialist"
+                    },
                     "geo": {
                         "@type": "GeoCoordinates",
                         "latitude": 39.8172159,
@@ -93,73 +121,7 @@ const effectiveDateModified = dateModified ?? '2026-07-13';
                         ],
                         "opens": "09:00",
                         "closes": "22:00"
-                    },
-                    "offers": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Web Design for Restoration Companies",
-                                "description": "Professional, fast-loading websites optimized for emergency response and lead generation, featuring emergency contact forms, service area maps, before/after galleries, and certification displays. Mobile-first approach ensures property owners can easily contact you during disasters."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Restoration SEO Services",
-                                "description": "Restoration-focused SEO strategies helping companies dominate local searches for water damage, fire restoration, mold remediation, and other essential services. Includes targeted local SEO, strategic content creation, and technical optimization."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "PPC & LSA Campaign Management",
-                                "description": "Targeted PPC and Local Service Ads campaigns for emergency restoration services, featuring weather-triggered ads, location-specific targeting, and insurance-focused campaigns. Optimized for cost-effective lead generation and maximum ROI."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Social Media Management",
-                                "description": "Strategic social media management showcasing restoration expertise through successful projects, customer testimonials, and professional certifications. Focused on building trust with property owners and insurance partners."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Reputation Management",
-                                "description": "Comprehensive reputation management services including automated review collection, online mention monitoring, and testimonial showcase. Helps maintain strong ratings across Google, Facebook, and industry-specific platforms."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Lead Tracking & Analytics",
-                                "description": "Advanced tracking system monitoring calls, form submissions, and chat interactions with detailed insights on lead quality, conversion rates, and cost per acquisition. Includes comprehensive analytics dashboard with real-time performance visibility."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Retargeting Services",
-                                "description": "Strategic retargeting campaigns that keep your restoration company visible to website visitors across major platforms. Using cookie-based tracking, we show targeted ads to potential customers as they browse other websites, ensuring your company stays top-of-mind during the research and decision-making process."
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Social Media Advertising",
-                                "description": "Targeted Facebook and Instagram ad campaigns designed for emergency restoration response. Features rapid campaign activation, precise location targeting, and emergency-focused messaging to reach property owners when they need restoration services most. Includes weather-event targeting and 24/7 campaign monitoring."
-                            }
-                        }
-                    ]
+                    }
                 }
             </script>
 
@@ -172,6 +134,19 @@ const effectiveDateModified = dateModified ?? '2026-07-13';
                     "logo": "https://remediationrestorationmarketing.com/assets/images/logo-small.jpg",
                     "image": "https://remediationrestorationmarketing.com/assets/images/logo-small.jpg",
                     "description": "Specialized marketing agency helping restoration companies generate more emergency service leads through SEO, PPC, web design, and digital marketing.",
+                    "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+1-717-420-1766",
+                    "email": "matt@remediationrestorationmarketing.com",
+                    "contactType": "sales",
+                    "areaServed": "US",
+                    "availableLanguage": "English"
+                    },
+                    "sameAs": [
+                    "https://www.facebook.com/remediationrestorationmarketing",
+                    "https://www.youtube.com/@RandR_Marketing",
+                    "https://www.instagram.com/randr.marketing/"
+                    ],
                     "areaServed": {
                     "@type": "Country",
                     "name": "United States"
@@ -191,17 +166,31 @@ const effectiveDateModified = dateModified ?? '2026-07-13';
                     "Roof Damage Restoration Restoration Marketing"
                     ],
                     "foundingDate": "2024",
-                    "founders": [
-                    {
+                    "founder": {
                         "@type": "Person",
                         "@id": "https://remediationrestorationmarketing.com/about/#matt-pugh",
                         "name": "Matt Pugh",
                         "url": "https://remediationrestorationmarketing.com/about/#matt-pugh",
                         "jobTitle": "Founder and Restoration Marketing Specialist"
                     }
-                    ]
                 }
                 </script>
+                <script type="application/ld+json" is:inline set:html={JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Person",
+                    "@id": "https://remediationrestorationmarketing.com/about/#matt-pugh",
+                    "name": "Matt Pugh",
+                    "url": "https://remediationrestorationmarketing.com/about/",
+                    "jobTitle": "Founder and Restoration Marketing Specialist",
+                    "knowsAbout": [
+                        "Restoration Marketing",
+                        "Search Engine Optimization",
+                        "Pay Per Click Advertising",
+                        "Lead Attribution",
+                        "Conversion-focused Web Design"
+                    ],
+                    "worksFor": { "@id": "https://remediationrestorationmarketing.com/#localbusiness" }
+                })} />
                 <script type="application/ld+json" is:inline>
                 {
                     "@context": "https://schema.org",
@@ -227,8 +216,8 @@ const effectiveDateModified = dateModified ?? '2026-07-13';
             <link rel="preload" href={preloadedImage.src} as="image" />
             <meta name="google-site-verification" content="Uhclxmf6JyErwpzjc2QhHZuENaQhwtR-TNMMiQVTT6o" />
             <!--Social Media Display-->
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
+            <meta property="og:title" content={metadataTitle} />
+            <meta property="og:description" content={metadataDescription} />
             <meta property="og:type" content="website" />
             <meta property="og:url" content={`https://${client.domain}${Astro.url.pathname}`} />
             <meta property="og:image" content="/assets/images/logo-small.jpg" />
@@ -252,8 +241,7 @@ const effectiveDateModified = dateModified ?? '2026-07-13';
             About Page - About us | Painters and Co.
             -->
             <title>
-                {(`${ title } | ${ client.name }`)
-                }
+                {metadataTitle}
             </title>
 
             <!-- Decap CMS scripts -->

@@ -1,5 +1,3 @@
-  // Astro:page-load wrapper for View Transitions purposes
-  document.addEventListener('astro:page-load', () => { // Make the script controlling the <Hamburger /> mobile menu component available after navigating to a new page.
 // add classes for mobile navigation toggling
 var CSbody = document.querySelector("body");
 const CSnavbarMenu = document.querySelector("#cs-navigation");
@@ -66,4 +64,3 @@ const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropd
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.async=true; g.src='https://cdn.matomo.cloud/remediationrestorationmarketing.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
     })();                  
-});

@@ -16,13 +16,13 @@ export default defineConfig({
       // The CMS is an editorial interface, not a public content page.
       filter: (page) => {
         const pathname = new URL(page).pathname;
-        return pathname !== '/admin' && pathname !== '/admin/';
+        return !['/admin', '/admin/', '/privacy/', '/tos/'].includes(pathname);
       },
       // Keep sitemap freshness aligned with the editorial review date used by
       // the shared WebPage schema. Resource pages provide their own date in
       // their structured data when they are updated.
       serialize(item) {
-        item.lastmod = '2026-07-13';
+        item.lastmod = '2026-07-16';
         return item;
       },
     }),

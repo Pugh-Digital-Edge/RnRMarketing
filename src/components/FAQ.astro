@@ -34,14 +34,14 @@ const faqSchema = {
         </p>
     </div>
       <div class="cs-flex-group">
-        <ul class="cs-faq-group">
+        <div class="cs-faq-group">
           {faqs.map((faq, i) => (
-            <li class:list={["cs-faq-item", { active: i === 0 }]}>
-                <button class="cs-button">{faq.question}</button>
+            <details class="cs-faq-item" open={i === 0}>
+                <summary class="cs-button">{faq.question}</summary>
                 <p class="cs-item-p">{faq.answer}</p>
-            </li>
+            </details>
           ))}
-      </ul>
+      </div>
         <div class="cs-cta">
             <h3 class="cs-h3">Don’t see the answer you need?</h3>
             <p class="cs-cta-p">
@@ -52,19 +52,6 @@ const faqSchema = {
       </div>
   </div>
 </section>
-
-<script>
-// Astro:page-load wrapper for View Transitions purposes
-document.addEventListener('astro:page-load', () => { // Makes the script available after navigating to a new page.
-    const faqItems = Array.from(document.querySelectorAll(".cs-faq-item"));
-    for (const item of faqItems) {
-      const onClick = () => {
-        item.classList.toggle("active");
-      };
-      item.addEventListener("click", onClick);
-    }
-  });
-</script>
 
 <style lang="less">
   /*-- -------------------------- -->
@@ -118,7 +105,7 @@ document.addEventListener('astro:page-load', () => { // Makes the script availab
             box-sizing: border-box;
             transition: border-color 0.3s, box-shadow 0.3s;
 
-            &.active {
+            &[open] {
                 border-color: rgba(10, 102, 194, 0.45);
                 box-shadow: var(--shadowM);
                 .cs-button {
@@ -146,13 +133,18 @@ document.addEventListener('astro:page-load', () => { // Makes the script availab
             text-align: left;
             font-weight: bold;
             /* 14px - 18px */
-            padding: clamp(0.875rem, 1.5vw, 1.125rem) 0;
+            padding: clamp(0.875rem, 1.5vw, 1.125rem) 2.5rem clamp(0.875rem, 1.5vw, 1.125rem) 0;
             background: transparent;
             border: none;
             color: var(--headerColor);
             display: block;
             width: 100%;
             position: relative;
+            list-style: none;
+
+            &::-webkit-details-marker {
+                display: none;
+            }
 
             &:hover {
                 cursor: pointer;
