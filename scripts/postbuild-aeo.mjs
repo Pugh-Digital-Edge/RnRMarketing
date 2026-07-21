@@ -6,6 +6,19 @@ const root = fileURLToPath(new URL('../dist/', import.meta.url));
 const failures = [];
 const symbols = new Map();
 const scopeNames = new Map();
+const spritePath = join(root, 'icons.svg');
+
+async function loadExistingSprite() {
+  try {
+    const sprite = await readFile(spritePath, 'utf8');
+    for (const match of sprite.matchAll(/<symbol\s+id="([^"]+)"([^>]*)>([\s\S]*?)<\/symbol>/g)) {
+      const [, id, attributes, body] = match;
+      symbols.set(id, `<symbol id="${id}"${attributes}>${body}</symbol>`);
+    }
+  } catch (error) {
+    if (error?.code !== 'ENOENT') throw error;
+  }
+}
 
 function shortScopeName(original) {
   if (!scopeNames.has(original)) {
@@ -73,6 +86,10 @@ async function processPage(path) {
   await writeFile(join(path.slice(0, -'index.html'.length), 'index.md'), markdown, 'utf8');
 }
 
+// The hosting pipeline can invoke this optimization more than once. Seed the
+// symbol map from a prior pass so a second invocation cannot replace a valid
+// sprite with an empty <svg> after the page symbols have already been moved.
+await loadExistingSprite();
 await walk(root);
 const assetDirectory = join(root, '_astro');
 for (const entry of await readdir(assetDirectory, { withFileTypes: true })) {
@@ -81,7 +98,7 @@ for (const entry of await readdir(assetDirectory, { withFileTypes: true })) {
   const asset = await readFile(path, 'utf8');
   await writeFile(path, shortenAstroScopes(asset), 'utf8');
 }
-await writeFile(join(root, 'icons.svg'), `<svg xmlns="http://www.w3.org/2000/svg">${[...symbols.values()].join('')}</svg>`, 'utf8');
+await writeFile(spritePath, `<svg xmlns="http://www.w3.org/2000/svg">${[...symbols.values()].join('')}</svg>`, 'utf8');
 
 if (failures.length) {
   throw new Error(`AEO rendered-page validation failed:\n${failures.join('\n')}`);
