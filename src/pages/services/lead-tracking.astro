@@ -15,7 +15,9 @@ import { Icon } from "astro-icon/components";
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
+import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 import ServiceSchema from "@components/ServiceSchema.astro";
+import MarketingFramework from "@components/MarketingFramework.astro";
 import AnswerBlock from "@components/AnswerBlock.astro";
 
 // Optimize the landing image
@@ -205,7 +207,14 @@ preloadedImage={optimizedImage} >
         </div>
         <div class="cs-bubbles" aria-hidden="true"></div>
     </section>
+    <MarketingFramework
+      serviceName="Lead Tracking & Analytics"
+      industryName="restoration"
+      path="/services/lead-tracking/"
+      includeFaq={false}
+    />
     <FAQ />  
+    <CaseStudyTeaser compact />
     <CTA />
     <Articles />
     <Newsletter />

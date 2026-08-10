@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-06T00:00:00.000Z",
+  "title": "Design System: Remediation & Restoration Marketing",
+  "extensions": {
+    "shadows": [
+      { "name": "quiet-lift", "value": "0 0.35rem 1.2rem rgba(8,22,50,.10)", "purpose": "Resting cards and forms." },
+      { "name": "active-lift", "value": "0 1rem 2rem rgba(8,22,50,.18)", "purpose": "Hovered cards and conversion surfaces." }
+    ],
+    "motion": [
+      { "name": "standard-ease", "value": "cubic-bezier(.2,.8,.2,1)", "purpose": "Short hover and focus transitions." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "767px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Rectangular assessment and conversion action.",
+      "html": "<button class=\"ds-btn-primary\">REQUEST AN ASSESSMENT</button>",
+      "css": ".ds-btn-primary{background:#0b4aa2;color:#fbfcf8;border:0;border-radius:.35rem;padding:1.15rem 1.5rem;font:700 .72rem/1.2 Poppins,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;transition:transform .2s,background .2s,box-shadow .2s}.ds-btn-primary:hover{background:#23c6d5;color:#071a42;transform:translateY(-2px);box-shadow:0 1rem 2rem rgba(8,22,50,.18)}.ds-btn-primary:focus-visible{outline:3px solid #efb43f;outline-offset:3px}"
+    },
+    {
+      "name": "Proof Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Framed evidence surface for metrics and service narratives.",
+      "html": "<article class=\"ds-proof-card\"><span>REPORTED OUTCOME</span><strong>62 → 124</strong><p>Reported organic sessions</p></article>",
+      "css": ".ds-proof-card{background:#fbfcf8;color:#42516a;border:1px solid rgba(8,22,50,.16);border-radius:.65rem;padding:1.5rem;box-shadow:0 .35rem 1.2rem rgba(8,22,50,.10)}.ds-proof-card span{color:#0b4aa2;font:700 .72rem/1.2 Poppins,Arial,sans-serif;letter-spacing:.16em}.ds-proof-card strong{display:block;color:#0b4aa2;font:800 2.5rem/1 Poppins,Arial,sans-serif;letter-spacing:-.055em;margin:.75rem 0 .35rem}.ds-proof-card p{margin:0;font:400 1rem/1.5 Poppins,Arial,sans-serif}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Cobalt Tile Hall",
+    "overview": "The site treats restoration marketing like a working signal system: cobalt fields carry the promise, chalk surfaces carry the explanation, and mustard marks show where to act. A fine tile-seam grid gives the pages a repeatable material language without turning the interface into a decorative pattern exercise.",
+    "keyCharacteristics": ["Cobalt-first hero fields", "Chalk-white reading surfaces", "Mustard as a scarce directional signal", "Whole-tile proof framing"],
+    "rules": [
+      { "name": "The Signal Scarcity Rule", "body": "Mustard is a directional signal, not a fill color for whole sections.", "section": "colors" },
+      { "name": "The Big Promise Rule", "body": "Let the first viewport state the value plainly before secondary explanation begins.", "section": "typography" },
+      { "name": "The Structural Lift Rule", "body": "Shadows support hierarchy; they do not turn every component into a floating pill.", "section": "elevation" }
+    ],
+    "dos": ["Do use dark cobalt to introduce a promise, mechanism, or proof moment.", "Do keep actions rectangular, specific, and easy to find."],
+    "donts": ["Don't turn every surface into a card or every action into a pill.", "Don't let the tile grid overpower copy, evidence, or form completion."]
+  }
+}

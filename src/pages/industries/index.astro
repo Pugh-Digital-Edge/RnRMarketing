@@ -14,6 +14,7 @@ import landingImage from "@assets/images/landing/nantucket.jpg"
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
+import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 const optimizedImage = await getOptimizedImage(landingImage)
 
 // Calculate the midpoint for splitting the industries into two columns
@@ -80,6 +81,7 @@ const secondHalf = industries.slice(midPoint);
         class="cs-floater">
     </div>
   </section>
+  <CaseStudyTeaser compact />
   <FAQ />  
   <CTA />
   <Articles />

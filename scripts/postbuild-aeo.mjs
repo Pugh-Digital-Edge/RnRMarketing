@@ -62,6 +62,17 @@ function textContent(html) {
     .trim();
 }
 
+function attributeValue(tag, name) {
+  const match = tag.match(new RegExp(`\\b${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+))`, 'i'));
+  return match?.[1] ?? match?.[2] ?? match?.[3] ?? null;
+}
+
+function countLinks(html, predicate) {
+  return (html.match(/<link\b[^>]*>/gi) || [])
+    .filter((tag) => predicate(tag, attributeValue))
+    .length;
+}
+
 async function processPage(path) {
   let html = await readFile(path, 'utf8');
   html = html.replace(/<symbol\s+id="([^"]+)"([^>]*)>([\s\S]*?)<\/symbol>\s*<use\s+href="#\1"\s*><\/use>/g, (match, id, attributes, body) => {
@@ -71,14 +82,34 @@ async function processPage(path) {
   html = html.replace(/<!--(?!\[if)[\s\S]*?-->/g, '');
   html = shortenAstroScopes(html);
   await writeFile(path, html, 'utf8');
+  const isAdminPage = path.includes(`${join('admin', 'index.html')}`);
   const h1Count = (html.match(/<h1\b/gi) || []).length;
-  if (!path.includes(`${join('admin', 'index.html')}`) && h1Count !== 1) {
+  if (!isAdminPage && h1Count !== 1) {
     failures.push(`${path}: expected exactly one H1, found ${h1Count}`);
   }
 
-  const canonicalCount = (html.match(/<link\b[^>]*rel=["']canonical["']/gi) || []).length;
-  if (!path.includes(`${join('admin', 'index.html')}`) && canonicalCount !== 1) {
+  const canonicalCount = countLinks(html, (tag, read) => read(tag, 'rel')?.split(/\s+/).includes('canonical'));
+  if (!isAdminPage && canonicalCount !== 1) {
     failures.push(`${path}: expected exactly one canonical, found ${canonicalCount}`);
+  }
+
+  if (!isAdminPage) {
+    const markdownAlternateCount = countLinks(html, (tag, read) => {
+      const rel = read(tag, 'rel')?.split(/\s+/) || [];
+      return rel.includes('alternate') && read(tag, 'type')?.toLowerCase() === 'text/markdown';
+    });
+    if (markdownAlternateCount !== 1) {
+      failures.push(`${path}: expected exactly one Markdown alternate link, found ${markdownAlternateCount}`);
+    }
+
+    const llmsLinkCount = countLinks(html, (tag, read) => read(tag, 'href') === '/llms.txt');
+    if (llmsLinkCount !== 1) {
+      failures.push(`${path}: expected exactly one /llms.txt link, found ${llmsLinkCount}`);
+    }
+
+    if (!(html.match(/<script\b[^>]*type=["']?application\/ld\+json\b/gi) || []).length) {
+      failures.push(`${path}: expected at least one JSON-LD script`);
+    }
   }
 
   const title = decode(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || 'Remediation & Restoration Marketing').trim();
@@ -91,6 +122,13 @@ async function processPage(path) {
 // sprite with an empty <svg> after the page symbols have already been moved.
 await loadExistingSprite();
 await walk(root);
+for (const filename of ['robots.txt', 'llms.txt', 'llms-full.txt']) {
+  try {
+    await readFile(join(root, filename));
+  } catch {
+    failures.push(`${filename}: expected the AI access file in the production build`);
+  }
+}
 const assetDirectory = join(root, '_astro');
 for (const entry of await readdir(assetDirectory, { withFileTypes: true })) {
   if (!entry.isFile() || (!entry.name.endsWith('.css') && !entry.name.endsWith('.js'))) continue;

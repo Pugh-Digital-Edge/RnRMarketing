@@ -1,0 +1,49 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import { getOptimizedImage } from "@libs/utils";
+import heroImage from "@assets/images/landing/blue-abstract.jpeg";
+
+const preloadedImage = await getOptimizedImage(heroImage);
+---
+
+<BaseLayout
+  title="Assessment Request Received"
+  description="Your Lead-Flow Assessment request has been received."
+  preloadedImage={preloadedImage}
+>
+  <main class="thank-you">
+    <div class="thank-you__content">
+      <p class="cs-topper">REQUEST RECEIVED</p>
+      <h1>Thanks—your Lead-Flow Assessment request is in.</h1>
+      <p>
+        We’ll review the details you shared and contact you with the next step. In the meantime, you can explore how our restoration marketing services work.
+      </p>
+      <a href="/services/" class="cs-button-solid">Explore Restoration Marketing Services</a>
+    </div>
+  </main>
+</BaseLayout>
+
+<style lang="less">
+  .thank-you {
+    min-height: 65vh;
+    padding: clamp(9rem, 16vw, 13rem) 1rem var(--sectionPadding);
+    background: var(--surfaceMuted);
+  }
+
+  .thank-you__content {
+    width: 100%;
+    max-width: 44rem;
+    margin: auto;
+    text-align: center;
+  }
+
+  .thank-you h1 {
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1.08;
+    margin-bottom: 1rem;
+  }
+
+  .thank-you p:not(.cs-topper) {
+    margin-bottom: 2rem;
+  }
+</style>

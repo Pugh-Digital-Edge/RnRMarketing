@@ -16,8 +16,10 @@ import { Icon } from 'astro-icon/components';
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
+import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 import AnswerBlock from "@components/AnswerBlock.astro";
 import ServiceSchema from "@components/ServiceSchema.astro";
+import MarketingFramework from "@components/MarketingFramework.astro";
 
 
 // Optimize the landing image
@@ -216,7 +218,14 @@ const optimizedImage = await getOptimizedImage(landingImage);
     </div>
     <div class="cs-bubbles" aria-hidden="true"></div>
   </section>
+    <MarketingFramework
+      serviceName="Restoration Web Design"
+      industryName="restoration"
+      path="/services/web-design/"
+      includeFaq={false}
+    />
     <FAQ />  
+    <CaseStudyTeaser compact />
     <CTA />
     <Articles />
     <Newsletter />

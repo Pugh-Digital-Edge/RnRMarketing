@@ -5,13 +5,15 @@ import Footer from "@components/Footer.astro";
 import CustomChat from "@components/CustomChat.astro";
 import "@styles/root.less";
 import "@styles/dark.less";
+import "@styles/refresh.less";
 
-const { description, title, preloadedImage, dateModified } = Astro.props;
+const { description, title, preloadedImage, dateModified, openGraphImage = '/assets/images/logo-small.jpg' } = Astro.props;
 // Keep one editorial freshness date for pages without frontmatter. Page-specific
-// resource dates override this through the dateModified prop.
-const effectiveDateModified = dateModified ?? '2026-07-16';
+// resource dates override this through the dateModified prop. This date reflects
+// the site-wide AEO refresh completed on 2026-08-10.
+const effectiveDateModified = dateModified ?? '2026-08-10';
 const canonicalUrl = `https://${client.domain}${Astro.url.pathname}`;
-const markdownUrl = `${Astro.url.pathname}index.md`;
+const markdownUrl = `${canonicalUrl}index.md`;
 const fullBrandSuffix = ` | ${client.name}`;
 const shortBrandSuffix = ' | R&R Marketing';
 const titleAlreadyNamesBrand = title.includes(client.name);
@@ -32,6 +34,10 @@ const expandedDescription = description.length < 120
 const metadataDescription = expandedDescription.length > 160
     ? `${expandedDescription.slice(0, 159).replace(/\s+\S*$/, '').replace(/[,:;-]+$/, '').trim()}.`
     : expandedDescription;
+const routeKey = Astro.url.pathname === '/' ? 'home' : Astro.url.pathname.split('/').filter(Boolean)[0] ?? 'home';
+const absoluteOpenGraphImage = openGraphImage.startsWith('http')
+    ? openGraphImage
+    : `https://${client.domain}${openGraphImage}`;
 
 ---
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
@@ -163,7 +169,7 @@ const metadataDescription = expandedDescription.length > 160
                     "Commercial Restoration Marketing",
                     "Sewage Cleanup Marketing",
                     "Biohazard Cleanup Restoration Marketing",
-                    "Roof Damage Restoration Restoration Marketing"
+                    "Roof Damage Restoration Marketing"
                     ],
                     "foundingDate": "2024",
                     "founder": {
@@ -220,8 +226,8 @@ const metadataDescription = expandedDescription.length > 160
             <meta property="og:description" content={metadataDescription} />
             <meta property="og:type" content="website" />
             <meta property="og:url" content={`https://${client.domain}${Astro.url.pathname}`} />
-            <meta property="og:image" content="/assets/images/logo-small.jpg" />
-            <meta property="og:image:secure_url" content="/assets/images/logo-small.jpg" />
+            <meta property="og:image" content={absoluteOpenGraphImage} />
+            <meta property="og:image:secure_url" content={absoluteOpenGraphImage} />
             <link rel=sitemap href=/sitemap-index.xml>
 
             <!--Favicons-->
@@ -231,7 +237,7 @@ const metadataDescription = expandedDescription.length > 160
             <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
             <link rel="manifest" href="/assets/favicons/site.webmanifest" />
             <meta name="msapplication-TileColor" content="#da532c">
-            <meta name="theme-color" content="#ffffff">
+            <meta name="theme-color" content="#071a42">
          
             <!--For home page, use service keywords for the title, including location for SEO.
             Other pages should just include the page name.
@@ -276,6 +282,52 @@ const metadataDescription = expandedDescription.length > 160
                 gtag('config', 'G-4K4H62DJ77');
             </script>
             <script is:inline>
+                document.addEventListener('DOMContentLoaded', () => {
+                    if (typeof window.gtag !== 'function') {
+                        return;
+                    }
+
+                    const caseStudyPath = window.location.pathname.startsWith('/case-studies');
+                    const caseStudySlug = window.location.pathname.split('/').filter(Boolean)[1] || 'index';
+                    const send = (eventName, params = {}) => window.gtag('event', eventName, {
+                        event_category: 'case_study_engagement',
+                        case_study_slug: caseStudySlug,
+                        page_location: window.location.href,
+                        ...params,
+                    });
+
+                    if (caseStudyPath) {
+                        document.querySelectorAll('a[href="/schedule/"]').forEach((link) => link.addEventListener('click', () => send('case_study_cta_click')));
+                        document.querySelectorAll('a[href^="/services/"]').forEach((link) => link.addEventListener('click', () => send('case_study_service_click', { link_url: link.href })));
+
+                        const seen = new Set();
+                        const reportScrollDepth = () => {
+                            const denominator = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+                            const depth = Math.round((window.scrollY / denominator) * 100);
+                            [25, 50, 75, 90].forEach((threshold) => {
+                                if (depth >= threshold && !seen.has(threshold)) {
+                                    seen.add(threshold);
+                                    send('case_study_scroll_depth', { percent_scrolled: threshold });
+                                }
+                            });
+                        };
+                        window.addEventListener('scroll', reportScrollDepth, { passive: true });
+                    }
+
+                    const leadForm = document.querySelector('#lead-form');
+                    if (leadForm) {
+                        let formStarted = false;
+                        leadForm.addEventListener('focusin', () => {
+                            if (!formStarted) {
+                                formStarted = true;
+                                window.gtag('event', 'form_start', { event_category: 'engagement', form_name: 'Schedule Lead Form', page_location: window.location.href });
+                            }
+                        });
+                        leadForm.addEventListener('submit', () => window.gtag('event', 'form_submit', { event_category: 'engagement', form_name: 'Schedule Lead Form', page_location: window.location.href }));
+                    }
+                });
+            </script>
+            <script is:inline>
                 document.addEventListener('click', (event) => {
                     if (!(event.target instanceof Element)) {
                         return;
@@ -299,7 +351,15 @@ const metadataDescription = expandedDescription.length > 160
             </script>
         
         </head>
-        <body>
+        <body class={`route-${routeKey}`}>
+            <!-- impeccable:contract 34da82de
+            THESIS: Restoration marketing should feel like a working signal system, not a brochure; this build refuses the generic blue-agency card wall.
+            OWN-WORLD: Cobalt glaze, chalk-white surfaces, ink navy, mustard signal marks, and straight tile seams framing real proof.
+            STORY: A restoration owner moves from visible constraint to connected solution to a specific assessment.
+            FIRST VIEWPORT: An oversized promise on a dark cobalt field, proof or mechanism beside it, and the assessment action in the first read.
+            FORM: Cobalt Tile Hall, candidate 3; seed key 34da82de.
+            FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+            -->
             <!--Screen reader skip main nav-->
             <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
     

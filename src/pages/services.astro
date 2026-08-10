@@ -13,6 +13,8 @@ import landingImage from "@assets/images/landing/ocean-water.jpg";
 import FAQ from "@components/FAQ.astro";
 import CTA from "@components/CTA.astro";
 import ServicesDisplay from "@components/ServicesDisplay.astro";
+import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
+import MarketingFramework from "@components/MarketingFramework.astro";
 
 // Optimize the landing image
 const optimizedImage = await getOptimizedImage(landingImage);
@@ -37,23 +39,31 @@ preloadedImage={optimizedImage}
         <div class="cs-container">
             <div class="cs-content">
                 <div class="cs-flex">
-                    <span class="cs-topper">OUR APPROACH</span>
                     <h2 class="cs-title">We Package Services That Drive Real Results for Restoration Companies</h2>
                 </div>
                 <div class="cs-flex">
                     <h3 class="cs-h3">
-                        Stop wasting money on scattered marketing efforts. Our proven combination of services delivers qualified restoration leads.
+                        A connected marketing system built to produce and measure qualified restoration leads.
                     </h3>
                     <p class="cs-text">
-                        Through years of SEO expertise and deep restoration industry knowledge, we've identified exactly what works to generate emergency calls and commercial contracts. Our core service package combines 24/7 PPC for immediate emergency leads, strategic SEO for long-term growth, and high-converting websites that turn visitors into customers. We enhance these foundations with targeted reputation management, social media presence, content marketing, and detailed analytics tracking to create a complete marketing ecosystem. Each component works together to attract property owners, build trust with insurance partners, and grow your restoration business. And since we only work with one restoration company per service area, your success is our sole focus in your market.
+                        Our core system combines paid search for immediate demand, SEO for lasting visibility, conversion-focused websites, reputation management, and lead tracking. Each part supports the next: attract property owners, earn trust, capture the inquiry, and measure which marketing created it. We work with one restoration company per territory, subject to availability.
                     </p>
-                    <a href="/schedule/" class="cs-button-solid">Schedule Your Strategy Call</a>
+                    <a href="/schedule/" class="cs-button-solid">Request Your Free Lead-Flow Assessment</a>
                 </div>
             </div>  
         </div>
     </section>
 
-    <ServicesDisplay />
+  <ServicesDisplay />
+
+  <MarketingFramework
+    serviceName="restoration marketing services"
+    industryName="restoration"
+    path="/services/"
+    includeFaq={false}
+  />
+
+  <CaseStudyTeaser compact />
 
     <FAQ />
 

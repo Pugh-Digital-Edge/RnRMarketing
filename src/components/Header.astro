@@ -15,7 +15,7 @@ import { Image } from 'astro:assets';
                   <Icon name="phone-grey" width="16" height="16" aria-hidden="true"/>
                   Call us: +1 (717) 420-1766
               </a>
-              <a href="/schedule/" class="cs-top-link" aria-label="Schedule your lead flow acceleration session">
+              <a href="/schedule/" class="cs-top-link" aria-label="Request your free Lead-Flow Assessment">
                   <Icon name="clock-grey" width="20" height="20" aria-hidden="true"/>
                   Opening hours: Mon - Friday: 9:00am To 10:00pm EST
               </a>
@@ -25,7 +25,7 @@ import { Image } from 'astro:assets';
                   <Icon name="face-grey" class="cs-social-icon"  width="12" height="12" aria-hidden="true"/>
               </a>
               <a href="https://www.youtube.com/@RandR_Marketing" class="cs-social-link" aria-label="Visit our YouTube">
-                <Icon name="youtube-grey" class="cs-social-icon" width="12" height="12" aria-hidden="true"/>
+                <Icon name="youtube-brand" class="cs-social-icon" width="12" height="12" aria-hidden="true"/>
               </a>
               <a href="https://www.instagram.com/randr.marketing/" class="cs-social-link" aria-label="Visit our Instagram">
                 <Icon name="new-instagram" class="cs-social-icon" width="12" height="12" aria-hidden="true"/>
@@ -106,11 +106,16 @@ import { Image } from 'astro:assets';
                         </li>
                       </ul>
                   </li>
-                  <li class="cs-li">
+                <li class="cs-li">
                     <a href="/industries/" class:list={["cs-li-link", { "cs-active": Astro.url.pathname.includes("/industries") }]}>
                         Industries
                     </a>
                 </li>
+                  <li class="cs-li">
+                      <a href="/case-studies/" class:list={["cs-li-link", { "cs-active": Astro.url.pathname.includes("/case-studies") }]}>
+                          Case Studies
+                      </a>
+                  </li>
                   <li class="cs-li">
                       <a href="/resources/" class:list={["cs-li-link", { "cs-active": Astro.url.pathname.includes("/resources") }]}>
                           Resources
@@ -124,7 +129,7 @@ import { Image } from 'astro:assets';
               </ul>
           </div>
       </nav>
-      <a href="/schedule/" class="cs-button-solid cs-nav-button">Contact Us</a>
+      <a href="/schedule/" class="cs-button-solid cs-nav-button" aria-label="Request your free Lead-Flow Assessment">Free Assessment</a>
   </div>
 </header>
 

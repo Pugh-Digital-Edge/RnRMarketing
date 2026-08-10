@@ -1,0 +1,157 @@
+---
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+import CaseStudyChart from '@components/CaseStudyChart.astro';
+import { caseStudies } from '@data/caseStudies.js';
+import landingImage from '@assets/images/landing/ocean-water.jpg';
+
+const { study } = Astro.props;
+const currentIndex = caseStudies.findIndex((item) => item.slug === study.slug);
+const related = caseStudies.filter((item) => item.slug !== study.slug).slice(0, 2);
+const absoluteUrl = `https://remediationrestorationmarketing.com/case-studies/${study.slug}/`;
+---
+
+<BaseLayout title={`${study.label} case study`} description={`${study.headline}. See the reported visibility, lead, and marketing outcomes for an anonymous ${study.label}.`} preloadedImage={landingImage} openGraphImage="/assets/images/case-study-og.svg" dateModified="2026-08-06">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${absoluteUrl}#case-study`,
+    url: absoluteUrl,
+    headline: study.headline,
+    description: study.summary,
+    datePublished: '2026-08-06',
+    dateModified: '2026-08-06',
+    author: { '@type': 'Organization', name: 'Remediation & Restoration Marketing' },
+    publisher: { '@type': 'Organization', name: 'Remediation & Restoration Marketing' },
+    about: { '@type': 'Thing', name: study.label },
+  })} />
+
+  <article class="case-study-page">
+    <section class="case-study-hero">
+      <div class="case-container case-hero-grid">
+        <div class="case-hero-copy">
+          <a class="case-back-link" href="/case-studies/">← All case studies</a>
+          <p class="case-meta">{study.label} · {study.window}</p>
+          <h1>{study.headline}</h1>
+          <p class="case-hero-summary">{study.summary}</p>
+          <div class="case-hero-actions"><a class="cs-button-solid" href="/schedule/">Request a Marketing Assessment</a><a class="case-text-link" href="#results">See the reported results ↓</a></div>
+        </div>
+        <div class="hero-proof-board" aria-label="Reported case study metrics">
+          <div class="proof-board-top"><span>Evidence board</span><span>{study.window}</span></div>
+          {study.metrics.map((metric) => (
+            <div class="hero-metric"><strong>{metric.value}</strong><span>{metric.label}</span><small>{metric.detail}</small></div>
+          ))}
+          <p class="proof-board-note">Anonymous by default. Figures are reported, not a promise of future performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="case-local-nav" aria-label="Case study sections"><div class="case-container"><a href="#starting-point">Starting point</a><a href="#strategy">Strategy</a><a href="#results">Results</a><a href="#impact">Business impact</a></div></nav>
+
+    <section id="starting-point" class="case-section case-container case-two-column">
+      <div><p class="case-section-label">The starting point</p><h2>Before the growth, there was a visibility gap to close.</h2></div>
+      <ul class="case-check-list">{study.startingPoint.map((item) => <li>{item}</li>)}</ul>
+    </section>
+
+    <section id="strategy" class="case-section strategy-section">
+      <div class="case-container"><div class="strategy-heading"><div><p class="case-section-label">The strategy</p><h2>Connected work across the demand path.</h2></div><p>Each move supported the next: get found, earn the click, create a useful next step, and learn from the lead quality that followed.</p></div><div class="strategy-grid">{study.strategy.map((item, index) => <article class="strategy-item"><span class="strategy-index">{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.text}</p><div class="strategy-links">{item.links.map((href) => <a href={href}>{href.includes('seo') ? 'SEO' : href.includes('ppc') ? 'PPC & LSA' : href.includes('web-design') ? 'Web design' : href.includes('lead-tracking') ? 'Lead tracking' : href.includes('reputation') ? 'Reputation' : 'Industry guide'} ↗</a>)}</div></article>)}</div></div>
+    </section>
+
+    <section id="results" class="case-section results-section"><div class="case-container"><div class="results-heading"><div><p class="case-section-label">Reported results</p><h2>What changed across the reporting window.</h2></div><p>Charts are rendered as HTML with a table alternative so the evidence stays readable, indexable, and accessible without an image.</p></div><div class="chart-grid">{study.charts.map((chart) => <CaseStudyChart chart={chart} />)}</div></div></section>
+
+    <section id="impact" class="case-section impact-section"><div class="case-container impact-grid"><div><p class="case-section-label">Business impact</p><h2>Visibility is only useful when it creates a better next conversation.</h2></div><div><p>{study.impact}</p><p class="impact-why"><strong>Why it worked:</strong> {study.why}</p></div></div></section>
+
+    <section class="case-section case-container related-section"><div class="methodology-note"><strong>Methodology and verification</strong><p>Figures come from monthly client reports and connected platform reporting. Results vary by market, budget, competition, and client responsiveness. {study.verification}</p></div><div class="related-heading"><p class="case-section-label">Keep exploring</p><h2>More reported stories</h2></div><div class="related-grid">{related.map((item) => <a href={`/case-studies/${item.slug}/`}><span>{item.label}</span><strong>{item.headline}</strong><small>Read the case study ↗</small></a>)}</div></section>
+
+    <section class="case-cta"><div class="case-container"><div><p class="case-section-label">Your market is different. Your assessment should be specific.</p><h2>Find the next constraint in your local visibility.</h2></div><a class="cs-button-solid" href="/schedule/">Request a Marketing Assessment</a></div></section>
+  </article>
+</BaseLayout>
+
+<style lang="less">
+  .case-study-page { background: var(--surface); }
+  .case-container { width: min(100% - 2rem, 80rem); margin-inline: auto; }
+  .case-study-hero { padding: clamp(8rem, 15vw, 12rem) 0 clamp(4rem, 8vw, 7rem); color: #fff; background: radial-gradient(circle at 80% 0%, rgba(59,142,222,.32), transparent 32rem), #071a32; overflow: hidden; }
+  .case-hero-grid { display: grid; gap: clamp(2.5rem, 7vw, 7rem); align-items: center; }
+  .case-hero-copy { max-width: 48rem; }
+  .case-back-link, .case-text-link { color: #a9d9ff; font-weight: 700; text-decoration: none; }
+  .case-back-link { display: inline-block; margin-bottom: 2rem; font-size: .9rem; }
+  .case-meta { margin-bottom: 1rem; color: #86c8ff; font-size: .8rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .case-hero-copy h1 { max-width: 12ch; margin: 0 0 1.25rem; color: #fff; font-size: clamp(2.75rem, 6vw, 5.5rem); line-height: .98; letter-spacing: -.055em; }
+  .case-hero-summary { max-width: 41rem; margin: 0; color: rgba(255,255,255,.78); font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.6; }
+  .case-hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; }
+  .case-hero-actions .cs-button-solid { background: #86c8ff !important; color: #071a32 !important; box-shadow: none; }
+  .hero-proof-board { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid rgba(255,255,255,.22); border-radius: 1.5rem; background: rgba(255,255,255,.07); box-shadow: 0 1.5rem 4rem rgba(0,0,0,.2); }
+  .proof-board-top { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,.18); color: #86c8ff; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .hero-metric { display: grid; gap: .15rem; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+  .hero-metric strong { color: #fff; font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1; letter-spacing: -.05em; }
+  .hero-metric span { color: #fff; font-weight: 700; }
+  .hero-metric small, .proof-board-note { color: rgba(255,255,255,.62); line-height: 1.45; }
+  .proof-board-note { margin-top: 1rem; font-size: .8rem; }
+  .case-local-nav { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--borderColor); background: rgba(255,255,255,.94); backdrop-filter: blur(12px); }
+  .case-local-nav .case-container { display: flex; overflow-x: auto; gap: clamp(1rem, 4vw, 3rem); }
+  .case-local-nav a { padding: 1rem 0; color: var(--secondary); font-size: .875rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+  .case-local-nav a:hover { color: var(--primary); }
+  .case-section { padding: clamp(4rem, 8vw, 7rem) 0; }
+  .case-section-label { margin: 0 0 .75rem; color: var(--primary); font-size: .75rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+  .case-section h2 { max-width: 17ch; margin: 0; font-size: clamp(2rem, 4vw, 3.75rem); line-height: 1.05; letter-spacing: -.045em; }
+  .case-two-column { display: grid; gap: 2.5rem; }
+  .case-check-list { display: grid; gap: 1rem; list-style: none; }
+  .case-check-list li { position: relative; padding: 1.25rem 1.25rem 1.25rem 3.25rem; border: 1px solid var(--borderColor); border-radius: 1rem; color: var(--headerColor); font-weight: 700; box-shadow: var(--shadowS); }
+  .case-check-list li::before { content: '✓'; position: absolute; top: 1.2rem; left: 1.25rem; color: var(--primary); font-size: 1.1rem; font-weight: 900; }
+  .strategy-section, .results-section { background: var(--surfaceMuted); }
+  .strategy-heading, .results-heading { display: grid; gap: 1.25rem; margin-bottom: 2.5rem; }
+  .strategy-heading > p, .results-heading > p { max-width: 35rem; margin: 0; color: var(--bodyTextColor); }
+  .strategy-grid { display: grid; gap: 1px; overflow: hidden; border: 1px solid var(--borderColor); border-radius: 1.25rem; background: var(--borderColor); }
+  .strategy-item { padding: clamp(1.25rem, 3vw, 2rem); background: var(--surface); }
+  .strategy-index { display: block; margin-bottom: 2.5rem; color: var(--primary); font-size: .8rem; font-weight: 800; }
+  .strategy-item h3 { margin-bottom: .6rem; font-size: 1.3rem; }
+  .strategy-item p { margin-bottom: 1.25rem; color: var(--bodyTextColor); }
+  .strategy-links { display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
+  .strategy-links a { color: var(--primary); font-size: .8rem; font-weight: 800; text-decoration: none; }
+  .chart-grid { display: grid; gap: 1rem; }
+  .impact-section { color: #fff; background: var(--primaryDark); }
+  .impact-section h2, .impact-section p { color: #fff; }
+  .impact-grid { display: grid; gap: 2rem; }
+  .impact-grid > div:last-child { max-width: 42rem; }
+  .impact-grid .case-section-label { color: #86c8ff; }
+  .impact-grid p { opacity: .84; }
+  .impact-grid .impact-why { padding-top: 1.25rem; margin-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.24); }
+  .impact-grid strong { color: #fff; }
+  .methodology-note { max-width: 56rem; padding: 1.25rem 1.5rem; margin-bottom: clamp(3rem, 7vw, 5rem); border: 1px solid var(--borderColor); border-radius: 1rem; background: var(--surfaceMuted); }
+  .methodology-note strong { display: block; margin-bottom: .4rem; color: var(--headerColor); }
+  .methodology-note p { margin: 0; color: var(--bodyTextColor); font-size: .9rem; }
+  .related-heading { margin-bottom: 1.5rem; }
+  .related-heading h2 { font-size: clamp(1.8rem, 3vw, 2.75rem); }
+  .related-grid { display: grid; gap: 1rem; }
+  .related-grid a { display: grid; gap: .4rem; padding: 1.5rem; border: 1px solid var(--borderColor); border-radius: 1rem; color: var(--headerColor); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+  .related-grid a:hover { transform: translateY(-3px); box-shadow: var(--shadowM); }
+  .related-grid span, .related-grid small { color: var(--primary); font-size: .8rem; font-weight: 800; }
+  .related-grid strong { font-size: 1.2rem; }
+  .case-cta { padding: clamp(3rem, 7vw, 5rem) 0; color: #fff; background: #071a32; }
+  .case-cta .case-container { display: grid; gap: 1.75rem; align-items: center; }
+  .case-cta h2 { max-width: 19ch; color: #fff; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.05; }
+  .case-cta .case-section-label { color: #86c8ff; }
+  .case-cta .cs-button-solid { justify-self: start; background: #86c8ff !important; color: #071a32 !important; box-shadow: none; }
+  @media (max-width: 47.99rem) {
+    .case-hero-copy, .case-hero-copy h1, .case-hero-summary, .case-meta { text-align: center; }
+    .case-hero-copy h1, .case-hero-summary { margin-inline: auto; }
+    .case-hero-actions { justify-content: center; }
+    .hero-proof-board { text-align: center; }
+    .proof-board-top { justify-content: center; flex-wrap: wrap; }
+    .case-local-nav .case-container { justify-content: center; }
+    .case-section-label, .case-section h2 { text-align: center; }
+    .case-section h2 { margin-inline: auto; }
+    .case-check-list li { padding-inline: 1.25rem; text-align: center; }
+    .case-check-list li::before { position: static; display: block; margin-bottom: .45rem; }
+    .strategy-heading > p, .results-heading > p { margin-inline: auto; text-align: center; }
+    .strategy-item { text-align: center; }
+    .strategy-links { justify-content: center; }
+    .impact-grid > div:last-child { margin-inline: auto; text-align: center; }
+    .methodology-note { margin-inline: auto; text-align: center; }
+    .related-heading h2, .related-grid a { text-align: center; }
+    .case-cta .case-container { text-align: center; }
+    .case-cta h2 { margin-inline: auto; }
+    .case-cta .cs-button-solid { justify-self: center; }
+  }
+  @media (min-width: 48rem) { .case-hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(20rem, .9fr); } .case-two-column, .impact-grid { grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 8vw, 8rem); } .strategy-heading, .results-heading { grid-template-columns: .9fr 1.1fr; align-items: end; } .strategy-grid { grid-template-columns: repeat(3, 1fr); } .chart-grid { grid-template-columns: repeat(2, 1fr); } .related-grid { grid-template-columns: repeat(2, 1fr); } .case-cta .case-container { grid-template-columns: 1fr auto; } }
+  @media (min-width: 64rem) { .chart-grid:has(.evidence-chart:nth-child(3)) { grid-template-columns: repeat(3, 1fr); } .case-cta .cs-button-solid { justify-self: end; } }
+</style>

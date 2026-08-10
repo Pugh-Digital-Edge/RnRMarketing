@@ -7,6 +7,7 @@ import Landing from "@components/Landing.astro";
 import CTA from "@components/CTA.astro";
 import AnswerBlock from "@components/AnswerBlock.astro";
 import MarketingFramework from "@components/MarketingFramework.astro";
+import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 import ServiceSchema from "@components/ServiceSchema.astro";
 import { Image } from 'astro:assets';
 
@@ -82,7 +83,7 @@ const pagePath = `/${industry.data.Name}/${service.data.Name}/`;
             <p class="cs-text">
                 <div set:html={service.data.Description1}></div>
             </p>           
-            <a href="/schedule/" class="cs-button-solid mt-3">Schedule Your Strategy Call</a>
+            <a href="/schedule/" class="cs-button-solid mt-3">Request Your Free Lead-Flow Assessment</a>
         </div>
     </div>
     <div class="cs-bubbles" aria-hidden="true"></div>
@@ -126,7 +127,7 @@ const pagePath = `/${industry.data.Name}/${service.data.Name}/`;
                 </li>
             </ul>               
             
-            <a href="/schedule/" class="cs-button-solid">Schedule a {service.data.FormalName} strategy session</a>
+            <a href="/schedule/" class="cs-button-solid">Request Your Free Lead-Flow Assessment</a>
         </div>
     </div>
     <div class="cs-bubbles" aria-hidden="true"></div>
@@ -169,7 +170,7 @@ const pagePath = `/${industry.data.Name}/${service.data.Name}/`;
                 </li>
             </ul>
 
-            <a href="/schedule/" class="cs-button-solid">Book Your Strategy Call</a>
+            <a href="/schedule/" class="cs-button-solid">Request Your Free Lead-Flow Assessment</a>
         </div>
     </div>
     <div class="cs-bubbles" aria-hidden="true"></div>
@@ -180,6 +181,8 @@ const pagePath = `/${industry.data.Name}/${service.data.Name}/`;
     industryName={industry.data.FormalName}
     path={pagePath}
 />
+
+<CaseStudyTeaser compact />
 
 <CTA />
 <ServicesDisplay industry={industry}/>

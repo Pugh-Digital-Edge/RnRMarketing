@@ -16,6 +16,8 @@ import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
 import ServiceSchema from "@components/ServiceSchema.astro";
+import MarketingFramework from "@components/MarketingFramework.astro";
+import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 
 // Optimize the landing image
 const optimizedImage = await getOptimizedImage(landingImage);
@@ -201,7 +203,14 @@ const optimizedImage = await getOptimizedImage(landingImage);
 </div>
 <div class="cs-bubbles" aria-hidden="true"></div>
 </section>
+    <MarketingFramework
+      serviceName="Social Media Marketing"
+      industryName="restoration"
+      path="/services/social-media-marketing/"
+      includeFaq={false}
+    />
     <FAQ />  
+    <CaseStudyTeaser compact />
     <CTA />
     <Articles />
     <Newsletter />

@@ -3,9 +3,10 @@ interface Props {
   serviceName: string;
   industryName: string;
   path: string;
+  includeFaq?: boolean;
 }
 
-const { serviceName, industryName, path } = Astro.props;
+const { serviceName, industryName, path, includeFaq = true } = Astro.props;
 const pageUrl = `https://remediationrestorationmarketing.com${path}`;
 
 const steps = [
@@ -60,7 +61,7 @@ const faqSchema = {
 ---
 
 <script type="application/ld+json" is:inline set:html={JSON.stringify(howToSchema)} />
-<script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+{includeFaq && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />}
 
 <section class="framework" aria-labelledby="framework-title">
   <div class="framework__container">
@@ -82,7 +83,7 @@ const faqSchema = {
       ))}
     </ol>
 
-    <div class="framework__details">
+    <div class:list={["framework__details", { "framework__details--single": !includeFaq }]}>
       <div>
         <h3>Metrics We Use</h3>
         <dl>
@@ -95,17 +96,19 @@ const faqSchema = {
         </dl>
       </div>
 
-      <div>
-        <h3>Common Questions</h3>
-        <div class="framework__faq">
-          {faqs.map(({ question, answer }) => (
-            <details>
-              <summary>{question}</summary>
-              <p>{answer}</p>
-            </details>
-          ))}
+      {includeFaq && (
+        <div>
+          <h3>Common Questions</h3>
+          <div class="framework__faq">
+            {faqs.map(({ question, answer }) => (
+              <details>
+                <summary>{question}</summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
 
     <p class="framework__sources">
@@ -180,6 +183,8 @@ const faqSchema = {
     dt:first-child { margin-top: 0; }
     dd { margin: (4/16rem) 0 0; line-height: 1.55em; color: var(--bodyTextColor); }
   }
+
+  .framework__details--single { grid-template-columns: 1fr; }
 
   .framework__faq {
     details { border-top: 1px solid var(--borderColor); }

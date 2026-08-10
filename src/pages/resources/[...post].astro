@@ -10,6 +10,7 @@ import "@styles/blog.less";
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "@libs/utils"
 import landingImage from "@assets/images/landing/hawaii.jpg";
+import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 const optimizedImage = await getOptimizedImage(landingImage)
 
 export async function getStaticPaths() {
@@ -176,5 +177,6 @@ const postUrl = `https://remediationrestorationmarketing.com/resources/${post.sl
       </article>
     </div>
     <FeaturedPost />
+    <CaseStudyTeaser compact />
   </div>
 </BaseLayout>

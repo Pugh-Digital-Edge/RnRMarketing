@@ -7,6 +7,7 @@ import Landing from "@components/Landing.astro";
 import {getOptimizedImage} from "@libs/utils";
 import landingImage from "@assets/images/landing/sierra-nevada.jpg";
 import buildingImage from "@assets/images/contact/building.jpeg";
+import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 import { Image } from 'astro:assets';
 
 const optimizedImage = await getOptimizedImage(landingImage);
@@ -14,7 +15,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
 
 <BaseLayout
   title="Contact Our Restoration Marketing Agency"
-  description="Schedule your free strategy call to see if your area is available. We help restoration companies generate more emergency leads through proven digital marketing strategies. One company per service area."
+  description="Request a free Lead-Flow Assessment for your restoration company. We’ll review your territory, visibility, and lead opportunities; one company per territory, subject to availability."
   preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
@@ -40,10 +41,10 @@ const optimizedImage = await getOptimizedImage(landingImage);
               </label>
           </p>
         <div class="cs-content">
-          <span class="cs-topper">Contact Us</span>
-          <h2 class="cs-title m-0">Is Your Area Available?</h2>
+          <span class="cs-topper">CHECK TERRITORY AVAILABILITY</span>
+          <h2 class="cs-title m-0">See Whether We Can Work Together in Your Territory</h2>
           <p class="cs-text">
-              To maintain competitive advantage for our clients, we exclusively partner with one restoration company per service territory. Check your area's availability now and discover how our focused restoration marketing strategies can help you capture more emergency calls and build valuable insurance partnerships.
+              We work with one restoration company per service territory. Share your ZIP code and goals, and we’ll confirm availability and explain the next step.
           </p>
         </div>
         <label>
@@ -95,7 +96,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             id="message"
             placeholder="Write message..."></textarea>
         </label>
-        <button class="cs-button-solid" type="submit">Submit Message</button>
+        <button class="cs-button-solid" type="submit">Request Territory Check</button>
       </form>
       <div class="cs-right-section">
         <!--Email-->
@@ -132,6 +133,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
       </div>
     </div>
   </section>
+  <CaseStudyTeaser compact />
 </BaseLayout>
 
 <style lang="less">

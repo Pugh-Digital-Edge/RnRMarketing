@@ -29,6 +29,7 @@ if (!industry) {
 import {getOptimizedImage} from "@libs/utils"
 import landingImage from "@assets/images/landing/california.jpg"
 import ServicesDisplay from "@components/ServicesDisplay.astro";
+import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 const optimizedImage = await getOptimizedImage(landingImage)
 ---
 
@@ -64,7 +65,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 <h1 class="cs-title">{industry.data.FormalName} Marketing</h1>
                 </div>
                 <div set:html={industry.data.Description}></div>
-                <a href="/contact/" class="cs-button-solid mt-4">Schedule Your Strategy Call</a>
+                <a href="/schedule/" class="cs-button-solid mt-4">Request Your Free Lead-Flow Assessment</a>
             </div>
         </div>
         <div class="cs-bubbles" aria-hidden="true"></div>
@@ -73,6 +74,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <Contact />
 
   <ServicesDisplay industry={industry}/>
+
+  <CaseStudyTeaser compact />
 
   
   <Testimonial />

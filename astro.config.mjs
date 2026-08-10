@@ -22,7 +22,7 @@ export default defineConfig({
       // the shared WebPage schema. Resource pages provide their own date in
       // their structured data when they are updated.
       serialize(item) {
-        item.lastmod = '2026-07-16';
+        item.lastmod = '2026-08-10';
         return item;
       },
     }),

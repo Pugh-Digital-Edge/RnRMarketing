@@ -2,6 +2,7 @@
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { getOptimizedImage } from "@libs/utils";
 import landingImage from "@assets/images/landing/blue-abstract.jpeg";
+import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 
 const optimizedImage = await getOptimizedImage(landingImage);
 
@@ -15,9 +16,9 @@ const proofImages = [
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Leadflow Acceleration Session",
+  name: "Free Lead-Flow Assessment",
   description:
-    "Free market analysis session for restoration contractors looking to generate more qualified restoration leads through focused digital marketing.",
+    "Free assessment for restoration contractors looking to identify lead opportunities through focused digital marketing.",
   url: "https://remediationrestorationmarketing.com/schedule/",
   provider: {
     "@type": "Organization",
@@ -29,21 +30,80 @@ const serviceSchema = {
     audienceType: "Restoration contractors, USA",
   },
 };
+
+const assessmentSteps = [
+  {
+    name: "Review your market opportunity",
+    text: "We look at where restoration demand is strongest in your service area and where competitors are winning.",
+  },
+  {
+    name: "Inspect visibility and lead flow",
+    text: "We review website, local search, and paid advertising gaps that may be holding back emergency lead flow.",
+  },
+  {
+    name: "Leave with prioritized next steps",
+    text: "You leave with practical recommendations for capturing more qualified restoration jobs.",
+  },
+];
+
+const assessmentFaqs = [
+  {
+    question: "What happens after I request a session?",
+    answer: "We review your service area, online visibility, and lead goals, then reach out with the next steps for your free Lead-Flow Assessment.",
+  },
+  {
+    question: "What will you review before the call?",
+    answer: "We look at your website, local search presence, service area, restoration keywords, and visible competitor activity so the session is specific to your market.",
+  },
+  {
+    question: "Is this just a sales pitch?",
+    answer: "No. The session is designed to give you practical observations about where restoration leads may be leaking and which growth moves are worth prioritizing.",
+  },
+  {
+    question: "Who is this best for?",
+    answer: "It is built for restoration contractors who want more water damage, fire damage, mold remediation, storm cleanup, or commercial restoration leads in a defined service area.",
+  },
+  {
+    question: "Do I need to prepare anything?",
+    answer: "Just share accurate contact details, your company name, service area, and the services you want to grow. If there is a specific challenge you want reviewed, include it in the goals field.",
+  },
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://remediationrestorationmarketing.com/schedule/#assessment-process",
+  name: "How to prepare for a restoration marketing assessment",
+  description: "A three-step process for reviewing restoration marketing opportunities and choosing the next practical growth moves.",
+  step: assessmentSteps.map((step) => ({ "@type": "HowToStep", ...step })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://remediationrestorationmarketing.com/schedule/#faq",
+  mainEntity: assessmentFaqs.map(({ question, answer }) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: { "@type": "Answer", text: answer },
+  })),
+};
 ---
 
 <BaseLayout
-  title="Schedule Your Leadflow Acceleration Session"
-  description="Request a free Leadflow Acceleration Session for your restoration company. Share your market, services, and goals so our team can review your lead opportunities."
+  title="Request Your Free Lead-Flow Assessment"
+  description="Request a free Lead-Flow Assessment for your restoration company. Share your territory, services, and goals so we can review your lead opportunities."
   preloadedImage={optimizedImage}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)}></script>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howToSchema)}></script>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)}></script>
 
   <section id="schedule-hero">
     <div class="cs-container">
-      <h1>Schedule Your Leadflow Acceleration Session</h1>
+      <h1>Request Your Free Lead-Flow Assessment</h1>
       <p>
-        Free Leadflow Acceleration Session reveals how restoration contractors can dominate their local market,
-        increase their leads via the internet, and take their business to the next level.
+        We’ll review your service territory, online visibility, and lead opportunities—then show you the next moves worth prioritizing.
       </p>
     </div>
   </section>
@@ -51,9 +111,9 @@ const serviceSchema = {
   <section id="schedule-main">
     <div class="cs-container">
       <div class="cs-media">
-        <h2>Learn How To Generate More Restoration Leads In Your Market</h2>
-        <p class="cs-video-intro">This quick video reveals how you can accelerate your lead flow online.</p>
-        <div class="cs-video" aria-label="Leadflow acceleration session video">
+        <h2>See How Restoration Marketing Can Create More Qualified Calls</h2>
+        <p class="cs-video-intro">This short video explains the approach behind a more measurable lead flow.</p>
+        <div class="cs-video" aria-label="Lead-Flow Assessment video">
           <iframe
             src="https://www.youtube.com/embed/SA49vYXmCM0?si=pjQUB2d5nFgiG6gd"
             title="YouTube video player"
@@ -65,13 +125,13 @@ const serviceSchema = {
         </div>
         <img
           src="/assets/images/schedule/apply-now.png"
-          alt="Schedule your Lead Flow Acceleration Session now"
+          alt="Request your free Lead-Flow Assessment"
           class="cs-brand-card"
           loading="lazy"
         />
       </div>
 
-      <form id="lead-form" name="Schedule Lead Form" method="post" data-netlify="true" netlify-honeypot="bot-field">
+      <form id="lead-form" name="Schedule Lead Form" method="post" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="Schedule Lead Form" />
         <p hidden>
           <label>
@@ -79,10 +139,10 @@ const serviceSchema = {
             <input name="bot-field" />
           </label>
         </p>
-        <span class="cs-topper">Request Your Session</span>
+        <span class="cs-topper">REQUEST YOUR ASSESSMENT</span>
         <h2>Tell Us Where You Want More Jobs</h2>
         <p>
-          We will review your service area, current online presence, and lead goals before reaching out with next steps.
+          We’ll review your service territory, online visibility, and lead goals before contacting you with next steps.
         </p>
         <ul class="cs-form-outcomes" aria-label="Session outcomes">
           <li>Know which services to prioritize</li>
@@ -107,7 +167,7 @@ const serviceSchema = {
           <input required type="text" name="service-area" placeholder="City, state, or ZIP codes" />
         </label>
 
-        <button class="cs-button-solid cs-form-continue" type="button">Continue &rarr;</button>
+        <button class="cs-button-solid cs-form-continue" type="button">Next: Company Details</button>
 
         <div class="cs-form-step" data-step="2" hidden>
           <label>
@@ -134,8 +194,8 @@ const serviceSchema = {
             ></textarea>
           </label>
 
-          <button class="cs-button-solid" type="submit">Request My Free Session</button>
-          <small>Privacy protected. No spam. No obligation. Built specifically for restoration contractors.</small>
+          <button class="cs-button-solid" type="submit">Request My Free Assessment</button>
+          <small>We use these details to prepare your assessment. No obligation; built for restoration contractors.</small>
         </div>
       </form>
     </div>
@@ -168,32 +228,28 @@ const serviceSchema = {
         getting the hard sale."
         <cite>Jason Fogus, TRW Contracting</cite>
       </blockquote>
-      <a href="#lead-form" class="cs-button-solid">Request Your Lead Flow Acceleration Session</a>
+      <a href="#lead-form" class="cs-button-solid">Request Your Free Lead-Flow Assessment</a>
     </div>
   </section>
+
+  <CaseStudyTeaser compact />
 
   <section id="schedule-proof">
     <div class="cs-container">
       <div class="cs-content">
-        <span class="cs-topper">Real Strategy, Not A Generic Sales Call</span>
-        <h2 class="cs-title">What We Review On Your Leadflow Session</h2>
+        <span class="cs-topper">A FOCUSED WORKING SESSION</span>
+        <h2 class="cs-title">What We Review in Your Assessment</h2>
         <p class="cs-text">
           A specific blueprint for your business, your website, and your particular service area.
         </p>
       </div>
       <ul>
-        <li>
-          <strong>Your market opportunity</strong>
-          We look at where restoration demand is strongest in your service area and where competitors are winning.
-        </li>
-        <li>
-          <strong>Your online visibility</strong>
-          We review website, search, and paid advertising gaps that may be holding back emergency lead flow.
-        </li>
-        <li>
-          <strong>Your next best growth moves</strong>
-          You leave with practical recommendations for capturing more qualified restoration jobs.
-        </li>
+        {assessmentSteps.map((step) => (
+          <li>
+            <strong>{step.name}</strong>
+            {step.text}
+          </li>
+        ))}
       </ul>
     </div>
   </section>
@@ -201,48 +257,19 @@ const serviceSchema = {
   <section id="schedule-faq">
     <div class="cs-container">
       <span class="cs-topper">FAQ</span>
-      <h2 class="cs-title">Leadflow Session Questions</h2>
+      <h2 class="cs-title">Lead-Flow Assessment Questions</h2>
       <div class="cs-faq-list">
-        <details open>
-          <summary>What happens after I request a session?</summary>
-          <p>
-            We review your service area, online visibility, and lead goals, then reach out with the next steps for your
-            free Leadflow Acceleration Session.
-          </p>
-        </details>
-        <details>
-          <summary>What will you review before the call?</summary>
-          <p>
-            We look at your website, local search presence, service area, restoration keywords, and visible competitor
-            activity so the session is specific to your market.
-          </p>
-        </details>
-        <details>
-          <summary>Is this just a sales pitch?</summary>
-          <p>
-            No. The session is designed to give you practical observations about where restoration leads may be leaking
-            and which growth moves are worth prioritizing.
-          </p>
-        </details>
-        <details>
-          <summary>Who is this best for?</summary>
-          <p>
-            It is built for restoration contractors who want more water damage, fire damage, mold remediation, storm
-            cleanup, or commercial restoration leads in a defined service area.
-          </p>
-        </details>
-        <details>
-          <summary>Do I need to prepare anything?</summary>
-          <p>
-            Just share accurate contact details, your company name, service area, and the services you want to grow. If
-            there is a specific challenge you want reviewed, include it in the goals field.
-          </p>
-        </details>
+        {assessmentFaqs.map((faq, index) => (
+          <details open={index === 0}>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 
-  <button class="schedule-mobile-cta" type="button">Get Your Free Market Analysis</button>
+  <button class="schedule-mobile-cta" type="button">Request Your Free Assessment</button>
 </BaseLayout>
 
 <style lang="less">
