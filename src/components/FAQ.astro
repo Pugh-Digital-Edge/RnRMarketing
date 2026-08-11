@@ -36,7 +36,7 @@ const faqSchema = {
         <div class="cs-faq-group">
           {faqs.map((faq, i) => (
             <details class="cs-faq-item" open={i === 0}>
-                <summary class="cs-button">{faq.question}</summary>
+                <summary class="cs-button"><h3>{faq.question}</h3></summary>
                 <p class="cs-item-p">{faq.answer}</p>
             </details>
           ))}
@@ -140,6 +140,12 @@ const faqSchema = {
             width: 100%;
             position: relative;
             list-style: none;
+
+            h3 {
+                margin: 0;
+                font: inherit;
+                color: inherit;
+            }
 
             &::-webkit-details-marker {
                 display: none;
@@ -255,19 +261,21 @@ const faqSchema = {
                 content: "";
                 position: absolute;
                 height: 100%;
-                width: 0%;
+                width: 100%;
                 background: #000;
                 opacity: 1;
                 top: 0;
                 left: 0;
                 z-index: -1;
                 border-radius: (4/16rem);
-                transition: width 0.3s;
+                transform: scaleX(0);
+                transform-origin: left center;
+                transition: transform 0.3s;
             }
 
             &:hover {
                 &:before {
-                    width: 100%;
+                    transform: scaleX(1);
                 }
             }
         }

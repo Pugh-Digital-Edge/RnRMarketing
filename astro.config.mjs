@@ -16,7 +16,7 @@ export default defineConfig({
       // The CMS is an editorial interface, not a public content page.
       filter: (page) => {
         const pathname = new URL(page).pathname;
-        return !['/admin', '/admin/', '/privacy/', '/tos/'].includes(pathname);
+        return !['/admin', '/admin/', '/privacy/', '/tos/', '/thank-you/'].includes(pathname);
       },
       // Keep sitemap freshness aligned with the editorial review date used by
       // the shared WebPage schema. Resource pages provide their own date in

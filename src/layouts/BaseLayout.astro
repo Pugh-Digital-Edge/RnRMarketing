@@ -7,7 +7,7 @@ import "@styles/root.less";
 import "@styles/dark.less";
 import "@styles/refresh.less";
 
-const { description, title, preloadedImage, dateModified, openGraphImage = '/assets/images/logo-small.jpg' } = Astro.props;
+const { description, title, preloadedImage, preloadedImageMobile, dateModified, noindex = false, openGraphImage = '/assets/images/logo-small.jpg' } = Astro.props;
 // Keep one editorial freshness date for pages without frontmatter. Page-specific
 // resource dates override this through the dateModified prop. This date reflects
 // the site-wide AEO refresh completed on 2026-08-10.
@@ -49,6 +49,7 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content={metadataDescription}>
             <meta name="author" content="Matt Pugh">
+            {noindex && <meta name="robots" content="noindex, nofollow">}
             <link rel="canonical" href={canonicalUrl}>
             <link rel="alternate" type="text/markdown" href={markdownUrl} title={`${title} in Markdown`}>
             <link rel="alternate" type="text/plain" href="/llms.txt">
@@ -218,8 +219,17 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                     }
                 }
                 </script>
-            <!-- Preloads the image passed as a prop -->
-            <link rel="preload" href={preloadedImage.src} as="image" />
+            <!-- Prioritize only the responsive hero asset needed for this viewport. -->
+            {preloadedImageMobile ? (
+                <>
+                    <link rel="preload" href={preloadedImageMobile.src} imagesrcset={preloadedImageMobile.srcSet} imagesizes={preloadedImageMobile.sizes ?? '100vw'} media="(max-width: 600px)" as="image" fetchpriority="high" />
+                    <link rel="preload" href={preloadedImage.src} imagesrcset={preloadedImage.srcSet} imagesizes={preloadedImage.sizes ?? '100vw'} media="(min-width: 601px)" as="image" fetchpriority="high" />
+                </>
+            ) : (
+                <link rel="preload" href={preloadedImage.src} imagesrcset={preloadedImage.srcSet} imagesizes={preloadedImage.sizes ?? '100vw'} as="image" fetchpriority="high" />
+            )}
+            <link rel="preload" href="/assets/fonts/poppins-v21-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+            <link rel="preload" href="/assets/fonts/poppins-v21-latin-700.woff2" as="font" type="font/woff2" crossorigin />
             <meta name="google-site-verification" content="Uhclxmf6JyErwpzjc2QhHZuENaQhwtR-TNMMiQVTT6o" />
             <!--Social Media Display-->
             <meta property="og:title" content={metadataTitle} />
@@ -250,30 +260,20 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                 {metadataTitle}
             </title>
 
-            <!-- Decap CMS scripts -->
-            {Astro.url.pathname === "/" &&
-                <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-                <script defer>
-                    if (window.netlifyIdentity) {
-                        window
-                            .netlifyIdentity
-                            .on('init', (user) => {
-                                if (!user) {
-                                    window
-                                        .netlifyIdentity
-                                        .on('login', () => {
-                                            document.location.href = '/admin/';
-                                        });
-                                }
-                            });
-                    }
-                </script>
-            }
+            <!-- Load the CMS identity client only for invite/recovery callback URLs. -->
+            {Astro.url.pathname === "/" && <script is:inline>
+                if (/(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(window.location.hash)) {
+                    const identityScript = document.createElement('script');
+                    identityScript.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+                    identityScript.onload = () => window.netlifyIdentity?.on('init', (user) => {
+                        if (!user) window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+                    });
+                    document.head.append(identityScript);
+                }
+            </script>}
 
             <!-- Sitewide Scripts -->
             <script src="../assets/js/nav.js"></script>
-             <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K4H62DJ77"></script>
             <script is:inline>
                 window.dataLayer = window.dataLayer || [];
                 window.gtag = function gtag(){dataLayer.push(arguments);}
@@ -369,6 +369,37 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
             </main>
             <Footer />
             <CustomChat />
+            <script is:inline>
+                (() => {
+                    window._paq = window._paq || [];
+                    window._paq.push(['trackPageView']);
+                    window._paq.push(['enableLinkTracking']);
+
+                    let analyticsLoaded = false;
+                    const loadAnalytics = () => {
+                        if (analyticsLoaded) return;
+                        analyticsLoaded = true;
+
+                        const googleTag = document.createElement('script');
+                        googleTag.async = true;
+                        googleTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-4K4H62DJ77';
+                        document.head.append(googleTag);
+
+                        const matomoUrl = 'https://remediationrestorationmarketing.matomo.cloud/';
+                        window._paq.push(['setTrackerUrl', `${matomoUrl}matomo.php`]);
+                        window._paq.push(['setSiteId', '1']);
+                        const matomo = document.createElement('script');
+                        matomo.async = true;
+                        matomo.src = 'https://cdn.matomo.cloud/remediationrestorationmarketing.matomo.cloud/matomo.js';
+                        document.head.append(matomo);
+                    };
+
+                    ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach((eventName) => {
+                        window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+                    });
+                    window.addEventListener('load', () => window.setTimeout(loadAnalytics, 10000), { once: true });
+                })();
+            </script>
         </body>
         <noscript>
             <!-- Matomo Image Tracker-->

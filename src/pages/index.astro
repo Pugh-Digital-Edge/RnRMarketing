@@ -19,8 +19,8 @@ import Newsletter from "@components/Newsletter.astro";
 import ResultsStats from "@components/ResultsStats.astro";
 import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 
-const optimizedImage = await getOptimizedImage(landingImage)
-const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
+const optimizedImage = await getOptimizedImage(landingImage, { widths: [960, 1600], quality: 72 })
+const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { widths: [480, 640], quality: 68 })
 
 ---
 
@@ -28,6 +28,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
   title="Restoration Marketing Agency for Emergency Calls | R&R"
   description="Restoration marketing agency for contractors seeking more qualified emergency calls, using SEO, paid ads, conversion-focused websites, and lead tracking."
  preloadedImage={optimizedImage}
+ preloadedImageMobile={optimizedImageMobile}
 >
 
 <!-- ============================================ -->
@@ -54,7 +55,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
     <picture class="cs-background" style={`--bg-image: url(${optimizedImage.src});`}>
       <source media="(max-width: 600px)" srcset={optimizedImageMobile.src}>
       <source media="(min-width: 601px)" srcset={optimizedImage.src}>
-      <img decoding="async" src={optimizedImage.src} alt="restoration marketing professionals" width="2250" height="1500" aria-hidden="true">
+      <img decoding="async" src={optimizedImage.src} alt="restoration marketing professionals" width={optimizedImage.attributes.width} height={optimizedImage.attributes.height} aria-hidden="true" loading="eager" fetchpriority="high">
   </picture>
   
 </section>
@@ -411,19 +412,21 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
                 position: absolute;
                 display: block;
                 height: 100%;
-                width: 0%;
+                width: 100%;
                 background: #fff;
                 opacity: 1;
                 top: 0;
                 left: 0;
                 z-index: -1;
-                transition: width 0.3s;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s;
             }
 
             &:hover {
                 color: var(--primary);
                 &:before {
-                    width: 100%;
+                    transform: scaleX(1);
                 }
             }
         }
@@ -1433,19 +1436,21 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile)
                 content: "";
                 position: absolute;
                 height: 100%;
-                width: 0%;
+                width: 100%;
                 background: #000;
                 opacity: 1;
                 top: 0;
                 left: 0;
                 z-index: -1;
                 border-radius: (4/16rem);
-                transition: width 0.3s;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s;
             }
 
             &:hover {
                 &:before {
-                    width: 100%;
+                    transform: scaleX(1);
                 }
             }
         }

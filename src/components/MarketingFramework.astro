@@ -67,7 +67,7 @@ const faqSchema = {
   <div class="framework__container">
     <div class="framework__heading">
       <span class="cs-topper">A MEASURABLE APPROACH</span>
-      <h2 id="framework-title">How We Build {serviceName} for {industryName} Companies</h2>
+      <h2 id="framework-title">How to Build {serviceName} for {industryName} Companies</h2>
       <p>
         More traffic is not the goal by itself. We start with the jobs your team wants and can handle, then build the marketing around those priorities.
       </p>
@@ -85,7 +85,10 @@ const faqSchema = {
 
     <div class:list={["framework__details", { "framework__details--single": !includeFaq }]}>
       <div>
-        <h3>Metrics We Use</h3>
+        <h3>What Does a Measurable Plan Track?</h3>
+        <p class="framework__definition">
+          A measurable plan connects marketing activity to qualified calls, forms, booked jobs, and revenue—not just clicks or impressions.
+        </p>
         <dl>
           <dt>Qualified lead</dt>
           <dd>A property owner, manager, or referral partner who needs a service you provide in an area you cover.</dd>
@@ -102,7 +105,7 @@ const faqSchema = {
           <div class="framework__faq">
             {faqs.map(({ question, answer }) => (
               <details>
-                <summary>{question}</summary>
+                <summary><h3>{question}</h3></summary>
                 <p>{answer}</p>
               </details>
             ))}
@@ -178,6 +181,7 @@ const faqSchema = {
     border: 1px solid var(--borderColor);
 
     h3 { margin: 0 0 (20/16rem); font-size: (24/16rem); color: var(--headerColor); }
+    .framework__definition { margin: 0 0 (20/16rem); line-height: 1.6em; color: var(--bodyTextColor); }
     dl { margin: 0; }
     dt { margin-top: (16/16rem); font-weight: 700; color: var(--headerColor); }
     dt:first-child { margin-top: 0; }
@@ -190,6 +194,7 @@ const faqSchema = {
     details { border-top: 1px solid var(--borderColor); }
     details:first-child { border-top: 0; }
     summary { padding: (16/16rem) (32/16rem) (16/16rem) 0; font-weight: 700; line-height: 1.35em; color: var(--headerColor); cursor: pointer; }
+    summary h3 { display: inline; margin: 0; font: inherit; color: inherit; }
     p { margin: 0 0 (16/16rem); line-height: 1.6em; color: var(--bodyTextColor); }
   }
 

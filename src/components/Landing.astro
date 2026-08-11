@@ -1,13 +1,17 @@
 ---
-import Picture from "astro/components/Picture.astro"
 import { Breadcrumbs } from "astro-breadcrumbs";
 import "astro-breadcrumbs/breadcrumbs.css";
 import { Icon } from "astro-icon/components";
 import type { GetImageResult } from "astro";
 
+type ResponsiveImage = GetImageResult & {
+  srcSet?: string;
+  sizes?: string;
+};
+
 interface Props {
   title: string;
-  image: GetImageResult;
+  image: ResponsiveImage;
   isIndustryByService?: boolean;
   /**
    * Render the banner title as the page's <h1>. Only set this on pages whose
@@ -59,15 +63,17 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
 
 <!-- standard <picture> attributes are supported. Set loading to lazy for assets below the fold -->
  <!-- Note: because we use the getImage function to generate an optimized image, we need to use special properties. More info on [the getImage() page](https://docs.astro.build/en/guides/images/#generating-images-with-getimage) -->
- <Picture 
+ <img
     src={image.src}
+    srcset={image.srcSet}
+    sizes={image.sizes ?? "100vw"}
     width={image.attributes.width}
     height={image.attributes.height}
-    formats={['avif', 'webp']} 
     aria-hidden="true" 
     decoding="async"
     alt=""
     loading="eager"
+    fetchpriority="high"
 />
 
 </section>

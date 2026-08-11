@@ -8,8 +8,10 @@ const optimizedImage = await getOptimizedImage(landingImage);
 
 const proofImages = [
   {
-    src: "/assets/images/schedule/leadflow-proof-3.png",
+    src: "/assets/images/schedule/leadflow-proof-3.webp",
     alt: "Restoration marketing client proof",
+    width: 1200,
+    height: 244,
   },
 ];
 
@@ -114,20 +116,19 @@ const faqSchema = {
         <h2>See How Restoration Marketing Can Create More Qualified Calls</h2>
         <p class="cs-video-intro">This short video explains the approach behind a more measurable lead flow.</p>
         <div class="cs-video" aria-label="Lead-Flow Assessment video">
-          <iframe
-            src="https://www.youtube.com/embed/SA49vYXmCM0?si=pjQUB2d5nFgiG6gd"
-            title="YouTube video player"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+          <button class="cs-video-placeholder" type="button" data-youtube-id="SA49vYXmCM0" aria-label="Play Lead-Flow Assessment video">
+            <img src="https://i.ytimg.com/vi/SA49vYXmCM0/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async" />
+            <span aria-hidden="true">Play video</span>
+          </button>
         </div>
         <img
-          src="/assets/images/schedule/apply-now.png"
+          src="/assets/images/schedule/apply-now.webp"
           alt="Request your free Lead-Flow Assessment"
           class="cs-brand-card"
           loading="lazy"
+          decoding="async"
+          width="1200"
+          height="678"
         />
       </div>
 
@@ -213,7 +214,7 @@ const faqSchema = {
       </div>
       <div class="cs-gallery">
         {proofImages.map((image) => (
-          <img src={image.src} alt={image.alt} loading="lazy" />
+          <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
         ))}
       </div>
       <blockquote hidden>
@@ -343,6 +344,48 @@ const faqSchema = {
           height: 100%;
           border: 0;
           display: block;
+        }
+
+        .cs-video-placeholder {
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          border: 0;
+          position: relative;
+          display: grid;
+          place-items: center;
+          overflow: hidden;
+          color: #fff;
+          background: #111;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            object-fit: cover;
+          }
+
+          span {
+            min-height: 3rem;
+            padding: 0.8rem 1.1rem;
+            border-radius: 0.35rem;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            color: #fff;
+            background: rgba(7, 26, 66, 0.94);
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.28);
+            font: 700 0.875rem/1 Poppins, Arial, sans-serif;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+          }
+
+          &:focus-visible {
+            outline: 0.2rem solid var(--primaryLight);
+            outline-offset: -0.3rem;
+          }
         }
       }
 
@@ -771,6 +814,21 @@ const faqSchema = {
 </style>
 
 <script>
+  const videoPlaceholder = document.querySelector("[data-youtube-id]");
+  videoPlaceholder?.addEventListener("click", () => {
+    if (!(videoPlaceholder instanceof HTMLButtonElement)) return;
+    const videoId = videoPlaceholder.dataset.youtubeId;
+    if (!videoId) return;
+
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+    iframe.title = "Lead-Flow Assessment video";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
+    videoPlaceholder.replaceWith(iframe);
+  });
+
   const leadForm = document.querySelector("#lead-form");
   const continueButton = leadForm?.querySelector(".cs-form-continue");
   const secondStep = leadForm?.querySelector("[data-step='2']");

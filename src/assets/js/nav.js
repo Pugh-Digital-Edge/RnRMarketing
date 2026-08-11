@@ -3,7 +3,7 @@ var CSbody = document.querySelector("body");
 const CSnavbarMenu = document.querySelector("#cs-navigation");
 const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
 
-CShamburgerMenu.addEventListener('click', function() {
+CShamburgerMenu?.addEventListener('click', function() {
     CShamburgerMenu.classList.toggle("cs-active");
     CSnavbarMenu.classList.toggle("cs-active");
     CSbody.classList.toggle("cs-open");
@@ -27,14 +27,15 @@ function ariaExpanded() {
 // and we used these body.scroll styles to create some on scroll 
 // animations with the navbar
 
-document.addEventListener('scroll', (e) => { 
-    const scroll = document.documentElement.scrollTop;
-    if(scroll >= 100){
-document.querySelector('body').classList.add('scroll')
-    } else {
-    document.querySelector('body').classList.remove('scroll')
-    }
-});
+let scrollUpdateQueued = false;
+document.addEventListener('scroll', () => {
+    if (scrollUpdateQueued) return;
+    scrollUpdateQueued = true;
+    requestAnimationFrame(() => {
+        CSbody?.classList.toggle('scroll', document.documentElement.scrollTop >= 100);
+        scrollUpdateQueued = false;
+    });
+}, { passive: true });
 
 // mobile nav toggle code
 const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
@@ -53,14 +54,3 @@ const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropd
             } 
         });
     });   
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-        var u="https://remediationrestorationmarketing.matomo.cloud/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '1']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.async=true; g.src='https://cdn.matomo.cloud/remediationrestorationmarketing.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-    })();                  
