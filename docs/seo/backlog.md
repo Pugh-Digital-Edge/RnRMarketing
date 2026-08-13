@@ -1,7 +1,7 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-08-11  
-Source run: [`2026-08-11-production-regression.md`](runs/2026-08-11-production-regression.md)
+Last reconciled: 2026-08-13
+Source run: [`2026-08-13-production-regression.md`](runs/2026-08-13-production-regression.md)
 
 Status values: Candidate · Planned · In Progress · Deployed · Measuring · Validated · Rejected · Superseded
 
@@ -9,26 +9,26 @@ Status values: Candidate · Planned · In Progress · Deployed · Measuring · V
 
 ### SEO-001 — Resolve Canonry/live/source parity on the audited cluster
 
-- Status: Planned
+- Status: Validated
 - Category: deployment / production parity; technical
 - Scope: representative `/services/`, generated industry/service, `/resources/`, `/schedule/`, and `/thank-you/` routes, then the full affected cluster.
-- Problem: the completed Canonry audit scored 50 pages at 28/100 even though the 2026-08-11 live crawl found the expected signals on every sitemap URL. A separate concrete mismatch remains: live `/thank-you/` is indexable and included in the sitemap, while current source/build marks it `noindex, nofollow` and excludes it.
-- Evidence: technical run `d519ac38-b993-403b-b929-7066103e0723`; all 96 live sitemap URLs returned 200 with self-canonicals, descriptions, one H1, and valid JSON-LD; tested Canonry-agent responses were byte-identical to normal HTML; [`2026-08-11-production-regression.md`](runs/2026-08-11-production-regression.md).
-- Expected impact: restore reliable measurement and prevent a conversion-confirmation page from entering the index.
-- Recommended change: deploy the already-present `/thank-you/` exclusion/noindex behavior through the normal operator-approved release path; then run a confirmed Canonry technical recheck to determine whether the old 28-point cluster was stale or parser-related.
+- Problem: the completed Canonry audit scored 50 pages at 28/100 even though direct live checks found the expected signals; the `/thank-you/` source/live mismatch also required deployment correction. Both are now resolved for current production measurement.
+- Evidence: current live crawl found 95 sitemap URLs, no `/thank-you/` sitemap entry, live `/thank-you/` `noindex, nofollow`, 95/95 successful pages with self-canonicals, descriptions, one H1, valid JSON-LD, and the same LocalBusiness entity; fresh Canonry audit `5b21a8cd-089c-44e6-adbc-a6d679aacb5a` audited 97 pages with 0 errors at 89/100, up 34 points from the stale 55/100 run; [`2026-08-13-production-regression.md`](runs/2026-08-13-production-regression.md).
+- Expected impact: the conversion-confirmation page is excluded from production index signals and Canonry now measures the current production state instead of the stale 55/100 cluster.
+- Recommended change: no generic content/schema rewrite. Deploy the two trailing-slash link fixes and continue monitoring; treat remaining content-extractability observations as a separate evidence-ranked opportunity.
 - Effort: Medium
 - Confidence: High
-- Verification: live `/thank-you/` meta robots and sitemap membership, normal-vs-crawler response comparison, `npm run build`, then an operator-confirmed Canonry technical audit.
+- Verification: live `/thank-you/` meta robots and sitemap membership, normal-vs-crawler response comparison, `npm run build`, independent `scripts/postbuild-aeo.mjs`, repaired Canonry runtime, and completed audit `5b21a8cd-089c-44e6-adbc-a6d679aacb5a`.
 
 ### SEO-002 — Improve intended index coverage after parity is stable
 
 - Status: Candidate
 - Category: indexing
 - Scope: 51 URLs last reported not indexed out of 94 in the connected GSC property, plus intended exclusions that must not enter the sitemap.
-- Problem: last recorded coverage is 43 indexed / 51 not indexed (45.7% indexed), with aggregate reason `URL is unknown to Google`; individual verdicts must be inspected before choosing remedies. Live `/thank-you/` is also currently indexable and in the 96-URL production sitemap despite being an intended exclusion in current source/build.
-- Evidence: synced 2026-08-10 coverage recorded in the Canonry audit plan; live/source mismatch in [`2026-08-11-production-regression.md`](runs/2026-08-11-production-regression.md). Current Canonry/GSC reads were unavailable because the local Canonry service could not load its Node 24 `better-sqlite3` binding.
+- Problem: current stored coverage is 48 indexed / 47 not indexed (50.5% indexed), with all 47 not-indexed URLs grouped as `URL is unknown to Google`; individual verdicts still need classification before choosing remedies. The prior `/thank-you/` sitemap/indexability mismatch is resolved.
+- Evidence: Canonry GSC read now reports 48 indexed / 47 not indexed of 95 (50.5%), last inspected/synced 2026-08-10, with all 47 grouped as `URL is unknown to Google`; current live sitemap contains 95 URLs and excludes `/thank-you/`, while live `/thank-you/` returns `noindex, nofollow`; [`2026-08-13-production-regression.md`](runs/2026-08-13-production-regression.md).
 - Expected impact: increase eligible commercial/content pages available to organic and AI systems.
-- Recommended change: first deploy and verify the intended `/thank-you/` exclusion; then export and classify representative GSC verdicts before any sitemap resubmission or priority URL indexing requests.
+- Recommended change: classify the 47 URL-level GSC verdicts, keep `/thank-you/` and other intended exclusions separate, and obtain explicit operator approval before any sitemap resubmission or priority URL indexing requests.
 - Effort: Medium
 - Confidence: Medium
 - Verification: Canonry/GSC coverage before/after over the normal recrawl window; record intended exclusions separately.
@@ -63,3 +63,4 @@ Status values: Candidate · Planned · In Progress · Deployed · Measuring · V
 
 - Generic sitewide audit-support copy: Rejected. Earlier browser review found duplication and unrelated content; native page-specific framework work is the safer direction.
 - Net-new location pages, mass article expansion, backlink campaigns, and provider-specific citation campaigns: Candidate, deferred until search/visibility/conversion evidence identifies a distinct opportunity.
+- Follow-up fix: normalized the two source links that caused the known `/services` and `/resources` trailing-slash redirects; deployment and live recheck remain pending.
