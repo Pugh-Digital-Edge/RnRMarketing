@@ -20,7 +20,7 @@ faqs:
     answer: "Track spend, source, service requested, territory, qualified-lead status, booked inspection or job, and documented revenue. Calls and forms alone do not show whether marketing produced useful work."
 ---
 
-The best way to market a restoration company is to connect local demand with the services, territory, and job types the business can actually handle. That usually means combining local SEO, paid search, a clear website, reputation management, referral relationships, and disciplined lead tracking. **Remediation & Restoration Marketing** recommends measuring qualified calls and booked work—not impressions or raw lead volume alone—so marketing decisions stay tied to operations.
+The best way to market a restoration company is to connect local demand with the services, territory, and job types the business can actually handle. That usually means combining local SEO, paid search, a clear website, reputation management, referral relationships, and disciplined lead tracking. **Remediation & Restoration Marketing** recommends measuring qualified calls and booked work rather than impressions or raw lead volume alone, so marketing decisions stay tied to operations.
 
 The twelve ideas below are not a checklist of channels to buy all at once. They are building blocks for a system restoration owners can prioritize according to capacity, service mix, market conditions, and evidence.
 

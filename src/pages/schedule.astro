@@ -18,9 +18,9 @@ const proofImages = [
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Free Lead-Flow Assessment",
+  name: "Free Lead Flow Acceleration Session",
   description:
-    "Free assessment for restoration contractors looking to identify lead opportunities through focused digital marketing.",
+    "Free 30-minute session for restoration contractors looking to identify lead opportunities through focused digital marketing.",
   url: "https://remediationrestorationmarketing.com/schedule/",
   provider: {
     "@type": "Organization",
@@ -40,7 +40,7 @@ const assessmentSteps = [
   },
   {
     name: "Inspect visibility and lead flow",
-    text: "We review website, local search, and paid advertising gaps that may be holding back emergency lead flow.",
+    text: "We review the website, local search, and paid advertising gaps holding back your emergency lead flow.",
   },
   {
     name: "Leave with prioritized next steps",
@@ -51,7 +51,11 @@ const assessmentSteps = [
 const assessmentFaqs = [
   {
     question: "What happens after I request a session?",
-    answer: "We review your service area, online visibility, and lead goals, then reach out with the next steps for your free Lead-Flow Assessment.",
+    answer: "We review your service area, online visibility, and lead goals, then reach out with the next steps for your free Lead Flow Acceleration Session.",
+  },
+  {
+    question: "How long is the session?",
+    answer: "About 30 minutes. That is enough time to review your market, your visibility, and your competition, and to leave you with a prioritized list of what to fix first.",
   },
   {
     question: "What will you review before the call?",
@@ -60,6 +64,10 @@ const assessmentFaqs = [
   {
     question: "Is this just a sales pitch?",
     answer: "No. The session is designed to give you practical observations about where restoration leads may be leaking and which growth moves are worth prioritizing.",
+  },
+  {
+    question: "Do you work with my competitors?",
+    answer: "No. We do not work with competing restoration companies in the same service area. When you work with us, we will not take on a competitor in your market.",
   },
   {
     question: "Who is this best for?",
@@ -75,7 +83,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "@id": "https://remediationrestorationmarketing.com/schedule/#assessment-process",
-  name: "How to prepare for a restoration marketing assessment",
+  name: "How to prepare for a restoration marketing session",
   description: "A three-step process for reviewing restoration marketing opportunities and choosing the next practical growth moves.",
   step: assessmentSteps.map((step) => ({ "@type": "HowToStep", ...step })),
 };
@@ -93,8 +101,8 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title="Request Your Free Lead-Flow Assessment"
-  description="Request a free Lead-Flow Assessment for your restoration company. Share your territory, services, and goals so we can review your lead opportunities."
+  title="Free Lead Flow Acceleration Session for Restoration Contractors"
+  description="Request a free Lead Flow Acceleration Session for your restoration company. Share your territory, services, and goals so we can review your lead opportunities."
   preloadedImage={optimizedImage}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)}></script>
@@ -103,33 +111,42 @@ const faqSchema = {
 
   <section id="schedule-hero">
     <div class="cs-container">
-      <h1>Request Your Free Lead-Flow Assessment</h1>
+      <span class="hero-eyebrow">One restoration company per market</span>
+      <h1>More <span>Water, Fire, and Mold</span> Jobs From Your Service Area</h1>
       <p>
-        We’ll review your service territory, online visibility, and lead opportunities—then show you the next moves worth prioritizing.
+        Request a free Lead Flow Acceleration Session. We review your territory, your online visibility, and where competitors are winning the emergency calls, then show you the next moves worth making.
       </p>
+      <a href="#lead-form" class="cs-button-solid">Request Your Free Session</a>
+      <ul class="hero-trust">
+        <li>30-minute session</li>
+        <li>No obligation</li>
+        <li>Not a sales pitch</li>
+      </ul>
     </div>
   </section>
 
   <section id="schedule-main">
     <div class="cs-container">
       <div class="cs-media">
-        <h2>See How Restoration Marketing Can Create More Qualified Calls</h2>
-        <p class="cs-video-intro">This short video explains the approach behind a more measurable lead flow.</p>
-        <div class="cs-video" aria-label="Lead-Flow Assessment video">
-          <button class="cs-video-placeholder" type="button" data-youtube-id="SA49vYXmCM0" aria-label="Play Lead-Flow Assessment video">
+        <h2>A Quick Word Before You Book</h2>
+        <p class="cs-video-intro">A short intro to the session and how to get yours scheduled.</p>
+        <div class="cs-video" aria-label="Lead Flow Acceleration Session video">
+          <button class="cs-video-placeholder" type="button" data-youtube-id="SA49vYXmCM0" aria-label="Play Lead Flow Acceleration Session video">
             <img src="https://i.ytimg.com/vi/SA49vYXmCM0/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async" />
             <span aria-hidden="true">Play video</span>
           </button>
         </div>
-        <img
-          src="/assets/images/schedule/apply-now.webp"
-          alt="Request your free Lead-Flow Assessment"
-          class="cs-brand-card"
-          loading="lazy"
-          decoding="async"
-          width="1200"
-          height="678"
-        />
+        <a href="#lead-form" class="cs-brand-card-link">
+          <img
+            src="/assets/images/schedule/apply-now.webp"
+            alt="Request your free Acceleration Session"
+            class="cs-brand-card"
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="678"
+          />
+        </a>
       </div>
 
       <form id="lead-form" name="Schedule Lead Form" method="post" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
@@ -140,15 +157,15 @@ const faqSchema = {
             <input name="bot-field" />
           </label>
         </p>
-        <span class="cs-topper">REQUEST YOUR ASSESSMENT</span>
+        <span class="cs-topper">REQUEST YOUR SESSION</span>
         <h2>Tell Us Where You Want More Jobs</h2>
         <p>
-          We’ll review your service territory, online visibility, and lead goals before contacting you with next steps.
+          Takes about 60 seconds. We review your details and get back to you within one business day.
         </p>
         <ul class="cs-form-outcomes" aria-label="Session outcomes">
-          <li>Know which services to prioritize</li>
+          <li>Know which services to prioritize first</li>
           <li>See where competitors are outranking you</li>
-          <li>Leave with a lead growth plan</li>
+          <li>Get a prioritized list of what to fix</li>
         </ul>
 
         <label>
@@ -168,7 +185,7 @@ const faqSchema = {
           <input required type="text" name="service-area" placeholder="City, state, or ZIP codes" />
         </label>
 
-        <button class="cs-button-solid cs-form-continue" type="button">Next: Company Details</button>
+        <button class="cs-button-solid cs-form-continue" type="button">Next Step (30 Seconds)</button>
 
         <div class="cs-form-step" data-step="2" hidden>
           <label>
@@ -195,8 +212,8 @@ const faqSchema = {
             ></textarea>
           </label>
 
-          <button class="cs-button-solid" type="submit">Request My Free Assessment</button>
-          <small>We use these details to prepare your assessment. No obligation; built for restoration contractors.</small>
+          <button class="cs-button-solid" type="submit">Request My Free Session</button>
+          <small>We use these details to prepare your session. No obligation and no sales pressure. We don’t work with competing restoration companies in the same market.</small>
         </div>
       </form>
     </div>
@@ -206,10 +223,10 @@ const faqSchema = {
     <div class="cs-container">
       <div class="cs-copy">
         <span class="cs-topper">Client Proof</span>
-        <h2 class="cs-title">See What Focused Restoration Marketing Can Change</h2>
+        <h2 class="cs-title">What Changes When Restoration Marketing Gets Focused</h2>
         <p class="cs-text">
-          By targeting the correct keywords and implementing a focused online marketing program, restoration companies
-          can turn their website and campaigns into a more predictable source of leads, estimates, and booked jobs.
+          Target the right keywords in the right territory and your website stops being a brochure. It becomes a
+          predictable source of leads, estimates, and booked jobs.
         </p>
       </div>
       <div class="cs-gallery">
@@ -217,11 +234,6 @@ const faqSchema = {
           <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
         ))}
       </div>
-      <blockquote hidden>
-        “Thank you for your time this morning Matt! I was concerned that this would be a sales pitch or a waste of
-        time, but I can honestly say that you exceeded my expectations.”
-        <cite>Jason Fogus, TRW Contracting</cite>
-      </blockquote>
       <blockquote>
         "Thank you for your time this morning Matt! I was concerned that this would be a sales pitch or a waste of
         time, but I can honestly say that you exceeded my expectations. You came prepared with details on our website,
@@ -229,7 +241,7 @@ const faqSchema = {
         getting the hard sale."
         <cite>Jason Fogus, TRW Contracting</cite>
       </blockquote>
-      <a href="#lead-form" class="cs-button-solid">Request Your Free Lead-Flow Assessment</a>
+      <a href="#lead-form" class="cs-button-solid">Request Your Free Acceleration Session</a>
     </div>
   </section>
 
@@ -239,9 +251,9 @@ const faqSchema = {
     <div class="cs-container">
       <div class="cs-content">
         <span class="cs-topper">A FOCUSED WORKING SESSION</span>
-        <h2 class="cs-title">What We Review in Your Assessment</h2>
+        <h2 class="cs-title">What We Review in Your Session</h2>
         <p class="cs-text">
-          A specific blueprint for your business, your website, and your particular service area.
+          We look at your market, your visibility, and your competition, then tell you what to fix first.
         </p>
       </div>
       <ul>
@@ -258,7 +270,7 @@ const faqSchema = {
   <section id="schedule-faq">
     <div class="cs-container">
       <span class="cs-topper">FAQ</span>
-      <h2 class="cs-title">Lead-Flow Assessment Questions</h2>
+      <h2 class="cs-title">Acceleration Session Questions</h2>
       <div class="cs-faq-list">
         {assessmentFaqs.map((faq, index) => (
           <details open={index === 0}>
@@ -270,17 +282,42 @@ const faqSchema = {
     </div>
   </section>
 
-  <button class="schedule-mobile-cta" type="button">Request Your Free Assessment</button>
+  <button class="schedule-mobile-cta" type="button">Request Your Free Session</button>
 </BaseLayout>
 
 <style lang="less">
   @media only screen and (min-width: 0rem) {
     #schedule-hero {
-      padding: clamp(9rem, 16vw, 13rem) 1rem clamp(2rem, 5vw, 4rem);
-      background:
-        linear-gradient(rgba(0, 72, 124, 0.9), rgba(0, 72, 124, 0.9)),
-        url("/assets/images/hero.webp") center/cover;
+      padding: clamp(9rem, 16vw, 13rem) 1rem clamp(3rem, 6vw, 5rem);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
       color: #fff;
+      // Layered depth: two brand-family glows over a darkened photo. Opacities
+      // are set from measurement, not taste. hero.webp contains near-white
+      // pixels (253,255,254), so a lighter stack pushed the worst-case
+      // background to rgb(40,126,182) and dropped body copy to 3.81:1. At these
+      // values the lightest point of the gradient is rgb(29,107,156), which
+      // holds 5.78:1 for white text and 3.72:1 for the accent at 60px.
+      background:
+        radial-gradient(85rem 38rem at 14% -12%, rgba(59, 142, 222, 0.28), transparent 60%),
+        radial-gradient(65rem 34rem at 88% 6%, rgba(35, 198, 213, 0.18), transparent 62%),
+        linear-gradient(160deg, rgba(6, 28, 68, 0.96) 0%, rgba(0, 60, 105, 0.95) 55%, rgba(6, 28, 68, 0.97) 100%),
+        url("/assets/images/hero.webp") center/cover;
+
+      // Faint blueprint grid, faded out at the edges so it never fights the copy.
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 4.5rem 4.5rem;
+        -webkit-mask-image: radial-gradient(72% 62% at 50% 38%, #000 28%, transparent 100%);
+        mask-image: radial-gradient(72% 62% at 50% 38%, #000 28%, transparent 100%);
+      }
 
       .cs-container {
         width: 100%;
@@ -289,19 +326,91 @@ const faqSchema = {
         text-align: center;
       }
 
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.05rem;
+        margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+        border: 1px solid rgba(239, 180, 63, 0.5);
+        border-radius: 2rem;
+        // Dark fill rather than a tinted one: amber-on-amber measured 3.45:1,
+        // below AA for text this size. Against this it clears 7:1.
+        background: rgba(7, 26, 66, 0.55);
+        color: #f6c964;
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 0.78rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .hero-eyebrow::before {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: #efb43f;
+        box-shadow: 0 0 0 0.25rem rgba(239, 180, 63, 0.2);
+      }
+
       h1 {
-        font-size: clamp(2.125rem, 6vw, 3rem);
-        line-height: 1.15em;
-        max-width: 16ch;
-        margin: 0 auto 1rem;
+        font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+        line-height: 1.08em;
+        letter-spacing: -0.03em;
+        max-width: 22ch;
+        margin: 0 auto 1.25rem;
         color: #fff;
+        text-wrap: balance;
+      }
+
+      h1 span {
+        color: #9ed6ff;
       }
 
       p {
         font-size: clamp(1.0625rem, 2vw, 1.25rem);
-        max-width: 48rem;
-        margin: auto;
+        line-height: 1.6em;
+        max-width: 46rem;
+        margin: 0 auto;
         color: #fff;
+      }
+
+      .cs-button-solid {
+        margin-top: clamp(1.75rem, 3vw, 2.25rem);
+      }
+
+      .hero-trust {
+        list-style: none;
+        padding: 0;
+        margin: clamp(1.75rem, 3.5vw, 2.5rem) 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 2rem;
+      }
+
+      .hero-trust li {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #fff;
+        font-size: 0.9375rem;
+        font-weight: 600;
+      }
+
+      .hero-trust li::before {
+        content: "✓";
+        width: 1.25rem;
+        height: 1.25rem;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(134, 200, 255, 0.16);
+        color: #86c8ff;
+        font-size: 0.7rem;
+        font-weight: 700;
       }
     }
 
@@ -389,16 +498,32 @@ const faqSchema = {
         }
       }
 
+      .cs-brand-card-link {
+        display: block;
+        border-radius: 0.5rem;
+
+        &:focus-visible {
+          outline: 0.2rem solid var(--primary);
+          outline-offset: 0.25rem;
+        }
+
+        &:hover .cs-brand-card {
+          transform: translateY(-0.25rem);
+        }
+      }
+
       .cs-brand-card {
         width: min(100%, 28rem);
         height: auto;
         margin: 2rem auto 0;
         display: block;
         border-radius: 0.5rem;
+        transition: transform 0.2s ease;
       }
 
       #lead-form {
         padding: clamp(1.25rem, 3vw, 2rem);
+        scroll-margin-top: 9rem;
         border-top: 0.375rem solid var(--primary);
         border-radius: 0.5rem;
         background: #fff;
@@ -737,10 +862,26 @@ const faqSchema = {
   }
 
   @media only screen and (min-width: 0rem) {
+    // Dark mode has to fight two pre-existing global rules in refresh.less:
+    //   :43  h1..h6 { color: var(--headerColor) !important }  -> near-black headings
+    //   :130 #schedule-main #lead-form { background: rgba(251,252,248,.9) !important }
+    //   :196 input, select, textarea { background: #fff !important }
+    // Those carry !important and dark.less does not, so every colour below that
+    // targets a heading, the form card, or a field needs !important to land.
+    // Note also that var(--accent) is NOT usable here: refresh.less:21 defines it
+    // as the amber signal (#efb43f) and overrides dark.less:13 (#334756), so the
+    // old rules were painting the FAQ cards and form fields amber.
     body.dark-mode {
       #schedule-main,
       #schedule-results {
         background: var(--dark);
+      }
+
+      // The brand blue topper (#0b4aa2) sits at 1.62:1 on the dark card.
+      // The lighter accent used elsewhere on the site clears 7.5:1.
+      #lead-form .cs-topper,
+      #schedule-faq .cs-topper {
+        color: #86c8ff !important;
       }
 
       #schedule-main {
@@ -750,19 +891,27 @@ const faqSchema = {
         #lead-form label,
         #lead-form p,
         #lead-form .cs-form-outcomes li {
-          color: var(--bodyTextColorWhite);
+          color: var(--bodyTextColorWhite) !important;
         }
 
         #lead-form {
-          background: var(--medium);
-          box-shadow: none;
+          background: var(--medium) !important;
+          border-color: rgba(255, 255, 255, 0.14) !important;
+          box-shadow: none !important;
 
           input,
           select,
           textarea {
-            color: var(--bodyTextColorWhite);
-            background: var(--accent);
-            border-color: rgba(255, 255, 255, 0.22);
+            // Was white-on-white: the rule set white text but refresh.less:196
+            // forced a #fff background, so typed input was invisible.
+            color: var(--bodyTextColorWhite) !important;
+            background: var(--dark) !important;
+            border-color: rgba(255, 255, 255, 0.22) !important;
+          }
+
+          input::placeholder,
+          textarea::placeholder {
+            color: rgba(255, 255, 255, 0.55) !important;
           }
 
           small {
@@ -778,19 +927,21 @@ const faqSchema = {
         .cs-title,
         li,
         strong {
-          color: var(--bodyTextColorWhite);
+          color: var(--bodyTextColorWhite) !important;
         }
 
         li {
-          background: var(--accent);
+          background: var(--medium);
+          border-left-color: var(--primaryLight);
         }
       }
 
       #schedule-results {
         .cs-title,
         .cs-text,
-        blockquote {
-          color: var(--bodyTextColorWhite);
+        blockquote,
+        cite {
+          color: var(--bodyTextColorWhite) !important;
         }
       }
 
@@ -800,11 +951,11 @@ const faqSchema = {
         .cs-title,
         summary,
         details p {
-          color: var(--bodyTextColorWhite);
+          color: var(--bodyTextColorWhite) !important;
         }
 
         details {
-          background: var(--accent);
+          background: var(--medium);
           border-color: rgba(255, 255, 255, 0.16);
           box-shadow: none;
         }
@@ -823,7 +974,7 @@ const faqSchema = {
     const iframe = document.createElement("iframe");
     iframe.className = "cs-video-frame";
     iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
-    iframe.title = "Lead-Flow Assessment video";
+    iframe.title = "Lead Flow Acceleration Session video";
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
     iframe.allowFullscreen = true;

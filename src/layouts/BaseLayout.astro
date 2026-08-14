@@ -361,6 +361,49 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                 });
             </script>
         
+            <!-- PPC landing variant. Adding ?ppc=1 to an ad's final URL strips the
+                 site navigation so the page has a single exit: the form. Runs here,
+                 before first paint, so the nav never flashes in and out. The canonical
+                 above is pathname-only, so the parameter adds no duplicate-content
+                 surface and needs no separate route. Not persisted: a footer link
+                 deliberately returns the visitor to the full site. -->
+            <script is:inline>
+                (() => {
+                    try {
+                        const v = new URLSearchParams(location.search).get('ppc');
+                        if (v === '1' || v === 'true') {
+                            document.documentElement.classList.add('ppc-mode');
+                        }
+                    } catch (e) {}
+                })();
+            </script>
+            <style is:global>
+                html.ppc-mode #cs-navigation .cs-top-social,
+                html.ppc-mode #cs-navigation .cs-nav,
+                html.ppc-mode #cs-navigation .cs-toggle,
+                html.ppc-mode #cs-navigation .cs-ul-wrapper,
+                html.ppc-mode #cs-navigation .cs-nav-button {
+                    display: none !important;
+                }
+
+                /* Keep the logo as a trust mark but remove it as an exit path. */
+                html.ppc-mode #cs-navigation .cs-logo {
+                    pointer-events: none;
+                }
+
+                /* The header loses its nav row, so reclaim the space the hero was
+                   reserving for it and retighten the anchor offset to match. */
+                html.ppc-mode #schedule-hero {
+                    padding-top: clamp(6.5rem, 11vw, 9rem) !important;
+                }
+
+                /* !important is required here: Astro stamps its scope attribute onto
+                   every compound in the page's own rule, so that selector outranks
+                   this one on class count despite being less specific by intent. */
+                html.ppc-mode #schedule-main #lead-form {
+                    scroll-margin-top: 6rem !important;
+                }
+            </style>
         </head>
         <body class={`route-${routeKey}`}>
             <!-- impeccable:contract 34da82de

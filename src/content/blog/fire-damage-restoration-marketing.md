@@ -64,7 +64,7 @@ Negative keywords also matter. Employment searches, training queries, consumer p
 
 Google Ads can use both a person's likely physical location and their interest in a location. Its default advanced location option includes people in, regularly in, **or interested in** a targeted area. Contractors that only want people likely to be physically inside the service territory should evaluate the more restrictive presence option and monitor geographic performance. Google also notes that location targeting is a best-effort system, not a guarantee, so out-of-area lead review still matters. See Google's current documentation on [advanced location options](https://support.google.com/google-ads/answer/1722038?hl=en).
 
-Structure location targets and exclusions around real dispatch boundaries. A territory map should guide campaigns, landing pages, call routing, and reporting—not live as a disconnected graphic in a sales deck.
+Structure location targets and exclusions around real dispatch boundaries. A territory map should guide campaigns, landing pages, call routing, and reporting. It should not live as a disconnected graphic in a sales deck.
 
 ### Send traffic to a fire-specific conversion path
 
@@ -150,7 +150,7 @@ Those are budget questions. Click-through rate alone cannot answer them.
 
 Fire-loss prospects often look for evidence that a company communicates clearly and handles complex situations professionally. Build a repeatable process for requesting honest feedback after appropriate customer milestones, responding to reviews, and escalating service issues internally.
 
-Do not write reviews for customers, gate negative feedback, publish invented testimonials, or add rating schema that is not supported by visible, genuine reviews. A sound [reputation management process](/services/reputation-management/) should improve how the company requests, monitors, and responds to feedback—not manufacture a perfect story.
+Do not write reviews for customers, gate negative feedback, publish invented testimonials, or add rating schema that is not supported by visible, genuine reviews. A sound [reputation management process](/services/reputation-management/) should improve how the company requests, monitors, and responds to feedback. It should not manufacture a perfect story.
 
 Where customers voluntarily mention fire, smoke, contents, communication, or commercial coordination, that language can help future prospects understand the company's relevant experience. Preserve the customer's meaning and obtain permission before republishing any testimonial beyond the original platform.
 
