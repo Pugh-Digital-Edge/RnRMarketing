@@ -1,7 +1,7 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-08-13
-Source run: [`2026-08-13-production-regression.md`](runs/2026-08-13-production-regression.md)
+Last reconciled: 2026-08-14
+Source run: [`2026-08-14-production-regression.md`](runs/2026-08-14-production-regression.md)
 
 Status values: Candidate · Planned · In Progress · Deployed · Measuring · Validated · Rejected · Superseded
 
@@ -13,12 +13,12 @@ Status values: Candidate · Planned · In Progress · Deployed · Measuring · V
 - Category: deployment / production parity; technical
 - Scope: representative `/services/`, generated industry/service, `/resources/`, `/schedule/`, and `/thank-you/` routes, then the full affected cluster.
 - Problem: the completed Canonry audit scored 50 pages at 28/100 even though direct live checks found the expected signals; the `/thank-you/` source/live mismatch also required deployment correction. Both are now resolved for current production measurement.
-- Evidence: current live crawl found 95 sitemap URLs, no `/thank-you/` sitemap entry, live `/thank-you/` `noindex, nofollow`, 95/95 successful pages with self-canonicals, descriptions, one H1, valid JSON-LD, and the same LocalBusiness entity; fresh Canonry audit `5b21a8cd-089c-44e6-adbc-a6d679aacb5a` audited 97 pages with 0 errors at 89/100, up 34 points from the stale 55/100 run; [`2026-08-13-production-regression.md`](runs/2026-08-13-production-regression.md).
+- Evidence: the 2026-08-14 live crawl found 95 unique sitemap URLs, no `/thank-you/` sitemap entry, live `/thank-you/` `noindex, nofollow`, 95/95 successful pages with self-canonicals, descriptions, one H1, valid JSON-LD, and the same LocalBusiness entity; 97 same-origin HTML targets had no broken links or redirects, including no remaining `/services` or `/resources` trailing-slash redirects; fresh Canonry audit `5b21a8cd-089c-44e6-adbc-a6d679aacb5a` audited 97 pages with 0 errors at 89/100, up 34 points from the stale 55/100 run; [`2026-08-14-production-regression.md`](runs/2026-08-14-production-regression.md).
 - Expected impact: the conversion-confirmation page is excluded from production index signals and Canonry now measures the current production state instead of the stale 55/100 cluster.
-- Recommended change: no generic content/schema rewrite. Deploy the two trailing-slash link fixes and continue monitoring; treat remaining content-extractability observations as a separate evidence-ranked opportunity.
+- Recommended change: no generic content/schema rewrite and no further redirect fix. Continue monitoring; treat remaining content-extractability observations as a separate evidence-ranked opportunity.
 - Effort: Medium
 - Confidence: High
-- Verification: live `/thank-you/` meta robots and sitemap membership, normal-vs-crawler response comparison, `npm run build`, independent `scripts/postbuild-aeo.mjs`, repaired Canonry runtime, and completed audit `5b21a8cd-089c-44e6-adbc-a6d679aacb5a`.
+- Verification: live `/thank-you/` meta robots and sitemap membership, 95-page live crawl, 97-target internal-link crawl, normal-vs-crawler response comparison, `npm run build`, independent `scripts/postbuild-aeo.mjs`, repaired Canonry runtime, and completed audit `5b21a8cd-089c-44e6-adbc-a6d679aacb5a`.
 
 ### SEO-002 — Improve intended index coverage after parity is stable
 
@@ -63,4 +63,4 @@ Status values: Candidate · Planned · In Progress · Deployed · Measuring · V
 
 - Generic sitewide audit-support copy: Rejected. Earlier browser review found duplication and unrelated content; native page-specific framework work is the safer direction.
 - Net-new location pages, mass article expansion, backlink campaigns, and provider-specific citation campaigns: Candidate, deferred until search/visibility/conversion evidence identifies a distinct opportunity.
-- Follow-up fix: normalized the two source links that caused the known `/services` and `/resources` trailing-slash redirects; deployment and live recheck remain pending.
+- Follow-up fix: normalized the two source links that caused the known `/services` and `/resources` trailing-slash redirects; deployment is now live-verified on 2026-08-14.

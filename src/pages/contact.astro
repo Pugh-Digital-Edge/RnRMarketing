@@ -121,15 +121,15 @@ const optimizedImage = await getOptimizedImage(landingImage);
           </span>
         </a>
 
-        <!-- Background Image-->
-         <Image 
+        <!-- Background Image -->
+        <div class="cs-bg-picture" aria-hidden="true">
+          <Image
             src={buildingImage}
-            alt="building"
+            alt=""
             width="2500"
             height="1667"
-            aria-hidden="true"
-            class="cs-bg-picture"
-         />        
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -168,6 +168,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
 
       .cs-content {
         width: 100%;
+        border: 0;
+        outline: 0;
       }
 
       .cs-topper {
@@ -260,8 +262,14 @@ const optimizedImage = await getOptimizedImage(landingImage);
         justify-content: flex-end;
         align-items: flex-start;
         position: relative;
+        isolation: isolate;
         /* cuts off corners on img tag */
         overflow: hidden;
+
+        > :not(.cs-bg-picture) {
+          position: relative;
+          z-index: 2;
+        }
       }
 
       .cs-header {
@@ -287,7 +295,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
         &:before {
           /* Animated underline */
           content: "";
-          width: 0%;
+          width: 100%;
           height: 2px;
           /* current color of the parent */
           background: currentColor;
@@ -296,12 +304,14 @@ const optimizedImage = await getOptimizedImage(landingImage);
           position: absolute;
           bottom: (-2/16rem);
           left: 0;
-          transition: width 0.3s;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s;
         }
 
         &:hover {
           &:before {
-            width: 100%;
+            transform: scaleX(1);
           }
         }
 
@@ -322,7 +332,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
+        z-index: 0;
+        pointer-events: none;
         transition: transform 0.6s;
 
         &:before {
@@ -350,6 +361,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
           position: absolute;
           top: 0;
           left: 0;
+          z-index: 0;
         }
       }
     }
