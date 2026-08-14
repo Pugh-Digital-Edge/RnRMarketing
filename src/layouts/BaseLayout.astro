@@ -323,7 +323,18 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                                 window.gtag('event', 'form_start', { event_category: 'engagement', form_name: 'Schedule Lead Form', page_location: window.location.href });
                             }
                         });
-                        leadForm.addEventListener('submit', () => window.gtag('event', 'form_submit', { event_category: 'engagement', form_name: 'Schedule Lead Form', page_location: window.location.href }));
+                        leadForm.addEventListener('submit', () => {
+                            window.gtag('event', 'form_submit', {
+                                event_category: 'engagement',
+                                form_name: 'Schedule Lead Form',
+                                page_location: window.location.href,
+                            });
+                            try {
+                                window.sessionStorage.setItem('schedule_lead_submission_pending', '1');
+                            } catch {
+                                // Storage can be unavailable in privacy-restricted browsers.
+                            }
+                        });
                     }
                 });
             </script>

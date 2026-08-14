@@ -12,6 +12,29 @@ const preloadedImage = await getOptimizedImage(heroImage);
   preloadedImage={preloadedImage}
   noindex
 >
+  <script is:inline>
+    (() => {
+      let shouldTrackLead = false;
+
+      try {
+        shouldTrackLead = window.sessionStorage.getItem('schedule_lead_submission_pending') === '1';
+        if (shouldTrackLead) {
+          window.sessionStorage.removeItem('schedule_lead_submission_pending');
+        }
+      } catch {
+        // Storage can be unavailable in privacy-restricted browsers.
+      }
+
+      if (shouldTrackLead && typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', {
+          event_category: 'conversion',
+          form_name: 'Schedule Lead Form',
+          lead_type: 'lead_flow_assessment',
+          page_location: window.location.href,
+        });
+      }
+    })();
+  </script>
   <main class="thank-you">
     <div class="thank-you__content">
       <p class="cs-topper">REQUEST RECEIVED</p>
