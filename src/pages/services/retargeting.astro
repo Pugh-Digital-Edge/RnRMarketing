@@ -14,7 +14,6 @@ import retargetingSvg from "@assets/images/services/retargeting.svg";
 import responsiveDesignIcon from "@assets/images/svg/responsive-design.svg";
 import { Icon } from 'astro-icon/components';
 import CTA from "@components/CTA.astro";
-import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
 import ServiceSchema from "@components/ServiceSchema.astro";
 import MarketingFramework from "@components/MarketingFramework.astro";
@@ -26,8 +25,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
- title="Restoration Retargeting Services"
- description="Keep your restoration company visible to website visitors during their research and decision-making process."
+ title="Retargeting for Restoration Companies"
+ description="Re-engage qualified restoration website visitors with practical retargeting campaigns that keep your company visible while they compare options."
  preloadedImage={optimizedImage}
 >
 <ServiceSchema
@@ -93,10 +92,10 @@ const optimizedImage = await getOptimizedImage(landingImage);
        </ul>
      </div>
      <div class="cs-content">
-       <h1 class="cs-title">Restoration Retargeting: Stay Visible to Interested Property Owners</h1>
+       <h1 class="cs-title">Retargeting for Restoration Companies: Stay Relevant After the First Visit</h1>
 
        <div class="intro">
-         <p class="cs-text">Retargeting lets you display ads to people who've visited your restoration website. When property owners are researching restoration services, your company stays visible through targeted ads as they browse other websites and social media platforms.</p>
+         <p class="cs-text">Retargeting helps your restoration company reconnect with people who visited but were not ready to call. We build audience, message, and landing-page paths around the services and jobs you want, so follow-up ads support a useful decision rather than simply chasing traffic.</p>
        </div>
 
        <h2>How Retargeting Works</h2>
@@ -125,13 +124,13 @@ const optimizedImage = await getOptimizedImage(landingImage);
            <li class="cs-text"><strong>Contact Options:</strong> Make it easy to reach your team</li>
        </ul>
 
-       <h2>Campaign Setup Process</h2>
-       <p class="cs-text">Launching your retargeting campaign:</p>
+       <h2>How We Build a Retargeting Campaign</h2>
+       <p class="cs-text">A useful campaign starts with a clear audience, a relevant next step, and measurement tied to qualified inquiries:</p>
        <ul>
-           <li class="cs-text"><strong>Pixel Installation:</strong> Adding tracking code to your website</li>
-           <li class="cs-text"><strong>Platform Setup:</strong> Configuring ad network accounts</li>
-           <li class="cs-text"><strong>Ad Creation:</strong> Developing effective restoration ads</li>
-           <li class="cs-text"><strong>Campaign Launch:</strong> Activating your retargeting campaign</li>
+           <li class="cs-text"><strong>Audience Definition:</strong> Separate prior visitors by service interest, location, and meaningful engagement.</li>
+           <li class="cs-text"><strong>Message and Offer:</strong> Match the ad to the question the visitor was researching instead of repeating a generic claim.</li>
+           <li class="cs-text"><strong>Landing-Page Path:</strong> Send each audience to a relevant service page or a clear contact path.</li>
+           <li class="cs-text"><strong>Measurement Plan:</strong> Review qualified calls and form inquiries alongside spend and return visits.</li>
        </ul>
 
        <h2>Performance Tracking</h2>
@@ -152,8 +151,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
            <li class="cs-text"><strong>Performance Review:</strong> Regular campaign analysis</li>
        </ul>
 
-       <h2>Conclusion</h2>
-       <p class="cs-text">Retargeting helps your restoration company stay visible to property owners who've shown interest in your services. By displaying targeted ads across major platforms, you maintain awareness with potential customers throughout their decision-making process.</p>
+       <h2>What a Retargeting Program Should Improve</h2>
+       <p class="cs-text">The goal is not more impressions for their own sake. A focused retargeting program should help the right prior visitors return to a relevant service page, contact your team when ready, and give you a clearer view of which campaigns contribute to qualified restoration opportunities.</p>
      </div>
    </div>
    <div class="cs-bubbles" aria-hidden="true"></div>
@@ -164,7 +163,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
      path="/services/retargeting/"
      includeFaq={false}
    />
-   <FAQ />  
    <CaseStudyTeaser compact />
    <CTA />
    <Articles />

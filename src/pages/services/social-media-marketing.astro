@@ -13,7 +13,6 @@ import socialSvg from "@assets/images/svg/social-media-marketing.svg";
 // Import SVG icons from @assets/images/svg directory
 import { Icon } from 'astro-icon/components';
 import CTA from "@components/CTA.astro";
-import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
 import ServiceSchema from "@components/ServiceSchema.astro";
 import MarketingFramework from "@components/MarketingFramework.astro";
@@ -24,8 +23,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
-  title="Restoration Social Media Marketing"
-  description="Grow your restoration company with targeted social media marketing. We create content that builds trust, showcases your work, and keeps your brand top-of-mind when property owners need emergency services."
+  title="Social Media Management for Restoration Companies"
+  description="Social media management for restoration companies that turns project proof, team expertise, and local updates into a consistent trust-building program."
   preloadedImage={optimizedImage}
 >
 <ServiceSchema
@@ -94,9 +93,9 @@ const optimizedImage = await getOptimizedImage(landingImage);
       </div>
       <div class="cs-content">
 
-        <h1 class="cs-title">Social Media Marketing: Building Trust in Restoration</h1>
+        <h1 class="cs-title">Social Media Management for Restoration Companies</h1>
         <div class="intro">
-            <p class="cs-text">In the restoration industry, building trust and showcasing expertise is crucial for success. Social media marketing provides a powerful platform to demonstrate your restoration capabilities, share success stories, and connect with property owners and insurance partners. Let's explore how strategic social media management can drive growth for your restoration company.</p>
+            <p class="cs-text">Social media management gives restoration companies a consistent way to show credible work between emergencies. We organize project proof, team expertise, local updates, and community responses into a practical publishing and engagement program that supports the people and partners you want to reach.</p>
         </div>
 
         <div class="cs-image-group d-lg-none d-block">
@@ -197,8 +196,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
       <li class="cs-text"><strong>Crisis Communication:</strong> Managing emergency response messaging.</li>
   </ul>
 
-  <h2>Conclusion</h2>
-  <p class="cs-text">Social media gives people a closer look at your crew, your process, and the quality of your work. Share useful project updates, answer common questions, and show how your team responds when a property owner needs help. Consistent, practical posts build familiarity with customers and referral partners in your area.</p>
+  <h2>What Social Media Management Delivers</h2>
+  <p class="cs-text">A managed program creates a reliable cadence for showing completed work, explaining your response process, and engaging local audiences without asking your operations team to improvise every post. The result should be a clearer body of trust proof and useful local communication—not generic activity for its own sake.</p>
 </div>
 </div>
 <div class="cs-bubbles" aria-hidden="true"></div>
@@ -209,7 +208,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
       path="/services/social-media-marketing/"
       includeFaq={false}
     />
-    <FAQ />  
     <CaseStudyTeaser compact />
     <CTA />
     <Articles />

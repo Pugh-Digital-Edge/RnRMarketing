@@ -42,11 +42,18 @@ import ServicesDisplay from "@components/ServicesDisplay.astro";
 import Icon from "node_modules/astro-icon/components/Icon.astro";
 const optimizedImage = await getOptimizedImage(landingImage);
 const pagePath = `/${industry.data.Name}/${service.data.Name}/`;
+const isWaterDamagePpc = industry.data.Name === "water-damage-restoration" && service.data.Name === "ppc";
+const pageTitle = isWaterDamagePpc
+  ? "Water Damage Restoration PPC & LSA Campaigns"
+  : `${service.data.FormalName} for ${industry.data.FormalName}`;
+const pageDescription = isWaterDamagePpc
+  ? "Water damage restoration PPC and Local Service Ads campaigns built to capture urgent calls, control lead costs, and support qualified booked jobs."
+  : `Specialized ${service.data.FormalName} services designed specifically for ${industry.data.FormalName} companies. Drive more emergency restoration leads and grow your ${industry.data.Name} business.`;
 ---
 
 <BaseLayout
-  title={`${service.data.FormalName} for ${industry.data.FormalName}`}
-  description={`Specialized ${service.data.FormalName} services designed specifically for ${industry.data.FormalName} companies. Drive more emergency restoration leads and grow your ${industry.data.Name} business.`}
+  title={pageTitle}
+  description={pageDescription}
   preloadedImage={optimizedImage}
 >
 <ServiceSchema
@@ -56,7 +63,7 @@ const pagePath = `/${industry.data.Name}/${service.data.Name}/`;
     serviceType={service.data.FormalName}
 />
 <Landing
-    title={`${service.data.FormalName} for ${industry.data.FormalName}`}
+    title={pageTitle}
     image={optimizedImage}
     isIndustryByService={true}
     isPageHeading
@@ -80,6 +87,11 @@ const pagePath = `/${industry.data.Name}/${service.data.Name}/`;
             <p class="cs-text">
                 {industry.data.Description}
             </p>
+            {isWaterDamagePpc && (
+                <p class="cs-text">
+                    Water-damage PPC needs its own campaign structure: urgent search terms, service-area controls, call-focused landing pages, and Local Service Ads that support fast response. For broader restoration advertising across service lines, see our <a href="/services/ppc/">PPC and Local Service Ads service</a>.
+                </p>
+            )}
             <p class="cs-text">
                 <div set:html={service.data.Description1}></div>
             </p>           

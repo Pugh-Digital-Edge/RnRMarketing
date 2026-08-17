@@ -14,7 +14,6 @@ import webDesignSvg from "@assets/images/svg/web-design.svg";
 import responsiveDesignIcon from "@assets/images/svg/responsive-design.svg";
 import { Icon } from 'astro-icon/components';
 import CTA from "@components/CTA.astro";
-import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
 import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 import AnswerBlock from "@components/AnswerBlock.astro";
@@ -27,8 +26,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
-  title="Restoration Web Design"
-  description="Discover how custom web design can help your restoration company convert more emergency calls and build trust with property owners."
+  title="Web Design for Restoration Companies"
+  description="Restoration web design built to help urgent visitors find the right service, trust your team, and contact you quickly from any device."
   preloadedImage={optimizedImage}
 >
 <ServiceSchema
@@ -98,7 +97,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
         </ul>
       </div>
       <div class="cs-content">
-        <h1 class="cs-title">Restoration Web Design: Converting Emergency Calls 24/7</h1>
+        <h1 class="cs-title">Web Design for Restoration Companies That Turns Urgent Visits Into Calls</h1>
 
         <AnswerBlock question="What makes a good restoration company website?" as="h2">
           <p>
@@ -212,8 +211,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
             <li class="cs-text"><strong>Continuous Updates:</strong> Regular updates to services and coverage areas.</li>
         </ul>
 
-        <h2>Conclusion</h2>
-        <p class="cs-text">A custom-designed restoration website is essential for converting emergency calls and building long-term growth. By combining emergency response features with professional design and mobile optimization, your website becomes a powerful tool for generating restoration leads 24/7. When integrated with your broader digital marketing strategy, your website helps establish your restoration company as the trusted local expert while ensuring property owners can easily reach you during disasters.</p>
+        <h2>Plan a Restoration Website Around the Next Call</h2>
+        <p class="cs-text">A restoration website should make the right next step obvious: identify the service, show why your team is credible, and give a stressed property owner a fast way to contact you. We prioritize clear service paths, mobile performance, trust proof, and measurement so design choices support qualified calls rather than just a prettier site.</p>
       </div>
     </div>
     <div class="cs-bubbles" aria-hidden="true"></div>
@@ -224,7 +223,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
       path="/services/web-design/"
       includeFaq={false}
     />
-    <FAQ />  
     <CaseStudyTeaser compact />
     <CTA />
     <Articles />
