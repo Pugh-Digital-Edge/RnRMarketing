@@ -14,9 +14,11 @@ export default defineConfig({
     tailwind(),
     sitemap({
       // The CMS is an editorial interface, not a public content page.
+      // Paid-search landing pages are excluded too: they exist only for ad traffic
+      // and would otherwise compete with the service pages on the same terms.
       filter: (page) => {
         const pathname = new URL(page).pathname;
-        return !['/admin', '/admin/', '/privacy/', '/tos/', '/thank-you/'].includes(pathname);
+        return !['/admin', '/admin/', '/privacy/', '/tos/', '/thank-you/', '/restoration-marketing/'].includes(pathname);
       },
       // Keep sitemap freshness aligned with the editorial review date used by
       // the shared WebPage schema. Resource pages provide their own date in

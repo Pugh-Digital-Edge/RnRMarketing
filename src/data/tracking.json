@@ -1,0 +1,7 @@
+{
+	"ga4Id": "G-4K4H62DJ77",
+	"googleTagId": "GT-5DGPX7H7",
+	"googleAdsId": "AW-18384038031",
+	"leadConversionLabel": "g-gLCL-5g-UcEI_RmL5E",
+	"note": "leadConversionLabel is the per-conversion-action label from Google Ads (Goals > Conversions > the lead action > Tag setup). The Ads conversion event and the enhanced-conversions user_data call are both skipped while it is blank."
+}

@@ -1,5 +1,6 @@
 ---
 import client from "@data/client.json";
+import tracking from "@data/tracking.json";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import CustomChat from "@components/CustomChat.astro";
@@ -7,7 +8,7 @@ import "@styles/root.less";
 import "@styles/dark.less";
 import "@styles/refresh.less";
 
-const { description, title, preloadedImage, preloadedImageMobile, dateModified, noindex = false, openGraphImage = '/assets/images/logo-small.jpg' } = Astro.props;
+const { description, title, preloadedImage, preloadedImageMobile, dateModified, noindex = false, openGraphImage = '/assets/images/logo-small.jpg', bodyContract, conversionOnly = false, eagerAnalytics = false } = Astro.props;
 // Keep one editorial freshness date for pages without frontmatter. Page-specific
 // resource dates override this through the dateModified prop. This date reflects
 // the site-wide AEO refresh completed on 2026-08-10.
@@ -220,14 +221,14 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                 }
                 </script>
             <!-- Prioritize only the responsive hero asset needed for this viewport. -->
-            {preloadedImageMobile ? (
+            {preloadedImageMobile && preloadedImage ? (
                 <>
                     <link rel="preload" href={preloadedImageMobile.src} imagesrcset={preloadedImageMobile.srcSet} imagesizes={preloadedImageMobile.sizes ?? '100vw'} media="(max-width: 600px)" as="image" fetchpriority="high" />
                     <link rel="preload" href={preloadedImage.src} imagesrcset={preloadedImage.srcSet} imagesizes={preloadedImage.sizes ?? '100vw'} media="(min-width: 601px)" as="image" fetchpriority="high" />
                 </>
-            ) : (
+            ) : preloadedImage ? (
                 <link rel="preload" href={preloadedImage.src} imagesrcset={preloadedImage.srcSet} imagesizes={preloadedImage.sizes ?? '100vw'} as="image" fetchpriority="high" />
-            )}
+            ) : null}
             <link rel="preload" href="/assets/fonts/poppins-v21-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
             <link rel="preload" href="/assets/fonts/poppins-v21-latin-700.woff2" as="font" type="font/woff2" crossorigin />
             <meta name="google-site-verification" content="Uhclxmf6JyErwpzjc2QhHZuENaQhwtR-TNMMiQVTT6o" />
@@ -274,12 +275,77 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
 
             <!-- Sitewide Scripts -->
             <script src="../assets/js/nav.js"></script>
-            <script is:inline>
+            <script is:inline define:vars={{ trackingConfig: tracking, eagerAnalytics }}>
+                window.rrTracking = trackingConfig;
+                window.rrEagerAnalytics = eagerAnalytics;
                 window.dataLayer = window.dataLayer || [];
                 window.gtag = function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                gtag('config', 'G-4K4H62DJ77');
+                gtag('config', trackingConfig.ga4Id);
+
+                // The GT- Google tag is configured alongside the GA4 property rather than
+                // replacing it, so measurement keeps working if the GT container's
+                // destinations are ever changed in the Google tag UI.
+                if (trackingConfig.googleTagId) {
+                    gtag('config', trackingConfig.googleTagId);
+                }
+
+                // The Google Ads tag only configures when a real conversion ID is present,
+                // so an unconfigured account never sends malformed hits.
+                if (trackingConfig.googleAdsId) {
+                    gtag('config', trackingConfig.googleAdsId, { allow_enhanced_conversions: true });
+                }
+            </script>
+            <script is:inline>
+                // Capture Google Ads click identifiers and campaign parameters once per session so
+                // the lead form can submit them and offline conversion import stays possible.
+                (() => {
+                    const TRACKED_PARAMS = ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+                    const STORAGE_KEY = 'rr_click_attribution';
+
+                    const readStored = () => {
+                        try {
+                            return JSON.parse(window.sessionStorage.getItem(STORAGE_KEY)) || {};
+                        } catch {
+                            return {};
+                        }
+                    };
+
+                    const params = new URLSearchParams(window.location.search);
+                    const stored = readStored();
+                    let changed = false;
+
+                    TRACKED_PARAMS.forEach((key) => {
+                        const value = params.get(key);
+                        if (value && stored[key] !== value) {
+                            stored[key] = value;
+                            changed = true;
+                        }
+                    });
+
+                    if (!stored.landing_page) {
+                        stored.landing_page = window.location.pathname;
+                        changed = true;
+                    }
+
+                    if (changed) {
+                        try {
+                            window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
+                        } catch {
+                            // Storage can be unavailable in privacy-restricted browsers.
+                        }
+                    }
+
+                    window.rrAttribution = stored;
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        document.querySelectorAll('[data-attribution-field]').forEach((field) => {
+                            const key = field.getAttribute('data-attribution-field');
+                            field.value = stored[key] || '';
+                        });
+                    });
+                })();
             </script>
             <script is:inline>
                 document.addEventListener('DOMContentLoaded', () => {
@@ -331,6 +397,27 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                             });
                             try {
                                 window.sessionStorage.setItem('schedule_lead_submission_pending', '1');
+                                // Enhanced conversions need the lead's own identifiers on the
+                                // confirmation page, which the Netlify redirect does not carry over.
+                                const readField = (name) => {
+                                    const field = leadForm.querySelector(`[name="${name}"]`);
+                                    return field && field.value ? field.value.trim() : '';
+                                };
+                                // Enhanced conversions match on E.164 numbers, so a typed
+                                // US number is normalised before it is stored.
+                                const toE164 = (value) => {
+                                    const digits = value.replace(/\D/g, '');
+                                    if (digits.length === 10) return `+1${digits}`;
+                                    if (digits.length === 11 && digits.startsWith('1')) return `+${digits}`;
+                                    return value.startsWith('+') ? value : '';
+                                };
+                                window.sessionStorage.setItem('schedule_lead_user_data', JSON.stringify({
+                                    email: readField('email').toLowerCase(),
+                                    phone_number: toE164(readField('phone')),
+                                    landing_page: window.location.pathname,
+                                    lead_scope: readField('program-scope'),
+                                    lead_budget: readField('monthly-budget'),
+                                }));
                             } catch {
                                 // Storage can be unavailable in privacy-restricted browsers.
                             }
@@ -406,23 +493,22 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
             </style>
         </head>
         <body class={`route-${routeKey}`}>
-            <!-- impeccable:contract 34da82de
+            <template data-impeccable-contract={bodyContract ?? `impeccable:contract 34da82de
             THESIS: Restoration marketing should feel like a working signal system, not a brochure; this build refuses the generic blue-agency card wall.
             OWN-WORLD: Cobalt glaze, chalk-white surfaces, ink navy, mustard signal marks, and straight tile seams framing real proof.
             STORY: A restoration owner moves from visible constraint to connected solution to a specific assessment.
             FIRST VIEWPORT: An oversized promise on a dark cobalt field, proof or mechanism beside it, and the assessment action in the first read.
             FORM: Cobalt Tile Hall, candidate 3; seed key 34da82de.
-            FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
-            -->
+            FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md`}></template>
             <!--Screen reader skip main nav-->
             <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
     
-            <Header />
+            {!conversionOnly && <Header />}
             <main id="main">
                 <slot/>
             </main>
-            <Footer />
-            <CustomChat />
+            {!conversionOnly && <Footer />}
+            {!conversionOnly && <CustomChat />}
             <script is:inline>
                 (() => {
                     window._paq = window._paq || [];
@@ -448,10 +534,16 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                         document.head.append(matomo);
                     };
 
-                    ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach((eventName) => {
-                        window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
-                    });
-                    window.addEventListener('load', () => window.setTimeout(loadAnalytics, 10000), { once: true });
+                    // Conversion pages cannot wait for an interaction that may never happen:
+                    // a lead who lands on the confirmation page and leaves would go unreported.
+                    if (window.rrEagerAnalytics) {
+                        loadAnalytics();
+                    } else {
+                        ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach((eventName) => {
+                            window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+                        });
+                        window.addEventListener('load', () => window.setTimeout(loadAnalytics, 10000), { once: true });
+                    }
                 })();
             </script>
         </body>

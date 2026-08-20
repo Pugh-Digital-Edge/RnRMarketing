@@ -1,0 +1,129 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import AdsLandingPage from "@components/AdsLandingPage.astro";
+
+const bodyContract = `impeccable:contract 60015ef0
+THESIS: A restoration marketer should feel like a protected territory and a founder-led specialist agency, not an interchangeable agency brochure or a one-person consultancy.
+OWN-WORLD: Ink-navy territory grid, cobalt fields, chalk form surface, cyan plot lines, mustard conversion control, and gently squared working panels.
+STORY: A restoration owner sees exact message match, understands the restoration-only agency system, verifies reported client outcomes, de-risks the call, and requests a founder-led strategy conversation.
+FIRST VIEWPORT: A territory briefing fills the screen: oversized query-matched headline left, qualified form right, and 30-minute, zero-prep, founder-led facts at the decision point.
+FORM: Territory field briefing, grounded structure 5; seed key 60015ef0; approved comp .impeccable/mocks/restoration-marketing-comp-b.png.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md`;
+
+// The page sells one managed program, so these read as inclusions rather than
+// a menu a visitor could order from.
+const services = [
+  {
+    title: "Your website",
+    text: "The foundation everything else runs on. We build and maintain it, so the demand the rest of the program creates has somewhere that actually converts.",
+    detail: "Foundation of the program",
+  },
+  {
+    title: "Local Services Ads",
+    text: "Google Guaranteed placement managed against your real lead quality and territory, not just clicks and impressions.",
+    detail: "Included in the program",
+  },
+  {
+    title: "Restoration SEO",
+    text: "Service and location coverage so your company is found for water, fire, and mold searches across the markets you serve.",
+    detail: "Included in the program",
+  },
+  {
+    title: "AEO",
+    text: "Structured, answer-ready content so your company gets surfaced and cited when property owners ask AI assistants who to call.",
+    detail: "Included in the program",
+  },
+  {
+    title: "Lead tracking",
+    text: "Call, form, and job tracking wired end to end, so every lead traces back to what produced it.",
+    detail: "Included in the program",
+  },
+];
+
+const proofItems = [
+  {
+    title: "One company per territory",
+    text: "We work with one restoration company per service territory, subject to availability.",
+  },
+  {
+    title: "100% U.S.-based team",
+    text: "Your work stays with our U.S.-based team. We do not outsource it.",
+  },
+  {
+    title: "Qualified leads can begin within 72 hours",
+    text: "Paid campaigns can begin producing qualified leads within 72 hours of launch. Timing depends on your market, budget, and campaign readiness.",
+  },
+];
+
+// Figures come from src/data/caseStudies.js. Only the verified numbers are used
+// here; the disputed figures flagged in that file are deliberately left off a
+// page that carries paid traffic. Every client runs the same program, so the
+// inclusions are stated once above the cards rather than per client.
+const results = [
+  {
+    label: "Chicago-area restoration",
+    window: "May–July 2026 reporting",
+    headline: "LSA leads more than tripled while cost per lead came down",
+    metrics: [
+      { value: "5 → 18", label: "Local Services Ads leads" },
+      { value: "$177.80 → $147.61", label: "LSA cost per lead" },
+    ],
+  },
+  {
+    label: "Michigan restoration",
+    window: "May–July 2026 reporting",
+    headline: "Organic and Google Business Profile traffic doubled in 90 days",
+    metrics: [
+      { value: "62 → 124", label: "Reported organic sessions" },
+      { value: "23 → 46", label: "Google Business Profile website clicks" },
+      { value: "12 → 19", label: "Reported calls" },
+    ],
+  },
+  {
+    label: "Kentucky mold & water damage",
+    window: "May–July 2026 reporting",
+    headline: "More calls and more LSA leads as cost per lead fell",
+    metrics: [
+      { value: "8 → 22", label: "Reported organic calls" },
+      { value: "11 → 19", label: "Local Services Ads leads" },
+      { value: "$108.54 → $77.79", label: "LSA cost per lead" },
+    ],
+  },
+];
+
+const programPillars = ["Website", "Local Services Ads", "SEO", "AEO", "Lead tracking"];
+
+const programNote = "Every client runs the same program, built on a website we own and maintain. We do not assemble a different package per account, so the results below are the same system applied in three different markets.";
+
+const heatMap = {
+  src: "/assets/images/case-studies/chicago-gbp-heatmap.gif",
+  alt: "Animated Google Business Profile rank grid for a water damage restoration company across the Chicago service area, showing ranking positions improving over time",
+  caption: "Google Business Profile rankings across a competitive Chicago service area.",
+  note: "Each point is a tracked map-pack position on a geographic grid. Green is a top-three position, red is outside the top twenty. This is local SEO and Google Business Profile work compounding over the reporting window, in one of the most competitive restoration markets in the country.",
+};
+---
+
+<BaseLayout
+  title="Full-Service Restoration Marketing for One Company Per Territory"
+  description="One team running every part of your restoration marketing: SEO, Google Business Profile, PPC and LSA, your website, and lead tracking. One restoration company per territory. Request a founder-led strategy call."
+  dateModified="2026-08-20"
+  bodyContract={bodyContract}
+  conversionOnly
+  noindex
+  eagerAnalytics
+>
+  <AdsLandingPage
+    heroTitle="One Team Running Every Part of Your Restoration Marketing."
+    heroText="SEO, Google Business Profile, Local Services Ads, your website, and lead tracking, built and managed as one system by a restoration-only agency. We take on one restoration company per service territory."
+    servicesTitle="What we take off your plate."
+    servicesIntro="You are not hiring a channel. You are handing over the whole path from the first search to the booked job, to one team that owns every part of it, starting with the website it all runs on."
+    services={services}
+    resultsTitle="What the full program has produced."
+    resultsIntro="Every result below came from running the entire program together, not from one service in isolation. Figures are taken from each client's own reporting for the window shown."
+    results={results}
+    programPillars={programPillars}
+    programNote={programNote}
+    heatMap={heatMap}
+    proofItems={proofItems}
+  />
+</BaseLayout>

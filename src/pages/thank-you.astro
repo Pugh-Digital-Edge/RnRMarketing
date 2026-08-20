@@ -7,10 +7,11 @@ const preloadedImage = await getOptimizedImage(heroImage);
 ---
 
 <BaseLayout
-  title="Session Request Received"
-  description="Your Lead Flow Acceleration Session request has been received."
+  title="Strategy Call Request Received"
+  description="Your 30-minute restoration marketing strategy call request has been received."
   preloadedImage={preloadedImage}
   noindex
+  eagerAnalytics
 >
   <script is:inline>
     (() => {
@@ -25,12 +26,45 @@ const preloadedImage = await getOptimizedImage(heroImage);
         // Storage can be unavailable in privacy-restricted browsers.
       }
 
-      if (shouldTrackLead && typeof window.gtag === 'function') {
-        window.gtag('event', 'generate_lead', {
-          event_category: 'conversion',
-          form_name: 'Schedule Lead Form',
-          lead_type: 'lead_flow_assessment',
-          page_location: window.location.href,
+      if (!shouldTrackLead || typeof window.gtag !== 'function') {
+        return;
+      }
+
+      let leadUserData = {};
+
+      try {
+        leadUserData = JSON.parse(window.sessionStorage.getItem('schedule_lead_user_data')) || {};
+        window.sessionStorage.removeItem('schedule_lead_user_data');
+      } catch {
+        // Storage can be unavailable in privacy-restricted browsers.
+      }
+
+      const attribution = window.rrAttribution || {};
+
+      window.gtag('event', 'generate_lead', {
+        event_category: 'conversion',
+        form_name: 'Schedule Lead Form',
+        lead_type: 'restoration_strategy_call',
+        landing_page: leadUserData.landing_page || attribution.landing_page || '',
+        lead_scope: leadUserData.lead_scope || '',
+        lead_budget: leadUserData.lead_budget || '',
+        gclid: attribution.gclid || '',
+        page_location: window.location.href,
+      });
+
+      const trackingConfig = window.rrTracking || {};
+
+      if (trackingConfig.googleAdsId && trackingConfig.leadConversionLabel) {
+        // Enhanced conversions hash these values in the tag before they leave the browser.
+        if (leadUserData.email || leadUserData.phone_number) {
+          window.gtag('set', 'user_data', {
+            email: leadUserData.email || undefined,
+            phone_number: leadUserData.phone_number || undefined,
+          });
+        }
+
+        window.gtag('event', 'conversion', {
+          send_to: `${trackingConfig.googleAdsId}/${trackingConfig.leadConversionLabel}`,
         });
       }
     })();
@@ -38,11 +72,31 @@ const preloadedImage = await getOptimizedImage(heroImage);
   <main class="thank-you">
     <div class="thank-you__content">
       <p class="cs-topper">REQUEST RECEIVED</p>
-      <h1>Thanks. Your Lead Flow Acceleration Session request is in.</h1>
+      <h1>Thanks. Now pick a time that works.</h1>
       <p>
-        We’ll review the details you shared and contact you with the next step. In the meantime, you can explore how our restoration marketing services work.
+        Your details are in. Book your 30-minute call with Matt below and it is locked in
+        straight away, no back-and-forth email. Nothing to prepare, just bring your questions.
       </p>
-      <a href="/services/" class="cs-button-solid">Explore Restoration Marketing Services</a>
+    </div>
+
+    <div class="thank-you__scheduler">
+      <!-- Loaded after the conversion script above so the lead is always recorded first. -->
+      <iframe
+        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0ZohPTCbsjXJVYM2p94A87G46TCsjvi-5Oj3cGo3PGwRfQhrqZIZ-Q9BTNS4jlHWSPKArREwSH?gv=true"
+        title="Book a 30-minute restoration marketing strategy call with Matt Pugh"
+        width="100%"
+        height="600"
+        frameborder="0"
+        style="border: 0"
+      ></iframe>
+    </div>
+
+    <div class="thank-you__content thank-you__footnote">
+      <p>
+        Prefer not to book now? Matt will review your service territory and reach out either way.
+        In the meantime, see how the full program has worked for other restoration companies.
+      </p>
+      <a href="/case-studies/" class="cs-button-solid">See Client Results</a>
     </div>
   </main>
 </BaseLayout>
@@ -69,5 +123,32 @@ const preloadedImage = await getOptimizedImage(heroImage);
 
   .thank-you p:not(.cs-topper) {
     margin-bottom: 2rem;
+  }
+
+  .thank-you__scheduler {
+    width: 100%;
+    max-width: 56rem;
+    margin: 0 auto 3rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background: var(--surface);
+    box-shadow: var(--shadowS);
+  }
+
+  .thank-you__scheduler iframe {
+    width: 100%;
+    min-height: 37.5rem;
+    border: 0;
+    border-radius: 0.75rem;
+    display: block;
+  }
+
+  .thank-you__footnote {
+    padding-top: 2rem;
+    border-top: 1px solid var(--borderColor);
+  }
+
+  .thank-you__footnote p {
+    font-size: 0.95rem;
   }
 </style>

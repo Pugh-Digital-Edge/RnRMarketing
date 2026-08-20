@@ -1,0 +1,1079 @@
+---
+import { Image } from "astro:assets";
+import mattImage from "@assets/images/matt.webp";
+import logo from "@assets/images/svg/rr-marketing-logo.svg";
+import client from "@data/client.json";
+
+interface ServiceItem {
+  title: string;
+  text: string;
+  detail: string;
+}
+
+interface ProofItem {
+  title: string;
+  text: string;
+}
+
+interface ResultMetric {
+  value: string;
+  label: string;
+}
+
+interface ResultItem {
+  label: string;
+  headline: string;
+  window: string;
+  metrics: ResultMetric[];
+}
+
+interface HeatMap {
+  src: string;
+  alt: string;
+  caption: string;
+  note: string;
+}
+
+interface Props {
+  heroTitle: string;
+  heroText: string;
+  servicesTitle: string;
+  servicesIntro: string;
+  services: ServiceItem[];
+  proofItems: ProofItem[];
+  resultsTitle: string;
+  resultsIntro: string;
+  results: ResultItem[];
+  programPillars: string[];
+  programNote: string;
+  heatMap?: HeatMap;
+}
+
+const {
+  heroTitle,
+  heroText,
+  servicesTitle,
+  servicesIntro,
+  services,
+  proofItems,
+  resultsTitle,
+  resultsIntro,
+  results,
+  programPillars,
+  programNote,
+  heatMap,
+} = Astro.props;
+---
+
+<div class="rm-landing">
+  <header class="rm-header">
+    <a class="rm-logo" href="#lead-form" aria-label="Remediation and Restoration Marketing, request a call">
+      <Image src={logo} alt="Remediation & Restoration Marketing" width={209} height={40} />
+    </a>
+    <a class="rm-header-cta" href="#lead-form">Check your territory</a>
+  </header>
+
+  <section class="rm-hero" aria-labelledby="rm-hero-title">
+    <div class="rm-grid" aria-hidden="true">
+      <span>A</span><span>B</span><span>C</span><span>D</span>
+      <span class="rm-grid-scale">RESTORATION TERRITORY / US</span>
+    </div>
+    <svg class="rm-territory-plot" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+      <path class="rm-plot-frame" d="M35 108H525V66H1030V144H1398V768H1110V838H564V792H35Z" />
+      <path class="rm-plot-seam" d="M525 66V290L692 410V792M1030 144V338L862 488V838M35 538H316L468 424H692M862 488L1048 566H1398" />
+      <path class="rm-plot-mark" d="M35 88v40M15 108h40M1398 748v40M1378 768h40M1010 144h40M1030 124v40M544 792h40M564 772v40" />
+      <circle cx="692" cy="410" r="7" />
+      <circle cx="862" cy="488" r="7" />
+    </svg>
+    <div class="rm-hero-inner">
+      <div class="rm-hero-copy">
+        <h1 id="rm-hero-title">{heroTitle}</h1>
+        <p class="rm-hero-text">{heroText}</p>
+
+        <div class="rm-no-layers">
+          <span class="rm-founder-signal">Founder-led strategy</span>
+          <p><strong>Your first call is with Matt Pugh.</strong> Matt leads the conversation, and our U.S.-based specialist team supports the work that follows.</p>
+        </div>
+      </div>
+
+      <div class="rm-form-side">
+        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="Schedule Lead Form" />
+          <p hidden>
+            <label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </p>
+
+          <div class="rm-form-heading">
+            <h2>Request your 30-minute strategy call</h2>
+            <p>You will speak directly with our founder, Matt Pugh.</p>
+          </div>
+
+          <input type="hidden" name="gclid" data-attribution-field="gclid" />
+          <input type="hidden" name="gbraid" data-attribution-field="gbraid" />
+          <input type="hidden" name="wbraid" data-attribution-field="wbraid" />
+          <input type="hidden" name="utm-source" data-attribution-field="utm_source" />
+          <input type="hidden" name="utm-medium" data-attribution-field="utm_medium" />
+          <input type="hidden" name="utm-campaign" data-attribution-field="utm_campaign" />
+          <input type="hidden" name="utm-term" data-attribution-field="utm_term" />
+          <input type="hidden" name="utm-content" data-attribution-field="utm_content" />
+          <input type="hidden" name="landing-page" data-attribution-field="landing_page" />
+
+          <div class="rm-fields">
+            <label>
+              Name
+              <input required type="text" name="name" autocomplete="name" placeholder="Your full name" />
+            </label>
+            <label>
+              Email
+              <input required type="email" name="email" autocomplete="email" placeholder="you@company.com" />
+            </label>
+            <label>
+              Phone <span class="rm-optional">Optional</span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555" />
+            </label>
+            <label>
+              Company
+              <input required type="text" name="company" autocomplete="organization" placeholder="Company name" />
+            </label>
+            <label class="rm-full-field">
+              Service territory
+              <span>We work with one restoration company per territory.</span>
+              <input required type="text" name="service-area" autocomplete="address-level2" placeholder="City, state, or ZIP codes" />
+            </label>
+            <label>
+              What are you looking for?
+              <select required name="program-scope">
+                <option value="" selected disabled>Choose the closest fit</option>
+                <option value="full-program">The full program</option>
+                <option value="paid-led">Mostly paid ads</option>
+                <option value="single-service">One specific service</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </label>
+            <label>
+              Monthly marketing budget
+              <select required name="monthly-budget">
+                <option value="" selected disabled>Choose a range</option>
+                <option value="under-2500">Under $2,500 / month</option>
+                <option value="2500-5000">$2,500 – $5,000 / month</option>
+                <option value="5000-10000">$5,000 – $10,000 / month</option>
+                <option value="10000-plus">$10,000+ / month</option>
+                <option value="undecided">Not decided yet</option>
+              </select>
+            </label>
+          </div>
+
+          <button class="rm-submit" type="submit">
+            <span>Check my territory</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
+          </button>
+
+          <ul class="rm-call-facts" aria-label="What to expect on the call">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span><strong>30 minutes</strong>Focused on your market</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h10v16H7zM9 3h6v4H9zM10 12l1.5 1.5L15 10"/></svg>
+              <span><strong>Nothing to prepare</strong>Just bring your questions</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21c.7-4.2 3-6 7-6s6.3 1.8 7 6"/></svg>
+              <span><strong>Speak with Matt</strong>Directly with the founder</span>
+            </li>
+          </ul>
+          <p class="rm-privacy-note">By submitting this form you agree that R &amp; R Marketing may contact you by email or phone about your strategy call. We do not sell your details. <a href="/privacy/">Privacy policy</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="rm-specialist" aria-labelledby="rm-specialist-title">
+    <div class="rm-section-shell rm-specialist-grid">
+      <div class="rm-specialist-copy">
+        <h2 id="rm-specialist-title">We know restoration because it is all we do.</h2>
+        <p class="rm-lead">R & R Marketing works exclusively with restoration companies. We start with how property owners search in an emergency, which services matter most, where you work, and which leads your team is ready to take.</p>
+        <dl class="rm-reasons">
+          <div>
+            <dt>One company per territory</dt>
+            <dd>We do not stack competing restoration clients in the same service territory.</dd>
+          </div>
+          <div>
+            <dt>100% U.S.-based team</dt>
+            <dd>Your work stays with our U.S.-based team. We do not outsource it.</dd>
+          </div>
+          <div>
+            <dt>Founder-led consultation</dt>
+            <dd>Your first strategy call is with Matt, and our specialists support the work that follows.</dd>
+          </div>
+        </dl>
+        <a class="rm-text-cta" href="#lead-form">See if your territory is available <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="rm-owner-panel">
+        <div class="rm-owner-photo">
+          <Image src={mattImage} alt="Matt Pugh, founder and restoration marketing specialist" width={960} height={1200} loading="eager" decoding="async" />
+        </div>
+        <div class="rm-owner-caption">
+          <p>Matt Pugh</p>
+          <span>Founder & Restoration Marketing Specialist</span>
+        </div>
+        <div class="rm-owner-signal" aria-hidden="true">
+          <span>FOUNDER-LED</span>
+          <span>AGENCY STRATEGY</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rm-system" aria-labelledby="rm-system-title">
+    <div class="rm-section-shell">
+      <div class="rm-system-intro">
+        <h2 id="rm-system-title">{servicesTitle}</h2>
+        <div class="rm-system-intro-copy">
+          <p>{servicesIntro}</p>
+          <dl class="rm-system-stack" aria-label="From search to booked job">
+            <div><dt>Search</dt><dd>Get found</dd></div>
+            <div><dt>Call or form</dt><dd>Start the conversation</dd></div>
+            <div><dt>Booked job</dt><dd>Track the outcome</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <ol class="rm-service-rail">
+        {services.map((service, index) => (
+          <li>
+            <div class="rm-service-node" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div>
+            <div class="rm-service-copy">
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+            </div>
+            <p class="rm-service-detail">{service.detail}</p>
+          </li>
+        ))}
+      </ol>
+
+      <div class="rm-mid-cta">
+        <p>One team owns all five. When something isn&rsquo;t working, there&rsquo;s one person to ask.</p>
+        <a href="#lead-form">Check your territory <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="rm-results" aria-labelledby="rm-results-title">
+    <div class="rm-section-shell">
+      <div class="rm-results-head">
+        <h2 id="rm-results-title">{resultsTitle}</h2>
+        <p>{resultsIntro}</p>
+      </div>
+
+      <div class="rm-program-band">
+        <ul class="rm-program-pillars" aria-label="What every client's program includes">
+          {programPillars.map((pillar) => <li>{pillar}</li>)}
+        </ul>
+        <p class="rm-program-note">{programNote}</p>
+      </div>
+
+      <div class="rm-results-grid">
+        {results.map((result) => (
+          <article class="rm-result-card">
+            <div class="rm-result-top">
+              <span>{result.label}</span>
+              <span>{result.window}</span>
+            </div>
+            <h3>{result.headline}</h3>
+            <dl class="rm-result-metrics">
+              {result.metrics.map((metric) => (
+                <div>
+                  <dt>{metric.value}</dt>
+                  <dd>{metric.label}</dd>
+                </div>
+              ))}
+            </dl>
+          </article>
+        ))}
+      </div>
+
+      {heatMap && (
+        <figure class="rm-heatmap">
+          <div class="rm-heatmap-media">
+            <img src={heatMap.src} alt={heatMap.alt} loading="lazy" decoding="async" data-heatmap-media />
+          </div>
+          <figcaption>
+            <span class="rm-heatmap-label">Local rank tracking</span>
+            <p class="rm-heatmap-caption">{heatMap.caption}</p>
+            <p class="rm-heatmap-note">{heatMap.note}</p>
+          </figcaption>
+        </figure>
+      )}
+
+      <p class="rm-results-disclosure">Client names are withheld by agreement. Every figure above is taken from the client's own reporting for the stated window and is not a guarantee of future results.</p>
+    </div>
+  </section>
+
+  <section class="rm-proof" aria-labelledby="rm-proof-title">
+    <div class="rm-section-shell">
+      <div class="rm-proof-title-wrap">
+        <h2 id="rm-proof-title">What you can count on.</h2>
+        <p>We would rather be clear about how we work than make vague promises.</p>
+      </div>
+      <div class="rm-proof-grid">
+        {proofItems.map((item) => (
+          <article>
+            <span class="rm-proof-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="rm-call" aria-labelledby="rm-call-title">
+    <div class="rm-section-shell rm-call-grid">
+      <div class="rm-call-copy">
+        <h2 id="rm-call-title">Start with a real conversation.</h2>
+        <p>Matt will look at your service territory, online visibility, and lead opportunities with you. You can ask questions, talk through what is not working, and decide whether R & R Marketing is the right fit.</p>
+        <ul class="rm-call-topics" aria-label="What the call covers">
+          <li>Your service territory</li>
+          <li>How people find you now</li>
+          <li>Your lead goals</li>
+        </ul>
+      </div>
+      <ol class="rm-call-steps">
+        <li><span>Tell us about your market</span><p>Share your company and service territory in the form.</p></li>
+        <li><span>Matt reviews the details</span><p>He looks at your territory and follows up with the next step.</p></li>
+        <li><span>Talk it through together</span><p>Spend 30 focused minutes with Matt. There is nothing you need to prepare.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="rm-final" aria-labelledby="rm-final-title">
+    <div class="rm-final-grid" aria-hidden="true"></div>
+    <div class="rm-section-shell rm-final-inner">
+      <div>
+        <h2 id="rm-final-title">Your marketing agency should not work for your competition.</h2>
+        <p>We work with one restoration company per service territory, subject to availability. Let’s start by checking yours.</p>
+      </div>
+      <div class="rm-final-action">
+        <span>Territory availability</span>
+        <p>Tell us where you work, and we will let you know if your territory is open.</p>
+        <a class="rm-final-cta" href="#lead-form">
+          <span class="rm-final-cta-copy"><strong>Check my territory</strong><small>Request a 30-minute strategy call</small></span>
+          <span class="rm-final-cta-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rm-footer">
+    <div class="rm-footer-inner">
+      <Image src={logo} alt="Remediation & Restoration Marketing" width={209} height={40} />
+      <div class="rm-business">
+        <p>{client.address.lineOne}, {client.address.lineTwo}, {client.address.city}, {client.address.state} {client.address.zip}</p>
+        <p>{client.email}<span aria-hidden="true"> · </span><a href={`tel:${client.phoneForTel}`} aria-label={`Call ${client.phoneFormatted}`}>{client.phoneFormatted}</a></p>
+      </div>
+      <div class="rm-legal"><a href="/privacy/">Privacy</a><a href="/tos/">Terms</a></div>
+    </div>
+  </footer>
+
+  <a class="rm-mobile-cta is-hidden" href="#lead-form">Check territory & request a call</a>
+</div>
+
+<script>
+  // Until the rank-tracking file is in place, drop the whole figure rather than
+  // showing a broken image on a page that carries paid traffic.
+  const heatMapImage = document.querySelector("[data-heatmap-media]");
+
+  if (heatMapImage) {
+    const dropHeatMap = () => {
+      const figure = heatMapImage.closest(".rm-heatmap");
+      if (figure) figure.remove();
+    };
+
+    heatMapImage.addEventListener("error", dropHeatMap);
+
+    // This module runs after parsing, so a failure may already have happened.
+    if (heatMapImage.complete && heatMapImage.naturalWidth === 0) {
+      dropHeatMap();
+    }
+  }
+
+  const landingLeadForm = document.querySelector("#lead-form");
+  const landingFinal = document.querySelector(".rm-final");
+  const landingFooter = document.querySelector(".rm-footer");
+  const stickyCta = document.querySelector(".rm-mobile-cta");
+
+  if (landingLeadForm && stickyCta && "IntersectionObserver" in window) {
+    let formIsVisible = true;
+    let finalIsVisible = false;
+    let footerIsVisible = false;
+    const updateStickyCta = () => stickyCta.classList.toggle("is-hidden", formIsVisible || finalIsVisible || footerIsVisible);
+    const formObserver = new IntersectionObserver(
+      ([entry]) => {
+        formIsVisible = entry.isIntersecting;
+        updateStickyCta();
+      },
+      { threshold: 0.1 },
+    );
+    formObserver.observe(landingLeadForm);
+
+    if (landingFinal) {
+      const finalObserver = new IntersectionObserver(
+        ([entry]) => {
+          finalIsVisible = entry.isIntersecting;
+          updateStickyCta();
+        },
+        { threshold: 0.05 },
+      );
+      finalObserver.observe(landingFinal);
+    }
+
+    if (landingFooter) {
+      const footerObserver = new IntersectionObserver(
+        ([entry]) => {
+          footerIsVisible = entry.isIntersecting;
+          updateStickyCta();
+        },
+        { threshold: 0.05 },
+      );
+      footerObserver.observe(landingFooter);
+    }
+  }
+</script>
+
+<style lang="less">
+  .rm-landing {
+    --rm-ink: #071a42;
+    --rm-cobalt: #0b4aa2;
+    --rm-cyan: #23c6d5;
+    --rm-chalk: #fbfcf8;
+    --rm-mist: #edf2f5;
+    --rm-mustard: #efb43f;
+    --rm-line: rgba(7, 26, 66, 0.16);
+    background: var(--rm-chalk);
+    color: var(--rm-ink);
+  }
+
+  .rm-landing a:focus-visible,
+  .rm-landing button:focus-visible,
+  .rm-landing input:focus-visible {
+    outline: 3px solid var(--rm-mustard);
+    outline-offset: 3px;
+  }
+
+  .rm-header {
+    min-height: 4.75rem;
+    padding: 0.85rem clamp(1rem, 4vw, 4rem);
+    background: var(--rm-ink);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .rm-logo { display: block; width: min(13rem, 62vw); }
+  .rm-logo img { width: 100%; height: auto; filter: brightness(0) invert(1); display: block; }
+
+  .rm-header-cta,
+  .rm-text-cta,
+  .rm-mid-cta a,
+  .rm-final-cta {
+    font-size: 0.78rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .rm-header-cta {
+    color: var(--rm-ink) !important;
+    background: var(--rm-mustard);
+    padding: 0.9rem 1.1rem;
+    border-radius: 0.25rem;
+  }
+
+  .rm-hero {
+    min-height: calc(100svh - 4.75rem);
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background:
+      radial-gradient(circle at 18% 34%, rgba(35, 198, 213, 0.18), transparent 30rem),
+      linear-gradient(120deg, #071a42 0%, #082c69 48%, #071a42 100%);
+  }
+
+  .rm-grid,
+  .rm-final-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.58;
+    background-image:
+      linear-gradient(rgba(35, 198, 213, 0.11) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(35, 198, 213, 0.11) 1px, transparent 1px);
+    background-size: 5rem 5rem;
+    mask-image: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.35) 70%, transparent);
+  }
+
+  .rm-grid > span:not(.rm-grid-scale) {
+    display: none;
+  }
+
+  .rm-grid-scale {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: rgba(134, 237, 235, 0.72);
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+  }
+
+  .rm-territory-plot {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.48;
+    fill: none;
+    stroke: var(--rm-cyan);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .rm-plot-frame { stroke-dasharray: 4 9; }
+  .rm-plot-seam { opacity: 0.68; }
+  .rm-plot-mark { stroke: var(--rm-mustard); stroke-width: 1.5; }
+  .rm-territory-plot circle { fill: var(--rm-ink); stroke-width: 1.5; }
+
+  .rm-hero-inner,
+  .rm-section-shell,
+  .rm-footer-inner {
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+  }
+
+  .rm-hero-inner {
+    min-height: inherit;
+    padding: clamp(3rem, 8vw, 7rem) 0;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .rm-hero-copy { align-self: center; }
+
+  .rm-hero h1 {
+    max-width: 11ch;
+    color: #fff !important;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.94;
+    letter-spacing: -0.04em !important;
+    text-wrap: balance;
+  }
+
+  .rm-hero-text {
+    max-width: 62ch;
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, 0.82) !important;
+    font-size: clamp(1rem, 2vw, 1.18rem);
+    line-height: 1.7;
+  }
+
+  .rm-no-layers {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .rm-founder-signal {
+    width: 7rem;
+    flex: none;
+    color: #9cf4f2;
+    display: grid;
+    gap: 0.65rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .rm-founder-signal::before {
+    content: "";
+    width: 3rem;
+    height: 1px;
+    background: var(--rm-cyan);
+  }
+
+  .rm-no-layers p { color: rgba(255, 255, 255, 0.74) !important; line-height: 1.55; }
+  .rm-no-layers strong { color: #fff; display: block; }
+
+  .rm-form-side { align-self: center; }
+
+  .rm-form {
+    padding: clamp(1.35rem, 4vw, 2.2rem);
+    background: var(--rm-chalk);
+    color: var(--rm-ink);
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 0.55rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 8, 30, 0.34);
+  }
+
+  .rm-form-heading {
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--rm-line);
+  }
+
+  .rm-form-heading p {
+    margin-top: 0.55rem;
+    color: var(--rm-cobalt) !important;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .rm-form-heading h2 {
+    color: var(--rm-ink) !important;
+    font-size: clamp(1.65rem, 4vw, 2.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em !important;
+  }
+
+  .rm-fields { display: grid; gap: 0.9rem; }
+
+  .rm-fields label {
+    color: var(--rm-ink);
+    font-size: 0.78rem;
+    font-weight: 800;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .rm-fields label > span {
+    color: #59667b;
+    font-size: 0.72rem;
+    font-weight: 400;
+  }
+
+  .rm-fields input {
+    width: 100%;
+    min-height: 3.15rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid rgba(7, 26, 66, 0.3) !important;
+    border-radius: 0.25rem !important;
+    background: #fff !important;
+    color: var(--rm-ink);
+    font: inherit;
+    font-size: 1rem;
+  }
+
+  .rm-fields select {
+    width: 100%;
+    min-height: 3.15rem;
+    padding: 0.75rem 2.4rem 0.75rem 0.9rem;
+    border: 1px solid rgba(7, 26, 66, 0.3);
+    border-radius: 0.25rem;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23071a42' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.85rem center;
+    background-size: 1.1rem;
+    color: var(--rm-ink);
+    font: inherit;
+    font-size: 1rem;
+    appearance: none;
+  }
+
+  .rm-fields select:invalid { color: #738096; }
+
+  .rm-optional {
+    margin-left: 0.35rem;
+    color: #7d8899 !important;
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .rm-fields input::placeholder { color: #738096; opacity: 1; }
+  .rm-fields input:focus,
+  .rm-fields select:focus { border-color: var(--rm-cobalt) !important; box-shadow: 0 0 0 4px rgba(35, 198, 213, 0.17) !important; }
+
+  .rm-submit {
+    width: 100%;
+    min-height: 3.7rem;
+    margin-top: 1.15rem;
+    padding: 0.85rem 1rem;
+    border: 0;
+    border-radius: 0.25rem;
+    background: var(--rm-mustard);
+    color: var(--rm-ink);
+    box-shadow: 0 0.75rem 1.5rem rgba(7, 26, 66, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 800;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+    transition: transform 0.3s cubic-bezier(.19,1,.22,1), box-shadow 0.3s cubic-bezier(.19,1,.22,1), background 0.2s ease;
+  }
+
+  .rm-submit:hover { transform: translateY(-3px); background: #f7c960; box-shadow: 0 1rem 2rem rgba(7, 26, 66, 0.23); }
+  .rm-submit:active { transform: translateY(0); }
+  .rm-submit svg { width: 1.35rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .rm-call-facts {
+    margin-top: 1.4rem;
+    padding: 1.25rem 0 0;
+    border-top: 1px solid var(--rm-line);
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .rm-call-facts li {
+    list-style: none;
+    color: #5b687d;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .rm-call-facts svg { width: 1.65rem; flex: none; fill: none; stroke: var(--rm-cyan); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .rm-call-facts strong { color: var(--rm-ink); display: block; font-size: 0.8rem; }
+  .rm-privacy-note { margin-top: 1rem; color: #68758a !important; text-align: center; font-size: 0.7rem; }
+  .rm-privacy-note a { color: var(--rm-cobalt) !important; font-size: inherit; }
+
+  .rm-specialist,
+  .rm-system,
+  .rm-results,
+  .rm-proof,
+  .rm-call { padding: clamp(5rem, 10vw, 9rem) 0; }
+
+  .rm-specialist { background: var(--rm-chalk); }
+  .rm-specialist-grid { display: grid; gap: 3rem; align-items: center; }
+
+  .rm-specialist h2,
+  .rm-system h2,
+  .rm-results h2,
+  .rm-proof h2,
+  .rm-call h2,
+  .rm-final h2 {
+    color: var(--rm-ink) !important;
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em !important;
+    text-wrap: balance;
+  }
+
+  .rm-specialist .rm-lead {
+    max-width: 66ch;
+    margin-top: 1.5rem;
+    color: #46566f;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .rm-reasons { margin-top: 2.25rem; border-top: 1px solid var(--rm-line); }
+  .rm-reasons > div { padding: 1.25rem 0; border-bottom: 1px solid var(--rm-line); display: grid; gap: 0.35rem; }
+  .rm-reasons dt { color: var(--rm-ink); font-weight: 800; }
+  .rm-reasons dd { color: #56657b; line-height: 1.6; }
+  .rm-text-cta { margin-top: 1.75rem; color: var(--rm-cobalt) !important; display: inline-flex; align-items: center; gap: 0.75rem; }
+
+  .rm-owner-panel {
+    min-height: 33rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--rm-cobalt);
+    border-radius: 0.55rem;
+    box-shadow: 0 2rem 4rem rgba(7, 26, 66, 0.2);
+  }
+
+  .rm-owner-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+  }
+
+  .rm-owner-photo { position: absolute; inset: 2rem 0 0; display: flex; align-items: flex-end; justify-content: center; }
+  .rm-owner-photo img { width: min(94%, 30rem); height: auto; max-height: 31rem; object-fit: contain; object-position: bottom; filter: saturate(0.82) contrast(1.05); display: block; }
+  .rm-owner-caption { position: absolute; right: 1.25rem; bottom: 1.25rem; left: 1.25rem; padding: 1rem 1.15rem; background: var(--rm-ink); border-top: 1px solid var(--rm-mustard); }
+  .rm-owner-caption p { color: #fff !important; font-weight: 800; }
+  .rm-owner-caption span { color: #b6c8e0; font-size: 0.74rem; }
+  .rm-owner-signal { position: absolute; top: 1.25rem; right: 1.25rem; color: #fff; display: grid; justify-items: end; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; }
+  .rm-owner-signal span:last-child { color: #9cf4f2; }
+
+  .rm-system { background: var(--rm-ink); color: #fff; }
+  .rm-system-intro { display: grid; gap: 2rem; }
+  .rm-system h2 { max-width: 11ch; color: #fff !important; }
+  .rm-system-intro-copy { padding-top: 1.5rem; border-top: 1px solid rgba(35, 198, 213, 0.45); }
+  .rm-system-intro-copy > p { max-width: 65ch; color: #b9c7da !important; line-height: 1.75; }
+  .rm-system-stack { margin-top: 1.35rem; border-top: 1px solid rgba(255,255,255,.16); }
+  .rm-system-stack > div { min-height: 3.4rem; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,.16); display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1rem; }
+  .rm-system-stack dt { color: #fff; font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; }
+  .rm-system-stack dd { color: #9cf4f2; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.09em; text-align: right; text-transform: uppercase; }
+
+  .rm-service-rail { margin-top: clamp(3rem, 7vw, 5rem); position: relative; }
+  .rm-service-rail::before { content: ""; position: absolute; top: 0; bottom: 0; left: 1.45rem; width: 1px; background: rgba(35, 198, 213, 0.4); }
+  .rm-service-rail li { padding: 0 0 2.5rem 4.5rem; list-style: none; position: relative; display: grid; gap: 0.75rem; }
+  .rm-service-node { width: 2.9rem; height: 2.9rem; position: absolute; top: 0; left: 0; z-index: 1; border: 1px solid var(--rm-cyan); border-radius: 50%; background: var(--rm-ink); color: #9cf4f2; display: grid; place-items: center; font-size: 0.7rem; font-weight: 800; }
+  .rm-service-copy h3 { color: #fff !important; font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -0.03em !important; }
+  .rm-service-copy p { margin-top: 0.5rem; color: #c1cede !important; line-height: 1.65; }
+  .rm-service-detail { color: #82eeeb !important; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .rm-mid-cta { margin-top: 1rem; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); display: grid; gap: 1rem; }
+  .rm-mid-cta p { color: #fff !important; font-size: clamp(1.15rem, 3vw, 1.6rem); font-weight: 700; }
+  .rm-mid-cta a { color: var(--rm-mustard) !important; }
+
+  .rm-results { background: var(--rm-chalk); }
+  .rm-results-head { max-width: 60rem; }
+  .rm-results h2 { max-width: 18ch; }
+  .rm-results-head > p { max-width: 68ch; margin-top: 1.25rem; color: #46566f; font-size: 1.05rem; line-height: 1.75; }
+
+  .rm-results-grid { margin-top: clamp(2.5rem, 6vw, 4rem); display: grid; gap: 1.25rem; }
+
+  .rm-result-card {
+    padding: clamp(1.4rem, 3vw, 2rem);
+    border: 1px solid var(--rm-line);
+    border-top: 3px solid var(--rm-cobalt);
+    border-radius: 0.55rem;
+    background: #fff;
+    display: grid;
+    align-content: start;
+  }
+
+  .rm-result-top {
+    padding-bottom: 1rem;
+    margin-bottom: 1.1rem;
+    border-bottom: 1px solid var(--rm-line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    color: #5b687d;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .rm-result-top span:first-child { color: var(--rm-cobalt); }
+  .rm-result-card h3 { color: var(--rm-ink) !important; font-size: clamp(1.3rem, 2.4vw, 1.6rem); line-height: 1.18; letter-spacing: -0.03em !important; }
+
+  .rm-result-metrics { margin-top: 1.4rem; border-top: 1px solid var(--rm-line); }
+  .rm-result-metrics > div { padding: 0.9rem 0; border-bottom: 1px solid var(--rm-line); display: grid; gap: 0.15rem; }
+  .rm-result-metrics dt { color: var(--rm-ink); font-size: clamp(1.25rem, 2.6vw, 1.6rem); font-weight: 800; letter-spacing: -0.035em; }
+  .rm-result-metrics dd { color: #5b687d; font-size: 0.78rem; line-height: 1.45; }
+
+  .rm-program-band {
+    margin-top: clamp(2rem, 4vw, 3rem);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    border: 1px solid var(--rm-line);
+    border-left: 3px solid var(--rm-mustard);
+    border-radius: 0.55rem;
+    background: #fff;
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .rm-program-pillars { display: flex; flex-wrap: wrap; gap: 0.5rem 0.65rem; }
+
+  .rm-program-pillars li {
+    padding: 0.45rem 0.85rem;
+    border: 1px solid rgba(11, 74, 162, 0.28);
+    border-radius: 2rem;
+    background: rgba(11, 74, 162, 0.06);
+    list-style: none;
+    color: var(--rm-cobalt);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .rm-program-note { color: #46566f !important; font-size: 0.95rem; line-height: 1.6; }
+
+  .rm-heatmap {
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border-radius: 0.55rem;
+    background: var(--rm-ink);
+    display: grid;
+    gap: 1.75rem;
+    align-items: center;
+  }
+
+  .rm-heatmap-media { border-radius: 0.35rem; overflow: hidden; background: #0d2350; }
+  .rm-heatmap-media img { width: 100%; height: auto; display: block; }
+  .rm-heatmap-label { color: #9cf4f2; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+  .rm-heatmap-caption { margin-top: 0.85rem; color: #fff !important; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; }
+  .rm-heatmap-note { margin-top: 0.85rem; color: #b9c7da !important; font-size: 0.85rem; line-height: 1.65; }
+
+  .rm-results-disclosure { max-width: 74ch; margin-top: 2rem; color: #6b788c !important; font-size: 0.74rem; line-height: 1.6; }
+
+  .rm-proof { background: var(--rm-mist); }
+  .rm-proof-title-wrap { max-width: 52rem; }
+  .rm-proof-title-wrap > p { margin-top: 1.25rem; max-width: 65ch; line-height: 1.7; }
+  .rm-proof-grid { margin-top: 3rem; border-top: 1px solid var(--rm-line); }
+  .rm-proof-grid article { padding: 1.7rem 0; border-bottom: 1px solid var(--rm-line); display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; align-content: start; gap: 0.5rem 1rem; }
+  .rm-proof-tick { width: 2.6rem; height: 2.6rem; grid-row: 1 / 3; border: 1px solid var(--rm-cobalt); border-radius: 50%; display: grid; place-items: center; }
+  .rm-proof-tick svg { width: 1.3rem; fill: none; stroke: var(--rm-cobalt); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .rm-proof-grid h3 { color: var(--rm-ink) !important; font-size: 1.2rem; letter-spacing: -0.02em !important; }
+  .rm-proof-grid p { color: #536176; line-height: 1.65; }
+
+  .rm-call { background: var(--rm-chalk); }
+  .rm-call-grid { display: grid; gap: 3rem; }
+  .rm-call-copy > p { margin-top: 1.5rem; max-width: 65ch; line-height: 1.75; }
+  .rm-call-topics { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rm-line); }
+  .rm-call-topics li { min-height: 2.8rem; padding: 0.75rem 0 0.75rem 2.25rem; position: relative; border-bottom: 1px solid var(--rm-line); list-style: none; color: var(--rm-ink); font-weight: 700; display: flex; align-items: center; }
+  .rm-call-topics li::before { content: ""; width: 1.25rem; height: 1px; position: absolute; left: 0; background: var(--rm-cyan); }
+  .rm-call-steps { border-top: 1px solid var(--rm-line); }
+  .rm-call-steps li { padding: 1.5rem 0 1.5rem 3rem; border-bottom: 1px solid var(--rm-line); position: relative; list-style: none; }
+  .rm-call-steps li::before { content: counter(list-item, decimal-leading-zero); position: absolute; top: 1.6rem; left: 0; color: var(--rm-cyan); font-size: 0.72rem; font-weight: 800; }
+  .rm-call-steps span { color: var(--rm-ink); font-size: 1.05rem; font-weight: 800; }
+  .rm-call-steps p { margin-top: 0.35rem; color: #56657b; line-height: 1.6; }
+
+  .rm-final { padding: clamp(4.5rem, 8vw, 6.5rem) 0; position: relative; overflow: hidden; background: var(--rm-cobalt); }
+  .rm-final-grid { opacity: 0.5; mask-image: none; }
+  .rm-final-inner { position: relative; z-index: 1; display: grid; gap: 2.5rem; align-items: center; }
+  .rm-final h2 { max-width: 14ch; color: #fff !important; }
+  .rm-final p { max-width: 60ch; margin-top: 1rem; color: #cbe0f4 !important; line-height: 1.7; }
+  .rm-final-action { padding-top: 1.25rem; border-top: 1px solid rgba(35, 198, 213, 0.65); }
+  .rm-final-action > span { color: #9cf4f2; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+  .rm-final-action > p { margin-top: 0.65rem; color: #d6e5f5 !important; font-size: 0.92rem; line-height: 1.6; }
+  .rm-final-cta { width: 100%; min-height: 5.5rem; margin-top: 1.35rem; padding: 1rem 1.4rem; background: var(--rm-mustard); color: var(--rm-ink) !important; border-radius: 0.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; box-shadow: 0 1rem 2rem rgba(7,26,66,.24); }
+  .rm-final-cta-copy { display: grid; gap: 0.3rem; }
+  .rm-final-cta-copy strong { font-size: 0.88rem; }
+  .rm-final-cta-copy small { font-size: 0.72rem; font-weight: 600; letter-spacing: 0; text-transform: none; }
+  .rm-final-cta-arrow { flex: none; }
+
+  .rm-footer { padding: 2rem 0; background: var(--rm-ink); border-top: 1px solid rgba(255,255,255,.14); }
+  .rm-footer-inner { display: grid; gap: 1.25rem; align-items: center; }
+  .rm-footer img { width: 12rem; height: auto; filter: brightness(0) invert(1); }
+  .rm-business { min-width: 0; }
+  .rm-business p { display: flex; flex-wrap: wrap; align-items: center; column-gap: 0.35rem; }
+  .rm-business p,
+  .rm-business a,
+  .rm-legal a { color: #b6c4d8 !important; font-size: 0.76rem; }
+  .rm-business a { min-height: 2.75rem; display: inline-flex; align-items: center; }
+  .rm-business a:hover,
+  .rm-legal a:hover { color: #fff !important; }
+  .rm-legal { display: flex; gap: 1rem; }
+
+  .rm-mobile-cta {
+    min-height: 3.5rem;
+    position: fixed;
+    right: 0.75rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    left: 0.75rem;
+    z-index: 100;
+    border-radius: 0.25rem;
+    background: var(--rm-mustard);
+    color: var(--rm-ink) !important;
+    box-shadow: 0 1rem 2rem rgba(7, 26, 66, 0.32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform .28s cubic-bezier(.19,1,.22,1), opacity .2s ease, visibility .2s ease;
+  }
+  .rm-mobile-cta.is-hidden { opacity: 0; visibility: hidden; transform: translateY(1rem); pointer-events: none; }
+
+  @media (min-width: 42rem) {
+    .rm-fields { grid-template-columns: 1fr 1fr; }
+    .rm-full-field { grid-column: 1 / -1; }
+    .rm-call-facts { grid-template-columns: repeat(3, 1fr); }
+    .rm-footer-inner { grid-template-columns: auto 1fr auto; }
+    .rm-legal { justify-content: end; }
+  }
+
+  @media (min-width: 64rem) {
+    .rm-hero-inner { grid-template-columns: minmax(0, 1.12fr) minmax(27rem, 0.88fr); gap: clamp(3rem, 6vw, 6rem); }
+    .rm-specialist-grid { grid-template-columns: minmax(0, 1.1fr) minmax(24rem, 0.75fr); gap: clamp(4rem, 8vw, 8rem); }
+    .rm-system-intro { grid-template-columns: minmax(0, 0.88fr) minmax(26rem, 1.12fr); gap: clamp(4rem, 7vw, 7rem); align-items: center; }
+    .rm-service-rail::before { top: 1.45rem; right: 10%; bottom: auto; left: 10%; width: auto; height: 1px; }
+    .rm-service-rail { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 2rem; }
+    .rm-service-rail li { padding: 4.5rem 0 0; display: block; }
+    .rm-service-node { left: 50%; transform: translateX(-50%); }
+    .rm-service-copy { text-align: center; }
+    .rm-service-detail { margin-top: 1rem; text-align: center; }
+    .rm-mid-cta { margin-top: 4rem; grid-template-columns: 1fr auto; align-items: center; }
+    .rm-results-grid { grid-template-columns: repeat(3, 1fr); }
+    .rm-program-band { grid-template-columns: auto minmax(0, 1fr); gap: 2rem; }
+    .rm-heatmap { grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr); gap: clamp(2rem, 4vw, 3.5rem); }
+    .rm-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .rm-proof-grid article { padding: 2rem; border-right: 1px solid var(--rm-line); }
+    .rm-proof-grid article:first-child { padding-left: 0; }
+    .rm-proof-grid article:last-child { border-right: 0; padding-right: 0; }
+    .rm-call-grid { grid-template-columns: minmax(0, 1fr) minmax(25rem, 0.82fr); gap: clamp(4rem, 7vw, 7rem); align-items: start; }
+    .rm-final-inner { grid-template-columns: minmax(0, 1.05fr) minmax(24rem, 0.65fr); gap: clamp(4rem, 7vw, 7rem); }
+    .rm-mobile-cta { display: none; }
+  }
+
+  @media (max-width: 48rem) {
+    .rm-hero-copy { text-align: center; }
+    .rm-hero h1,
+    .rm-hero-text { margin-inline: auto; }
+    .rm-no-layers { flex-direction: column; justify-content: center; text-align: center; }
+    .rm-founder-signal { width: auto; justify-items: center; }
+
+    .rm-system-intro { text-align: center; }
+    .rm-system h2,
+    .rm-system-intro-copy > p { margin-inline: auto; }
+    .rm-system-stack { max-width: 36rem; margin-inline: auto; text-align: left; }
+
+    .rm-results-head { margin-inline: auto; text-align: center; }
+    .rm-results h2,
+    .rm-results-head > p { margin-inline: auto; }
+    .rm-results-disclosure { margin-inline: auto; text-align: center; }
+    .rm-program-pillars { justify-content: center; }
+    .rm-program-note { text-align: center; }
+
+    .rm-proof-title-wrap { margin-inline: auto; text-align: center; }
+    .rm-proof-title-wrap > p { margin-inline: auto; }
+
+    .rm-final-inner > div:first-child,
+    .rm-final-action { text-align: center; }
+    .rm-final h2,
+    .rm-final p { margin-inline: auto; }
+    .rm-final-cta { position: relative; justify-content: center; text-align: center; }
+    .rm-final-cta-copy { width: 100%; padding-inline: 2rem; justify-items: center; }
+    .rm-final-cta-arrow { position: absolute; right: 1.4rem; }
+  }
+
+  @media (max-width: 26rem) {
+    .rm-header { gap: 0.75rem; }
+    .rm-logo { width: min(9rem, 44vw); }
+    .rm-header-cta { padding: 0.8rem 0.75rem; font-size: 0.68rem; }
+    .rm-founder-signal { width: auto; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .rm-grid { animation: rm-grid-drift 18s cubic-bezier(.19,1,.22,1) infinite alternate; }
+    @keyframes rm-grid-drift { to { transform: translate3d(-1.2rem, .7rem, 0); } }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rm-submit,
+    .rm-mobile-cta { transition: none; }
+  }
+</style>
