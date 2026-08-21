@@ -42,7 +42,7 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
 
 ---
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
-<html lang="en">
+<html lang="en" class={conversionOnly ? "conversion-page" : undefined}>
         <head>
             <!-- Standard meta tags -->
             <meta charset="UTF-8">
@@ -489,6 +489,23 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                    this one on class count despite being less specific by intent. */
                 html.ppc-mode #schedule-main #lead-form {
                     scroll-margin-top: 6rem !important;
+                }
+            </style>
+            <style is:global>
+                /* The sitewide rule in root.less makes the root font-size a fraction of
+                   viewport width above 2000px. Conversion pages set their own type scale
+                   with clamp(min, vw, max), so that rule scales them a second time and
+                   defeats the clamp ceilings, which are expressed in rem.
+
+                   Gated on the class rather than rendered conditionally: Astro bundles
+                   is:global styles whether or not the tag renders, so a conditional tag
+                   would still apply this to every page. !important because bundle order
+                   against root.less is not guaranteed. */
+                @media only screen and (min-width: 2000px) {
+                    html.conversion-page,
+                    html.conversion-page > body {
+                        font-size: 100% !important;
+                    }
                 }
             </style>
         </head>
