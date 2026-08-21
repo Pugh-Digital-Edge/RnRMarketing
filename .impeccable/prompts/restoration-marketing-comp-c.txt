@@ -1,0 +1,6 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop landing-page composition study, 1440×1000 first viewport plus glimpse of second fold
+Primary request: Create a premium conversion landing page comp for Remediation & Restoration Marketing. Composition A is a left-side oversized decisive headline and narrative, with a large controlled lead form as an integrated white dispatch sheet on the right. Beneath, show a horizontal proof/mechanism strip that begins the second fold.
+Color palette: ink navy #071a42, cobalt #0b4aa2, cyan #23c6d5, chalk #fbfcf8, mustard #efb43f.
+Text: "Restoration Marketing Built for the Jobs You Actually Want"; "Talk directly with Matt Pugh"; "Check My Territory & Book a Call"; "30 minutes"; "Nothing to prepare"; "Owner-direct".
+Constraints: one primary action; no testimonials, invented metrics, client logos, countdowns, popups, or fake dashboards; no gradient text.

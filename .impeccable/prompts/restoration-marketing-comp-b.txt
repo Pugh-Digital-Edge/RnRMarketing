@@ -1,0 +1,9 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop landing-page composition study, 1440×1000 first viewport plus glimpse of second fold
+Primary request: Create a premium conversion landing page comp for Remediation & Restoration Marketing, an agency exclusively for restoration and remediation contractors. Composition B is a territory-first field briefing: a wide hero with the headline spanning the top, a bold single-territory statement like a plotted service map/dispatch board in the center-left, and a compact controlled form anchored lower-right without enclosing everything in cards. Second fold starts with a restoration-only versus generalist contrast.
+Surface structure: minimal brand header, no sitewide nav distraction; full-bleed cobalt/ink hero; visible tile coordinate seams; large territory frame; practical copy; form remains immediately visible.
+Style/medium: polished real web UI mockup, not a poster or geographic illustration, desktop browser viewport.
+Color palette: established brand only—ink navy #071a42, cobalt #0b4aa2, cyan #23c6d5, chalk #fbfcf8, restrained mustard #efb43f.
+Typography: bold geometric sans inspired by Poppins; rectangular controls; hairline plotted-grid annotations; no pills.
+Text (verbatim): "Restoration Marketing. One Company Per Territory."; "Talk directly with Matt Pugh"; form labels "Name", "Email", "Phone", "Company", "Service territory"; button "Check My Territory & Book a Call"; trust details "30 minutes", "Nothing to prepare", "Owner-direct".
+Constraints: use only real provided claims; one primary action; no fake map availability states, testimonials, invented metrics, client logos, countdowns, popups, or fake dashboards. No gradient text. Keep form accessible and obvious.

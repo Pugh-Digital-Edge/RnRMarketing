@@ -1,0 +1,6 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop landing-page composition study, 1440×1000 first viewport plus glimpse of second fold
+Primary request: Create a premium conversion landing page comp for Remediation & Restoration Marketing. Composition C is an owner-direct field dossier: oversized headline on a cobalt tile field at upper left; a grounded portrait panel for Matt Pugh on the lower left, using a neutral photo placeholder if identity cannot be known; on the right a large five-field form integrated with a three-point call de-risking checklist. Second fold begins as a vertical connected system for PPC & LSA, SEO, conversion websites, and lead tracking.
+Color palette: ink navy #071a42, cobalt #0b4aa2, cyan #23c6d5, chalk #fbfcf8, mustard #efb43f.
+Text: "Restoration Marketing Without the Agency Layers"; "You’ll speak directly with Matt Pugh"; "Check My Territory & Book a Call"; "30 minutes"; "Nothing to prepare"; "Owner-direct".
+Constraints: one primary action; no testimonials, invented metrics, client logos, countdowns, popups, fake dashboards, or fake portrait presented as Matt; no gradient text.
