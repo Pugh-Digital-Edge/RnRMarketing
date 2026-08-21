@@ -75,11 +75,14 @@ function countLinks(html, predicate) {
 
 async function processPage(path) {
   let html = await readFile(path, 'utf8');
+  html = html.replace(/<template\s+data-impeccable-contract=(?:"([^"]*)"|'([^']*)')\s*><\/template>/i, (_, doubleQuoted, singleQuoted) => {
+    return `<!-- ${decode(doubleQuoted ?? singleQuoted ?? '')} -->`;
+  });
   html = html.replace(/<symbol\s+id="([^"]+)"([^>]*)>([\s\S]*?)<\/symbol>\s*<use\s+href="#\1"\s*><\/use>/g, (match, id, attributes, body) => {
     symbols.set(id, `<symbol id="${id}"${attributes}>${body}</symbol>`);
     return `<use href="/icons.svg#${id}"></use>`;
   });
-  html = html.replace(/<!--(?!\[if)[\s\S]*?-->/g, '');
+  html = html.replace(/<!--(?!\[if|\s*impeccable:contract)[\s\S]*?-->/g, '');
   html = shortenAstroScopes(html);
   await writeFile(path, html, 'utf8');
   const isAdminPage = path.includes(`${join('admin', 'index.html')}`);
