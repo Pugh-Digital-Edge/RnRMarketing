@@ -188,7 +188,7 @@ const {
     </div>
   </section>
 
-  <section class="rm-specialist" aria-labelledby="rm-specialist-title">
+  <section id="why-us" class="rm-specialist" aria-labelledby="rm-specialist-title">
     <div class="rm-section-shell rm-specialist-grid">
       <div class="rm-specialist-copy">
         <h2 id="rm-specialist-title">We know restoration because it is all we do.</h2>
@@ -226,7 +226,7 @@ const {
     </div>
   </section>
 
-  <section class="rm-system" aria-labelledby="rm-system-title">
+  <section id="program" class="rm-system" aria-labelledby="rm-system-title">
     <div class="rm-section-shell">
       <div class="rm-system-intro">
         <h2 id="rm-system-title">{servicesTitle}</h2>
@@ -260,7 +260,7 @@ const {
     </div>
   </section>
 
-  <section class="rm-results" aria-labelledby="rm-results-title">
+  <section id="results" class="rm-results" aria-labelledby="rm-results-title">
     <div class="rm-section-shell">
       <div class="rm-results-head">
         <h2 id="rm-results-title">{resultsTitle}</h2>
@@ -311,7 +311,7 @@ const {
     </div>
   </section>
 
-  <section class="rm-proof" aria-labelledby="rm-proof-title">
+  <section id="commitments" class="rm-proof" aria-labelledby="rm-proof-title">
     <div class="rm-section-shell">
       <div class="rm-proof-title-wrap">
         <h2 id="rm-proof-title">What you can count on.</h2>
@@ -329,7 +329,7 @@ const {
     </div>
   </section>
 
-  <section class="rm-call" aria-labelledby="rm-call-title">
+  <section id="how-it-works" class="rm-call" aria-labelledby="rm-call-title">
     <div class="rm-section-shell rm-call-grid">
       <div class="rm-call-copy">
         <h2 id="rm-call-title">Start with a real conversation.</h2>
@@ -760,7 +760,11 @@ const {
   .rm-system,
   .rm-results,
   .rm-proof,
-  .rm-call { padding: clamp(5rem, 10vw, 9rem) 0; }
+  .rm-call {
+    padding: clamp(5rem, 10vw, 9rem) 0;
+    /* Sitelinks deep-link into these sections; keep the heading clear of the top edge. */
+    scroll-margin-top: 1.5rem;
+  }
 
   .rm-specialist { background: var(--rm-chalk); }
   .rm-specialist-grid { display: grid; gap: 3rem; align-items: center; }
