@@ -10,7 +10,7 @@ const related = caseStudies.filter((item) => item.slug !== study.slug).slice(0, 
 const absoluteUrl = `https://remediationrestorationmarketing.com/case-studies/${study.slug}/`;
 ---
 
-<BaseLayout title={`${study.label} case study`} description={`${study.headline}. See the reported visibility, lead, and marketing outcomes for an anonymous ${study.label}.`} preloadedImage={landingImage} openGraphImage="/assets/images/case-study-og.svg" dateModified="2026-08-06">
+<BaseLayout title={`${study.label} case study`} description={`${study.headline}. See the reported visibility, lead, and marketing outcomes for an anonymous ${study.label}.`} preloadedImage={landingImage} openGraphImage="/assets/images/case-study-og.svg" dateModified="2026-08-24">
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -19,7 +19,7 @@ const absoluteUrl = `https://remediationrestorationmarketing.com/case-studies/${
     headline: study.headline,
     description: study.summary,
     datePublished: '2026-08-06',
-    dateModified: '2026-08-06',
+    dateModified: '2026-08-24',
     author: { '@type': 'Organization', name: 'Remediation & Restoration Marketing' },
     publisher: { '@type': 'Organization', name: 'Remediation & Restoration Marketing' },
     about: { '@type': 'Thing', name: study.label },
@@ -56,11 +56,11 @@ const absoluteUrl = `https://remediationrestorationmarketing.com/case-studies/${
       <div class="case-container"><div class="strategy-heading"><div><p class="case-section-label">The strategy</p><h2>Connected work across the demand path.</h2></div><p>Each move supported the next: get found, earn the click, create a useful next step, and learn from the lead quality that followed.</p></div><div class="strategy-grid">{study.strategy.map((item, index) => <article class="strategy-item"><span class="strategy-index">{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.text}</p><div class="strategy-links">{item.links.map((href) => <a href={href}>{href.includes('seo') ? 'SEO' : href.includes('ppc') ? 'PPC & LSA' : href.includes('web-design') ? 'Web design' : href.includes('lead-tracking') ? 'Lead tracking' : href.includes('reputation') ? 'Reputation' : 'Industry guide'} ↗</a>)}</div></article>)}</div></div>
     </section>
 
-    <section id="results" class="case-section results-section"><div class="case-container"><div class="results-heading"><div><p class="case-section-label">Reported results</p><h2>What changed across the reporting window.</h2></div><p>Charts are rendered as HTML with a table alternative so the evidence stays readable, indexable, and accessible without an image.</p></div><div class="chart-grid">{study.charts.map((chart) => <CaseStudyChart chart={chart} />)}</div></div></section>
+    <section id="results" class="case-section results-section"><div class="case-container"><div class="results-heading"><div><p class="case-section-label">Reported results</p><h2>What changed across the reporting window.</h2></div><p>{study.resultsIntro}</p></div><div class="chart-grid">{study.charts.map((chart) => <CaseStudyChart chart={chart} />)}</div></div></section>
 
-    <section id="impact" class="case-section impact-section"><div class="case-container impact-grid"><div><p class="case-section-label">Business impact</p><h2>Visibility is only useful when it creates a better next conversation.</h2></div><div><p>{study.impact}</p><p class="impact-why"><strong>Why it worked:</strong> {study.why}</p></div></div></section>
+    <section id="impact" class="case-section impact-section"><div class="case-container impact-grid"><h2>{study.impactHeadline}</h2><div><p>{study.impact}</p><p class="impact-why"><strong>What made the difference:</strong> {study.why}</p></div></div></section>
 
-    <section class="case-section case-container related-section"><div class="methodology-note"><strong>Methodology and verification</strong><p>Figures come from monthly client reports and connected platform reporting. Results vary by market, budget, competition, and client responsiveness. {study.verification}</p></div><div class="related-heading"><p class="case-section-label">Keep exploring</p><h2>More reported stories</h2></div><div class="related-grid">{related.map((item) => <a href={`/case-studies/${item.slug}/`}><span>{item.label}</span><strong>{item.headline}</strong><small>Read the case study ↗</small></a>)}</div></section>
+    <section class="case-section case-container related-section"><p class="results-context"><strong>Results in context:</strong> {study.resultsContext}</p><div class="related-heading"><p class="case-section-label">Keep exploring</p><h2>More reported stories</h2></div><div class="related-grid">{related.map((item) => <a href={`/case-studies/${item.slug}/`}><span>{item.label}</span><strong>{item.headline}</strong><small>Read the case study ↗</small></a>)}</div></section>
 
     <section class="case-cta"><div class="case-container"><div><p class="case-section-label">Your market is different. Your session should be specific.</p><h2>Find the next constraint in your local visibility.</h2></div><a class="cs-button-solid" href="/schedule/">Request Your Free Session</a></div></section>
   </article>
@@ -101,7 +101,7 @@ const absoluteUrl = `https://remediationrestorationmarketing.com/case-studies/${
   .strategy-heading, .results-heading { display: grid; gap: 1.25rem; margin-bottom: 2.5rem; }
   .strategy-heading > p, .results-heading > p { max-width: 35rem; margin: 0; color: var(--bodyTextColor); }
   .strategy-grid { display: grid; gap: 1px; overflow: hidden; border: 1px solid var(--borderColor); border-radius: 1.25rem; background: var(--borderColor); }
-  .strategy-item { padding: clamp(1.25rem, 3vw, 2rem); background: var(--surface); }
+  .strategy-grid .strategy-item { padding: clamp(1.25rem, 3vw, 2rem); border-radius: 0 !important; background: var(--surface); }
   .strategy-index { display: block; margin-bottom: 2.5rem; color: var(--primary); font-size: .8rem; font-weight: 800; }
   .strategy-item h3 { margin-bottom: .6rem; font-size: 1.3rem; }
   .strategy-item p { margin-bottom: 1.25rem; color: var(--bodyTextColor); }
@@ -109,16 +109,15 @@ const absoluteUrl = `https://remediationrestorationmarketing.com/case-studies/${
   .strategy-links a { color: var(--primary); font-size: .8rem; font-weight: 800; text-decoration: none; }
   .chart-grid { display: grid; gap: 1rem; }
   .impact-section { color: #fff; background: var(--primaryDark); }
-  .impact-section h2, .impact-section p { color: #fff; }
+  .impact-section h2, .impact-section p { color: #fff !important; }
   .impact-grid { display: grid; gap: 2rem; }
   .impact-grid > div:last-child { max-width: 42rem; }
   .impact-grid .case-section-label { color: #86c8ff; }
   .impact-grid p { opacity: .84; }
   .impact-grid .impact-why { padding-top: 1.25rem; margin-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.24); }
   .impact-grid strong { color: #fff; }
-  .methodology-note { max-width: 56rem; padding: 1.25rem 1.5rem; margin-bottom: clamp(3rem, 7vw, 5rem); border: 1px solid var(--borderColor); border-radius: 1rem; background: var(--surfaceMuted); }
-  .methodology-note strong { display: block; margin-bottom: .4rem; color: var(--headerColor); }
-  .methodology-note p { margin: 0; color: var(--bodyTextColor); font-size: .9rem; }
+  .results-context { max-width: 70ch; margin: 0 0 clamp(3rem, 7vw, 5rem); color: var(--bodyTextColor); font-size: .9rem; line-height: 1.7; }
+  .results-context strong { color: var(--headerColor); }
   .related-heading { margin-bottom: 1.5rem; }
   .related-heading h2 { font-size: clamp(1.8rem, 3vw, 2.75rem); }
   .related-grid { display: grid; gap: 1rem; }
@@ -146,7 +145,7 @@ const absoluteUrl = `https://remediationrestorationmarketing.com/case-studies/${
     .strategy-item { text-align: center; }
     .strategy-links { justify-content: center; }
     .impact-grid > div:last-child { margin-inline: auto; text-align: center; }
-    .methodology-note { margin-inline: auto; text-align: center; }
+    .results-context { margin-inline: auto; text-align: center; }
     .related-heading h2, .related-grid a { text-align: center; }
     .case-cta .case-container { text-align: center; }
     .case-cta h2 { margin-inline: auto; }

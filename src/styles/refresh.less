@@ -20,6 +20,11 @@
   --gradientPrimary: linear-gradient(125deg, #0b4aa2 0%, #0d67b5 64%, #23c6d5 100%);
   --accent: #efb43f;
   --sectionPadding: clamp(4.5rem, 8vw, 8rem) 1rem;
+  /* Native UI primitives: shadcn-style semantic tokens with the site's cobalt grammar. */
+  --ui-focus: 0 0 0 4px rgba(35, 198, 213, .2);
+  --ui-control-height: 3.25rem;
+  --ui-ease: cubic-bezier(.22, 1, .36, 1);
+  --ui-surface-hover: #f2f8fa;
 }
 
 html { background: var(--surface); }
@@ -68,6 +73,8 @@ p, li, a { color: var(--bodyTextColor); }
 }
 
 .cs-button-solid:hover { transform: translateY(-3px); box-shadow: 0 18px 28px rgba(11, 74, 162, .28) !important; }
+.cs-button-solid:active { transform: translateY(-1px) scale(.985); }
+.cs-button-solid:focus-visible, .blog-link:focus-visible { box-shadow: var(--ui-focus), 0 12px 22px rgba(11, 74, 162, .22) !important; }
 
 /* Shared shell */
 #cs-navigation { background: rgba(251, 252, 248, .94) !important; border-bottom: 1px solid var(--borderColor) !important; box-shadow: 0 8px 30px rgba(8, 22, 50, .08) !important; backdrop-filter: blur(16px); }
@@ -119,6 +126,7 @@ p, li, a { color: var(--bodyTextColor); }
 }
 
 #hero-1349 .cs-title, #hero-1349 .cs-text, #int-hero #home-h, #schedule-hero h1, .case-study-hero h1, .case-study-hero h2, .case-index-hero h1 { color: #fff !important; }
+#main .service-hero h1, #cta-1393 .cs-title { color: #fff !important; }
 #hero-1349 .cs-topper, #int-hero .cs-topper, #schedule-hero .cs-topper { color: #86edeb !important; }
 #hero-1349 .cs-background img, #int-hero picture img, #schedule-hero img { filter: saturate(.75) contrast(1.05); opacity: .56; mix-blend-mode: screen; }
 #int-hero { min-height: 34vh !important; border-bottom: 4px solid var(--accent); }
@@ -135,6 +143,11 @@ p, li, a { color: var(--bodyTextColor); }
 }
 
 #cs-contact #cs-form {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+#contact-1388 .cs-form {
   border: 0 !important;
   outline: 0 !important;
 }
@@ -193,8 +206,58 @@ p, li, a { color: var(--bodyTextColor); }
   width: 100% !important;
 }
 
-input, select, textarea { border: 1px solid rgba(8,22,50,.2) !important; border-radius: .3rem !important; background: #fff !important; }
-input:focus, select:focus, textarea:focus { border-color: var(--primaryLight) !important; box-shadow: 0 0 0 4px rgba(35,198,213,.16) !important; outline: none !important; }
+/* shadcn-style controls with beUI-style tactile feedback. */
+input, select, textarea {
+  min-height: var(--ui-control-height);
+  border: 1px solid rgba(8,22,50,.2) !important;
+  border-radius: .35rem !important;
+  background: #fff !important;
+  color: var(--headerColor);
+  transition: border-color .25s var(--ui-ease), box-shadow .25s var(--ui-ease), background .25s var(--ui-ease);
+}
+textarea { min-height: 8rem; }
+input::placeholder, textarea::placeholder { color: #68788e; opacity: 1; }
+input:focus, select:focus, textarea:focus { border-color: var(--primaryLight) !important; box-shadow: var(--ui-focus) !important; outline: none !important; background: #fff !important; }
+input:disabled, select:disabled, textarea:disabled { cursor: not-allowed; opacity: .6; background: var(--surfaceMuted) !important; }
+
+/* Shared surface primitive for service, article, proof, and case-study collections. */
+.ui-card,
+#services-1304 .cs-item, #services .card, #results-stats .stat,
+#blog-1580 .cs-item, .recent-articles, .case-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform .35s var(--ui-ease), box-shadow .35s var(--ui-ease), border-color .35s var(--ui-ease), background .35s var(--ui-ease);
+}
+.ui-card::after,
+#services-1304 .cs-item::after, #results-stats .stat::after,
+#blog-1580 .cs-item::after, .recent-articles::after, .case-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(135deg, rgba(35,198,213,.10), transparent 52%);
+  transition: opacity .35s var(--ui-ease);
+}
+.ui-card:hover, #services-1304 .cs-item:hover, #services .card:hover, #results-stats .stat:hover,
+#blog-1580 .cs-item:hover, .recent-articles:hover, .case-card:hover { border-color: rgba(11,74,162,.3) !important; }
+.ui-card:hover::after, #services-1304 .cs-item:hover::after, #results-stats .stat:hover::after,
+#blog-1580 .cs-item:hover::after, .recent-articles:hover::after, .case-card:hover::after { opacity: 1; }
+#blog-1580 .cs-flex { padding: 1rem 1.1rem 1.35rem; }
+
+/* Transitions.dev-inspired disclosure: the browser still owns semantics and keyboard behavior. */
+details > summary { cursor: pointer; list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] > summary { background: var(--primary) !important; color: #fff !important; }
+details > *:not(summary) { animation: ui-disclosure-in .3s var(--ui-ease); }
+@keyframes ui-disclosure-in { from { opacity: 0; transform: translateY(-.35rem); } to { opacity: 1; transform: translateY(0); } }
+
+/* A consistent text-link action for dense lists and card footers. */
+.ui-link-arrow, .case-teaser-link, .blog-link { font-weight: 800; letter-spacing: .04em; }
+.ui-link-arrow::after { content: "→"; display: inline-block; margin-left: .45rem; transition: transform .25s var(--ui-ease); }
+.ui-link-arrow:hover::after { transform: translateX(.3rem); }
 
 /* Resource center */
 .blog-container { max-width: 80rem !important; }

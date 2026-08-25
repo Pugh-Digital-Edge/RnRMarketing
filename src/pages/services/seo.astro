@@ -1,48 +1,29 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import Articles from "@components/Articles.astro";
-
-// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import { getOptimizedImage } from "@libs/utils";
-import Landing from "@components/Landing.astro";
-
-// Import images
-import landingImage from "@assets/images/landing/ocean-water.jpg";
-import seoPic from "@assets/images/svg/seo-pic.svg";
-
-// Import SVG icons from @assets/images/svg directory
-import seoIcon from "@assets/images/svg/seo.svg";
-import piggyBankIcon from "@assets/images/svg/piggy-bank.svg";
 import CTA from "@components/CTA.astro";
 import FAQ from "@components/FAQ.astro";
 import Newsletter from "@components/Newsletter.astro";
-import AnswerBlock from "@components/AnswerBlock.astro";
 import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 import MarketingFramework from "@components/MarketingFramework.astro";
-
-// Optimize the landing image
-const optimizedImage = await getOptimizedImage(landingImage);
+import ServiceDepth from "@components/ServiceDepth.astro";
 ---
 
 <BaseLayout
-  title="Restoration SEO"
-  description="Learn how SEO can help your restoration company capture more emergency calls and grow your business through organic search visibility."
-  preloadedImage={optimizedImage}
+  title="SEO for Restoration Companies"
+  description="Restoration SEO services built to improve local visibility, capture emergency searches, and connect organic performance to qualified calls."
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "SEO for Restoration Companies",
-    "description": "Restoration-focused SEO strategies helping companies dominate local searches for water damage, fire restoration, mold remediation, and other emergency services. Includes local SEO, strategic content creation, and technical optimization.",
+    "description": "Restoration-focused SEO for water damage, fire restoration, mold remediation, and other emergency services, including local SEO, content, technical optimization, and lead tracking.",
     "provider": {
       "@type": "Organization",
       "@id": "https://remediationrestorationmarketing.com/#localbusiness",
       "name": "Remediation & Restoration Marketing"
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": "United States"
-    },
+    "areaServed": { "@type": "Country", "name": "United States" },
     "serviceType": "Search Engine Optimization",
     "url": "https://remediationrestorationmarketing.com/services/seo/",
     "offers": {
@@ -50,664 +31,273 @@ const optimizedImage = await getOptimizedImage(landingImage);
       "url": "https://remediationrestorationmarketing.com/services/seo/"
     }
   })} />
-<Landing 
-    title="Restoration SEO"
-    image={optimizedImage}
-  />
 
-  <section id="content-page-1401">
-    <div class="cs-container">
-      <div class="cs-image-group">
-        <div class="cs-flex">
-          <picture class="cs-background">
-            <!-- Mobile Image -->
-            <source media="(max-width: 600px)" srcset={seoPic.src}>
-            <!-- Tablet and above Image -->
-            <source media="(min-width: 601px)" srcset={seoPic.src}>
-            <img
-              loading="lazy"
-              decoding="async"
-              src={seoPic.src}
-              alt="SEO illustration"
-              width="542"
-              height="728"
-            >
-          </picture>
+  <section class="seo-hero">
+    <div class="seo-hero__grid" aria-hidden="true"></div>
+    <div class="seo-hero__inner">
+      <div class="seo-hero__copy">
+        <h1>SEO for restoration companies that need to be found before the next call is gone</h1>
+        <p class="seo-hero__answer"><strong>Restoration SEO</strong> improves a contractor’s visibility for urgent local searches such as water damage, fire restoration, and mold remediation. It connects technically sound service pages, Google Business Profile optimization, local authority, and call tracking so visibility can be measured against real inquiries.</p>
+        <div class="seo-hero__actions">
+          <a class="seo-hero__primary" href="/contact/">Request an SEO assessment</a>
+          <a class="seo-hero__secondary" href="#restoration-seo-system">See how the system works</a>
         </div>
-        <ul class="cs-card-group">
-          <li class="cs-item">
-            <h3 class="cs-h3">
-              <img
-                class="cs-h3-icon"
-                aria-hidden="true"
-                loading="lazy"
-                decoding="async"
-                src={seoIcon.src}
-                alt="SEO icon"
-                width="32"
-                height="32"
-              >
-              Emergency Visibility
-            </h3>
-            <p class="cs-item-text cs-text">
-              Dominate local searches when property owners need immediate restoration services. Our SEO strategies ensure your company appears at the top of search results for emergency water damage, fire restoration, and disaster response searches.
-            </p>
-          </li>
-          <li class="cs-item">
-            <h3 class="cs-h3">
-              <img
-                class="cs-h3-icon"
-                aria-hidden="true"
-                loading="lazy"
-                decoding="async"
-                src={piggyBankIcon.src}
-                alt="Piggy bank icon"
-                width="32"
-                height="32"
-              >
-              Long-Term Growth
-            </h3>
-            <p class="cs-item-text cs-text">
-              Build sustainable organic visibility that generates restoration leads year-round. While PPC handles emergencies, SEO creates lasting authority with insurance partners, property managers, and local communities.
-            </p>
-          </li>
-        </ul>
       </div>
-        <div class="cs-content">
-            <h1 class="cs-title">SEO for Restoration Companies: Dominating Local Emergency Searches</h1>
 
-            <AnswerBlock question="What is restoration SEO?" as="h2">
-                <p>
-                    <strong>Restoration SEO</strong> is the practice of optimizing a water damage, fire, or mold remediation company's website so it ranks in local search results when property owners search for emergency help. It combines local SEO, emergency-intent keywords, and service-area pages to capture calls at the moment disaster strikes.
-                </p>
-            </AnswerBlock>
-
-            <p class="cs-text">
-                In the restoration industry, being found quickly during emergencies is crucial for success. Search Engine Optimization (SEO) helps ensure your restoration company appears at the top of search results when property owners need immediate help. By implementing restoration-specific SEO strategies, you can capture more emergency calls while building long-term visibility for your services.
-            </p>
-
-            <p class="cs-text">
-                Speed matters more here than in almost any other industry. Restoration is a distress purchase: property owners search on a phone, in a flooded basement, and call one of the first companies they see. Ranking below the fold often means the job is gone before your page is ever opened.
-            </p>
-
-            <p class="cs-text">
-                <strong>Our results:</strong> we grew one restoration client's website traffic by 500%, a six-fold increase, within a single month. That put their services in front of many more property owners searching for emergency help.
-            </p>
-
-            <div class="cs-image-group d-lg-none d-block">
-                <div class="cs-flex">
-                  <picture class="cs-background">
-                    <!-- Mobile Image -->
-                    <source media="(max-width: 600px)" srcset={seoPic.src}>
-                    <!-- Tablet and above Image -->
-                    <source media="(min-width: 601px)" srcset={seoPic.src}>
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      src={seoPic.src}
-                      alt="SEO illustration"
-                      width="542"
-                      height="728"
-                    >
-                  </picture>
-                </div>
-                <ul class="cs-card-group">
-                  <li class="cs-item">
-                    <h3 class="cs-h3">
-                      <img
-                        class="cs-h3-icon"
-                        aria-hidden="true"
-                        loading="lazy"
-                        decoding="async"
-                        src={seoIcon.src}
-                        alt="SEO icon"
-                        width="32"
-                        height="32"
-                      >
-                      Emergency Visibility
-                    </h3>
-                    <p class="cs-item-text cs-text">
-                      Dominate local searches when property owners need immediate restoration services. Our SEO strategies ensure your company appears at the top of search results for emergency water damage, fire restoration, and disaster response searches.
-                    </p>
-                  </li>
-                  <li class="cs-item">
-                    <h3 class="cs-h3">
-                      <img
-                        class="cs-h3-icon"
-                        aria-hidden="true"
-                        loading="lazy"
-                        decoding="async"
-                        src={piggyBankIcon.src}
-                        alt="Piggy bank icon"
-                        width="32"
-                        height="32"
-                      >
-                      Long-Term Growth
-                    </h3>
-                    <p class="cs-item-text cs-text">
-                      Build sustainable organic visibility that generates restoration leads year-round. While PPC handles emergencies, SEO creates lasting authority with insurance partners, property managers, and local communities.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            <h2>Restoration SEO Fundamentals</h2>
-            <p class="cs-text">
-                Restoration SEO requires a specialized approach focused on emergency response and local visibility:
-            </p>
-            <ul>
-                <li class="cs-text"><strong>Emergency Keywords:</strong> Targeting urgent search terms like "emergency water damage" and "24/7 fire restoration"</li>
-                <li class="cs-text"><strong>Location-Based Terms:</strong> Optimizing for specific service areas and neighborhoods</li>
-                <li class="cs-text"><strong>Service-Specific Pages:</strong> Dedicated content for water damage, fire restoration, mold remediation, etc.</li>
-                <li class="cs-text"><strong>Mobile Optimization:</strong> Ensuring visibility on devices used during emergencies</li>
-            </ul>
-
-            <h2>Local SEO for Restoration Companies</h2>
-            <p class="cs-text">
-                Local visibility is critical for restoration success:
-            </p>
-            <ul>
-                <li class="cs-text"><strong>Google Business Profile:</strong> Optimized for emergency restoration services</li>
-                <li class="cs-text"><strong>Service Area Optimization:</strong> Targeting multiple locations effectively</li>
-                <li class="cs-text"><strong>Local Citations:</strong> Building presence on restoration directories</li>
-                <li class="cs-text"><strong>Review Management:</strong> Gathering and showcasing customer testimonials</li>
-            </ul>
-
-            <h2>Benefits of Restoration SEO</h2>
-            <p class="cs-text">
-                Strategic SEO provides numerous advantages for restoration companies:
-            </p>
-            <ol>
-                <li class="cs-text"><strong>Emergency Response:</strong> Appear first when property owners need immediate help</li>
-                <li class="cs-text"><strong>Insurance Partnerships:</strong> Build visibility with insurance companies and adjusters</li>
-                <li class="cs-text"><strong>Property Manager Relationships:</strong> Establish authority with commercial clients</li>
-                <li class="cs-text"><strong>Community Trust:</strong> Develop long-term local presence and recognition</li>
-                <li class="cs-text"><strong>Service Area Dominance:</strong> Own the search results in your target locations</li>
-                <li class="cs-text"><strong>Sustainable Growth:</strong> Create lasting visibility that compounds over time</li>
-                <li class="cs-text"><strong>Quality Leads:</strong> Attract property owners actively seeking restoration services</li>
-            </ol>
-
-            <h2>Critical SEO Elements for Restoration</h2>
-            <p class="cs-text">
-                Success in restoration SEO requires attention to specific factors:
-            </p>
-            <ul>
-                <li class="cs-text"><strong>Emergency Schema:</strong> Implementing proper markup for 24/7 availability</li>
-                <li class="cs-text"><strong>Service Areas:</strong> Clear definition of coverage zones and response times</li>
-                <li class="cs-text"><strong>Certifications:</strong> Highlighting IICRC and industry credentials</li>
-                <li class="cs-text"><strong>Before/After Content:</strong> Showcasing successful restoration projects</li>
-                <li class="cs-text"><strong>Emergency Resources:</strong> Providing valuable disaster response information</li>
-            </ul>
-
-            <h2>Building Authority in Restoration</h2>
-            <p class="cs-text">
-                Establishing expertise requires specific content strategies:
-            </p>
-            <ul>
-                <li class="cs-text"><strong>Service Pages:</strong> Detailed information about each restoration service</li>
-                <li class="cs-text"><strong>Emergency Guides:</strong> Resources for property owners during disasters</li>
-                <li class="cs-text"><strong>Industry Content:</strong> Articles targeting insurance and property management sectors</li>
-                <li class="cs-text"><strong>Local Disaster Updates:</strong> Current information during weather events</li>
-            </ul>
-
-            <h2>Conclusion</h2>
-            <p class="cs-text">
-                For restoration companies, effective SEO is essential for capturing emergency calls and building long-term growth. By implementing restoration-specific strategies and focusing on local emergency visibility, your company can establish itself as the trusted local expert in property restoration. When combined with other digital marketing efforts, SEO creates a powerful foundation for generating consistent restoration leads while building valuable relationships with insurance partners and property managers.
-            </p>
+      <aside class="seo-proof" aria-label="Recent restoration SEO outcomes">
+        <h2>Recent reported outcomes</h2>
+        <div class="seo-proof__metrics">
+          <p><strong>79.7%</strong><span>month-over-month organic-session growth</span></p>
+          <p><strong>220%</strong><span>reported increase in organic calls</span></p>
         </div>
+        <p class="seo-proof__note">Strongest improvements observed in July 2026 client reporting. Individual account results are shown without exposing client volume. Outcomes are not guarantees.</p>
+      </aside>
     </div>
-    <div class="cs-bubbles" aria-hidden="true"></div>
-</section>
-    <MarketingFramework
-      serviceName="Search Engine Optimization"
-      industryName="restoration"
-      path="/services/seo/"
-      includeFaq={false}
-    />
-    <FAQ />  
-    <CaseStudyTeaser compact />
-    <CTA />
-    <Articles />
-    <Newsletter />
 
+    <nav class="seo-hero__nav" aria-label="On this page">
+      <a href="#restoration-seo-system">What we optimize</a>
+      <a href="#restoration-seo-process">Our process</a>
+      <a href="#restoration-seo-evidence">Client evidence</a>
+      <a href="#restoration-seo-faqs">Questions answered</a>
+    </nav>
+  </section>
+
+  <ServiceDepth service="seo" />
+  <MarketingFramework
+    serviceName="Search Engine Optimization"
+    industryName="restoration"
+    path="/services/seo/"
+    includeFaq={false}
+  />
+  <FAQ />
+  <CaseStudyTeaser compact />
+  <CTA />
+  <Articles />
+  <Newsletter />
 </BaseLayout>
 
 <style lang="less">
+  .seo-hero {
+    color: #fbfcf8;
+    background: #071a42;
+    overflow: hidden;
+    position: relative;
+  }
 
-/*-- -------------------------- -->
-<---        Content Page        -->
-<--- -------------------------- -*/
+  .seo-hero__grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.16;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    mask-image: linear-gradient(to bottom, black, transparent 90%);
+  }
 
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    @keyframes floatAnimation {
-        0% {
-            transform: translateY(0);
-        }
+  .seo-hero__inner,
+  .seo-hero__nav {
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+    position: relative;
+  }
 
-        50% {
-            transform: translateY(-2rem);
-        }
+  .seo-hero__inner {
+    min-height: min(34rem, calc(100svh - 8rem));
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    box-sizing: border-box;
+    display: grid;
+    align-items: center;
+    gap: clamp(2.5rem, 6vw, 6rem);
+  }
 
-        100% {
-            transform: translateY(0);
-        }
+  .seo-hero__copy {
+    max-width: 47rem;
+  }
+
+  .seo-hero h1 {
+    max-width: 14ch;
+    margin: 0 0 1.5rem;
+    color: #fff;
+    font-size: clamp(2.7rem, 5vw, 4.8rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  .seo-hero__answer {
+    max-width: 68ch;
+    margin: 0;
+    color: #dce8f8;
+    font-size: clamp(1rem, 1.5vw, 1.16rem);
+    line-height: 1.7;
+  }
+
+  .seo-hero__answer strong {
+    color: #fff;
+  }
+
+  .seo-hero__actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+  }
+
+  .seo-hero__primary,
+  .seo-hero__secondary {
+    min-height: 3.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .seo-hero__primary {
+    padding: 0.9rem 1.3rem;
+    border-radius: 0.35rem;
+    color: #071a42;
+    background: #efb43f;
+    box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.2);
+  }
+
+  .seo-hero__secondary {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #23c6d5;
+    text-underline-offset: 0.4rem;
+  }
+
+  .seo-hero a:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+  }
+
+  .seo-proof {
+    padding: clamp(1.5rem, 3vw, 2rem);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.65rem;
+    background: rgba(11, 74, 162, 0.42);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .seo-proof h2 {
+    margin: 0 0 1.5rem;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .seo-proof__metrics {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .seo-proof__metrics p {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .seo-proof__metrics strong {
+    color: #23c6d5;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .seo-proof__metrics span {
+    color: #eef6ff;
+    line-height: 1.45;
+  }
+
+  .seo-proof__note {
+    margin: 1.5rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: #cbd9ec;
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .seo-hero__nav {
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    gap: 0.75rem 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .seo-hero__nav a {
+    flex: none;
+    color: #dce8f8;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .seo-hero__primary:hover {
+    background: #23c6d5;
+    transform: translateY(-2px);
+  }
+
+  .seo-hero__secondary:hover,
+  .seo-hero__nav a:hover {
+    color: #23c6d5;
+  }
+
+  @media (min-width: 64rem) {
+    .seo-hero__inner {
+      grid-template-columns: minmax(0, 1.65fr) minmax(19rem, 0.75fr);
+    }
+  }
+
+  @media (max-width: 47.99rem) {
+    .seo-hero__inner {
+      min-height: 0;
+      padding: 2.75rem 0;
+      gap: 2rem;
     }
 
-    @keyframes floatAnimation2 {
-        0% {
-            transform: translateY(0);
-        }
-
-        50% {
-            transform: translateY(-3rem);
-        }
-
-        100% {
-            transform: translateY(0);
-        }
+    .seo-hero h1 {
+      font-size: clamp(2.4rem, 11vw, 3.25rem);
     }
 
-    #content-page-1401 {
-        padding: var(--sectionPadding);
-        background-color: #fff;
-        /* clips the wave background from causing overflow issues when it goes off screen */
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
+    .seo-proof {
+      padding: 1.25rem;
     }
 
-        #content-page-1401 .cs-container {
-            width: 100%;
-            max-width: 80rem;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* 40px - 64px */
-            gap: clamp(2.5rem, 4vw, 4rem);
-            position: relative;
-        }
-
-        #content-page-1401 .cs-content {
-            /* set text align to left if content needs to be left aligned */
-            text-align: left;
-            width: 100%;
-            max-width: 46.125rem;
-            display: flex;
-            flex-direction: column;
-            /* centers content horizontally, set to flex-start to left align */
-            align-items: flex-start;
-        }
-
-        #content-page-1401 .cs-title {
-            font-size: var(--headerFontSize);
-            font-weight: 900;
-            line-height: 1.2em;
-            text-align: inherit;
-            width: 100%;
-            max-width: 100%;
-            margin: 0 0 1rem 0;
-            color: var(--headerColor);
-            position: relative;
-        }
-
-        #content-page-1401 h2,
-        #content-page-1401 h3,
-        #content-page-1401 h4,
-        #content-page-1401 h5,
-        #content-page-1401 h6 {
-            font-weight: 700;
-            text-align: inherit;
-            margin: 0 0 1rem 0;
-            color: var(--headerColor);
-        }
-
-        #content-page-1401 h2 {
-            font-size: 2rem;
-            margin-top: 2rem;
-        }
-
-        #content-page-1401 h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        #content-page-1401 h4,
-        #content-page-1401 h5,
-        #content-page-1401 h6 {
-            font-size: 1.25rem;
-        }
-
-        #content-page-1401 .cs-button-solid {
-            margin-bottom: 2rem;
-        }
-
-        #content-page-1401 .cs-no-margin {
-            margin: 0;
-        }
-
-        #content-page-1401 .cs-color {
-            color: var(--primary);
-        }
-
-        #content-page-1401 p {
-            font-size: var(--bodyFontSize);
-            line-height: 1.5em;
-            text-align: inherit;
-            width: 100%;
-            margin: 0 0 1rem 0;
-            color: var(--bodyTextColor);
-        }
-
-            #content-page-1401 p:last-of-type {
-                margin-bottom: 2rem;
-            }
-
-            #content-page-1401 p a {
-                font-size: inherit;
-                line-height: inherit;
-                text-decoration: underline;
-                color: var(--primary);
-                filter: brightness(120%);
-            }
-
-        #content-page-1401 ol,
-        #content-page-1401 ul {
-            padding-left: 1.5rem;
-            margin: 0 0 2rem 0;
-            color: var(--bodyTextColor);
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-            #content-page-1401 ul li {
-                list-style: none;
-                color: inherit;
-                position: relative;
-            }
-
-                #content-page-1401 ul li:before {
-                    /* custom list bullet */
-                    content: "";
-                    width: 3px;
-                    height: 3px;
-                    background: currentColor;
-                    opacity: 1;
-                    border-radius: 50%;
-                    position: absolute;
-                    display: block;
-                    top: 0.625rem;
-                    left: -0.75rem;
-                }
-
-        #content-page-1401 img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        #content-page-1401 .cs-image-group {
-            width: 100%;
-            display: none;
-            flex-direction: column;
-            /* 16px - 20px */
-            gap: clamp(1rem, 2.6vw, 1.25rem);
-            position: relative;
-        }
-
-        #content-page-1401 .cs-flex {
-            position: relative;
-        }
-
-        #content-page-1401 .cs-background {
-            width: 100%;
-            height: 100%;
-            /* 32px - 48px */
-            border-radius: clamp(2rem, 4vw, 3rem);
-            /* clips the corners of the children around the border radius */
-            overflow: hidden;
-            /* makes it cover the parent dimensions */
-            object-fit: cover;
-            display: block;
-        }
-
-            #content-page-1401 .cs-background img {
-                width: 100%;
-                height: 100%;
-                /* makes it cover the parent like a backgorund image */
-                object-fit: cover;
-                display: block;
-            }
-
-        #content-page-1401 .cs-box {
-            text-align: left;
-            width: 100%;
-            max-width: 12.5rem;
-            padding: 2rem;
-            /* prevents padding from affecting height and width */
-            box-sizing: border-box;
-            background-color: var(--primary);
-            /* 48px - 80px */
-            border-radius: 2rem;
-            display: none;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1.5rem;
-            position: absolute;
-            /* 12px - 20px */
-            right: clamp(0.75rem, 1.9vw, 1.5rem);
-            /* 12px - 20px */
-            bottom: clamp(0.75rem, 1.9vw, 1.5rem);
-        }
-
-        #content-page-1401 .cs-box-icon {
-            width: 3.75rem;
-            height: auto;
-            display: block;
-        }
-
-        #content-page-1401 .cs-desc {
-            font-size: 1.25rem;
-            line-height: 1.2em;
-            text-align: inherit;
-            font-weight: 700;
-            width: 100%;
-            margin: 0;
-            color: var(--bodyTextColorWhite);
-        }
-
-        #content-page-1401 .cs-card-group {
-            width: 100%;
-            max-width: 39.375rem;
-            margin: 0 0 1.5rem 0;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(15.265rem, 1fr));
-            align-items: center;
-            gap: clamp(1rem, 2vw, 1.25rem);
-        }
-
-        #content-page-1401 .cs-item {
-            list-style: none;
-            /* 16px - 24px */
-            padding: clamp(1rem, 3vw, 1.5rem);
-            /* prevents padding from affecting height and width */
-            box-sizing: border-box;
-            background-color: #f7f7f7;
-            border-radius: 1rem;
-            border: 1px solid #e8e8e8;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-            #content-page-1401 .cs-item:before {
-                display: none !important;
-            }
-
-        #content-page-1401 .cs-h3 {
-            font-size: 1.25rem;
-            line-height: 1.2em;
-            font-weight: 700;
-            margin: 0;
-            color: var(--headerColor);
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        #content-page-1401 .cs-h3-icon {
-            width: 2rem;
-            height: auto;
-            display: block;
-        }
-
-        #content-page-1401 .cs-item-text {
-            font-size: 0.875rem;
-            line-height: 1.5em;
-            margin: 0;
-            color: var(--bodyTextColor);
-        }
-
-            #content-page-1401 .cs-item-text:last-of-type {
-                margin: 0;
-            }
-
-        #content-page-1401 .cs-ul {
-            width: 100%;
-            margin: 0 0 1.5rem 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        #content-page-1401 .cs-li {
-            font-size: var(--bodyFontSize);
-            list-style: none;
-            line-height: 1.5em;
-            width: 100%;
-            color: var(--bodyTextColor);
-            display: flex;
-            justify-content: flex-start;
-            /* push icon top the top so if the list item goes to two lines the icon stays at the top */
-            align-items: flex-start;
-            gap: 0.5rem;
-        }
-
-        #content-page-1401 .cs-icon {
-            width: 1.5rem;
-            height: auto;
-            /* adds extra space between the icon and top of parent so it's more centered */
-            margin-top: 1px;
-            display: block;
-        }
-
-        #content-page-1401 .cs-bubbles {
-            font-size: min(2.5vw, 0.7em);
-            width: 36.375em;
-            height: 34.8125em;
-            display: none;
-            position: absolute;
-            /* changes to auto at larger desktop */
-            right: -16.25em;
-            /* changes to -220px at large desktop */
-            bottom: -3.125em;
-            z-index: -1;
-        }
-
-            #content-page-1401 .cs-bubbles:before {
-                /* white border bubble */
-                content: "";
-                width: 29em;
-                height: 29em;
-                background: transparent;
-                border: 1px solid #1a1a1a;
-                border-radius: 50%;
-                opacity: 1;
-                position: absolute;
-                display: block;
-                top: 0;
-                right: 0;
-                animation-name: floatAnimation;
-                animation-duration: 5s;
-                animation-timing-function: ease-in-out;
-                animation-fill-mode: forwards;
-                animation-iteration-count: infinite;
-            }
-
-            #content-page-1401 .cs-bubbles:after {
-                /* orange bubble */
-                content: "";
-                width: 22.875em;
-                height: 22.875em;
-                background: var(--primary);
-                opacity: 0.15;
-                border-radius: 50%;
-                display: block;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: -1;
-                animation-name: floatAnimation2;
-                animation-duration: 14s;
-                animation-timing-function: ease-in-out;
-                animation-fill-mode: forwards;
-                animation-iteration-count: infinite;
-            }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-    #content-page-1401 .cs-container {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
+    .seo-proof__metrics {
+      grid-template-columns: 1fr 1fr;
     }
 
-    #content-page-1401 .cs-content {
-        width: 50%;
-        max-width: 42.125rem;
-        /* prevents flexbox from squishing it */
-        flex: none;
+    .seo-proof__metrics p {
+      display: block;
     }
 
-    #content-page-1401 .cs-image-group {
-        width: 44%;
-        max-width: 33.875rem;
-        display: flex;
-        /* sends it to the right in the 2nd position */
-        order: 2;
-    }
-}
-/* Desktop - 1200px */
-@media only screen and (min-width: 75rem) {
-    #content-page-1401 .cs-content {
-        width: 53%;
+    .seo-proof__metrics strong,
+    .seo-proof__metrics span {
+      display: block;
     }
 
-    #content-page-1401 .cs-image-group {
-        width: 43%;
+    .seo-proof__metrics span {
+      margin-top: 0.45rem;
+      font-size: 0.85rem;
     }
 
-    #content-page-1401 .cs-box {
-        display: flex;
+    .seo-hero__actions,
+    .seo-hero__primary {
+      width: 100%;
     }
 
-    #content-page-1401 .cs-bubbles {
-        font-size: 1em;
-        margin-left: 37.5rem;
-        display: block;
-        right: auto;
-        left: 50%;
-        bottom: -13.75rem;
+    .seo-hero__secondary {
+      justify-content: flex-start;
     }
-    .cs-item {
-        height: 300px;
-    }
-}
-
+  }
 </style>

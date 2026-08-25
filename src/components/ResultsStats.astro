@@ -44,7 +44,7 @@ const stats = [
 
     <dl class="stat-group">
       {stats.map((stat) => (
-        <div class="stat">
+        <div class="stat ui-card">
           <dt class="stat__figure">{stat.figure}</dt>
           <dd class="stat__body">
             <span class="stat__label">{stat.label}</span>
@@ -113,10 +113,7 @@ const stats = [
     line-height: 1.1em;
     letter-spacing: -0.03em;
     margin: 0 0 0.5rem 0;
-    background: var(--gradientPrimary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--primary);
     display: block;
   }
 

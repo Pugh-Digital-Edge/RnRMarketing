@@ -39,7 +39,7 @@ const getServiceUrl = (serviceName: string) => {
                 services.map((service) => {
                     const serviceUrl = getServiceUrl(service.data.Name);
                     return (
-                    <li class="cs-item">
+                    <li class="cs-item ui-card">
                         <a href={serviceUrl} class="cs-link">
                             <Icon
                                 class="cs-icon"

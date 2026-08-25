@@ -143,6 +143,7 @@
 
     .main-content-wrapper {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -159,12 +160,25 @@
     }
 }
 
+/* The case-study teaser follows the article and featured-post sidebar. Keep it
+   on its own full-width row instead of letting flexbox squeeze it into a
+   narrow third column. */
+.main-content-wrapper > .case-teaser.compact {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+}
+
 /* Tablet - 1024px */
 @media only screen and (min-width: 64em) {
     .main-content-wrapper {
         flex-direction: row;
         align-items: flex-start;
         column-gap: (20/16em);
+    }
+
+    .main-content-wrapper > .case-teaser.compact {
+        margin-top: (20/16em);
     }
 }
 

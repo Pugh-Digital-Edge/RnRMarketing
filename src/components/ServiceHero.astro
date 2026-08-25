@@ -1,0 +1,144 @@
+---
+interface Metric { value: string; label: string; }
+interface HeroConfig {
+  title: string;
+  answer: string;
+  proofTitle: string;
+  proofText: string;
+  metrics?: Metric[];
+  proofPoints?: string[];
+}
+
+const { service } = Astro.props as { service: string };
+const configs: Record<string, HeroConfig> = {
+  ppc: {
+    title: "Paid search for restoration companies that need qualified calls, not just clicks",
+    answer: "<strong>Restoration PPC</strong> uses Google Ads and Local Services Ads to capture urgent demand while controlling services, geography, budget, and lead quality. Search terms, calls, bookings, and job value are reviewed together so spend follows viable work.",
+    proofTitle: "Recent reported outcome",
+    proofText: "Observed in July 2026 client reporting. Market conditions, category, budget, screening, and response handling affect results.",
+    metrics: [
+      { value: "39%", label: "month-over-month reduction in reported LSA cost per lead" },
+      { value: "$77.79", label: "reported July LSA cost per lead" },
+    ],
+  },
+  "web-design": {
+    title: "Restoration websites built to turn urgent visits into calls",
+    answer: "A strong <strong>restoration company website</strong> makes services, coverage, credentials, proof, and the next action immediately clear on mobile. It also gives search engines accessible, well-structured information they can crawl, understand, and cite.",
+    proofTitle: "What earns the conversion",
+    proofText: "The available reports do not isolate design as the cause of a specific result, so we evaluate the complete lead path instead of inventing a conversion statistic.",
+    proofPoints: ["Fast emergency-service access", "Visible trust and project evidence", "Verified calls, forms, and mobile behavior"],
+  },
+  "lead-tracking": {
+    title: "Know which restoration leads become real jobs",
+    answer: "<strong>Restoration lead tracking</strong> connects calls, forms, ads, local profiles, appointments, and sold work without treating every platform event as a unique prospect. The goal is a defensible view of lead quality and marketing return.",
+    proofTitle: "What the reporting must answer",
+    proofText: "Activity totals are not persuasive by themselves. The useful questions are whether the inquiry fit the service area, booked, sold, and produced enough value to justify the source.",
+    proofPoints: ["Source and landing page", "Qualified, booked, and sold status", "Revenue and cost by channel"],
+  },
+  "reputation-management": {
+    title: "Build local trust before the emergency call",
+    answer: "<strong>Restoration reputation management</strong> strengthens the public evidence customers and search systems use to evaluate a company: accurate profiles, genuine reviews, useful responses, current project information, and a consistent local identity.",
+    proofTitle: "Recent reported outcome",
+    proofText: "Observed in July 2026 client reporting. Profile activity is evaluated alongside calls and lead quality, not treated as a ranking guarantee.",
+    metrics: [{ value: "76.9%", label: "month-over-month growth in Google Business Profile website clicks" }],
+  },
+  "social-media-marketing": {
+    title: "Turn real restoration work into useful, credible content",
+    answer: "<strong>Social media management for restoration companies</strong> creates a repeatable system for publishing approved project evidence, practical guidance, team standards, and community updates. It supports trust and assisted discovery without pretending reach equals revenue.",
+    proofTitle: "What meaningful social reporting looks like",
+    proofText: "The available reports do not isolate social management as the cause of leads, so this page does not attach unsupported numbers to the service.",
+    proofPoints: ["Qualified conversations", "Assisted website visits", "Reusable proof collected from real work"],
+  },
+  "social-media-advertising": {
+    title: "Paid social built for the jobs it can actually support",
+    answer: "<strong>Paid social for restoration companies</strong> is best used for deliberate awareness, recruiting, commercial relationships, and carefully measured remarketing—not as a substitute for urgent search demand. Audience, message, landing page, and downstream quality must stay connected.",
+    proofTitle: "No manufactured paid-social claim",
+    proofText: "Current client reports do not isolate paid social as the source of a strong outcome. We show the measurement standard instead of borrowing results from SEO, LSA, or Google Business Profile.",
+    proofPoints: ["Audience matched to a real objective", "Ad promise matched to the landing page", "Qualified response reviewed before scaling"],
+  },
+  retargeting: {
+    title: "Stay relevant after the first visit—without wasting impressions",
+    answer: "<strong>Restoration retargeting</strong> reconnects with appropriate prior visitors using a controlled message sequence, audience duration, exclusions, and frequency. It is measured as an assisted channel and is not automatically credited for every return visit.",
+    proofTitle: "Evidence before attribution",
+    proofText: "Current reports do not isolate retargeting as the cause of a strong outcome, so the service is judged on incremental qualified response rather than inflated view-through totals.",
+    proofPoints: ["Intent-based audiences", "Controlled frequency and exclusions", "Direct and assisted conversions kept separate"],
+  },
+};
+
+const config = configs[service];
+if (!config) throw new Error(`Unknown service hero: ${service}`);
+---
+
+<section class="service-hero">
+  <div class="service-hero__grid" aria-hidden="true"></div>
+  <div class="service-hero__inner">
+    <div class="service-hero__copy">
+      <h1>{config.title}</h1>
+      <p class="service-hero__answer" set:html={config.answer}></p>
+      <div class="service-hero__actions">
+        <a class="service-hero__primary" href="/contact/">Request a marketing assessment</a>
+        <a class="service-hero__secondary" href={`#${service}-system`}>See how the system works</a>
+      </div>
+    </div>
+    <aside class="service-hero__proof" aria-label={config.proofTitle}>
+      <h2>{config.proofTitle}</h2>
+      {config.metrics?.length ? (
+        <div class="service-hero__metrics">
+          {config.metrics.map((metric) => <p><strong>{metric.value}</strong><span>{metric.label}</span></p>)}
+        </div>
+      ) : (
+        <ul>{config.proofPoints?.map((point) => <li>{point}</li>)}</ul>
+      )}
+      <p class="service-hero__note">{config.proofText}</p>
+    </aside>
+  </div>
+  <nav class="service-hero__nav" aria-label="On this page">
+    <a href={`#${service}-system`}>What we do</a>
+    <a href={`#${service}-process`}>Our process</a>
+    <a href={`#${service}-evidence`}>Evidence standard</a>
+    <a href={`#${service}-faqs`}>Questions answered</a>
+  </nav>
+</section>
+
+<style lang="less">
+  .service-hero { color: #fbfcf8; background: #071a42; overflow: hidden; position: relative; padding-top: clamp(5rem, 8vw, 8rem); }
+  .service-hero__grid { position: absolute; inset: 0; opacity: .16; background-image: linear-gradient(rgba(255,255,255,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px); background-size: 4rem 4rem; mask-image: linear-gradient(to bottom, #000, transparent 90%); }
+  .service-hero__inner, .service-hero__nav { width: min(100% - 2rem, 80rem); margin-inline: auto; position: relative; }
+  .service-hero__inner { min-height: min(34rem, calc(100svh - 8rem)); padding: clamp(3rem, 6vw, 5rem) 0; box-sizing: border-box; display: grid; align-items: center; gap: clamp(2.5rem, 6vw, 6rem); }
+  .service-hero__copy { max-width: 47rem; }
+  h1 { max-width: 15ch; margin: 0 0 1.5rem; color: #fff; font-size: clamp(2.7rem, 5vw, 4.8rem); font-weight: 800; letter-spacing: -.04em; line-height: .98; text-wrap: balance; }
+  .service-hero__answer { max-width: 68ch; margin: 0; color: #dce8f8; font-size: clamp(1rem, 1.5vw, 1.16rem); line-height: 1.7; }
+  .service-hero__answer :global(strong) { color: #fff; }
+  .service-hero__actions { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
+  .service-hero__primary, .service-hero__secondary { min-height: 3.25rem; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; text-decoration: none; }
+  .service-hero__primary { padding: .9rem 1.3rem; border-radius: .35rem; color: #071a42; background: #efb43f; box-shadow: 0 .6rem 1.5rem rgba(0,0,0,.2); }
+  .service-hero__secondary { color: #fff; text-decoration: underline; text-decoration-color: #23c6d5; text-underline-offset: .4rem; }
+  .service-hero a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+  .service-hero__proof { padding: clamp(1.5rem, 3vw, 2rem); border: 1px solid rgba(255,255,255,.25); border-radius: .65rem; background: rgba(11,74,162,.42); box-shadow: inset 0 0 0 1px rgba(255,255,255,.05); }
+  .service-hero__proof h2 { margin: 0 0 1.5rem; color: #fff; font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; }
+  .service-hero__metrics { display: grid; gap: 1.25rem; }
+  .service-hero__metrics p { margin: 0; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 1rem; }
+  .service-hero__metrics strong { color: #23c6d5; font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1; }
+  .service-hero__metrics span { color: #eef6ff; line-height: 1.45; }
+  .service-hero__proof ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .8rem; }
+  .service-hero__proof li { padding-bottom: .8rem; border-bottom: 1px solid rgba(255,255,255,.2); color: #eef6ff; font-weight: 700; line-height: 1.4; }
+  .service-hero__note { margin: 1.5rem 0 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.2); color: #cbd9ec; font-size: .78rem; line-height: 1.55; }
+  .service-hero__nav { padding: 1rem 0; border-top: 1px solid rgba(255,255,255,.18); display: flex; gap: .75rem 1.5rem; overflow-x: auto; scrollbar-width: thin; }
+  .service-hero__nav a { flex: none; color: #dce8f8; font-size: .82rem; font-weight: 700; text-decoration: none; }
+  .service-hero__nav a + a::before { content: "·"; color: #86edeb; margin-right: 1.5rem; }
+  .service-hero__primary:hover { background: #23c6d5; transform: translateY(-2px); }
+  .service-hero__secondary:hover, .service-hero__nav a:hover { color: #23c6d5; }
+  @media (min-width: 64rem) { .service-hero__inner { grid-template-columns: minmax(0, 1.65fr) minmax(19rem, .75fr); } }
+  @media (max-width: 47.99rem) {
+    .service-hero { padding-top: 4.75rem; }
+    .service-hero__inner { min-height: 0; padding: 2.75rem 0; gap: 2rem; }
+    h1 { font-size: clamp(2.4rem, 11vw, 3.25rem); }
+    .service-hero__proof { padding: 1.25rem; }
+    .service-hero__metrics { grid-template-columns: 1fr 1fr; }
+    .service-hero__metrics p { display: block; }
+    .service-hero__metrics strong, .service-hero__metrics span { display: block; }
+    .service-hero__metrics span { margin-top: .45rem; font-size: .85rem; }
+    .service-hero__actions, .service-hero__primary { width: 100%; }
+    .service-hero__secondary { justify-content: flex-start; }
+  }
+</style>

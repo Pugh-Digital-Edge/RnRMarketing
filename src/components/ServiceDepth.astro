@@ -1,0 +1,523 @@
+---
+interface Detail {
+  title: string;
+  text: string;
+}
+
+interface Definition {
+  term: string;
+  meaning: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface ServiceGuide {
+  title: string;
+  intro: string;
+  work: Detail[];
+  process: Detail[];
+  evidence: {
+    title: string;
+    text: string;
+    metrics: { value: string; label: string }[];
+  };
+  definitions: Definition[];
+  faqs: FAQ[];
+}
+
+const guides: Record<string, ServiceGuide> = {
+  seo: {
+    title: "What restoration SEO work should actually include",
+    intro: "Restoration SEO is the work of making the right service, location, and proof pages easy to find, understand, and trust. The useful unit is not a keyword added to a page. It is a complete path from a high-intent search to a qualified call or estimate request.",
+    work: [
+      { title: "Service and location ownership", text: "Assign each important search intent to one primary page, then make that page specific enough to deserve the ranking. This reduces overlap between generic services, specialty services, and city pages." },
+      { title: "Local trust signals", text: "Keep Google Business Profile services, reviews, business information, service areas, and on-site entity details consistent so local search systems can connect the company to the work it performs." },
+      { title: "Useful restoration answers", text: "Publish practical explanations, decision guides, process details, and job-based proof that help owners, managers, and adjusters make a decision—not filler written only to repeat a phrase." },
+      { title: "Technical discovery", text: "Maintain crawlable internal links, accurate canonicals and sitemaps, valid structured data, accessible page content, and clean indexing controls for Google, Bing, and AI-assisted search." },
+    ],
+    process: [
+      { title: "Map demand", text: "Review the services, territories, job values, seasonality, and search terms already producing impressions." },
+      { title: "Fix page ownership", text: "Choose the strongest existing page for each intent before creating anything new." },
+      { title: "Build evidence", text: "Add accurate process, credential, project, cost, timing, and decision information that a searcher can use." },
+      { title: "Measure qualified response", text: "Track rankings and traffic alongside calls, forms, booked jobs, and the pages that initiated them." },
+    ],
+    evidence: {
+      title: "What recent client reporting shows",
+      text: "July 2026 client reporting included a 79.7% month-over-month increase in organic sessions and a separate reported 220% increase in organic calls. These are observed account-level outcomes, not averages or forecasts; channel definitions and attribution are checked account by account.",
+      metrics: [
+        { value: "79.7%", label: "reported monthly organic-session growth" },
+        { value: "220%", label: "reported increase in organic calls" },
+      ],
+    },
+    definitions: [
+      { term: "Search intent", meaning: "The problem or decision behind a query, such as emergency help, service comparison, pricing, or contractor selection." },
+      { term: "Index coverage", meaning: "The share of eligible website pages that a search engine has discovered and accepted into its searchable index." },
+      { term: "Entity consistency", meaning: "Agreement across the site and trusted profiles about the company name, services, locations, people, and credentials." },
+    ],
+    faqs: [
+      { question: "How long does restoration SEO take?", answer: "Technical and indexing changes may be detected quickly, but durable ranking and lead changes usually require a multi-month comparison. We report what changed, what is indexed, and whether qualified calls and booked work move with the search metrics." },
+      { question: "Does every service need a separate page?", answer: "Only when the service represents a distinct customer need and the company can provide enough useful, accurate information to support it. Thin pages built from the same template can compete with one another and may never be indexed." },
+      { question: "How does SEO support AI search visibility?", answer: "AI systems need the same underlying clarity: accessible pages, consistent business facts, direct answers, first-party evidence, and trustworthy references. We measure brand mentions and source citations separately because either can appear without the other." },
+    ],
+  },
+  ppc: {
+    title: "What a restoration PPC and LSA program needs to control",
+    intro: "Paid restoration campaigns succeed or fail on operational detail: which jobs are worth buying, where crews can respond, who answers the phone, and what happens after a lead arrives. Click volume alone cannot answer those questions.",
+    work: [
+      { title: "Job and territory filters", text: "Separate emergency and scheduled services, residential and commercial work, preferred job sizes, excluded categories, and realistic response areas before budget is released." },
+      { title: "Search and LSA structure", text: "Build focused Google Ads groups and Local Services Ads categories around the services the company can fulfill, with location and schedule settings that match operations." },
+      { title: "Call-ready landing pages", text: "Give urgent visitors the service, area, response expectation, proof, phone action, and short request path they need without making them hunt through a general website." },
+      { title: "Lead-quality feedback", text: "Review calls, dispute invalid LSA leads when eligible, label job quality, and move budget toward the terms and territories producing viable work." },
+    ],
+    process: [
+      { title: "Define a qualified lead", text: "Document service, geography, job value, urgency, and exclusion rules with the operations team." },
+      { title: "Launch controlled tests", text: "Start with focused services and conversion actions instead of spreading budget across every possible keyword." },
+      { title: "Review conversations", text: "Use call outcomes and booking feedback to distinguish viable opportunities from wrong-number or out-of-area volume." },
+      { title: "Scale from economics", text: "Increase spend only where lead cost, booking rate, capacity, and expected job value support it." },
+    ],
+    evidence: {
+      title: "What recent client reporting shows",
+      text: "One July 2026 account reported a $77.79 Local Services Ads cost per lead after a 39% month-over-month reduction. Results vary by market, category, budget, screening, and response handling.",
+      metrics: [
+        { value: "$77.79", label: "reported July LSA cost per lead" },
+        { value: "39%", label: "reported monthly CPL reduction on one account" },
+      ],
+    },
+    definitions: [
+      { term: "Cost per qualified lead", meaning: "Campaign cost divided by leads that match the agreed service, territory, and customer criteria—not every recorded contact." },
+      { term: "Search term", meaning: "The words a person actually typed before an ad appeared; these are reviewed separately from the keywords selected in the account." },
+      { term: "Booked-job rate", meaning: "The percentage of qualified leads that become scheduled or sold restoration work." },
+    ],
+    faqs: [
+      { question: "Should restoration companies use Google Ads or Local Services Ads?", answer: "Often both, but for different coverage. LSA can capture eligible local service demand, while Google Ads offers more control over queries, landing pages, schedules, and specialty campaigns. The right mix depends on category eligibility and lead quality." },
+      { question: "How much should a restoration company spend?", answer: "Budget should follow local click costs, target services, booking rate, capacity, and expected job value. We establish a controlled test budget first, then scale only when the lead economics are supportable." },
+      { question: "Why do paid leads sometimes feel unqualified?", answer: "Common causes include broad search terms, loose geography, mismatched LSA categories, unclear landing pages, slow call handling, and missing lead disposition data. Each cause needs a different correction." },
+    ],
+  },
+  "web-design": {
+    title: "What a restoration website has to do during a real emergency",
+    intro: "A restoration website is an operating surface, not a brochure. On a phone, under stress, a visitor must be able to confirm the service and location, trust the company, call quickly, and understand what happens next.",
+    work: [
+      { title: "Emergency decision path", text: "Place phone and request actions where mobile visitors can reach them quickly, with clear separation between urgent response and non-urgent estimates." },
+      { title: "Service depth", text: "Explain causes, warning signs, response steps, documentation, insurance coordination, timing, and what the customer should do before a crew arrives." },
+      { title: "Proof in context", text: "Connect credentials, reviews, project photographs, service areas, case studies, and response practices to the exact page where a visitor is making a decision." },
+      { title: "Search-ready implementation", text: "Ship fast, accessible pages with accurate headings, metadata, internal links, structured data, forms, analytics, and dependable mobile behavior." },
+    ],
+    process: [
+      { title: "Plan around calls", text: "Start with the services, markets, customer questions, and actions that matter most to the business." },
+      { title: "Build the information path", text: "Organize each page around the decision a visitor is trying to make rather than a generic agency template." },
+      { title: "Connect proof and tracking", text: "Place truthful evidence near decisions and verify calls, forms, and key interactions are recorded." },
+      { title: "Test the deployed site", text: "Check desktop and mobile layouts, keyboard access, forms, redirects, metadata, indexability, and live-versus-build parity." },
+    ],
+    evidence: {
+      title: "How we evaluate website work",
+      text: "Recent client work included mobile fixes, clearer calls to action, expanded service content, accessibility improvements, stronger search structure, analytics, and click-to-call tracking. The source reports do not isolate design as the cause of a specific result, so this page does not manufacture a conversion statistic.",
+      metrics: [],
+    },
+    definitions: [
+      { term: "Conversion path", meaning: "The sequence from landing on a page to calling, submitting a request, scheduling, or taking another measurable action." },
+      { term: "Production parity", meaning: "Confirmation that the live page serves the same reviewed content, metadata, links, and indexability as the approved build." },
+      { term: "Core Web Vitals", meaning: "Google's field measures for loading speed, interaction responsiveness, and visual stability." },
+    ],
+    faqs: [
+      { question: "What belongs on a restoration service page?", answer: "A useful page explains who the service is for, urgent warning signs, the response process, documentation and insurance considerations, service-area availability, credentials, proof, common questions, and a clear next action." },
+      { question: "Can a beautiful website still perform poorly?", answer: "Yes. A polished site can lose work through vague service copy, slow mobile interaction, weak calls to action, broken tracking, confusing page ownership, or pages that search engines do not index." },
+      { question: "How is a new restoration website verified?", answer: "We check the successful build, forms and analytics, mobile and keyboard use, metadata and structured data, sitemap and robots behavior, redirects, live deployment parity, and post-launch search performance over a comparable window." },
+    ],
+  },
+  "lead-tracking": {
+    title: "What restoration lead tracking must connect",
+    intro: "A useful reporting system follows the path from source to conversation to booked work. It also records what cannot be known, so estimates and attribution gaps do not quietly become false certainty.",
+    work: [
+      { title: "Calls and forms", text: "Capture click-to-call actions, tracked phone calls, form submissions, chat requests, and the landing page or campaign associated with each event." },
+      { title: "Lead disposition", text: "Label service need, geography, urgency, qualification, appointment status, sold outcome, and known revenue using a consistent process." },
+      { title: "Channel attribution", text: "Separate organic search, Google Business Profile, paid search, LSA, social, direct, referral, and AI-assisted visits where the available systems allow it." },
+      { title: "Decision reporting", text: "Report trends and limitations in plain language, then tie the next recommendation to lead quality, booking behavior, capacity, and economics." },
+    ],
+    process: [
+      { title: "Define the events", text: "Agree on what counts as a contact, qualified lead, appointment, sold job, and revenue outcome." },
+      { title: "Instrument the path", text: "Configure analytics, call tracking, forms, campaign tags, and platform conversions without exposing private customer information." },
+      { title: "Reconcile the sources", text: "Check platform totals against calls and customer records, documenting overlap or missing attribution." },
+      { title: "Use the result", text: "Move budget and page work toward the sources producing viable work, not merely the largest activity count." },
+    ],
+    evidence: {
+      title: "What recent client reporting shows",
+      text: "Lead tracking is the measurement layer behind the reported SEO, Local Services Ads, and Google Business Profile outcomes elsewhere on this site. Calls, ad leads, profile actions, appointments, and sold work remain separate so activity is not inflated or presented as unique prospects without reconciliation.",
+      metrics: [],
+    },
+    definitions: [
+      { term: "Lead disposition", meaning: "A consistent status describing what happened after an inquiry, such as wrong service, qualified, scheduled, sold, or lost." },
+      { term: "Deduplication", meaning: "The process of preventing one person or visit from being counted more than once across overlapping measurement systems." },
+      { term: "Attribution window", meaning: "The period during which a source can receive credit for a later conversion." },
+    ],
+    faqs: [
+      { question: "Can every restoration lead be attributed perfectly?", answer: "No. People switch devices, call numbers from saved contacts, return directly, and interact with several channels. Good reporting reduces uncertainty and labels the remaining gaps instead of assigning false precision." },
+      { question: "Should calls be recorded?", answer: "Call recording can improve qualification and training when the business has appropriate consent notices and follows applicable laws. Access, retention, and use should be limited to a documented business purpose." },
+      { question: "Which metrics matter most?", answer: "Qualified lead volume, answer rate, appointment rate, booked-job rate, acquisition cost, attributed revenue, and service or territory fit matter more than isolated impressions or clicks." },
+    ],
+  },
+  "reputation-management": {
+    title: "How reputation work supports restoration demand",
+    intro: "Reviews help property owners decide whether to trust a company during a stressful loss. Reputation work also affects Google Business Profile conversion, Local Services Ads confidence, referral decisions, and the consistency of business information across the web.",
+    work: [
+      { title: "Request at the right moment", text: "Build a simple, compliant review request into the customer handoff after the team has delivered a real outcome and resolved open concerns." },
+      { title: "Respond with judgment", text: "Acknowledge positive feedback without sounding automated, and address critical reviews calmly without disclosing customer or claim details." },
+      { title: "Keep profiles accurate", text: "Maintain services, hours, areas, categories, photographs, and business information across Google, Bing, and relevant directories." },
+      { title: "Reuse proof responsibly", text: "Bring authorized reviews and project outcomes onto the relevant website pages with accurate attribution and privacy controls." },
+    ],
+    process: [
+      { title: "Audit the footprint", text: "Review profile completeness, rating patterns, response practices, duplicate listings, and business-information consistency." },
+      { title: "Create the request workflow", text: "Choose who asks, when the request is sent, how reminders work, and how unhappy customers receive support." },
+      { title: "Publish and respond", text: "Keep profiles active with genuine photos, service updates, useful posts, and timely review responses." },
+      { title: "Measure trust actions", text: "Track profile website clicks, calls, direction requests where relevant, review velocity, rating, and downstream lead quality." },
+    ],
+    evidence: {
+      title: "What recent client reporting shows",
+      text: "July 2026 reporting included a 76.9% month-over-month increase in Google Business Profile website clicks. Profile activity is evaluated alongside calls and lead quality rather than treated as a ranking guarantee.",
+      metrics: [
+        { value: "76.9%", label: "reported monthly growth in GBP website clicks" },
+      ],
+    },
+    definitions: [
+      { term: "Review velocity", meaning: "The pace at which a business receives new reviews over time, considered with legitimacy, recency, and customer experience." },
+      { term: "NAP consistency", meaning: "Agreement in the business name, address, and phone number across important profiles and directories." },
+      { term: "Profile conversion", meaning: "A meaningful action from a business profile, such as a call, website visit, message, or direction request." },
+    ],
+    faqs: [
+      { question: "Can a company offer incentives for Google reviews?", answer: "Google prohibits incentives offered in exchange for reviews. Requests should be neutral, go to real customers, and never require a positive rating." },
+      { question: "Should every negative review receive a response?", answer: "Most legitimate reviews should receive a calm, privacy-conscious response. The goal is to show future customers how the company handles concerns, not to argue the full case in public." },
+      { question: "Do reviews help AI search visibility?", answer: "Reviews can strengthen the public evidence around a brand, but AI mentions and citations are independent outcomes. Accurate profiles, consistent entities, useful first-party pages, and reputable third-party references all contribute context." },
+    ],
+  },
+  "social-media-marketing": {
+    title: "What restoration social media should document",
+    intro: "The most useful restoration social content turns everyday operations into trust: preparedness advice, project context, team standards, community involvement, and proof that the company can communicate clearly before and after a loss.",
+    work: [
+      { title: "Project documentation", text: "With permission, turn before-and-after images, scope explanations, drying or containment steps, and completed rebuilds into understandable proof." },
+      { title: "Preparedness guidance", text: "Publish timely advice around freezes, storms, flooding, mold conditions, fire recovery, and what property owners should do before help arrives." },
+      { title: "People and standards", text: "Show the technicians, training, certifications, equipment, safety practices, and communication habits behind the service." },
+      { title: "Local continuity", text: "Keep Google Business Profile and selected social channels active with consistent facts, recent images, useful updates, and links to deeper service resources." },
+    ],
+    process: [
+      { title: "Choose the audience", text: "Separate homeowner education, commercial relationship building, recruiting, referral partners, and community visibility." },
+      { title: "Build a capture routine", text: "Give field teams a safe process for collecting approved photos, project facts, and short explanations without exposing customers." },
+      { title: "Publish with a purpose", text: "Connect each update to a helpful next step such as an emergency guide, service page, checklist, or assessment." },
+      { title: "Review meaningful response", text: "Track qualified conversations, profile actions, assisted website visits, and reusable proof rather than chasing reach alone." },
+    ],
+    evidence: {
+      title: "What responsible social reporting looks like",
+      text: "A dependable content-capture system is more valuable than a burst of generic posts. The source reports do not isolate social media management as the cause of leads, so this page focuses on qualified conversations, assisted visits, reusable project proof, and a consistent publishing workflow without attaching unsupported numbers.",
+      metrics: [],
+    },
+    definitions: [
+      { term: "Content capture", meaning: "The repeatable collection of approved photos, facts, and explanations from real work for later publishing." },
+      { term: "Assisted visit", meaning: "A website visit or conversion where social content contributed to the path but was not necessarily the final recorded source." },
+      { term: "Usage permission", meaning: "Documented approval governing whether customer, property, employee, and project material may be published." },
+    ],
+    faqs: [
+      { question: "Which social platforms matter for restoration companies?", answer: "The answer depends on the audience. Facebook and Instagram often support homeowner and community visibility, LinkedIn can support commercial relationships and recruiting, and Google Business Profile posts reinforce the local decision surface." },
+      { question: "How often should a restoration company post?", answer: "Use a cadence the team can sustain with real material. Consistent useful updates are better than frequent generic posts that say nothing about the company's work, standards, or market." },
+      { question: "Can customer project photos be posted?", answer: "Only with appropriate permission and privacy review. Remove identifying details when needed, avoid sensitive loss information, and follow the company's documented consent process." },
+    ],
+  },
+  "social-media-advertising": {
+    title: "Where paid social fits a restoration growth plan",
+    intro: "Paid social is usually strongest for planned demand, remarketing, commercial awareness, recruiting, seasonal education, and community trust. It should not be presented as a substitute for urgent search campaigns when someone is actively looking for emergency help.",
+    work: [
+      { title: "Audience and use case", text: "Define whether the campaign supports homeowners, property managers, referral partners, recruiting, or people who previously visited a service page." },
+      { title: "Creative built from real work", text: "Use approved project evidence, practical guidance, team standards, and specific offers rather than generic disaster imagery." },
+      { title: "Landing-page continuity", text: "Match the promise in the ad to a focused page with the same audience, service, proof, and next action." },
+      { title: "Incremental measurement", text: "Use campaign tags, platform events, lead dispositions, and assisted-conversion context while acknowledging cross-device and view-through uncertainty." },
+    ],
+    process: [
+      { title: "Choose the job", text: "Identify a service or relationship goal that benefits from awareness or repeated exposure." },
+      { title: "Build the audience", text: "Use geography, first-party engagement, page visits, and appropriate platform signals without expanding beyond service capacity." },
+      { title: "Test message and proof", text: "Compare meaningful creative angles and offers, not cosmetic variants with the same weak proposition." },
+      { title: "Judge downstream quality", text: "Review qualified contacts, assisted visits, and customer fit before increasing spend." },
+    ],
+    evidence: {
+      title: "How we keep the evidence honest",
+      text: "The July 2026 client reports document organic, Google Business Profile, call, and LSA outcomes, but they do not isolate paid-social lead impact. We use those reports to inform message, proof, and measurement standards—not to manufacture a paid-social success claim that the source data cannot support.",
+      metrics: [],
+    },
+    definitions: [
+      { term: "Remarketing audience", meaning: "People who previously interacted with an approved website, profile, or campaign and may receive a follow-up ad where permitted." },
+      { term: "View-through conversion", meaning: "A later conversion credited after someone saw an ad but did not click it; this requires cautious interpretation." },
+      { term: "Frequency", meaning: "The average number of times a person was shown an ad during the selected period." },
+    ],
+    faqs: [
+      { question: "Can Facebook ads generate emergency restoration leads?", answer: "They can occasionally assist, but urgent search and Local Services Ads usually align more directly with active emergency intent. Paid social is generally better used where awareness, education, remarketing, or relationship building matters." },
+      { question: "What creative performs best?", answer: "Approved real-world proof, useful local guidance, clear service context, and a specific next step usually provide a stronger test than stock disaster imagery. Performance still varies by audience and offer." },
+      { question: "How should paid social be measured?", answer: "Track platform events and tagged visits, then reconcile them with qualified contacts and booked outcomes. Keep click-through, view-through, assisted, and last-click results separate." },
+    ],
+  },
+  retargeting: {
+    title: "What restoration retargeting can—and cannot—do",
+    intro: "Retargeting gives previous visitors another useful opportunity to return. It can reinforce a planned service, commercial relationship, or longer decision cycle, but it cannot create trust if the original page was vague or solve a poor emergency response experience.",
+    work: [
+      { title: "Segment by intent", text: "Separate visitors to emergency, scheduled, commercial, recruiting, and resource pages instead of showing one general ad to everyone." },
+      { title: "Set exclusions and limits", text: "Exclude converted users where appropriate, control frequency, respect consent and platform rules, and avoid following people indefinitely after a sensitive property event." },
+      { title: "Offer the next useful step", text: "Return visitors to a relevant assessment, guide, case study, checklist, or service explanation rather than repeating the same generic message." },
+      { title: "Measure assisted value", text: "Keep retargeting clicks, view-through attribution, qualified contacts, and eventual booked outcomes distinct so the campaign is not given automatic credit." },
+    ],
+    process: [
+      { title: "Define eligible journeys", text: "Choose the pages, audiences, consent signals, and business cases that justify follow-up." },
+      { title: "Build message sequence", text: "Move from reminder to proof to a practical next step instead of repeating one ad indefinitely." },
+      { title: "Control exposure", text: "Set audience duration, exclusions, and frequency appropriate to the service and platform." },
+      { title: "Compare incremental value", text: "Review whether retargeted users produce qualified actions beyond what direct return traffic would likely have done." },
+    ],
+    evidence: {
+      title: "How client reporting informs this service",
+      text: "Recent restoration reports reinforce the need to connect page visits, calls, forms, LSA leads, and profile actions without double counting. They do not isolate retargeting as the cause of those outcomes. That is why our retargeting reporting keeps click-through, view-through, assisted, and direct conversions separate.",
+      metrics: [],
+    },
+    definitions: [
+      { term: "Audience duration", meaning: "How long a person remains eligible for a retargeting audience after the qualifying interaction." },
+      { term: "Frequency cap", meaning: "A limit on how often an ad may be shown to the same person in a set period." },
+      { term: "Incrementality", meaning: "The additional outcome caused by a campaign beyond what likely would have happened without it." },
+    ],
+    faqs: [
+      { question: "Is retargeting appropriate after an emergency visit?", answer: "Sometimes, but it requires restraint. Sensitive-loss pages need appropriate consent, short audience windows, careful exclusions, and useful messaging. Some situations should not be retargeted at all." },
+      { question: "How long should a retargeting audience last?", answer: "It depends on the decision cycle. Emergency intent may justify a very short window, while commercial planning or reconstruction can support a longer one. The duration should match the real buying process." },
+      { question: "Does retargeting replace search advertising?", answer: "No. Search captures active demand; retargeting follows up with people who already interacted. They solve different problems and should be measured separately." },
+    ],
+  },
+};
+
+const { service } = Astro.props as { service: keyof typeof guides };
+const guide = guides[service];
+const anchorPrefix = service === "seo" ? "restoration-seo" : service;
+
+if (!guide) {
+  throw new Error(`Unknown ServiceDepth service: ${service}`);
+}
+---
+
+<section class="service-depth" aria-labelledby={`service-depth-${service}`}>
+  <div class="service-depth__container">
+    <header class="service-depth__intro">
+      <h2 id={`service-depth-${service}`}>{guide.title}</h2>
+      <p>{guide.intro}</p>
+    </header>
+
+    <div class="service-depth__work" id={`${anchorPrefix}-system`}>
+      {guide.work.map((item) => (
+        <article>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="service-depth__process" id={`${anchorPrefix}-process`}>
+      <div>
+        <h2>What the working process looks like</h2>
+        <p>The sequence keeps the service tied to restoration operations and makes each recommendation verifiable.</p>
+      </div>
+      <ol>
+        {guide.process.map((item) => (
+          <li>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <aside class:list={["service-depth__evidence", { "service-depth__evidence--no-metrics": guide.evidence.metrics.length === 0 }]} id={`${anchorPrefix}-evidence`} aria-labelledby={`service-evidence-${service}`}>
+      <div class="service-depth__evidence-copy">
+        <h2 id={`service-evidence-${service}`}>{guide.evidence.title}</h2>
+        <p>{guide.evidence.text}</p>
+        <a href="/case-studies/">Review the full reported client stories <span aria-hidden="true">→</span></a>
+      </div>
+      {guide.evidence.metrics.length > 0 && (
+        <dl>
+          {guide.evidence.metrics.map((metric) => (
+            <div>
+              <dt>{metric.value}</dt>
+              <dd>{metric.label}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </aside>
+
+    <div class="service-depth__reference">
+      <section aria-labelledby={`terms-${service}`}>
+        <h2 id={`terms-${service}`}>Terms restoration owners should know</h2>
+        <dl>
+          {guide.definitions.map((item) => (
+            <div>
+              <dt>{item.term}</dt>
+              <dd>{item.meaning}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section id={`${anchorPrefix}-faqs`} aria-labelledby={`questions-${service}`}>
+        <h2 id={`questions-${service}`}>Questions to ask before committing</h2>
+        <div class="service-depth__faq">
+          {guide.faqs.map((item) => (
+            <details>
+              <summary><h3>{item.question}</h3></summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    {guide.evidence.metrics.length > 0 && (
+      <p class="service-depth__method">
+        Reporting note: figures above come from anonymized May–July 2026 client reporting and remain qualified where sources overlap or platform definitions differ. They describe observed outcomes, not guaranteed results.
+      </p>
+    )}
+  </div>
+</section>
+
+<style lang="less">
+  .service-depth {
+    padding: var(--sectionPadding);
+    background: var(--surface);
+    color: var(--bodyTextColor);
+  }
+
+  .service-depth__container {
+    width: min(100%, 80rem);
+    margin: 0 auto;
+  }
+
+  .service-depth__intro {
+    max-width: 48rem;
+    margin-bottom: clamp(2.5rem, 6vw, 4.75rem);
+
+    h2 {
+      max-width: 18ch;
+      margin: 0 0 1rem;
+      color: var(--headerColor);
+      font-size: clamp(2.15rem, 5vw, 4.25rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      text-wrap: balance;
+    }
+
+    p {
+      max-width: 70ch;
+      margin: 0;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      line-height: 1.75;
+    }
+  }
+
+  .service-depth__work {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: clamp(4rem, 8vw, 7rem);
+    border-top: 1px solid var(--borderColor);
+    border-bottom: 1px solid var(--borderColor);
+
+    article {
+      padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2rem);
+      border-bottom: 1px solid var(--borderColor);
+    }
+
+    article:nth-child(odd) { border-right: 1px solid var(--borderColor); }
+    article:nth-last-child(-n + 2) { border-bottom: 0; }
+
+    h3 { margin: 0 0 .75rem; color: var(--headerColor); font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.25; }
+    p { max-width: 65ch; margin: 0; line-height: 1.7; }
+  }
+
+  .service-depth__process {
+    display: grid;
+    grid-template-columns: .72fr 1.28fr;
+    gap: clamp(2.5rem, 7vw, 7rem);
+    margin-bottom: clamp(4rem, 8vw, 7rem);
+
+    > div { position: sticky; top: 7rem; align-self: start; }
+    > div h2 { margin: 0 0 1rem; color: var(--headerColor); font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.08; letter-spacing: -.04em; text-wrap: balance; }
+    > div p { margin: 0; line-height: 1.7; }
+    ol { margin: 0; padding: 0; counter-reset: service-process; border-top: 1px solid var(--borderColor); }
+    li { list-style: none; position: relative; padding: 1.6rem 0 1.6rem 3.4rem; border-bottom: 1px solid var(--borderColor); counter-increment: service-process; }
+    li::before { content: counter(service-process); position: absolute; left: 0; top: 1.6rem; color: var(--primary); font-weight: 800; }
+    li h3 { margin: 0 0 .5rem; color: var(--headerColor); font-size: 1.2rem; }
+    li p { margin: 0; line-height: 1.65; }
+  }
+
+  .service-depth__evidence {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    margin-bottom: clamp(4rem, 8vw, 7rem);
+    padding: clamp(2rem, 6vw, 4.5rem);
+    background: var(--primaryDark);
+    color: #fff;
+    border-radius: var(--radiusL);
+    box-shadow: var(--shadowL);
+  }
+
+  .service-depth__evidence--no-metrics {
+    grid-template-columns: minmax(0, 48rem);
+  }
+
+  .service-depth__evidence-copy {
+    h2 { margin: 0 0 1rem; color: #fff !important; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.08; letter-spacing: -.04em; text-wrap: balance; }
+    p { margin: 0 0 1.5rem; max-width: 68ch; color: rgba(255,255,255,.78); line-height: 1.75; }
+    a { color: #fff; font-weight: 700; text-decoration-thickness: .08em; text-underline-offset: .24em; }
+    a span { color: var(--accent); }
+  }
+
+  .service-depth__evidence dl { display: grid; margin: 0; border-top: 1px solid rgba(255,255,255,.2); }
+  .service-depth__evidence dl div { display: grid; grid-template-columns: minmax(7rem, .7fr) 1.3fr; gap: 1rem; align-items: center; padding: 1.35rem 0; border-bottom: 1px solid rgba(255,255,255,.2); }
+  .service-depth__evidence dt { color: var(--primaryLight); font-size: clamp(1.7rem, 4vw, 2.8rem); font-weight: 800; line-height: 1; letter-spacing: -.04em; }
+  .service-depth__evidence dd { margin: 0; color: rgba(255,255,255,.72); line-height: 1.45; }
+
+  .service-depth__reference {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: clamp(2.5rem, 7vw, 7rem);
+
+    section > h2 { margin: 0 0 1.5rem; color: var(--headerColor); font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.12; letter-spacing: -.035em; text-wrap: balance; }
+    dl { margin: 0; }
+    dl div { padding: 1.1rem 0; border-top: 1px solid var(--borderColor); }
+    dt { margin-bottom: .35rem; color: var(--headerColor); font-weight: 800; }
+    dd { margin: 0; line-height: 1.65; }
+  }
+
+  .service-depth__faq {
+    border-top: 1px solid var(--borderColor);
+    details { border-bottom: 1px solid var(--borderColor); }
+    summary { padding: 1.15rem 2rem 1.15rem 0; cursor: pointer; }
+    summary h3 { display: inline; margin: 0; color: var(--headerColor); font-size: 1.05rem; line-height: 1.45; }
+    p { margin: 0 0 1.25rem; max-width: 68ch; line-height: 1.7; }
+  }
+
+  .service-depth__method {
+    max-width: 76ch;
+    margin: 2.5rem 0 0;
+    color: var(--bodyTextColor);
+    font-size: .875rem;
+    line-height: 1.65;
+  }
+
+  @media only screen and (max-width: 63.9375rem) {
+    .service-depth__process,
+    .service-depth__evidence,
+    .service-depth__reference { grid-template-columns: 1fr; }
+    .service-depth__process > div { position: static; }
+  }
+
+  @media only screen and (max-width: 47.9375rem) {
+    .service-depth__work { grid-template-columns: 1fr; }
+    .service-depth__work article,
+    .service-depth__work article:nth-child(odd),
+    .service-depth__work article:nth-last-child(-n + 2) { border-right: 0; border-bottom: 1px solid var(--borderColor); }
+    .service-depth__work article:last-child { border-bottom: 0; }
+    .service-depth__evidence { border-radius: var(--radiusM); }
+    .service-depth__evidence dl div { grid-template-columns: 1fr; gap: .4rem; }
+  }
+</style>
