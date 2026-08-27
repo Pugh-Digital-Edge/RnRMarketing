@@ -97,7 +97,7 @@ const {
       </div>
 
       <div class="rm-form-side">
-        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
+        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/.netlify/functions/submit-lead" data-success-redirect="/thank-you/" data-lead-phone-form data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="Schedule Lead Form" />
           <p hidden>
             <label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
@@ -127,10 +127,11 @@ const {
               Email
               <input required type="email" name="email" autocomplete="email" placeholder="you@company.com" />
             </label>
-            <label>
-              Phone <span class="rm-optional">Optional</span>
-              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555" />
-            </label>
+            <div data-phone-field>
+              <label>Country <select name="phone-country" data-phone-country aria-label="Phone number country"><option value="US">United States +1</option></select></label>
+              <label>Phone <input required type="tel" name="phone" data-phone-input aria-describedby="ads-phone-error" autocomplete="tel" inputmode="tel" placeholder="(310) 555-1234" /></label>
+              <p id="ads-phone-error" data-phone-error role="alert" hidden>Please enter a valid phone number, including the area code.</p>
+            </div>
             <label>
               Company
               <input required type="text" name="company" autocomplete="organization" placeholder="Company name" />

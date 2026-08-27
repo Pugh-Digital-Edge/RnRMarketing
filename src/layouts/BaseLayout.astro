@@ -526,6 +526,15 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
             </main>
             {!conversionOnly && <Footer />}
             {!conversionOnly && <CustomChat />}
+            <script>
+                import "@scripts/lead-phone-form";
+            </script>
+            <style is:global>
+                [data-phone-field] { display: grid; gap: 0.5rem; }
+                [data-phone-error] { margin: 0; color: #b42318 !important; font-size: 0.875rem; font-weight: 700; line-height: 1.4; }
+                [data-phone-field] select { min-height: 3rem; }
+                button:disabled { cursor: not-allowed; opacity: 0.55; }
+            </style>
             <script is:inline>
                 (() => {
                     window._paq = window._paq || [];

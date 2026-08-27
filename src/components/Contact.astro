@@ -45,7 +45,8 @@ import { Icon } from "astro-icon/components";
             </ul>
         </div>
         <!--Form-->
-        <form class="cs-form" id="cs-form-1388" name="Contact Form" method="post" data-netlify="true" netlify-honeypot="bot-field">
+        <form class="cs-form" id="cs-form-1388" name="Contact Form" method="post" action="/.netlify/functions/submit-lead" data-lead-phone-form data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="Contact Form" />
             <p hidden aria-hidden="true">
                 <label>Do not fill this out if you are human:
                     <input name="bot-field" tabindex="-1" autocomplete="off">
@@ -60,10 +61,11 @@ import { Icon } from "astro-icon/components";
                 Email
                 <input class="cs-input" required type="email" id="email-1388" name="email" placeholder="Email">
             </label>
-            <label class="cs-label cs-phone">
-                Phone
-                <input class="cs-input" required type="tel" inputmode="tel" id="phone-1388" name="phone" placeholder="Phone">
-            </label>
+            <div class="cs-label cs-phone" data-phone-field>
+                <label>Country <select class="cs-input" name="phone-country" data-phone-country aria-label="Phone number country"><option value="US">United States +1</option></select></label>
+                <label>Phone <input class="cs-input" required type="tel" inputmode="tel" autocomplete="tel" id="phone-1388" name="phone" data-phone-input aria-describedby="contact-1388-phone-error" placeholder="(310) 555-1234"></label>
+                <p id="contact-1388-phone-error" data-phone-error role="alert" hidden>Please enter a valid phone number, including the area code.</p>
+            </div>
             <label class="cs-label cs-phone">
                 ZIP Code
                 <input class="cs-input" required type="text" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" id="zip-1388" name="zip" placeholder="ZIP">
@@ -73,6 +75,7 @@ import { Icon } from "astro-icon/components";
                 <textarea class="cs-input cs-textarea" required name="Message" id="message-1388" placeholder="Write message..."></textarea>
             </label>
             <button class="cs-button-solid cs-submit" type="submit">Request Territory Check</button>
+            <p data-form-status role="status" aria-live="polite"></p>
         </form>
     </div>
   </section>
