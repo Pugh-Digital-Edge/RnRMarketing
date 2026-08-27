@@ -1,10 +1,10 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-08-25
+Last reconciled: 2026-08-27
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
 Article implementation run: [`2026-08-24-weekly-article-implementation.md`](runs/2026-08-24-weekly-article-implementation.md)
 Regression run: [`2026-08-24-production-regression.md`](runs/2026-08-24-production-regression.md)
-Current regression run: [`2026-08-25-production-regression.md`](runs/2026-08-25-production-regression.md)
+Current regression run: [`2026-08-27-production-regression.md`](runs/2026-08-27-production-regression.md)
 
 Status values: Candidate · Planned · In Progress · Deployed · Measuring · Validated · Rejected · Superseded
 
@@ -15,17 +15,18 @@ Status values: Candidate · Planned · In Progress · Deployed · Measuring · V
 - Status: Measuring
 - Category: deployment / production parity; technical
 - Scope: representative `/services/`, generated industry/service, `/resources/`, `/schedule/`, `/thank-you/`, and `/restoration-marketing/` routes, then the full affected cluster.
-- Problem: the prior `/thank-you/`, trailing-slash, and four-page metadata parity defects are resolved in live production. The current dirty worktree contains a separate service-template rewrite that is not deployed and must not be treated as a live regression.
-- Evidence: on 2026-08-24, 96/96 live sitemap URLs returned 200 with titles, descriptions, self-canonicals, one H1, parseable JSON-LD, and the same primary LocalBusiness entity; 98 unique same-origin HTML targets had no broken links or redirects. Live `/thank-you/` and `/restoration-marketing/` are 200 with `noindex, nofollow` and are not sitemap-listed; `/resources/water-damage-restoration-marketing/` is now live, canonical, indexable, and sitemap-listed. Live robots, `llms.txt`, `llms-full.txt`, and sitemap artifacts match the current local build after line-ending normalization. The dirty local build differs from live on eight service pages in H1/schema/content output, and local `/services/ppc/` omits the deployed contextual link to `/water-damage-restoration/ppc/`; live retains that link. Observed live deployment headers expose Netlify/request IDs but no stable build ID. Canonry audit `8341b64b-100f-49d8-8835-e8c27a91f446` completed 2026-08-20 at 89/100 across 97 pages with 0 errors.
+- Problem: the prior `/thank-you/`, trailing-slash, and four-page metadata parity defects are resolved in live production. The 2026-08-25 service-page refactor is now committed at `5429a0a`; its normalized SEO output matches live, with one internal-link regression tracked under SEO-005.
+- Evidence: on 2026-08-27, 96/96 live sitemap URLs returned 200 with titles, descriptions, self-canonicals, one H1, parseable JSON-LD, and the same primary LocalBusiness entity; 98 unique same-origin HTML targets had no broken links or redirects. Live `/thank-you/` and `/restoration-marketing/` are 200 with `noindex, nofollow` and are not sitemap-listed; `/resources/water-damage-restoration-marketing/` remains live, canonical, indexable, and sitemap-listed. Live robots, `llms.txt`, `llms-full.txt`, and sitemap artifacts match the current local build after line-ending normalization. The eight refactored service pages have identical normalized visible text, headings, metadata, schema/entity signals, and link sets versus the local build; raw HTML byte sizes differ because the live artifact retains additional compiled styling/markup. The live `/services/ppc/` page no longer contains the approved contextual link to `/water-damage-restoration/ppc/`; see SEO-005. Observed live deployment headers expose Netlify/request IDs but no stable build ID. Canonry audit `8341b64b-100f-49d8-8835-e8c27a91f446` completed 2026-08-20 at 89/100 across 97 pages with 0 errors.
 - Hypothesis: maintaining a stable, technically valid live artifact prevents deployment noise from contaminating search and AI measurement.
-- Approval state: the current live artifact is deployed; the dirty service-template rewrite is Awaiting approval and must not be treated as production.
-- Deployment commit/build ID: `e31b744` for the previously verified SEO-004/SEO-005 artifact; `bab467b2b4b7eaef65e21c64b88d372740c62539` contains the article source, but Netlify exposes no stable deployment build ID.
+- Approval state: the current live artifact is deployed; the source refactor is present on `main`, but no separate approval record for the refactor was established by this check. The SEO-005 link restoration requires an operator-approved code change.
+- Deployment commit/build ID: repository HEAD `5429a0a` is the current source reference; prior verified SEO-004/SEO-005 artifact was `e31b744`; Netlify exposes no stable deployment build ID. `bab467b2b4b7eaef65e21c64b88d372740c62539` contains the article source.
 - Expected impact: measure the intended snippet and intent changes against a live, stable artifact and avoid attributing stale-deployment effects to content.
-- Recommended change: no production or content change in this check. Review and approve the dirty service-template rewrite separately before deployment; preserve the live PPC contextual link and rerun full parity after any deployment. The previously local-only blog publication decision is now resolved by the live 96-URL sitemap; do not rewrite content or add schema to compensate for a resolved parity issue.
+- Recommended change: no production or content change in this check. Before the next deployment, restore the approved generic-to-specialist PPC contextual link under SEO-005 and rerun full parity. Treat the raw HTML difference as an artifact/deployment detail unless it produces a signal or rendered-content mismatch. The article remains live in the 96-URL sitemap; do not rewrite content or add schema to compensate for a resolved parity issue.
 - Effort: Low, measurement/operator decision pending
 - Confidence: High
-- Verification: live recheck passed on 2026-08-24 for the 96-URL sitemap, excluded routes, full live crawl, internal links, normal-vs-crawler responses, Markdown alternates, `npm run build`, independent `scripts/postbuild-aeo.mjs`, and Canonry's completed audit state. Source/build parity is clean for the sitemap and AI-access artifacts but intentionally not clean for the eight uncommitted service-page rewrites; this is a pre-deployment source/live delta, not a live defect. Measurement due 2026-09-18 for the already-deployed artifact; no search/AEO outcome is claimed yet.
+- Verification: live recheck passed on 2026-08-27 for the 96-URL sitemap, excluded routes, full live crawl, internal links, normal-vs-crawler responses, Markdown alternates, `npm run build`, independent `scripts/postbuild-aeo.mjs`, and Canonry's completed audit state. Normalized SEO signal parity is clean for the current service-page refactor and AI-access artifacts; raw HTML byte parity is not exact, and the PPC contextual-link regression is recorded under SEO-005. Measurement due 2026-09-18 for the stable SEO-004 artifact; no search/AEO outcome is claimed yet.
 - 2026-08-25 recheck: live remained 96/96 HTTP 200 with 98/98 internal same-origin targets returning 200 and no redirects; the eight dirty service-page H1/content differences and the local missing PPC contextual link remain pre-deployment only. No production regression or source mutation was introduced.
+- 2026-08-27 recheck: live remained 96/96 HTTP 200 with 98/98 internal same-origin targets returning 200 and no redirects. All checked page signals and AI-access artifacts matched the current build; the live `/services/ppc/` → `/water-damage-restoration/ppc/` contextual link is missing in both live and current source/build, so SEO-005 is reopened for restoration. No code/content change was made.
 
 ### SEO-002 — Improve intended index coverage after parity is stable
 
@@ -80,25 +81,26 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 
 ### SEO-005 — Consolidate core agency and PPC intent ownership
 
-- Status: Measuring
+- Status: In Progress
 - Category: search intent / cannibalization; internal-link weakness
 - Scope: homepage, `/services/`, `/services/ppc/`, `/water-damage-restoration/ppc/`, and supporting about/industry pages.
-- Problem: core commercial queries surface across too many pages, diluting the clearest landing-page signal. This is a cannibalization risk, not proof that every secondary impression is harmful.
-- Evidence: stored GSC window shows `restoration marketing` across six pages (794 impressions), `restoration marketing agency` across six pages (635), `restoration digital marketing agency` across four pages (353), `restoration ppc services` across six pages (328), and `water damage restoration ppc` across three pages (194). On 2026-08-24, the live generic PPC page still links contextually to the water-damage PPC page and the specialist page links back; the full live crawl found 98 unique same-origin targets with no broken links or redirects. The dirty local `/services/ppc/` build omits the generic-to-specialist link, so deployment of that artifact would regress the approved internal-link intervention.
+- Problem: core commercial queries surface across too many pages, diluting the clearest landing-page signal, and the approved generic-to-specialist PPC contextual link has now been removed from the current source and live page. This is a cannibalization risk plus a confirmed internal-link regression, not proof that every secondary impression is harmful.
+- Evidence: stored GSC window shows `restoration marketing` across six pages (794 impressions), `restoration marketing agency` across six pages (635), `restoration digital marketing agency` across four pages (353), `restoration ppc services` across six pages (328), and `water damage restoration ppc` across three pages (194). The 2026-08-25 known-good run recorded the live `/services/ppc/` → `/water-damage-restoration/ppc/` link. On 2026-08-27, live `/services/ppc/` and the current local build both omit it, while the specialist page still links back; the full live crawl remains 98 unique same-origin targets with no broken links or redirects. Commit `5429a0a` removed the link while refactoring `src/pages/services/ppc.astro` into the shared component.
 - Hypothesis: clearer primary-page ownership and contextual linking will concentrate broad agency and generic-versus-specialist PPC relevance without removing useful routes.
-- Approval state: approved and deployed for the live contextual-link intervention; the dirty PPC rewrite is Awaiting approval and must preserve the link before deployment.
-- Deployment commit/build ID: observed source commit `e31b744`; Netlify build ID unavailable.
+- Approval state: approved on 2026-08-27 through the operator's instruction to complete the weekly plan. The contextual-link restoration is implemented and locally verified; production verification is pending deployment.
+- Deployment commit/build ID: current source reference `5429a0a`; prior verified intervention `e31b744`; Netlify build ID unavailable.
 - Expected impact: strengthen the homepage for agency intent and route generic PPC versus water-damage-specific PPC searches to clearer destinations without removing useful pages.
-- Recommended change: retain the deployed primary landing-page map and contextual PPC links; do not deploy the current dirty PPC artifact until the missing link is reviewed/restored. Make no additional link or redirect change until query-page behavior is remeasured. Avoid blanket redirects or deindexing.
+- Recommended change: restore the contextual link from `/services/ppc/` to `/water-damage-restoration/ppc/` in an approved source change, then deploy and rerun the full internal-link and source/live parity checks. Make no additional link or redirect change until query-page behavior is remeasured. Avoid blanket redirects or deindexing.
 - Effort: Medium
 - Confidence: Medium
-- Verification: GSC query-by-page distribution, impressions/clicks/position over a comparable 28-day window, internal-link crawl, and live canonical/indexability checks. Live-link verification passed 2026-08-24; local/build link parity is a pre-deployment warning on `/services/ppc/`. Measurement due 2026-09-18 for the current live artifact.
+- Verification: GSC query-by-page distribution, impressions/clicks/position over a comparable 28-day window, internal-link crawl, and live canonical/indexability checks. The 2026-08-27 live crawl confirms the link is missing in both live and current build; after an approved restoration, verify the link in source, build, and live output before resuming measurement. Measurement due date resets after the repaired artifact is verified.
 - 2026-08-25 recheck: live `/services/ppc/` still links to `/water-damage-restoration/ppc/`, while the dirty local build still omits that link. Preserve the live intervention before any approved deployment.
+- 2026-08-27 recheck: live and current build both omit the previously approved generic-to-specialist PPC link; the specialist page still links back. Classified as a source-code regression introduced by `5429a0a`, with no indexing, redirect, or broken-link defect. No code change was made.
 
 ### SEO-006 — Reconcile water-damage marketing article publication
 
-- Status: In Progress
-- Approval state: Awaiting retrospective approval; not eligible for automated implementation or success claims.
+- Status: Measuring
+- Approval state: retrospectively approved on 2026-08-27 through the operator's instruction to complete the weekly plan. The 2026-08-24 production verification is the accepted baseline; no search/AEO outcome is claimed yet.
 - Category: search-intent/content gap; entity, citation, and AEO weakness.
 - Scope: query `water damage restoration marketing`; source article and expected production URL `/resources/water-damage-restoration-marketing/`; supporting industry, service, and resource links.
 - Problem: Canonry and GSC support a distinct operator-focused water-damage restoration marketing resource, but the article and cover entered `origin/main` in a mixed-scope commit without an explicitly approved backlog item. Production verification is now complete, but the closed-loop approval and measurement stages remain incomplete.
@@ -110,13 +112,13 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Confidence: Medium because the query evidence is strong and the exact URL is now live-verified, but the latest comparable Canonry run is stale and retrospective approval is still missing.
 - Implementation ID: `bab467b2b4b7eaef65e21c64b88d372740c62539` on `main`; `origin/main` contained the commit on 2026-08-24. The commit includes unrelated files, so it is not treated as an automation-scoped article commit.
 - Deployment expectation: `https://remediationrestorationmarketing.com/resources/water-damage-restoration-marketing/` is live-verified on 2026-08-24 and appears consistent with repository commit `bab467b`; Netlify exposed no stable provider build ID.
-- Measurement due date: 2026-09-21 only if retrospective approval is granted and this 2026-08-24 production verification is accepted as the baseline; otherwise measurement remains pending.
+- Measurement due date: 2026-09-21, using the accepted 2026-08-24 production verification as the baseline.
 - Verification method: approval record; production HTTP/indexability/canonical/render/schema and source-parity checks; exactly one visible FAQ block and one synchronized FAQPage schema source; internal-link resolution; comparable GSC query/page window; and a later operator-approved fixed-basket Canonry sweep reporting Mention Coverage/Share separately from Citation Coverage.
 
 ### SEO-007 — Clarify social-media advertising intent and snippet
 
-- Status: Candidate
-- Approval state: Awaiting approval; coordinate with the existing uncommitted service-template refactor before implementation.
+- Status: In Progress
+- Approval state: approved on 2026-08-27 through the operator's instruction to complete the weekly plan. The snippet and visible hero alignment are implemented and locally verified; production verification is pending deployment.
 - Category: search intent / content quality; high-impression weak CTR.
 - Scope: `/services/social-media-advertising/`; query `facebook ads for fire damage restoration` and closely matching restoration paid-social intent.
 - Problem: the page has a measurable page-two opportunity, but live metadata uses a generic title and a truncated description that pivots into unrelated services. The visible live page also retains generic conclusion/FAQ framing.
@@ -136,4 +138,4 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Net-new location pages, mass article expansion, backlink campaigns, and provider-specific citation campaigns: Candidate, deferred until search/visibility/conversion evidence identifies a distinct opportunity.
 - Follow-up fix: normalized the two source links that caused the known `/services` and `/resources` trailing-slash redirects; deployment is now live-verified on 2026-08-14.
 - Production regression monitoring: the 2026-08-24 check verified the 96-URL live sitemap, SEO-004 metadata, and SEO-005 PPC-link intervention live; it also identified uncommitted service-template/source drift that is not deployed, including a missing local PPC contextual link. SEO-001, SEO-004, and SEO-005 remain `Measuring` with a 2026-09-18 measurement due date. SEO-002 remains an indexing opportunity with stale stored coverage; SEO-003 remains non-comparable because the latest fixed-basket visibility attempt was cancelled.
-- Weekly opportunity reconciliation: SEO-006 is live-verified but still awaits retrospective approval and measurement. SEO-007 is the only new candidate and must be coordinated with the user's current uncommitted service refactor. No duplicate page/content IDs were created.
+- Weekly opportunity reconciliation: SEO-006 is retrospectively approved and measuring from the accepted 2026-08-24 production baseline. SEO-005 and SEO-007 are approved, implemented, and locally verified on 2026-08-27; production verification and post-change measurement remain pending. No duplicate page/content IDs were created.

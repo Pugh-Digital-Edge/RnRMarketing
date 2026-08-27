@@ -9,6 +9,13 @@ interface Definition {
   meaning: string;
 }
 
+interface ContextualLink {
+  before: string;
+  href: string;
+  label: string;
+  after?: string;
+}
+
 interface FAQ {
   question: string;
   answer: string;
@@ -25,6 +32,7 @@ interface ServiceGuide {
     metrics: { value: string; label: string }[];
   };
   definitions: Definition[];
+  contextualLink?: ContextualLink;
   faqs: FAQ[];
 }
 
@@ -91,6 +99,12 @@ const guides: Record<string, ServiceGuide> = {
       { term: "Search term", meaning: "The words a person actually typed before an ad appeared; these are reviewed separately from the keywords selected in the account." },
       { term: "Booked-job rate", meaning: "The percentage of qualified leads that become scheduled or sold restoration work." },
     ],
+    contextualLink: {
+      before: "For a dedicated water-damage campaign structure—urgent-call messaging, service-area control, and Local Service Ads coordination, see our",
+      href: "/water-damage-restoration/ppc/",
+      label: "water damage restoration PPC and LSA campaigns",
+      after: ".",
+    },
     faqs: [
       { question: "Should restoration companies use Google Ads or Local Services Ads?", answer: "Often both, but for different coverage. LSA can capture eligible local service demand, while Google Ads offers more control over queries, landing pages, schedules, and specialty campaigns. The right mix depends on category eligibility and lead quality." },
       { question: "How much should a restoration company spend?", answer: "Budget should follow local click costs, target services, booking rate, capacity, and expected job value. We establish a controlled test budget first, then scale only when the lead economics are supportable." },
@@ -301,6 +315,11 @@ if (!guide) {
     <header class="service-depth__intro">
       <h2 id={`service-depth-${service}`}>{guide.title}</h2>
       <p>{guide.intro}</p>
+      {guide.contextualLink && (
+        <p class="service-depth__contextual-link">
+          {guide.contextualLink.before} <a href={guide.contextualLink.href}>{guide.contextualLink.label}</a>{guide.contextualLink.after}
+        </p>
+      )}
     </header>
 
     <div class="service-depth__work" id={`${anchorPrefix}-system`}>
@@ -410,6 +429,18 @@ if (!guide) {
       margin: 0;
       font-size: clamp(1.05rem, 2vw, 1.2rem);
       line-height: 1.75;
+    }
+
+    .service-depth__contextual-link {
+      margin-top: 1rem;
+
+      a {
+        color: var(--primary);
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-thickness: .08em;
+        text-underline-offset: .2em;
+      }
     }
   }
 
