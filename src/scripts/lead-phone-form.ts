@@ -9,26 +9,28 @@ function setupLeadForm(form: HTMLFormElement) {
   const error = form.querySelector<HTMLElement>("[data-phone-error]");
   const submitButtons = form.querySelectorAll<HTMLButtonElement>("button[type='submit'], .cs-form-continue");
 
-  if (!phone || !country || !error) return;
+  if (!phone || !error) return;
 
-  const countryNames = typeof Intl.DisplayNames === "function"
-    ? new Intl.DisplayNames(["en"], { type: "region" })
-    : null;
-  country.replaceChildren(
-    ...getCountries().map((countryCode) => {
-      const option = new Option(
-        `${countryNames?.of(countryCode) || countryCode} +${getCountryCallingCode(countryCode)}`,
-        countryCode,
-        false,
-        countryCode === "US",
-      );
-      return option;
-    }),
-  );
+  if (country) {
+    const countryNames = typeof Intl.DisplayNames === "function"
+      ? new Intl.DisplayNames(["en"], { type: "region" })
+      : null;
+    country.replaceChildren(
+      ...getCountries().map((countryCode) => {
+        const option = new Option(
+          `${countryNames?.of(countryCode) || countryCode} +${getCountryCallingCode(countryCode)}`,
+          countryCode,
+          false,
+          countryCode === "US",
+        );
+        return option;
+      }),
+    );
+  }
 
   let touched = false;
   const validate = () => {
-    const result = validatePhoneNumber(phone.value, country.value);
+    const result = validatePhoneNumber(phone.value, country?.value || "US");
     const valid = phone.value.length > 0 && result.valid;
 
     phone.setCustomValidity(valid ? "" : PHONE_VALIDATION_MESSAGE);
@@ -53,7 +55,7 @@ function setupLeadForm(form: HTMLFormElement) {
     touched = true;
     validate();
   });
-  country.addEventListener("change", () => {
+  country?.addEventListener("change", () => {
     touched = true;
     validate();
   });
@@ -62,7 +64,7 @@ function setupLeadForm(form: HTMLFormElement) {
   form.addEventListener("submit", async (event) => {
     touched = true;
     const result = validate();
-    if (!result.valid) {
+    if (!result.valid || !result.e164) {
       event.preventDefault();
       phone.reportValidity();
       return;

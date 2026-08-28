@@ -97,7 +97,7 @@ const {
       </div>
 
       <div class="rm-form-side">
-        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/.netlify/functions/submit-lead" data-success-redirect="/thank-you/" data-lead-phone-form data-netlify="true" netlify-honeypot="bot-field">
+        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/thank-you/" data-success-redirect="/thank-you/" data-lead-phone-form data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="Schedule Lead Form" />
           <p hidden>
             <label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
@@ -119,55 +119,75 @@ const {
           <input type="hidden" name="landing-page" data-attribution-field="landing_page" />
 
           <div class="rm-fields">
-            <label>
-              Name
-              <input required type="text" name="name" autocomplete="name" placeholder="Your full name" />
-            </label>
-            <label>
-              Email
-              <input required type="email" name="email" autocomplete="email" placeholder="you@company.com" />
-            </label>
-            <div data-phone-field>
-              <label>Country <select name="phone-country" data-phone-country aria-label="Phone number country"><option value="US">United States +1</option></select></label>
-              <label>Phone <input required type="tel" name="phone" data-phone-input aria-describedby="ads-phone-error" autocomplete="tel" inputmode="tel" placeholder="(310) 555-1234" /></label>
-              <p id="ads-phone-error" data-phone-error role="alert" hidden>Please enter a valid phone number, including the area code.</p>
-            </div>
-            <label>
-              Company
-              <input required type="text" name="company" autocomplete="organization" placeholder="Company name" />
-            </label>
-            <label class="rm-full-field">
-              Service territory
-              <span>We work with one restoration company per territory.</span>
-              <input required type="text" name="service-area" autocomplete="address-level2" placeholder="City, state, or ZIP codes" />
-            </label>
-            <label>
-              What are you looking for?
-              <select required name="program-scope">
-                <option value="" selected disabled>Choose the closest fit</option>
-                <option value="full-program">The full program</option>
-                <option value="paid-led">Mostly paid ads</option>
-                <option value="single-service">One specific service</option>
-                <option value="not-sure">Not sure yet</option>
-              </select>
-            </label>
-            <label>
-              Monthly marketing budget
-              <select required name="monthly-budget">
-                <option value="" selected disabled>Choose a range</option>
-                <option value="under-2500">Under $2,500 / month</option>
-                <option value="2500-5000">$2,500 – $5,000 / month</option>
-                <option value="5000-10000">$5,000 – $10,000 / month</option>
-                <option value="10000-plus">$10,000+ / month</option>
-                <option value="undecided">Not decided yet</option>
-              </select>
-            </label>
-          </div>
+            <fieldset class="rm-form-step" data-form-step="1">
+              <legend>Your details</legend>
+              <p class="rm-step-status" aria-hidden="true">Step 1 of 2</p>
+              <div class="rm-step-fields">
+                <label>
+                  Name
+                  <input required type="text" name="name" autocomplete="name" placeholder="Your full name" />
+                </label>
+                <label>
+                  Email
+                  <input required type="email" name="email" autocomplete="email" placeholder="you@company.com" />
+                </label>
+                <div data-phone-field>
+                  <label>Phone <input required type="tel" name="phone" data-phone-input aria-describedby="ads-phone-error" autocomplete="tel" inputmode="tel" placeholder="(310) 555-1234" /></label>
+                  <p id="ads-phone-error" data-phone-error role="alert" hidden>Please enter a valid U.S. phone number, including the area code.</p>
+                </div>
+                <label>
+                  Company
+                  <input required type="text" name="company" autocomplete="organization" placeholder="Company name" />
+                </label>
+              </div>
+              <button class="rm-step-next" type="button" data-step-next>
+                <span>Continue</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
+              </button>
+            </fieldset>
 
-          <button class="rm-submit" type="submit">
-            <span>Check my territory</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
-          </button>
+            <fieldset class="rm-form-step" data-form-step="2">
+              <legend>Your market and program</legend>
+              <p class="rm-step-status" aria-hidden="true">Step 2 of 2</p>
+              <div class="rm-step-fields">
+                <label class="rm-full-field">
+                  Service territory
+                  <span>We work with one restoration company per territory.</span>
+                  <input required type="text" name="service-area" autocomplete="address-level2" placeholder="City, state, or ZIP codes" />
+                </label>
+                <label>
+                  What are you looking for?
+                  <select required name="program-scope">
+                    <option value="" selected disabled>Choose the closest fit</option>
+                    <option value="full-program">The full program</option>
+                    <option value="paid-led">Mostly paid ads</option>
+                    <option value="single-service">One specific service</option>
+                    <option value="not-sure">Not sure yet</option>
+                  </select>
+                </label>
+                <label>
+                  Monthly marketing budget, including ad spend
+                  <span>Your total monthly investment — what you'd spend with us plus what goes to Google.</span>
+                  <select required name="monthly-budget">
+                    <option value="" selected disabled>Choose a range</option>
+                    <option value="under-2500">Under $2,500 / month</option>
+                    <option value="2500-5000">$2,500 – $5,000 / month</option>
+                    <option value="5000-10000">$5,000 – $10,000 / month</option>
+                    <option value="10000-plus">$10,000+ / month</option>
+                    <option value="undecided">Not decided yet</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="rm-step-actions">
+                <button class="rm-step-back" type="button" data-step-back>Back</button>
+                <button class="rm-submit" type="submit">
+                  <span>Check my territory</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
+                </button>
+              </div>
+            </fieldset>
+          </div>
 
           <ul class="rm-call-facts" aria-label="What to expect on the call">
             <li>
@@ -384,7 +404,7 @@ const {
 <script>
   // Until the rank-tracking file is in place, drop the whole figure rather than
   // showing a broken image on a page that carries paid traffic.
-  const heatMapImage = document.querySelector("[data-heatmap-media]");
+  const heatMapImage = document.querySelector<HTMLImageElement>("[data-heatmap-media]");
 
   if (heatMapImage) {
     const dropHeatMap = () => {
@@ -400,7 +420,7 @@ const {
     }
   }
 
-  const landingLeadForm = document.querySelector("#lead-form");
+  const landingLeadForm = document.querySelector<HTMLFormElement>("#lead-form");
   const landingFinal = document.querySelector(".rm-final");
   const landingFooter = document.querySelector(".rm-footer");
   const stickyCta = document.querySelector(".rm-mobile-cta");
@@ -439,6 +459,74 @@ const {
         { threshold: 0.05 },
       );
       footerObserver.observe(landingFooter);
+    }
+  }
+
+  if (landingLeadForm) {
+    const firstStep = landingLeadForm.querySelector<HTMLElement>("[data-form-step='1']");
+    const secondStep = landingLeadForm.querySelector<HTMLElement>("[data-form-step='2']");
+    const nextButton = landingLeadForm.querySelector<HTMLButtonElement>("[data-step-next]");
+    const backButton = landingLeadForm.querySelector<HTMLButtonElement>("[data-step-back]");
+
+    if (firstStep && secondStep && nextButton && backButton) {
+      const stepFields = (step: HTMLElement) =>
+        Array.from(step.querySelectorAll<HTMLInputElement | HTMLSelectElement>("input, select"));
+      const firstStepFields = stepFields(firstStep);
+      const secondStepFields = stepFields(secondStep);
+      let currentStep = 1;
+
+      const setRequired = (fields: Array<HTMLInputElement | HTMLSelectElement>, required: boolean) => {
+        fields.forEach((field) => {
+          if (field.dataset.stepRequired === "true") field.required = required;
+        });
+      };
+
+      [...firstStepFields, ...secondStepFields].forEach((field) => {
+        field.dataset.stepRequired = String(field.required);
+      });
+
+      const showStep = (step: 1 | 2, focus = true) => {
+        currentStep = step;
+        landingLeadForm.dataset.currentStep = String(step);
+        const showingFirst = step === 1;
+        firstStep.hidden = !showingFirst;
+        secondStep.hidden = showingFirst;
+        setRequired(firstStepFields, showingFirst);
+        setRequired(secondStepFields, !showingFirst);
+
+        if (focus) {
+          const heading = (showingFirst ? firstStep : secondStep).querySelector<HTMLElement>("legend");
+          heading?.setAttribute("tabindex", "-1");
+          heading?.focus();
+        }
+      };
+
+      const advance = () => {
+        const invalidField = firstStepFields.find((field) => !field.checkValidity());
+        if (invalidField) {
+          invalidField.reportValidity();
+          return;
+        }
+        showStep(2);
+      };
+
+      landingLeadForm.classList.add("is-stepped");
+      showStep(1, false);
+      nextButton.addEventListener("click", advance);
+      backButton.addEventListener("click", () => showStep(1));
+      firstStep.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          advance();
+        }
+      });
+      landingLeadForm.addEventListener("submit", (event) => {
+        if (currentStep === 1) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          advance();
+        }
+      }, true);
     }
   }
 </script>
@@ -634,6 +722,8 @@ const {
     border-bottom: 1px solid var(--rm-line);
   }
 
+  .rm-form.is-stepped[data-current-step="2"] .rm-form-heading { display: none; }
+
   .rm-form-heading p {
     margin-top: 0.55rem;
     color: var(--rm-cobalt) !important;
@@ -648,7 +738,33 @@ const {
     letter-spacing: -0.035em !important;
   }
 
-  .rm-fields { display: grid; gap: 0.9rem; }
+  .rm-fields,
+  .rm-form-step,
+  .rm-step-fields { display: grid; gap: 0.9rem; }
+
+  .rm-form-step {
+    min-width: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .rm-form-step[hidden] { display: none; }
+
+  .rm-form-step legend {
+    padding: 0;
+    color: var(--rm-ink);
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .rm-step-status {
+    display: none;
+    color: #59667b;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .rm-form.is-stepped .rm-step-status { display: block; }
 
   .rm-fields label {
     color: var(--rm-ink);
@@ -708,6 +824,7 @@ const {
   .rm-fields input:focus,
   .rm-fields select:focus { border-color: var(--rm-cobalt) !important; box-shadow: 0 0 0 4px rgba(35, 198, 213, 0.17) !important; }
 
+  .rm-step-next,
   .rm-submit {
     width: 100%;
     min-height: 3.7rem;
@@ -730,9 +847,32 @@ const {
     transition: transform 0.3s cubic-bezier(.19,1,.22,1), box-shadow 0.3s cubic-bezier(.19,1,.22,1), background 0.2s ease;
   }
 
+  .rm-step-next { display: none; }
+  .rm-form.is-stepped .rm-step-next { display: flex; }
+
+  .rm-step-next:hover,
   .rm-submit:hover { transform: translateY(-3px); background: #f7c960; box-shadow: 0 1rem 2rem rgba(7, 26, 66, 0.23); }
+  .rm-step-next:active,
   .rm-submit:active { transform: translateY(0); }
+  .rm-step-next svg,
   .rm-submit svg { width: 1.35rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .rm-step-actions { display: grid; gap: 0.65rem; }
+
+  .rm-step-back {
+    min-height: 2.75rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid rgba(7, 26, 66, 0.3);
+    border-radius: 0.25rem;
+    background: transparent;
+    color: var(--rm-cobalt);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  .rm-form:not(.is-stepped) .rm-step-back { display: none; }
+  .rm-step-actions .rm-submit { margin-top: 0; }
 
   .rm-call-facts {
     margin-top: 1.4rem;
@@ -1004,8 +1144,10 @@ const {
   .rm-mobile-cta.is-hidden { opacity: 0; visibility: hidden; transform: translateY(1rem); pointer-events: none; }
 
   @media (min-width: 42rem) {
-    .rm-fields { grid-template-columns: 1fr 1fr; }
+    .rm-step-fields { grid-template-columns: 1fr 1fr; }
     .rm-full-field { grid-column: 1 / -1; }
+    .rm-step-actions { grid-template-columns: auto minmax(0, 1fr); }
+    .rm-step-back { min-width: 6rem; }
     .rm-call-facts { grid-template-columns: repeat(3, 1fr); }
     .rm-footer-inner { grid-template-columns: auto 1fr auto; }
     .rm-legal { justify-content: end; }
