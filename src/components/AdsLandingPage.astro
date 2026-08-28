@@ -117,6 +117,8 @@ const {
           <input type="hidden" name="utm-term" data-attribution-field="utm_term" />
           <input type="hidden" name="utm-content" data-attribution-field="utm_content" />
           <input type="hidden" name="landing-page" data-attribution-field="landing_page" />
+          <input type="hidden" name="submission-id" data-submission-id />
+          <input type="hidden" name="lead-stage" value="qualified" data-lead-stage />
 
           <div class="rm-fields">
             <fieldset class="rm-form-step" data-form-step="1">
@@ -141,9 +143,10 @@ const {
                 </label>
               </div>
               <button class="rm-step-next" type="button" data-step-next>
-                <span>Continue</span>
+                <span>Save &amp; continue</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
               </button>
+              <p class="rm-step-disclosure">Continuing saves your details so R &amp; R Marketing may follow up by email or phone.</p>
             </fieldset>
 
             <fieldset class="rm-form-step" data-form-step="2">
@@ -187,6 +190,7 @@ const {
                 </button>
               </div>
             </fieldset>
+            <p class="rm-partial-status" data-partial-status role="status" aria-live="polite" hidden></p>
           </div>
 
           <ul class="rm-call-facts" aria-label="What to expect on the call">
@@ -467,13 +471,21 @@ const {
     const secondStep = landingLeadForm.querySelector<HTMLElement>("[data-form-step='2']");
     const nextButton = landingLeadForm.querySelector<HTMLButtonElement>("[data-step-next]");
     const backButton = landingLeadForm.querySelector<HTMLButtonElement>("[data-step-back]");
+    const submissionIdField = landingLeadForm.querySelector<HTMLInputElement>("[data-submission-id]");
+    const leadStageField = landingLeadForm.querySelector<HTMLInputElement>("[data-lead-stage]");
+    const saveStatus = landingLeadForm.querySelector<HTMLElement>("[data-partial-status]");
 
-    if (firstStep && secondStep && nextButton && backButton) {
+    if (firstStep && secondStep && nextButton && backButton && submissionIdField && leadStageField) {
       const stepFields = (step: HTMLElement) =>
         Array.from(step.querySelectorAll<HTMLInputElement | HTMLSelectElement>("input, select"));
       const firstStepFields = stepFields(firstStep);
       const secondStepFields = stepFields(secondStep);
       let currentStep = 1;
+      let identitySaved = false;
+
+      submissionIdField.value = typeof crypto.randomUUID === "function"
+        ? crypto.randomUUID()
+        : `lead-${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
       const setRequired = (fields: Array<HTMLInputElement | HTMLSelectElement>, required: boolean) => {
         fields.forEach((field) => {
@@ -508,6 +520,38 @@ const {
           return;
         }
         showStep(2);
+        void saveIdentity();
+      };
+
+      const saveIdentity = async () => {
+        if (identitySaved) return;
+
+        leadStageField.value = "identity";
+        const body = new URLSearchParams();
+        new FormData(landingLeadForm).forEach((value, key) => {
+          if (typeof value === "string") body.append(key, value);
+        });
+        leadStageField.value = "qualified";
+
+        try {
+          const response = await fetch("/.netlify/functions/submit-lead", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body,
+            keepalive: true,
+          });
+          if (!response.ok) throw new Error("Identity capture failed");
+          identitySaved = true;
+          if (saveStatus) {
+            saveStatus.hidden = false;
+            saveStatus.textContent = "Details saved. Finish the last three questions when you're ready.";
+          }
+        } catch {
+          if (saveStatus) {
+            saveStatus.hidden = false;
+            saveStatus.textContent = "We couldn't save this step yet. Your details will still be sent when you finish the form.";
+          }
+        }
       };
 
       landingLeadForm.classList.add("is-stepped");
@@ -525,7 +569,9 @@ const {
           event.preventDefault();
           event.stopImmediatePropagation();
           advance();
+          return;
         }
+        leadStageField.value = "qualified";
       }, true);
     }
   }
@@ -849,6 +895,14 @@ const {
 
   .rm-step-next { display: none; }
   .rm-form.is-stepped .rm-step-next { display: flex; }
+
+  .rm-step-disclosure,
+  .rm-partial-status {
+    color: #59667b;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    text-align: center;
+  }
 
   .rm-step-next:hover,
   .rm-submit:hover { transform: translateY(-3px); background: #f7c960; box-shadow: 0 1rem 2rem rgba(7, 26, 66, 0.23); }

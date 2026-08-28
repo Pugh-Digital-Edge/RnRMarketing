@@ -59,3 +59,28 @@ test("backend stores the validated phone number as E.164", async () => {
     globalThis.fetch = previousFetch;
   }
 });
+
+test("backend preserves partial-lead stage and submission ID", async () => {
+  const previousFetch = globalThis.fetch;
+  let forwardedBody = "";
+  globalThis.fetch = async (_url, options) => {
+    forwardedBody = options.body;
+    return new Response("ok", { status: 200 });
+  };
+
+  try {
+    const response = await submitLead(new Request("https://example.test/.netlify/functions/submit-lead", {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: "form-name=Schedule+Lead+Form&phone=%28202%29+555-0147&submission-id=lead-qa-123&lead-stage=identity&name=Mobile+QA",
+    }));
+
+    assert.equal(response.status, 200);
+    const forwardedFields = new URLSearchParams(forwardedBody);
+    assert.equal(forwardedFields.get("submission-id"), "lead-qa-123");
+    assert.equal(forwardedFields.get("lead-stage"), "identity");
+    assert.equal(forwardedFields.get("name"), "Mobile QA");
+  } finally {
+    globalThis.fetch = previousFetch;
+  }
+});
