@@ -143,10 +143,10 @@ const {
                 </label>
               </div>
               <button class="rm-step-next" type="button" data-step-next>
-                <span>Save &amp; continue</span>
+                <span>Continue</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
               </button>
-              <p class="rm-step-disclosure">Continuing saves your details so R &amp; R Marketing may follow up by email or phone.</p>
+              <p class="rm-step-disclosure">If you leave before finishing, R &amp; R Marketing may follow up by email or phone using the details above.</p>
             </fieldset>
 
             <fieldset class="rm-form-step" data-form-step="2">
@@ -190,7 +190,6 @@ const {
                 </button>
               </div>
             </fieldset>
-            <p class="rm-partial-status" data-partial-status role="status" aria-live="polite" hidden></p>
           </div>
 
           <ul class="rm-call-facts" aria-label="What to expect on the call">
@@ -473,7 +472,6 @@ const {
     const backButton = landingLeadForm.querySelector<HTMLButtonElement>("[data-step-back]");
     const submissionIdField = landingLeadForm.querySelector<HTMLInputElement>("[data-submission-id]");
     const leadStageField = landingLeadForm.querySelector<HTMLInputElement>("[data-lead-stage]");
-    const saveStatus = landingLeadForm.querySelector<HTMLElement>("[data-partial-status]");
 
     if (firstStep && secondStep && nextButton && backButton && submissionIdField && leadStageField) {
       const stepFields = (step: HTMLElement) =>
@@ -482,6 +480,7 @@ const {
       const secondStepFields = stepFields(secondStep);
       let currentStep = 1;
       let identitySaved = false;
+      let finalSubmissionStarted = false;
 
       submissionIdField.value = typeof crypto.randomUUID === "function"
         ? crypto.randomUUID()
@@ -520,38 +519,34 @@ const {
           return;
         }
         showStep(2);
-        void saveIdentity();
       };
 
-      const saveIdentity = async () => {
-        if (identitySaved) return;
-
+      const buildIdentityBody = () => {
         leadStageField.value = "identity";
         const body = new URLSearchParams();
         new FormData(landingLeadForm).forEach((value, key) => {
           if (typeof value === "string") body.append(key, value);
         });
         leadStageField.value = "qualified";
+        return body;
+      };
 
-        try {
-          const response = await fetch("/.netlify/functions/submit-lead", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body,
-            keepalive: true,
-          });
-          if (!response.ok) throw new Error("Identity capture failed");
+      const captureAbandonment = () => {
+        if (currentStep !== 2 || finalSubmissionStarted || identitySaved) return;
+
+        const body = buildIdentityBody();
+        if (typeof navigator.sendBeacon === "function" && navigator.sendBeacon("/.netlify/functions/submit-lead", body)) {
           identitySaved = true;
-          if (saveStatus) {
-            saveStatus.hidden = false;
-            saveStatus.textContent = "Details saved. Finish the last three questions when you're ready.";
-          }
-        } catch {
-          if (saveStatus) {
-            saveStatus.hidden = false;
-            saveStatus.textContent = "We couldn't save this step yet. Your details will still be sent when you finish the form.";
-          }
+          return;
         }
+
+        identitySaved = true;
+        void fetch("/.netlify/functions/submit-lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body,
+          keepalive: true,
+        }).catch(() => {});
       };
 
       landingLeadForm.classList.add("is-stepped");
@@ -564,6 +559,7 @@ const {
           advance();
         }
       });
+      window.addEventListener("pagehide", captureAbandonment);
       landingLeadForm.addEventListener("submit", (event) => {
         if (currentStep === 1) {
           event.preventDefault();
@@ -571,6 +567,7 @@ const {
           advance();
           return;
         }
+        finalSubmissionStarted = true;
         leadStageField.value = "qualified";
       }, true);
     }
@@ -896,8 +893,7 @@ const {
   .rm-step-next { display: none; }
   .rm-form.is-stepped .rm-step-next { display: flex; }
 
-  .rm-step-disclosure,
-  .rm-partial-status {
+  .rm-step-disclosure {
     color: #59667b;
     font-size: 0.7rem;
     line-height: 1.5;
