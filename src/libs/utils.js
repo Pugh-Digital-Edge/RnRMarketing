@@ -29,6 +29,10 @@ export async function getOptimizedImage(image, options = {}) {
   })));
   const optimizedImage = variants.at(-1);
 
+  if (!optimizedImage) {
+    throw new Error("getOptimizedImage requires at least one valid width");
+  }
+
   return {
     ...optimizedImage,
     srcSet: variants.map((variant, index) => `${variant.src} ${widths[index]}w`).join(", "),

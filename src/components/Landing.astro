@@ -2,11 +2,12 @@
 import { Breadcrumbs } from "astro-breadcrumbs";
 import "astro-breadcrumbs/breadcrumbs.css";
 import { Icon } from "astro-icon/components";
-import type { GetImageResult } from "astro";
 
-type ResponsiveImage = GetImageResult & {
-  srcSet?: string;
+type ResponsiveImage = {
+  src: string;
+  srcSet: string;
   sizes?: string;
+  attributes: Record<string, any>;
 };
 
 interface Props {
