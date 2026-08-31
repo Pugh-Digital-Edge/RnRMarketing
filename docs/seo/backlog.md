@@ -135,6 +135,23 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Measurement due date: 2026-09-24.
 - Verification method: reviewed diff; successful production build and postbuild AEO check; desktop/mobile rendered review with no overflow; no browser console warnings/errors; exact live title and 152-character description; self-canonical/indexable/one-H1/JSON-LD-valid output; zero local/live signal mismatches; fresh Google state `Submitted and indexed`. Measure comparable 28-day query-page GSC performance before claiming impact.
 
+### SEO-009 — Publish a Local Services Ads guide for restoration companies
+
+- Status: In Progress
+- Approval state: **Auto-approved by weekly article automation on 2026-08-31** after the stored-evidence, winnability, duplication, factual-support, image, and validation gates passed.
+- Category: search-intent/content gap; internal-link support; entity, citation, and AEO weakness.
+- Scope: queries `how does local service ads work for damage restoration`, `local service ads for restoration companies`, and `restoration local service ads`; new canonical resource `/resources/local-services-ads-for-restoration-companies/`; supporting PPC, lead-tracking, web-design, reputation, SEO, retargeting, social-advertising, water-damage, and lead-generation pages.
+- Problem: the site has commercial PPC/LSA service pages but no dedicated operator-focused resource explaining LSA eligibility, verification, service-area controls, ranking inputs, lead handling, credits, and booked-job measurement. Canonry consistently finds competitor sources for the informational query while the project is neither mentioned nor cited.
+- Evidence baseline: stored Canonry target `tgt_15i6eaw` from completed run `30969b56-2bc9-49cc-bba3-4cee92a4e36e` is `ownable` with winnability `1.0` and medium action confidence. The 30-day and 90-day stored views both show 0/2 mentioned and 0/2 cited for the exact query; Canonry content gaps report a 100% miss rate with six cited competitor domains. Stored GSC rows through 2026-08-22 show 34 impressions, 0 clicks, and weighted average position 27.59 across the related `local service ads for restoration companies` and `restoration local service ads` family, split between `/services/ppc/` and `/water-damage-restoration/ppc/`. Missing conversion and fresh post-publication evidence are unavailable, not zero.
+- Hypothesis: a distinct, primary-source-backed educational guide can satisfy informational LSA intent without replacing the commercial PPC service pages, consolidate supporting internal links, and create a more useful owned source for organic and answer-engine retrieval.
+- Expected impact: establish one clear informational target for restoration LSA questions, help owners evaluate operational fit, and route qualified readers to PPC and lead-tracking services. No ranking, lead, mention, citation, or revenue outcome is claimed.
+- Recommended change: publish the 1,966-word article with Matt Pugh authorship, one cover image, one synchronized four-question FAQ block/schema source, Google primary-source citations, and natural internal links. Keep commercial management intent on `/services/ppc/` and avoid a second near-duplicate LSA article.
+- Effort: Medium.
+- Confidence: Medium–High for the content and citation gap; Medium for organic/AEO impact because exact-query GSC demand is sparse and no post-publication comparison exists.
+- Deployment commit/build ID: article and required implementation safeguards committed as `1b13b66e4d6f4483b9bbc15f466847fbb965d0ce` on `main` and pushed to `origin/main` on 2026-08-31; Netlify build ID and live deployment verification remain unavailable.
+- Measurement due date: 28 days after production verification; provisionally 2026-09-28 if the URL is verified live on 2026-08-31.
+- Verification method: successful `astro check` and production build; rendered one-H1, BlogPosting, visible FAQ/FAQPage synchronization, author, image, sitemap, and internal-link checks; regression-automation production parity and indexability verification; then comparable GSC query/page results and a later operator-approved fixed-basket Canonry run with Mention Coverage/Share reported separately from Citation Coverage.
+
 ## Reconciled / not prioritized
 
 - Generic sitewide audit-support copy: Rejected. Earlier browser review found duplication and unrelated content; native page-specific framework work is the safer direction.
