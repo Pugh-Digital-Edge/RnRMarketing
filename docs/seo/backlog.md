@@ -152,6 +152,23 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Measurement due date: 28 days after production verification; provisionally 2026-09-28 if the URL is verified live on 2026-08-31.
 - Verification method: successful `astro check` and production build; rendered one-H1, BlogPosting, visible FAQ/FAQPage synchronization, author, image, sitemap, and internal-link checks; regression-automation production parity and indexability verification; then comparable GSC query/page results and a later operator-approved fixed-basket Canonry run with Mention Coverage/Share reported separately from Citation Coverage.
 
+### SEO-010 — Publish a restoration agency selection guide
+
+- Status: Deployed; production verification pending.
+- Approval state: **Auto-approved by weekly article automation on 2026-09-07** after the stored Canonry opportunity, winnability, query-demand, duplication, factual-support, image, and validation gates passed.
+- Category: search-intent/content gap; internal-link support; entity, citation, and AEO weakness.
+- Scope: query `should i use a niche restoration agency or a general marketing firm`; supporting family `restoration marketing agency`; new canonical resource `/resources/restoration-marketing-agency-vs-generalist/`; homepage commercial intent remains unchanged.
+- Problem: the site had no informational resource for an owner comparing a restoration specialist with a generalist agency. Canonry mapped the query to an effectively invisible fire-marketing article, while the homepage serves the distinct commercial `restoration marketing agency` intent.
+- Evidence baseline: Canonry target `tgt_fe73v6` is `ownable` with winnability `1.0`, medium action confidence, four stored runs from 2026-08-10 through 2026-08-27 with 0 mentions and 0 citations, and competitor-owned comparison/list content led by Contractor Marketing Pros. The stored 30-day and 90-day gap views are identical and show competitor mentions/citations without an owned result. Stored GSC rows for 2026-07-12 through 2026-08-22 show 861 impressions, 0 surfaced row clicks, and weighted average position 48.98 for `restoration marketing agency` across seven pages; the homepage owns 444 impressions at position 25.85, supporting a separate decision guide rather than a replacement commercial page.
+- Hypothesis: a balanced, operations-first comparison guide can give owners a useful evaluation framework and create an ownable source for the decision query without cannibalizing the homepage's agency intent.
+- Expected impact: establish a distinct informational entry point for agency-selection demand, strengthen topical/internal-link support for the site's commercial and service pages, and create a citation-eligible first-party source. No ranking, mention, citation, lead, or revenue outcome is promised.
+- Recommended change: publish the 2,400-word Matt Pugh guide with a direct answer, specialist/generalist comparison, restoration-specific scenarios, lead-to-booked-work scorecard, access and ownership criteria, a 90-day onboarding plan, one cover image, one synchronized four-question FAQ block/schema source, primary Google/FTC/IICRC citations, and natural service/industry/resource links.
+- Effort: Medium.
+- Confidence: Medium–High for the distinct content and AEO gap; Medium for organic/AEO impact because the exact decision query has competitor evidence but no stored GSC impressions of its own.
+- Deployment commit/build ID: article and cover committed as `2fa365ec45451e323efbabab3a81c6b6734fd486` on `main` and pushed to `origin/main` on 2026-09-07; stable hosting build ID and production verification are pending.
+- Measurement due date: provisionally 2026-10-05 if production verification is accepted on 2026-09-07; otherwise 28 days after the accepted live checkpoint.
+- Verification method: successful `astro check`, production build/postbuild, rendered one-H1/BlogPosting/FAQ synchronization/author/image/sitemap/internal-link checks; regression-automation live availability and source/build/live parity; then exact query/page GSC results over a comparable 28-day window and a later separately authorized fixed-basket Canonry sweep reporting Mention Coverage/Share separately from Citation Coverage.
+
 ## Reconciled / not prioritized
 
 - Generic sitewide audit-support copy: Rejected. Earlier browser review found duplication and unrelated content; native page-specific framework work is the safer direction.
