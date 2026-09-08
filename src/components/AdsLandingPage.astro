@@ -99,6 +99,10 @@ const {
       <div class="rm-form-side">
         <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/thank-you/" data-success-redirect="/thank-you/" data-lead-phone-form data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="Schedule Lead Form" />
+          <!-- Register legacy /schedule/ fields too: Netlify uses one definition per form name. -->
+          <input type="hidden" name="phone-country" value="US" />
+          <input type="hidden" name="primary-service" value="" />
+          <input type="hidden" name="goals" value="" />
           <p hidden>
             <label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
           </p>
@@ -567,9 +571,18 @@ const {
           advance();
           return;
         }
-        finalSubmissionStarted = true;
         leadStageField.value = "qualified";
       }, true);
+      // Observe the event after the form's phone-validation handler has run.
+      // Rejected submissions must remain eligible for abandonment capture.
+      window.addEventListener("submit", (event) => {
+        if (event.target === landingLeadForm) {
+          finalSubmissionStarted = !event.defaultPrevented;
+        }
+      });
+      window.addEventListener("pageshow", () => {
+        finalSubmissionStarted = false;
+      });
     }
   }
 </script>

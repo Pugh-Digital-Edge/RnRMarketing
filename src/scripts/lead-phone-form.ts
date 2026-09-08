@@ -70,8 +70,13 @@ function setupLeadForm(form: HTMLFormElement) {
       return;
     }
 
-    event.preventDefault();
     phone.value = result.e164;
+
+    // Forms with a native action post directly to Netlify Forms. Do not put
+    // the function's cold start (or a client-side redirect) in that path.
+    if (new URL(form.action).pathname !== endpoint) return;
+
+    event.preventDefault();
     submitButtons.forEach((button) => {
       button.disabled = true;
     });
