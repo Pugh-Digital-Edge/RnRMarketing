@@ -189,34 +189,60 @@ const optimizedImage = await getOptimizedImage(landingImage);
       }
 
       #cs-form {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem 1.5rem;
+        min-width: 0;
+        width: 100%;
         margin-bottom: (40/16rem);
+        .cs-content,
+        [data-phone-field],
+        .cs-label-message,
+        .cs-button-solid,
+        [data-form-status] { grid-column: 1 / -1; }
+
+        [data-phone-field] {
+          min-width: 0;
+          gap: 1.25rem 1.5rem;
+          align-items: start;
+        }
+
+        [data-phone-error] { grid-column: 1 / -1; }
+        [data-form-status]:empty { display: none; }
+        .cs-content .cs-text { margin-bottom: 0.75rem; }
+
         label {
+          min-width: 0;
+          width: 100%;
           font-size: (16/16rem);
           font-weight: 700;
           line-height: 1.5em;
           /* 12px - 20px */
-          margin-bottom: clamp(0.75rem, 1.3em, 1.25rem);
+          margin-bottom: 0;
           color: var(--headerColor);
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: flex-start;
           align-items: flex-start;
         }
 
         .cs-label-message {
           /* 32px - 48px */
-          margin-bottom: clamp(2rem, 6.3vw, 3rem);
+          margin-bottom: 0.5rem;
         }
 
         input,
+        select,
         textarea {
+          min-width: 0;
+          font-family: inherit;
           font-size: (16/16rem);
           width: 100%;
           height: (56/16rem);
           margin-top: (4/16rem);
           /* prevents border & padding from affecting height */
           box-sizing: border-box;
-          padding-left: (20/16rem);
+          padding-inline: (16/16rem);
           background-color: var(--surfaceMuted);
           border: 1px solid var(--borderColor);
           border-radius: (10/16rem);
@@ -367,18 +393,8 @@ const optimizedImage = await getOptimizedImage(landingImage);
   @media only screen and (min-width: 43.75em) {
     #cs-contact {
       #cs-form {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-
-        label {
-          width: 48%;
-        }
-
-        .cs-label-message {
-          width: 100%;
-        }
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        [data-phone-field] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       }
     }
   }
@@ -427,15 +443,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
   @media only screen and (min-width: 81.25em) {
     #cs-contact {
       #cs-form {
-        column-gap: (0/16rem);
-        label {
-          width: 48%;
-          max-width: (305/16rem);
-        }
-
-        .cs-label-message {
-          max-width: 100%;
-        }
+        label { max-width: 100%; }
       }
 
       .cs-right-section {
