@@ -1,6 +1,7 @@
 # SEO/AEO Backlog
 
 Last reconciled: 2026-09-10
+Current implementation run: [`2026-09-10-backlog-implementation.md`](runs/2026-09-10-backlog-implementation.md)
 Monthly learning review: [`2026-09-01-monthly-review.md`](runs/2026-09-01-monthly-review.md)
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
 Current weekly opportunity run: [`2026-09-07-weekly-opportunity.md`](runs/2026-09-07-weekly-opportunity.md)
@@ -13,19 +14,23 @@ Status values: Candidate · Planned · In Progress · Deployed · Measuring · V
 
 ## September evidence-ranked order
 
-1. **SEO-003** — decide whether to authorize the now-eligible unchanged-basket confirmation sweep; the 22-query mention loss is the largest measured risk, but it remains a two-observation, point-in-time result.
-2. **SEO-008** — decide whether to approve the single fire-guide-to-specialist contextual link; it is the strongest low-effort existing-page candidate (24 impressions, average position 4.04) and does not require a new page.
+The September 10 instruction to implement the backlog authorized the pending link change, one confirmation sweep, deployment, and verification. All currently supported source changes are implemented and live; outcome measurements remain open.
+
+1. **SEO-003** — confirmation completed September 10: Mention Coverage 6/42, non-brand Mention Share 7/33, Citation Coverage 3/42. All 22 historical lost-mentioned queries remain absent. Reviewed commercial queries show informational/competing-source answers, with no demonstrated technical cause or evidence-backed broad rewrite. Retain the fixed basket and evaluate existing interventions over their measurement windows.
+2. **SEO-008** — the single fire-guide-to-specialist link is deployed and production-verified; hold stable for the October 8 measurement checkpoint.
 3. **SEO-004** — preserve the measured artifact and evaluate the comparable query-page window on 2026-09-18 before any additional rewrite.
 4. **SEO-006** — evaluate the indexed water-damage article on 2026-09-21; keep organic results and later operator-approved mention/citation evidence separate.
 5. **SEO-005 and SEO-007** — evaluate intent ownership and snippet results on 2026-09-24 before changing links, page ownership, copy, or schema again.
 6. **SEO-002** — repeat the same bounded URL-level indexing set no earlier than 2026-09-25 if approved; do not optimize toward the stale whole-site rollup.
 7. **SEO-009** — hold the newly production-verified LSA guide stable through 2026-09-29; no search or AEO outcome is due yet.
+8. **SEO-010** — agency-selection guide is implemented and live; measurement due 2026-10-06.
 
 ## Prioritized work
 
 ### SEO-001 — Resolve Canonry/live/source parity on the audited cluster
 
 - Status: Measuring
+- Current September 10 implementation: `84e67ea` is live in Netlify deploy `6aa2e9136cdb4e00087de203` (published 17:33:35 UTC). A strict parsed-schema comparison found the previously unrecorded live `priceRange: "$"` versus source `"$$"` discrepancy. JSON Unicode escapes now preserve the existing two-dollar-sign value in production. All 98 sitemap pages and 100 internal HTML targets pass; full parsed metadata/JSON-LD local/live parity is clean. Fresh Canonry audit `638de6d0-fea9-4ad4-996a-fb1f2bd320bb` completed at 90/100 over 100 pages, with 0 skipped and 0 errored. The prior 88/100 audit covered 98 pages, so the score change is not attributed to these fixes. Historical checkpoints below remain historical.
 - Category: deployment / production parity; technical
 - Scope: representative `/services/`, generated industry/service, `/resources/`, `/schedule/`, `/thank-you/`, and `/restoration-marketing/` routes, then the full affected cluster.
 - Problem: the prior `/thank-you/`, trailing-slash, four-page metadata, and PPC contextual-link parity defects are resolved in live production. The 2026-08-25 service-page refactor remains committed at `5429a0a`; its normalized SEO output matches live. The current HEAD `2c7c545` adds lead-capture/form handling and the checked `/restoration-marketing/` form markers match live without changing its noindex state.
@@ -76,6 +81,7 @@ Status values: Candidate · Planned · In Progress · Deployed · Measuring · V
 ### SEO-003 — Re-run visibility baseline with the adopted query basket
 
 - Status: Measuring
+- Current September 10 result: authorized confirmation run `dc0e5f1c-7708-4edc-90be-47474349f809` completed at 17:37:00 UTC with 126 snapshots and unchanged query/provider/model/location sets. Mention Coverage is 6/42 versus 5/42 on August 27; non-brand Mention Share is 7/33 versus 5/29; Citation Coverage remains 3/42. The website-design consultation query gained both a mention and citation; the monthly-retainer query lost a citation but retained its mention. No query lost its August 27 mention. All 22 August 10-to-27 lost-mentioned queries remain absent. The confirmation task is complete; this is not evidence of recovery or a durable trend from only three comparable runs. See the implementation run for commercial-query diagnosis and limitations.
 - Category: AEO / measurement
 - Scope: the existing commercial query basket and provider set.
 - Problem: the first comparable 42-query refresh shows a large mention-coverage decline that must be confirmed against sampling volatility before it drives page changes.
@@ -84,10 +90,10 @@ Status values: Candidate · Planned · In Progress · Deployed · Measuring · V
 - Approval state: approved and completed on 2026-08-27. The first attempt `badc9ee5-71d6-41a2-92e9-0a9b083c30bd` failed when the local Canonry service restarted and is excluded; the completed retry is the valid comparison. No basket mutation occurred.
 - Deployment commit/build ID: not applicable; measurement intervention only.
 - Expected impact: establish a trustworthy post-remediation mention/citation baseline and expose mention losses or citation gaps.
-- Recommended change: do not react with a broad rewrite. Flag the 22 mention losses for monitoring, preserve the fixed basket, and seek approval for one confirmation sweep after an appropriate cooldown/window. If losses persist, diagnose the highest-commercial queries first for competitor displacement and surface-specific gaps; keep mention loss primary and citation loss secondary.
+- Recommended change: preserve the fixed basket and existing measurement windows. The September 10 confirmation and bounded commercial-query diagnosis are complete; no technical or specific content defect was demonstrated for the persistent losses. Use exact query-page and source evidence before proposing further changes. Do not rewrite healthy pages merely because informational answers cite other sources.
 - Effort: Low operator time / quota-consuming
 - Confidence: High that the point-in-time decline is measured comparably; Low that it is durable because each query/provider has only two observations across the comparison window.
-- Verification: repeat the unchanged basket after approval, then use per-query/provider mention rates and competitor mention-share displacement to confirm or dismiss the regression. Next checkpoint: 2026-09-04. The cancelled and failed partial attempts are not valid baselines.
+- Verification: September 10 completed the unchanged-basket confirmation. Query/provider/model/location sets match August 27, and all 126 observations are present. The cancelled and failed attempts remain excluded. Preserve mention and citation measurements separately; later comparisons require a meaningful window and must account for the ongoing page interventions.
 - 2026-08-31 recheck: no new sweep or probe was run. Stored four-run visibility remains 73 mentions and 15 citations across 288 checks; the 2026-08-27 fixed-basket decline remains point-in-time and unconfirmed under Aero's n=1-per-provider caution.
 - 2026-08-31 weekly reconciliation: the current stored headline remains 5/42 Mention Coverage (12%), 5/29 non-brand Mention Share (17%), then 3/42 Citation Coverage (7%). The comparable 2026-08-10 baseline remains 27/42 (64%), 4/31 (13%), and 4/42 (10%), respectively. Canonry still reports 22 lost-mentioned queries, 0 gained-mentioned queries, 3 lost citation queries, and 2 gained citation queries. The next approval gate is **Awaiting approval** for one unchanged-basket confirmation sweep on or after 2026-09-04; no sweep is authorized by this entry and no page rewrite is approved.
 - 2026-09-07 weekly reconciliation: no later visibility run exists. Mention Coverage remains 5/42 (12%), non-brand Mention Share 5/29 (17%), and Citation Coverage 3/42 (7%); pooled usable history remains 73 mentions and 15 citations across 288 checks. The unchanged-basket confirmation is now eligible and **Awaiting approval**. No sweep, probe, provider read, or page change was run.
@@ -179,21 +185,22 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 
 ### SEO-008 — Strengthen fire-damage web-design intent with one contextual link
 
-- Status: Candidate
-- Approval state: **Awaiting approval** for one narrowly scoped internal-link change after review; no source edit, deployment, or indexing action is authorized by the weekly queue.
+- Status: Measuring
+- Approval state: approved by the operator's September 10 instruction to implement the backlog; implemented, deployed, and production-verified. No indexing request was made.
 - Category: internal-link weakness; search intent.
 - Scope: `/fire-damage-restoration/web-design/`; query `web design for fire damage restoration`; contextual source `/resources/fire-damage-restoration-marketing/`.
 - Problem: the indexed specialist page is already near the top of page one but receives only template-level internal support, while the fire-damage marketing guide links to the generic web-design service instead of the more intent-aligned fire specialist.
 - Evidence baseline: stored GSC query-page data for 2026-07-24 through 2026-08-22 shows 24 impressions, 0 surfaced row clicks, and average position 4.04 on the exact specialist URL, up from 14 impressions at position 3.86 in the overlapping window ending 2026-08-14. Fresh stored inspection marks the page `Submitted and indexed`; direct live review on 2026-08-31 returned 200, one H1, an indexable page, and title `Web Design for Fire Damage Restoration | R&R Marketing`. A read-only 96-page live link extraction counted 11 inbound links to the specialist URL versus 115 to `/services/web-design/`; repository evidence shows the fire-damage marketing guide currently links to the generic page.
 - Hypothesis: one relevant fire-guide-to-specialist contextual link can reinforce exact intent ownership without changing the page body, URL, indexability, or generic web-design ownership.
-- Deployment commit/build ID: not applicable; candidate only.
-- Measurement due date: 28 days after any approved deployment and live verification.
+- Deployment commit/build ID: link implementation `64429c1`, first live in Netlify deploy `6aa2e81785e7f400081ea057`; final verified artifact `84e67ea` / `6aa2e9136cdb4e00087de203`, including the schema parity correction.
+- Measurement due date: 2026-10-08, 28 days after the accepted September 10 live verification.
 - Expected impact: improve consolidation and click/ranking opportunity for a query already averaging position 4, with limited risk to the broader web-design page.
-- Recommended change: after approval, change or add one natural contextual link in the fire-damage marketing guide to `/fire-damage-restoration/web-design/`, using accurate fire-specific anchor text; preserve the generic `/services/web-design/` page elsewhere and make no broad template-link expansion.
+- Recommended change: implemented one contextual link using “fire damage restoration web design service” and `/fire-damage-restoration/web-design/`. Preserve it and the generic service page elsewhere through the measurement window; no broad template-link expansion is supported.
 - Effort: Low.
 - Confidence: Medium–High for the opportunity and intent match; Medium for search impact because the impression base is 24 and the rolling windows overlap.
 - Verification method: reviewed one-link diff; successful build/postbuild checks; source/build/live followability; unchanged canonical/indexability/title/H1/JSON-LD; full internal-link crawl after deployment; then exact query-page GSC impressions, CTR, and position over a comparable 28-day window. Do not claim impact from the overlapping pre-change windows.
 - 2026-09-07 weekly reconciliation: the repository and bounded live HTML still route the fire guide to `/services/web-design/` and not `/fire-damage-restoration/web-design/`; the specialist remains HTTP 200 and indexable. The one-link candidate remains **Awaiting approval** with no source or deployment change.
+- 2026-09-10 implementation: source/build/live each contain the intended contextual link exactly once, with native browser navigation to the specialist page. Build/postbuild checks and all 13 existing tests pass. All 98 live sitemap pages and 100 internal HTML targets pass; robots, llms files, sitemaps, and guide Markdown match the build. The affected pages' original metadata and JSON-LD are unchanged except the separately documented `priceRange` correction. No ranking, CTR, or AEO gain is attributed to the same-day link deployment.
 
 ### SEO-009 — Publish a Local Services Ads guide for restoration companies
 

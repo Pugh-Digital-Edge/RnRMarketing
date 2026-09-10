@@ -1,5 +1,7 @@
 # Canonry audit and easy-remediation plan
 
+> Historical implementation record. Use the [current evidence-ranked backlog](seo/backlog.md) for remaining work and accepted production verification; the deployment and provider states below describe August 10 and are not current blockers.
+
 Date: 2026-08-10  
 Project: `remediation-restoration-marketing`  
 Domain: `https://remediationrestorationmarketing.com`

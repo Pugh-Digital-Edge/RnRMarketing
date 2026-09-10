@@ -1,5 +1,7 @@
 # Canonry AEO 100% Remediation Plan
 
+> Historical plan, superseded for execution by the [current evidence-ranked backlog](seo/backlog.md). The 2026-09-10 reconciliation found its parity fixes and approved content work already implemented. Unchecked audit-score quotas below are historical targets, not authorization for additional copy, schema, submissions, or duplicate pages. Use the current backlog and measurement windows to choose work.
+
 Project: `remediation-restoration-marketing`
 
 Domain: `remediationrestorationmarketing.com`
