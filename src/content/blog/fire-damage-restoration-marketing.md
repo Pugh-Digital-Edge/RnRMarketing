@@ -77,7 +77,7 @@ An ad about fire and smoke restoration should not land on a page where the visit
 - A clear explanation of what happens after the call or form
 - Truthful trust elements that can be verified
 
-Our [restoration web design service](/services/web-design/) focuses on these conversion fundamentals across urgent and non-urgent lead paths.
+Our [fire damage restoration web design service](/fire-damage-restoration/web-design/) focuses on these conversion fundamentals across urgent and non-urgent lead paths.
 
 ## Build Local SEO Around Real Services and Real Places
 
