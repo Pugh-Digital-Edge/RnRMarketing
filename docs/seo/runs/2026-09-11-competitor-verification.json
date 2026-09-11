@@ -1,0 +1,193 @@
+{
+  "date": "2026-09-11T16:14:15.216Z",
+  "live": {
+    "count": 98,
+    "errors": [],
+    "links": 100,
+    "linkErrors": []
+  },
+  "local": {
+    "count": 98,
+    "errors": [],
+    "links": 100,
+    "linkErrors": []
+  },
+  "metadataDiffs": [],
+  "implementation": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "Restoration Marketing Agency for Emergency Calls | R&amp;R",
+      "h1": [
+        "Restoration Marketing Agency for Emergency Calls"
+      ],
+      "canonical": "https://remediationrestorationmarketing.com/",
+      "description": "Restoration marketing agency for contractors seeking more qualified emergency calls, using SEO, paid ads, conversion-focused websites, and lead tracking.",
+      "robots": "",
+      "schemaTypes": [
+        "WebPage",
+        "LocalBusiness",
+        "Organization",
+        "Person",
+        "WebSite",
+        "HowTo",
+        "FAQPage"
+      ],
+      "entity": "https://remediationrestorationmarketing.com/#localbusiness",
+      "proofBeforeForm": true,
+      "hasHeroProofLink": true,
+      "serviceSummaryLinks": 3
+    },
+    {
+      "route": "/contact/",
+      "status": 200,
+      "title": "Contact Our Restoration Marketing Agency | R&amp;R Marketing",
+      "h1": [
+        "Contact Our Restoration Marketing Team"
+      ],
+      "canonical": "https://remediationrestorationmarketing.com/contact/",
+      "description": "Request a free Lead Flow Acceleration Session for your restoration company. We’ll review your territory, visibility, and lead opportunities; one company per.",
+      "robots": "",
+      "schemaTypes": [
+        "WebPage",
+        "LocalBusiness",
+        "Organization",
+        "Person",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "entity": "https://remediationrestorationmarketing.com/#localbusiness"
+    },
+    {
+      "route": "/services/",
+      "status": 200,
+      "title": "Restoration Marketing Services | Remediation &amp; Restoration Marketing",
+      "h1": [
+        "Restoration Marketing Services"
+      ],
+      "canonical": "https://remediationrestorationmarketing.com/services/",
+      "description": "Marketing services for water damage, fire restoration, and mold remediation companies, built around qualified leads and booked jobs.",
+      "robots": "",
+      "schemaTypes": [
+        "WebPage",
+        "LocalBusiness",
+        "Organization",
+        "Person",
+        "WebSite",
+        "BreadcrumbList",
+        "HowTo",
+        "FAQPage"
+      ],
+      "entity": "https://remediationrestorationmarketing.com/#localbusiness",
+      "hasGuide": true,
+      "hasBudget": true,
+      "overviewSelfCta": false
+    }
+  ],
+  "excluded": [
+    {
+      "route": "/thank-you/",
+      "status": 200,
+      "noindex": true,
+      "inSitemap": false
+    },
+    {
+      "route": "/restoration-marketing/",
+      "status": 200,
+      "noindex": true,
+      "inSitemap": false
+    }
+  ],
+  "serializationDifferences": [
+    {
+      "route": "/biohazard-cleanup/lead-tracking/",
+      "field": "description",
+      "before": "Specialized Lead Tracking &amp; Analytics services designed specifically for Biohazard Cleanup companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized Lead Tracking &#38; Analytics services designed specifically for Biohazard Cleanup companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/biohazard-cleanup/ppc/",
+      "field": "description",
+      "before": "Specialized PPC &amp; LSA Campaigns services designed specifically for Biohazard Cleanup companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized PPC &#38; LSA Campaigns services designed specifically for Biohazard Cleanup companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/commercial-restoration/lead-tracking/",
+      "field": "description",
+      "before": "Specialized Lead Tracking &amp; Analytics services designed specifically for Commercial Restoration companies. Drive more emergency restoration leads and grow.",
+      "after": "Specialized Lead Tracking &#38; Analytics services designed specifically for Commercial Restoration companies. Drive more emergency restoration leads and grow."
+    },
+    {
+      "route": "/commercial-restoration/ppc/",
+      "field": "description",
+      "before": "Specialized PPC &amp; LSA Campaigns services designed specifically for Commercial Restoration companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized PPC &#38; LSA Campaigns services designed specifically for Commercial Restoration companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/fire-damage-restoration/lead-tracking/",
+      "field": "description",
+      "before": "Specialized Lead Tracking &amp; Analytics services designed specifically for Fire Damage Restoration companies. Drive more emergency restoration leads and grow.",
+      "after": "Specialized Lead Tracking &#38; Analytics services designed specifically for Fire Damage Restoration companies. Drive more emergency restoration leads and grow."
+    },
+    {
+      "route": "/fire-damage-restoration/ppc/",
+      "field": "description",
+      "before": "Specialized PPC &amp; LSA Campaigns services designed specifically for Fire Damage Restoration companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized PPC &#38; LSA Campaigns services designed specifically for Fire Damage Restoration companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/mold-remediation/lead-tracking/",
+      "field": "description",
+      "before": "Specialized Lead Tracking &amp; Analytics services designed specifically for Mold Remediation companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized Lead Tracking &#38; Analytics services designed specifically for Mold Remediation companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/mold-remediation/ppc/",
+      "field": "description",
+      "before": "Specialized PPC &amp; LSA Campaigns services designed specifically for Mold Remediation companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized PPC &#38; LSA Campaigns services designed specifically for Mold Remediation companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/roof-damage-restoration/lead-tracking/",
+      "field": "description",
+      "before": "Specialized Lead Tracking &amp; Analytics services designed specifically for Roof Damage Restoration companies. Drive more emergency restoration leads and grow.",
+      "after": "Specialized Lead Tracking &#38; Analytics services designed specifically for Roof Damage Restoration companies. Drive more emergency restoration leads and grow."
+    },
+    {
+      "route": "/roof-damage-restoration/ppc/",
+      "field": "description",
+      "before": "Specialized PPC &amp; LSA Campaigns services designed specifically for Roof Damage Restoration companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized PPC &#38; LSA Campaigns services designed specifically for Roof Damage Restoration companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/sewage-cleanup/lead-tracking/",
+      "field": "description",
+      "before": "Specialized Lead Tracking &amp; Analytics services designed specifically for Sewage Cleanup companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized Lead Tracking &#38; Analytics services designed specifically for Sewage Cleanup companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/sewage-cleanup/ppc/",
+      "field": "description",
+      "before": "Specialized PPC &amp; LSA Campaigns services designed specifically for Sewage Cleanup companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized PPC &#38; LSA Campaigns services designed specifically for Sewage Cleanup companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/storm-damage-cleanup/lead-tracking/",
+      "field": "description",
+      "before": "Specialized Lead Tracking &amp; Analytics services designed specifically for Storm Damage Cleanup companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized Lead Tracking &#38; Analytics services designed specifically for Storm Damage Cleanup companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/storm-damage-cleanup/ppc/",
+      "field": "description",
+      "before": "Specialized PPC &amp; LSA Campaigns services designed specifically for Storm Damage Cleanup companies. Drive more emergency restoration leads and grow your.",
+      "after": "Specialized PPC &#38; LSA Campaigns services designed specifically for Storm Damage Cleanup companies. Drive more emergency restoration leads and grow your."
+    },
+    {
+      "route": "/water-damage-restoration/lead-tracking/",
+      "field": "description",
+      "before": "Specialized Lead Tracking &amp; Analytics services designed specifically for Water Damage Restoration companies. Drive more emergency restoration leads and grow.",
+      "after": "Specialized Lead Tracking &#38; Analytics services designed specifically for Water Damage Restoration companies. Drive more emergency restoration leads and grow."
+    }
+  ]
+}

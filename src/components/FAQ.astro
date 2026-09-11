@@ -1,4 +1,5 @@
 ---
+import Accordion from "@components/starwind/Accordion.astro";
 import faqs from "@data/faqData.json";
 
 // The FAQPage schema is emitted here rather than in BaseLayout so it only ever
@@ -33,14 +34,7 @@ const faqSchema = {
         </p>
     </div>
       <div class="cs-flex-group">
-        <div class="cs-faq-group">
-          {faqs.map((faq, i) => (
-            <details class="cs-faq-item" open={i === 0}>
-                <summary class="cs-button"><h3>{faq.question}</h3></summary>
-                <p class="cs-item-p">{faq.answer}</p>
-            </details>
-          ))}
-      </div>
+        <Accordion items={faqs} id="marketing-faq" />
         <div class="cs-cta">
             <h3 class="cs-h3">Need an answer specific to your market?</h3>
             <p class="cs-cta-p">
@@ -75,6 +69,12 @@ const faqSchema = {
             gap: clamp(3rem, 6vw, 4rem);
         }
 
+        .cs-flex-group {
+            display: grid;
+            gap: 2rem;
+            width: 100%;
+        }
+
         .cs-content {
             /* set text align to left if content needs to be left aligned */
             text-align: center;
@@ -83,125 +83,6 @@ const faqSchema = {
             flex-direction: column;
             /* centers content horizontally, set to flex-start to left align */
             align-items: center;
-        }
-
-        .cs-faq-group {
-            padding: 0;
-            margin: 0;
-            margin-bottom: (48/16rem);
-            display: flex;
-            flex-direction: column;
-            gap: (12/16rem);
-        }
-
-        .cs-faq-item {
-            list-style: none;
-            background-color: #fff;
-            border: 1px solid var(--borderColor);
-            border-radius: var(--radiusS);
-            box-shadow: var(--shadowS);
-            padding: 0 (20/16rem);
-            box-sizing: border-box;
-            transition: border-color 0.3s, box-shadow 0.3s;
-
-            &[open] {
-                border-color: rgba(10, 102, 194, 0.45);
-                box-shadow: var(--shadowM);
-                .cs-button {
-                    &:before {
-                        transform: rotate(180deg);
-                    }
-                    &:after {
-                        opacity: 0;
-                        transform: rotate(360deg);
-                    }
-                }
-                .cs-item-p {
-                    height: auto;
-                    /* 12px - 16px */
-                    margin-bottom: clamp(0.75rem, 1.3vw, 1rem);
-                    opacity: 1;
-                }
-            }
-        }
-
-        .cs-button {
-            /* 16px - 20px */
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            line-height: 1.2em;
-            text-align: left;
-            font-weight: bold;
-            /* 14px - 18px */
-            padding: clamp(0.875rem, 1.5vw, 1.125rem) 2.5rem clamp(0.875rem, 1.5vw, 1.125rem) 0;
-            background: transparent;
-            border: none;
-            color: var(--headerColor);
-            display: block;
-            width: 100%;
-            position: relative;
-            list-style: none;
-
-            h3 {
-                margin: 0;
-                font: inherit;
-                color: inherit;
-            }
-
-            &::-webkit-details-marker {
-                display: none;
-            }
-
-            &:hover {
-                cursor: pointer;
-            }
-
-            &:before {
-                /* plus sign */
-                content: "";
-                width: (12/16rem);
-                height: (2/16rem);
-                background: var(--headerColor);
-                opacity: 1;
-                position: absolute;
-                display: block;
-                top: 50%;
-                right: (4/16rem);
-                transition: transform 0.3s;
-            }
-
-            &:after {
-                /* plus sign */
-                content: "";
-                width: (12/16rem);
-                height: (2/16rem);
-                background: var(--headerColor);
-                opacity: 1;
-                position: absolute;
-                display: block;
-                top: 50%;
-                right: (4/16rem);
-                transform: rotate(90deg);
-                transform-origin: center;
-                transition:
-                    opacity 0.5s,
-                    transform 0.3s;
-            }
-        }
-
-        .cs-item-p {
-            /* 14px - 16px */
-            font-size: clamp(0.875rem, 1.5vw, 1rem);
-            line-height: 1.5em;
-            width: 90%;
-            height: 0;
-            margin: 0;
-            opacity: 0;
-            color: var(--bodyTextColor);
-            /* clips the text so it doesn't show up */
-            overflow: hidden;
-            transition:
-                opacity 0.3s,
-                margin-bottom 0.3s;
         }
 
         .cs-cta {
@@ -297,9 +178,7 @@ const faqSchema = {
             gap: clamp(1rem, 3.5vw, 3rem);
         }
 
-        .cs-faq-group {
-            margin: 0;
-        }
+
 
         .cs-cta {
             width: 38.5%;

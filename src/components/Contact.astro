@@ -1,4 +1,6 @@
 ---
+import Input from "@components/starwind/Input.astro";
+import Button from "@components/starwind/Button.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -55,26 +57,27 @@ import { Icon } from "astro-icon/components";
             <h3 class="cs-h3">Request a Territory Check</h3>
             <label class="cs-label">
                 Name
-                <input class="cs-input" required type="text" id="name-1388" name="name" placeholder="Name">
+                <Input class="cs-input" required type="text" id="name-1388" name="name" autocomplete="name" placeholder="Name" />
             </label>
             <label class="cs-label cs-email">
                 Email
-                <input class="cs-input" required type="email" id="email-1388" name="email" placeholder="Email">
+                <Input class="cs-input" required type="email" id="email-1388" name="email" autocomplete="email" placeholder="Email" />
             </label>
             <div class="cs-label cs-phone" data-phone-field>
                 <label>Country <select class="cs-input" name="phone-country" data-phone-country aria-label="Phone number country"><option value="US">United States +1</option></select></label>
-                <label>Phone <input class="cs-input" required type="tel" inputmode="tel" autocomplete="tel" id="phone-1388" name="phone" data-phone-input aria-describedby="contact-1388-phone-error" placeholder="(310) 555-1234"></label>
+                <label>Phone <Input class="cs-input" required type="tel" inputmode="tel" autocomplete="tel" id="phone-1388" name="phone" data-phone-input aria-describedby="contact-1388-phone-error" placeholder="(310) 555-1234" /></label>
                 <p id="contact-1388-phone-error" data-phone-error role="alert" hidden>Please enter a valid phone number, including the area code.</p>
             </div>
             <label class="cs-label cs-phone">
                 ZIP Code
-                <input class="cs-input" required type="text" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" id="zip-1388" name="zip" placeholder="ZIP">
+                <Input class="cs-input" required type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?" id="zip-1388" name="zip" placeholder="ZIP" />
             </label>
             <label class="cs-label">
-                Message
-                <textarea class="cs-input cs-textarea" required name="Message" id="message-1388" placeholder="Write message..."></textarea>
+                Service area and goals
+                <textarea class="cs-input cs-textarea" required name="Message" id="message-1388" placeholder="Which cities do you serve, and what would you like to improve?"></textarea>
             </label>
-            <button class="cs-button-solid cs-submit" type="submit">Request Territory Check</button>
+            <p>Include a valid phone number to enable sending. We will review your territory and contact you about availability and next steps.</p>
+            <Button class="cs-button-solid cs-submit" type="submit">Request Territory Check</Button>
             <p data-form-status role="status" aria-live="polite"></p>
         </form>
     </div>

@@ -11,16 +11,15 @@ import { Icon } from 'astro-icon/components';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "@libs/utils"
-import landingImage from "@assets/images/hero-img.png" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-import landingImageMobile from "@assets/images/landing/blue-abstract.jpeg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from "@assets/images/restoration-drying-hero.png"
 import restorationGraphic from "@assets/images/results.jpg"
-import number1 from "@assets/images/number 1.jpeg"
+import restorationTeam from "@assets/images/restoration-team-planning.png"
 import Newsletter from "@components/Newsletter.astro";
 import ResultsStats from "@components/ResultsStats.astro";
 import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 
 const optimizedImage = await getOptimizedImage(landingImage, { widths: [960, 1600], quality: 72 })
-const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { widths: [480, 640], quality: 68 })
+const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [480, 640], quality: 68 })
 
 ---
 
@@ -43,19 +42,20 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
             <p class="cs-text">
               We connect local search, paid ads, conversion-focused websites, and lead tracking so you can turn more property-damage searches into booked work and see what drives each opportunity.
             </p>
-            <a href="/schedule/" class="cs-button-solid d-none d-lg-block">Request Your Free Acceleration Session &rarr;</a>
-            <a href="/schedule/" class="cs-button-solid d-block d-lg-none">Request Your Free Session &rarr;</a>
-
+            <div class="hero-actions">
+              <a href="/schedule/" class="cs-button-solid">Request Your Free Session &rarr;</a>
+              <a href="#client-results" class="hero-proof-link">See reported client results <span aria-hidden="true">→</span></a>
+            </div>
+            <p class="hero-session-details">Free 30-minute session. No obligation. We review your market and recommend what to work on first.</p>
         </div>
     </div>
     <!--Bubble Groups-->
     <div class="cs-bubbles cs-bubbles1" aria-hidden="true"></div>
     <div class="cs-bubbles cs-bubbles2" aria-hidden="true"></div>
-    <!-- Background Image, background image added in the css at 1600px for parallax effect -->
-    <picture class="cs-background" style={`--bg-image: url(${optimizedImage.src});`}>
-      <source media="(max-width: 600px)" srcset={optimizedImageMobile.src}>
-      <source media="(min-width: 601px)" srcset={optimizedImage.src}>
-      <img decoding="async" src={optimizedImage.src} alt="restoration marketing professionals" width={optimizedImage.attributes.width} height={optimizedImage.attributes.height} aria-hidden="true" loading="eager" fetchpriority="high">
+    <picture class="cs-background" aria-hidden="true">
+      <source media="(max-width: 600px)" srcset={optimizedImageMobile.srcSet} sizes="100vw">
+      <source media="(min-width: 601px)" srcset={optimizedImage.srcSet} sizes="100vw">
+      <img decoding="async" src={optimizedImage.src} alt="" width={optimizedImage.attributes.width} height={optimizedImage.attributes.height} loading="eager" fetchpriority="high">
   </picture>
   
 </section>
@@ -72,6 +72,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
       <p>
         Improve your visibility for water damage, fire restoration, and mold remediation searches in your service territory, right when property owners need emergency help.
       </p>
+      <a class="service-summary-link" href="/services/seo/">Explore restoration SEO</a>
     </div>
     <div class="card ui-card">
       <picture>
@@ -81,6 +82,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
       <p>
         Capture urgent demand with targeted Google Ads campaigns designed for property owners searching for restoration help now.
       </p>
+      <a class="service-summary-link" href="/services/ppc/">Explore Google Ads &amp; LSA</a>
     </div>
     <div class="card ui-card">
       <picture>
@@ -90,8 +92,11 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
       <p>
         Turn visits into inquiries with mobile-first restoration websites, clear emergency actions, and trust-building proof.
       </p>
+      <a class="service-summary-link" href="/services/web-design/">Explore restoration web design</a>
     </div>
   </section>
+
+  <CaseStudyTeaser id="client-results" />
 
   <!-- ============================================ -->
 <!--                Why Choose Us                 -->
@@ -115,10 +120,14 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
       </div>  
       <div class="cs-wrapper">
         <Image
-            src={number1}
-            alt="restoration workers meeting" 
-            width="760" 
-            height="507"
+            src={restorationTeam}
+            alt="Illustration of a restoration team planning a job beside drying equipment"
+            width={900}
+            widths={[480, 640, 900]}
+            sizes="(min-width: 768px) 40vw, 100vw"
+            format="webp"
+            quality={78}
+            loading="lazy"
             class="cs-picture"
            />
           <p class="cs-review">
@@ -207,8 +216,6 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
     
   <ResultsStats />
 
-  <CaseStudyTeaser />
-
   <!-- ============================================ -->
   <!--                 Why Choose                   -->
   <!-- ============================================ -->
@@ -263,6 +270,19 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
 </BaseLayout>
 
 <style lang="less" define:vars={{ bgImage: optimizedImage.src }}>
+ #hero-1349 .hero-session-details { color: #e3edf8; font-size: .9rem; line-height: 1.65; max-width: 37rem; margin: 1rem 0 .25rem; }
+ #hero-1349 .hero-proof-link { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: .25em; }
+ #hero-1349 .hero-proof-link:hover { color: #86edeb; }
+ #services .service-summary-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--primary); font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
+ #hero-1349 .hero-proof-link:focus-visible, #services .service-summary-link:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+ #hero-1349 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; }
+ #hero-1349 .hero-actions .cs-button-solid { margin: 0; }
+ @media (max-width: 47.99rem) {
+   #hero-1349 .hero-session-details { margin-inline: auto; }
+   #hero-1349 .hero-actions { justify-content: center; }
+   #hero-1349 .cs-content .cs-title { font-size: clamp(2.15rem, 9vw, 3.5rem) !important; letter-spacing: -.03em !important; }
+   #hero-1349 .cs-content .cs-text { font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.25rem; }
+ }
  /*-- -------------------------- -->
 <---           Hero             -->
 <--- -------------------------- -*/
@@ -574,6 +594,8 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
                 object-fit: cover;
                 /* makes the top of the image start at the top of the parent */
                 object-position: top;
+                opacity: .8;
+                mix-blend-mode: normal;
             }
         }
     }
@@ -619,21 +641,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
     }
 }
 
-/* Large Desktop Parallax Effect - 1600px */
-@media only screen and (min-width: 100rem) {
-    #hero-1349 {
-        .cs-background {
-            background: url("/assets/images/hero-img.webp");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            img {
-                display: none;
-            }
-        }
-    }
-}
+/* The responsive picture supplies the same image at every desktop width. */
 
 /* Larger Desktop - 1800px */
 @media only screen and (min-width: 112.5rem) {
@@ -724,6 +732,11 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
     }
   }
 
+  /* Keep the raised service icons and their shadows visible during hover. */
+  #services .card {
+    overflow: visible;
+  }
+
   /* Inbetween */
   @media only screen and (min-width: 768px) {
     .services {
@@ -731,11 +744,23 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
       width: 98%;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: stretch;
 
       .card {
         max-width: (325/16em);
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        picture {
+          margin: 0 auto (23/16em);
+          flex-shrink: 0;
+        }
+
+        .service-summary-link {
+          margin-top: auto;
+        }
       }
     }
   }
@@ -1218,8 +1243,9 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
 
         .cs-picture {
             width: 100%;
-            height: 70vw;
-            max-height: (400/16rem);
+            height: auto;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
             border-radius: var(--radiusM);
             overflow: hidden;
             box-shadow: var(--shadowM);
@@ -1275,14 +1301,15 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
 
         .cs-content {
             padding-bottom: (100/16rem);
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: clamp(2rem, 4vw, 4rem);
+            align-items: start;
         }
 
         .cs-flex {
             text-align: left;
-            width: 48vw;
+            width: 100%;
             max-width: (630/16rem);
             flex: none;
             /* sends it to the right in the 2nd position */
@@ -1295,19 +1322,20 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
         
         .cs-wrapper {
             /* -60px to -140px */
-            margin-top: ~"calc(clamp(3.75rem, 10vw, 8.75rem)*-1)";
-            flex-direction: row;
-            align-items: stretch;
-            justify-content: space-between;
+            margin-top: 0;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            align-items: center;
+            gap: clamp(2rem, 4vw, 4rem);
         }
 
         .cs-picture {
-            width: 43vw;
+            width: 100%;
             max-width: (630/16rem);
             height: auto;
             /* 252px - 414px */
-            min-height: clamp(15.75rem, 30vw, 25.875rem);
-            max-height: 100%;
+            min-height: 0;
+            max-height: none;
             /* prevents flexbox from squishing it */
             flex: none;
             /* sends it to the right in the 2nd position */
@@ -1317,8 +1345,8 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
         .cs-review {
             /* 100px - 235px */
             /* pushes up against the container so there's always that gap between the top of the review and the container */
-            margin-top: clamp(6.25rem, 20vw, 14.5rem);
-            align-self: flex-end;
+            margin-top: 0;
+            align-self: center;
         }
     }
 }
@@ -1470,5 +1498,13 @@ const optimizedImageMobile = await getOptimizedImage(landingImageMobile, { width
 
                                 
 
-                                
+ #hero-1349 { padding-top: 11rem; padding-bottom: 6rem; }
+ #hero-1349 .cs-background { top: 8rem; height: calc(100% - 8rem); }
+ #services { margin-top: -3rem; }
+ @media (min-width: 64rem) {
+   #hero-1349 { padding-top: 11rem; }
+   #hero-1349 .cs-content { width: 100%; max-width: 46rem; }
+   #hero-1349 .cs-content .cs-title { font-size: clamp(3rem, 4.3vw, 3.75rem); }
+   #hero-1349 .cs-content .cs-text { margin-bottom: 1.5rem; }
+ }
 </style>

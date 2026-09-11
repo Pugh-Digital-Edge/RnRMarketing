@@ -77,8 +77,11 @@ function setupLeadForm(form: HTMLFormElement) {
     if (new URL(form.action).pathname !== endpoint) return;
 
     event.preventDefault();
+    const status = form.querySelector<HTMLElement>("[data-form-status]");
+    if (status) status.textContent = "Sending your message…";
     submitButtons.forEach((button) => {
       button.disabled = true;
+      button.setAttribute("aria-busy", "true");
     });
 
     try {
@@ -113,6 +116,8 @@ function setupLeadForm(form: HTMLFormElement) {
       submitButtons.forEach((button) => {
         button.disabled = false;
       });
+    } finally {
+      submitButtons.forEach((button) => button.removeAttribute("aria-busy"));
     }
   });
 }

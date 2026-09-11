@@ -1,0 +1,85 @@
+---
+const startingPoints = [
+  {
+    need: 'We need more emergency inquiries.',
+    service: 'Google Ads & Local Services Ads',
+    href: '/services/ppc/',
+    approach: 'Capture people searching for help now. Match the service, territory, budget, and landing page before increasing spend.',
+    measure: 'Qualified calls, cost per qualified lead, and booked jobs.',
+    condition: 'Start when your team can answer and follow up. LSA availability and screening depend on the service and market.',
+  },
+  {
+    need: 'Local customers cannot find us.',
+    service: 'Restoration SEO',
+    href: '/services/seo/',
+    approach: 'Review indexing, service pages, Google Business Profile, and local trust signals to find the missing path from search to your business.',
+    measure: 'Relevant search visibility, profile actions, and qualified organic inquiries.',
+    condition: 'Plan for sustained work. SEO is not an immediate replacement for paid lead flow.',
+  },
+  {
+    need: 'People visit, but do not contact us.',
+    service: 'Restoration website design',
+    href: '/services/web-design/',
+    approach: 'Make coverage, services, project evidence, and the next action easy to find. Check the mobile call and form journey.',
+    measure: 'Visitor-to-inquiry rate and the quality of calls and forms.',
+    condition: 'Check traffic quality and tracking before deciding that a full rebuild is needed.',
+  },
+  {
+    need: 'We cannot tell which marketing pays off.',
+    service: 'Lead tracking & reporting',
+    href: '/services/lead-tracking/',
+    approach: 'Connect the source of an inquiry with qualification, appointments, sold work, and revenue so decisions follow business results.',
+    measure: 'Qualified, booked, and sold leads; acquisition cost by source.',
+    condition: 'Include feedback from the people answering calls and booking work. A dashboard alone cannot explain lead quality.',
+  },
+];
+---
+
+<section id="starting-points" class="starting-points" aria-labelledby="starting-points-title">
+  <div class="starting-points__inner">
+    <div class="starting-points__intro">
+      <h2 id="starting-points-title">Start with the problem you need to solve.</h2>
+      <p>You do not need to choose every marketing channel. Use your current bottleneck to start the conversation, then review the evidence from your market.</p>
+    </div>
+    <ul class="starting-points__list">
+      {startingPoints.map((point) => (
+        <li class="starting-points__row">
+          <div>
+            <h3>{point.need}</h3>
+            <a href={point.href}>{point.service}<span aria-hidden="true"> →</span></a>
+          </div>
+          <div class="starting-points__detail">
+            <p>{point.approach}</p>
+            <p><strong>Measure:</strong> {point.measure}</p>
+            <p class="starting-points__condition">{point.condition}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+    <p class="starting-points__next">Not sure where the problem starts? <a href="/schedule/">Request a free 30-minute session.</a></p>
+  </div>
+</section>
+
+<style>
+  .starting-points { padding: var(--sectionPadding); background: #edf2f5; color: #071a42; scroll-margin-top: 7rem; }
+  .starting-points__inner { max-width: 80rem; margin: auto; }
+  .starting-points__intro { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: 2.5rem; }
+  .starting-points h2 { margin: 0; font-size: clamp(2rem, 3.8vw, 3.5rem); line-height: 1.12; max-width: 21ch; text-wrap: balance; }
+  .starting-points p { margin: 0; max-width: 70ch; line-height: 1.75; color: #42516a; }
+  .starting-points__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid #acb9ca; }
+  .starting-points__row { display: grid; grid-template-columns: .85fr 1.15fr; gap: 3rem; padding: 2rem 0; border-bottom: 1px solid #acb9ca; }
+  .starting-points h3 { margin: 0 0 .5rem; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; max-width: 28ch; color: #071a42; }
+  .starting-points a { display: inline-block; padding-block: .65rem; color: #0b4aa2; font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
+  .starting-points a:hover { color: #071a42; }
+  .starting-points a:focus-visible { outline: 3px solid #0b4aa2; outline-offset: 4px; }
+  .starting-points__detail { display: grid; gap: .7rem; }
+  .starting-points__condition { font-size: .9rem; }
+  .starting-points__next { margin-top: 1.5rem !important; }
+  @media (max-width: 47.99rem) {
+    .starting-points__intro, .starting-points__row { grid-template-columns: 1fr; gap: 1rem; }
+    .starting-points__intro { text-align: center; }
+    .starting-points h2 { margin-inline: auto; }
+    .starting-points__row { padding-block: 1.5rem; }
+    .starting-points__next { text-align: center; }
+  }
+</style>

@@ -11,9 +11,13 @@ const script = ts.transpileModule(source, {
   compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.None },
 }).outputText;
 
-function setup(value, action = "/thank-you/") {
+function setup(value, action = "/thank-you/", responseOk) {
   const listeners = {};
-  const button = { disabled: false };
+  const button = {
+    disabled: false, attributes: {},
+    setAttribute(name, value) { this.attributes[name] = value; },
+    removeAttribute(name) { delete this.attributes[name]; },
+  };
   const phone = {
     value, validityMessage: "", reported: false,
     setCustomValidity(message) { this.validityMessage = message; },
@@ -21,23 +25,26 @@ function setup(value, action = "/thank-you/") {
     reportValidity() { this.reported = true; },
   };
   const error = { hidden: true };
+  const status = { textContent: '' };
   const form = {
     action: `https://example.test${action}`, dataset: {},
     querySelector(selector) {
-      return { "[data-phone-input]": phone, "[data-phone-error]": error }[selector] ?? null;
+      return { "[data-phone-input]": phone, "[data-phone-error]": error, "[data-form-status]": status }[selector] ?? null;
     },
     querySelectorAll() { return [button]; },
     addEventListener(name, handler) { listeners[name] = handler; },
+    reset() { phone.value = ''; },
   };
   let fetches = 0;
   const context = {
     document: { querySelectorAll: () => [form] },
     PHONE_VALIDATION_MESSAGE, validatePhoneNumber, URL, URLSearchParams,
     FormData: class { forEach(callback) { callback(phone.value, "phone"); } },
-    fetch: () => { fetches++; return new Promise(() => {}); },
+    fetch: () => { fetches++; return responseOk === undefined ? new Promise(() => {}) : Promise.resolve({ ok: responseOk }); },
   };
   vm.runInNewContext(script, context);
-  return { phone, button, error, get fetches() { return fetches; },
+  return { phone, button, error, status, get fetches() { return fetches; },
+    async submitAndWait() { await listeners.submit({ preventDefault() {} }); },
     submit() {
       const event = { defaultPrevented: false, preventDefault() { this.defaultPrevented = true; } };
       void listeners.submit(event);
@@ -54,6 +61,34 @@ test("native lead post normalizes phone without cancellation, fetch, or disablin
   assert.equal(form.fetches, 0);
 });
 
+test("async failure preserves entered phone and restores retry without a busy state", async () => {
+  const form = setup('(202) 555-0147', '/.netlify/functions/submit-lead', false);
+  await form.submitAndWait();
+  assert.equal(form.phone.value, '+12025550147');
+  assert.equal(form.button.disabled, false);
+  assert.equal(form.button.attributes['aria-busy'], undefined);
+  assert.match(form.status.textContent, /Please try again/);
+});
+
+test("async success resets the form and announces success", async () => {
+  const form = setup('(202) 555-0147', '/.netlify/functions/submit-lead', true);
+  await form.submitAndWait();
+  assert.equal(form.phone.value, '');
+  assert.equal(form.button.disabled, true);
+  assert.equal(form.button.attributes['aria-busy'], undefined);
+  assert.match(form.status.textContent, /message was sent/);
+});
+
+test("newsletter has a separate complete registration and contact has one field schema", () => {
+  const newsletter = readFileSync(new URL('../src/components/Newsletter.astro', import.meta.url), 'utf8');
+  const contact = readFileSync(new URL('../src/pages/contact.astro', import.meta.url), 'utf8');
+  assert.match(newsletter, /name="Newsletter Form"[^>]*data-netlify="true"/);
+  assert.match(newsletter, /name="form-name" value="Newsletter Form"/);
+  assert.match(newsletter, /type="email"[^>]*name="email"[^>]*required/);
+  assert.doesNotMatch(contact, /data-netlify="true"/);
+  assert.match(contact, /name="zip"/);
+});
+
 test("invalid native lead post is blocked with inline and native validation", () => {
   const form = setup("310-CALL-NOW");
   assert.equal(form.submit().defaultPrevented, true);
@@ -67,6 +102,8 @@ test("forms explicitly targeting the function retain their existing async submis
   const form = setup("(310) 555-1234", "/.netlify/functions/submit-lead");
   assert.equal(form.submit().defaultPrevented, true);
   assert.equal(form.fetches, 1);
+  assert.equal(form.button.disabled, true);
+  assert.equal(form.button.attributes['aria-busy'], 'true');
 });
 
 test("shared schedule form has one complete Netlify registration with the native success action", () => {

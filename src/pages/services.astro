@@ -15,6 +15,12 @@ import CTA from "@components/CTA.astro";
 import ServicesDisplay from "@components/ServicesDisplay.astro";
 import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 import MarketingFramework from "@components/MarketingFramework.astro";
+import MarketingStartingPoints from "@components/MarketingStartingPoints.astro";
+import faqData from "@data/faqData.json";
+
+// Keep commercial terms aligned with the existing visible FAQ and its schema.
+const commercialQuestions = ['How much does restoration marketing cost?', 'Do you require long-term contracts?'];
+const commercialTerms = commercialQuestions.map(question => faqData.find(faq => faq.question === question)!);
 
 // Optimize the landing image
 const optimizedImage = await getOptimizedImage(landingImage);
@@ -29,7 +35,15 @@ preloadedImage={optimizedImage}
     title="Restoration Marketing Services"
     image={optimizedImage}
     isPageHeading
+    compact
   />
+
+  <nav class="service-page-nav" aria-label="On this page">
+    <a href="#starting-points">Which service fits?</a>
+    <a href="#services-1304">All services</a>
+    <a href="#service-results">Client results</a>
+    <a href="#service-investment">Budget &amp; commitment</a>
+  </nav>
 
   <!-- ============================================ -->
     <!--                  Content                     -->
@@ -54,7 +68,9 @@ preloadedImage={optimizedImage}
         </div>
     </section>
 
-  <ServicesDisplay />
+  <MarketingStartingPoints />
+
+  <ServicesDisplay showOverviewLink={false} />
 
   <MarketingFramework
     serviceName="restoration marketing services"
@@ -63,7 +79,18 @@ preloadedImage={optimizedImage}
     includeFaq={false}
   />
 
-  <CaseStudyTeaser compact />
+  <CaseStudyTeaser id="service-results" compact />
+
+  <section id="service-investment" class="service-investment" aria-labelledby="service-investment-title">
+    <div class="service-investment__inner">
+      <h2 id="service-investment-title">Know the investment before choosing a plan.</h2>
+      <div class="service-investment__terms">
+        {commercialTerms.map(term => <div><h3>{term.question}</h3><p>{term.answer}</p></div>)}
+      </div>
+      <p class="service-investment__next">Your session is free. A marketing proposal comes after we review your territory, priorities, and the work involved.</p>
+      <a href="/schedule/" class="cs-button-solid">Discuss your market and budget</a>
+    </div>
+  </section>
 
     <FAQ />
 
@@ -74,6 +101,18 @@ preloadedImage={optimizedImage}
 </BaseLayout>
 
 <style lang="less">
+ .service-page-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem 2rem; padding: .65rem 1rem; background: #edf2f5; border-bottom: 1px solid #acb9ca; }
+ .service-page-nav a { display: inline-flex; align-items: center; min-height: 44px; color: #0b4aa2; font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
+ .service-page-nav a:focus-visible { outline: 3px solid #0b4aa2; outline-offset: 3px; }
+ .service-investment { padding: var(--sectionPadding); background: #edf2f5; scroll-margin-top: 7rem; }
+ :global(.route-services #services-1304) { scroll-margin-top: 7rem; }
+ .service-investment__inner { max-width: 80rem; margin: auto; }
+ .service-investment h2 { max-width: 26ch; margin: 0 0 2.5rem; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.12; text-wrap: balance; }
+ .service-investment__terms { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; }
+ .service-investment h3 { font-size: 1.25rem; margin: 0 0 .75rem; }
+ .service-investment p { max-width: 70ch; line-height: 1.75; color: #42516a; }
+ .service-investment__next { margin-block: 2rem 1rem; }
+ @media (max-width: 47.99rem) { .service-investment__terms { grid-template-columns: 1fr; gap: 1.5rem; } .service-investment h2 { margin-inline: auto; text-align: center; } }
 /*-- -------------------------- -->
 <---          Content           -->
 <--- -------------------------- -*/

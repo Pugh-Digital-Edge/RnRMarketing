@@ -1,4 +1,6 @@
 ---
+import Input from "@components/starwind/Input.astro";
+import Button from "@components/starwind/Button.astro";
 const currentPath = Astro.url.pathname;
 ---
 
@@ -36,15 +38,15 @@ const currentPath = Astro.url.pathname;
 
       <label>
         Name
-        <input type="text" name="name" autocomplete="name" required />
+        <Input type="text" name="name" autocomplete="name" required />
       </label>
       <label>
         Email
-        <input type="email" name="email" autocomplete="email" required />
+        <Input type="email" name="email" autocomplete="email" required />
       </label>
       <div data-phone-field>
         <label>Country <select name="phone-country" data-phone-country aria-label="Phone number country"><option value="US">United States +1</option></select></label>
-        <label>Phone <input required type="tel" name="phone" data-phone-input aria-describedby="chat-phone-error" autocomplete="tel" inputmode="tel" /></label>
+        <label>Phone <Input required type="tel" name="phone" data-phone-input aria-describedby="chat-phone-error" autocomplete="tel" inputmode="tel" /></label>
         <p id="chat-phone-error" data-phone-error role="alert" hidden>Please enter a valid phone number, including the area code.</p>
       </div>
       <label>
@@ -57,9 +59,9 @@ const currentPath = Astro.url.pathname;
         ></textarea>
       </label>
 
-      <button class="custom-chat__submit" type="submit">Send Message</button>
+      <Button class="custom-chat__submit" type="submit">Send Message</Button>
       <p class="custom-chat__notice">We usually reply within one business day.</p>
-      <p class="custom-chat__status" role="status" aria-live="polite"></p>
+      <p class="custom-chat__status" data-form-status role="status" aria-live="polite"></p>
     </form>
   </section>
 </details>

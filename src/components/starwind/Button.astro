@@ -1,0 +1,17 @@
+---
+import { ButtonRoot } from '@starwind-ui/astro/button';
+import type { ComponentProps } from 'astro/types';
+type Props = ComponentProps<typeof ButtonRoot>;
+const { class: className, ...props } = Astro.props;
+---
+<ButtonRoot {...props} class:list={['rnr-button', className]}><slot /></ButtonRoot>
+
+<style is:global>
+  .rnr-button { min-height: 44px; }
+  .rnr-button:focus-visible {
+    outline: 3px solid var(--primary) !important;
+    outline-offset: 4px;
+  }
+  .rnr-button:disabled { cursor: not-allowed; opacity: .6; }
+  .rnr-button[aria-busy='true'] { cursor: progress; }
+</style>

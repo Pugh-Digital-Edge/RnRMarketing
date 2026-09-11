@@ -115,14 +115,14 @@ if (!config) throw new Error(`Unknown service hero: ${service}`);
   .service-hero__secondary { color: #fff; text-decoration: underline; text-decoration-color: #23c6d5; text-underline-offset: .4rem; }
   .service-hero a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
   .service-hero__proof { padding: clamp(1.5rem, 3vw, 2rem); border: 1px solid rgba(255,255,255,.25); border-radius: .65rem; background: rgba(11,74,162,.42); box-shadow: inset 0 0 0 1px rgba(255,255,255,.05); }
-  .service-hero__proof h2 { margin: 0 0 1.5rem; color: #fff; font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; }
+  .service-hero__proof h2 { margin: 0 0 1.5rem; color: #fff !important; font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; }
   .service-hero__metrics { display: grid; gap: 1.25rem; }
   .service-hero__metrics p { margin: 0; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 1rem; }
   .service-hero__metrics strong { color: #23c6d5; font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1; }
   .service-hero__metrics span { color: #eef6ff; line-height: 1.45; }
   .service-hero__proof ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .8rem; }
   .service-hero__proof li { padding-bottom: .8rem; border-bottom: 1px solid rgba(255,255,255,.2); color: #eef6ff; font-weight: 700; line-height: 1.4; }
-  .service-hero__note { margin: 1.5rem 0 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.2); color: #cbd9ec; font-size: .78rem; line-height: 1.55; }
+  .service-hero__note { margin: 1.5rem 0 0; color: #cbd9ec; font-size: .78rem; line-height: 1.55; }
   .service-hero__nav { padding: 1rem 0; border-top: 1px solid rgba(255,255,255,.18); display: flex; gap: .75rem 1.5rem; overflow-x: auto; scrollbar-width: thin; }
   .service-hero__nav a { flex: none; color: #dce8f8; font-size: .82rem; font-weight: 700; text-decoration: none; }
   .service-hero__nav a + a::before { content: "·"; color: #86edeb; margin-right: 1.5rem; }

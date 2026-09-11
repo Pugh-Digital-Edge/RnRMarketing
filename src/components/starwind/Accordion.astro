@@ -1,0 +1,71 @@
+---
+import { Accordion } from '@starwind-ui/astro/accordion';
+interface Props {
+  items: { question: string; answer: string }[];
+  id: string;
+}
+const { items, id } = Astro.props;
+---
+<Accordion.Root class="rnr-accordion" type="multiple" defaultValue={['0']}>
+  {items.map((item, i) => (
+    <Accordion.Item value={String(i)}>
+      <Accordion.Header>
+        <Accordion.Trigger id={`${id}-trigger-${i}`} aria-controls={`${id}-panel-${i}`} aria-expanded="true">
+          <span>{item.question}</span>
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
+        </Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Panel id={`${id}-panel-${i}`} aria-labelledby={`${id}-trigger-${i}`} hidden={false}>
+        <p>{item.answer}</p>
+      </Accordion.Panel>
+    </Accordion.Item>
+  ))}
+</Accordion.Root>
+
+<script>
+  // Starwind owns disclosure state. Add the optional WAI-ARIA arrow/Home/End
+  // shortcuts while retaining normal Tab navigation between every question.
+  function setupKeyboardNavigation() {
+    document.querySelectorAll<HTMLElement>('.rnr-accordion').forEach((root) => {
+      if (root.dataset.keyboardReady) return;
+      root.dataset.keyboardReady = 'true';
+      root.addEventListener('keydown', (event) => {
+        const triggers = [...root.querySelectorAll<HTMLButtonElement>('[data-sw-accordion-trigger]:not(:disabled)')];
+        const index = triggers.indexOf(event.target as HTMLButtonElement);
+        if (index < 0 || !['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? triggers.length - 1
+          : (index + (event.key === 'ArrowDown' ? 1 : -1) + triggers.length) % triggers.length;
+        triggers[next].focus();
+      });
+    });
+  }
+  setupKeyboardNavigation();
+  document.addEventListener('astro:page-load', setupKeyboardNavigation);
+</script>
+
+<style is:global>
+  .rnr-accordion { min-width: 0; width: 100%; }
+  .rnr-accordion [data-sw-accordion-item] { border-bottom: 1px solid var(--borderColor); }
+  .rnr-accordion [data-sw-accordion-item]:first-child { border-top: 1px solid var(--borderColor); }
+  .rnr-accordion [data-sw-accordion-header] { margin: 0; font-size: inherit; }
+  .rnr-accordion [data-sw-accordion-trigger] {
+    display: flex; align-items: center; justify-content: space-between; gap: 1.25rem;
+    width: 100%; min-height: 64px; padding: 1.25rem .5rem;
+    font: inherit; font-size: clamp(1rem, 1.5vw, 1.125rem); font-weight: 700;
+    line-height: 1.5; text-align: left; color: var(--headerColor);
+    border: 0; background: transparent; cursor: pointer;
+  }
+  .rnr-accordion [data-sw-accordion-trigger]:hover { color: var(--primary); }
+  .rnr-accordion [data-sw-accordion-trigger]:focus-visible {
+    outline: 3px solid var(--primary); outline-offset: -3px; border-radius: 4px;
+  }
+  .rnr-accordion svg { flex-shrink: 0; transition: transform .2s ease-out; }
+  .rnr-accordion [aria-expanded='true'] svg { transform: rotate(180deg); }
+  .rnr-accordion [data-sw-accordion-content] p {
+    max-width: 70ch; margin: 0; padding: 0 .5rem 1.5rem;
+    color: var(--bodyTextColor); font-size: 1rem; line-height: 1.7;
+  }
+  .rnr-accordion [data-sw-accordion-content][hidden] { display: none; }
+  @media (prefers-reduced-motion: reduce) { .rnr-accordion svg { transition: none; } }
+</style>

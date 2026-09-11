@@ -21,9 +21,10 @@ interface Props {
    * for search and AI crawlers.
    */
   isPageHeading?: boolean;
+  compact?: boolean;
 }
 
-const { title, image, isIndustryByService, isPageHeading = false } = Astro.props;
+const { title, image, isIndustryByService, isPageHeading = false, compact = false } = Astro.props;
 
 // Get current path segments
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
@@ -52,7 +53,7 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
   }
 ] : undefined;
 ---
-<section id="int-hero">
+<section id="int-hero" class:list={{ "int-hero--compact": compact }}>
 {isPageHeading
   ? <h1 id="home-h">{title}</h1>
   : <p id="home-h" class="banner-title">{title}</p>}
@@ -195,4 +196,17 @@ const customCrumbs = isIndustryByService && pathSegments.length >= 2 ? [
             margin-bottom: 0rem;
         }
     }
+    #int-hero.int-hero--compact {
+        min-height: 0 !important;
+        padding: 10rem 1rem 2rem;
+    }
+    #int-hero.int-hero--compact #home-h {
+        max-width: 65rem;
+        margin: 0 auto 1rem !important;
+        font-size: clamp(2rem, 4vw, 3.5rem) !important;
+        letter-spacing: -.03em !important;
+        text-wrap: balance;
+    }
+    #int-hero.int-hero--compact .margin-bread { margin: 0; }
+    @media (min-width: 64rem) { #int-hero.int-hero--compact { padding-top: 12rem; } }
 </style>

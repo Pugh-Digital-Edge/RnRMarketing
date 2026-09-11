@@ -195,7 +195,7 @@ const faqSchema = {
 
         <button class="cs-button-solid cs-form-continue" type="button">Next Step (30 Seconds)</button>
 
-        <div class="cs-form-step" data-step="2" hidden>
+        <div class="cs-form-step" data-step="2">
           <label>
             Company
             <input required type="text" name="company" placeholder="Company name" />
@@ -223,6 +223,7 @@ const faqSchema = {
           <button class="cs-button-solid" type="submit">Request My Free Session</button>
           <small>We use these details to prepare your session. No obligation and no sales pressure. We don’t work with competing restoration companies in the same market.</small>
         </div>
+        <p data-form-status role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -993,6 +994,11 @@ const faqSchema = {
   const continueButton = leadForm?.querySelector(".cs-form-continue");
   const secondStep = leadForm?.querySelector("[data-step='2']");
   const mobileCta = document.querySelector(".schedule-mobile-cta");
+  const secondStepRequired = secondStep?.querySelectorAll<HTMLInputElement | HTMLSelectElement>('[required]');
+  if (secondStep instanceof HTMLElement) {
+    secondStep.hidden = true;
+    secondStepRequired?.forEach((field) => { field.required = false; });
+  }
 
   const showSecondStep = () => {
     if (!(leadForm instanceof HTMLFormElement) || !(secondStep instanceof HTMLElement)) {
@@ -1011,6 +1017,7 @@ const faqSchema = {
     }
 
     secondStep.hidden = false;
+    secondStepRequired?.forEach((field) => { field.required = true; });
     if (continueButton instanceof HTMLElement) {
       continueButton.hidden = true;
     }
@@ -1024,6 +1031,15 @@ const faqSchema = {
 
   leadForm?.addEventListener("submit", (event) => {
     if (secondStep instanceof HTMLElement && secondStep.hidden) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      showSecondStep();
+    }
+  }, true);
+
+  leadForm?.addEventListener("keydown", (event) => {
+    if (event instanceof KeyboardEvent && event.key === "Enter" &&
+        event.target instanceof HTMLInputElement && secondStep instanceof HTMLElement && secondStep.hidden) {
       event.preventDefault();
       showSecondStep();
     }

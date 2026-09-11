@@ -1,0 +1,17 @@
+---
+import { InputRoot } from '@starwind-ui/astro/input';
+import type { ComponentProps } from 'astro/types';
+type Props = ComponentProps<typeof InputRoot>;
+const { class: className, ...props } = Astro.props;
+---
+<InputRoot {...props} class:list={['rnr-input', className]} />
+
+<style is:global>
+  .rnr-input:focus-visible {
+    outline: 3px solid var(--primary) !important;
+    outline-offset: 3px;
+  }
+  .rnr-input:user-invalid {
+    border-color: #b42318 !important;
+  }
+</style>

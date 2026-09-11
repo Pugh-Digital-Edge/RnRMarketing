@@ -78,11 +78,14 @@ import ServiceDepth from "@components/ServiceDepth.astro";
 
 <style lang="less">
   .seo-hero {
+    padding-top: 8rem;
     color: #fbfcf8;
     background: #071a42;
     overflow: hidden;
     position: relative;
   }
+
+  :global(.route-services [id^="restoration-seo-"]) { scroll-margin-top: 9rem; }
 
   .seo-hero__grid {
     position: absolute;
@@ -97,7 +100,8 @@ import ServiceDepth from "@components/ServiceDepth.astro";
 
   .seo-hero__inner,
   .seo-hero__nav {
-    width: min(100% - 2rem, 80rem);
+    width: calc(100% - 2rem);
+    max-width: 80rem;
     margin-inline: auto;
     position: relative;
   }
@@ -116,9 +120,9 @@ import ServiceDepth from "@components/ServiceDepth.astro";
   }
 
   .seo-hero h1 {
-    max-width: 14ch;
+    max-width: 21ch;
     margin: 0 0 1.5rem;
-    color: #fff;
+    color: #fff !important;
     font-size: clamp(2.7rem, 5vw, 4.8rem);
     font-weight: 800;
     letter-spacing: -0.04em;
@@ -186,7 +190,7 @@ import ServiceDepth from "@components/ServiceDepth.astro";
 
   .seo-proof h2 {
     margin: 0 0 1.5rem;
-    color: #fff;
+    color: #fff !important;
     font-size: 1rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -252,7 +256,7 @@ import ServiceDepth from "@components/ServiceDepth.astro";
     color: #23c6d5;
   }
 
-  @media (min-width: 64rem) {
+  @media (min-width: 75rem) {
     .seo-hero__inner {
       grid-template-columns: minmax(0, 1.65fr) minmax(19rem, 0.75fr);
     }

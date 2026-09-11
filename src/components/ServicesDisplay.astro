@@ -4,9 +4,10 @@ import { Icon } from 'astro-icon/components';
 
 interface Props {
   industry?: any; // If passed, we're on an industry page
+  showOverviewLink?: boolean;
 }
 
-const { industry } = Astro.props;
+const { industry, showOverviewLink = true } = Astro.props;
 
 // Get all services from the collection
 const services = await getCollection('services');
@@ -58,7 +59,7 @@ const getServiceUrl = (serviceName: string) => {
                 })
             }
         </ul>
-        <a href="/services/" class="cs-button-solid">View All Services</a>
+        {showOverviewLink && <a href="/services/" class="cs-button-solid">View All Services</a>}
     </div>
 </section>                                
 

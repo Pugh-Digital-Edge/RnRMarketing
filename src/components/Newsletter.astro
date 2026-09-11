@@ -17,13 +17,14 @@ import city from "@assets/images/newsletter/black-city.jpeg";
             <p class="cs-text">
                 Join restoration company owners who receive our expert marketing insights. Get actionable tips for growing your restoration business, industry updates, and exclusive strategies for generating more emergency calls.
             </p>
-            <form class="cs-form" name="Contact Form" method="post" data-netlify="true" netlify-honeypot="bot-field">
+            <form class="cs-form" name="Newsletter Form" method="post" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="Newsletter Form" />
                 <p hidden aria-hidden="true">
                     <label>Do not fill this out if you are human:
                         <input name="bot-field" tabindex="-1" autocomplete="off">
                     </label>
                 </p>
-                <input class="cs-input" type="email" id="cs-email-1393" name="find-us" placeholder="Email Address">
+                <input class="cs-input" type="email" id="cs-email-1393" name="email" placeholder="Email Address" aria-label="Email address" autocomplete="email" required>
                 <button class="cs-button-solid cs-submit" type="submit">Subscribe Now</button>
             </form>
         </div>
@@ -86,6 +87,15 @@ import city from "@assets/images/newsletter/black-city.jpeg";
         overflow: hidden;
         z-index: 1;
 
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(5, 17, 38, .9);
+            pointer-events: none;
+            z-index: 0;
+        }
+
         .cs-container {
             width: 100%;
             /* changes to 1280px at tablet */
@@ -119,14 +129,19 @@ import city from "@assets/images/newsletter/black-city.jpeg";
 
         .cs-text {
             margin-bottom: (32/16rem);
-            opacity: 0.8;
+            color: #eef6ff !important;
+            opacity: 1;
+        }
+
+        .cs-topper {
+            color: #72e2ec !important;
         }
 
         .cs-form {
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
             justify-content: center;
             gap: (12/16rem);
             position: relative;
@@ -136,8 +151,8 @@ import city from "@assets/images/newsletter/black-city.jpeg";
         .cs-input {
             font-size: (16/16rem);
             width: 100%;
-            /* 46px - 72px */
-            height: clamp(2.875rem, 8vw, 4.5rem);
+            min-width: 0;
+            height: 3.5rem;
             margin: 0;
             padding: 0;
             padding-left: (24/16rem);
@@ -202,6 +217,8 @@ import city from "@assets/images/newsletter/black-city.jpeg";
         .cs-submit {
             width: 100%;
             border: none;
+            min-height: 3.5rem;
+            line-height: 1.25;
         }
 
         .cs-picture {
@@ -298,16 +315,19 @@ import city from "@assets/images/newsletter/black-city.jpeg";
             max-width: (1280/16rem);
         }
 
+        .cs-form {
+            flex-direction: row;
+        }
+
         .cs-input {
-            width: 100%;
+            flex: 1;
+            width: 0;
+            height: auto;
         }
 
         .cs-submit {
             width: auto;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: (8/16rem);
+            flex: 0 0 auto;
         }
 
         .cs-picture {
@@ -321,6 +341,10 @@ import city from "@assets/images/newsletter/black-city.jpeg";
     #cta-1393 {
         /* 100px - 130px */
         padding: clamp(6.25rem, 7vw, 8.125rem) 1rem;
+
+        &::before {
+            background: linear-gradient(90deg, rgba(5, 17, 38, .98) 0%, rgba(5, 17, 38, .94) 40%, rgba(5, 17, 38, .58) 65%, rgba(5, 17, 38, .15) 100%);
+        }
 
         .cs-container {
             flex-direction: row;

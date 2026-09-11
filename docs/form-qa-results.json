@@ -1,0 +1,182 @@
+{
+  "checkedAt": "2026-09-11T18:57:52.437Z",
+  "environment": "Local isolated Netlify storage simulation; no live leads sent",
+  "fail": false,
+  "posts": [
+    {
+      "path": "/thank-you/",
+      "fields": {
+        "form-name": "Schedule Lead Form",
+        "phone-country": "US",
+        "primary-service": "",
+        "goals": "",
+        "bot-field": "",
+        "gclid": "qa-click",
+        "gbraid": "",
+        "wbraid": "",
+        "utm-source": "qa",
+        "utm-medium": "",
+        "utm-campaign": "form-test",
+        "utm-term": "",
+        "utm-content": "",
+        "landing-page": "/restoration-marketing/",
+        "submission-id": "9e230e3c-07ac-4df4-a5fa-b82ef1b6866b",
+        "lead-stage": "qualified",
+        "name": "QA Test",
+        "email": "qa@example.com",
+        "phone": "+12025550147",
+        "company": "QA Restoration",
+        "service-area": "Hanover, PA",
+        "program-scope": "full-program",
+        "monthly-budget": "2500-5000"
+      },
+      "failed": false
+    },
+    {
+      "path": "/",
+      "fields": {
+        "form-name": "Schedule Lead Form",
+        "primary-service": "",
+        "goals": "",
+        "bot-field": "",
+        "gclid": "qa-click",
+        "gbraid": "",
+        "wbraid": "",
+        "utm-source": "qa",
+        "utm-medium": "",
+        "utm-campaign": "form-test",
+        "utm-term": "",
+        "utm-content": "",
+        "landing-page": "/restoration-marketing/",
+        "submission-id": "b5971ab0-6af9-43c3-b09c-a121d9cd4255",
+        "lead-stage": "identity",
+        "name": "QA Abandonment",
+        "email": "qa@example.com",
+        "phone": "+12025550147",
+        "company": "QA Restoration",
+        "service-area": ""
+      },
+      "failed": false
+    },
+    {
+      "path": "/",
+      "fields": {
+        "form-name": "Contact Form",
+        "bot-field": "",
+        "name": "QA Contact",
+        "email": "qa@example.com",
+        "phone": "+12025550147",
+        "zip-code": "",
+        "Message": "Local form test only."
+      },
+      "failed": true
+    },
+    {
+      "path": "/",
+      "fields": {
+        "form-name": "Contact Form",
+        "bot-field": "",
+        "name": "QA Contact",
+        "email": "qa@example.com",
+        "phone": "+12025550147",
+        "zip-code": "",
+        "Message": "Local form test only."
+      },
+      "failed": false
+    },
+    {
+      "path": "/",
+      "fields": {
+        "form-name": "Chat Widget Submission",
+        "page": "/contact/",
+        "chat-bot-field": "",
+        "name": "QA Chat",
+        "email": "qa@example.com",
+        "phone": "+12025550147",
+        "message": "Local chat form test."
+      },
+      "failed": false
+    },
+    {
+      "path": "/",
+      "fields": {
+        "form-name": "Contact Form",
+        "bot-field": "",
+        "name": "QA Territory",
+        "email": "qa@example.com",
+        "phone": "+12025550147",
+        "zip": "17331",
+        "Message": "Local territory form test."
+      },
+      "failed": false
+    },
+    {
+      "path": "/",
+      "fields": {
+        "form-name": "Schedule Lead Form",
+        "bot-field": "",
+        "name": "QA Schedule",
+        "email": "qa@example.com",
+        "phone": "+12025550147",
+        "service-area": "Hanover PA",
+        "company": "QA Restoration",
+        "primary-service": "Water Damage Restoration",
+        "goals": ""
+      },
+      "failed": true
+    },
+    {
+      "path": "/",
+      "fields": {
+        "form-name": "Schedule Lead Form",
+        "bot-field": "",
+        "name": "QA Schedule",
+        "email": "qa@example.com",
+        "phone": "+12025550147",
+        "service-area": "Hanover PA",
+        "company": "QA Restoration",
+        "primary-service": "Water Damage Restoration",
+        "goals": ""
+      },
+      "failed": false
+    },
+    {
+      "path": "/services/web-design/",
+      "fields": {
+        "form-name": "Newsletter Form",
+        "bot-field": "",
+        "email": "qa@example.com"
+      },
+      "failed": false
+    },
+    {
+      "path": "/thank-you/",
+      "fields": {
+        "form-name": "Schedule Lead Form",
+        "phone-country": "US",
+        "primary-service": "",
+        "goals": "",
+        "bot-field": "",
+        "gclid": "qa-click",
+        "gbraid": "",
+        "wbraid": "",
+        "utm-source": "qa",
+        "utm-medium": "",
+        "utm-campaign": "form-test",
+        "utm-term": "",
+        "utm-content": "",
+        "landing-page": "/restoration-marketing/",
+        "submission-id": "916b9b0c-fdc9-4e04-bbd3-3b3a63d0dbb1",
+        "lead-stage": "qualified",
+        "name": "QA Mobile Complete",
+        "email": "qa@example.com",
+        "phone": "+12025550147",
+        "company": "QA Restoration",
+        "service-area": "Hanover, PA",
+        "program-scope": "paid-led",
+        "monthly-budget": "5000-10000"
+      },
+      "failed": false
+    }
+  ]
+}
