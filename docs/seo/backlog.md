@@ -1,29 +1,30 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-09-11
+Last reconciled: 2026-09-14
 Current implementation run: [`2026-09-10-backlog-implementation.md`](runs/2026-09-10-backlog-implementation.md)
 Monthly learning review: [`2026-09-01-monthly-review.md`](runs/2026-09-01-monthly-review.md)
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
-Current weekly opportunity run: [`2026-09-07-weekly-opportunity.md`](runs/2026-09-07-weekly-opportunity.md)
-Article implementation run: [`2026-08-24-weekly-article-implementation.md`](runs/2026-08-24-weekly-article-implementation.md)
+Current weekly opportunity run: [`2026-09-14-weekly-opportunity.md`](runs/2026-09-14-weekly-opportunity.md)
+Article implementation run: [`2026-09-14-weekly-article-implementation.md`](runs/2026-09-14-weekly-article-implementation.md)
 Regression run: [`2026-08-24-production-regression.md`](runs/2026-08-24-production-regression.md)
-Current regression run: [`2026-09-11-production-regression.md`](runs/2026-09-11-production-regression.md)
+Current regression run: [`2026-09-14-production-regression.md`](runs/2026-09-14-production-regression.md)
 Weekly implementation run: [`2026-08-27-weekly-plan-implementation.md`](runs/2026-08-27-weekly-plan-implementation.md)
 
 Status values: Candidate · Planned · In Progress · Deployed · Measuring · Validated · Rejected · Superseded
 
 ## September evidence-ranked order
 
-The September 10 instruction to implement the backlog authorized the pending link change, one confirmation sweep, deployment, and verification. All currently supported source changes are implemented and live; outcome measurements remain open.
+The September 10 instruction implemented the then-current backlog. The September 11 competitor-review intervention is also on `origin/main` and visible in production, so it is reconciled below as SEO-011 rather than left outside the control plane. No new source/content intervention is supported by fresher search or AI evidence; outcome measurements remain open.
 
 1. **SEO-003** — confirmation completed September 10: Mention Coverage 6/42, non-brand Mention Share 7/33, Citation Coverage 3/42. All 22 historical lost-mentioned queries remain absent. Reviewed commercial queries show informational/competing-source answers, with no demonstrated technical cause or evidence-backed broad rewrite. Retain the fixed basket and evaluate existing interventions over their measurement windows.
-2. **SEO-008** — the single fire-guide-to-specialist link is deployed and production-verified; hold stable for the October 8 measurement checkpoint.
-3. **SEO-004** — preserve the measured artifact and evaluate the comparable query-page window on 2026-09-18 before any additional rewrite.
-4. **SEO-006** — evaluate the indexed water-damage article on 2026-09-21; keep organic results and later operator-approved mention/citation evidence separate.
-5. **SEO-005 and SEO-007** — evaluate intent ownership and snippet results on 2026-09-24 before changing links, page ownership, copy, or schema again.
-6. **SEO-002** — repeat the same bounded URL-level indexing set no earlier than 2026-09-25 if approved; do not optimize toward the stale whole-site rollup.
-7. **SEO-009** — hold the newly production-verified LSA guide stable through 2026-09-29; no search or AEO outcome is due yet.
-8. **SEO-010** — agency-selection guide is implemented and live; measurement due 2026-10-06.
+2. **SEO-004** — preserve the measured artifact and evaluate the comparable query-page window on 2026-09-18 before any additional rewrite.
+3. **SEO-006** — evaluate the indexed water-damage article on 2026-09-21; keep organic results and later operator-approved mention/citation evidence separate.
+4. **SEO-005 and SEO-007** — evaluate intent ownership and snippet results on 2026-09-24 before changing links, page ownership, copy, or schema again.
+5. **SEO-002** — repeat the same bounded URL-level indexing set no earlier than 2026-09-25 if approved; do not optimize toward the stale whole-site rollup.
+6. **SEO-009** — hold the production-verified LSA guide stable through 2026-09-29; no search or AEO outcome is due yet.
+7. **SEO-010** — hold the agency-selection guide stable through its 2026-10-06 measurement checkpoint.
+8. **SEO-008** — hold the fire-guide-to-specialist link stable through its 2026-10-08 measurement checkpoint.
+9. **SEO-011** — preserve the September 11 homepage/services/contact decision-support intervention now visible in production; measure from the accepted 2026-09-11 live checkpoint on 2026-10-09. Treat it as a confounder for overlapping SEO-004/005/007 windows.
 
 ## Prioritized work
 
@@ -53,6 +54,7 @@ The September 10 instruction to implement the backlog authorized the pending lin
 - 2026-09-08 recheck: HEAD `cddf474` adds the approved SEO-010 agency-selection guide. Live and local sitemaps now match at 98 unique URLs; 98/98 pages return HTTP 200 with valid metadata, self-canonicals, one H1, parseable JSON-LD, the same `LocalBusiness` entity, and indexability. The internal crawl expanded to 102 same-origin HTML targets with zero broken targets or redirects. Fifteen representative normal/`CanonryBot/1.0` bodies remain identical, and normalized page-signal parity is 0/98. SEO-010 is live, sitemap-listed, indexable, and its article/schema signals match the local build; no source-code, deployment, configuration, indexing, or content regression was found.
 - 2026-09-10 recheck: HEAD `1d945c3` changes only responsive contact/form layout CSS in `src/components/AdsLandingPage.astro` and `src/pages/contact.astro`. The live `/contact/` route remains HTTP 200 with stable metadata, canonical, H1, schema, and indexability signals; live output exposes the new form-grid rules. The 98-page sitemap and normalized SEO signal parity remain clean, with only the recurring 15 generated-description entity-encoding differences (`&amp;` versus `&#38;`). No source-code SEO, deployment, configuration, indexing, or content regression was found.
 - 2026-09-11 recheck: current HEAD `7701720` is documentation-only after the September 10 verified `84e67ea` artifact. The live 98-page sitemap, 100-target internal crawl, normalized SEO signals, and AI-access artifacts remain clean. Parsed `LocalBusiness.priceRange` is `$$` on all 98 live pages and all 98 local-build pages with 0 mismatches; the known Netlify deploy remains `6aa2e9136cdb4e00087de203`, while the current response exposes request ID `01M285WM7HNXTFMHY4K9NSX6WN` and no stable build ID. No source-code, deployment, configuration, indexing, or content regression was found.
+- 2026-09-14 recheck: current HEAD `858a02d` includes broad functionality/presentation changes, but the 98-page live sitemap remains healthy. All 98 pages return 200 with valid title, description, self-canonical, one H1, parseable JSON-LD, the shared `LocalBusiness` entity, and indexability; a filtered crawl of 200 same-origin HTML targets found 0 broken targets and 0 redirects. Twelve normal/`CanonryBot/1.0` representative bodies are identical, including recently affected homepage, contact, schedule, services, PPC, SEO, and published article routes. The current local build matches live on the checked page SEO signals and affected-route visible output; no source-code, deployment/stale-artifact, configuration, indexing, or content regression was found. `npm run build` passed with 103 pages and a 98-URL sitemap; `npm test` passed 16/16. The current live response exposes request IDs but no stable hosting build ID and retains the non-identifying stale `Last-Modified` value.
 - 2026-09-07 weekly reconciliation: no newer repository commit or full production regression record exists. A bounded live read found the sitemap index/child at HTTP 200 with 97 unique URLs, and the fire specialist, fire guide, and both published article URLs remained HTTP 200 and indexable. No new parity intervention is supported; keep the verified artifact stable.
 
 ### SEO-002 — Improve intended index coverage after parity is stable
@@ -243,6 +245,41 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Measurement due date: 2026-10-06, 28 days after the accepted 2026-09-08 live checkpoint.
 - Verification method: successful `astro check`, production build/postbuild, rendered one-H1/BlogPosting/FAQ synchronization/author/image/sitemap/internal-link checks; regression-automation live availability and source/build/live parity; then exact query/page GSC results over a comparable 28-day window and a later separately authorized fixed-basket Canonry sweep reporting Mention Coverage/Share separately from Citation Coverage.
 
+### SEO-011 — Measure homepage and services decision-support improvements
+
+- Status: Measuring
+- Approval state: authorized by the operator's September 11 competitor-review and implementation request; committed and pushed in `858a02d9b1bc45ef275c137fad7495a68fa6d6bc`. No additional source/content work, provider sync, sweep, indexing action, or deployment is approved by the September 14 opportunity queue.
+- Category: search intent/content quality; internal-link weakness; conversion-support information architecture.
+- Scope: homepage `/`, `/services/`, and `/contact/`; supporting service/detail and case-study links; tracked queries `what are the best digital marketing channels for restoration businesses`, `monthly retainer costs for restoration marketing services`, `restoration SEO services`, and the GSC families `restoration marketing plan` / restoration PPC and web-design demand.
+- Problem: the prior homepage placed proof after the lead form, three service summaries were dead ends, the services overview offered eight equal choices without a starting-point path, and budget/commitment answers existed only in the FAQ. These were buyer-navigation and extractability weaknesses, not a technical, indexing, or proven ranking defect.
+- Evidence baseline: the September 10 Canonry run recorded Mention Coverage 6/42 (14%), non-brand Mention Share 7/33 (21%), and Citation Coverage 3/42 (7%). `monthly retainer costs for restoration marketing services` remains a mention gap with Built Right Digital mentioned and five competitor citation domains; `restoration SEO services` remains a mention gap with Blue Corona mentioned and four competitor citation domains. Stored GSC through 2026-08-22 includes 77 impressions at position 18.45 for `restoration marketing plan` on the homepage, 45 impressions at position 9.44 for `disaster restoration web design` on `/services/web-design/`, and the larger water-damage PPC cluster already tracked under SEO-004/005. The 2026-09-11 competitor review supplied qualitative UX/IA evidence but no competitor traffic or conversion measurements.
+- Hypothesis: moving existing proof before the form, adding descriptive homepage service links, exposing truthful budget/commitment guidance, and routing buyers by current bottleneck can improve discovery and qualified decision-making while giving answer engines clearer page-level service and cost context.
+- Expected impact: improve navigation to existing high-value pages and case studies, reduce uncertainty before consultation, and create a clearer owned answer surface for channel-selection and retainer-cost questions. No ranking, CTR, mention, citation, lead, or conversion outcome is claimed.
+- Recommended change: preserve the deployed September 11 artifact through the measurement window. Do not add more service copy, schema, pricing packages, or another overview page before the comparable search and later operator-approved AI checks. Record SEO-011 as a possible confounder when interpreting overlapping SEO-004/005/007 results.
+- Effort: Low for measurement; Medium only if a later evidence-backed follow-up is approved.
+- Confidence: High that the live information architecture and link paths changed as intended; Medium for organic/AEO impact; Low for conversion impact while analytics is unavailable.
+- Deployment commit/build ID: `858a02d9b1bc45ef275c137fad7495a68fa6d6bc` is `HEAD` and `origin/main`. Bounded live reads on 2026-09-14 confirmed the new homepage results link and hero image, the services starting-point/budget sections, and the contact territory copy. A stable Netlify build ID is unavailable.
+- Measurement due date: 2026-10-09, 28 days after the accepted September 11 live checkpoint.
+- Verification method: preserve the reviewed September 11 build/test/browser record; verify the exact live content markers and technical eligibility after any later deployment; compare query/page impressions, clicks/CTR, and position over a comparable GSC window; use consultation-link clicks and qualified submissions only if a connected analytics/conversion source becomes available; run a later fixed-basket Canonry comparison only with explicit approval, reporting Mention Coverage/Share separately from Citation Coverage.
+
+### SEO-012 — Publish a mold remediation marketing guide
+
+- Status: In Progress
+- Approval state: **Auto-approved by weekly article automation on 2026-09-14** after the stored Canonry opportunity, winnability, query-demand, duplication, factual-support, and initial image gates passed.
+- Category: search-intent/content gap; internal-link support; entity, citation, and AEO weakness.
+- Scope: query `mold remediation marketing`; supporting questions `SEO vs PPC for mold remediation marketing` and `why SEO is important for mold remediation companies`; new canonical resource `/resources/mold-remediation-marketing/`; the existing `/industries/mold-remediation/` commercial hub remains the service destination.
+- Problem: the site has a short commercial mold-remediation industry hub but no operator-focused informational guide that connects local visibility, paid search, website conversion, intake boundaries, reputation, and booked-job measurement. Canonry repeatedly finds competitor-owned vertical guides while the project is neither mentioned nor cited.
+- Evidence baseline: Canonry target `tgt_nk1nf3` is `ownable` with winnability `0.99`, medium action confidence, and both stored GSC and competitor evidence. Five nonfailed stored snapshots from 2026-07-14 through 2026-09-10 show 0 mentions and 0 citations for `mold remediation marketing`; the 30-day and 90-day gap views both classify it as not mentioned and a citation gap. Stored GSC rows from 2026-08-06 through 2026-08-18 show 16 impressions, 0 clicks, and weighted average position 51.94 on `/industries/`. Canonry's cited-source set contains six direct-competitor pages, led by Clicks Geek, Built Right Digital, Restoration Inbound, Water Restoration Marketing, and PushLeads; their recurring pattern is a dedicated vertical guide covering channel selection, lead generation, and operating considerations.
+- Hypothesis: a distinct, operations-first mold marketing guide can satisfy informational intent without replacing the commercial industry hub, consolidate relevant internal links, and create a useful first-party source for organic and answer-engine retrieval.
+- Expected impact: establish one canonical informational target for mold-remediation marketing decisions, support the existing industry and service pages, and improve the site's eligibility to earn mentions and citations. No ranking, click, lead, mention, citation, or revenue result is promised.
+- Recommended change: publish a long-form Matt Pugh guide with a direct answer, service/territory definition, customer-path and channel frameworks, local SEO and paid-search controls, reviewed technical-content boundaries, intake and booked-work measurement, one cover image, one synchronized four-question FAQ block/schema source, primary Google/EPA/FTC citations, and natural links to the mold hub and relevant service/resource pages.
+- Effort: Medium.
+- Confidence: Medium–High for the distinct query/content gap and winnability; Medium for organic/AEO impact because demand is modest and post-publication provider/indexing evidence will remain unavailable until later checks.
+- Deployment commit/build ID: not created. The article-specific render checks, 16 repository tests, and 104-page production build passed, but `npx astro check` failed on 11 pre-existing type errors in `src/components/starwind/Accordion.astro`. The weekly article automation therefore stopped before commit or push; stable hosting build ID is unavailable.
+- Measurement due date: provisionally 2026-10-12 if production verification is accepted on 2026-09-14; otherwise 28 days after the first accepted live checkpoint.
+- Verification method: successful `astro check`, production build/postbuild, tests, rendered one-H1/BlogPosting/FAQ synchronization/author/image/sitemap/internal-link checks, and regression-automation live availability/parity verification; then exact query/page GSC results over a comparable 28-day window and a later separately authorized fixed-basket Canonry sweep reporting Mention Coverage/Share separately from Citation Coverage.
+- 2026-09-14 implementation gate: the draft, cover, and rendered article passed their scoped checks, but the repository-wide Astro type check failed outside the article scope. The uncommitted files remain available for a later focused run after the shared validation baseline is repaired; no deployment or outcome measurement window has begun.
+
 ## Reconciled / not prioritized
 
 - Generic sitewide audit-support copy: Rejected. Earlier browser review found duplication and unrelated content; native page-specific framework work is the safer direction.
@@ -256,3 +293,4 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - 2026-09-08 production regression reconciliation: SEO-010 is now production-verified and measuring from the 2026-09-08 checkpoint; no duplicate IDs, deployment mutation, purge, provider sync, indexing request, or visibility sweep was run. SEO-001 remains Measuring after a clean 98-page/102-target parity check; SEO-002 remains Measuring with stale/incomplete provider samples; SEO-003 through SEO-009 retain their existing states.
 - 2026-09-10 production regression reconciliation: HEAD `1d945c3` contains responsive form-layout changes only; the live 98-URL artifact remains clean and SEO-010 remains Measuring from 2026-09-08. No duplicate IDs, deployment mutation, purge, provider sync, indexing request, visibility sweep, or substantive SEO/content change was run.
 - 2026-09-11 production regression reconciliation: current HEAD `7701720` is documentation-only; the live artifact remains clean after the final September 10 `84e67ea` deployment. No duplicate IDs, deployment mutation, purge, provider sync, indexing request, visibility sweep, or substantive SEO/content change was run by this check.
+- 2026-09-14 weekly opportunity reconciliation: no fresher GSC, Google/Bing inspection, analytics, local, backlink, or server-traffic evidence is available, and the September 10 visibility run is unchanged. Added SEO-011 solely to bring the already-authorized, pushed, and live September 11 intervention into the closed-loop control plane. No new implementation candidate, sweep, audit, sync, inspection, submission, deployment, purge, source/content change, commit, or push was performed.
