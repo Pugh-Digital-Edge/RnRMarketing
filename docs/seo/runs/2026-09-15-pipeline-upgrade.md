@@ -51,3 +51,11 @@ Pre-existing September 15 production-regression/backlog changes are preserved se
 ## Acceptance checkpoint
 
 Keep SEO-013 Measuring until the first unattended cycle is observed on **September 21**: daily sources remain fresh, September 20 sweep/audit complete, one article is delivered for the new week, due measurements use complete post-live windows, and no competing writer acquires the lock. The manual checks above establish immediate functionality, not future scheduler reliability or SEO impact.
+
+## Deployment receipt — 16:13 UTC
+
+- Source commit `d24a865140bfcfab3bdae00e7833c2afd0bae743` was committed and pushed to main.
+- Netlify deploy `6aa96d8a8894200008645491` published at 12:12:22 Eastern after a successful 3m 38s build/deploy. Production `/build-info.json` returned HTTP 200 with the exact source commit, `Cache-Control: no-store` and `X-Robots-Tag: noindex, nofollow`.
+- Post-deployment full verification completed at **16:13:25 UTC**: local HEAD and deployed commit matched; 99/99 sitemap pages, 101 normalized navigation targets and 99 Markdown alternates passed with **zero failures**. The integrated release gate passed again on the deployed revision.
+- Native schedules were read back enabled with the expected Eastern timezone/provider set. Windows health task returned exit 0. All five affected automation memories received the new contract and current data/publication checkpoint.
+- This accepts the immediate deployment and data-connection work. SEO-013 remains Measuring for its September 21 unattended-execution checkpoint; no ranking or business-outcome gain is claimed.

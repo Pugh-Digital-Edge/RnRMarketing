@@ -301,7 +301,7 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Recommended change: apply docs/seo/pipeline.md; daily native data refresh, Sunday fixed-basket sweep/audit, weekday health/due measurements, Mon/Wed/Fri coordinator, monthly synthesis, and an OS health watchdog. Pause the duplicate opportunity and LLM serve jobs. Repair Accordion's import-name collision without changing rendered behavior.
 - Effort: Medium.
 - Confidence: High for the diagnosed operational defects and immediate fresh-data recovery; Medium for unattended delivery until the first scheduled cycle completes.
-- Deployment commit/build ID: pending focused pipeline commit; refer to the 2026-09-15-pipeline-upgrade run for the verified source and live checkpoint.
+- Deployment commit/build ID: d24a865140bfcfab3bdae00e7833c2afd0bae743; Netlify deploy 6aa96d8a8894200008645491 published September 15 at 12:12:22 Eastern. The live source receipt and full 99-page parity check passed at 16:13:25 UTC. Operational scheduled-run acceptance remains due September 21.
 - Measurement due date: 2026-09-21
 - Verification method: successful daily fresh-data runs, September 20 complete 42×3 visibility sweep and technical audit, one September 21 article committed/pushed/live or explicit recoverable blocker, no concurrent lock owners, due items measured against complete data windows, zero Astro errors, passing tests/build, and live signal parity. Wednesday/Friday retries must not produce a second article in the same week. Keep this item Measuring until scheduled execution is observed.
 
