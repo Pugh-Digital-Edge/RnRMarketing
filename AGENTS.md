@@ -1,5 +1,9 @@
 # Agent instructions
 
+## Scheduled SEO pipeline
+
+For scheduled SEO/AEO work, read `docs/seo/pipeline.md` first. The user approved that bounded pipeline on 2026-09-15 and explicitly retained one new article per week. Its collection schedules, repair-sync limits and article publication authority are standing authorization; do not ask again for those exact operations. All repository-writing automations must acquire the shared SEO lock. Use the single `npm run validate` release gate. Broader mutations remain outside that authorization.
+
 ## SEO/AEO routing principle
 
 SEO recommendations must be evidence-backed and opportunity-ranked. Do not recommend changes solely because they are SEO best practices.

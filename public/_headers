@@ -4,3 +4,7 @@
 
 /*.md
   Content-Type: text/markdown; charset=UTF-8
+
+/build-info.json
+  Cache-Control: no-store
+  X-Robots-Tag: noindex, nofollow

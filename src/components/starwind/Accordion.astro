@@ -1,26 +1,26 @@
 ---
-import { Accordion } from '@starwind-ui/astro/accordion';
+import { Accordion as StarwindAccordion } from '@starwind-ui/astro/accordion';
 interface Props {
   items: { question: string; answer: string }[];
   id: string;
 }
 const { items, id } = Astro.props;
 ---
-<Accordion.Root class="rnr-accordion" type="multiple" defaultValue={['0']}>
+<StarwindAccordion.Root class="rnr-accordion" type="multiple" defaultValue={['0']}>
   {items.map((item, i) => (
-    <Accordion.Item value={String(i)}>
-      <Accordion.Header>
-        <Accordion.Trigger id={`${id}-trigger-${i}`} aria-controls={`${id}-panel-${i}`} aria-expanded="true">
+    <StarwindAccordion.Item value={String(i)}>
+      <StarwindAccordion.Header>
+        <StarwindAccordion.Trigger id={`${id}-trigger-${i}`} aria-controls={`${id}-panel-${i}`} aria-expanded="true">
           <span>{item.question}</span>
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
-        </Accordion.Trigger>
-      </Accordion.Header>
-      <Accordion.Panel id={`${id}-panel-${i}`} aria-labelledby={`${id}-trigger-${i}`} hidden={false}>
+        </StarwindAccordion.Trigger>
+      </StarwindAccordion.Header>
+      <StarwindAccordion.Panel id={`${id}-panel-${i}`} aria-labelledby={`${id}-trigger-${i}`} hidden={false}>
         <p>{item.answer}</p>
-      </Accordion.Panel>
-    </Accordion.Item>
+      </StarwindAccordion.Panel>
+    </StarwindAccordion.Item>
   ))}
-</Accordion.Root>
+</StarwindAccordion.Root>
 
 <script>
   // Starwind owns disclosure state. Add the optional WAI-ARIA arrow/Home/End

@@ -18,6 +18,7 @@ Every substantive run must read the current strategy, backlog, learnings, and re
 
 ## Documents
 
+- [`pipeline.md`](pipeline.md) — current automation ownership, authorized collection, weekly article commitment, shared lock, release gate and due-date measurements.
 - [`strategy.md`](strategy.md) — durable business, measurement, and prioritization context.
 - [`backlog.md`](backlog.md) — current actionable work with stable IDs and statuses.
 - [`learnings.md`](learnings.md) — conclusions promoted only after before/after evidence.

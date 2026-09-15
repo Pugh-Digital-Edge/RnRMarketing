@@ -1,6 +1,7 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 const root = fileURLToPath(new URL('../dist/', import.meta.url));
 const failures = [];
@@ -144,3 +145,9 @@ await writeFile(spritePath, `<svg xmlns="http://www.w3.org/2000/svg">${[...symbo
 if (failures.length) {
   throw new Error(`AEO rendered-page validation failed:\n${failures.join('\n')}`);
 }
+
+// Expose only the source revision so monitoring can identify the deployed
+// artifact without relying on Netlify request IDs or static Last-Modified headers.
+const revision = process.env.COMMIT_REF || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+if (!/^[a-f0-9]{40}$/i.test(revision)) throw new Error('Expected a Git SHA for the deployment receipt');
+await writeFile(join(root, 'build-info.json'), JSON.stringify({ commit: revision }) + '\n', 'utf8');

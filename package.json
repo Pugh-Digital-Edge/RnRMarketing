@@ -9,7 +9,12 @@
     "start": "astro dev",
     "build": "astro build && node scripts/postbuild-aeo.mjs",
     "preview": "astro preview",
-    "test": "node --test tests/**/*.test.mjs"
+    "test": "node --test tests/**/*.test.mjs",
+    "check": "astro check",
+    "validate": "npm run check && npm test && npm run build",
+    "seo:lock": "node scripts/seo-lock.mjs",
+    "seo:check": "node scripts/seo-check.mjs",
+    "seo:due": "node scripts/seo-due.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -27,6 +32,7 @@
     "typescript": "^5.6.3"
   },
   "devDependencies": {
+    "entities": "4.5.0",
     "npm-run-all": "^4.1.5"
   }
 }

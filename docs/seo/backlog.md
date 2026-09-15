@@ -12,6 +12,10 @@ Weekly implementation run: [`2026-08-27-weekly-plan-implementation.md`](runs/202
 
 Status values: Candidate · Planned · In Progress · Deployed · Measuring · Validated · Rejected · Superseded
 
+## Current pipeline authorization — 2026-09-15
+
+Matt approved the [pipeline fixes](pipeline.md), explicitly retaining one new article per week. This supersedes older per-run approval gates for the exact bounded schedules, repair syncs and September 25 same-set inspection in that contract. No indexing submissions or basket expansion are authorized. GSC was refreshed through 2026-09-13 and GA4 property 543995602 was connected and synced on September 15; earlier dated statements about unavailable/stale evidence remain historical. SEO-012's live mold guide satisfies the September 14–20 article obligation. SEO-013 tracks the pipeline upgrade and its first unattended verification.
+
 ## September evidence-ranked order
 
 The September 10 instruction implemented the then-current backlog. The September 11 competitor-review intervention is also on `origin/main` and visible in production, so it is reconciled below as SEO-011 rather than left outside the control plane. No new source/content intervention is supported by fresher search or AI evidence; outcome measurements remain open.
@@ -60,6 +64,7 @@ The September 10 instruction implemented the then-current backlog. The September
 ### SEO-002 — Improve intended index coverage after parity is stable
 
 - Status: Measuring
+- Measurement due date: 2026-09-25
 - Category: indexing
 - Scope: the current 96-URL live sitemap, reconciled against stored URL-level GSC inspection verdicts and intended exclusions.
 - Problem: Canonry's stored whole-site 52/100 Google headline is stale and mixes current sitemap URLs with obsolete or intentionally excluded URLs; current URL-level evidence still shows concentrated Google coverage gaps on industry hubs.
@@ -85,6 +90,7 @@ The September 10 instruction implemented the then-current backlog. The September
 ### SEO-003 — Re-run visibility baseline with the adopted query basket
 
 - Status: Measuring
+- Measurement due date: 2026-09-21
 - Current September 10 result: authorized confirmation run `dc0e5f1c-7708-4edc-90be-47474349f809` completed at 17:37:00 UTC with 126 snapshots and unchanged query/provider/model/location sets. Mention Coverage is 6/42 versus 5/42 on August 27; non-brand Mention Share is 7/33 versus 5/29; Citation Coverage remains 3/42. The website-design consultation query gained both a mention and citation; the monthly-retainer query lost a citation but retained its mention. No query lost its August 27 mention. All 22 August 10-to-27 lost-mentioned queries remain absent. The confirmation task is complete; this is not evidence of recovery or a durable trend from only three comparable runs. See the implementation run for commercial-query diagnosis and limitations.
 - Category: AEO / measurement
 - Scope: the existing commercial query basket and provider set.
@@ -279,6 +285,25 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Measurement due date: provisionally 2026-10-12 if production verification is accepted on 2026-09-14; otherwise 28 days after the first accepted live checkpoint.
 - Verification method: successful `astro check`, production build/postbuild, tests, rendered one-H1/BlogPosting/FAQ synchronization/author/image/sitemap/internal-link checks, and regression-automation live availability/parity verification; then exact query/page GSC results over a comparable 28-day window and a later separately authorized fixed-basket Canonry sweep reporting Mention Coverage/Share separately from Citation Coverage.
 - 2026-09-14 implementation gate: the draft, cover, and rendered article passed their scoped checks, but the repository-wide Astro type check failed outside the article scope. The uncommitted files remain available for a later focused run after the shared validation baseline is repaired; no deployment or outcome measurement window has begun.
+
+## Pipeline reliability
+
+### SEO-013 — Restore fresh measurement and coordinate weekly article delivery
+
+- Status: Measuring
+- Approval state: approved by Matt's 2026-09-15 instruction to apply the pipeline assessment fixes, with the explicit correction that one new article per week remains required.
+- Category: measurement/configuration defect; automation coordination; repository validation defect.
+- Scope: Canonry project remediation-restoration-marketing, RnRMarketing SEO automations, shared runtime health and Accordion import/type-check baseline. No article or commercial-page copy change.
+- Problem: collection schedules were absent; GSC evidence stopped August 22; GA4 was disconnected; concurrent jobs edited the same backlog; Astro's 11 existing errors blocked the article gate.
+- Evidence baseline: September 15 stored reads found no answer-visibility, data-refresh or site-audit schedules; GA4 connected=false; September 14 run records documented overlapping writers and a blocked article. September 15 production had 99 healthy sitemap pages.
+- Hypothesis: fresh automatic evidence, one weekly coordinator with recovery runs, shared lock ownership and one passing release gate will support reliable weekly publication and timely outcome measurement.
+- Expected impact: reduce repeated stale-data reviews and overlapping writes, preserve one new article per week, and enable comparable measurements when their windows mature. Ranking, leads and AI gains remain unproven.
+- Recommended change: apply docs/seo/pipeline.md; daily native data refresh, Sunday fixed-basket sweep/audit, weekday health/due measurements, Mon/Wed/Fri coordinator, monthly synthesis, and an OS health watchdog. Pause the duplicate opportunity and LLM serve jobs. Repair Accordion's import-name collision without changing rendered behavior.
+- Effort: Medium.
+- Confidence: High for the diagnosed operational defects and immediate fresh-data recovery; Medium for unattended delivery until the first scheduled cycle completes.
+- Deployment commit/build ID: pending focused pipeline commit; refer to the 2026-09-15-pipeline-upgrade run for the verified source and live checkpoint.
+- Measurement due date: 2026-09-21
+- Verification method: successful daily fresh-data runs, September 20 complete 42×3 visibility sweep and technical audit, one September 21 article committed/pushed/live or explicit recoverable blocker, no concurrent lock owners, due items measured against complete data windows, zero Astro errors, passing tests/build, and live signal parity. Wednesday/Friday retries must not produce a second article in the same week. Keep this item Measuring until scheduled execution is observed.
 
 ## Reconciled / not prioritized
 

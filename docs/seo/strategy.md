@@ -36,3 +36,7 @@ Maintain separate denominators for each tracked query basket. Do not mix a 12-qu
 - Do not add FAQ or schema markup without matching useful visible content.
 - Do not claim a change worked without a comparable before/after window.
 - Production deployment, CDN invalidation, Search Console requests, and fresh visibility sweeps are external or quota-consuming actions and must be explicitly confirmed or documented as pending.
+
+## Approved pipeline update — 2026-09-15
+
+The bounded schedules and weekly article release authority in [pipeline.md](pipeline.md) are preauthorized exceptions to the generic confirmation rule above. Preserve one new article each week; rank existing-page improvements separately. Collect fresh evidence automatically, measure due interventions during daily/weekly work, and use the monthly review for synthesis. This changes operating mechanics, not a claim that any SEO intervention has improved results.
