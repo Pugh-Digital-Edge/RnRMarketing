@@ -1,13 +1,13 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-09-14
+Last reconciled: 2026-09-15
 Current implementation run: [`2026-09-10-backlog-implementation.md`](runs/2026-09-10-backlog-implementation.md)
 Monthly learning review: [`2026-09-01-monthly-review.md`](runs/2026-09-01-monthly-review.md)
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
 Current weekly opportunity run: [`2026-09-14-weekly-opportunity.md`](runs/2026-09-14-weekly-opportunity.md)
 Article implementation run: [`2026-09-14-weekly-article-implementation.md`](runs/2026-09-14-weekly-article-implementation.md)
 Regression run: [`2026-08-24-production-regression.md`](runs/2026-08-24-production-regression.md)
-Current regression run: [`2026-09-14-production-regression.md`](runs/2026-09-14-production-regression.md)
+Current regression run: [`2026-09-15-production-regression.md`](runs/2026-09-15-production-regression.md)
 Weekly implementation run: [`2026-08-27-weekly-plan-implementation.md`](runs/2026-08-27-weekly-plan-implementation.md)
 
 Status values: Candidate · Planned · In Progress · Deployed · Measuring · Validated · Rejected · Superseded
@@ -29,6 +29,7 @@ The September 10 instruction implemented the then-current backlog. The September
 7. **SEO-010** — hold the agency-selection guide stable through its 2026-10-06 measurement checkpoint.
 8. **SEO-008** — hold the fire-guide-to-specialist link stable through its 2026-10-08 measurement checkpoint.
 9. **SEO-011** — preserve the September 11 homepage/services/contact decision-support intervention now visible in production; measure from the accepted 2026-09-11 live checkpoint on 2026-10-09. Treat it as a confounder for overlapping SEO-004/005/007 windows.
+10. **SEO-012** — hold the mold-remediation marketing guide stable after its 2026-09-15 production checkpoint; measure the exact query/page window on 2026-10-13 and keep indexing/AEO outcomes separate.
 
 ## Prioritized work
 
@@ -59,6 +60,7 @@ The September 10 instruction implemented the then-current backlog. The September
 - 2026-09-10 recheck: HEAD `1d945c3` changes only responsive contact/form layout CSS in `src/components/AdsLandingPage.astro` and `src/pages/contact.astro`. The live `/contact/` route remains HTTP 200 with stable metadata, canonical, H1, schema, and indexability signals; live output exposes the new form-grid rules. The 98-page sitemap and normalized SEO signal parity remain clean, with only the recurring 15 generated-description entity-encoding differences (`&amp;` versus `&#38;`). No source-code SEO, deployment, configuration, indexing, or content regression was found.
 - 2026-09-11 recheck: current HEAD `7701720` is documentation-only after the September 10 verified `84e67ea` artifact. The live 98-page sitemap, 100-target internal crawl, normalized SEO signals, and AI-access artifacts remain clean. Parsed `LocalBusiness.priceRange` is `$$` on all 98 live pages and all 98 local-build pages with 0 mismatches; the known Netlify deploy remains `6aa2e9136cdb4e00087de203`, while the current response exposes request ID `01M285WM7HNXTFMHY4K9NSX6WN` and no stable build ID. No source-code, deployment, configuration, indexing, or content regression was found.
 - 2026-09-14 recheck: current HEAD `858a02d` includes broad functionality/presentation changes, but the 98-page live sitemap remains healthy. All 98 pages return 200 with valid title, description, self-canonical, one H1, parseable JSON-LD, the shared `LocalBusiness` entity, and indexability; a filtered crawl of 200 same-origin HTML targets found 0 broken targets and 0 redirects. Twelve normal/`CanonryBot/1.0` representative bodies are identical, including recently affected homepage, contact, schedule, services, PPC, SEO, and published article routes. The current local build matches live on the checked page SEO signals and affected-route visible output; no source-code, deployment/stale-artifact, configuration, indexing, or content regression was found. `npm run build` passed with 103 pages and a 98-URL sitemap; `npm test` passed 16/16. The current live response exposes request IDs but no stable hosting build ID and retains the non-identifying stale `Last-Modified` value.
+- 2026-09-15 recheck: current HEAD `d5db10d` adds the SEO-012 mold guide and reconciles the previously documented candidate into the deployed artifact. Live production now serves 99/99 sitemap pages with valid title, description, self-canonical, one H1, parseable JSON-LD, the shared `LocalBusiness` entity, and indexability; 202 filtered same-origin HTML targets returned 200 after excluding the expected POST-only lead-submit 405. Twelve normal/`CanonryBot/1.0` representative bodies are identical, local/live SEO signals match 0/99, and robots/llms/sitemap artifacts match after normalization. The new article is live, sitemap-listed, indexable, and linked to the mold industry hub; no source-code, deployment/stale-artifact, configuration, indexing, or content regression was found. `npm run build` passed with 104 pages and a 99-URL sitemap; `npm test` passed 16/16. Netlify exposes request IDs but no stable build ID; the stale `Last-Modified` value remains non-identifying.
 - 2026-09-07 weekly reconciliation: no newer repository commit or full production regression record exists. A bounded live read found the sitemap index/child at HTTP 200 with 97 unique URLs, and the fire specialist, fire guide, and both published article URLs remained HTTP 200 and indexable. No new parity intervention is supported; keep the verified artifact stable.
 
 ### SEO-002 — Improve intended index coverage after parity is stable
@@ -86,6 +88,7 @@ The September 10 instruction implemented the then-current backlog. The September
 - 2026-09-08 production reconciliation: stored Google remains 53 indexed / 47 not indexed / 0 deindexed across 100 URLs, last inspected 2026-08-27 and last synced 2026-08-24; Bing remains 37 indexed / 1 unknown across 38 inspections, last inspected 2026-08-27. The current live sitemap is now 98 URLs and SEO-010 is absent from both stored provider samples, so its provider state remains unavailable, not zero. No sync, inspection, submission, or indexing request was run.
 - 2026-09-10 production reconciliation: stored Google remains 53 indexed / 47 not indexed / 0 deindexed across 100 URLs, last inspected 2026-08-27 and last synced 2026-08-24; Bing remains 37 indexed / 1 unknown across 38 inspections, last inspected 2026-08-27. The live sitemap remains 98 URLs, and SEO-009/SEO-010 are absent from both stored provider samples, so their provider states remain unavailable, not zero. No sync, inspection, submission, or indexing request was run.
 - 2026-09-11 production reconciliation: stored Google remains 53 indexed / 47 not indexed / 0 deindexed across 100 URLs, last inspected 2026-08-27 and last synced 2026-08-24; Bing remains 37 indexed / 1 unknown across 38 inspections, last inspected 2026-08-27. The live sitemap remains 98 URLs, and SEO-009/SEO-010 remain absent from both stored provider samples, so their provider states remain unavailable, not zero. No sync, inspection, submission, or indexing request was run.
+- 2026-09-15 production reconciliation: stored Google remains 53 indexed / 47 not indexed / 0 deindexed across 100 URLs, last inspected 2026-08-27 and last synced 2026-08-24; Bing remains 37 indexed / 1 unknown across 38 inspections, last inspected 2026-08-27. The live sitemap now contains 99 URLs, and SEO-012 remains absent from the stored provider samples, so its current provider state is unavailable, not zero. No sync, inspection, submission, or indexing request was run; the approved bounded URL-level recheck remains gated no earlier than 2026-09-25.
 
 ### SEO-003 — Re-run visibility baseline with the adopted query basket
 
@@ -270,8 +273,8 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 
 ### SEO-012 — Publish a mold remediation marketing guide
 
-- Status: In Progress
-- Approval state: **Auto-approved by weekly article automation on 2026-09-14** after the stored Canonry opportunity, winnability, query-demand, duplication, factual-support, and initial image gates passed.
+- Status: Measuring
+- Approval state: **Auto-approved by weekly article automation on 2026-09-14** after the stored Canonry opportunity, winnability, query-demand, duplication, factual-support, and initial image gates passed; production verification was accepted on 2026-09-15.
 - Category: search-intent/content gap; internal-link support; entity, citation, and AEO weakness.
 - Scope: query `mold remediation marketing`; supporting questions `SEO vs PPC for mold remediation marketing` and `why SEO is important for mold remediation companies`; new canonical resource `/resources/mold-remediation-marketing/`; the existing `/industries/mold-remediation/` commercial hub remains the service destination.
 - Problem: the site has a short commercial mold-remediation industry hub but no operator-focused informational guide that connects local visibility, paid search, website conversion, intake boundaries, reputation, and booked-job measurement. Canonry repeatedly finds competitor-owned vertical guides while the project is neither mentioned nor cited.
@@ -281,10 +284,11 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Recommended change: publish a long-form Matt Pugh guide with a direct answer, service/territory definition, customer-path and channel frameworks, local SEO and paid-search controls, reviewed technical-content boundaries, intake and booked-work measurement, one cover image, one synchronized four-question FAQ block/schema source, primary Google/EPA/FTC citations, and natural links to the mold hub and relevant service/resource pages.
 - Effort: Medium.
 - Confidence: Medium–High for the distinct query/content gap and winnability; Medium for organic/AEO impact because demand is modest and post-publication provider/indexing evidence will remain unavailable until later checks.
-- Deployment commit/build ID: not created. The article-specific render checks, 16 repository tests, and 104-page production build passed, but `npx astro check` failed on 11 pre-existing type errors in `src/components/starwind/Accordion.astro`. The weekly article automation therefore stopped before commit or push; stable hosting build ID is unavailable.
-- Measurement due date: provisionally 2026-10-12 if production verification is accepted on 2026-09-14; otherwise 28 days after the first accepted live checkpoint.
-- Verification method: successful `astro check`, production build/postbuild, tests, rendered one-H1/BlogPosting/FAQ synchronization/author/image/sitemap/internal-link checks, and regression-automation live availability/parity verification; then exact query/page GSC results over a comparable 28-day window and a later separately authorized fixed-basket Canonry sweep reporting Mention Coverage/Share separately from Citation Coverage.
+- Deployment commit/build ID: source and `origin/main` are now `d5db10d10854b5d9b1c76b0dc869f47a318fb7d8`; the article and cover are present in that commit and live production. Netlify exposes no stable hosting build ID.
+- Measurement due date: 2026-10-13, 28 days after the accepted 2026-09-15 production checkpoint.
+- Verification method: production build/postbuild, 16 tests, live 99-URL metadata/indexability/schema/entity check, article one-H1/BlogPosting/FAQPage/internal-link check, local/live signal parity, and AI-access artifact parity; `astro check` remains blocked by 11 pre-existing `src/components/starwind/Accordion.astro` errors unrelated to SEO-012. Then compare exact query/page GSC results over a comparable 28-day window and use a later separately authorized fixed-basket Canonry sweep reporting Mention Coverage/Share separately from Citation Coverage.
 - 2026-09-14 implementation gate: the draft, cover, and rendered article passed their scoped checks, but the repository-wide Astro type check failed outside the article scope. The uncommitted files remain available for a later focused run after the shared validation baseline is repaired; no deployment or outcome measurement window has begun.
+- 2026-09-15 production checkpoint: the article and cover are now in `d5db10d` and live at `/resources/mold-remediation-marketing/`. It returns 200, is sitemap-listed and indexable, has one H1, `BlogPosting` and `FAQPage` schema alongside the shared entity graph, and links once to `/industries/mold-remediation/`; local/build SEO signals match live. This starts measurement but does not establish indexing, ranking, traffic, mention, citation, lead, or revenue impact. The stored Google/Bing samples do not yet include the URL.
 
 ## Pipeline reliability
 
