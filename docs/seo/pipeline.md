@@ -1,13 +1,13 @@
-# SEO pipeline contract
+﻿# SEO pipeline contract
 
-Approved by Matt on 2026-09-15: apply the pipeline assessment fixes, retaining **one new article every calendar week**. Weeks run Monday–Sunday in America/New_York. This contract supersedes older automation wording that requires fresh approval for the bounded operations below. It does not approve fabricated evidence or unrelated changes.
+Approved by Matt on 2026-09-15: apply the pipeline assessment fixes, retaining **one new article every calendar week**. Weeks run Mondayâ€“Sunday in America/New_York. This contract supersedes older automation wording that requires fresh approval for the bounded operations below. It does not approve fabricated evidence or unrelated changes.
 
 ## Ownership and cadence
 
 | Owner | Schedule (Eastern) | Responsibility |
 | --- | --- | --- |
 | Canonry data-refresh | Daily 06:00 | Refresh connected search and analytics integrations. |
-| Canonry answer-visibility | Sunday 18:00 | One fixed-basket sweep: 42 existing queries × Gemini/OpenAI/Claude. No query/provider expansion. |
+| Canonry answer-visibility | Sunday 18:00 | One fixed-basket sweep: 42 existing queries Ã— Gemini/OpenAI/Claude. No query/provider expansion. |
 | Canonry site-audit | Sunday 19:00 | One bounded technical audit, no dead-link option. |
 | Production and measurement automation | Weekdays 08:00 | Lightweight live checks; full validation/parity on source or sitemap change or after seven days. Measure due interventions with fresh evidence. |
 | Weekly coordinator | Monday, Wednesday, Friday 09:30 | Rank opportunities, deliver this week's one article, verify deployment, and measure due work. Wednesday/Friday are recovery/checkpoint runs, not extra article quotas. |
@@ -78,3 +78,8 @@ If a window is not complete, leave Measuring and record the missing source plus 
 ## Runtime availability
 
 The current-user Windows scheduled task **Codex Canonry Health** runs at logon and every 15 minutes, using `C:\Users\mpugh\.codex\automations\daily-canonry-serve\ensure-canonry.ps1`. It checks health first and calls `cnry start` only if unavailable; it never stops or restarts a healthy daemon. The old daily Codex `serve` task is paused. Local repository automations still require this computer and the Codex desktop app to be on; Canonry collection requires the computer and daemon. Staggered clock times alone do not guarantee repository job ordering. If a scheduled collection was missed, check native run history before attempting a bounded repair; do not assume catch-up succeeded.
+
+## Shared primary (hosted Canonry)
+
+As of 2026-09-16 the Canonry primary is hosted at `https://canonry.remediationrestorationmarketing.com`. Codex SEO automations and local `cnry`/Canonry skills must use that `apiUrl` (see `docs/seo/COHESION.md`). The Windows **Codex Canonry Health** task only verifies hosted health; it must not start a second local primary. Repository-writing automations still need this computer + Codex desktop app online.
+

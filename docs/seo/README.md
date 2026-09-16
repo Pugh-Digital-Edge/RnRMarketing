@@ -1,10 +1,10 @@
-# SEO/AEO Operating System
+﻿# SEO/AEO Operating System
 
 This directory is the durable record for SEO and answer-engine optimization work on Remediation & Restoration Marketing.
 
 ## Operating loop
 
-`Measure → Diagnose → Prioritize → Improve → Deploy → Verify → Measure → Learn`
+`Measure â†’ Diagnose â†’ Prioritize â†’ Improve â†’ Deploy â†’ Verify â†’ Measure â†’ Learn`
 
 Every substantive run must read the current strategy, backlog, learnings, and recent run records before making recommendations. Findings must be evidence-backed and opportunity-ranked. Existing pages with measurable search, indexing, visibility, or conversion opportunity take priority over net-new content.
 
@@ -18,11 +18,12 @@ Every substantive run must read the current strategy, backlog, learnings, and re
 
 ## Documents
 
-- [`pipeline.md`](pipeline.md) — current automation ownership, authorized collection, weekly article commitment, shared lock, release gate and due-date measurements.
-- [`strategy.md`](strategy.md) — durable business, measurement, and prioritization context.
-- [`backlog.md`](backlog.md) — current actionable work with stable IDs and statuses.
-- [`learnings.md`](learnings.md) — conclusions promoted only after before/after evidence.
-- [`runs/`](runs/) — dated, append-only run records.
+- [COHESION.md](COHESION.md) — Codex executes closed-loop; Grok Bot owns hosted Canonry/infra.
+- [`pipeline.md`](pipeline.md) â€” current automation ownership, authorized collection, weekly article commitment, shared lock, release gate and due-date measurements.
+- [`strategy.md`](strategy.md) â€” durable business, measurement, and prioritization context.
+- [`backlog.md`](backlog.md) â€” current actionable work with stable IDs and statuses.
+- [`learnings.md`](learnings.md) â€” conclusions promoted only after before/after evidence.
+- [`runs/`](runs/) â€” dated, append-only run records.
 
 ## Recommendation format
 
@@ -31,3 +32,4 @@ Each substantive recommendation records: Problem, Evidence, Expected impact, Rec
 ## Verification gate
 
 SEO-impacting code changes require local build and technical checks, production verification after deployment, a relevant Canonry recheck, and comparison with the pre-change baseline. A source-only success is not a production result.
+
