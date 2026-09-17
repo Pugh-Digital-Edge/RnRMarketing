@@ -1,0 +1,29 @@
+{
+  "title": "AI Visibility Checklist for Restoration Companies",
+  "reviewed": "September 17, 2026",
+  "intro": "Use this self-check with your team or agency. Mark each item Done, Needs work, or Not checked. It is a way to organize useful next steps, not a visibility score or a promise of AI placement.",
+  "sections": [
+    { "title": "Make your business easy to identify", "items": [
+      "Check that your business name, phone number, website, and genuine service areas agree across your website, Google Business Profile, and key listings.",
+      "Confirm your Business Profile is verified and has accurate categories, services, hours, and contact details. Represent the areas you actually serve.",
+      "Make water, fire, mold, and other services you genuinely offer easy to find. Explain coverage, availability, and how a property owner can reach you."
+    ]},
+    { "title": "Give people and answer engines useful evidence", "items": [
+      "Review your main service pages for clear explanations of your process and the questions customers actually ask. Fix missing or misleading information before adding more pages.",
+      "Support claims with real project examples, permitted photos, current credentials, and authentic customer feedback. Avoid promises you cannot substantiate.",
+      "Ask your web team to check that important text and links are accessible, pages can be indexed, and structured data accurately describes visible content."
+    ]},
+    { "title": "Check discovery and measure what happens", "items": [
+      "Ask your web team to review crawler access and security rules. OAI-SearchBot controls ChatGPT search discovery separately from GPTBot training access. Access does not guarantee inclusion.",
+      "Choose a small set of realistic service-and-location questions. Record the exact question, date, assistant, and location context when checking answers.",
+      "Record brand mentions separately from links that cite your website. Save the answer or screenshot; one result is not a stable ranking.",
+      "Review referrals, calls, forms, and booked work alongside visibility. Pick the next change from an observed gap, then recheck comparable questions over time."
+    ]}
+  ],
+  "closing": "Choose one observed gap to work on first. A missing check means you need evidence, not that your visibility is zero. No checklist can guarantee rankings, AI answers, citations, or leads.",
+  "sources": [
+    { "title": "Google Search technical requirements", "url": "https://developers.google.com/search/docs/essentials/technical" },
+    { "title": "Google Business Profile local ranking guidance", "url": "https://support.google.com/business/answer/7091?hl=en" },
+    { "title": "OpenAI guidance for publishers", "url": "https://help.openai.com/en/articles/12627856" }
+  ]
+}

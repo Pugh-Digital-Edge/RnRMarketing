@@ -1,0 +1,434 @@
+npm notice run astro-kit-les-decap@1.0.0 validate
+npm notice run npm run check && npm test && npm run build
+npm warn Unknown env config "global-ignore-file". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> astro-kit-les-decap@1.0.0 check
+> astro check
+
+16:00:15 [content] Syncing content
+16:00:15 [content] Synced content
+16:00:15 [types] Generated 481ms
+16:00:15 [check] Getting diagnostics for Astro files in C:\Users\mpugh\Code\RnRMarketing...
+[96msrc/components/AnswerBlock.astro[0m:[93m10[0m:[93m11[0m - [93mwarning[0m[90m ts(6196): [0m'Props' is declared but never used.
+
+[7m10[0m interface Props {
+[7m  [0m [93m          ~~~~~[0m
+
+[96msrc/components/Articles.astro[0m:[93m3[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Image' is declared but its value is never read.
+
+[7m3[0m import { Image } from "astro:assets";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/CTA.astro[0m:[93m5[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Image' is declared but its value is never read.
+
+[7m5[0m import { Image } from 'astro:assets';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/CaseStudyChart.astro[0m:[93m25[0m:[93m64[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'value' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m25[0m     <tbody><tr><th scope="row">Reported</th>{chart.values.map((value) => <td>{formatValue(value)}</td>)}</tr></tbody>
+[7m  [0m [93m                                                               ~~~~~[0m
+[96msrc/components/CaseStudyChart.astro[0m:[93m14[0m:[93m31[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m14[0m     {chart.values.map((value, index) => (
+[7m  [0m [93m                              ~~~~~[0m
+[96msrc/components/CaseStudyChart.astro[0m:[93m14[0m:[93m24[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'value' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m14[0m     {chart.values.map((value, index) => (
+[7m  [0m [93m                       ~~~~~[0m
+[96msrc/components/CaseStudyChart.astro[0m:[93m5[0m:[93m22[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'value' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m5[0m const formatValue = (value) => `${chart.prefix ?? ''}${Number(value).toLocaleString('en-US', { minimumFractionDigits: chart.decimals ?? 0, maximumFractionDigits: chart.decimals ?? 0 })}${chart.suffix ?? ''}`;
+[7m [0m [93m                     ~~~~~[0m
+
+[96msrc/components/CaseStudyPage.astro[0m:[93m59[0m:[93m308[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'chart' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m59[0m     <section id="results" class="case-section results-section"><div class="case-container"><div class="results-heading"><div><p class="case-section-label">Reported results</p><h2>What changed across the reporting window.</h2></div><p>{study.resultsIntro}</p></div><div class="chart-grid">{study.charts.map((chart) => <CaseStudyChart chart={chart} />)}</div></div></section>
+[7m  [0m [93m                                                                                                                                                                                                                                                                                                                   ~~~~~[0m
+[96msrc/components/CaseStudyPage.astro[0m:[93m56[0m:[93m563[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'href' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m56[0m       <div class="case-container"><div class="strategy-heading"><div><p class="case-section-label">The strategy</p><h2>Connected work across the demand path.</h2></div><p>Each move supported the next: get found, earn the click, create a useful next step, and learn from the lead quality that followed.</p></div><div class="strategy-grid">{study.strategy.map((item, index) => <article class="strategy-item"><span class="strategy-index">{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.text}</p><div class="strategy-links">{item.links.map((href) => <a href={href}>{href.includes('seo') ? 'SEO' : href.includes('ppc') ? 'PPC & LSA' : href.includes('web-design') ? 'Web design' : href.includes('lead-tracking') ? 'Lead tracking' : href.includes('reputation') ? 'Reputation' : 'Industry guide'} ↗</a>)}</div></article>)}</div></div>
+[7m  [0m [93m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ~~~~[0m
+[96msrc/components/CaseStudyPage.astro[0m:[93m56[0m:[93m366[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'index' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m56[0m       <div class="case-container"><div class="strategy-heading"><div><p class="case-section-label">The strategy</p><h2>Connected work across the demand path.</h2></div><p>Each move supported the next: get found, earn the click, create a useful next step, and learn from the lead quality that followed.</p></div><div class="strategy-grid">{study.strategy.map((item, index) => <article class="strategy-item"><span class="strategy-index">{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.text}</p><div class="strategy-links">{item.links.map((href) => <a href={href}>{href.includes('seo') ? 'SEO' : href.includes('ppc') ? 'PPC & LSA' : href.includes('web-design') ? 'Web design' : href.includes('lead-tracking') ? 'Lead tracking' : href.includes('reputation') ? 'Reputation' : 'Industry guide'} ↗</a>)}</div></article>)}</div></div>
+[7m  [0m [93m                                                                                                                                                                                                                                                                                                                                                                             ~~~~~[0m
+[96msrc/components/CaseStudyPage.astro[0m:[93m56[0m:[93m360[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'item' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m56[0m       <div class="case-container"><div class="strategy-heading"><div><p class="case-section-label">The strategy</p><h2>Connected work across the demand path.</h2></div><p>Each move supported the next: get found, earn the click, create a useful next step, and learn from the lead quality that followed.</p></div><div class="strategy-grid">{study.strategy.map((item, index) => <article class="strategy-item"><span class="strategy-index">{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.text}</p><div class="strategy-links">{item.links.map((href) => <a href={href}>{href.includes('seo') ? 'SEO' : href.includes('ppc') ? 'PPC & LSA' : href.includes('web-design') ? 'Web design' : href.includes('lead-tracking') ? 'Lead tracking' : href.includes('reputation') ? 'Reputation' : 'Industry guide'} ↗</a>)}</div></article>)}</div></div>
+[7m  [0m [93m                                                                                                                                                                                                                                                                                                                                                                       ~~~~[0m
+[96msrc/components/CaseStudyPage.astro[0m:[93m52[0m:[93m61[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'item' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m52[0m       <ul class="case-check-list">{study.startingPoint.map((item) => <li>{item}</li>)}</ul>
+[7m  [0m [93m                                                            ~~~~[0m
+[96msrc/components/CaseStudyPage.astro[0m:[93m40[0m:[93m31[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'metric' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m40[0m           {study.metrics.map((metric) => (
+[7m  [0m [93m                              ~~~~~~[0m
+[96msrc/components/CaseStudyPage.astro[0m:[93m8[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'currentIndex' is declared but its value is never read.
+
+[7m8[0m const currentIndex = caseStudies.findIndex((item) => item.slug === study.slug);
+[7m [0m [93m      ~~~~~~~~~~~~[0m
+
+[96msrc/components/CustomChat.astro[0m:[93m265[0m:[93m9[0m - [93mwarning[0m[90m ts(6133): [0m'chatStatus' is declared but its value is never read.
+
+[7m265[0m   const chatStatus = chatRoot?.querySelector(".custom-chat__status");
+[7m   [0m [93m        ~~~~~~~~~~[0m
+[96msrc/components/CustomChat.astro[0m:[93m264[0m:[93m9[0m - [93mwarning[0m[90m ts(6133): [0m'chatForm' is declared but its value is never read.
+
+[7m264[0m   const chatForm = chatRoot?.querySelector(".custom-chat__form");
+[7m   [0m [93m        ~~~~~~~~[0m
+
+[96msrc/components/DarkModeToggle.astro[0m:[93m25[0m:[93m26[0m - [93mwarning[0m[90m ts(7044): [0mParameter 'element' implicitly has an 'any' type, but a better type may be inferred from usage.
+
+[7m25[0m     function ariaPressed(element) {
+[7m  [0m [93m                         ~~~~~~~[0m
+
+[96msrc/components/Footer.astro[0m:[93m3[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'navData' is declared but its value is never read.
+
+[7m3[0m import navData from "@data/navData.json";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/Footer.astro[0m:[93m2[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'client' is declared but its value is never read.
+
+[7m2[0m import client from "@data/client.json";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/content/config.ts[0m:[93m2[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Image' is declared but its value is never read.
+
+[7m2[0m import { Image } from 'astro:assets';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/thank-you.astro[0m:[93m94[0m:[93m9[0m - [93mwarning[0m[90m ts(6385): [0m'frameborder' is deprecated.
+
+[7m94[0m         frameborder="0"
+[7m  [0m [93m        ~~~~~~~~~~~[0m
+
+Result (85 files): 
+- 0 errors
+- 0 warnings
+- 21 hints
+
+npm warn Unknown env config "global-ignore-file". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> astro-kit-les-decap@1.0.0 test
+> node --test tests/**/*.test.mjs
+
+✔ checklist rejects invalid emails and sales-form names without forwarding (16.9075ms)
+✔ checklist forwards only signup fields and accepts an email without a phone (0.7802ms)
+✔ checklist failure is retryable and a honeypot never reaches storage (0.653ms)
+✔ native lead post normalizes phone without cancellation, fetch, or disabling submit (3.3201ms)
+✔ async failure preserves entered phone and restores retry without a busy state (0.8371ms)
+✔ async success resets the form and announces success (0.7881ms)
+✔ newsletter has a separate complete registration and contact has one field schema (0.4619ms)
+✔ invalid native lead post is blocked with inline and native validation (0.6925ms)
+✔ forms explicitly targeting the function retain their existing async submission (0.617ms)
+✔ shared schedule form has one complete Netlify registration with the native success action (0.6432ms)
+✔ viewport, field focus and step two are ordered and deduplicated (1.6786ms)
+✔ phone blur captures disabled-submit failures without PII or duplicate invalid events (0.7016ms)
+✔ required and malformed email errors are distinguished and hidden fields excluded (0.5307ms)
+✔ other landing pages retain their existing instrumentation (0.4952ms)
+✔ rejects missing digits (2.1388ms)
+✔ rejects extra digits (0.4207ms)
+✔ rejects letters (0.1299ms)
+✔ rejects invalid US area codes (0.2907ms)
+✔ accepts a pasted formatted US number and normalizes it (0.8661ms)
+✔ accepts a valid number beginning with +1 (0.2016ms)
+✔ backend rejects an invalid submitted phone number (14.8303ms)
+✔ backend stores the validated phone number as E.164 (0.6882ms)
+✔ backend preserves partial-lead stage and submission ID (0.5121ms)
+✔ concurrent writers have one owner and another owner cannot release it (13.287ms)
+✔ SEO signal check detects canonical, robots, schema and H1 regressions (2.0423ms)
+✔ measurement queue uses current due field and retains missing dates for reconciliation (0.4926ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 303.6171
+npm warn Unknown env config "global-ignore-file". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> astro-kit-les-decap@1.0.0 build
+> astro build && node scripts/postbuild-aeo.mjs
+
+16:00:23 [content] Syncing content
+16:00:23 [content] Synced content
+16:00:23 [types] Generated 392ms
+16:00:23 [build] output: "static"
+16:00:23 [build] mode: "static"
+16:00:23 [build] directory: C:\Users\mpugh\Code\RnRMarketing\dist\
+16:00:23 [build] Collecting build info...
+16:00:23 [build] ✓ Completed in 438ms.
+16:00:23 [build] Building static entrypoints...
+Removing unexpected attribute on SVG: clip-rule
+Removing unexpected attribute on SVG: clip-rule
+Removing unexpected attribute on SVG: clip-rule
+Removing unexpected attribute on SVG: clip-rule
+Removing unexpected attribute on SVG: clip-rule
+Removing unexpected attribute on SVG: clip-rule
+Removing unexpected attribute on SVG: clip-rule
+Removing unexpected attribute on SVG: clip-rule
+Error parsing flag: Error: Duplicate id "Star-1"
+    at addID (file:///C:/Users/mpugh/Code/RnRMarketing/node_modules/@iconify/tools/lib/svg/analyse.mjs:20:13)
+    at gotElementWithID (file:///C:/Users/mpugh/Code/RnRMarketing/node_modules/@iconify/tools/lib/svg/analyse.mjs:27:5)
+    at file:///C:/Users/mpugh/Code/RnRMarketing/node_modules/@iconify/tools/lib/svg/analyse.mjs:150:13
+    at checkNode (file:///C:/Users/mpugh/Code/RnRMarketing/node_modules/@iconify/tools/lib/svg/parse.mjs:19:28)
+    at checkNode (file:///C:/Users/mpugh/Code/RnRMarketing/node_modules/@iconify/tools/lib/svg/parse.mjs:35:7)
+    at checkNode (file:///C:/Users/mpugh/Code/RnRMarketing/node_modules/@iconify/tools/lib/svg/parse.mjs:35:7)
+    at checkNode (file:///C:/Users/mpugh/Code/RnRMarketing/node_modules/@iconify/tools/lib/svg/parse.mjs:35:7)
+    at checkNode (file:///C:/Users/mpugh/Code/RnRMarketing/node_modules/@iconify/tools/lib/svg/parse.mjs:35:7)
+    at checkNode (file:///C:/Users/mpugh/Code/RnRMarketing/node_modules/@iconify/tools/lib/svg/parse.mjs:35:7)
+    at parseSVG (file:///C:/Users/mpugh/Code/RnRMarketing/node_modules/@iconify/tools/lib/svg/parse.mjs:41:3)
+16:00:25 [astro-icon] Loaded icons from src/icons
+16:00:25 [vite] ✓ built in 2.46s
+16:00:25 [build] ✓ Completed in 2.48s.
+
+ building client (vite) 
+16:00:25 [vite] transforming...
+16:00:26 [vite] ✓ 144 modules transformed.
+16:00:26 [vite] rendering chunks...
+16:00:26 [vite] computing gzip size...
+16:00:26 [vite] dist/_astro/admin.astro_astro_type_script_index_0_lang.DuzC3YGv.js             0.06 kB │ gzip:  0.07 kB
+16:00:26 [vite] dist/_astro/controller-lifecycle.CoR2zGOM.js                                   1.38 kB │ gzip:  0.65 kB
+16:00:26 [vite] dist/_astro/ButtonRoot.astro_astro_type_script_index_0_lang.5qnpxJgt.js        2.23 kB │ gzip:  0.89 kB
+16:00:26 [vite] dist/_astro/InputRoot.astro_astro_type_script_index_0_lang.DZHaMCOp.js         4.17 kB │ gzip:  1.51 kB
+16:00:26 [vite] dist/_astro/AdsLandingPage.astro_astro_type_script_index_0_lang.DEQBJYUk.js    4.32 kB │ gzip:  1.91 kB
+16:00:26 [vite] dist/_astro/AccordionRoot.astro_astro_type_script_index_0_lang.DyhDiJdF.js     9.30 kB │ gzip:  3.26 kB
+16:00:26 [vite] dist/_astro/BaseLayout.astro_astro_type_script_index_0_lang.BXp-UZb-.js      121.29 kB │ gzip: 30.40 kB
+16:00:26 [vite] ✓ built in 229ms
+
+ generating static routes 
+16:00:26 ▶ src/pages/[industry]/[service].astro
+16:00:26   ├─ /biohazard-cleanup/ppc/index.html (+15ms) 
+16:00:26   ├─ /fire-damage-restoration/ppc/index.html (+6ms) 
+16:00:26   ├─ /commercial-restoration/ppc/index.html (+5ms) 
+16:00:26   ├─ /mold-remediation/ppc/index.html (+5ms) 
+16:00:26   ├─ /storm-damage-cleanup/ppc/index.html (+5ms) 
+16:00:26   ├─ /sewage-cleanup/ppc/index.html (+5ms) 
+16:00:26   ├─ /water-damage-restoration/ppc/index.html (+5ms) 
+16:00:26   ├─ /roof-damage-restoration/ppc/index.html (+5ms) 
+16:00:26   ├─ /biohazard-cleanup/lead-tracking/index.html (+5ms) 
+16:00:26   ├─ /fire-damage-restoration/lead-tracking/index.html (+5ms) 
+16:00:26   ├─ /commercial-restoration/lead-tracking/index.html (+5ms) 
+16:00:26   ├─ /mold-remediation/lead-tracking/index.html (+6ms) 
+16:00:26   ├─ /storm-damage-cleanup/lead-tracking/index.html (+6ms) 
+16:00:26   ├─ /sewage-cleanup/lead-tracking/index.html (+5ms) 
+16:00:26   ├─ /water-damage-restoration/lead-tracking/index.html (+7ms) 
+16:00:26   ├─ /roof-damage-restoration/lead-tracking/index.html (+5ms) 
+16:00:26   ├─ /biohazard-cleanup/reputation-management/index.html (+5ms) 
+16:00:26   ├─ /fire-damage-restoration/reputation-management/index.html (+6ms) 
+16:00:26   ├─ /commercial-restoration/reputation-management/index.html (+6ms) 
+16:00:26   ├─ /mold-remediation/reputation-management/index.html (+8ms) 
+16:00:26   ├─ /storm-damage-cleanup/reputation-management/index.html (+16ms) 
+16:00:26   ├─ /sewage-cleanup/reputation-management/index.html (+6ms) 
+16:00:26   ├─ /water-damage-restoration/reputation-management/index.html (+6ms) 
+16:00:26   ├─ /roof-damage-restoration/reputation-management/index.html (+7ms) 
+16:00:26   ├─ /biohazard-cleanup/retargeting/index.html (+7ms) 
+16:00:26   ├─ /fire-damage-restoration/retargeting/index.html (+8ms) 
+16:00:26   ├─ /commercial-restoration/retargeting/index.html (+5ms) 
+16:00:26   ├─ /mold-remediation/retargeting/index.html (+7ms) 
+16:00:26   ├─ /storm-damage-cleanup/retargeting/index.html (+5ms) 
+16:00:26   ├─ /sewage-cleanup/retargeting/index.html (+6ms) 
+16:00:26   ├─ /water-damage-restoration/retargeting/index.html (+9ms) 
+16:00:26   ├─ /roof-damage-restoration/retargeting/index.html (+5ms) 
+16:00:26   ├─ /biohazard-cleanup/seo/index.html (+7ms) 
+16:00:26   ├─ /fire-damage-restoration/seo/index.html (+5ms) 
+16:00:26   ├─ /commercial-restoration/seo/index.html (+4ms) 
+16:00:26   ├─ /mold-remediation/seo/index.html (+6ms) 
+16:00:26   ├─ /storm-damage-cleanup/seo/index.html (+5ms) 
+16:00:26   ├─ /sewage-cleanup/seo/index.html (+7ms) 
+16:00:26   ├─ /water-damage-restoration/seo/index.html (+8ms) 
+16:00:26   ├─ /roof-damage-restoration/seo/index.html (+6ms) 
+16:00:26   ├─ /biohazard-cleanup/web-design/index.html (+7ms) 
+16:00:26   ├─ /fire-damage-restoration/web-design/index.html (+8ms) 
+16:00:26   ├─ /commercial-restoration/web-design/index.html (+8ms) 
+16:00:26   ├─ /mold-remediation/web-design/index.html (+6ms) 
+16:00:26   ├─ /storm-damage-cleanup/web-design/index.html (+12ms) 
+16:00:26   ├─ /sewage-cleanup/web-design/index.html (+5ms) 
+16:00:26   ├─ /water-damage-restoration/web-design/index.html (+6ms) 
+16:00:26   ├─ /roof-damage-restoration/web-design/index.html (+6ms) 
+16:00:26   ├─ /biohazard-cleanup/social-media-advertising/index.html (+7ms) 
+16:00:26   ├─ /fire-damage-restoration/social-media-advertising/index.html (+6ms) 
+16:00:26   ├─ /commercial-restoration/social-media-advertising/index.html (+6ms) 
+16:00:26   ├─ /mold-remediation/social-media-advertising/index.html (+9ms) 
+16:00:26   ├─ /storm-damage-cleanup/social-media-advertising/index.html (+7ms) 
+16:00:26   ├─ /sewage-cleanup/social-media-advertising/index.html (+7ms) 
+16:00:26   ├─ /water-damage-restoration/social-media-advertising/index.html (+6ms) 
+16:00:26   ├─ /roof-damage-restoration/social-media-advertising/index.html (+9ms) 
+16:00:26   ├─ /biohazard-cleanup/social-media-marketing/index.html (+7ms) 
+16:00:26   ├─ /fire-damage-restoration/social-media-marketing/index.html (+9ms) 
+16:00:26   ├─ /commercial-restoration/social-media-marketing/index.html (+6ms) 
+16:00:26   ├─ /mold-remediation/social-media-marketing/index.html (+7ms) 
+16:00:26   ├─ /storm-damage-cleanup/social-media-marketing/index.html (+6ms) 
+16:00:26   ├─ /sewage-cleanup/social-media-marketing/index.html (+7ms) 
+16:00:26   ├─ /water-damage-restoration/social-media-marketing/index.html (+7ms) 
+16:00:26   └─ /roof-damage-restoration/social-media-marketing/index.html (+6ms) 
+16:00:26 ▶ src/pages/about.astro
+16:00:26   └─ /about/index.html (+5ms) 
+16:00:26 ▶ src/pages/admin.astro
+16:00:26   └─ /admin/index.html (+1ms) 
+16:00:26 ▶ src/pages/case-studies/[slug].astro
+16:00:26   ├─ /case-studies/chicago-restoration-lead-growth/index.html (+5ms) 
+16:00:26   ├─ /case-studies/michigan-restoration-organic-growth/index.html (+5ms) 
+16:00:26   └─ /case-studies/kentucky-mold-water-damage-lead-growth/index.html (+4ms) 
+16:00:26 ▶ src/pages/case-studies/index.astro
+16:00:26   └─ /case-studies/index.html (+3ms) 
+16:00:26 ▶ src/pages/contact.astro
+16:00:26   └─ /contact/index.html (+5ms) 
+16:00:26 ▶ src/pages/index.astro
+16:00:26   └─ /index.html (+7ms) 
+16:00:26 ▶ src/pages/industries/[industry].astro
+16:00:26   ├─ /industries/biohazard-cleanup/index.html (+11ms) 
+16:00:26   ├─ /industries/fire-damage-restoration/index.html (+5ms) 
+16:00:26   ├─ /industries/commercial-restoration/index.html (+4ms) 
+16:00:26   ├─ /industries/mold-remediation/index.html (+4ms) 
+16:00:26   ├─ /industries/storm-damage-cleanup/index.html (+4ms) 
+16:00:26   ├─ /industries/sewage-cleanup/index.html (+4ms) 
+16:00:26   ├─ /industries/water-damage-restoration/index.html (+4ms) 
+16:00:26   └─ /industries/roof-damage-restoration/index.html (+5ms) 
+16:00:26 ▶ src/pages/industries/index.astro
+16:00:26   └─ /industries/index.html (+7ms) 
+16:00:26 ▶ src/pages/privacy.astro
+16:00:26   └─ /privacy/index.html (+4ms) 
+16:00:26 ▶ src/pages/resources/[...post].astro
+16:00:26   ├─ /resources/10-powerful-restoration-marketing-strategies-to-boost-your-business/index.html (+5ms) 
+16:00:26   ├─ /resources/fire-damage-restoration-marketing/index.html (+4ms) 
+16:00:26   ├─ /resources/restoration-marketing-agency-vs-generalist/index.html (+4ms) 
+16:00:26   ├─ /resources/restoration-marketing-tips-for-your-restoration-company/index.html (+4ms) 
+16:00:26   ├─ /resources/high-performance-restoration-websites-boost-your-google-page-speed/index.html (+4ms) 
+16:00:26   ├─ /resources/local-services-ads-for-restoration-companies/index.html (+7ms) 
+16:00:26   ├─ /resources/water-damage-restoration-marketing/index.html (+12ms) 
+16:00:26   └─ /resources/mold-remediation-marketing/index.html (+7ms) 
+16:00:26 ▶ src/pages/resources/ai-visibility-checklist/download.astro
+16:00:26   └─ /resources/ai-visibility-checklist/download/index.html (+4ms) 
+16:00:26 ▶ src/pages/resources/ai-visibility-checklist/index.astro
+16:00:26   └─ /resources/ai-visibility-checklist/index.html (+3ms) 
+16:00:26 ▶ src/pages/resources/index.astro
+16:00:26   └─ /resources/index.html (+5ms) 
+16:00:26 ▶ src/pages/restoration-marketing.astro
+16:00:26   └─ /restoration-marketing/index.html (+3ms) 
+16:00:26 ▶ src/pages/schedule.astro
+16:00:26   └─ /schedule/index.html (+4ms) 
+16:00:26 ▶ src/pages/services/lead-tracking.astro
+16:00:26   └─ /services/lead-tracking/index.html (+5ms) 
+16:00:26 ▶ src/pages/services/ppc.astro
+16:00:26   └─ /services/ppc/index.html (+6ms) 
+16:00:26 ▶ src/pages/services/reputation-management.astro
+16:00:26   └─ /services/reputation-management/index.html (+4ms) 
+16:00:26 ▶ src/pages/services/retargeting.astro
+16:00:26   └─ /services/retargeting/index.html (+5ms) 
+16:00:26 ▶ src/pages/services/seo.astro
+16:00:26   └─ /services/seo/index.html (+6ms) 
+16:00:26 ▶ src/pages/services/social-media-advertising.astro
+16:00:26   └─ /services/social-media-advertising/index.html (+4ms) 
+16:00:26 ▶ src/pages/services/social-media-marketing.astro
+16:00:26   └─ /services/social-media-marketing/index.html (+4ms) 
+16:00:26 ▶ src/pages/services/web-design.astro
+16:00:26   └─ /services/web-design/index.html (+4ms) 
+16:00:26 ▶ src/pages/services.astro
+16:00:26   └─ /services/index.html (+5ms) 
+16:00:26 ▶ src/pages/thank-you.astro
+16:00:26   └─ /thank-you/index.html (+3ms) 
+16:00:26 ▶ src/pages/tos.astro
+16:00:26   └─ /tos/index.html (+3ms) 
+16:00:26 ✓ Completed in 731ms.
+
+ generating optimized images 
+16:00:26   ▶ /_astro/rr-marketing-logo.Dpqij4tw_2oLUB7.svg (reused cache entry) (+5ms) (1/92)
+16:00:26   ▶ /_astro/ppc2.DBf-rJ5z_2gnUKh.webp (reused cache entry) (+6ms) (2/92)
+16:00:26   ▶ /_astro/ppc1.Bnrzjj8m_ZoyclC.webp (reused cache entry) (+6ms) (3/92)
+16:00:26   ▶ /_astro/oregan.DUZyNyvQ_ZlOUMV.webp (reused cache entry) (+7ms) (4/92)
+16:00:26   ▶ /_astro/black-abstract-cta.DI4M7R7V_Z23gNnR.avif (reused cache entry) (+7ms) (5/92)
+16:00:26   ▶ /_astro/commercial-restoration.B1JcFcxt_Z1peMxT.webp (reused cache entry) (+7ms) (6/92)
+16:00:26   ▶ /_astro/biohazard-cleanup.DPi78YKl_Z1SY8Jp.webp (reused cache entry) (+8ms) (7/92)
+16:00:26   ▶ /_astro/mold-remediation.L8VCM1eo_Z1hWbXx.webp (reused cache entry) (+8ms) (8/92)
+16:00:26   ▶ /_astro/fire-damage-restoration.CpaKijfz_Z1JdyTa.webp (reused cache entry) (+9ms) (9/92)
+16:00:26   ▶ /_astro/storm-damage-cleanup.CTgqfEl6_1lUCV8.webp (reused cache entry) (+9ms) (10/92)
+16:00:26   ▶ /_astro/sewage-cleanup.Bfc4xTCB_nGO8X.webp (reused cache entry) (+9ms) (11/92)
+16:00:26   ▶ /_astro/water-damage-restoration.BPtmbfP7_e9aYG.webp (reused cache entry) (+9ms) (12/92)
+16:00:26   ▶ /_astro/tracking1.DCnvS1cC_1IBRXu.webp (reused cache entry) (+11ms) (13/92)
+16:00:26   ▶ /_astro/roof-damage-restoration.BpIGw-hw_Zf2QK.webp (reused cache entry) (+11ms) (14/92)
+16:00:26   ▶ /_astro/tracking2.BdI9reRm_Z1xUwJe.webp (reused cache entry) (+11ms) (15/92)
+16:00:26   ▶ /_astro/rep1.UXQqwveq_1VcRrT.webp (reused cache entry) (+12ms) (16/92)
+16:00:26   ▶ /_astro/retargeting1.Ddb5BSQC_Zu7klz.webp (reused cache entry) (+13ms) (17/92)
+16:00:26   ▶ /_astro/rep2.cmvIeJr-_qIsYk.webp (reused cache entry) (+13ms) (18/92)
+16:00:26   ▶ /_astro/seo2.6I6imrBJ_Z1wCMNF.webp (reused cache entry) (+13ms) (19/92)
+16:00:26   ▶ /_astro/retargeting2.Dw2gterD_1r0bmq.webp (reused cache entry) (+14ms) (20/92)
+16:00:26   ▶ /_astro/seo1.B4QORFTm_Z1lemSe.webp (reused cache entry) (+14ms) (21/92)
+16:00:26   ▶ /_astro/web-design1.R4-aokfH_22ChAi.webp (reused cache entry) (+14ms) (22/92)
+16:00:26   ▶ /_astro/web-design2.BEyKwzwj_Z1eNixy.webp (reused cache entry) (+15ms) (23/92)
+16:00:26   ▶ /_astro/social-media-advertising1.TbQg6ycE_1IIW85.webp (reused cache entry) (+15ms) (24/92)
+16:00:26   ▶ /_astro/rr-marketing-logo.Dpqij4tw_Lch02.svg (reused cache entry) (+13ms) (25/92)
+16:00:26   ▶ /_astro/oregan.DUZyNyvQ_ZdPMCb.webp (reused cache entry) (+12ms) (26/92)
+16:00:26   ▶ /_astro/social1.Dh9maynh_G46ht.webp (reused cache entry) (+13ms) (27/92)
+16:00:26   ▶ /_astro/social-media-advertising2.CJbueQh5_Z1Rd7Gp.webp (reused cache entry) (+13ms) (28/92)
+16:00:26   ▶ /_astro/black-abstract-cta.DI4M7R7V_14swYX.webp (reused cache entry) (+12ms) (29/92)
+16:00:26   ▶ /_astro/commercial-restoration.B1JcFcxt_1H4AX7.webp (reused cache entry) (+12ms) (30/92)
+16:00:26   ▶ /_astro/biohazard-cleanup.DPi78YKl_ubIAa.webp (reused cache entry) (+12ms) (31/92)
+16:00:26   ▶ /_astro/mold-remediation.L8VCM1eo_b4Ytv.webp (reused cache entry) (+12ms) (32/92)
+16:00:26   ▶ /_astro/storm-damage-cleanup.CTgqfEl6_Z1NhuU4.webp (reused cache entry) (+11ms) (33/92)
+16:00:26   ▶ /_astro/sewage-cleanup.Bfc4xTCB_25mvXh.webp (reused cache entry) (+11ms) (34/92)
+16:00:26   ▶ /_astro/fire-damage-restoration.CpaKijfz_Z1SVf8b.webp (reused cache entry) (+12ms) (35/92)
+16:00:26   ▶ /_astro/water-damage-restoration.BPtmbfP7_ZBfUyJ.webp (reused cache entry) (+12ms) (36/92)
+16:00:26   ▶ /_astro/poconos.Dq5eYNyx_Z2jUEoD.webp (reused cache entry) (+10ms) (37/92)
+16:00:26   ▶ /_astro/social2.CxaOjLTf_ZwQ3Ob.webp (reused cache entry) (+11ms) (38/92)
+16:00:26   ▶ /_astro/roof-damage-restoration.BpIGw-hw_1LFaEu.webp (reused cache entry) (+11ms) (39/92)
+16:00:26   ▶ /_astro/sierra-nevada.BVxmlBvo_QPhJc.webp (reused cache entry) (+11ms) (40/92)
+16:00:26   ▶ /_astro/building.fT4y9Ssm_Z11rURa.webp (reused cache entry) (+10ms) (41/92)
+16:00:26   ▶ /_astro/restoration-drying-hero.CY-t0t9W_tvVMX.webp (reused cache entry) (+10ms) (42/92)
+16:00:26   ▶ /_astro/matt.DVtvhL4q_Z2s99vs.webp (reused cache entry) (+9ms) (43/92)
+16:00:26   ▶ /_astro/results.B3_N6xnP_1FLtIW.webp (reused cache entry) (+10ms) (44/92)
+16:00:26   ▶ /_astro/california.BQ1PIQv1_E6FGm.webp (reused cache entry) (+9ms) (45/92)
+16:00:26   ▶ /_astro/restoration-team-planning.NNssgZkG_Z12VkUk.webp (reused cache entry) (+9ms) (46/92)
+16:00:26   ▶ /_astro/black-city.D7eolv9b_Z51rVU.webp (reused cache entry) (+10ms) (47/92)
+16:00:26   ▶ /_astro/nantucket.CjRQNJKJ_ZTASCA.webp (reused cache entry) (+9ms) (48/92)
+16:00:26   ▶ /_astro/desert.CHj4JqPE_19juG0.webp (reused cache entry) (+10ms) (49/92)
+16:00:26   ▶ /_astro/hawaii.BrfZ2mZF_Z22swxT.webp (reused cache entry) (+10ms) (50/92)
+16:00:26   ▶ /_astro/oregan.DUZyNyvQ_Zl72Tp.webp (reused cache entry) (+10ms) (51/92)
+16:00:26   ▶ /_astro/restoration-lead-generation-system.CbML2dGo_YOtTv.webp (reused cache entry) (+10ms) (52/92)
+16:00:26   ▶ /_astro/fire-damage-restoration-marketing.BLNhquAc_1VTVlj.webp (reused cache entry) (+10ms) (53/92)
+16:00:26   ▶ /_astro/restoration-marketing-agency-vs-generalist.jGMNhsel_nb1TW.webp (reused cache entry) (+11ms) (54/92)
+16:00:26   ▶ /_astro/how-to-market-restoration-company.Dxp2WLJF_1z2NOS.webp (reused cache entry) (+10ms) (55/92)
+16:00:26   ▶ /_astro/black-abstract-cta.DI4M7R7V_OQdJN.jpg (reused cache entry) (+12ms) (56/92)
+16:00:26   ▶ /_astro/local-services-ads-restoration-companies.C5JCuQ04_19TPhi.webp (reused cache entry) (+10ms) (57/92)
+16:00:26   ▶ /_astro/web-design-and-development.B2eDDPoe_1IB0AG.webp (reused cache entry) (+11ms) (58/92)
+16:00:26   ▶ /_astro/water-damage-restoration-marketing.V3r4QlCa_Zlnz82.webp (reused cache entry) (+10ms) (59/92)
+16:00:26   ▶ /_astro/poconos.Dq5eYNyx_Z1ntCzJ.webp (reused cache entry) (+10ms) (60/92)
+16:00:26   ▶ /_astro/mold-remediation-marketing.D8LoB27-_1XeITl.webp (reused cache entry) (+12ms) (61/92)
+16:00:26   ▶ /_astro/blue-abstract.fGlZTA2g_1vYm3e.webp (reused cache entry) (+11ms) (62/92)
+16:00:26   ▶ /_astro/ocean-water.DmBFWI7m_Dra1O.webp (reused cache entry) (+10ms) (63/92)
+16:00:26   ▶ /_astro/sierra-nevada.BVxmlBvo_Z276nKx.webp (reused cache entry) (+11ms) (64/92)
+16:00:26   ▶ /_astro/restoration-drying-hero.CY-t0t9W_20LrPH.webp (reused cache entry) (+10ms) (65/92)
+16:00:26   ▶ /_astro/matt.DVtvhL4q_Z1hMVzX.webp (reused cache entry) (+10ms) (66/92)
+16:00:26   ▶ /_astro/california.BQ1PIQv1_Z4wLLb.webp (reused cache entry) (+10ms) (67/92)
+16:00:26   ▶ /_astro/nantucket.CjRQNJKJ_Z1J4PIF.webp (reused cache entry) (+10ms) (68/92)
+16:00:26   ▶ /_astro/restoration-team-planning.NNssgZkG_Z1p3Sf0.webp (reused cache entry) (+10ms) (69/92)
+16:00:26   ▶ /_astro/desert.CHj4JqPE_Z2rCiBd.webp (reused cache entry) (+7ms) (70/92)
+16:00:26   ▶ /_astro/hawaii.BrfZ2mZF_Zydc2b.webp (reused cache entry) (+7ms) (71/92)
+16:00:26   ▶ /_astro/restoration-lead-generation-system.CbML2dGo_Z1CfCdt.webp (reused cache entry) (+8ms) (72/92)
+16:00:26   ▶ /_astro/restoration-marketing-agency-vs-generalist.jGMNhsel_2c1sE.webp (reused cache entry) (+7ms) (73/92)
+16:00:26   ▶ /_astro/how-to-market-restoration-company.Dxp2WLJF_rqla0.webp (reused cache entry) (+7ms) (74/92)
+16:00:26   ▶ /_astro/fire-damage-restoration-marketing.BLNhquAc_OisFq.webp (reused cache entry) (+7ms) (75/92)
+16:00:26   ▶ /_astro/local-services-ads-restoration-companies.C5JCuQ04_R9Kh5.webp (reused cache entry) (+7ms) (76/92)
+16:00:26   ▶ /_astro/web-design-and-development.B2eDDPoe_1PTjXO.webp (reused cache entry) (+7ms) (77/92)
+16:00:26   ▶ /_astro/water-damage-restoration-marketing.V3r4QlCa_2gGwYW.webp (reused cache entry) (+7ms) (78/92)
+16:00:26   ▶ /_astro/poconos.Dq5eYNyx_gT4hu.webp (reused cache entry) (+7ms) (79/92)
+16:00:26   ▶ /_astro/blue-abstract.fGlZTA2g_ZBcVhe.webp (reused cache entry) (+7ms) (80/92)
+16:00:26   ▶ /_astro/ocean-water.DmBFWI7m_ZGmmPg.webp (reused cache entry) (+7ms) (81/92)
+16:00:26   ▶ /_astro/mold-remediation-marketing.D8LoB27-_25x3ht.webp (reused cache entry) (+7ms) (82/92)
+16:00:26   ▶ /_astro/restoration-drying-hero.CY-t0t9W_xUjlB.webp (reused cache entry) (+7ms) (83/92)
+16:00:26   ▶ /_astro/california.BQ1PIQv1_14f7I6.webp (reused cache entry) (+6ms) (84/92)
+16:00:26   ▶ /_astro/nantucket.CjRQNJKJ_Z14iA8n.webp (reused cache entry) (+6ms) (85/92)
+16:00:26   ▶ /_astro/sierra-nevada.BVxmlBvo_2smVw8.webp (reused cache entry) (+8ms) (86/92)
+16:00:26   ▶ /_astro/restoration-team-planning.NNssgZkG_IGycA.webp (reused cache entry) (+6ms) (87/92)
+16:00:26   ▶ /_astro/desert.CHj4JqPE_ZIQBdj.webp (reused cache entry) (+7ms) (88/92)
+16:00:26   ▶ /_astro/hawaii.BrfZ2mZF_1XH8zq.webp (reused cache entry) (+7ms) (89/92)
+16:00:26   ▶ /_astro/ocean-water.DmBFWI7m_14tTQW.webp (reused cache entry) (+3ms) (90/92)
+16:00:26   ▶ /_astro/restoration-drying-hero.CY-t0t9W_Z9whJT.webp (reused cache entry) (+3ms) (91/92)
+16:00:26   ▶ /_astro/blue-abstract.fGlZTA2g_is8n4.webp (reused cache entry) (+4ms) (92/92)
+16:00:26 ✓ Completed in 45ms.
+
+16:00:26 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+16:00:26 [build] 106 page(s) built in 4.09s
+16:00:26 [build] Complete!

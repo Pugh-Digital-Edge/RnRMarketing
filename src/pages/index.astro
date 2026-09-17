@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
+import ProgramOverview from "@components/ProgramOverview.astro";
+import { offer } from "@data/offer.js";
 import FAQ from "@components/FAQ.astro";
 import Contact from "@components/Contact.astro";
 import Services from "@components/ServicesDisplay.astro";
@@ -40,7 +42,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
             <span class="cs-topper">Marketing built for restoration contractors</span>
             <h1 class="cs-title">Restoration Marketing Agency for Emergency Calls</h1>
             <p class="cs-text">
-              We connect local search, paid ads, conversion-focused websites, and lead tracking so you can turn more property-damage searches into booked work and see what drives each opportunity.
+              {offer.name} connects local search and Google Business Profile, paid ads, your website, AI visibility, and lead tracking so you can see what drives each opportunity.
             </p>
             <div class="hero-actions">
               <a href="/schedule/" class="cs-button-solid">Request Your Free Session &rarr;</a>
@@ -97,6 +99,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
   </section>
 
   <CaseStudyTeaser id="client-results" />
+  <ProgramOverview />
 
   <!-- ============================================ -->
 <!--                Why Choose Us                 -->
@@ -111,10 +114,10 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
         </div>
         <ul class="cs-ul">
           <li class="cs-text">
-            <b>Dominate your local market</b> with our battle-tested restoration marketing strategies. We don't just generate leads. We attract <b>premium clients actively seeking emergency restoration services</b>. Our digital marketing arsenal combines SEO, targeted advertising, and compelling content to ensure your phone rings with qualified prospects while your competitors wonder where all the business went.          
+            <b>One team responsible for the whole system.</b> Your website, paid campaigns, local search, AI visibility, and lead tracking work together around your service territory and the jobs your crew can handle.
           </li>
           <li class="cs-text">
-            <b>Stop wearing all the hats</b> in your business. While you focus on transforming disaster-struck properties into homes again, we'll handle the entire digital marketing ecosystem. From optimizing your online presence to implementing automated lead capture systems, we create a <b>steady stream of high-value opportunities</b> that translate into measurable ROI. Your success is our blueprint. Let's build your restoration empire together.          
+            <b>Know what your marketing is producing.</b> We connect inquiries to their sources and use your team’s follow-up and job outcomes to guide the next improvements. You get one agency partner and a clear place to ask questions.
           </li>
         </ul> 
       </div>  
@@ -244,7 +247,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
                 </picture>
                 <h3 class="cs-h3">Exclusive Territory Rights</h3>
                 <p class="cs-item-text">
-                    We partner with only one restoration company per service area, ensuring you never compete against another client for the same leads. Your success is our sole focus in your market.
+                    {offer.territory} This protects your client territory with our agency; it does not mean each prospect contacts only your company.
                 </p>
             </li>
             <li class="cs-item mb-auto">

@@ -1,4 +1,5 @@
 ---
+import { offer } from "@data/offer.js";
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { getOptimizedImage } from "@libs/utils";
 import heroImage from "@assets/images/landing/blue-abstract.jpeg";
@@ -7,8 +8,8 @@ const preloadedImage = await getOptimizedImage(heroImage);
 ---
 
 <BaseLayout
-  title="Strategy Call Request Received"
-  description="Your 30-minute restoration marketing strategy call request has been received."
+  title="Lead Flow Acceleration Session Request Received"
+  description={`Your ${offer.session} request has been received. Choose a time for your 30-minute session with Matt.`}
   preloadedImage={preloadedImage}
   noindex
   eagerAnalytics
@@ -42,6 +43,10 @@ const preloadedImage = await getOptimizedImage(heroImage);
       const attribution = window.rrAttribution || {};
 
       window.gtag('event', 'generate_lead', {
+        send_to: window.rrTracking?.ga4Id,
+        form_id: 'lead-form',
+        form_page: leadUserData.landing_page || '',
+        ...(leadUserData.landing_page === '/restoration-marketing/' ? { funnel_version: 'restoration_v1', form_step: 2 } : {}),
         event_category: 'conversion',
         form_name: 'Schedule Lead Form',
         lead_type: 'restoration_strategy_call',
@@ -74,7 +79,7 @@ const preloadedImage = await getOptimizedImage(heroImage);
       <p class="cs-topper">REQUEST RECEIVED</p>
       <h1>Thanks. Now pick a time that works.</h1>
       <p>
-        Your details are in. Book your 30-minute call with Matt below and it is locked in
+        Your details are in. Book your 30-minute {offer.session} with Matt below and it is locked in
         straight away, no back-and-forth email. Nothing to prepare, just bring your questions.
       </p>
     </div>
@@ -83,7 +88,7 @@ const preloadedImage = await getOptimizedImage(heroImage);
       <!-- Loaded after the conversion script above so the lead is always recorded first. -->
       <iframe
         src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0ZohPTCbsjXJVYM2p94A87G46TCsjvi-5Oj3cGo3PGwRfQhrqZIZ-Q9BTNS4jlHWSPKArREwSH?gv=true"
-        title="Book a 30-minute restoration marketing strategy call with Matt Pugh"
+        title={`Book your ${offer.session} with Matt Pugh`}
         width="100%"
         height="600"
         frameborder="0"
@@ -92,9 +97,10 @@ const preloadedImage = await getOptimizedImage(heroImage);
     </div>
 
     <div class="thank-you__content thank-you__footnote">
+      <p><a href={offer.checklistDownload} download>Download your AI visibility checklist</a>. Bring it to your session if you like; nothing to prepare.</p>
       <p>
         Prefer not to book now? Matt will review your service territory and reach out either way.
-        In the meantime, see how the full program has worked for other restoration companies.
+        In the meantime, see the reported client results behind the {offer.name}.
       </p>
       <a href="/case-studies/" class="cs-button-solid">See Client Results</a>
     </div>

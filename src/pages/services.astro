@@ -12,11 +12,13 @@ import landingImage from "@assets/images/landing/ocean-water.jpg";
 // Import SVG icons from @assets/images/svg directory
 import FAQ from "@components/FAQ.astro";
 import CTA from "@components/CTA.astro";
+import ProgramOverview from "@components/ProgramOverview.astro";
+import { offer } from "@data/offer.js";
 import ServicesDisplay from "@components/ServicesDisplay.astro";
 import CaseStudyTeaser from "@components/CaseStudyTeaser.astro";
 import MarketingFramework from "@components/MarketingFramework.astro";
 import MarketingStartingPoints from "@components/MarketingStartingPoints.astro";
-import faqData from "@data/faqData.json";
+import faqData from "@data/marketingFaqs.js";
 
 // Keep commercial terms aligned with the existing visible FAQ and its schema.
 const commercialQuestions = ['How much does restoration marketing cost?', 'Do you require long-term contracts?'];
@@ -53,14 +55,14 @@ preloadedImage={optimizedImage}
         <div class="cs-container">
             <div class="cs-content">
                 <div class="cs-flex">
-                    <h2 class="cs-title">We Package Services That Drive Real Results for Restoration Companies</h2>
+                    <h2 class="cs-title">One Managed Program for Restoration Companies</h2>
                 </div>
                 <div class="cs-flex">
                     <h3 class="cs-h3">
-                        A connected marketing system built to produce and measure qualified restoration leads.
+                        {offer.name}
                     </h3>
                     <p class="cs-text">
-                        Our core system combines paid search for immediate demand, SEO for lasting visibility, conversion-focused websites, reputation management, and lead tracking. Each part supports the next: attract property owners, earn trust, capture the inquiry, and measure which marketing created it. We work with one restoration company per territory, subject to availability.
+                        {offer.summary} {offer.territory}
                     </p>
                     <a href="/schedule/" class="cs-button-solid">Request Your Free Acceleration Session</a>
                 </div>
@@ -68,6 +70,7 @@ preloadedImage={optimizedImage}
         </div>
     </section>
 
+  <ProgramOverview />
   <MarketingStartingPoints />
 
   <ServicesDisplay showOverviewLink={false} />

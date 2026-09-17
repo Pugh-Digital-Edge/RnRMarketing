@@ -1,0 +1,38 @@
+---
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+import { offer } from '@data/offer.js';
+import checklist from '@data/aiChecklist.json';
+---
+<BaseLayout title="Your AI Visibility Checklist" description="Download your restoration AI visibility checklist and choose one observed gap to work on first." noindex eagerAnalytics>
+  <article class="checklist-download">
+    <h1>Your AI visibility checklist is ready.</h1>
+    <p>{checklist.intro}</p>
+    <a class="cs-button-solid" href={offer.checklistDownload} download data-checklist-download>Download the printable PDF</a>
+    <p>Prefer to read it here? The complete checklist is below.</p>
+    {checklist.sections.map(section => <section><h2>{section.title}</h2><ul>{section.items.map(item => <li>{item}</li>)}</ul></section>)}
+    <p>{checklist.closing}</p>
+    <section><h2>Turn your observations into priorities.</h2><p>Bring your questions to a free, 30-minute {offer.session} with Matt. We’ll discuss your territory, your priorities, and whether the {offer.name} fits.</p><a class="cs-button-solid" href="/schedule/">Check your territory</a></section>
+    <aside><h2>Source guidance</h2><ul>{checklist.sources.map(source => <li><a href={source.url}>{source.title}</a></li>)}</ul><p>Reviewed {checklist.reviewed}.</p></aside>
+  </article>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        if (sessionStorage.getItem('ai_checklist_submission_pending') === '1' && typeof window.gtag === 'function') {
+          sessionStorage.removeItem('ai_checklist_submission_pending');
+          window.gtag('event', 'checklist_signup', { resource: 'restoration_ai_visibility', method: 'email' });
+        }
+      } catch {}
+      document.querySelector('[data-checklist-download]')?.addEventListener('click', () => {
+        if (typeof window.gtag === 'function') window.gtag('event', 'checklist_download', { resource: 'restoration_ai_visibility' });
+      });
+    });
+  </script>
+</BaseLayout>
+<style>
+  .checklist-download { max-width: 52rem; padding: 12rem 1.25rem 4rem; margin: auto; }
+  h1 { font-size: clamp(2rem, 4vw, 3rem); color: #071a42; line-height: 1.15; }
+  h2 { font-size: 1.5rem; color: #071a42; line-height: 1.3; }
+  p, li { color: #42516a; line-height: 1.8; } p { margin: 1.25rem 0; } li { margin: 1rem 0; }
+  ul { padding-left: 1.25rem; } section, aside { margin-top: 3rem; } aside { border-top: 1px solid #acb9ca; padding-top: 2rem; }
+  a:not(.cs-button-solid) { color: #0b4aa2; text-decoration: underline; }
+</style>

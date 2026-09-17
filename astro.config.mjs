@@ -18,7 +18,7 @@ export default defineConfig({
       // and would otherwise compete with the service pages on the same terms.
       filter: (page) => {
         const pathname = new URL(page).pathname;
-        return !['/admin', '/admin/', '/privacy/', '/tos/', '/thank-you/', '/restoration-marketing/'].includes(pathname);
+        return !['/admin', '/admin/', '/privacy/', '/tos/', '/thank-you/', '/restoration-marketing/', '/resources/ai-visibility-checklist/', '/resources/ai-visibility-checklist/download/'].includes(pathname);
       },
       // Keep sitemap freshness aligned with the editorial review date used by
       // the shared WebPage schema. Resource pages provide their own date in

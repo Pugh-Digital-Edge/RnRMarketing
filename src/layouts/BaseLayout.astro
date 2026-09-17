@@ -282,7 +282,9 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                 window.gtag = function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                gtag('config', trackingConfig.ga4Id);
+                // Explicit QA opt-in; ordinary visitors are never marked as debug traffic.
+                const analyticsDebug = new URLSearchParams(window.location.search).get('ga_debug') === '1';
+                gtag('config', trackingConfig.ga4Id, analyticsDebug ? { debug_mode: true } : {});
 
                 // The GT- Google tag is configured alongside the GA4 property rather than
                 // replacing it, so measurement keeps working if the GT container's
@@ -384,7 +386,7 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                     if (leadForm) {
                         let formStarted = false;
                         leadForm.addEventListener('focusin', () => {
-                            if (!formStarted) {
+                            if (!formStarted && leadForm.dataset.funnelManaged !== 'true') {
                                 formStarted = true;
                                 window.gtag('event', 'form_start', { event_category: 'engagement', form_name: 'Schedule Lead Form', page_location: window.location.href });
                             }

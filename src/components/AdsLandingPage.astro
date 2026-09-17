@@ -3,11 +3,11 @@ import { Image } from "astro:assets";
 import mattImage from "@assets/images/matt.webp";
 import logo from "@assets/images/svg/rr-marketing-logo.svg";
 import client from "@data/client.json";
+import { offer, offerFaqs } from "@data/offer.js";
 
 interface ServiceItem {
   title: string;
   text: string;
-  detail: string;
 }
 
 interface ProofItem {
@@ -88,6 +88,7 @@ const {
     <div class="rm-hero-inner">
       <div class="rm-hero-copy">
         <h1 id="rm-hero-title">{heroTitle}</h1>
+        <p class="rm-hero-proof"><a href="#results"><strong>5 → 18 LSA leads</strong> · Chicago-area client · May–July 2026</a><small>Reported client outcome. Results vary.</small></p>
         <p class="rm-hero-text">{heroText}</p>
 
         <div class="rm-no-layers">
@@ -108,8 +109,8 @@ const {
           </p>
 
           <div class="rm-form-heading">
-            <h2>Request your 30-minute strategy call</h2>
-            <p>You will speak directly with our founder, Matt Pugh.</p>
+            <h2>Request your {offer.session}</h2>
+            <p>Free · 30 minutes · With founder Matt Pugh</p>
           </div>
 
           <input type="hidden" name="gclid" data-attribution-field="gclid" />
@@ -166,7 +167,7 @@ const {
                   What are you looking for?
                   <select required name="program-scope">
                     <option value="" selected disabled>Choose the closest fit</option>
-                    <option value="full-program">The full program</option>
+                    <option value="full-program">{offer.name}</option>
                     <option value="paid-led">Mostly paid ads</option>
                     <option value="single-service">One specific service</option>
                     <option value="not-sure">Not sure yet</option>
@@ -174,7 +175,7 @@ const {
                 </label>
                 <label>
                   Monthly marketing budget, including ad spend
-                  <span>Your total monthly investment — what you'd spend with us plus what goes to Google.</span>
+                  <span>Typical total budget: $2,500–$10,000 per month, including management and ad spend. Still planning? Choose “Not decided yet.”</span>
                   <select required name="monthly-budget">
                     <option value="" selected disabled>Choose a range</option>
                     <option value="under-2500">Under $2,500 / month</option>
@@ -210,6 +211,7 @@ const {
               <span><strong>Speak with Matt</strong>Directly with the founder</span>
             </li>
           </ul>
+          <p class="rm-takeaway">{offer.takeaway}</p>
           <p class="rm-privacy-note">By submitting this form you agree that R &amp; R Marketing may contact you by email or phone about your strategy call. We do not sell your details. <a href="/privacy/">Privacy policy</a></p>
         </form>
       </div>
@@ -276,7 +278,6 @@ const {
               <h3>{service.title}</h3>
               <p>{service.text}</p>
             </div>
-            <p class="rm-service-detail">{service.detail}</p>
           </li>
         ))}
       </ol>
@@ -335,7 +336,10 @@ const {
         </figure>
       )}
 
-      <p class="rm-results-disclosure">Client names are withheld by agreement. Every figure above is taken from the client's own reporting for the stated window and is not a guarantee of future results.</p>
+      <div class="rm-results-footer">
+        <blockquote class="rm-testimonial"><p>“Their expertise shows in everything they do, from our website's design to our targeted marketing campaigns.”</p><footer>Jason Fogus, Owner of TRW Contracting</footer></blockquote>
+        <p class="rm-results-disclosure">Case-study client names are withheld by agreement. Every figure above is taken from the client's own reporting for the stated window and is not a guarantee of future results.</p>
+      </div>
     </div>
   </section>
 
@@ -360,7 +364,7 @@ const {
   <section id="how-it-works" class="rm-call" aria-labelledby="rm-call-title">
     <div class="rm-section-shell rm-call-grid">
       <div class="rm-call-copy">
-        <h2 id="rm-call-title">Start with a real conversation.</h2>
+        <h2 id="rm-call-title">Your {offer.session}.</h2>
         <p>Matt will look at your service territory, online visibility, and lead opportunities with you. You can ask questions, talk through what is not working, and decide whether R & R Marketing is the right fit.</p>
         <ul class="rm-call-topics" aria-label="What the call covers">
           <li>Your service territory</li>
@@ -370,24 +374,28 @@ const {
       </div>
       <ol class="rm-call-steps">
         <li><span>Tell us about your market</span><p>Share your company and service territory in the form.</p></li>
-        <li><span>Matt reviews the details</span><p>He looks at your territory and follows up with the next step.</p></li>
+        <li><span>Choose your session time</span><p>After submitting, use the calendar on the confirmation page to book your session with Matt.</p></li>
         <li><span>Talk it through together</span><p>Spend 30 focused minutes with Matt. There is nothing you need to prepare.</p></li>
       </ol>
     </div>
   </section>
+
+  <section class="rm-faq" aria-labelledby="rm-faq-title"><div class="rm-section-shell"><h2 id="rm-faq-title">Know what you’re signing up for.</h2><div class="rm-faq-list">{offerFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></div></section>
+
+  <section class="rm-checklist" aria-labelledby="rm-checklist-title"><div class="rm-section-shell"><h2 id="rm-checklist-title">Not ready for a call? Start here.</h2><p>Use our AI visibility checklist to review how clearly your restoration company can be found, understood, and cited. A practical self-check, with no custom audit or call required.</p><a href={offer.checklistPath}>Get the AI visibility checklist <span aria-hidden="true">→</span></a></div></section>
 
   <section class="rm-final" aria-labelledby="rm-final-title">
     <div class="rm-final-grid" aria-hidden="true"></div>
     <div class="rm-section-shell rm-final-inner">
       <div>
         <h2 id="rm-final-title">Your marketing agency should not work for your competition.</h2>
-        <p>We work with one restoration company per service territory, subject to availability. Let’s start by checking yours.</p>
+        <p>We are your marketing partner, not a shared-lead marketplace. We work with one restoration company per agreed service territory, subject to availability. Let’s start by checking yours.</p>
       </div>
       <div class="rm-final-action">
         <span>Territory availability</span>
         <p>Tell us where you work, and we will let you know if your territory is open.</p>
         <a class="rm-final-cta" href="#lead-form">
-          <span class="rm-final-cta-copy"><strong>Check my territory</strong><small>Request a 30-minute strategy call</small></span>
+          <span class="rm-final-cta-copy"><strong>Check my territory</strong><small>Free Lead Flow Acceleration Session</small></span>
           <span class="rm-final-cta-arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -405,10 +413,11 @@ const {
     </div>
   </footer>
 
-  <a class="rm-mobile-cta is-hidden" href="#lead-form">Check territory & request a call</a>
+  <nav class="rm-mobile-cta is-hidden" aria-label="Quick contact"><a href={`tel:${client.phoneForTel}`}>Call Matt</a><a href="#lead-form">Check territory</a></nav>
 </div>
 
 <script>
+  import { setupLeadFunnel } from "../scripts/lead-funnel";
   // Until the rank-tracking file is in place, drop the whole figure rather than
   // showing a broken image on a page that carries paid traffic.
   const heatMapImage = document.querySelector<HTMLImageElement>("[data-heatmap-media]");
@@ -470,6 +479,7 @@ const {
   }
 
   if (landingLeadForm) {
+    const funnel = setupLeadFunnel(landingLeadForm);
     const firstStep = landingLeadForm.querySelector<HTMLElement>("[data-form-step='1']");
     const secondStep = landingLeadForm.querySelector<HTMLElement>("[data-form-step='2']");
     const nextButton = landingLeadForm.querySelector<HTMLButtonElement>("[data-step-next]");
@@ -508,6 +518,7 @@ const {
         secondStep.hidden = showingFirst;
         setRequired(firstStepFields, showingFirst);
         setRequired(secondStepFields, !showingFirst);
+        if (!showingFirst) funnel?.stepTwoVisible();
 
         if (focus) {
           const heading = (showingFirst ? firstStep : secondStep).querySelector<HTMLElement>("legend");
@@ -588,6 +599,31 @@ const {
 </script>
 
 <style lang="less">
+  .rm-hero-proof { margin: 1.25rem 0; font-size: .92rem; line-height: 1.6; }
+  .rm-hero-proof a { color: #9cf4f2; text-decoration: underline; text-underline-offset: .2em; }
+  .rm-hero-proof small { display: block; color: #dce9f7; font-size: .75rem; }
+  .rm-takeaway { color: #42516a; font-size: .85rem; line-height: 1.65; margin-top: 1.5rem; }
+  .rm-results-footer { display: grid; gap: 1.5rem; padding: 2rem clamp(1.25rem, 3vw, 2rem) 0; align-items: start; }
+  .rm-testimonial { margin: 0; min-width: 0; color: #071a42; }
+  .rm-testimonial p { font-size: 1.15rem; line-height: 1.65; }
+  .rm-testimonial footer { font-size: .85rem; margin-top: 1rem; color: #42516a; }
+  .rm-faq, .rm-checklist { padding: clamp(3rem, 6vw, 5rem) 1.25rem; background: #fbfcf8; }
+  .rm-faq h2, .rm-checklist h2 { color: #071a42; font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.2; }
+  .rm-faq h2 { text-align: center; }
+  .rm-faq-list { margin: 2rem auto 0; max-width: 52rem; }
+  .rm-faq details { border-bottom: 1px solid #acb9ca; }
+  .rm-faq summary { cursor: pointer; color: #071a42; font-weight: 700; padding: 1.5rem 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; list-style: none; line-height: 1.5; }
+  .rm-faq summary::-webkit-details-marker { display: none; }
+  .rm-faq summary::after { content: ''; width: .6rem; height: .6rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); flex-shrink: 0; margin: -.3rem .25rem 0; }
+  .rm-faq details[open] summary::after { transform: rotate(225deg); margin-top: .3rem; }
+  .rm-faq summary:focus-visible { outline: 2px solid #0b4aa2; outline-offset: -2px; }
+  .rm-faq p, .rm-checklist p { max-width: 70ch; color: #42516a; line-height: 1.75; margin: 1rem 0; }
+  .rm-faq details > p { margin: 0; padding: 1.25rem 1rem 1.75rem; }
+  .rm-checklist { background: #edf2f5; }
+  .rm-checklist a { color: #0b4aa2; text-decoration: underline; font-weight: 700; display: inline-block; padding-block: .75rem; }
+  .rm-mobile-cta a { color: inherit; display: flex; align-items: center; justify-content: center; min-height: 44px; flex: 1; padding: .3rem .6rem; }
+  .rm-mobile-cta a + a { border-left: 1px solid #071a42; }
+
   .rm-landing {
     --rm-ink: #071a42;
     --rm-cobalt: #0b4aa2;
@@ -1053,7 +1089,6 @@ const {
   .rm-service-node { width: 2.9rem; height: 2.9rem; position: absolute; top: 0; left: 0; z-index: 1; border: 1px solid var(--rm-cyan); border-radius: 50%; background: var(--rm-ink); color: #9cf4f2; display: grid; place-items: center; font-size: 0.7rem; font-weight: 800; }
   .rm-service-copy h3 { color: #fff !important; font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -0.03em !important; }
   .rm-service-copy p { margin-top: 0.5rem; color: #c1cede !important; line-height: 1.65; }
-  .rm-service-detail { color: #82eeeb !important; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 
   .rm-mid-cta { margin-top: 1rem; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); display: grid; gap: 1rem; }
   .rm-mid-cta p { color: #fff !important; font-size: clamp(1.15rem, 3vw, 1.6rem); font-weight: 700; }
@@ -1101,32 +1136,25 @@ const {
 
   .rm-program-band {
     margin-top: clamp(2rem, 4vw, 3rem);
-    padding: clamp(1.25rem, 3vw, 1.75rem);
-    border: 1px solid var(--rm-line);
-    border-left: 3px solid var(--rm-mustard);
-    border-radius: 0.55rem;
-    background: #fff;
+    padding: 1.5rem 0;
+    border-block: 1px solid var(--rm-line);
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
-    align-items: center;
   }
 
-  .rm-program-pillars { display: flex; flex-wrap: wrap; gap: 0.5rem 0.65rem; }
+  .rm-program-pillars { display: flex; flex-wrap: wrap; gap: 0.65rem 1.5rem; margin: 0; padding: 0; min-width: 0; }
 
   .rm-program-pillars li {
-    padding: 0.45rem 0.85rem;
-    border: 1px solid rgba(11, 74, 162, 0.28);
-    border-radius: 2rem;
-    background: rgba(11, 74, 162, 0.06);
+    padding: 0;
     list-style: none;
     color: var(--rm-cobalt);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.5;
   }
 
-  .rm-program-note { color: #46566f !important; font-size: 0.95rem; line-height: 1.6; }
+  .rm-program-note { max-width: 78ch; margin: 0; color: #46566f !important; font-size: 1rem; line-height: 1.7; }
 
   .rm-heatmap {
     margin-top: clamp(2.5rem, 6vw, 4rem);
@@ -1144,7 +1172,7 @@ const {
   .rm-heatmap-caption { margin-top: 0.85rem; color: #fff !important; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; }
   .rm-heatmap-note { margin-top: 0.85rem; color: #b9c7da !important; font-size: 0.85rem; line-height: 1.65; }
 
-  .rm-results-disclosure { max-width: 74ch; margin-top: 2rem; color: #6b788c !important; font-size: 0.74rem; line-height: 1.6; }
+  .rm-results-disclosure { margin: 0; color: #46566f !important; font-size: 0.8rem; line-height: 1.7; }
 
   .rm-proof { background: var(--rm-mist); }
   .rm-proof-title-wrap { max-width: 52rem; }
@@ -1237,11 +1265,10 @@ const {
     .rm-service-rail li { padding: 4.5rem 0 0; display: block; }
     .rm-service-node { left: 50%; transform: translateX(-50%); }
     .rm-service-copy { text-align: center; }
-    .rm-service-detail { margin-top: 1rem; text-align: center; }
     .rm-mid-cta { margin-top: 4rem; grid-template-columns: 1fr auto; align-items: center; }
     .rm-results-grid { grid-template-columns: repeat(3, 1fr); }
-    .rm-program-band { grid-template-columns: auto minmax(0, 1fr); gap: 2rem; }
     .rm-heatmap { grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr); gap: clamp(2rem, 4vw, 3.5rem); }
+    .rm-results-footer { grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr); gap: clamp(2rem, 4vw, 3.5rem); }
     .rm-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
     .rm-proof-grid article { padding: 2rem; border-right: 1px solid var(--rm-line); }
     .rm-proof-grid article:first-child { padding-left: 0; }
@@ -1266,7 +1293,7 @@ const {
     .rm-results-head { margin-inline: auto; text-align: center; }
     .rm-results h2,
     .rm-results-head > p { margin-inline: auto; }
-    .rm-results-disclosure { margin-inline: auto; text-align: center; }
+    .rm-results-footer { text-align: left; }
     .rm-program-pillars { justify-content: center; }
     .rm-program-note { text-align: center; }
 

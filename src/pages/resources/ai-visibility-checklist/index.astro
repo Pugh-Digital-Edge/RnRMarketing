@@ -1,0 +1,25 @@
+---
+import BaseLayout from 'src/layouts/BaseLayout.astro';
+import ChecklistSignup from '@components/ChecklistSignup.astro';
+import { offer } from '@data/offer.js';
+---
+<BaseLayout title={offer.checklist} description="A practical self-check for restoration owners: review business information, useful service content, crawler access, and evidence of AI mentions and citations." noindex eagerAnalytics>
+  <section class="checklist-page"><div class="checklist-shell">
+    <div><h1>{offer.checklist}</h1>
+      <p class="intro">Find a useful place to start with AI visibility.</p>
+      <p>Ten checks to work through with your team or agency. Use the printable checklist to spot missing information, organize questions, and choose what to verify next.</p>
+      <ul><li>Business details and Google Business Profile</li><li>Useful service content and real evidence</li><li>Search access, AI mentions, and citations</li><li>Referrals, inquiries, and booked work</li></ul>
+      <p>This is a reusable self-check, not a custom audit or a guarantee of AI placement.</p>
+      <p>Already ready to talk? <a href="/schedule/">Request your {offer.session}</a>.</p>
+    </div><ChecklistSignup />
+  </div></section>
+</BaseLayout>
+<style>
+  .checklist-page { background: #edf2f5; padding: 12rem 1.25rem 5rem; }
+  .checklist-shell { max-width: 72rem; margin: auto; display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 3rem; align-items: start; }
+  h1 { color: #071a42; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.12; letter-spacing: -.03em; }
+  p, li { color: #42516a; line-height: 1.75; } p { margin: 1.25rem 0; max-width: 65ch; }
+  .intro { font-size: 1.3rem; color: #071a42; } ul { padding-left: 1.3rem; list-style: disc outside; } li { margin: .65rem 0; display: list-item; list-style: disc outside; }
+  a { color: #0b4aa2; text-decoration: underline; }
+  @media(max-width: 760px) { .checklist-shell { grid-template-columns: 1fr; gap: 1.5rem; } }
+</style>

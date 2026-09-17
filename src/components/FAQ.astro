@@ -1,10 +1,10 @@
 ---
 import Accordion from "@components/starwind/Accordion.astro";
-import faqs from "@data/faqData.json";
+import faqs from "@data/marketingFaqs.js";
 
 // The FAQPage schema is emitted here rather than in BaseLayout so it only ever
 // appears on pages that actually render these questions. Both the visible
-// markup and the schema below read from faqData.json, so they cannot drift.
+// markup and the schema below read from marketingFaqs.js, so they cannot drift.
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",

@@ -1,0 +1,26 @@
+<form class="checklist-form" name="AI Checklist Form" method="post" action="/resources/ai-visibility-checklist/download/" data-netlify="true" netlify-honeypot="bot-field" data-checklist-form>
+  <input type="hidden" name="form-name" value="AI Checklist Form" />
+  <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+  <input type="hidden" name="landing-page" data-attribution-field="landing_page" />
+  <input type="hidden" name="utm-source" data-attribution-field="utm_source" />
+  <input type="hidden" name="utm-medium" data-attribution-field="utm_medium" />
+  <input type="hidden" name="utm-campaign" data-attribution-field="utm_campaign" />
+  <label for="checklist-email">Email address</label>
+  <input id="checklist-email" type="email" name="email" autocomplete="email" placeholder="you@company.com" required maxlength="254" />
+  <button type="submit">Get the checklist</button>
+  <p>Access the printable PDF on the next page. No call required. By requesting it, you agree that R&amp;R Marketing may email you about the checklist and our services. <a href="/privacy/">Privacy policy</a>.</p>
+  <p role="status" aria-live="polite" data-checklist-status></p>
+</form>
+<script>
+  import '../scripts/checklist-form';
+</script>
+<style>
+  .checklist-form { padding: 2rem; background: #fff; border: 1px solid #acb9ca; border-radius: .5rem; }
+  label { display: block; font-weight: 700; color: #071a42; margin-bottom: .65rem; }
+  input[type=email] { box-sizing: border-box; display: block; width: 100%; padding: 1rem; border: 1px solid #65768e; border-radius: .25rem; color: #071a42; background: #fbfcf8; font: inherit; }
+  input::placeholder { color: #58677c; }
+  button { width: 100%; margin: 1rem 0 .5rem; min-height: 48px; padding: 1rem; border: 0; border-radius: .25rem; background: #0b4aa2; color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+  button:hover { background: #071a42; } button:disabled { opacity: .65; cursor: wait; }
+  :is(input,button,a):focus-visible { outline: 3px solid #0b4aa2; outline-offset: 3px; }
+  p { color: #42516a; line-height: 1.6; font-size: .85rem; } a { color: #0b4aa2; text-decoration: underline; }
+</style>

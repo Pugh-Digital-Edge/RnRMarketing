@@ -1,5 +1,7 @@
 # Restoration marketing landing page handoff
 
+September 17, 2026: the current offer and conversion-flow handoff is [offer alignment](offer-alignment-2026-09-17.md). This earlier record contains historical setup details: the Ads conversion label and thank-you calendar are now configured, and the landing page now includes a separate AI checklist path. Use current source and the newer handoff for implementation.
+
 ## Publish URL
 
 `https://remediationrestorationmarketing.com/restoration-marketing/`

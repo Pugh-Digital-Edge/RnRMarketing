@@ -1,4 +1,5 @@
 ---
+import { offer } from "@data/offer.js";
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { getOptimizedImage } from "@libs/utils";
 import landingImage from "@assets/images/landing/blue-abstract.jpeg";
@@ -51,11 +52,11 @@ const assessmentSteps = [
 const assessmentFaqs = [
   {
     question: "What happens after I request a session?",
-    answer: "We review your service area, online visibility, and lead goals, then reach out with the next steps for your free Lead Flow Acceleration Session.",
+    answer: "After submitting, choose a time for your free Lead Flow Acceleration Session with Matt on the confirmation page. We review your territory, visibility, and priorities together.",
   },
   {
     question: "How long is the session?",
-    answer: "About 30 minutes. That is enough time to review your market, your visibility, and your competition, and to leave you with a prioritized list of what to fix first.",
+    answer: "About 30 minutes. We discuss your market and priorities. You leave with our reusable AI visibility checklist and a clearer sense of what to work on first; a custom written audit is not included.",
   },
   {
     question: "What will you review before the call?",
@@ -67,7 +68,7 @@ const assessmentFaqs = [
   },
   {
     question: "Do you work with my competitors?",
-    answer: "No. We do not work with competing restoration companies in the same service area. When you work with us, we will not take on a competitor in your market.",
+    answer: "We partner with one restoration company per agreed service territory, subject to availability.",
   },
   {
     question: "Who is this best for?",
@@ -114,13 +115,13 @@ const faqSchema = {
       <span class="hero-eyebrow">One restoration company per market</span>
       <h1>More <span>Water, Fire, and Mold</span> Jobs From Your Service Area</h1>
       <p>
-        Request a free Lead Flow Acceleration Session. We review your territory, your online visibility, and where competitors are winning the emergency calls, then show you the next moves worth making.
+        Explore the {offer.name} with Matt in a free {offer.session}. We review your territory, visibility, and lead opportunities. {offer.takeaway}
       </p>
       <a href="#lead-form" class="cs-button-solid">Request Your Free Session</a>
       <ul class="hero-trust">
         <li>30-minute session</li>
         <li>No obligation</li>
-        <li>Not a sales pitch</li>
+        <li>Founder-led</li>
       </ul>
     </div>
   </section>

@@ -1,4 +1,5 @@
 ---
+import { offer } from "@data/offer.js";
 import desktopImage from "@assets/images/CTA/black-abstract-cta.jpg"
 import { Picture } from 'astro:assets';
 import { Image } from 'astro:assets';
@@ -15,10 +16,12 @@ import { Image } from 'astro:assets';
             <span class="cs-topper text-white">CHECK TERRITORY AVAILABILITY</span>
             <h2 class="cs-title">Get a Clearer Plan for More Qualified Restoration Leads</h2>
             <p class="cs-text text-white font-bold">
-                In your free Lead Flow Acceleration Session, we review your service territory, online visibility, and lead opportunities. We work with one restoration company per territory, subject to availability.
+                Explore the {offer.name} in your free {offer.session}. We review your service territory, visibility, and lead opportunities. {offer.territory}
             </p>
             <a href="/schedule/" class="cs-button-solid">Request Your Free Acceleration Session</a>
-            <p class="text-white mt-2">30-minute session | No obligation | Recommendations tailored to your market</p>
+            <p class="text-white mt-2">30 minutes with Matt | No obligation</p>
+            <p class="text-white mt-2">{offer.takeaway}</p>
+            <a href={offer.checklistPath} class="text-white" style="text-decoration: underline; display: inline-block; padding: 1rem 0;">Get the AI visibility checklist</a>
         </div>
         <Picture class="cs-picture"
             src={desktopImage} 

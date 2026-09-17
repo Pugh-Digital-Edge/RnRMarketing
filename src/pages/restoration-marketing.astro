@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import AdsLandingPage from "@components/AdsLandingPage.astro";
+import { offer, programServices } from "@data/offer.js";
 
 const bodyContract = `impeccable:contract 60015ef0
 THESIS: A restoration marketer should feel like a protected territory and a founder-led specialist agency, not an interchangeable agency brochure or a one-person consultancy.
@@ -12,33 +13,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 // The page sells one managed program, so these read as inclusions rather than
 // a menu a visitor could order from.
-const services = [
-  {
-    title: "Your website",
-    text: "The foundation everything else runs on. We build and maintain it, so the demand the rest of the program creates has somewhere that actually converts.",
-    detail: "Foundation of the program",
-  },
-  {
-    title: "Local Services Ads",
-    text: "Google Guaranteed placement managed against your real lead quality and territory, not just clicks and impressions.",
-    detail: "Included in the program",
-  },
-  {
-    title: "Restoration SEO",
-    text: "Service and location coverage so your company is found for water, fire, and mold searches across the markets you serve.",
-    detail: "Included in the program",
-  },
-  {
-    title: "AEO",
-    text: "Structured, answer-ready content so your company gets surfaced and cited when property owners ask AI assistants who to call.",
-    detail: "Included in the program",
-  },
-  {
-    title: "Lead tracking",
-    text: "Call, form, and job tracking wired end to end, so every lead traces back to what produced it.",
-    detail: "Included in the program",
-  },
-];
+const services = programServices;
 
 const proofItems = [
   {
@@ -91,9 +66,9 @@ const results = [
   },
 ];
 
-const programPillars = ["Website", "Local Services Ads", "SEO", "AEO", "Lead tracking"];
+const programPillars = programServices.map(service => service.title);
 
-const programNote = "Every client runs the same program, built on a website we own and maintain. We do not assemble a different package per account, so the results below are the same system applied in three different markets.";
+const programNote = `${offer.name} brings these five areas together. We build and maintain your website, with transfer rights described in your agreement. The reports below show the combined work in three different markets.`;
 
 const heatMap = {
   src: "/assets/images/case-studies/chicago-gbp-heatmap.gif",
@@ -105,8 +80,8 @@ const heatMap = {
 
 <BaseLayout
   title="Full-Service Restoration Marketing for One Company Per Territory"
-  description="One team running every part of your restoration marketing: SEO, Google Business Profile, PPC and LSA, your website, and lead tracking. One restoration company per territory. Request a founder-led strategy call."
-  dateModified="2026-08-20"
+  description={`${offer.name}: website, paid search, local SEO and Google Business Profile, AI visibility, and lead tracking. Request your ${offer.session}.`}
+  dateModified="2026-09-17"
   bodyContract={bodyContract}
   conversionOnly
   noindex
@@ -114,11 +89,11 @@ const heatMap = {
 >
   <AdsLandingPage
     heroTitle="One Team Running Every Part of Your Restoration Marketing."
-    heroText="SEO, Google Business Profile, Local Services Ads, your website, and lead tracking, built and managed as one system by a restoration-only agency. We take on one restoration company per service territory."
-    servicesTitle="What we take off your plate."
-    servicesIntro="You are not hiring a channel. You are handing over the whole path from the first search to the booked job, to one team that owns every part of it, starting with the website it all runs on."
+    heroText={`${offer.name} connects your website, paid search, local SEO and Google Business Profile, AI visibility, and lead tracking. ${offer.territory}`}
+    servicesTitle={offer.name}
+    servicesIntro={offer.summary}
     services={services}
-    resultsTitle="What the full program has produced."
+    resultsTitle="The work behind the system."
     resultsIntro="Every result below came from running the entire program together, not from one service in isolation. Figures are taken from each client's own reporting for the window shown."
     results={results}
     programPillars={programPillars}

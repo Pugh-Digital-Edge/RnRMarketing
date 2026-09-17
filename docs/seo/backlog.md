@@ -1,20 +1,21 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-09-15
+Last reconciled: 2026-09-16
 Current implementation run: [`2026-09-10-backlog-implementation.md`](runs/2026-09-10-backlog-implementation.md)
 Monthly learning review: [`2026-09-01-monthly-review.md`](runs/2026-09-01-monthly-review.md)
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
 Current weekly opportunity run: [`2026-09-14-weekly-opportunity.md`](runs/2026-09-14-weekly-opportunity.md)
+Current weekly coordinator run: [`2026-09-16-weekly-coordinator.md`](runs/2026-09-16-weekly-coordinator.md)
 Article implementation run: [`2026-09-14-weekly-article-implementation.md`](runs/2026-09-14-weekly-article-implementation.md)
 Regression run: [`2026-08-24-production-regression.md`](runs/2026-08-24-production-regression.md)
-Current regression run: [`2026-09-15-production-regression.md`](runs/2026-09-15-production-regression.md)
+Current regression run: [`2026-09-16-production-regression.md`](runs/2026-09-16-production-regression.md)
 Weekly implementation run: [`2026-08-27-weekly-plan-implementation.md`](runs/2026-08-27-weekly-plan-implementation.md)
 
 Status values: Candidate · Planned · In Progress · Deployed · Measuring · Validated · Rejected · Superseded
 
 ## Current pipeline authorization — 2026-09-15
 
-Matt approved the [pipeline fixes](pipeline.md), explicitly retaining one new article per week. This supersedes older per-run approval gates for the exact bounded schedules, repair syncs and September 25 same-set inspection in that contract. No indexing submissions or basket expansion are authorized. GSC was refreshed through 2026-09-13 and GA4 property 543995602 was connected and synced on September 15; earlier dated statements about unavailable/stale evidence remain historical. SEO-012's live mold guide satisfies the September 14–20 article obligation. SEO-013 tracks the pipeline upgrade and its first unattended verification.
+Matt approved the [pipeline fixes](pipeline.md), explicitly retaining one new article per week. This supersedes older per-run approval gates for the exact bounded schedules, repair syncs and September 25 same-set inspection in that contract. No indexing submissions or basket expansion are authorized. GSC is refreshed through 2026-09-13 with a September 16 inspection/sync, and GA4 property 543995602 is connected and synced through September 16; earlier dated statements about unavailable/stale evidence remain historical. SEO-012's live mold guide satisfies the September 14–20 article obligation. SEO-013 tracks the pipeline upgrade and its first unattended verification.
 
 ## September evidence-ranked order
 
@@ -61,6 +62,7 @@ The September 10 instruction implemented the then-current backlog. The September
 - 2026-09-11 recheck: current HEAD `7701720` is documentation-only after the September 10 verified `84e67ea` artifact. The live 98-page sitemap, 100-target internal crawl, normalized SEO signals, and AI-access artifacts remain clean. Parsed `LocalBusiness.priceRange` is `$$` on all 98 live pages and all 98 local-build pages with 0 mismatches; the known Netlify deploy remains `6aa2e9136cdb4e00087de203`, while the current response exposes request ID `01M285WM7HNXTFMHY4K9NSX6WN` and no stable build ID. No source-code, deployment, configuration, indexing, or content regression was found.
 - 2026-09-14 recheck: current HEAD `858a02d` includes broad functionality/presentation changes, but the 98-page live sitemap remains healthy. All 98 pages return 200 with valid title, description, self-canonical, one H1, parseable JSON-LD, the shared `LocalBusiness` entity, and indexability; a filtered crawl of 200 same-origin HTML targets found 0 broken targets and 0 redirects. Twelve normal/`CanonryBot/1.0` representative bodies are identical, including recently affected homepage, contact, schedule, services, PPC, SEO, and published article routes. The current local build matches live on the checked page SEO signals and affected-route visible output; no source-code, deployment/stale-artifact, configuration, indexing, or content regression was found. `npm run build` passed with 103 pages and a 98-URL sitemap; `npm test` passed 16/16. The current live response exposes request IDs but no stable hosting build ID and retains the non-identifying stale `Last-Modified` value.
 - 2026-09-15 recheck: current HEAD `d5db10d` adds the SEO-012 mold guide and reconciles the previously documented candidate into the deployed artifact. Live production now serves 99/99 sitemap pages with valid title, description, self-canonical, one H1, parseable JSON-LD, the shared `LocalBusiness` entity, and indexability; 202 filtered same-origin HTML targets returned 200 after excluding the expected POST-only lead-submit 405. Twelve normal/`CanonryBot/1.0` representative bodies are identical, local/live SEO signals match 0/99, and robots/llms/sitemap artifacts match after normalization. The new article is live, sitemap-listed, indexable, and linked to the mold industry hub; no source-code, deployment/stale-artifact, configuration, indexing, or content regression was found. `npm run build` passed with 104 pages and a 99-URL sitemap; `npm test` passed 16/16. Netlify exposes request IDs but no stable build ID; the stale `Last-Modified` value remains non-identifying.
+- 2026-09-16 recheck: current HEAD and the live `/build-info.json` receipt are `c8698c8`; the source and sitemap hashes are unchanged from the prior accepted artifact, while the receipt revision changed after the approved pipeline/documentation deployment. The locked auto check therefore ran full validation and parity: 99/99 sitemap pages, 101 same-origin navigation targets, 99 Markdown alternates, expected redirects/exclusions/404 behavior, representative normal/`CanonryBot/1.0` parity, and local/live SEO-signal and AI-access artifact parity all passed with zero failures. No source-code SEO, deployment/stale-artifact, configuration, indexing, or content regression was found.
 - 2026-09-07 weekly reconciliation: no newer repository commit or full production regression record exists. A bounded live read found the sitemap index/child at HTTP 200 with 97 unique URLs, and the fire specialist, fire guide, and both published article URLs remained HTTP 200 and indexable. No new parity intervention is supported; keep the verified artifact stable.
 
 ### SEO-002 — Improve intended index coverage after parity is stable
@@ -89,6 +91,7 @@ The September 10 instruction implemented the then-current backlog. The September
 - 2026-09-10 production reconciliation: stored Google remains 53 indexed / 47 not indexed / 0 deindexed across 100 URLs, last inspected 2026-08-27 and last synced 2026-08-24; Bing remains 37 indexed / 1 unknown across 38 inspections, last inspected 2026-08-27. The live sitemap remains 98 URLs, and SEO-009/SEO-010 are absent from both stored provider samples, so their provider states remain unavailable, not zero. No sync, inspection, submission, or indexing request was run.
 - 2026-09-11 production reconciliation: stored Google remains 53 indexed / 47 not indexed / 0 deindexed across 100 URLs, last inspected 2026-08-27 and last synced 2026-08-24; Bing remains 37 indexed / 1 unknown across 38 inspections, last inspected 2026-08-27. The live sitemap remains 98 URLs, and SEO-009/SEO-010 remain absent from both stored provider samples, so their provider states remain unavailable, not zero. No sync, inspection, submission, or indexing request was run.
 - 2026-09-15 production reconciliation: stored Google remains 53 indexed / 47 not indexed / 0 deindexed across 100 URLs, last inspected 2026-08-27 and last synced 2026-08-24; Bing remains 37 indexed / 1 unknown across 38 inspections, last inspected 2026-08-27. The live sitemap now contains 99 URLs, and SEO-012 remains absent from the stored provider samples, so its current provider state is unavailable, not zero. No sync, inspection, submission, or indexing request was run; the approved bounded URL-level recheck remains gated no earlier than 2026-09-25.
+- 2026-09-16 production reconciliation: the scheduled data-refresh completed a fresh Google read of 103 stored URLs: 58 indexed, 45 not indexed, and 0 deindexed, inspected and synced 2026-09-16. The water-damage and LSA guides are `Submitted and indexed`; the agency-selection and mold-remediation guides are `URL is unknown to Google`. Bing's fresh sample is 41 indexed, 0 known not-indexed, and 1 unknown across 42 inspections from 2026-09-16; the newer agency, LSA, and mold URLs are not represented, while the older water-damage URL remains the unknown row. These are provider samples, not a full 99-URL verdict and not a reason to submit or request indexing. SEO-002's same 23-URL bounded recheck remains gated no earlier than 2026-09-25.
 
 ### SEO-003 — Re-run visibility baseline with the adopted query basket
 
@@ -306,8 +309,41 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Effort: Medium.
 - Confidence: High for the diagnosed operational defects and immediate fresh-data recovery; Medium for unattended delivery until the first scheduled cycle completes.
 - Deployment commit/build ID: d24a865140bfcfab3bdae00e7833c2afd0bae743; Netlify deploy 6aa96d8a8894200008645491 published September 15 at 12:12:22 Eastern. The live source receipt and full 99-page parity check passed at 16:13:25 UTC. Operational scheduled-run acceptance remains due September 21.
+- 2026-09-16 checkpoint: the native data-refresh schedule ran at 06:00 Eastern and refreshed GSC/Bing samples; GA4 is connected and synced through 2026-09-16. The production automation's locked full check passed against current HEAD `c8698c8`, but the first unattended weekly coordinator acceptance remains due September 21. Keep SEO-013 Measuring until that checkpoint is observed.
 - Measurement due date: 2026-09-21
 - Verification method: successful daily fresh-data runs, September 20 complete 42×3 visibility sweep and technical audit, one September 21 article committed/pushed/live or explicit recoverable blocker, no concurrent lock owners, due items measured against complete data windows, zero Astro errors, passing tests/build, and live signal parity. Wednesday/Friday retries must not produce a second article in the same week. Keep this item Measuring until scheduled execution is observed.
+
+## Reserve article candidates
+
+### SEO-014 — Google Ads for restoration companies
+
+- Status: Candidate
+- Approval state: reserve brief only; not approved for the already-satisfied September 14–20 publication week.
+- Category: search-intent/content gap; entity, citation, and AEO weakness.
+- Scope: tracked query `Google Ads for restoration companies`; fresh GSC `google ads` family; prospective informational resource supporting `/services/ppc/`.
+- Problem: the site has commercial PPC pages and an LSA explainer but no operator-focused Google Ads guide covering campaign structure, territory controls, query quality, call handling, and booked-job measurement.
+- Evidence baseline: the tracked query is unmentioned and uncited across four completed runs, while seven competitor domains appear in cited sources. GSC data for 2026-08-15 through 2026-09-13 shows 49 impressions, 0 clicks, and weighted average position 36.29 for the `google ads` family; 36 impressions map to `/services/ppc/`.
+- Hypothesis: a distinct educational guide can satisfy informational Google Ads intent while the commercial PPC page retains service intent.
+- Expected impact: create a useful first-party answer source and a clearer internal path into PPC and lead-tracking services. No outcome is promised.
+- Recommended change: recheck after the September 20 fixed-basket run; if the gap persists, validate distinct intent and use current Google primary sources for a future weekly article.
+- Effort: Medium.
+- Confidence: Medium–High for the gap; Medium for organic/AEO impact.
+- Verification method: fresh query/provider evidence, exact GSC query/page baseline, duplication review, standard release validation, exact live parity, and a later comparable outcome window.
+
+### SEO-015 — Email marketing platforms for restoration companies
+
+- Status: Candidate
+- Approval state: second reserve brief only; requires fresh evidence and factual-source review before a future weekly auto-approval.
+- Category: search-intent/content gap; lead-nurture and platform-selection guidance.
+- Scope: tracked query `recommended email marketing platforms for remediation companies`; fresh GSC `email marketing` family; prospective informational resource distinct from `/services/retargeting/`.
+- Problem: the site lacks a restoration-specific decision resource for choosing and governing email marketing tools; current impressions split across the services overview, retargeting page, and homepage.
+- Evidence baseline: the tracked query is unmentioned and uncited across three completed runs, with two competitor domains cited. GSC data for 2026-08-15 through 2026-09-13 shows 12 impressions, 0 clicks, and weighted average position 44.83 for the `email marketing` family.
+- Hypothesis: a bounded platform-selection framework tied to consent, list ownership, lifecycle use, and measurement can serve distinct informational intent without inventing rankings or vendor results.
+- Expected impact: create a modest-demand first-party resource and a qualified route into retargeting and lead-tracking services. No outcome is promised.
+- Recommended change: retain as the lower-confidence reserve. Revalidate demand, current platform documentation, and overlap with retargeting before publication.
+- Effort: Medium.
+- Confidence: Medium–Low because search demand is small; Medium that the intent is distinct.
+- Verification method: fresh GSC/Canonry evidence, current vendor and primary-source review, cannibalization check, release validation, live parity, and a later exact query/page comparison.
 
 ## Reconciled / not prioritized
 
