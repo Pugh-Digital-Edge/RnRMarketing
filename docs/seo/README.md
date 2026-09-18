@@ -18,9 +18,9 @@ Every substantive run must read the current strategy, backlog, learnings, and re
 
 ## Documents
 
-- [COHESION.md](COHESION.md) — Codex executes closed-loop SEO and merges Cloud Agent handoff PRs; Grok Bot owns hosted Canonry/infra and launches agents only after the SEO gate.
-- [`handoffs/`](handoffs/README.md) — Notion Fulfillment briefs (`pending/` actionable, `review/` waits for Matt, `done/` historical). Cloud Agent implements as a PR; Codex reviews and merges.
-- [`pipeline.md`](pipeline.md) — current automation ownership, authorized collection, weekly article commitment, shared lock, release gate, due-date measurements, and Codex review/merge of handoff PRs.
+- [COHESION.md](COHESION.md) — Canonry measures; Notion mirrors execution status; the backlog keeps hypotheses and checkpoints; Codex prioritizes, accepts releases, and learns; Grok coordinates; Cloud Agent implements. Not a second publisher.
+- [`handoffs/`](handoffs/README.md) — Notion Fulfillment briefs. Lifecycle is Ready → Implementing → PR review → Awaiting live verification → Measuring → Done. `done/` is accepted-and-measured; `cancelled/` is closed unmerged.
+- [`pipeline.md`](pipeline.md) — current automation ownership, authorized collection, weekly article commitment, shared lock (linked worktrees on one clone), release gate, due-date measurements, weekday handoff discovery, and coordinator bounded review.
 - [`strategy.md`](strategy.md) â€” durable business, measurement, and prioritization context.
 - [`backlog.md`](backlog.md) â€” current actionable work with stable IDs and statuses.
 - [`learnings.md`](learnings.md) â€” conclusions promoted only after before/after evidence.

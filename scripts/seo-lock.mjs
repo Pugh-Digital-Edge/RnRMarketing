@@ -32,6 +32,8 @@ export async function manageLock(file, action, owner) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   try {
+    // Common-dir lock is shared by linked worktrees on this clone only — not by
+    // independent Cloud Agent clones, a laptop checkout, or the VPS.
     const common = execFileSync('git', ['rev-parse', '--git-common-dir'], { encoding: 'utf8' }).trim();
     const result = await manageLock(path.resolve(common, 'seo-pipeline.lock'), process.argv[2], process.argv[3]);
     console.log(JSON.stringify(result));

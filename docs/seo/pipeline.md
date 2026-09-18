@@ -9,11 +9,11 @@ Approved by Matt on 2026-09-15: apply the pipeline assessment fixes, retaining *
 | Canonry data-refresh | Daily 06:00 | Refresh connected search and analytics integrations. |
 | Canonry answer-visibility | Sunday 18:00 | One fixed-basket sweep: 42 existing queries Ã— Gemini/OpenAI/Claude. No query/provider expansion. |
 | Canonry site-audit | Sunday 19:00 | One bounded technical audit, no dead-link option. |
-| Production and measurement automation | Weekdays 08:00 | Lightweight live checks; full validation/parity on source or sitemap change or after seven days. Measure due interventions with fresh evidence. |
-| Weekly coordinator | Monday, Wednesday, Friday 09:30 | Rank opportunities, deliver this week's one article, verify deployment, and measure due work. Wednesday/Friday are recovery/checkpoint runs, not extra article quotas. |
+| Production and measurement automation | Weekdays 08:00 | Lightweight live checks; full validation/parity on source or sitemap change or after seven days. Measure due interventions with fresh evidence. Discover handoff PRs using the executable signals in this contract (candidates only; discovery does not grant approval). |
+| Weekly coordinator | Monday, Wednesday, Friday 09:30 | Rank opportunities, deliver this week's one article, verify deployment, and measure due work. Wednesday/Friday are recovery/checkpoint runs, not extra article quotas. After the article is secured and urgent regressions are handled, bounded review of complete handoff PRs. |
 | Monthly learning review | First day 10:30 | Synthesize already-measured outcomes and adjust strategy. |
 
-The former separate opportunity job is paused. Its responsibility belongs to the coordinator, immediately upstream of article selection. All repository-writing roles share one lock. Canonry collection jobs write only Canonry state.
+The former separate opportunity job is paused. Its responsibility belongs to the coordinator, immediately upstream of article selection. Main-branch writers on the designated Codex checkout share one lock. Canonry collection jobs write only Canonry state.
 
 ## Lock and release
 
@@ -24,7 +24,9 @@ $seoOwner = 'seo-' + [guid]::NewGuid().ToString('N')
 node scripts/seo-lock.mjs acquire $seoOwner
 ```
 
-Only exit code 0 with `acquired: true` grants ownership. A busy lock means no writes or builds. Retry at most ten times, 30 seconds apart; then report contention once and defer to the next scheduled checkpoint. Do not steal an old lock automatically. If abandoned, inspect task state and release using its recorded owner only after confirming the owning run ended. The lock lives in the Git common directory, so linked worktrees share it.
+Only exit code 0 with `acquired: true` grants ownership. A busy lock means no writes or builds. Retry at most ten times, 30 seconds apart; then report contention once and defer to the next scheduled checkpoint. Do not steal an old lock automatically. If abandoned, inspect task state and release using its recorded owner only after confirming the owning run ended.
+
+`scripts/seo-lock.mjs` stores the lock in this clone's Git common directory. It coordinates **linked worktrees on that clone**, not independent Cloud Agent clones, a laptop checkout, or the VPS. Cloud Agents work on isolated branches; parallel implementation is OK. One designated Codex checkout serializes **main-branch releases** under this lock. Overlapping releases need serialization. Validate a proposed merge against **current main**; invalidate that validation if either revision changes; refuse merge if the PR head moved.
 
 Use a PowerShell `try/finally` around bounded command batches. For agent work spanning tool calls, retain the token and release before returning, including on failures:
 
@@ -77,7 +79,7 @@ If a window is not complete, leave Measuring and record the missing source plus 
 
 ## Runtime availability
 
-The current-user Windows scheduled task **Codex Canonry Health** runs at logon and every 15 minutes, using `C:\Users\mpugh\.codex\automations\daily-canonry-serve\ensure-canonry.ps1`. It checks health first and calls `cnry start` only if unavailable; it never stops or restarts a healthy daemon. The old daily Codex `serve` task is paused. Local repository automations still require this computer and the Codex desktop app to be on; Canonry collection requires the computer and daemon. Staggered clock times alone do not guarantee repository job ordering. If a scheduled collection was missed, check native run history before attempting a bounded repair; do not assume catch-up succeeded.
+Hosted Canonry is the primary. The current-user Windows scheduled task **Codex Canonry Health** runs at logon and every 15 minutes, using `C:\Users\mpugh\.codex\automations\daily-canonry-serve\ensure-canonry.ps1`. It only verifies hosted `/health`; it must not start a second local primary. The old daily Codex `serve` task is paused. Repository-writing automations still need this computer and the Codex desktop app online. Staggered clock times alone do not guarantee repository job ordering. If a scheduled collection was missed, check native run history before attempting a bounded repair; do not assume catch-up succeeded.
 
 ## Shared primary (hosted Canonry)
 
@@ -85,14 +87,33 @@ As of 2026-09-16 the Canonry primary is hosted at `https://canonry.remediationre
 
 ## Cloud Agent handoff PRs (Codex review/merge)
 
-Approved Notion Fulfillment work may be implemented by a Cursor Cloud Agent as a pull request. That lane is **not** a second article publisher and does **not** change the one-article-per-week obligation. Ownership stays with Codex: weekly articles, weekday health, monthly learning, **and** review/merge of these PRs.
+Approved Notion Fulfillment work may be implemented by a Cursor Cloud Agent as a pull request. That lane is **not** a second article publisher and does **not** change the one-article-per-week obligation. Ownership stays with Codex: weekly articles, weekday health, monthly learning, **and** review, merge, live acceptance, and measurement of these PRs.
 
-When Codex sees a PR labeled `handoff`, opened from a Cloud Agent, or referencing `docs/seo/handoffs/`:
+Keep with Codex: weekly article selection/drafting, substantive marketing prose, strategic prioritization, measurement interpretation, and learning. Good Cloud Agent work: scoped technical fixes, components, accessibility, approved redirects/internal links, schema tied to visible content, and PPC/local landing-page structure using approved copy. Preserve existing copy or include an explicit copy diff. `npm run validate` cannot detect bland prose or invented claims. Live ad-budget/campaign changes, GBP edits, and connector config are separate workflows. A brief must not let the implementer change its own approval rules.
 
-1. Treat it as **review-to-merge** work, not as a competing weekly-article run.
-2. Acquire the shared SEO lock. Run `npm run validate`. Merge only if the PR matches the brief, stays inside its constraints, and the SEO gate is satisfied.
-3. Do not merge if the brief is still in `review/`, the SEO gate is Needs review or Rejected, or the change publishes an article outside the brief or the weekly article rules.
-4. After merge, Notion Fulfillment is Done (PR link) and the brief belongs in `docs/seo/handoffs/done/`.
+### Executable discovery
 
-When scanning `docs/seo/handoffs/`, only `pending/` is actionable for implementers. `review/` waits for Matt's SEO gate. Cloud Agents never merge. Grok Bot launches Cloud Agents only after that gate (see `docs/seo/COHESION.md`).
+Search using **any** of these signals. Labels and author identify candidates; they do not grant approval. Require the complete contract before merge.
+
+| Signal | Value |
+| --- | --- |
+| Label | `handoff` |
+| Title | `[handoff][SEO-###] Concrete change` |
+| Branch | `handoff/SEO-###-short-slug` |
+| PR body | Stable ID, Notion URL, approved brief path/revision, evidence, scope, validation result |
+
+The weekday 08:00 job **discovers** matching PRs and records candidates. The Mon/Wed/Fri coordinator performs **bounded review** only after this week's article is secured and after urgent regression handling. Automation prompts live in `~/.codex/automations` (outside this repo) and must stay aligned with this contract.
+
+Before dispatch or merge, Codex must check active articles, existing-page work, open PRs, and measuring interventions. Reuse the existing backlog ID when a handoff overlaps. Notion mirrors execution status; the backlog retains hypotheses and measurement checkpoints — not two competing queues.
+
+### Review, merge, and Done
+
+When Codex sees a complete handoff candidate:
+
+1. Treat it as **bounded review-to-merge** work, not as a competing weekly-article run.
+2. On the designated Codex checkout, acquire the shared SEO lock. Validate the proposed merge against **current main**. Run `npm run validate`. Merge only if the PR matches the approved brief revision, stays inside allowed files/URLs, and the SEO gate is satisfied.
+3. Invalidate that validation if main or the PR head changes. Do not merge a moved PR head. Do not merge if the brief is still in `review/`, the SEO gate is Needs review or Rejected, scope drifted from the approved revision, or the change takes weekly-article/prose/prioritization/measurement work that stays with Codex.
+4. Merge is **Awaiting live verification**, not Done. After the live artifact matches, record the acceptance receipt. Grok updates Notion from that receipt. Status becomes **Measuring** using the backlog checkpoint. Move the brief to `docs/seo/handoffs/done/` only after acceptance **and** required measurement. Closed-unmerged work is **Cancelled**. If fulfillment must close at live acceptance, label **Delivery complete** and keep a separately linked open measurement item.
+
+Grok Bot launches Cloud Agents only after the SEO gate **and** launch dedup by repo + intervention ID + approved revision, with the Cloud Agent run and PR recorded before retries. `pending/` alone must never mean launch again. A timeout is reconciliation, not another launch. Cloud Agents never merge. Details: `docs/seo/COHESION.md` and `docs/seo/handoffs/README.md`.
 
