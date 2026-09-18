@@ -1,11 +1,11 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-09-16
+Last reconciled: 2026-09-18
 Current implementation run: [`2026-09-10-backlog-implementation.md`](runs/2026-09-10-backlog-implementation.md)
 Monthly learning review: [`2026-09-01-monthly-review.md`](runs/2026-09-01-monthly-review.md)
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
 Current weekly opportunity run: [`2026-09-14-weekly-opportunity.md`](runs/2026-09-14-weekly-opportunity.md)
-Current weekly coordinator run: [`2026-09-16-weekly-coordinator.md`](runs/2026-09-16-weekly-coordinator.md)
+Current weekly coordinator run: [`2026-09-18-weekly-coordinator.md`](runs/2026-09-18-weekly-coordinator.md)
 Article implementation run: [`2026-09-14-weekly-article-implementation.md`](runs/2026-09-14-weekly-article-implementation.md)
 Regression run: [`2026-08-24-production-regression.md`](runs/2026-08-24-production-regression.md)
 Current regression run: [`2026-09-16-production-regression.md`](runs/2026-09-16-production-regression.md)
@@ -128,11 +128,13 @@ The September 10 instruction implemented the then-current backlog. The September
 - Recommended change: make no additional content change in this check. Measure the already-deployed artifact; if the dirty rewrites are later approved and deployed, restart the post-deployment comparison window and verify the four pages again. Do not add FAQ/schema or rewrite whole templates for audit-score reasons.
 - Effort: Medium–High
 - Confidence: High for the snippet defects and search opportunity; Medium for ranking impact.
-- Verification: pre/post GSC query-page CTR and position over comparable 28-day windows, rendered snippet/content review, build/artifact validation, live parity, and later Canonry mention/citation checks. Deployed artifact parity passed live on 2026-08-24; dirty local rewrite parity is pending approval/deployment. Measurement due 2026-09-18 only if the measured `e31b744` artifact remains unchanged; no search/AEO outcome is claimed yet.
+- Measurement due date: 2026-09-21
+- Verification: pre/post GSC query-page CTR and position over comparable 27-day windows, rendered snippet/content review, build/artifact validation, live parity, and later Canonry mention/citation checks. Deployed artifact parity passed live on 2026-08-21. The measured artifact remains unchanged, but the September 18 checkpoint was incomplete because GSC data ended September 15. Current measurement checkpoint: 2026-09-21, after the daily feed is expected to cover the complete August 22–September 17 post-live window; no search/AEO outcome is claimed yet.
 - 2026-08-25 recheck: all four live SEO-004 URLs still serve the reviewed page-specific title/description and remain indexable, canonical, one-H1, JSON-LD-valid, and stored `Submitted and indexed`. Dirty local H1/content drift remains unapproved and undeployed; no post-deployment search outcome is claimed.
 - 2026-08-31 recheck: the four SEO-004 URLs remain live, indexable, canonical, one-H1, JSON-LD-valid, and locally/live signal-aligned. No comparable search-performance window is available and no content change is recommended.
 - 2026-08-31 GSC reconciliation: the stored reporting window advanced to 2026-07-24 through 2026-08-22. Exact query-page rows remain zero-click opportunities: retargeting 122 impressions at position 2.47; water-damage restoration PPC 158 at 10.34, water-damage PPC 145 at 15.37, and restoration PPC experts 133 at 18.53; disaster restoration web design 45 at 9.44. These overlapping rolling windows are not a causal post-deployment comparison. The gate remains measurement only through 2026-09-18; no additional content change is approved.
 - 2026-09-07 weekly reconciliation: stored GSC performance is still current only through 2026-08-22, so the exact retargeting, water-damage PPC, and web-design rows and the 2026-09-18 measurement gate are unchanged. No additional content, schema, or internal-link change is approved.
+- 2026-09-18 coordinator checkpoint: the scheduled GSC sync completed as run `6dc953f2-6cd6-4b07-aac2-c7bbe94a2d89`, but performance data is current only through 2026-09-15. The equal 27-day post-live window for the accepted August 21 deployment is August 22–September 17, so the result is not measurable yet. Partial August 17–September 15 reads remain 132 impressions / 0 clicks / position 2.38 for SEO-004b, 193 / 0 / 13.28 for SEO-004a, and 38 / 0 / 20.58 for SEO-004c; these overlap the intervention and are context only, not outcome claims. Defer to 2026-09-21 and keep the artifact stable.
 
 The weekly queue tracks the four page-level candidates under this umbrella as SEO-004a (water-damage PPC), SEO-004b (retargeting), SEO-004c (web design), and SEO-004d (social-media marketing). These are report sub-items, not additional backlog records.
 
