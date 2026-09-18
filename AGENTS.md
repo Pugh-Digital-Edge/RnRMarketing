@@ -71,11 +71,23 @@ Do not claim that a change worked without stating what was verified and over wha
 
 ## Notion Fulfillment handoffs (Cloud Agent → Codex)
 
-Approved work from Notion Fulfillment is implemented through `docs/seo/handoffs/`, not a parallel SEO publisher. Folder rules and the brief template live there; ownership is in `docs/seo/COHESION.md`.
+Approved work from Notion Fulfillment is implemented through `docs/seo/handoffs/`, not a parallel SEO publisher. Folder rules and the brief template live there; ownership is in `docs/seo/COHESION.md`. Notion mirrors execution status; `docs/seo/backlog.md` retains intervention hypotheses and measurement checkpoints — not two competing queues.
 
-- **Scan:** only `docs/seo/handoffs/pending/` is actionable for implementers. `review/` waits for Matt's SEO gate. `done/` is historical.
-- **Cloud Agent:** implement the pending brief as a pull request only. Never merge. Never auto-publish articles outside the brief. Acquire the shared SEO lock. Label the PR `handoff` and link the brief path.
-- **Codex:** when reviewing a PR labeled `handoff`, opened by a Cloud Agent, or tied to `docs/seo/handoffs/`, treat it as review-to-merge work (lock + `npm run validate`). Codex remains the closed-loop owner of weekly articles, weekday health, monthly learning, **and** these merges.
-- **Grok Bot:** launches Cloud Agents only after the SEO gate. Does not compete on article publishing and does not merge.
+Lifecycle: `Ready → Implementing → PR review → Awaiting live verification → Measuring → Done`. Merge is not Done. Move briefs to `done/` only after live acceptance **and** required measurement. Closed-unmerged work is `cancelled/`. If fulfillment must close at live acceptance, label **Delivery complete** and keep a separately linked open measurement item. Grok updates Notion from Codex's acceptance receipt.
 
-SEO gate: Source Matt (or a Client request Matt confirmed) may launch when the gate is N/A or Approved. Source Canonry evidence or Competitive research must be Approved by Matt; those briefs start in `review/`, not `pending/`.
+- **Scan:** `review/` waits for Matt's SEO gate. `pending/` is gate-satisfied filing, not a launch signal. `done/` is accepted-and-measured. `cancelled/` is closed unmerged.
+- **Keep with Codex:** weekly article selection/drafting, substantive marketing prose, strategic prioritization, measurement interpretation, and learning. Briefs must not let the implementer change their own approval rules.
+- **Cloud Agent:** implement the approved revision as a pull request only. Never merge. Good work is scoped technical fixes, components, accessibility, approved redirects/internal links, schema tied to visible content, and PPC/local landing-page structure using approved copy. Preserve existing copy or include an explicit copy diff. `npm run validate` cannot detect bland prose or invented claims. Live ad-budget/campaign changes, GBP edits, and connector config are separate workflows.
+- **Codex:** discover and review handoff PRs (weekday discovery; coordinator bounded review after article delivery and urgent regressions). Before dispatch or merge, check active articles, existing-page work, open PRs, and measuring interventions. Validate the proposed merge against **current main** on the designated Codex checkout under the SEO lock; invalidate if either revision changes; refuse merge if the PR head moved. Codex remains the closed-loop owner of weekly articles, weekday health, monthly learning, **and** these releases.
+- **Grok Bot:** launches Cloud Agents only after the SEO gate **and** launch dedup (repo + intervention ID + approved revision, with the Cloud Agent run and PR recorded before retries). `pending/` alone must never mean launch again. A timeout is reconciliation, not another launch. Does not compete on article publishing and does not merge.
+
+SEO gate: Source Matt (or a Client request Matt confirmed) may launch when the gate is N/A or Approved. Source Canonry evidence or Competitive research must be Approved by Matt; those briefs start in `review/`, not `pending/`. Material scope changes invalidate approval.
+
+Executable PR discovery (any signal identifies a **candidate**; none grants approval). Require the complete contract before merge:
+
+- Label: `handoff`
+- Title: `[handoff][SEO-###] Concrete change`
+- Branch: `handoff/SEO-###-short-slug`
+- PR body: stable ID, Notion URL, approved brief path/revision, evidence, scope, validation result
+
+`scripts/seo-lock.mjs` coordinates linked worktrees on one clone. Cloud Agents work on isolated branches; one designated Codex checkout serializes main-branch releases. Parallel implementation is OK; overlapping releases need serialization.
