@@ -83,3 +83,16 @@ The current-user Windows scheduled task **Codex Canonry Health** runs at logon a
 
 As of 2026-09-16 the Canonry primary is hosted at `https://canonry.remediationrestorationmarketing.com`. Codex SEO automations and local `cnry`/Canonry skills must use that `apiUrl` (see `docs/seo/COHESION.md`). The Windows **Codex Canonry Health** task only verifies hosted health; it must not start a second local primary. Repository-writing automations still need this computer + Codex desktop app online.
 
+## Cloud Agent handoff PRs (Codex review/merge)
+
+Approved Notion Fulfillment work may be implemented by a Cursor Cloud Agent as a pull request. That lane is **not** a second article publisher and does **not** change the one-article-per-week obligation. Ownership stays with Codex: weekly articles, weekday health, monthly learning, **and** review/merge of these PRs.
+
+When Codex sees a PR labeled `handoff`, opened from a Cloud Agent, or referencing `docs/seo/handoffs/`:
+
+1. Treat it as **review-to-merge** work, not as a competing weekly-article run.
+2. Acquire the shared SEO lock. Run `npm run validate`. Merge only if the PR matches the brief, stays inside its constraints, and the SEO gate is satisfied.
+3. Do not merge if the brief is still in `review/`, the SEO gate is Needs review or Rejected, or the change publishes an article outside the brief or the weekly article rules.
+4. After merge, Notion Fulfillment is Done (PR link) and the brief belongs in `docs/seo/handoffs/done/`.
+
+When scanning `docs/seo/handoffs/`, only `pending/` is actionable for implementers. `review/` waits for Matt's SEO gate. Cloud Agents never merge. Grok Bot launches Cloud Agents only after that gate (see `docs/seo/COHESION.md`).
+
