@@ -68,3 +68,14 @@ After code or configuration changes that may affect SEO/AEO, require all applica
 - comparison with the pre-change baseline.
 
 Do not claim that a change worked without stating what was verified and over what comparison window. Preserve unrelated repository changes and modify only files necessary for the requested task.
+
+## Notion Fulfillment handoffs (Cloud Agent → Codex)
+
+Approved work from Notion Fulfillment is implemented through `docs/seo/handoffs/`, not a parallel SEO publisher. Folder rules and the brief template live there; ownership is in `docs/seo/COHESION.md`.
+
+- **Scan:** only `docs/seo/handoffs/pending/` is actionable for implementers. `review/` waits for Matt's SEO gate. `done/` is historical.
+- **Cloud Agent:** implement the pending brief as a pull request only. Never merge. Never auto-publish articles outside the brief. Acquire the shared SEO lock. Label the PR `handoff` and link the brief path.
+- **Codex:** when reviewing a PR labeled `handoff`, opened by a Cloud Agent, or tied to `docs/seo/handoffs/`, treat it as review-to-merge work (lock + `npm run validate`). Codex remains the closed-loop owner of weekly articles, weekday health, monthly learning, **and** these merges.
+- **Grok Bot:** launches Cloud Agents only after the SEO gate. Does not compete on article publishing and does not merge.
+
+SEO gate: Source Matt (or a Client request Matt confirmed) may launch when the gate is N/A or Approved. Source Canonry evidence or Competitive research must be Approved by Matt; those briefs start in `review/`, not `pending/`.
