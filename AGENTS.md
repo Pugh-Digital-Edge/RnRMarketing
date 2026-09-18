@@ -79,3 +79,8 @@ Approved work from Notion Fulfillment is implemented through `docs/seo/handoffs/
 - **Grok Bot:** launches Cloud Agents only after the SEO gate. Does not compete on article publishing and does not merge.
 
 SEO gate: Source Matt (or a Client request Matt confirmed) may launch when the gate is N/A or Approved. Source Canonry evidence or Competitive research must be Approved by Matt; those briefs start in `review/`, not `pending/`.
+
+
+## Portfolio SEO workflow (2026-09-18)
+
+For scheduled SEO work and Notion/Cloud Agent handoffs, read `docs/seo/portfolio-flow.md` first. Matt extended the Codex-owned weekly article and handoff flow to this website on 2026-09-18. Follow its project-specific evidence, release gate, approval, acceptance-receipt and desktop/laptop single-owner rules. It supersedes older handoff language that equates merge with Done or treats the local lock as cross-machine. Preserve the client-specific facts, voice, privacy and verification rules above. This rollout does not authorize new paid collections or connected-account mutations.
