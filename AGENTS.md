@@ -84,3 +84,17 @@ SEO gate: Source Matt (or a Client request Matt confirmed) may launch when the g
 ## Portfolio SEO workflow (2026-09-18)
 
 For scheduled SEO work and Notion/Cloud Agent handoffs, read `docs/seo/portfolio-flow.md` first. Matt extended the Codex-owned weekly article and handoff flow to this website on 2026-09-18. Follow its project-specific evidence, release gate, approval, acceptance-receipt and desktop/laptop single-owner rules. It supersedes older handoff language that equates merge with Done or treats the local lock as cross-machine. Preserve the client-specific facts, voice, privacy and verification rules above. This rollout does not authorize new paid collections or connected-account mutations.
+
+## Shared agent operations and cross-device continuity
+
+Start each task at Matt's [Notion Agent Hub](https://app.notion.com/p/3e0d49a32caf81cb9594ed656e08cb19), then read the relevant client/task, decisions, approval scope and handoff history. Notion is the shared storehouse for context, priorities, ownership and durable summaries. Do not leave important decisions only in a chat.
+
+The private [AgentOperations repository](https://github.com/Pugh-Digital-Edge/AgentOperations) owns the versioned automation registry, common policies and explicit project enrollment. Read its README.md, projects.json and automation-registry.json when setting up or changing automation. Locate a verified checkout by Git remote on this device; never assume another computer's paths or app IDs. Review the source revision and reconcile through supported automation tools. Do not treat a Git pull or this instruction as permission to activate schedules.
+
+Repository-specific instructions, factual/client constraints and release checks still apply. Notion owns coordination; Git owns executable definitions/code/acceptance receipts; Canonry owns measurement; HubSpot owns deals. Link evidence and record summaries in Notion rather than maintaining contradictory copies. If these sources conflict, report the discrepancy and preserve existing authorization and stronger safety gates.
+
+Only projects and roles explicitly enrolled in AgentOperations may run that registry's website automations. Presence of this section does not enroll this project or authorize article publication, paid collection, account changes or new workers. RestoPros remains excluded from website automation; Miracle remains removed/paused. Existing PPC mutation and privacy rules remain in force.
+
+Keep machine bindings, credentials, active locks, owner records and runtime state out of Git and OneDrive. One designated host owns a project's writers. Laptop imports stay paused until the old host is confirmed paused/idle and Matt explicitly transfers ownership. A local Git lock does not coordinate machines. Cloud Agents receive scoped briefs and make PRs only; they do not become article authors or publishers.
+
+Use the linked Agent Exchange contract for authorized inter-agent handoffs. Verify exact project, message ID, approval revision and prior receipts before acting; do not duplicate a request or turn ACK into completion. Grok owns routine Fulfillment synchronization from Codex receipts. On completion/blockage, preserve an artifact link, verified result, owner and next checkpoint. If Notion or the private operations repository is unavailable, report that dependency; continue only independently authorized work that does not rely on missing approval or coordination.
