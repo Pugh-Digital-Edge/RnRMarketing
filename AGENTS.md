@@ -87,3 +87,16 @@ Only projects and roles explicitly enrolled in AgentOperations may run that regi
 Keep machine bindings, credentials, active locks, owner records and runtime state out of Git and OneDrive. One designated host owns a project's writers. Laptop imports stay paused until the old host is confirmed paused/idle and Matt explicitly transfers ownership. A local Git lock does not coordinate machines. Cloud Agents receive scoped briefs and make PRs only; they do not become article authors or publishers.
 
 Use the linked Agent Exchange contract for authorized inter-agent handoffs. Verify exact project, message ID, approval revision and prior receipts before acting; do not duplicate a request or turn ACK into completion. Grok owns routine Fulfillment synchronization from Codex receipts. On completion/blockage, preserve an artifact link, verified result, owner and next checkpoint. If Notion or the private operations repository is unavailable, report that dependency; continue only independently authorized work that does not rely on missing approval or coordination.
+
+## Notion Fulfillment handoffs (Cloud Agent → Codex)
+
+Approved work from Notion Fulfillment is implemented through `docs/seo/handoffs/`, not a parallel SEO publisher. Folder rules and the brief template live there; ownership is in `docs/seo/COHESION.md`.
+
+- **Scan:** only `docs/seo/handoffs/pending/` is actionable for implementers. `review/` waits for Matt's SEO gate. `done/` is historical.
+- **Cloud Agent:** implement the approved pending brief on an isolated branch as a pull request only. Never merge, publish articles, or draft substantive marketing prose. The shared SEO lock coordinates one local clone and its worktrees, not separate Cloud Agent checkouts or devices. Label the PR `handoff` and link the approved brief path and revision.
+- **Codex:** when reviewing a PR labeled `handoff`, opened by a Cloud Agent, or tied to `docs/seo/handoffs/`, treat it as review-to-merge work (lock + `npm run validate`). Codex remains the closed-loop owner of weekly articles, weekday health, monthly learning, **and** these merges.
+- **Grok Bot:** launches Cloud Agents only after the SEO gate. Does not compete on article publishing and does not merge.
+
+SEO gate: Source Matt (or a Client request Matt confirmed) may launch when the gate is N/A or Approved. Source Canonry evidence or Competitive research must be Approved by Matt; those briefs start in `review/`, not `pending/`.
+
+For exact approval scope, launch deduplication, PR discovery, live acceptance and measurement, follow `docs/seo/portfolio-flow.md`. A pending path is not approval or permission to relaunch. Merge is not Done.
