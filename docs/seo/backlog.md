@@ -5,8 +5,8 @@ Current implementation run: [`2026-09-10-backlog-implementation.md`](runs/2026-0
 Monthly learning review: [`2026-09-01-monthly-review.md`](runs/2026-09-01-monthly-review.md)
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
 Current weekly opportunity run: [`2026-09-14-weekly-opportunity.md`](runs/2026-09-14-weekly-opportunity.md)
-Current weekly coordinator run: [`2026-09-18-weekly-coordinator.md`](runs/2026-09-18-weekly-coordinator.md)
-Article implementation run: [`2026-09-14-weekly-article-implementation.md`](runs/2026-09-14-weekly-article-implementation.md)
+Current weekly coordinator run: [`2026-09-23-weekly-coordinator.md`](runs/2026-09-23-weekly-coordinator.md)
+Article implementation run: [`2026-09-23-weekly-coordinator.md`](runs/2026-09-23-weekly-coordinator.md)
 Regression run: [`2026-08-24-production-regression.md`](runs/2026-08-24-production-regression.md)
 Current regression run: [`2026-09-18-production-regression.md`](runs/2026-09-18-production-regression.md)
 Weekly implementation run: [`2026-08-27-weekly-plan-implementation.md`](runs/2026-08-27-weekly-plan-implementation.md)
@@ -319,18 +319,21 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 
 ### SEO-014 — Google Ads for restoration companies
 
-- Status: Candidate
-- Approval state: reserve brief only; not approved for the already-satisfied September 14–20 publication week.
+- Status: In Progress — Awaiting live verification
+- Approval state: auto-approved on 2026-09-23 as the single article for the September 21–27 Eastern week under the standing weekly pipeline authorization.
 - Category: search-intent/content gap; entity, citation, and AEO weakness.
-- Scope: tracked query `Google Ads for restoration companies`; fresh GSC `google ads` family; prospective informational resource supporting `/services/ppc/`.
+- Scope: tracked query `Google Ads for restoration companies`; fresh GSC `google ads` family; `/resources/google-ads-for-restoration-companies/` supporting `/services/ppc/` and lead-tracking services.
 - Problem: the site has commercial PPC pages and an LSA explainer but no operator-focused Google Ads guide covering campaign structure, territory controls, query quality, call handling, and booked-job measurement.
-- Evidence baseline: the tracked query is unmentioned and uncited across four completed runs, while seven competitor domains appear in cited sources. GSC data for 2026-08-15 through 2026-09-13 shows 49 impressions, 0 clicks, and weighted average position 36.29 for the `google ads` family; 36 impressions map to `/services/ppc/`.
+- Evidence baseline: Canonry's latest gap analysis reports the tracked query at 0/5 mentions and 0/5 citations with five cited competitor domains. Pooled separately across the four latest completed fixed-basket runs, the provider-snapshot denominator is 3/12 mentioned and 0/12 cited. GSC data for 2026-08-22 through 2026-09-20 shows 50 impressions, 0 clicks, and weighted average position 36.38 for the `google ads` family across four URLs; the exact query has 1 impression at position 16 on `/services/ppc/`.
 - Hypothesis: a distinct educational guide can satisfy informational Google Ads intent while the commercial PPC page retains service intent.
 - Expected impact: create a useful first-party answer source and a clearer internal path into PPC and lead-tracking services. No outcome is promised.
-- Recommended change: recheck after the September 20 fixed-basket run; if the gap persists, validate distinct intent and use current Google primary sources for a future weekly article.
+- Recommended change: deploy and live-verify the implemented operator guide; do not draft a second article during recovery. The source uses current Google primary documentation for location options, search terms, call reporting, and conversion measurement.
 - Effort: Medium.
 - Confidence: Medium–High for the gap; Medium for organic/AEO impact.
-- Verification method: fresh query/provider evidence, exact GSC query/page baseline, duplication review, standard release validation, exact live parity, and a later comparable outcome window.
+- Implementation: `src/content/blog/google-ads-for-restoration-companies.md` plus one WebP cover image, committed and pushed as `0b970144783f817f176803cf177215158ac284ac`. `npm run validate` passed with 0 Astro errors, 26/26 tests, a successful 107-page build, and postbuild checks. Render QA found one H1, one BlogPosting source, one matching FAQPage source with four visible FAQs, zero body images, valid internal links, and sitemap inclusion.
+- Live checkpoint: the post-push full checker passed validation and the existing live surface but failed the deployment-revision gate because `/build-info.json` still reports `c8698c8`; the exact article URL is 404 and absent from the live sitemap. A manual deployment was not forced because intervening commit `6e177d8` contains broader unrelated site changes. Next checkpoint: Friday, 2026-09-25, with the same SEO-014 ID.
+- Measurement due date: 28 days after accepted live verification; no measurement clock starts from the source push.
+- Verification method: exact live HTTP 200, sitemap inclusion, canonical/indexability, local/live parity and accepted deployed revision, followed by a comparable exact query/page outcome window.
 
 ### SEO-015 — Email marketing platforms for restoration companies
 
@@ -346,6 +349,21 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Effort: Medium.
 - Confidence: Medium–Low because search demand is small; Medium that the intent is distinct.
 - Verification method: fresh GSC/Canonry evidence, current vendor and primary-source review, cannibalization check, release validation, live parity, and a later exact query/page comparison.
+
+### SEO-016 — CRM selection for restoration business management
+
+- Status: Candidate
+- Approval state: second evidence-supported reserve after SEO-015; not approved for the September 21–27 publication week.
+- Category: search-intent/content gap; operational measurement and lead-management guidance.
+- Scope: tracked query `best CRM software for restoration business management`; prospective decision framework for restoration-company owners, distinct from the lead-tracking service page.
+- Problem: the site explains lead tracking but does not provide an operator-focused CRM selection framework connecting intake, job stages, attribution, access controls, integrations, and reporting governance.
+- Evidence baseline: Canonry marks the query ownable with 0/4 mentions, 0/4 citations, 0.8407 winnability, and Medium action confidence; cited competitors include PushLeads, Restoration Inbound, and Diginebel. Pooled separately across the four latest runs, provider snapshots are 1/12 mentioned and 0/12 cited. A GSC `crm` query-family read for 2026-08-22 through 2026-09-20 returned no rows, so search demand is unavailable rather than zero.
+- Hypothesis: a vendor-neutral selection and governance framework could serve distinct informational intent and create a qualified route into lead tracking without inventing vendor rankings or outcomes.
+- Expected impact: add a credible first-party answer source for an observed AEO gap; organic demand remains unproven.
+- Recommended change: keep as a reserve only. Revalidate attributable search demand, current primary vendor documentation, and overlap with the lead-tracking page before any future weekly auto-approval.
+- Effort: Medium.
+- Confidence: Medium for the AEO/content gap; Low–Medium for organic impact until search demand is observed.
+- Verification method: fresh Canonry query/provider evidence, nonzero attributable search or other customer-demand evidence, duplication review, primary-source factual verification, release validation, live parity, and a later exact query/page comparison.
 
 ## Reconciled / not prioritized
 
