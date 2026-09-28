@@ -337,18 +337,21 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 
 ### SEO-015 — Email marketing platforms for restoration companies
 
-- Status: Candidate
-- Approval state: second reserve brief only; requires fresh evidence and factual-source review before a future weekly auto-approval.
+- Status: In Progress — Awaiting live verification
+- Approval state: auto-approved on 2026-09-28 as the single article for the September 28–October 4 Eastern week under the standing weekly pipeline authorization.
 - Category: search-intent/content gap; lead-nurture and platform-selection guidance.
-- Scope: tracked query `recommended email marketing platforms for remediation companies`; fresh GSC `email marketing` family; prospective informational resource distinct from `/services/retargeting/`.
+- Scope: tracked query `recommended email marketing platforms for remediation companies`; fresh GSC `email marketing` family; `/resources/email-marketing-platforms-for-restoration-companies/` supporting `/services/retargeting/` and `/services/lead-tracking/`.
 - Problem: the site lacks a restoration-specific decision resource for choosing and governing email marketing tools; current impressions split across the services overview, retargeting page, and homepage.
-- Evidence baseline: the tracked query is unmentioned and uncited across three completed runs, with two competitor domains cited. GSC data for 2026-08-15 through 2026-09-13 shows 12 impressions, 0 clicks, and weighted average position 44.83 for the `email marketing` family.
+- Evidence baseline: the tracked query is unmentioned and uncited in all seven stored query-level run records, including 0/3 mentions and 0/3 citations across the September 27 fixed-basket provider snapshots; the pooled stored provider-snapshot denominator is 0/19 mentioned and 0/19 cited. GSC through 2026-09-25 shows 40 impressions, 0 clicks, and weighted position 41.62 for the `email marketing` family over 60 days; the latest 30-day window has 2 impressions, 0 clicks, and weighted position 40.50.
 - Hypothesis: a bounded platform-selection framework tied to consent, list ownership, lifecycle use, and measurement can serve distinct informational intent without inventing rankings or vendor results.
 - Expected impact: create a modest-demand first-party resource and a qualified route into retargeting and lead-tracking services. No outcome is promised.
-- Recommended change: retain as the lower-confidence reserve. Revalidate demand, current platform documentation, and overlap with retargeting before publication.
+- Recommended change: deploy and live-verify the implemented vendor-neutral selection guide. Current FTC and official platform documentation support its compliance, segmentation, automation, subscription-preference, and integration claims.
 - Effort: Medium.
-- Confidence: Medium–Low because search demand is small; Medium that the intent is distinct.
-- Verification method: fresh GSC/Canonry evidence, current vendor and primary-source review, cannibalization check, release validation, live parity, and a later exact query/page comparison.
+- Confidence: Medium for the distinct gap; Medium–Low for organic impact because recent search demand is modest.
+- Implementation: `src/content/blog/email-marketing-platforms-for-restoration-companies.md` plus one 1590×800 WebP cover image, committed and pushed in `a0fd8ba`. `npm run validate` passed with 0 Astro errors, 26/26 tests, a successful 108-page build, and postbuild checks. Render QA found one H1, one BlogPosting source, one FAQPage source matching four visible FAQs, zero body images, valid internal targets, and local sitemap inclusion.
+- Live checkpoint: source is ready, but production still reports build `c8698c8`; the SEO-015 URL is not yet accepted live and the older SEO-014 URL remains 404. A broad manual deployment was not forced because the live-to-main range contains unrelated site work outside the focused weekly article authority. Next checkpoint: Wednesday, 2026-09-30, or immediately after an explicit hosting deployment receipt.
+- Measurement due date: 28 days after accepted live verification; no measurement clock starts from the source push.
+- Verification method: exact live HTTP 200, sitemap inclusion, canonical/indexability, one matching FAQ block/schema source, local/live parity and accepted deployed revision, followed by a comparable exact query/page outcome window.
 
 ### SEO-016 — CRM selection for restoration business management
 

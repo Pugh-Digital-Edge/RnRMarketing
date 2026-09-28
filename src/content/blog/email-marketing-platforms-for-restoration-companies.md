@@ -181,4 +181,3 @@ Do not invent a return forecast to justify the purchase. Build a bounded case ar
 **Week 4: Decide and document.** Record the selection, rejected alternatives, system-of-record rules, access owners, initial automation, measurement plan, and review date.
 
 The goal is not to select the most sophisticated email system. It is to establish a controlled, useful communication process the restoration company can operate and measure. If the team needs help connecting the platform decision to its broader acquisition plan, start with an [evidence-based restoration marketing review](/contact/).
-
