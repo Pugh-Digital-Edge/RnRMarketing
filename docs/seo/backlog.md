@@ -1,17 +1,28 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-09-25
+Last reconciled: 2026-10-01
 Current implementation run: [`2026-09-10-backlog-implementation.md`](runs/2026-09-10-backlog-implementation.md)
-Monthly learning review: [`2026-09-01-monthly-review.md`](runs/2026-09-01-monthly-review.md)
+Monthly learning review: [`2026-10-01-monthly-review.md`](runs/2026-10-01-monthly-review.md)
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
 Current weekly opportunity run: [`2026-09-14-weekly-opportunity.md`](runs/2026-09-14-weekly-opportunity.md)
-Current weekly coordinator run: [`2026-09-23-weekly-coordinator.md`](runs/2026-09-23-weekly-coordinator.md)
-Article implementation run: [`2026-09-23-weekly-coordinator.md`](runs/2026-09-23-weekly-coordinator.md)
+Current weekly coordinator run: [`2026-10-01-weekly-coordinator.md`](runs/2026-10-01-weekly-coordinator.md)
+Article implementation run: [`2026-09-28-weekly-coordinator.md`](runs/2026-09-28-weekly-coordinator.md)
 Regression run: [`2026-08-24-production-regression.md`](runs/2026-08-24-production-regression.md)
-Current regression run: [`2026-09-25-production-regression.md`](runs/2026-09-25-production-regression.md)
+Current regression run: [`2026-09-29-production-regression.md`](runs/2026-09-29-production-regression.md)
 Weekly implementation run: [`2026-08-27-weekly-plan-implementation.md`](runs/2026-08-27-weekly-plan-implementation.md)
 
 Status values: Candidate · Planned · In Progress · Deployed · Measuring · Validated · Rejected · Superseded
+
+## October evidence-ranked order
+
+The [October 1 monthly review](runs/2026-10-01-monthly-review.md) found no confirmed ranking, CTR, qualified-lead, mention, or citation win. SEO-004 is the only completed equal search window and remains mixed with zero clicks across all four cohorts. Production parity is the controlling defect: SEO-014 and SEO-015 are validated in source but remain 404 and absent from the live sitemap, so neither measurement clock has started.
+
+1. **SEO-014 and SEO-015** — restore production parity through an explicitly accepted deployment scope, then run locked full acceptance and start each 28-day clock from the accepted-live timestamp. Do not create replacement articles or count source delivery as live delivery.
+2. **SEO-002, SEO-005, SEO-007, and SEO-009** — close the overdue exact-cohort measurements through daily/coordinator receipts. Preserve unavailable or partial data as inconclusive; do not infer success from aggregate coverage or sparse page impressions.
+3. **SEO-010, SEO-008, SEO-011, and SEO-012** — evaluate in due-date order on October 6, 8, 9, and 13 using complete equal windows. Keep GSC, organic/AI sessions, verified lead events, Mention Coverage/Share, and Citation Coverage separate.
+4. **SEO-003** — confirm whether the September 27 decline (3/42 Mention Coverage, 3/27 non-brand Mention Share, 0/42 Citation Coverage) persists through the next authorized scheduled fixed-basket run. No manual sweep, probe, basket change, or content rewrite is authorized by this review.
+5. **SEO-013** — keep Measuring until the pipeline demonstrates accepted live delivery and Git-addressable measurement closure without duplicate weekly articles. Fresh schedules alone are not completion.
+6. **Existing-page candidates** — after parity and overdue measurements, reassess retargeting, lead tracking, water-damage PPC, web design, and homepage agency intent. No implementation is authorized by this ranking.
 
 ## Current pipeline authorization — 2026-09-15
 
