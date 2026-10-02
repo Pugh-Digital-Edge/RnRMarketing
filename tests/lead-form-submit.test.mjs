@@ -11,7 +11,7 @@ const script = ts.transpileModule(source, {
   compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.None },
 }).outputText;
 
-function setup(value, action = "/thank-you/", responseOk) {
+function setup(value, action = "/thank-you/", responseOk, options = {}) {
   const listeners = {};
   const button = {
     disabled: false, attributes: {},
@@ -27,23 +27,31 @@ function setup(value, action = "/thank-you/", responseOk) {
   const error = { hidden: true };
   const status = { textContent: '' };
   const form = {
-    action: `https://example.test${action}`, dataset: {},
+    action: `https://example.test${action}`, dataset: options.redirect ? { successRedirect: "/thank-you/" } : {},
     querySelector(selector) {
-      return { "[data-phone-input]": phone, "[data-phone-error]": error, "[data-form-status]": status }[selector] ?? null;
+      return { "[data-phone-input]": phone, "[data-phone-error]": error, "[data-form-status]": status, "[data-submission-id]": { value: "submission-1234" } }[selector] ?? null;
     },
+    hasAttribute() { return !!options.accepted; },
+    dispatchEvent() {},
     querySelectorAll() { return [button]; },
     addEventListener(name, handler) { listeners[name] = handler; },
     reset() { phone.value = ''; },
   };
   let fetches = 0;
+  const receipts = [], redirects = [];
   const context = {
+    Event, history: { state: null, replaceState() {} },
+    rememberAcceptedRequest: id => receipts.push(id),
+    window: { rrTrackingDisabled: !!options.isolated, rrTestMode: !!options.testMode, location: {
+      hostname: options.hostname || 'example.test', assign: url => redirects.push(url),
+    } },
     document: { querySelectorAll: () => [form] },
     PHONE_VALIDATION_MESSAGE, validatePhoneNumber, URL, URLSearchParams,
     FormData: class { forEach(callback) { callback(phone.value, "phone"); } },
-    fetch: () => { fetches++; return responseOk === undefined ? new Promise(() => {}) : Promise.resolve({ ok: responseOk }); },
+    fetch: () => { fetches++; return responseOk === 'reject' ? Promise.reject(Error('network')) : responseOk === undefined ? new Promise(() => {}) : Promise.resolve({ ok: responseOk, headers: { get: () => options.contentType || (options.accepted ? "application/json" : "text/html") }, json: async () => options.malformed ? Promise.reject(Error('bad JSON')) : options.receipt || { ok: true, stage: 'request_accepted', submissionId: 'submission-1234', receiptSource: 'netlify_http' } }); },
   };
   vm.runInNewContext(script, context);
-  return { phone, button, error, status, get fetches() { return fetches; },
+  return { phone, button, error, status, receipts, redirects, get fetches() { return fetches; },
     async submitAndWait() { await listeners.submit({ preventDefault() {} }); },
     submit() {
       const event = { defaultPrevented: false, preventDefault() { this.defaultPrevented = true; } };
@@ -121,5 +129,58 @@ test("shared schedule form has one complete Netlify registration with the native
     "utm-content", "landing-page", "submission-id", "lead-stage", "name", "email", "phone",
     "company", "service-area", "program-scope", "monthly-budget"]) {
     assert.ok(form.includes(`name="${name}"`), `Missing registered field: ${name}`);
+  }
+});
+
+
+test('paid request stores matching provider receipt and then redirects', async () => {
+  const s = setup('(202) 555-0147', '/thank-you/', true, { accepted: true, redirect: true });
+  await s.submitAndWait();
+  assert.equal(s.fetches, 1);
+  assert.deepEqual(s.receipts, ['submission-1234']);
+  assert.deepEqual(s.redirects, ['/thank-you/']);
+});
+test('paid HTTP/network failures allow retry and never create a receipt or redirect', async () => {
+  for (const result of [false, 'reject']) {
+    const s = setup('(202) 555-0147', '/thank-you/', result, { accepted: true, redirect: true });
+    await s.submitAndWait(); await s.submitAndWait();
+    assert.equal(s.fetches, 2);
+    assert.equal(s.button.disabled, false);
+    assert.equal(s.button.attributes['aria-busy'], undefined);
+    assert.deepEqual(s.receipts, []); assert.deepEqual(s.redirects, []);
+  }
+});
+test('paid in-flight submissions are deduplicated and production QA cannot submit', () => {
+  const pending = setup('(202) 555-0147', '/thank-you/', undefined, { accepted: true });
+  pending.submit(); pending.submit();
+  assert.equal(pending.fetches, 1);
+  assert.equal(pending.button.disabled, true);
+  const qa = setup('(202) 555-0147', '/thank-you/', true, { accepted: true, isolated: true, testMode: true });
+  assert.equal(qa.submit().defaultPrevented, true);
+  assert.equal(qa.fetches, 0);
+});
+
+test('non-QA privacy/storage tracking suppression never blocks normal intake', async () => {
+  const s = setup('(202) 555-0147', '/thank-you/', true, { accepted: true, isolated: true, redirect: true });
+  await s.submitAndWait();
+  assert.equal(s.fetches, 1);
+  assert.deepEqual(s.redirects, ['/thank-you/']);
+});
+
+test('a 200 JSON error body is unexpected for native Netlify and cannot redirect or create a response record', async () => {
+  const s = setup('(202) 555-0147', '/thank-you/', true, { accepted: true, redirect: true, contentType: 'application/json', receipt: { error: 'not accepted' } });
+  await s.submitAndWait();
+  assert.deepEqual(s.redirects, []); assert.deepEqual(s.receipts, []);
+  assert.match(s.status.textContent, /Please try again/);
+});
+
+test('static HTML 200, malformed JSON, wrong stage and wrong ID never create a receipt or redirect', async () => {
+  for (const options of [{ contentType: 'text/html' }, { malformed: true },
+    { receipt: { ok: true, stage: 'identity', submissionId: 'submission-1234', receiptSource: 'netlify_http' } },
+    { receipt: { ok: true, stage: 'request_accepted', submissionId: 'wrong-id-123', receiptSource: 'netlify_http' } },
+    { receipt: { ok: true, stage: 'request_accepted', submissionId: 'submission-1234', receiptSource: 'unknown' } }]) {
+    const s = setup('(202) 555-0147', '/thank-you/', true, { accepted: true, redirect: true, ...options });
+    await s.submitAndWait(); assert.deepEqual(s.redirects, []); assert.deepEqual(s.receipts, []);
+    assert.equal(s.button.disabled, false);
   }
 });

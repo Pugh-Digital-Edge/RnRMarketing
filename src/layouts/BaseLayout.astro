@@ -276,10 +276,18 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
             <!-- Sitewide Scripts -->
             <script src="../assets/js/nav.js"></script>
             <script is:inline define:vars={{ trackingConfig: tracking, eagerAnalytics }}>
+                // Isolated QA persists through the confirmation redirect. No tag loaders run.
+                const localQa = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+                window.rrTestMode = new URLSearchParams(location.search).get('rr_test') === '1';
+                try {
+                    if (window.rrTestMode) sessionStorage.setItem('rr_test', '1');
+                    window.rrTestMode = window.rrTestMode || sessionStorage.getItem('rr_test') === '1';
+                    window.rrTrackingDisabled = localQa || window.rrTestMode;
+                } catch { window.rrTrackingDisabled = true; } // Privacy mode suppresses tracking, not intake.
                 window.rrTracking = trackingConfig;
                 window.rrEagerAnalytics = eagerAnalytics;
                 window.dataLayer = window.dataLayer || [];
-                window.gtag = function gtag(){dataLayer.push(arguments);}
+                window.gtag = function gtag(){if (!window.rrTrackingDisabled) dataLayer.push(arguments);}
                 gtag('js', new Date());
 
                 // Explicit QA opt-in; ordinary visitors are never marked as debug traffic.
@@ -392,6 +400,7 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                             }
                         });
                         leadForm.addEventListener('submit', () => {
+                            if (leadForm.hasAttribute('data-request-receipt')) return;
                             window.gtag('event', 'form_submit', {
                                 event_category: 'engagement',
                                 form_name: 'Schedule Lead Form',
@@ -399,23 +408,8 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
                             });
                             try {
                                 window.sessionStorage.setItem('schedule_lead_submission_pending', '1');
-                                // Enhanced conversions need the lead's own identifiers on the
-                                // confirmation page, which the Netlify redirect does not carry over.
-                                const readField = (name) => {
-                                    const field = leadForm.querySelector(`[name="${name}"]`);
-                                    return field && field.value ? field.value.trim() : '';
-                                };
-                                // Enhanced conversions match on E.164 numbers, so a typed
-                                // US number is normalised before it is stored.
-                                const toE164 = (value) => {
-                                    const digits = value.replace(/\D/g, '');
-                                    if (digits.length === 10) return `+1${digits}`;
-                                    if (digits.length === 11 && digits.startsWith('1')) return `+${digits}`;
-                                    return value.startsWith('+') ? value : '';
-                                };
+                                const readField = (name) => leadForm.querySelector(`[name="${name}"]`)?.value || '';
                                 window.sessionStorage.setItem('schedule_lead_user_data', JSON.stringify({
-                                    email: readField('email').toLowerCase(),
-                                    phone_number: toE164(readField('phone')),
                                     landing_page: window.location.pathname,
                                     lead_scope: readField('program-scope'),
                                     lead_budget: readField('monthly-budget'),
@@ -539,6 +533,7 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
             </style>
             <script is:inline>
                 (() => {
+                    if (window.rrTrackingDisabled) return;
                     window._paq = window._paq || [];
                     window._paq.push(['trackPageView']);
                     window._paq.push(['enableLinkTracking']);

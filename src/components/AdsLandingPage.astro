@@ -98,7 +98,7 @@ const {
       </div>
 
       <div class="rm-form-side">
-        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/thank-you/" data-success-redirect="/thank-you/" data-lead-phone-form data-netlify="true" netlify-honeypot="bot-field">
+        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/thank-you/" data-success-redirect="/thank-you/" data-lead-phone-form data-request-receipt data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="Schedule Lead Form" />
           <!-- Register legacy /schedule/ fields too: Netlify uses one definition per form name. -->
           <input type="hidden" name="phone-country" value="US" />
@@ -123,7 +123,8 @@ const {
           <input type="hidden" name="utm-content" data-attribution-field="utm_content" />
           <input type="hidden" name="landing-page" data-attribution-field="landing_page" />
           <input type="hidden" name="submission-id" data-submission-id />
-          <input type="hidden" name="lead-stage" value="qualified" data-lead-stage />
+          <input type="hidden" name="lead-stage" value="request" data-lead-stage />
+          <p data-form-status role="status" aria-live="polite"></p>
 
           <div class="rm-fields">
             <fieldset class="rm-form-step" data-form-step="1">
@@ -468,6 +469,10 @@ const {
   }
 
   if (landingLeadForm) {
+    try {
+      sessionStorage.removeItem('schedule_lead_submission_pending');
+      sessionStorage.removeItem('schedule_lead_user_data');
+    } catch { /* Storage is optional; failed storage never grants acceptance. */ }
     const funnel = setupLeadFunnel(landingLeadForm);
     const firstStep = landingLeadForm.querySelector<HTMLElement>("[data-form-step='1']");
     const secondStep = landingLeadForm.querySelector<HTMLElement>("[data-form-step='2']");
@@ -485,10 +490,16 @@ const {
       let identitySaved = false;
       let finalSubmissionStarted = false;
 
-      submissionIdField.value = typeof crypto.randomUUID === "function"
+      submissionIdField.value = typeof history.state?.rrFormResponse === "string"
+        ? history.state.rrFormResponse
+        : typeof crypto.randomUUID === "function"
         ? crypto.randomUUID()
         : `lead-${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
+      if (history.state?.rrFormResponse === submissionIdField.value) {
+        landingLeadForm.dataset.responseReceived = "true";
+        finalSubmissionStarted = true;
+      }
       const setRequired = (fields: Array<HTMLInputElement | HTMLSelectElement>, required: boolean) => {
         fields.forEach((field) => {
           if (field.dataset.stepRequired === "true") field.required = required;
@@ -531,12 +542,12 @@ const {
         new FormData(landingLeadForm).forEach((value, key) => {
           if (typeof value === "string") body.append(key, value);
         });
-        leadStageField.value = "qualified";
+        leadStageField.value = "request";
         return body;
       };
 
       const captureAbandonment = () => {
-        if (currentStep !== 2 || finalSubmissionStarted || identitySaved) return;
+        if (window.rrTrackingDisabled || currentStep !== 2 || finalSubmissionStarted || identitySaved) return;
 
         const body = buildIdentityBody();
         if (typeof navigator.sendBeacon === "function" && navigator.sendBeacon("/.netlify/functions/submit-lead", body)) {
@@ -571,17 +582,18 @@ const {
           advance();
           return;
         }
-        leadStageField.value = "qualified";
+        leadStageField.value = "request";
       }, true);
       // Observe the event after the form's phone-validation handler has run.
       // Rejected submissions must remain eligible for abandonment capture.
       window.addEventListener("submit", (event) => {
         if (event.target === landingLeadForm) {
-          finalSubmissionStarted = !event.defaultPrevented;
+          finalSubmissionStarted = landingLeadForm.dataset.submitting === "true" || !event.defaultPrevented;
         }
       });
+      landingLeadForm.addEventListener("lead-request-error", () => { finalSubmissionStarted = false; });
       window.addEventListener("pageshow", () => {
-        finalSubmissionStarted = false;
+        finalSubmissionStarted = landingLeadForm.dataset.responseReceived === "true";
       });
     }
   }

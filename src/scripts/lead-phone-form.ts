@@ -1,3 +1,4 @@
+import { rememberAcceptedRequest } from "./lead-request";
 import { getCountries, getCountryCallingCode } from "libphonenumber-js";
 import { PHONE_VALIDATION_MESSAGE, validatePhoneNumber } from "@libs/phone";
 
@@ -37,7 +38,7 @@ function setupLeadForm(form: HTMLFormElement) {
     phone.setAttribute("aria-invalid", String(!valid));
     error.hidden = valid || !touched;
     submitButtons.forEach((button) => {
-      button.disabled = !valid;
+      button.disabled = !valid || form.dataset.submitting === "true";
     });
 
     return result;
@@ -62,6 +63,7 @@ function setupLeadForm(form: HTMLFormElement) {
   validate();
 
   form.addEventListener("submit", async (event) => {
+    if (form.dataset.submitting === "true") { event.preventDefault(); return; }
     touched = true;
     const result = validate();
     if (!result.valid || !result.e164) {
@@ -72,11 +74,20 @@ function setupLeadForm(form: HTMLFormElement) {
 
     phone.value = result.e164;
 
-    // Forms with a native action post directly to Netlify Forms. Do not put
-    // the function's cold start (or a client-side redirect) in that path.
-    if (new URL(form.action).pathname !== endpoint) return;
+    // The paid form requires an explicit receipt from the existing function.
+    // Its native action remains the no-JavaScript fallback; other native forms post directly.
+    const requestReceipt = form.hasAttribute("data-request-receipt");
+    if (!requestReceipt && new URL(form.action).pathname !== endpoint) return;
 
     event.preventDefault();
+    // Explicit production QA opt-in must never create a real lead. Local QA uses intercepted POSTs.
+    if (requestReceipt && window.rrTestMode
+      && !["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname)) {
+      const status = form.querySelector<HTMLElement>("[data-form-status]");
+      if (status) status.textContent = "Test mode: submissions are disabled here. Use the isolated local preview.";
+      return;
+    }
+    form.dataset.submitting = "true";
     const status = form.querySelector<HTMLElement>("[data-form-status]");
     if (status) status.textContent = "Sending your message…";
     submitButtons.forEach((button) => {
@@ -90,6 +101,9 @@ function setupLeadForm(form: HTMLFormElement) {
         if (typeof value === "string") body.append(key, value);
       });
 
+      if (requestReceipt && (window.rrTestMode || ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname))) {
+        body.set("test-flow", "1"); // Existing function rejects local/QA forwarding even if a mock is absent.
+      }
       const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -97,7 +111,16 @@ function setupLeadForm(form: HTMLFormElement) {
       });
 
       if (!response.ok) throw new Error("Lead submission failed");
-
+      if (requestReceipt) {
+        const id = form.querySelector<HTMLInputElement>("[data-submission-id]")?.value;
+        if (!response.headers?.get("content-type")?.includes("application/json")) throw new Error("Missing request receipt");
+        const receipt = await response.json();
+        if (!id || receipt?.ok !== true || receipt.stage !== "request_accepted"
+          || receipt.submissionId !== id || receipt.receiptSource !== "netlify_http") throw new Error("Invalid request receipt");
+        rememberAcceptedRequest(id);
+        form.dataset.responseReceived = "true";
+        try { history.replaceState({ ...history.state, rrFormResponse: id }, ""); } catch { /* BFCache DOM flag remains. */ }
+      }
       const destination = form.dataset.successRedirect;
       if (destination) {
         window.location.assign(destination);
@@ -111,12 +134,14 @@ function setupLeadForm(form: HTMLFormElement) {
       if (status) status.textContent = "Thanks. Your message was sent.";
       validate();
     } catch {
+      form.dispatchEvent(new Event("lead-request-error"));
       const status = form.querySelector<HTMLElement>("[data-form-status]");
       if (status) status.textContent = "Something went wrong. Please try again.";
       submitButtons.forEach((button) => {
         button.disabled = false;
       });
     } finally {
+      delete form.dataset.submitting;
       submitButtons.forEach((button) => button.removeAttribute("aria-busy"));
     }
   });

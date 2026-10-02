@@ -9,11 +9,12 @@ export function setupLeadFunnel(form: HTMLFormElement) {
   const seen = new Set<string>();
   const invalidFields = new WeakSet<Element>();
   const send = (name: string, params: Record<string, unknown> = {}) => {
+    if (window.rrTrackingDisabled) return;
     analytics.gtag?.("event", name, {
       send_to: analytics.rrTracking?.ga4Id,
       form_id: "lead-form",
       form_name: "Schedule Lead Form",
-      funnel_version: "restoration_v1",
+      funnel_version: "restoration_v2",
       form_page: "/restoration-marketing/",
       form_step: Number(form.dataset.currentStep || 1),
       ...params,

@@ -14,6 +14,10 @@ const preloadedImage = await getOptimizedImage(heroImage);
   noindex
   eagerAnalytics
 >
+  <script>
+    import { consumeAcceptedRequest } from "../scripts/lead-request";
+    consumeAcceptedRequest();
+  </script>
   <script is:inline>
     (() => {
       let shouldTrackLead = false;
@@ -27,7 +31,7 @@ const preloadedImage = await getOptimizedImage(heroImage);
         // Storage can be unavailable in privacy-restricted browsers.
       }
 
-      if (!shouldTrackLead || typeof window.gtag !== 'function') {
+      if (window.rrTrackingDisabled || !shouldTrackLead || typeof window.gtag !== 'function') {
         return;
       }
 
@@ -40,6 +44,8 @@ const preloadedImage = await getOptimizedImage(heroImage);
         // Storage can be unavailable in privacy-restricted browsers.
       }
 
+      // Older paid-page pending flags are intents, not accepted requests.
+      if (typeof leadUserData.landing_page === 'string' && leadUserData.landing_page.replace(/\/$/, '') === '/restoration-marketing') return;
       const attribution = window.rrAttribution || {};
 
       window.gtag('event', 'generate_lead', {
@@ -60,14 +66,6 @@ const preloadedImage = await getOptimizedImage(heroImage);
       const trackingConfig = window.rrTracking || {};
 
       if (trackingConfig.googleAdsId && trackingConfig.leadConversionLabel) {
-        // Enhanced conversions hash these values in the tag before they leave the browser.
-        if (leadUserData.email || leadUserData.phone_number) {
-          window.gtag('set', 'user_data', {
-            email: leadUserData.email || undefined,
-            phone_number: leadUserData.phone_number || undefined,
-          });
-        }
-
         window.gtag('event', 'conversion', {
           send_to: `${trackingConfig.googleAdsId}/${trackingConfig.leadConversionLabel}`,
         });
