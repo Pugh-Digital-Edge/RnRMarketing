@@ -5,11 +5,11 @@ export const offer = {
   checklist: 'AI Visibility Checklist for Restoration Companies',
   checklistPath: '/resources/ai-visibility-checklist/',
   checklistDownload: '/downloads/restoration-ai-visibility-checklist.pdf',
-  summary: 'One managed program connecting your website, paid search and Local Services Ads, local SEO and Google Business Profile, AI visibility, and lead tracking.',
+  summary: 'Managed website, local visibility, and lead generation for restoration owners who want to reach more local customers. Paid channels roll out according to your agreed plan: some clients start with Local Services Ads, with Search added later by approval.',
   territory: 'We partner with one restoration company per agreed service territory, subject to availability.',
-  investment: 'Typical total marketing budgets range from $2,500 to $10,000 per month, including management and ad spend. Your proposal separates the management fee from the advertising budget for your market.',
-  commitment: 'Start with a three-month commitment, then continue month to month. Cancellation requires 30 days’ written notice and takes effect at the end of the applicable billing period; partial months are not prorated.',
-  ownership: 'Yes. After completing your three-month commitment and paying your balance, we transfer your website, graphics, and content at no extra charge. Early-transfer and hosting details are covered in your agreement.',
+  investment: 'Management is $1,300 per month, with advertising spend separate. We discuss the right media budget for your territory during the proposal and budget conversation. Your signed agreement governs any client-specific exceptions.',
+  commitment: 'Start with a three-month commitment that includes website development, then continue month to month. Your signed agreement governs any client-specific exceptions. Cancellation requires 30 days’ written notice and takes effect at the end of the applicable billing period; partial months are not prorated.',
+  ownership: 'Your website is client-owned from day one. Scope, hosting, and any handover arrangements are documented in your signed agreement.',
   timing: 'Paid campaigns can begin producing qualified leads within 72 hours of launch, depending on market, budget, eligibility, and campaign readiness. Organic search and AI visibility take longer. Rankings, leads, and AI citations are not guaranteed.',
   takeaway: 'Leave with our AI visibility checklist and a clearer sense of what to prioritize, even if we don’t work together.',
 };
@@ -19,7 +19,7 @@ export const programServices = [
   { title: 'Paid search + Local Services Ads', text: 'Campaign planning and management guided by your service territory, eligibility, advertising budget, and actual lead quality.' },
   { title: 'Local SEO + Google Business Profile', text: 'Service pages, local business information, and Google Business Profile work that help property owners find and evaluate you in Search and Maps.' },
   { title: 'AI visibility + AEO', text: 'Clear, useful service content and technical access that help answer engines understand your company. We monitor mentions and citations without promising placement.' },
-  { title: 'Lead tracking', text: 'Connect calls and forms to their marketing source, then use your team’s job outcomes to understand which opportunities become booked work.' },
+  { title: 'Lead tracking', text: 'Connect calls and forms to their marketing source. Your team handles sales follow-up and closing; its reported job outcomes help us understand which opportunities become booked work.' },
 ];
 
 export const offerFaqs = [

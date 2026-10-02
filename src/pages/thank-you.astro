@@ -76,16 +76,16 @@ const preloadedImage = await getOptimizedImage(heroImage);
   </script>
   <main class="thank-you">
     <div class="thank-you__content">
-      <p class="cs-topper">REQUEST RECEIVED</p>
-      <h1>Thanks. Now pick a time that works.</h1>
+      <p class="cs-topper">YOUR TERRITORY PLAN</p>
+      <h1>Choose a time to discuss your territory.</h1>
       <p>
-        Your details are in. Book your 30-minute {offer.session} with Matt below and it is locked in
+        Next, book your 30-minute {offer.session} with Matt below and it is locked in
         straight away, no back-and-forth email. Nothing to prepare, just bring your questions.
       </p>
     </div>
 
     <div class="thank-you__scheduler">
-      <!-- Loaded after the conversion script above so the lead is always recorded first. -->
+      <!-- Opening this scheduler is not evidence of a booked appointment. -->
       <iframe
         src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0ZohPTCbsjXJVYM2p94A87G46TCsjvi-5Oj3cGo3PGwRfQhrqZIZ-Q9BTNS4jlHWSPKArREwSH?gv=true"
         title={`Book your ${offer.session} with Matt Pugh`}
@@ -99,7 +99,7 @@ const preloadedImage = await getOptimizedImage(heroImage);
     <div class="thank-you__content thank-you__footnote">
       <p><a href={offer.checklistDownload} download>Download your AI visibility checklist</a>. Bring it to your session if you like; nothing to prepare.</p>
       <p>
-        Prefer not to book now? Matt will review your service territory and reach out either way.
+        Prefer not to book now? After submitting your request, Matt will review your service territory and reach out.
         In the meantime, see the reported client results behind the {offer.name}.
       </p>
       <a href="/case-studies/" class="cs-button-solid">See Client Results</a>

@@ -70,7 +70,7 @@ const {
     <a class="rm-logo" href="#lead-form" aria-label="Remediation and Restoration Marketing, request a call">
       <Image src={logo} alt="Remediation & Restoration Marketing" width={209} height={40} />
     </a>
-    <a class="rm-header-cta" href="#lead-form">Check your territory</a>
+    <a class="rm-header-cta" href="#lead-form">See the Plan for Your Territory</a>
   </header>
 
   <section class="rm-hero" aria-labelledby="rm-hero-title">
@@ -109,8 +109,8 @@ const {
           </p>
 
           <div class="rm-form-heading">
-            <h2>Request your {offer.session}</h2>
-            <p>Free · 30 minutes · With founder Matt Pugh</p>
+            <h2>See the Plan for Your Territory</h2>
+            <p>Share your contact details, then your territory. Choose a free, 30-minute session with Matt on the next page.</p>
           </div>
 
           <input type="hidden" name="gclid" data-attribution-field="gclid" />
@@ -155,7 +155,7 @@ const {
             </fieldset>
 
             <fieldset class="rm-form-step" data-form-step="2">
-              <legend>Your market and program</legend>
+              <legend>Your territory and priorities</legend>
               <p class="rm-step-status" aria-hidden="true">Step 2 of 2</p>
               <div class="rm-step-fields">
                 <label class="rm-full-field">
@@ -173,24 +173,13 @@ const {
                     <option value="not-sure">Not sure yet</option>
                   </select>
                 </label>
-                <label>
-                  Monthly marketing budget, including ad spend
-                  <span>Typical total budget: $2,500–$10,000 per month, including management and ad spend. Still planning? Choose “Not decided yet.”</span>
-                  <select required name="monthly-budget">
-                    <option value="" selected disabled>Choose a range</option>
-                    <option value="under-2500">Under $2,500 / month</option>
-                    <option value="2500-5000">$2,500 – $5,000 / month</option>
-                    <option value="5000-10000">$5,000 – $10,000 / month</option>
-                    <option value="10000-plus">$10,000+ / month</option>
-                    <option value="undecided">Not decided yet</option>
-                  </select>
-                </label>
+                <input type="hidden" name="monthly-budget" value="" />
               </div>
 
               <div class="rm-step-actions">
                 <button class="rm-step-back" type="button" data-step-back>Back</button>
                 <button class="rm-submit" type="submit">
-                  <span>Check my territory</span>
+                  <span>See the Plan for Your Territory</span>
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
                 </button>
               </div>
@@ -237,7 +226,7 @@ const {
             <dd>Your first strategy call is with Matt, and our specialists support the work that follows.</dd>
           </div>
         </dl>
-        <a class="rm-text-cta" href="#lead-form">See if your territory is available <span aria-hidden="true">→</span></a>
+        <a class="rm-text-cta" href="#lead-form">See the Plan for Your Territory <span aria-hidden="true">→</span></a>
       </div>
 
       <div class="rm-owner-panel">
@@ -283,8 +272,8 @@ const {
       </ol>
 
       <div class="rm-mid-cta">
-        <p>One team owns all five. When something isn&rsquo;t working, there&rsquo;s one person to ask.</p>
-        <a href="#lead-form">Check your territory <span aria-hidden="true">→</span></a>
+        <p>One team manages the agreed marketing work. Your team owns customer follow-up and sales closing.</p>
+        <a href="#lead-form">See the Plan for Your Territory <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -380,7 +369,7 @@ const {
     </div>
   </section>
 
-  <section class="rm-faq" aria-labelledby="rm-faq-title"><div class="rm-section-shell"><h2 id="rm-faq-title">Know what you’re signing up for.</h2><div class="rm-faq-list">{offerFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></div></section>
+  <section class="rm-faq" aria-labelledby="rm-faq-title"><div class="rm-section-shell"><h2 id="rm-faq-title">Know what you’re signing up for.</h2><div class="rm-faq-list">{offerFaqs.filter(faq => faq.question !== "How much does the program cost?").map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></div></section>
 
   <section class="rm-checklist" aria-labelledby="rm-checklist-title"><div class="rm-section-shell"><h2 id="rm-checklist-title">Not ready for a call? Start here.</h2><p>Use our AI visibility checklist to review how clearly your restoration company can be found, understood, and cited. A practical self-check, with no custom audit or call required.</p><a href={offer.checklistPath}>Get the AI visibility checklist <span aria-hidden="true">→</span></a></div></section>
 
@@ -395,7 +384,7 @@ const {
         <span>Territory availability</span>
         <p>Tell us where you work, and we will let you know if your territory is open.</p>
         <a class="rm-final-cta" href="#lead-form">
-          <span class="rm-final-cta-copy"><strong>Check my territory</strong><small>Free Lead Flow Acceleration Session</small></span>
+          <span class="rm-final-cta-copy"><strong>See the Plan for Your Territory</strong><small>Free Lead Flow Acceleration Session</small></span>
           <span class="rm-final-cta-arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -413,7 +402,7 @@ const {
     </div>
   </footer>
 
-  <nav class="rm-mobile-cta is-hidden" aria-label="Quick contact"><a href={`tel:${client.phoneForTel}`}>Call Matt</a><a href="#lead-form">Check territory</a></nav>
+  <nav class="rm-mobile-cta is-hidden" aria-label="Quick contact"><a href={`tel:${client.phoneForTel}`}>Call Matt</a><a href="#lead-form">See the Plan for Your Territory</a></nav>
 </div>
 
 <script>

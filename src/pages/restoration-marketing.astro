@@ -32,7 +32,7 @@ const proofItems = [
 
 // Figures come from src/data/caseStudies.js. Only the verified numbers are used
 // here; the disputed figures flagged in that file are deliberately left off a
-// page that carries paid traffic. Every client runs the same program, so the
+// page that carries paid traffic. Channel rollout follows each client’s agreement; the
 // inclusions are stated once above the cards rather than per client.
 const results = [
   {
@@ -68,7 +68,7 @@ const results = [
 
 const programPillars = programServices.map(service => service.title);
 
-const programNote = `${offer.name} brings these five areas together. We build and maintain your website, with transfer rights described in your agreement. The reports below show the combined work in three different markets.`;
+const programNote = `${offer.name} brings these five areas together. We build and maintain your website, with client ownership from day one and development included in the initial three months. The reports below show the combined work in three different markets.`;
 
 const heatMap = {
   src: "/assets/images/case-studies/chicago-gbp-heatmap.gif",
@@ -81,20 +81,20 @@ const heatMap = {
 <BaseLayout
   title="Full-Service Restoration Marketing for One Company Per Territory"
   description={`${offer.name}: website, paid search, local SEO and Google Business Profile, AI visibility, and lead tracking. Request your ${offer.session}.`}
-  dateModified="2026-09-17"
+  dateModified="2026-10-02"
   bodyContract={bodyContract}
   conversionOnly
   noindex
   eagerAnalytics
 >
   <AdsLandingPage
-    heroTitle="One Team Running Every Part of Your Restoration Marketing."
-    heroText={`${offer.name} connects your website, paid search, local SEO and Google Business Profile, AI visibility, and lead tracking. ${offer.territory}`}
+    heroTitle="More Restoration Jobs. Less Time Chasing Leads."
+    heroText={`For restoration owners ready to reach more local customers. We manage your website, local visibility, and lead generation so you can focus on running your business. Your team handles sales follow-up and closing. ${offer.territory}`}
     servicesTitle={offer.name}
     servicesIntro={offer.summary}
     services={services}
     resultsTitle="The work behind the system."
-    resultsIntro="Every result below came from running the entire program together, not from one service in isolation. Figures are taken from each client's own reporting for the window shown."
+    resultsIntro="These reported client results show specific channels and reporting periods. Channel rollout follows each client’s agreed plan; figures are not booked jobs or revenue."
     results={results}
     programPillars={programPillars}
     programNote={programNote}

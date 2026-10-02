@@ -7,6 +7,7 @@ const answers = {
   'Do you require long-term contracts?': offer.commitment,
   'How quickly can I expect to see results?': offer.timing,
   'Who owns the website?': offer.ownership,
+  'Can we keep our website if we leave?': offer.ownership,
   'Do you work with restoration companies outside my area?': offer.territory,
   "What's included in your marketing services?": `${offer.name}: ${offer.summary} Our U.S.-based team manages the work, with scope and budget documented in your proposal.`,
 };
