@@ -1,12 +1,12 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-10-01
+Last reconciled: 2026-10-05
 Current implementation run: [`2026-09-10-backlog-implementation.md`](runs/2026-09-10-backlog-implementation.md)
 Monthly learning review: [`2026-10-01-monthly-review.md`](runs/2026-10-01-monthly-review.md)
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
 Current weekly opportunity run: [`2026-09-14-weekly-opportunity.md`](runs/2026-09-14-weekly-opportunity.md)
-Current weekly coordinator run: [`2026-10-01-weekly-coordinator.md`](runs/2026-10-01-weekly-coordinator.md)
-Article implementation run: [`2026-09-28-weekly-coordinator.md`](runs/2026-09-28-weekly-coordinator.md)
+Current weekly coordinator run: [`2026-10-05-weekly-coordinator.md`](runs/2026-10-05-weekly-coordinator.md)
+Article implementation run: [`2026-10-05-weekly-coordinator.md`](runs/2026-10-05-weekly-coordinator.md)
 Regression run: [`2026-08-24-production-regression.md`](runs/2026-08-24-production-regression.md)
 Current regression run: [`2026-09-29-production-regression.md`](runs/2026-09-29-production-regression.md)
 Weekly implementation run: [`2026-08-27-weekly-plan-implementation.md`](runs/2026-08-27-weekly-plan-implementation.md)
@@ -15,18 +15,18 @@ Status values: Candidate · Planned · In Progress · Deployed · Measuring · V
 
 ## October evidence-ranked order
 
-The [October 1 monthly review](runs/2026-10-01-monthly-review.md) found no confirmed ranking, CTR, qualified-lead, mention, or citation win. SEO-004 is the only completed equal search window and remains mixed with zero clicks across all four cohorts. Production parity is the controlling defect: SEO-014 and SEO-015 are validated in source but remain 404 and absent from the live sitemap, so neither measurement clock has started.
+The [October 5 coordinator run](runs/2026-10-05-weekly-coordinator.md) found fresh scheduled search, analytics, visibility, technical-audit, and Google coverage evidence, but no confirmed intervention outcome. Production parity remains the controlling defect: live build `c8698c8` predates SEO-014, SEO-015, and the newly validated SEO-017 source, so all three article URLs remain outside accepted-live measurement.
 
-1. **SEO-014 and SEO-015** — restore production parity through an explicitly accepted deployment scope, then run locked full acceptance and start each 28-day clock from the accepted-live timestamp. Do not create replacement articles or count source delivery as live delivery.
+1. **SEO-014, SEO-015, and SEO-017** — restore production parity through an explicitly accepted deployment scope, then run locked full acceptance and start each 28-day clock from the accepted-live timestamp. Do not create replacement articles or count source delivery as live delivery.
 2. **SEO-002, SEO-005, SEO-007, and SEO-009** — close the overdue exact-cohort measurements through daily/coordinator receipts. Preserve unavailable or partial data as inconclusive; do not infer success from aggregate coverage or sparse page impressions.
 3. **SEO-010, SEO-008, SEO-011, and SEO-012** — evaluate in due-date order on October 6, 8, 9, and 13 using complete equal windows. Keep GSC, organic/AI sessions, verified lead events, Mention Coverage/Share, and Citation Coverage separate.
 4. **SEO-003** — confirm whether the September 27 decline (3/42 Mention Coverage, 3/27 non-brand Mention Share, 0/42 Citation Coverage) persists through the next authorized scheduled fixed-basket run. No manual sweep, probe, basket change, or content rewrite is authorized by this review.
 5. **SEO-013** — keep Measuring until the pipeline demonstrates accepted live delivery and Git-addressable measurement closure without duplicate weekly articles. Fresh schedules alone are not completion.
-6. **Existing-page candidates** — after parity and overdue measurements, reassess retargeting, lead tracking, water-damage PPC, web design, and homepage agency intent. No implementation is authorized by this ranking.
+6. **Existing-page candidates** — after parity and overdue measurements, reassess retargeting (127 impressions, position 6.86), lead tracking (17, 7.65), water-damage PPC (183, 19.22), web design (69, 22.68), and homepage agency intent (370, 42.87; 2 clicks) in the latest stored 30-day family reads. No implementation is authorized by this ranking.
 
 ## Current pipeline authorization — 2026-09-15
 
-Matt approved the [pipeline fixes](pipeline.md), explicitly retaining one new article per week. This supersedes older per-run approval gates for the exact bounded schedules, repair syncs and September 25 same-set inspection in that contract. No indexing submissions or basket expansion are authorized. As of the September 25 scheduled refresh, Google coverage is 59 indexed / 44 not indexed / 0 deindexed across 103 stored URLs, GSC performance is available through September 22, GA4 property 543995602 is connected and synced through September 25, and the scheduled Bing sitemap inspection is partial with 89 of 99 pages uninspected; the last complete stored Bing sample remains 41 indexed / 0 not indexed / 1 unknown across 42 URLs from September 23. Earlier dated statements about unavailable/stale evidence remain historical. SEO-012's live mold guide satisfies the September 14–20 article obligation. SEO-013 tracks the pipeline upgrade and its first unattended verification. SEO-014 is the single auto-approved September 21–27 article: source commit `0b97014` is pushed, but the live site still reports `c8698c8` and the article URL is 404, so it remains Awaiting live verification. Friday recovery must resume SEO-014 rather than create a second article.
+Matt approved the [pipeline fixes](pipeline.md), explicitly retaining one new article per week. This supersedes older per-run approval gates for the exact bounded schedules, repair syncs and same-set inspections in that contract. No indexing submissions or basket expansion are authorized. As of October 5, GSC is available through October 3, GA4 property 543995602 synced October 5, the October 4 fixed-basket run completed 126/126 provider snapshots, and audit `10032af0-79a2-443c-8357-58b1a179dc3b` scored 90/100 over 101 pages with no errors or skips. Google coverage is 57 indexed / 46 not indexed / 0 deindexed across 103 stored URLs; Bing remains partial with 89 of 99 pages uninspected. SEO-017 is the single auto-approved October 5–11 article: source commit `53800b0` is pushed and validated, but live still reports `c8698c8`, the URL is 404, and it is absent from the live sitemap, so it remains Awaiting live verification.
 
 ## September evidence-ranked order
 
@@ -379,13 +379,31 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Category: search-intent/content gap; operational measurement and lead-management guidance.
 - Scope: tracked query `best CRM software for restoration business management`; prospective decision framework for restoration-company owners, distinct from the lead-tracking service page.
 - Problem: the site explains lead tracking but does not provide an operator-focused CRM selection framework connecting intake, job stages, attribution, access controls, integrations, and reporting governance.
-- Evidence baseline: Canonry marks the query ownable with 0/4 mentions, 0/4 citations, 0.8407 winnability, and Medium action confidence; cited competitors include PushLeads, Restoration Inbound, and Diginebel. Pooled separately across the four latest runs, provider snapshots are 1/12 mentioned and 0/12 cited. A GSC `crm` query-family read for 2026-08-22 through 2026-09-20 returned no rows, so search demand is unavailable rather than zero.
+- Evidence baseline: Canonry marks the query ownable with 0.8407 winnability and Medium action confidence; cited competitors include PushLeads, Restoration Inbound, and Diginebel. Reconciled October 5 evidence across the four latest scheduled runs is 0/12 mentioned and 0/12 cited. A current GSC `crm` query-family read returned no rows, so search demand is unavailable rather than zero.
 - Hypothesis: a vendor-neutral selection and governance framework could serve distinct informational intent and create a qualified route into lead tracking without inventing vendor rankings or outcomes.
 - Expected impact: add a credible first-party answer source for an observed AEO gap; organic demand remains unproven.
 - Recommended change: keep as a reserve only. Revalidate attributable search demand, current primary vendor documentation, and overlap with the lead-tracking page before any future weekly auto-approval.
 - Effort: Medium.
 - Confidence: Medium for the AEO/content gap; Low–Medium for organic impact until search demand is observed.
 - Verification method: fresh Canonry query/provider evidence, nonzero attributable search or other customer-demand evidence, duplication review, primary-source factual verification, release validation, live parity, and a later exact query/page comparison.
+
+### SEO-017 — Restoration marketing ROI measurement
+
+- Status: In Progress — Awaiting live verification
+- Approval state: auto-approved on 2026-10-05 as the single article for the October 5–11 Eastern week under the standing weekly pipeline authorization.
+- Category: search-intent/content gap; marketing measurement guidance.
+- Scope: tracked query `restoration marketing ROI`; GSC query family; `/resources/restoration-marketing-roi/` supporting lead tracking, PPC, SEO, web design, reputation, and retargeting services.
+- Problem: the site lacks a dedicated operator guide that connects attributable marketing cost to qualified leads, booked jobs, collected revenue, and gross profit without treating lead volume or platform ROAS as business ROI.
+- Evidence baseline: the query family produced 14 impressions, 0 clicks, and weighted position 15.29 over 60 days, primarily on `/services/lead-tracking/` and `/water-damage-restoration/ppc/`. The tracked query was 0/12 mentioned and 1/12 cited across the latest four scheduled provider snapshots, including 0/3 mentioned and 1/3 cited on October 4. Existing coverage was a short FAQ answer rather than a dedicated calculation and governance resource.
+- Hypothesis: a practical, vendor-neutral measurement guide can satisfy distinct informational intent and strengthen qualified routes into existing commercial services.
+- Expected impact: create a useful first-party answer source and clearer decision framework. No ranking, lead, revenue, or citation outcome is promised.
+- Recommended change: deploy and live-verify the implemented guide; preserve the same ID during recovery and do not draft another article this week.
+- Effort: Medium.
+- Confidence: Medium–High for the gap; Medium for organic/AEO impact.
+- Implementation: article plus one 1590×800 WebP cover image committed and pushed as `53800b0367d5239f50b9c268f20d226d33b5748f`. `npm run validate` passed with zero Astro errors, 39/39 tests, a successful 109-page build, and postbuild checks. Render QA found one H1, one BlogPosting source, one FAQPage source matching four visible FAQs, seven internal links, four official-source links, zero body images, and local sitemap inclusion.
+- Live checkpoint: the locked full checker failed because production remains on `c8698c8`; the exact article URL returns 404 and is absent from the live sitemap. Status remains Awaiting live verification. Next checkpoint: Wednesday, 2026-10-07, or immediately after an explicit hosting deployment receipt.
+- Measurement due date: 28 days after accepted live verification; no measurement clock starts from the source push.
+- Verification method: exact live HTTP 200, sitemap inclusion, canonical/indexability, matching visible/schema FAQ content, local/live parity and accepted deployed revision, followed by an equal exact query/page outcome window.
 
 ## Reconciled / not prioritized
 
