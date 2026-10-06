@@ -1,39 +1,18 @@
 # SEO handoff briefs
 
-Approved Notion Fulfillment work becomes a pull request through this folder, then Codex reviews and merges. This is the same closed-loop SEO brain documented in [`../COHESION.md`](../COHESION.md) — not a parallel publisher.
+Use [portfolio-flow.md](../portfolio-flow.md) for the current approval, dispatch, PR review, live acceptance and measurement contract. It supersedes the original September handoff instructions.
 
-Copy [`TEMPLATE.md`](TEMPLATE.md) into the correct folder below. Point the Notion row's **Codex brief path** at that file. Do not invent extra Notion IDs in the repo; the Notion URL on the brief is the durable pointer.
+Copy [PORTFOLIO-TEMPLATE.md](PORTFOLIO-TEMPLATE.md), including the intervention ID, approved revision, scope, evidence, launch claim and acceptance fields. Reuse an existing backlog ID for overlapping work.
 
-## Folders
+| Folder | Meaning |
+| --- | --- |
+| `review/` | Waiting for Matt's required approval; no implementation or dispatch. |
+| `pending/` | Gate-satisfied brief, from Ready through Measuring. Folder presence does not authorize another launch. |
+| `done/` | Accepted live and required measurement complete, or an explicit justified measurement exemption. |
+| `cancelled/` | Closed without merge. |
 
-| Folder | Meaning | Who acts |
-| --- | --- | --- |
-| [`pending/`](pending/) | Gate already satisfied. Actionable for implementers. | Grok Bot may launch a Cloud Agent. Cloud Agents implement as a PR. |
-| [`review/`](review/) | Waiting for Matt's SEO gate. | Not actionable for implementers. Grok Bot does not launch. |
-| [`done/`](done/) | Merged (or closed without merge). Historical. | Do not re-implement unless a new brief is filed. |
+Suggested filename: `YYYY-MM-DD-SEO-###-short-slug.md`.
 
-When scanning this tree, **only `pending/` is actionable for implementers**. `review/` waits for Matt. After Codex merges, move the brief into `done/` (the implementing PR may include that move).
+Cloud Agents implement the approved technical/structural scope on an isolated PR only. Codex owns substantive prose, review, merge, live acceptance and measurement. Grok owns launch deduplication and Notion synchronization from Codex receipts. The local SEO lock coordinates one clone and its linked worktrees; desktop/laptop ownership requires an explicit transfer.
 
-Suggested filename: `YYYY-MM-DD-short-slug.md`.
-
-## SEO gate (before any Cloud Agent)
-
-Launch a Cloud Agent only when Notion status is **Ready**, the brief is in **`pending/`**, and Source matches:
-
-- **Matt** (or **Client request** that Matt confirmed): SEO gate is **N/A** or **Approved** → may kick.
-- **Canonry evidence** or **Competitive research**: SEO gate must be **Approved** by Matt. Those briefs **start in `review/`**, not `pending/`. After approval, move the file to `pending/` before launch.
-- **Internal ops**: same as Client request (Matt confirmed, gate N/A or Approved). Keep in `review/` until that is true.
-
-Never launch while the gate is **Needs review** or **Rejected**.
-
-## Roles
-
-- **Cloud Agent:** implement the pending brief as a PR only. Never merge. Never auto-publish articles outside the brief. Acquire the shared SEO lock. Label the PR `handoff` and link this brief path.
-- **Codex:** weekly articles, weekday health, monthly learning, **and** review/merge of these PRs (lock + `npm run validate`). A handoff PR is review-to-merge work, not a second weekly-article run.
-- **Grok Bot:** hosted Canonry spine, Notion ops, and Cloud Agent launch **only after** the SEO gate. Does not compete on article publishing and does not merge.
-
-## After merge
-
-1. Codex merge is the ship signal (validate + SEO lock passed).
-2. Brief file belongs in `done/`.
-3. Notion Fulfillment status → Done, with the PR link.
+Merge is Awaiting live verification. Delivery complete may have a separately linked open measurement item; it is not permission to call required measurement Done. Apply the full approval and deduplication contract before dispatch, and validate the proposed merge against current main under the local lock before merging.

@@ -1,4 +1,6 @@
-﻿# Execution ownership (cohesion)
+# Execution ownership (cohesion)
+
+The current approval, deduplication, desktop/laptop ownership and acceptance contract is [portfolio-flow.md](portfolio-flow.md). This ownership summary follows that contract.
 
 Approved direction: **Codex keeps running the closed-loop SEO jobs**. Grok Bot owns shared infrastructure so both sides stay aligned. Cursor Cloud Agents implement approved Notion Fulfillment briefs as **pull requests only**; Codex reviews and merges those PRs. This is the same closed-loop brain as weekly articles, weekday health, and monthly learning — not a parallel publisher.
 
@@ -6,7 +8,7 @@ Approved direction: **Codex keeps running the closed-loop SEO jobs**. Grok Bot o
 | --- | --- | --- |
 | Article + weekday health + monthly learning | **Codex automations** | Same prompts/schedules in `~/.codex/automations` |
 | Review/merge of Cloud Agent handoff PRs | **Codex** | Shared SEO lock + `npm run validate`. Merge is Codex-only. |
-| Implement approved handoffs as PRs | **Cursor Cloud Agent** | Never merge. Never auto-publish articles outside the brief. |
+| Implement approved handoffs as PRs | **Cursor Cloud Agent** | Approved technical/structural PRs only; no merge, articles or substantive marketing prose. |
 | Measurement / AEO evidence | **Hosted Canonry** | `https://canonry.remediationrestorationmarketing.com` · project `remediation-restoration-marketing` |
 | Repo contract | **This repo** | `AGENTS.md` + `docs/seo/pipeline.md` remain source of truth. Briefs live in `docs/seo/handoffs/`. |
 | Hosting / DNS / MCP / backups | **Grok Bot** | VPS, Caddy, MCP wiring, deploy repo |
@@ -15,7 +17,7 @@ Approved direction: **Codex keeps running the closed-loop SEO jobs**. Grok Bot o
 
 Desktop + laptop `~/.canonry/config.yaml` must keep `apiUrl` / `publicUrl` on the hosted HTTPS URL so Codex's installed Canonry/Aero skills hit the same DB as the dashboard and Grok MCP.
 
-Do not run parallel Grok Bot routines that rewrite the same backlog/runs while Codex jobs are ACTIVE — that causes lock fights and duplicate articles. Cloud Agent implementation PRs take the same shared SEO lock; they do not bypass Codex cadence or the weekly article quota.
+Do not run parallel Grok Bot routines that rewrite the same backlog/runs while Codex jobs are ACTIVE — that causes lock fights and duplicate articles. Cloud Agents use isolated branches. The shared SEO lock coordinates one clone and linked worktrees only; one designated Codex host serializes releases. Independent devices require explicit ownership transfer.
 
 ## Grok Bot in RRM fulfillment
 
@@ -29,9 +31,9 @@ Work is tracked in Notion Fulfillment under RRM HQ. Canonry remains measurement 
 
 1. Gate the work in Notion (`Source` + `SEO gate`).
 2. Land the approved brief in `docs/seo/handoffs/pending/` (copy [`handoffs/TEMPLATE.md`](handoffs/TEMPLATE.md)). Evidence-sourced drafts start in `review/` until Matt Approves.
-3. **Grok Bot launches a Cursor Cloud Agent**, which implements the pending brief as a **PR only** (no merge).
+3. **Grok Bot launches a Cursor Cloud Agent** only after exact-revision approval and launch deduplication under portfolio-flow.md. The agent implements as a **PR only** (no merge).
 4. **Codex reviews and merges** that PR (acquire the SEO lock, run `npm run validate`) — same owner as articles, weekday health, and monthly learning.
-5. Notion Fulfillment → Done with the PR link; the brief file moves to `docs/seo/handoffs/done/`.
+5. Codex verifies the live artifact and records a Git acceptance receipt; Grok synchronizes Notion from that receipt. Keep Measuring until required measurement completes, or record an explicit measurement exemption. Only then file under `done/`; closed-unmerged work belongs under `cancelled/`.
 
 ### SEO gate (before any Cloud Agent)
 

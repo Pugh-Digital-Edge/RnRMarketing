@@ -1,4 +1,4 @@
-﻿# SEO pipeline contract
+# SEO pipeline contract
 
 Approved by Matt on 2026-09-15: apply the pipeline assessment fixes, retaining **one new article every calendar week**. Weeks run Mondayâ€“Sunday in America/New_York. This contract supersedes older automation wording that requires fresh approval for the bounded operations below. It does not approve fabricated evidence or unrelated changes.
 
@@ -77,7 +77,7 @@ If a window is not complete, leave Measuring and record the missing source plus 
 
 ## Runtime availability
 
-The current-user Windows scheduled task **Codex Canonry Health** runs at logon and every 15 minutes, using `C:\Users\mpugh\.codex\automations\daily-canonry-serve\ensure-canonry.ps1`. It checks health first and calls `cnry start` only if unavailable; it never stops or restarts a healthy daemon. The old daily Codex `serve` task is paused. Local repository automations still require this computer and the Codex desktop app to be on; Canonry collection requires the computer and daemon. Staggered clock times alone do not guarantee repository job ordering. If a scheduled collection was missed, check native run history before attempting a bounded repair; do not assume catch-up succeeded.
+Hosted Canonry is the primary. The current-user Windows **Codex Canonry Health** task only verifies hosted health; it must not start a second local primary. The old daily Codex serve task is paused. Repository-writing automations require this computer and the Codex desktop app online. Check native collection history before a bounded repair; staggered schedules do not establish lock ownership or prove catch-up.
 
 ## Shared primary (hosted Canonry)
 
@@ -85,14 +85,8 @@ As of 2026-09-16 the Canonry primary is hosted at `https://canonry.remediationre
 
 ## Cloud Agent handoff PRs (Codex review/merge)
 
-Approved Notion Fulfillment work may be implemented by a Cursor Cloud Agent as a pull request. That lane is **not** a second article publisher and does **not** change the one-article-per-week obligation. Ownership stays with Codex: weekly articles, weekday health, monthly learning, **and** review/merge of these PRs.
+Follow [portfolio-flow.md](portfolio-flow.md) for approval revisions, launch deduplication, PR discovery, bounded review, desktop/laptop ownership and acceptance. Use [handoffs/PORTFOLIO-TEMPLATE.md](handoffs/PORTFOLIO-TEMPLATE.md) for briefs. This is the existing Codex workflow; the one-article-per-week obligation is unchanged.
 
-When Codex sees a PR labeled `handoff`, opened from a Cloud Agent, or referencing `docs/seo/handoffs/`:
+Weekday health discovers candidate PRs. The coordinator reviews at most one eligible handoff after article delivery is secured and urgent regressions are handled. Discovery signals identify candidates, not approval. Cloud Agents implement approved technical/structural scope as isolated PRs only; Codex retains prose, prioritization, release acceptance and measurement.
 
-1. Treat it as **review-to-merge** work, not as a competing weekly-article run.
-2. Acquire the shared SEO lock. Run `npm run validate`. Merge only if the PR matches the brief, stays inside its constraints, and the SEO gate is satisfied.
-3. Do not merge if the brief is still in `review/`, the SEO gate is Needs review or Rejected, or the change publishes an article outside the brief or the weekly article rules.
-4. After merge, Notion Fulfillment is Done (PR link) and the brief belongs in `docs/seo/handoffs/done/`.
-
-When scanning `docs/seo/handoffs/`, only `pending/` is actionable for implementers. `review/` waits for Matt's SEO gate. Cloud Agents never merge. Grok Bot launches Cloud Agents only after that gate (see `docs/seo/COHESION.md`).
-
+Validate the proposed merge against current main under the local SEO lock. A moved base or PR head invalidates validation. After merge, status is Awaiting live verification; record a Git acceptance receipt after live parity passes, then measure the defined cohort. Grok synchronizes Notion from that receipt. Folder presence is not launch permission, and merge is not Done.
