@@ -1,159 +1,30 @@
 ---
 import { offer } from "@data/offer.js";
-import desktopImage from "@assets/images/CTA/black-abstract-cta.jpg"
-import { Picture } from 'astro:assets';
-import { Image } from 'astro:assets';
-
 ---
-
-<!-- ============================================ -->
-<!--                     CTA                      -->
-<!-- ============================================ -->
-
-<section id="cta-52">
-    <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper text-white">CHECK TERRITORY AVAILABILITY</span>
-            <h2 class="cs-title">Get a Clearer Plan for More Qualified Restoration Leads</h2>
-            <p class="cs-text text-white font-bold">
-                Explore the {offer.name} in your free {offer.session}. We review your service territory, visibility, and lead opportunities. {offer.territory}
-            </p>
-            <a href="/schedule/" class="cs-button-solid">Request Your Free Acceleration Session</a>
-            <p class="text-white mt-2">30 minutes with Matt | No obligation</p>
-            <p class="text-white mt-2">{offer.takeaway}</p>
-            <a href={offer.checklistPath} class="text-white" style="text-decoration: underline; display: inline-block; padding: 1rem 0;">Get the AI visibility checklist</a>
-        </div>
-        <Picture class="cs-picture"
-            src={desktopImage} 
-            width="2250" 
-            height="1500" 
-            formats={['avif', 'webp']} 
-            alt="A flooded basement that is in need of water restoration services."/>
-        
+<section id="cta-52" aria-labelledby="closing-cta-title">
+  <div class="cs-container">
+    <div class="cs-content">
+      <h2 class="cs-title" id="closing-cta-title">Get a Clearer Plan for More Qualified Restoration Leads</h2>
+      <p class="cs-text">We review your service territory, visibility, and lead opportunities in your free {offer.session}.</p>
+      <p class="cta-territory">{offer.territory}</p>
     </div>
-  </section>
-                              
-
-<style lang="less">
- /*-- -------------------------- -->
-<---            CTA             -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    #cta-52 {
-        padding: var(--sectionPadding);
-        position: relative;
-
-        .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
-            padding: var(--sectionPadding);
-            /* prevents padding from affecting width and height */
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
-            position: relative;
-        }
-
-        .cs-content {
-            /* set text align to left if content needs to be left aligned */
-            text-align: center;
-            width: 100%;
-            max-width: (630/16rem);
-            display: flex;
-            flex-direction: column;
-            /* centers content horizontally, set to flex-start to left align */
-            align-items: center;
-        }
-
-        .cs-title, .cs-text {
-            color: var(--bodyTextColorWhite);
-        }
-
-        .cs-text {
-            margin: 0 0 (32/16rem) 0;
-            opacity: .8;
-        }
-
-        .cs-button-solid {
-            font-size: (16/16rem);
-            /* 46px - 56px */
-            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-            text-decoration: none;
-	    	font-weight: 700;
-	        text-align: center;
-            margin: 0;
-            color: #fff;
-            min-width: (150/16rem);
-            padding: 0 (24/16rem);
-            background-color: var(--primary);
-            border-radius: (4/16rem);
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            /* prevents padding from adding to the width */
-            box-sizing: border-box;
-
-            &:before {
-                content: '';
-                position: absolute;
-                height: 100%;
-                width: 0%;
-                background: #000;
-                opacity: 1;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                border-radius: (4/16rem);
-                transition: width .3s;
-            }
-
-            &:hover {
-                &:before {
-                    width: 100%;
-                }
-            }
-        }
-
-        .cs-picture {
-            height: 100%;
-            width: 100%;
-            display: block;
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            z-index: -1;
-
-            &:before {
-                /* navy gradient overlay */
-                content: "";
-                position: absolute;
-                display: block;
-                height: 100%;
-                width: 100%;
-                background: linear-gradient(120deg, rgba(6, 17, 36, 0.96) 0%, rgba(10, 60, 120, 0.85) 100%);
-                opacity: 1;
-                top: 0;
-                left: 0;
-                z-index: 1;
-            }
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-}
-                                
+    <div class="cta-next-step">
+      <h3>Your next step</h3>
+      <p>30 minutes with Matt. No obligation.</p>
+      <a href="/schedule/" class="cs-button-solid">Request Your Free Session</a>
+      <p>{offer.takeaway}</p>
+      <a href={offer.checklistPath} class="cta-checklist">Get the AI visibility checklist</a>
+    </div>
+  </div>
+</section>
+<style>
+  #cta-52 { background: #071a42; padding: 4rem 1rem; }
+  .cs-container { max-width: 80rem; margin: auto; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: clamp(2rem, 6vw, 6rem); }
+  .cs-title { color: #fff; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.15; margin: 0 0 1.5rem; max-width: 23ch; }
+  .cs-text, .cta-territory, .cta-next-step p { color: #dce6f4; line-height: 1.7; margin: 0 0 1.25rem; }
+  .cta-next-step { border-top: 1px solid #6680a6; padding-top: 1.5rem; }
+  h3 { color: #fff; font-size: 1.4rem; margin: 0 0 .75rem; }
+  .cs-button-solid { margin-bottom: 1.5rem; }
+  .cta-checklist { display: inline-flex; align-items: center; min-height: 44px; color: #fff; text-decoration: underline; text-underline-offset: .2em; }
+  @media(max-width: 767px) { .cs-container { grid-template-columns: 1fr; } }
 </style>

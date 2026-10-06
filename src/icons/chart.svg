@@ -1,1 +1,18 @@
-<svg clip-rule="evenodd" fill-rule="evenodd" height="300" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 3000 3000" width="300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns:svgjs="http://svgjs.dev/svgjs"><g width="100%" height="100%" transform="matrix(1,0,0,1,0,0)"><linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="-48" x2="3047.99" y1="984" y2="2015.99"><stop offset="0" stop-color="#08469a"/><stop offset="1" stop-color="#25a4c3"/></linearGradient><g id="Layer_x0020_1"><circle cx="1500" cy="1500" fill="#00487c" r="1500" data-original-color="id0" stroke="none" stroke-opacity="1" fill-opacity="1"/><path d="m794 1500c0 26-40 26-40 0 0-395 308-720 699-745l-74-74c-19-19 9-47 28-28 16 16 109 105 112 116l-5 19-107 108c-19 18-47-10-28-29l71-71c-368 26-656 332-656 704zm166 278h48v-240c0-11 9-20 20-20h140c11 0 20 9 20 20v240h71v-596c0-11 9-20 20-20h139c11 0 20 9 20 20v596h72v-460c0-11 8-20 20-20h139c11 0 20 9 20 20v460h71v-689h-47c-16 0-26-19-16-32l141-184c9-6 21-5 28 4l137 179c12 14 1 33-15 33h-48v689c79 0 68-10 68 88 0 11-9 20-20 20h-1028c-11 0-20-9-20-20v-68c0-11 9-20 20-20zm1008 40c-329 0-659 0-988 0v28h988zm-168-40h100v-709c0-25 29-20 47-20l-97-127-97 127c18 0 47-5 47 20zm-250 0h99v-440h-99zm-251 0h99v-576h-99zm-251 0h100v-220h-100zm574 541c18 19-10 47-29 28l-111-112c-4-8-2-17 4-23l107-108c19-18 47 10 29 29l-72 71c368-26 656-332 656-704 0-26 40-26 40 0 0 395-308 720-699 745z" fill="#ffffff" fill-rule="nonzero" fill-opacity="1" data-original-color="#ffffffff" stroke="none" stroke-opacity="1"/></g></g></svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 16v5" />
+  <path d="M16 14.639V21" />
+  <path d="M20 10.656V21" />
+  <path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15" />
+  <path d="M4 18.463V21" />
+  <path d="M8 14.656V21" />
+</svg>

@@ -7,23 +7,22 @@ import landingImage from '@assets/images/landing/ocean-water.jpg';
 
 <BaseLayout title="Restoration Marketing Case Studies" description="Anonymous, report-led case studies showing how restoration marketing programs improve local visibility, leads, calls, and cost efficiency." preloadedImage={landingImage} openGraphImage="/assets/images/case-study-og.svg" dateModified="2026-08-06">
   <section class="case-index-hero"><div class="case-index-container"><p class="case-index-label">Reported client outcomes</p><h1>Proof you can actually trace.</h1><p>See how restoration-focused SEO, Google Business Profile work, Local Services Ads, web design, and lead tracking came together across three reporting windows.</p><a class="cs-button-solid" href="/schedule/">Request Your Free Session</a></div></section>
-  <section class="case-index-intro"><div class="case-index-container intro-grid"><div><p class="case-index-label">Why these stories are different</p><h2>Outcomes first. Claims kept in proportion.</h2></div><p>These stories use broad geographies and anonymous labels by design. They separate reported visibility and lead outcomes from customer-confirmed jobs, and keep every metric in its original reporting context.</p></div></section>
-<main class="case-index-list"><div class="case-index-container"><div class="case-index-list-heading"><h2>Choose a story</h2><span>Three reporting windows · one reusable framework</span></div><div class="case-cards">{caseStudies.map((study, index) => <article class="case-card ui-card"><div class="case-card-top"><span>0{index + 1}</span><span>{study.window}</span></div><p class="case-card-label">{study.label}</p><h3>{study.headline}</h3><p>{study.summary}</p><div class="case-card-metrics">{study.metrics.slice(0, 2).map((metric) => <div><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div><div class="case-card-footer"><span>{study.proofLine}</span><a class="ui-link-arrow" href={`/case-studies/${study.slug}/`}>Read story <span aria-hidden="true">↗</span></a></div></article>)}</div></div></main>
-  <section class="case-index-services"><div class="case-index-container"><div><p class="case-index-label">Build your own proof loop</p><h2>Start with the service that matches your constraint.</h2></div><div class="service-link-grid">{caseStudyServices.map((service) => <a href={service.href}>{service.label}<span aria-hidden="true">↗</span></a>)}</div></div></section>
+<main class="case-index-list"><div class="case-index-container"><div class="case-index-list-heading"><h2>Choose a story</h2><span>Results from three restoration companies</span></div><div class="case-cards">{caseStudies.map((study, index) => <article class="case-card ui-card"><div class="case-card-top"><span>0{index + 1}</span><span>{study.window}</span></div><p class="case-card-label">{study.label}</p><h3>{study.headline}</h3><p>{study.summary}</p><div class="case-card-metrics">{study.metrics.slice(0, 2).map((metric) => <div><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div><div class="case-card-footer"><span>{study.proofLine}</span><a class="ui-link-arrow" href={`/case-studies/${study.slug}/`}>Read story</a></div></article>)}</div></div></main>
+  <section class="case-index-services"><div class="case-index-container"><div><h2>Explore our restoration marketing services</h2></div><div class="service-link-grid">{caseStudyServices.map((service) => <a href={service.href}>{service.label}<span aria-hidden="true">↗</span></a>)}</div></div></section>
   <CaseStudyTeaser compact />
 </BaseLayout>
 
 <style lang="less">
-  .case-index-container { width: min(100% - 2rem, 80rem); margin-inline: auto; }
+  .case-index-container { width: calc(100% - 2rem); max-width: 80rem; margin-inline: auto; }
   .case-index-hero { padding: clamp(9rem, 18vw, 14rem) 0 clamp(4rem, 8vw, 7rem); color: #fff; background: radial-gradient(circle at 80% 10%, rgba(59,142,222,.32), transparent 34rem), #071a32; }
-  .case-index-hero h1 { max-width: 9ch; margin: 0 0 1.25rem; color: #fff; font-size: clamp(3.5rem, 9vw, 7rem); line-height: .9; letter-spacing: -.07em; }
+  .case-index-hero h1 { max-width: 14ch; margin: 0 0 1.25rem; color: #fff; font-size: clamp(3.5rem, 7vw, 6rem); line-height: 1.05; letter-spacing: -.035em; }
   .case-index-hero p:not(.case-index-label) { max-width: 43rem; margin: 0 0 2rem; color: rgba(255,255,255,.78); font-size: clamp(1.05rem, 2vw, 1.3rem); }
   .case-index-label { margin: 0 0 .85rem; color: var(--primary); font-size: .75rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
   .case-index-hero .case-index-label { color: #86c8ff; }
   .case-index-hero .cs-button-solid { background: #86c8ff !important; color: #071a32 !important; box-shadow: none; }
   .case-index-intro { padding: clamp(4rem, 8vw, 7rem) 0; }
   .intro-grid { display: grid; gap: 2rem; align-items: end; }
-  .intro-grid h2, .case-index-services h2 { max-width: 16ch; margin: 0; font-size: clamp(2.2rem, 5vw, 4.25rem); line-height: 1; letter-spacing: -.055em; }
+  .case-index-services h2 { max-width: 24ch; margin: 0; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.15; letter-spacing: -.03em; }
   .intro-grid > p { max-width: 40rem; margin: 0; color: var(--bodyTextColor); font-size: 1.05rem; }
   .case-index-list { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--surfaceMuted); }
   .case-index-list-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: end; margin-bottom: 2rem; }

@@ -7,7 +7,7 @@ export const offer = {
   checklistDownload: '/downloads/restoration-ai-visibility-checklist.pdf',
   summary: 'Managed website, local visibility, and lead generation for restoration owners who want to reach more local customers. Paid channels roll out according to your agreed plan: some clients start with Local Services Ads, with Search added later by approval.',
   territory: 'We partner with one restoration company per agreed service territory, subject to availability.',
-  investment: 'Management is $1,300 per month, with advertising spend separate. We discuss the right media budget for your territory during the proposal and budget conversation. Your signed agreement governs any client-specific exceptions.',
+  investment: 'We recommend a scope for your service territory and priorities during your consultation. Your proposal documents the agreed work and campaign plan.',
   commitment: 'Start with a three-month commitment that includes website development, then continue month to month. Your signed agreement governs any client-specific exceptions. Cancellation requires 30 days’ written notice and takes effect at the end of the applicable billing period; partial months are not prorated.',
   ownership: 'Your website is client-owned from day one. Scope, hosting, and any handover arrangements are documented in your signed agreement.',
   timing: 'Paid campaigns can begin producing qualified leads within 72 hours of launch, depending on market, budget, eligibility, and campaign readiness. Organic search and AI visibility take longer. Rankings, leads, and AI citations are not guaranteed.',

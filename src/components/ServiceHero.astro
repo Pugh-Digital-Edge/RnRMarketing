@@ -103,7 +103,7 @@ if (!config) throw new Error(`Unknown service hero: ${service}`);
 <style lang="less">
   .service-hero { color: #fbfcf8; background: #071a42; overflow: hidden; position: relative; padding-top: clamp(5rem, 8vw, 8rem); }
   .service-hero__grid { position: absolute; inset: 0; opacity: .16; background-image: linear-gradient(rgba(255,255,255,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px); background-size: 4rem 4rem; mask-image: linear-gradient(to bottom, #000, transparent 90%); }
-  .service-hero__inner, .service-hero__nav { width: min(100% - 2rem, 80rem); margin-inline: auto; position: relative; }
+  .service-hero__inner, .service-hero__nav { width: calc(100% - 2rem); max-width: 80rem; margin-inline: auto; position: relative; }
   .service-hero__inner { min-height: min(34rem, calc(100svh - 8rem)); padding: clamp(3rem, 6vw, 5rem) 0; box-sizing: border-box; display: grid; align-items: center; gap: clamp(2.5rem, 6vw, 6rem); }
   .service-hero__copy { max-width: 47rem; }
   h1 { max-width: 15ch; margin: 0 0 1.5rem; color: #fff; font-size: clamp(2.7rem, 5vw, 4.8rem); font-weight: 800; letter-spacing: -.04em; line-height: .98; text-wrap: balance; }
@@ -111,7 +111,7 @@ if (!config) throw new Error(`Unknown service hero: ${service}`);
   .service-hero__answer :global(strong) { color: #fff; }
   .service-hero__actions { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
   .service-hero__primary, .service-hero__secondary { min-height: 3.25rem; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; text-decoration: none; }
-  .service-hero__primary { padding: .9rem 1.3rem; border-radius: .35rem; color: #071a42; background: #efb43f; box-shadow: 0 .6rem 1.5rem rgba(0,0,0,.2); }
+  .service-hero__primary { padding: .9rem 1.3rem; border-radius: .35rem; color: #071a42; background: #efb43f; }
   .service-hero__secondary { color: #fff; text-decoration: underline; text-decoration-color: #23c6d5; text-underline-offset: .4rem; }
   .service-hero a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
   .service-hero__proof { padding: clamp(1.5rem, 3vw, 2rem); border: 1px solid rgba(255,255,255,.25); border-radius: .65rem; background: rgba(11,74,162,.42); box-shadow: inset 0 0 0 1px rgba(255,255,255,.05); }
@@ -126,11 +126,11 @@ if (!config) throw new Error(`Unknown service hero: ${service}`);
   .service-hero__nav { padding: 1rem 0; border-top: 1px solid rgba(255,255,255,.18); display: flex; gap: .75rem 1.5rem; overflow-x: auto; scrollbar-width: thin; }
   .service-hero__nav a { flex: none; color: #dce8f8; font-size: .82rem; font-weight: 700; text-decoration: none; }
   .service-hero__nav a + a::before { content: "·"; color: #86edeb; margin-right: 1.5rem; }
-  .service-hero__primary:hover { background: #23c6d5; transform: translateY(-2px); }
+  .service-hero__primary:hover { background: #f7c960; }
   .service-hero__secondary:hover, .service-hero__nav a:hover { color: #23c6d5; }
   @media (min-width: 64rem) { .service-hero__inner { grid-template-columns: minmax(0, 1.65fr) minmax(19rem, .75fr); } }
   @media (max-width: 47.99rem) {
-    .service-hero { padding-top: 4.75rem; }
+    .service-hero { padding-top: 8rem; }
     .service-hero__inner { min-height: 0; padding: 2.75rem 0; gap: 2rem; }
     h1 { font-size: clamp(2.4rem, 11vw, 3.25rem); }
     .service-hero__proof { padding: 1.25rem; }

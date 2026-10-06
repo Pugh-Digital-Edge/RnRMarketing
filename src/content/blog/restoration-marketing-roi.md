@@ -3,8 +3,8 @@ title: "How to Measure Restoration Marketing ROI Without Guessing"
 description: "A practical restoration marketing ROI framework for connecting channel cost, qualified leads, booked work, attributable revenue, and gross profit."
 author: Matt Pugh
 date: 2026-10-05T14:45:00.000Z
-image: src/assets/images/blog/restoration-marketing-roi.webp
-imageAlt: Restoration company owner and marketing strategist reviewing an unlabeled lead-to-job workflow and service-area map
+image: src/assets/images/blog/restoration-marketing-roi-v2.webp
+imageAlt: Calculator and ledger sheets beside wooden blocks illustrating the path from an inquiry to completed restoration work
 tags:
   - post
   - featured

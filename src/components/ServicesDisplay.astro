@@ -136,7 +136,7 @@ const getServiceUrl = (serviceName: string) => {
         /* 24px - 16px top & Bottom */
         padding: clamp(1.5rem, 5.3vw, 3.75rem) clamp(1rem, 2.7vw, 2.5rem);
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
     }
@@ -206,15 +206,16 @@ const getServiceUrl = (serviceName: string) => {
         border-right: 1px solid var(--borderColor);
     }
     #services-1304 .cs-item:hover {
-        background-color: var(--headerColor);
-        border-color: var(--headerColor);
+        background-color: var(--surfaceMuted);
+        border-color: var(--primary);
     }
     #services-1304 .cs-item:hover .cs-h3,
     #services-1304 .cs-item:hover .cs-item-text {
-        color: var(--bodyTextColorWhite);
+        color: var(--headerColor);
     }
     #services-1304 .cs-item:hover .cs-item-text {
-        opacity: 0.8;
+        color: var(--bodyTextColor);
+        opacity: 1;
     }
     #services-1304 .cs-item:nth-of-type(5),
     #services-1304 .cs-item:nth-of-type(6),

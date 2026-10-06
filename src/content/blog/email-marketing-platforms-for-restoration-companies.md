@@ -3,8 +3,8 @@ title: "Email Marketing Platforms for Restoration Companies: How to Choose"
 description: "Choose an email marketing platform for a restoration company by comparing consent controls, segmentation, automation, CRM fit, attribution, and ownership."
 author: Matt Pugh
 date: 2026-09-28T13:30:00.000Z
-image: src/assets/images/blog/email-marketing-platforms-restoration-companies.webp
-imageAlt: Restoration company owner and marketing advisor mapping an email workflow with unlabeled audience and follow-up cards
+image: src/assets/images/blog/email-marketing-platforms-restoration-companies-v2.webp
+imageAlt: Envelope cutouts and blank cards connected on a cork board to illustrate email audience and follow-up workflows
 tags:
   - post
   - featured

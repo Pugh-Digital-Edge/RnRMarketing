@@ -46,7 +46,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
             </p>
             <div class="hero-actions">
               <a href="/schedule/" class="cs-button-solid">Request Your Free Session &rarr;</a>
-              <a href="#client-results" class="hero-proof-link">See reported client results <span aria-hidden="true">→</span></a>
+              <a href="#client-results" class="hero-proof-link"><span class="hero-proof-label">See reported client results</span> <span aria-hidden="true">→</span></a>
             </div>
             <p class="hero-session-details">Free 30-minute session. No obligation. We review your market and recommend what to work on first.</p>
         </div>
@@ -68,7 +68,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
   <section id="services" class="services">
     <div class="card ui-card">
       <picture>
-        <Icon name="chart" width="100" height="100"/>
+        <Icon name="chart" width="100" height="100" aria-hidden="true"/>
       </picture>
       <h2>Local SEO for Emergency Searches</h2>
       <p>
@@ -78,7 +78,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
     </div>
     <div class="card ui-card">
       <picture>
-        <Icon name="clock" width="100" height="100"/>  
+        <Icon name="clock" width="100" height="100" aria-hidden="true"/>
       </picture>
       <h2>24/7 Emergency PPC</h2>
       <p>
@@ -88,7 +88,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
     </div>
     <div class="card ui-card">
       <picture>
-        <Icon name="cash" width="100" height="100"/>
+        <Icon name="cash" width="100" height="100" aria-hidden="true"/>
       </picture>
       <h2>Websites That Convert</h2>
       <p>
@@ -274,7 +274,8 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
 
 <style lang="less" define:vars={{ bgImage: optimizedImage.src }}>
  #hero-1349 .hero-session-details { color: #e3edf8; font-size: .9rem; line-height: 1.65; max-width: 37rem; margin: 1rem 0 .25rem; }
- #hero-1349 .hero-proof-link { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: .25em; }
+ #hero-1349 .hero-proof-link { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; color: #fff; font-weight: 700; text-decoration: none; }
+ #hero-1349 .hero-proof-label { text-decoration: underline; text-underline-offset: .25em; }
  #hero-1349 .hero-proof-link:hover { color: #86edeb; }
  #services .service-summary-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--primary); font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
  #hero-1349 .hero-proof-link:focus-visible, #services .service-summary-link:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
@@ -675,10 +676,8 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
       margin-top: (-167/16em);
       margin-bottom: (50/16em);
       padding: (50/16em) (20/16em);
-      background: rgba(255, 255, 255, 0.95);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
-      box-shadow: var(--shadowL);
+      background: var(--surface);
+      box-shadow: var(--shadowS);
       border: 1px solid var(--borderColor);
       border-radius: var(--radiusL);
       position: relative;
@@ -698,9 +697,9 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
           height: (80/16em);
           margin: auto;
           margin-bottom: (23/16em);
-          background: var(--gradientPrimary);
-          border-radius: (24/16em);
-          box-shadow: 0 8px 20px rgba(10, 102, 194, 0.3);
+          background: #eaf0f7;
+          border-radius: var(--radiusM);
+          box-shadow: none;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -714,7 +713,7 @@ const optimizedImageMobile = await getOptimizedImage(landingImage, { widths: [48
         }
 
         &:hover picture {
-          transform: translateY(-4px) scale(1.05);
+          transform: none;
         }
 
         h2 {

@@ -3,24 +3,26 @@ import { offer, programServices } from '@data/offer.js';
 ---
 <section class="program-overview" aria-labelledby="growth-system-title">
   <div class="program-overview__inner">
-    <h2 id="growth-system-title">{offer.name}</h2>
-    <p class="program-overview__intro">{offer.summary} {offer.territory}</p>
-    <ul>
-      {programServices.map(service => <li><h3>{service.title}</h3><p>{service.text}</p></li>)}
-    </ul>
-    <p>{offer.investment}</p>
-    <p>One program. A three-month initial commitment. A clear proposal for your market.</p>
-    <a class="cs-button-solid" href="/schedule/">Check your territory</a>
-    <a class="program-overview__secondary" href={offer.checklistPath}>Get the AI visibility checklist</a>
+    <div class="program-overview__heading">
+      <h2 id="growth-system-title">{offer.name}</h2>
+      <p>{offer.summary}</p>
+      <p>{offer.territory}</p>
+      <a class="cs-button-solid" href="/schedule/">Check your territory</a>
+      <a class="program-overview__secondary" href={offer.checklistPath}>Get the AI visibility checklist</a>
+    </div>
+    <ul>{programServices.map(service => <li><h3>{service.title}</h3><p>{service.text}</p></li>)}</ul>
   </div>
 </section>
 <style>
-  .program-overview { background: #edf2f5; padding: clamp(3rem, 6vw, 5rem) 1.25rem; }
-  .program-overview__inner { max-width: 72rem; margin: auto; }
-  h2 { color: #071a42; font-size: clamp(1.8rem, 4vw, 3rem); max-width: 26ch; line-height: 1.15; }
-  p { color: #42516a; line-height: 1.75; max-width: 74ch; margin: 1rem 0; }
-  ul { list-style: none; padding: 0; margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem 2rem; }
-  li { border-top: 1px solid #acb9ca; padding-top: 1rem; }
-  h3 { color: #071a42; font-size: 1.1rem; line-height: 1.4; }
-  .program-overview__secondary { display: inline-block; color: #0b4aa2; text-decoration: underline; margin: 1rem 1.25rem; font-weight: 600; }
+  .program-overview { background: #edf2f5; padding: clamp(3rem, 6vw, 5rem) 1rem; }
+  .program-overview__inner { max-width: 80rem; margin: auto; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  h2 { color: #071a42; font-size: clamp(2rem, 3.5vw, 3rem); max-width: 20ch; line-height: 1.15; margin: 0 0 1.5rem; }
+  p { color: #42516a; line-height: 1.7; margin: 0 0 1.25rem; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { border-top: 1px solid #acb9ca; padding: 1.25rem 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 1.5rem; }
+  li:last-child { padding-bottom: 0; }
+  li p { margin: 0; font-size: .95rem; }
+  h3 { color: #071a42; font-size: 1.05rem; line-height: 1.4; margin: 0; }
+  .program-overview__secondary { display: block; width: fit-content; color: #0b4aa2; text-decoration: underline; text-underline-offset: .2em; padding: 1rem 0; font-weight: 600; }
+  @media(max-width: 767px) { .program-overview__inner { grid-template-columns: 1fr; } li { grid-template-columns: 1fr; gap: .5rem; } }
 </style>

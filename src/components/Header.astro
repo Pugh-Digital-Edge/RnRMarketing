@@ -297,16 +297,16 @@ import { Image } from 'astro:assets';
     width: 2.875rem;
     height: 2.875rem;
     margin: 0 0 0 auto;
-    background: var(--gradientPrimary);
-    border-radius: 0.625rem;
+    background: var(--primary);
+    border-radius: 0.35rem;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform .6s;
+    transition: background-color .2s;
   }
   #cs-navigation .cs-toggle.cs-active {
-    transform: rotate(180deg);
+    background: var(--primaryDark);
   }
   #cs-navigation .cs-active .cs-line1 {
     top: 50%;

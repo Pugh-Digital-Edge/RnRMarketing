@@ -137,17 +137,7 @@ const faqSchema = {
             <span aria-hidden="true">Play video</span>
           </button>
         </div>
-        <a href="#lead-form" class="cs-brand-card-link">
-          <img
-            src="/assets/images/schedule/apply-now.webp"
-            alt="Request your free Acceleration Session"
-            class="cs-brand-card"
-            loading="lazy"
-            decoding="async"
-            width="1200"
-            height="678"
-          />
-        </a>
+        <a href="#lead-form" class="cs-brand-card-link cs-button-solid">Request your free Acceleration Session</a>
       </div>
 
       <!-- AdsLandingPage registers this shared Netlify form and its complete field set. -->
@@ -189,7 +179,7 @@ const faqSchema = {
           </label>
           <p id="schedule-phone-error" data-phone-error role="alert" hidden>Please enter a valid phone number, including the area code.</p>
         </div>
-        <label>
+        <label class="cs-full">
           Service Area
           <input required type="text" name="service-area" placeholder="City, state, or ZIP codes" />
         </label>
@@ -509,7 +499,8 @@ const faqSchema = {
       }
 
       .cs-brand-card-link {
-        display: block;
+        display: inline-flex;
+        margin-top: 1.5rem;
         border-radius: 0.5rem;
 
         &:focus-visible {
@@ -517,18 +508,6 @@ const faqSchema = {
           outline-offset: 0.25rem;
         }
 
-        &:hover .cs-brand-card {
-          transform: translateY(-0.25rem);
-        }
-      }
-
-      .cs-brand-card {
-        width: min(100%, 28rem);
-        height: auto;
-        margin: 2rem auto 0;
-        display: block;
-        border-radius: 0.5rem;
-        transition: transform 0.2s ease;
       }
 
       #lead-form {
@@ -585,6 +564,18 @@ const faqSchema = {
           color: var(--headerColor);
           display: grid;
           gap: 0.375rem;
+          align-content: start;
+        }
+
+        [data-phone-field] {
+          display: grid;
+          gap: 1rem;
+          grid-column: 1 / -1;
+        }
+
+        [data-phone-error] {
+          margin: 0;
+          text-align: left;
         }
 
         input,
@@ -835,6 +826,10 @@ const faqSchema = {
     #schedule-main {
       #lead-form {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        [data-phone-field] {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
 
         .cs-topper,
         h2,

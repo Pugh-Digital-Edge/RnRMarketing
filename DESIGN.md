@@ -153,9 +153,10 @@ Controls and cards use gently squared corners: 0.35rem for actions, 0.65rem for 
 
 ### Buttons
 
-- **Shape:** Gently squared corners (0.35rem), uppercase labels, tracked text.
-- **Primary:** Cobalt-to-cyan gradient with chalk text; generous touch padding and a clear arrow or action phrase.
-- **Hover / Focus:** Cyan lift, slight upward movement, stronger shadow, and a visible keyboard focus ring.
+- **Shape:** Gently squared corners (0.35rem), natural-case labels, normal tracking, and a minimum 44px touch target.
+- **Primary:** Flat cobalt with chalk text. On the homepage hero and closing conversion panels, flat mustard with navy text provides contrast. No gloss, gradient, glow, or decorative button shadow.
+- **Hover / Focus:** A darker cobalt or lighter mustard fill, no vertical movement, and a visible keyboard focus ring.
+- **Icons:** Local Lucide SVGs for service and benefit icons, with consistent 2px rounded strokes and no forced fills. Preserve multicolor brand icons. Attribution is in `docs/licenses/lucide.txt`.
 - **Secondary:** Framed or transparent actions remain subordinate to the primary assessment path.
 
 ### Cards / Containers

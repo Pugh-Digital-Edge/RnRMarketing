@@ -3,8 +3,8 @@ title: "Google Ads for Restoration Companies: A Practical Campaign Framework"
 description: "Plan Google Ads for a restoration company around service intent, territory, qualified calls, landing pages, and booked-job measurement."
 author: Matt Pugh
 date: 2026-09-23T14:00:00.000Z
-image: src/assets/images/blog/google-ads-restoration-companies.webp
-imageAlt: Restoration company owner and paid-search strategist reviewing an unlabeled territory map and campaign plan
+image: src/assets/images/blog/google-ads-restoration-companies-v2.webp
+imageAlt: Unbranded restoration service van in a residential service territory with a map and location marker
 tags:
   - post
   - featured

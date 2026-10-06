@@ -152,7 +152,6 @@ const {
                 <span>Continue</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
               </button>
-              <p class="rm-step-disclosure">If you leave before finishing, R &amp; R Marketing may follow up by email or phone using the details above.</p>
             </fieldset>
 
             <fieldset class="rm-form-step" data-form-step="2">
@@ -328,7 +327,6 @@ const {
 
       <div class="rm-results-footer">
         <blockquote class="rm-testimonial"><p>“Their expertise shows in everything they do, from our website's design to our targeted marketing campaigns.”</p><footer>Jason Fogus, Owner of TRW Contracting</footer></blockquote>
-        <p class="rm-results-disclosure">Case-study client names are withheld by agreement. Every figure above is taken from the client's own reporting for the stated window and is not a guarantee of future results.</p>
       </div>
     </div>
   </section>
@@ -734,7 +732,7 @@ const {
   .rm-hero-inner,
   .rm-section-shell,
   .rm-footer-inner {
-    width: min(100% - 2rem, 80rem);
+    width: calc(100% - 2rem); max-width: 80rem;
     margin-inline: auto;
   }
 
@@ -939,7 +937,7 @@ const {
     border-radius: 0.25rem;
     background: var(--rm-mustard);
     color: var(--rm-ink);
-    box-shadow: 0 0.75rem 1.5rem rgba(7, 26, 66, 0.16);
+    box-shadow: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -947,23 +945,17 @@ const {
     font: inherit;
     font-size: 0.84rem;
     font-weight: 800;
-    letter-spacing: 0.055em;
-    text-transform: uppercase;
-    transition: transform 0.3s cubic-bezier(.19,1,.22,1), box-shadow 0.3s cubic-bezier(.19,1,.22,1), background 0.2s ease;
+    letter-spacing: 0;
+    text-transform: none;
+    transition: background 0.2s ease;
   }
 
   .rm-step-next { display: none; }
   .rm-form.is-stepped .rm-step-next { display: flex; }
 
-  .rm-step-disclosure {
-    color: #59667b;
-    font-size: 0.7rem;
-    line-height: 1.5;
-    text-align: center;
-  }
 
   .rm-step-next:hover,
-  .rm-submit:hover { transform: translateY(-3px); background: #f7c960; box-shadow: 0 1rem 2rem rgba(7, 26, 66, 0.23); }
+  .rm-submit:hover { background: #f7c960; box-shadow: none; }
   .rm-step-next:active,
   .rm-submit:active { transform: translateY(0); }
   .rm-step-next svg,
@@ -1105,7 +1097,6 @@ const {
   .rm-result-card {
     padding: clamp(1.4rem, 3vw, 2rem);
     border: 1px solid var(--rm-line);
-    border-top: 3px solid var(--rm-cobalt);
     border-radius: 0.55rem;
     background: #fff;
     display: grid;
@@ -1173,7 +1164,6 @@ const {
   .rm-heatmap-caption { margin-top: 0.85rem; color: #fff !important; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; }
   .rm-heatmap-note { margin-top: 0.85rem; color: #b9c7da !important; font-size: 0.85rem; line-height: 1.65; }
 
-  .rm-results-disclosure { margin: 0; color: #46566f !important; font-size: 0.8rem; line-height: 1.7; }
 
   .rm-proof { background: var(--rm-mist); }
   .rm-proof-title-wrap { max-width: 52rem; }
@@ -1205,7 +1195,7 @@ const {
   .rm-final-action { padding-top: 1.25rem; border-top: 1px solid rgba(35, 198, 213, 0.65); }
   .rm-final-action > span { color: #9cf4f2; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
   .rm-final-action > p { margin-top: 0.65rem; color: #d6e5f5 !important; font-size: 0.92rem; line-height: 1.6; }
-  .rm-final-cta { width: 100%; min-height: 5.5rem; margin-top: 1.35rem; padding: 1rem 1.4rem; background: var(--rm-mustard); color: var(--rm-ink) !important; border-radius: 0.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; box-shadow: 0 1rem 2rem rgba(7,26,66,.24); }
+  .rm-final-cta { width: 100%; min-height: 5.5rem; margin-top: 1.35rem; padding: 1rem 1.4rem; background: var(--rm-mustard); color: var(--rm-ink) !important; border-radius: 0.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; box-shadow: none; }
   .rm-final-cta-copy { display: grid; gap: 0.3rem; }
   .rm-final-cta-copy strong { font-size: 0.88rem; }
   .rm-final-cta-copy small { font-size: 0.72rem; font-weight: 600; letter-spacing: 0; text-transform: none; }
@@ -1269,7 +1259,7 @@ const {
     .rm-mid-cta { margin-top: 4rem; grid-template-columns: 1fr auto; align-items: center; }
     .rm-results-grid { grid-template-columns: repeat(3, 1fr); }
     .rm-heatmap { grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr); gap: clamp(2rem, 4vw, 3.5rem); }
-    .rm-results-footer { grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr); gap: clamp(2rem, 4vw, 3.5rem); }
+    .rm-results-footer { max-width: 48rem; }
     .rm-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
     .rm-proof-grid article { padding: 2rem; border-right: 1px solid var(--rm-line); }
     .rm-proof-grid article:first-child { padding-left: 0; }
