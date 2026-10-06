@@ -1,6 +1,6 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-10-05
+Last reconciled: 2026-10-06
 Current implementation run: [`2026-09-10-backlog-implementation.md`](runs/2026-09-10-backlog-implementation.md)
 Monthly learning review: [`2026-10-01-monthly-review.md`](runs/2026-10-01-monthly-review.md)
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
@@ -15,9 +15,9 @@ Status values: Candidate · Planned · In Progress · Deployed · Measuring · V
 
 ## October evidence-ranked order
 
-The [October 5 coordinator run](runs/2026-10-05-weekly-coordinator.md) found fresh scheduled search, analytics, visibility, technical-audit, and Google coverage evidence, but no confirmed intervention outcome. Production parity remains the controlling defect: live build `c8698c8` predates SEO-014, SEO-015, and the newly validated SEO-017 source, so all three article URLs remain outside accepted-live measurement.
+The [October 5 coordinator run](runs/2026-10-05-weekly-coordinator.md) found fresh scheduled search, analytics, visibility, technical-audit, and Google coverage evidence, but no confirmed intervention outcome. The [October 6 acceptance receipt](runs/2026-10-06-release-acceptance.md) resolves the production-parity defect: reviewed site changes and SEO-014, SEO-015, and SEO-017 are accepted live on `15239f0`. Their measurement windows begin October 6; deployment acceptance does not establish search impact.
 
-1. **SEO-014, SEO-015, and SEO-017** — restore production parity through an explicitly accepted deployment scope, then run locked full acceptance and start each 28-day clock from the accepted-live timestamp. Do not create replacement articles or count source delivery as live delivery.
+1. **SEO-014, SEO-015, and SEO-017** — Measuring after October 6 locked full acceptance; compare complete equal windows on November 3. Do not create replacement articles during recovery or claim outcome improvements from deployment alone.
 2. **SEO-002, SEO-005, SEO-007, and SEO-009** — close the overdue exact-cohort measurements through daily/coordinator receipts. Preserve unavailable or partial data as inconclusive; do not infer success from aggregate coverage or sparse page impressions.
 3. **SEO-010, SEO-008, SEO-011, and SEO-012** — evaluate in due-date order on October 6, 8, 9, and 13 using complete equal windows. Keep GSC, organic/AI sessions, verified lead events, Mention Coverage/Share, and Citation Coverage separate.
 4. **SEO-003** — confirm whether the September 27 decline (3/42 Mention Coverage, 3/27 non-brand Mention Share, 0/42 Citation Coverage) persists through the next authorized scheduled fixed-basket run. No manual sweep, probe, basket change, or content rewrite is authorized by this review.
@@ -26,7 +26,7 @@ The [October 5 coordinator run](runs/2026-10-05-weekly-coordinator.md) found fre
 
 ## Current pipeline authorization — 2026-09-15
 
-Matt approved the [pipeline fixes](pipeline.md), explicitly retaining one new article per week. This supersedes older per-run approval gates for the exact bounded schedules, repair syncs and same-set inspections in that contract. No indexing submissions or basket expansion are authorized. As of October 5, GSC is available through October 3, GA4 property 543995602 synced October 5, the October 4 fixed-basket run completed 126/126 provider snapshots, and audit `10032af0-79a2-443c-8357-58b1a179dc3b` scored 90/100 over 101 pages with no errors or skips. Google coverage is 57 indexed / 46 not indexed / 0 deindexed across 103 stored URLs; Bing remains partial with 89 of 99 pages uninspected. SEO-017 is the single auto-approved October 5–11 article: source commit `53800b0` is pushed and validated, but live still reports `c8698c8`, the URL is 404, and it is absent from the live sitemap, so it remains Awaiting live verification.
+Matt approved the [pipeline fixes](pipeline.md), explicitly retaining one new article per week. This supersedes older per-run approval gates for the exact bounded schedules, repair syncs and same-set inspections in that contract. No indexing submissions or basket expansion are authorized. As of October 5, GSC is available through October 3, GA4 property 543995602 synced October 5, the October 4 fixed-basket run completed 126/126 provider snapshots, and audit `10032af0-79a2-443c-8357-58b1a179dc3b` scored 90/100 over 101 pages with no errors or skips. Google coverage is 57 indexed / 46 not indexed / 0 deindexed across 103 stored URLs; Bing remains partial with 89 of 99 pages uninspected. SEO-017 is the single auto-approved October 5–11 article. The October 6 reviewed release accepted it and SEO-014/015 live on `15239f0`; all three are Measuring, due 2026-11-03.
 
 ## September evidence-ranked order
 
@@ -337,7 +337,7 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 
 ### SEO-014 — Google Ads for restoration companies
 
-- Status: In Progress — Awaiting live verification
+- Status: Measuring
 - Approval state: auto-approved on 2026-09-23 as the single article for the September 21–27 Eastern week under the standing weekly pipeline authorization.
 - Category: search-intent/content gap; entity, citation, and AEO weakness.
 - Scope: tracked query `Google Ads for restoration companies`; fresh GSC `google ads` family; `/resources/google-ads-for-restoration-companies/` supporting `/services/ppc/` and lead-tracking services.
@@ -351,12 +351,14 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Implementation: `src/content/blog/google-ads-for-restoration-companies.md` plus one WebP cover image, committed and pushed as `0b970144783f817f176803cf177215158ac284ac`. `npm run validate` passed with 0 Astro errors, 26/26 tests, a successful 107-page build, and postbuild checks. Render QA found one H1, one BlogPosting source, one matching FAQPage source with four visible FAQs, zero body images, valid internal links, and sitemap inclusion.
 - Live checkpoint: the post-push full checker passed validation and the existing live surface but failed the deployment-revision gate because `/build-info.json` still reports `c8698c8`; the exact article URL is 404 and absent from the live sitemap. A manual deployment was not forced because intervening commit `6e177d8` contains broader unrelated site changes. Next checkpoint: Friday, 2026-09-25, with the same SEO-014 ID.
 - 2026-09-25 Friday recovery: the exact article URL still returns 404, remains absent from the live sitemap, and live `/build-info.json` still reports `c8698c8` while source/origin are `43004bf`. The same-day locked health run passed `npm run validate`, 99 live sitemap pages, 101 internal targets, 99 Markdown alternates, expected exclusions, and crawler parity; failures remain the deployment receipt, twelve schema-only source/live mismatches, and the missing SEO-014 URL. The September 21–27 article obligation is therefore a delivery failure. Hosting/release ownership is required to deploy an explicitly accepted scope; Codex must then rerun the locked full checker before live acceptance. Do not create a second article or start measurement from the source push.
-- Measurement due date: 28 days after accepted live verification; no measurement clock starts from the source push.
+- Measurement due date: 2026-11-03, 28 days after accepted live verification on 2026-10-06.
 - Verification method: exact live HTTP 200, sitemap inclusion, canonical/indexability, local/live parity and accepted deployed revision, followed by a comparable exact query/page outcome window.
+
+- 2026-10-06 accepted-live checkpoint: Matt authorized the reviewed main release. Netlify deploy `6ac517995410d961eeb7b4db` published source `15239f0` at 15:46:34 UTC; locked full acceptance passed at 15:51:50 UTC. The exact article is HTTP 200, sitemap-listed and indexable, with matching canonical, H1, parsed schema, Markdown alternate and local/live signals. See [acceptance receipt](runs/2026-10-06-release-acceptance.md). Status is Measuring; no search or business outcome is yet established.
 
 ### SEO-015 — Email marketing platforms for restoration companies
 
-- Status: In Progress — Awaiting live verification
+- Status: Measuring
 - Approval state: auto-approved on 2026-09-28 as the single article for the September 28–October 4 Eastern week under the standing weekly pipeline authorization.
 - Category: search-intent/content gap; lead-nurture and platform-selection guidance.
 - Scope: tracked query `recommended email marketing platforms for remediation companies`; fresh GSC `email marketing` family; `/resources/email-marketing-platforms-for-restoration-companies/` supporting `/services/retargeting/` and `/services/lead-tracking/`.
@@ -369,8 +371,10 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Confidence: Medium for the distinct gap; Medium–Low for organic impact because recent search demand is modest.
 - Implementation: `src/content/blog/email-marketing-platforms-for-restoration-companies.md` plus one 1590×800 WebP cover image, committed and pushed in `a0fd8ba`. `npm run validate` passed with 0 Astro errors, 26/26 tests, a successful 108-page build, and postbuild checks. Render QA found one H1, one BlogPosting source, one FAQPage source matching four visible FAQs, zero body images, valid internal targets, and local sitemap inclusion.
 - Live checkpoint: source is ready, but production still reports build `c8698c8`; the SEO-015 URL is not yet accepted live and the older SEO-014 URL remains 404. A broad manual deployment was not forced because the live-to-main range contains unrelated site work outside the focused weekly article authority. Next checkpoint: Wednesday, 2026-09-30, or immediately after an explicit hosting deployment receipt.
-- Measurement due date: 28 days after accepted live verification; no measurement clock starts from the source push.
+- Measurement due date: 2026-11-03, 28 days after accepted live verification on 2026-10-06.
 - Verification method: exact live HTTP 200, sitemap inclusion, canonical/indexability, one matching FAQ block/schema source, local/live parity and accepted deployed revision, followed by a comparable exact query/page outcome window.
+
+- 2026-10-06 accepted-live checkpoint: Matt authorized the reviewed main release. Netlify deploy `6ac517995410d961eeb7b4db` published source `15239f0` at 15:46:34 UTC; locked full acceptance passed at 15:51:50 UTC. The exact article is HTTP 200, sitemap-listed and indexable, with matching canonical, H1, parsed schema, Markdown alternate and local/live signals. See [acceptance receipt](runs/2026-10-06-release-acceptance.md). Status is Measuring; no search or business outcome is yet established.
 
 ### SEO-016 — CRM selection for restoration business management
 
@@ -389,7 +393,7 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 
 ### SEO-017 — Restoration marketing ROI measurement
 
-- Status: In Progress — Awaiting live verification
+- Status: Measuring
 - Approval state: auto-approved on 2026-10-05 as the single article for the October 5–11 Eastern week under the standing weekly pipeline authorization.
 - Category: search-intent/content gap; marketing measurement guidance.
 - Scope: tracked query `restoration marketing ROI`; GSC query family; `/resources/restoration-marketing-roi/` supporting lead tracking, PPC, SEO, web design, reputation, and retargeting services.
@@ -402,8 +406,10 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Confidence: Medium–High for the gap; Medium for organic/AEO impact.
 - Implementation: article plus one 1590×800 WebP cover image committed and pushed as `53800b0367d5239f50b9c268f20d226d33b5748f`. `npm run validate` passed with zero Astro errors, 39/39 tests, a successful 109-page build, and postbuild checks. Render QA found one H1, one BlogPosting source, one FAQPage source matching four visible FAQs, seven internal links, four official-source links, zero body images, and local sitemap inclusion.
 - Live checkpoint: the locked full checker failed because production remains on `c8698c8`; the exact article URL returns 404 and is absent from the live sitemap. Status remains Awaiting live verification. Next checkpoint: Wednesday, 2026-10-07, or immediately after an explicit hosting deployment receipt.
-- Measurement due date: 28 days after accepted live verification; no measurement clock starts from the source push.
+- Measurement due date: 2026-11-03, 28 days after accepted live verification on 2026-10-06.
 - Verification method: exact live HTTP 200, sitemap inclusion, canonical/indexability, matching visible/schema FAQ content, local/live parity and accepted deployed revision, followed by an equal exact query/page outcome window.
+
+- 2026-10-06 accepted-live checkpoint: Matt authorized the reviewed main release. Netlify deploy `6ac517995410d961eeb7b4db` published source `15239f0` at 15:46:34 UTC; locked full acceptance passed at 15:51:50 UTC. The exact article is HTTP 200, sitemap-listed and indexable, with matching canonical, H1, parsed schema, Markdown alternate and local/live signals. See [acceptance receipt](runs/2026-10-06-release-acceptance.md). Status is Measuring; no search or business outcome is yet established.
 
 ## Reconciled / not prioritized
 
