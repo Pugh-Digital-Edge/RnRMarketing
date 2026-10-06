@@ -63,6 +63,12 @@ const {
   programNote,
   heatMap,
 } = Astro.props;
+
+// Keep the landing page focused on the included website and plan; agreement
+// details remain in the shared terms used elsewhere.
+const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum commitment?"
+  ? { ...faq, answer: "Your custom website is included and yours from day one. We start with a three-month plan to build your site and get your marketing underway, then continue month to month." }
+  : faq);
 ---
 
 <div class="rm-landing">
@@ -148,6 +154,7 @@ const {
                   <input required type="text" name="company" autocomplete="organization" placeholder="Company name" />
                 </label>
               </div>
+              <p class="rm-privacy-note">If you continue, your contact details may be saved when you leave so we can follow up, even without a final request. <a href="/privacy/">Privacy policy</a></p>
               <button class="rm-step-next" type="button" data-step-next>
                 <span>Continue</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
@@ -201,7 +208,7 @@ const {
             </li>
           </ul>
           <p class="rm-takeaway">{offer.takeaway}</p>
-          <p class="rm-privacy-note">By submitting this form you agree that R &amp; R Marketing may contact you by email or phone about your strategy call. We do not sell your details. <a href="/privacy/">Privacy policy</a></p>
+          <p class="rm-privacy-note">By submitting this form you agree that R &amp; R Marketing may contact you by email or phone about your strategy call. <a href="/privacy/">Privacy policy</a></p>
         </form>
       </div>
     </div>
@@ -368,7 +375,7 @@ const {
     </div>
   </section>
 
-  <section class="rm-faq" aria-labelledby="rm-faq-title"><div class="rm-section-shell"><h2 id="rm-faq-title">Know what you’re signing up for.</h2><div class="rm-faq-list">{offerFaqs.filter(faq => faq.question !== "How much does the program cost?").map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></div></section>
+  <section class="rm-faq" aria-labelledby="rm-faq-title"><div class="rm-section-shell"><h2 id="rm-faq-title">Know what you’re signing up for.</h2><div class="rm-faq-list">{landingFaqs.filter(faq => faq.question !== "How much does the program cost?").map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></div></section>
 
   <section class="rm-checklist" aria-labelledby="rm-checklist-title"><div class="rm-section-shell"><h2 id="rm-checklist-title">Not ready for a call? Start here.</h2><p>Use our AI visibility checklist to review how clearly your restoration company can be found, understood, and cited. A practical self-check, with no custom audit or call required.</p><a href={offer.checklistPath}>Get the AI visibility checklist <span aria-hidden="true">→</span></a></div></section>
 

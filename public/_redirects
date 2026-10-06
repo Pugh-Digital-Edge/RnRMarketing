@@ -1,2 +1,6 @@
 # Compatibility for crawlers and tools that assume the default sitemap path.
 /sitemap.xml  /sitemap-index.xml  301
+
+# Preserve historical privacy-policy links.
+/privacy-policy  /privacy/  301
+/privacy-policy/  /privacy/  301
