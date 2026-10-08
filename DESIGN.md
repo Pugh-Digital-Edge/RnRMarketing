@@ -61,6 +61,10 @@ components:
 
 # Design System: Remediation & Restoration Marketing
 
+## Paid conversion surfaces — October 8, 2026
+
+The paid landing page keeps the Cobalt Tile Hall identity and outcome headline, with a compact hero, an explicit free 30-minute founder call beside the CTA, and less space before the first form action. Its six required fields remain contact-first across two steps; qualification, privacy disclosure and typed accepted-request tracking are unchanged. Describe restoration-focused expertise accurately, without claiming that the broader agency serves only restoration businesses. The confirmation page uses the conversion-only layout and a short introduction to expose the existing booking calendar sooner, plus a direct calendar link for visitors who prefer a separate tab. Request acceptance and confirmed booking remain distinct outcomes.
+
 ## Overview
 
 **Creative North Star: "Cobalt Tile Hall"**

@@ -1,16 +1,13 @@
 ---
 import { offer } from "@data/offer.js";
 import BaseLayout from "src/layouts/BaseLayout.astro";
-import { getOptimizedImage } from "@libs/utils";
-import heroImage from "@assets/images/landing/blue-abstract.jpeg";
-
-const preloadedImage = await getOptimizedImage(heroImage);
+const bookingUrl = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0ZohPTCbsjXJVYM2p94A87G46TCsjvi-5Oj3cGo3PGwRfQhrqZIZ-Q9BTNS4jlHWSPKArREwSH?gv=true";
 ---
 
 <BaseLayout
   title="Lead Flow Acceleration Session Request Received"
   description={`Your ${offer.session} request has been received. Choose a time for your 30-minute session with Matt.`}
-  preloadedImage={preloadedImage}
+  conversionOnly
   noindex
   eagerAnalytics
 >
@@ -72,20 +69,21 @@ const preloadedImage = await getOptimizedImage(heroImage);
       }
     })();
   </script>
-  <main class="thank-you">
+  <div class="thank-you">
     <div class="thank-you__content">
-      <p class="cs-topper">YOUR TERRITORY PLAN</p>
-      <h1>Choose a time to discuss your territory.</h1>
+      <a class="thank-you__brand" href="/restoration-marketing/">Remediation &amp; Restoration Marketing</a>
+      <h1>Choose a time with Matt.</h1>
       <p>
-        Next, book your 30-minute {offer.session} with Matt below and it is locked in
-        straight away, no back-and-forth email. Nothing to prepare, just bring your questions.
+        Your free 30-minute strategy call covers your territory and marketing priorities.
+        Choose a time below. Nothing to prepare.
       </p>
+      <a class="thank-you__calendar-link" href={bookingUrl} target="_blank" rel="noopener noreferrer">Open booking calendar in a new tab</a>
     </div>
 
     <div class="thank-you__scheduler">
       <!-- Opening this scheduler is not evidence of a booked appointment. -->
       <iframe
-        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0ZohPTCbsjXJVYM2p94A87G46TCsjvi-5Oj3cGo3PGwRfQhrqZIZ-Q9BTNS4jlHWSPKArREwSH?gv=true"
+        src={bookingUrl}
         title={`Book your ${offer.session} with Matt Pugh`}
         width="100%"
         height="600"
@@ -102,13 +100,13 @@ const preloadedImage = await getOptimizedImage(heroImage);
       </p>
       <a href="/case-studies/" class="cs-button-solid">See Client Results</a>
     </div>
-  </main>
+  </div>
 </BaseLayout>
 
 <style lang="less">
   .thank-you {
     min-height: 65vh;
-    padding: clamp(9rem, 16vw, 13rem) 1rem var(--sectionPadding);
+    padding: clamp(1.5rem, 4vw, 3rem) 1rem var(--sectionPadding);
     background: var(--surfaceMuted);
   }
 
@@ -120,14 +118,18 @@ const preloadedImage = await getOptimizedImage(heroImage);
   }
 
   .thank-you h1 {
-    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-size: clamp(1.9rem, 4vw, 3rem);
     line-height: 1.08;
     margin-bottom: 1rem;
   }
 
-  .thank-you p:not(.cs-topper) {
-    margin-bottom: 2rem;
+  .thank-you p {
+    margin-bottom: 0.75rem;
   }
+
+  .thank-you__brand { display: inline-block; margin-bottom: 1.25rem; color: var(--primaryDark); font-size: 0.85rem; font-weight: 700; }
+  .thank-you__calendar-link { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 1rem; color: var(--primary); text-decoration: underline; text-underline-offset: 0.2em; font-size: 0.9rem; }
+  .thank-you a:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
 
   .thank-you__scheduler {
     width: 100%;
