@@ -4,7 +4,7 @@ Owner: Codex on designated host MATT-GAMING-PC. Authority: Matt's direct instruc
 
 - Base: `d94adf5ec2dbd4617a9bbd9b74c7d97fffaffbdb`.
 - Released source: [`d18756b53f701c6197cc3a18b69f149b5dd5ba51`](https://github.com/Pugh-Digital-Edge/RnRMarketing/commit/d18756b53f701c6197cc3a18b69f149b5dd5ba51), reviewed on `codex/rrm-paid-cro-20261008`, fast-forwarded to main and pushed.
-- Git-connected Netlify release verified through public [`/build-info.json`](https://remediationrestorationmarketing.com/build-info.json), which equals the complete source revision above. The Netlify dashboard deployment ID was not separately retrieved.
+- Git-connected Netlify release verified through public [`/build-info.json`](https://remediationrestorationmarketing.com/build-info.json), which equals the complete source revision above. Independent Netlify read at 18:24:17 UTC confirms production deploy [`6ac7df483807ac0007dbac4e`](https://app.netlify.com/projects/remediationrestorationmarketing/deploys/6ac7df483807ac0007dbac4e), state ready, published **2026-10-08T18:22:34.239Z**, with that same source commit.
 - Full production acceptance: **2026-10-08T18:23:32.274Z** (2:23pm America/New_York).
 - Source hash: `316a42a3732607a773aaacb443f2eecf495904ce0bc48c82dc59487bd8e7aca4`.
 - Sitemap hash: `e55bb503cf2687af0c33ff6e13efd93145d8dcd9eb7d162cb648c7fbb8b428ea`.
@@ -24,13 +24,14 @@ Source files: `src/components/AdsLandingPage.astro`, `src/pages/restoration-mark
 - `npm run validate`: **39 tests passed**, zero Astro errors/warnings, 20 existing hints, successful **109-page** build/postbuild. The required full production check reran the same release gate on the committed source.
 - `npm run seo:check -- full`: **102/102** sitemap pages, **105** same-origin internal targets, **102** Markdown alternates, zero failures. Exact deployed revision, source/live signals, schema, canonicals, indexability, sitemap and AI-access artifact parity passed.
 - Additional GET-only checks: paid landing page, thank-you page and Terms each HTTP 200 with their changed text; old paid-page exclusive-agency statement absent; direct calendar link present; confirmed Pennsylvania/Gettysburg wording present.
+- Parent production browser acceptance: new hero/free-call copy is visible, with the live page captured as `landing-live.jpg`; the real thank-you calendar fully loads and displays October 9 appointment times from 11:30am through 4:30pm. No form submission or appointment was made.
 - Parent browser QA at **390×844**: clean layout/no horizontal overflow; free-call explanation around y=420; form heading around y=613 versus prior y≈920. Invalid `123` phone remains blocked with the explicit error; valid synthetic phone progresses to territory/scope, and Back returns to contact details. All original qualification fields remain.
 - Parent browser QA at **1280×720**: clean desktop view; Continue bottom around y=692, inside the first viewport. The thank-you calendar begins around y=280 desktop and y=290 mobile, with the direct link visible. A fresh mobile reload resolved an initial viewport-resize screenshot timing artifact; verified innerWidth=390 and document scrollWidth=375.
 - Local review served built output through a loopback-only server with restrictive CSP blocking all external analytics, frames and network sends; any POST was a local mock. The calendar iframe was intentionally blocked in this environment, so this verification covers its layout/link, not a new live booking. The actual live calendar displayed available October 9 times in the preceding read-only audit.
 - Mechanical Impeccable scan returned no findings. This is not a comprehensive accessibility or field-performance certification.
 - Parent reviewed source diff. `git diff --check` passed. Unrelated `docs/seo/runs/2026-09-29-production-regression.md` remained untracked and untouched.
 
-Private local evidence remains in the PPC report storage under `reports/rr-marketing/20261008-landing-audit/` (validation, live-check logs, live HTML and structured GET results). Parent screenshot: `reports/rr-marketing/20261008-implementation/landing-preview.jpg`, with final live screenshot owned by the parent. No private submission IDs or lead details are committed here.
+Private local evidence remains in the PPC report storage under `reports/rr-marketing/20261008-landing-audit/` (validation, live-check logs, live HTML and structured GET results). Parent preview/live screenshots and the independent `netlify-site-after-landing.json` receipt are under `reports/rr-marketing/20261008-implementation/`. No private submission IDs or lead details are committed here.
 
 ## Tracking and scope boundaries
 
@@ -40,4 +41,4 @@ Provider HTTP acceptance, stored/nonspam form, delivered notification, booked ca
 
 Knowledge used: [RRM KB](https://app.notion.com/p/3dfd49a32caf81fab5f6d5ce7a5b2719), version **2026-10-05.v1**, RRM-C01/C02/C03/C04, public-site source RRM-S02 and coordination source RRM-S03; the existing page's verified offer and claims register. Source context is not new proof of underlying case-study analytics or future conversion improvement.
 
-Next checkpoint: the parent completes live visual review and reconciles campaign implementation. Measure paid form progression by device and theme under consistent event definitions, with booked/qualified outcomes separately. Technical acceptance and improved first-view visibility do not prove a conversion-rate increase. This receipt-only follow-up may skip hosting because site/build inputs match the accepted source.
+Next checkpoint: the parent reconciles campaign implementation and the follow-up measurement window. Measure paid form progression by device and theme under consistent event definitions, with booked/qualified outcomes separately. Technical acceptance and improved first-view visibility do not prove a conversion-rate increase. This receipt-only follow-up may skip hosting because site/build inputs match the accepted source.
