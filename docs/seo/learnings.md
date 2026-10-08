@@ -4,7 +4,7 @@ Only completed, comparable interventions are promoted here. Pending hypotheses r
 
 ## Confirmed learnings
 
-No intervention has a completed production before/after measurement window yet.
+Complete comparisons now exist for SEO-004/005/006/007/009, but none supports a confirmed causal search or lead improvement. See the [October 8 exact-cohort receipt](runs/2026-10-08-overdue-measurements.md); mixed and low-data hypotheses remain Measuring.
 
 ## Evidence-backed working observations
 
@@ -43,3 +43,9 @@ No intervention has a completed production before/after measurement window yet.
 - Observed result: evidence freshness improved materially, while delivery and measurement closure remained incomplete.
 - Limitation: this evaluates pipeline reliability, not search or AI performance.
 - Implication: judge the pipeline by accepted delivery plus Git-addressable measurement receipts, not by schedule presence or fresh dashboards alone.
+
+### One citation trough did not persist in the next comparable scheduled run
+
+- Evidence: unchanged 42-query × three-provider scheduled runs on September 27 and October 4; complete 126-pair captures and matching served models. Query Citation Coverage rose 0/42 → 7/42, while Mention Coverage moved 3/42 → 4/42. October 4 has nine cited provider snapshots, not nine cited queries.
+- Limitation: one following run establishes neither a durable recovery nor a content intervention effect; non-brand Mention Share needs its own verified competitor denominator.
+- Implication: track mention and citation separately and confirm a sustained loss before proposing broad content changes. Original query/provider sets remain fixed. [Exact receipt](runs/2026-10-08-overdue-measurements.md).

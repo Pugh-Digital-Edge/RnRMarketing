@@ -1,6 +1,7 @@
 # SEO/AEO Backlog
 
-Last reconciled: 2026-10-06
+Last reconciled: 2026-10-08
+Current measurement receipt: [`2026-10-08-overdue-measurements.md`](runs/2026-10-08-overdue-measurements.md)
 Current implementation run: [`2026-09-10-backlog-implementation.md`](runs/2026-09-10-backlog-implementation.md)
 Monthly learning review: [`2026-10-01-monthly-review.md`](runs/2026-10-01-monthly-review.md)
 Source run: [`2026-08-24-weekly-opportunity.md`](runs/2026-08-24-weekly-opportunity.md)
@@ -47,7 +48,8 @@ The September 10 instruction implemented the then-current backlog. The September
 
 ### SEO-001 — Resolve Canonry/live/source parity on the audited cluster
 
-- Status: Measuring
+- Status: Validated
+- 2026-10-08 measurement reconciliation: Technical acceptance validated by October 6 release plus October 8 full parity (102 pages / 105 targets / 102 Markdown alternates, exact source/live 6a60a0c). Measurement N/A for technical closure; SEO-004/005/007 search outcomes remain separate. Historical dates/artifacts above remain history. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
 - Current September 10 implementation: `84e67ea` is live in Netlify deploy `6aa2e9136cdb4e00087de203` (published 17:33:35 UTC). A strict parsed-schema comparison found the previously unrecorded live `priceRange: "$"` versus source `"$$"` discrepancy. JSON Unicode escapes now preserve the existing two-dollar-sign value in production. All 98 sitemap pages and 100 internal HTML targets pass; full parsed metadata/JSON-LD local/live parity is clean. Fresh Canonry audit `638de6d0-fea9-4ad4-996a-fb1f2bd320bb` completed at 90/100 over 100 pages, with 0 skipped and 0 errored. The prior 88/100 audit covered 98 pages, so the score change is not attributed to these fixes. Historical checkpoints below remain historical.
 - Category: deployment / production parity; technical
 - Scope: representative `/services/`, generated industry/service, `/resources/`, `/schedule/`, `/thank-you/`, and `/restoration-marketing/` routes, then the full affected cluster.
@@ -79,7 +81,9 @@ The September 10 instruction implemented the then-current backlog. The September
 ### SEO-002 — Improve intended index coverage after parity is stable
 
 - Status: Measuring
-- Measurement due date: 2026-09-25
+- 2026-10-08 measurement reconciliation: Original 23-URL Google comparison completed: 14/5/4 indexed/crawled-not-indexed/unknown → 13/6/4; only mold-remediation/web-design lost its indexed verdict. Exact Bing bounded review recorded in the receipt. Keep Measuring; next scheduled inspection and page-specific evidence review October 9, no submission or rewrite inferred. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
+- Measurement due date: 2026-10-09
+- Original due checkpoint (historical): 2026-09-25
 - Category: indexing
 - Scope: the current 96-URL live sitemap, reconciled against stored URL-level GSC inspection verdicts and intended exclusions.
 - Problem: Canonry's stored whole-site 52/100 Google headline is stale and mixes current sitemap URLs with obsolete or intentionally excluded URLs; current URL-level evidence still shows concentrated Google coverage gaps on industry hubs.
@@ -108,7 +112,9 @@ The September 10 instruction implemented the then-current backlog. The September
 ### SEO-003 — Re-run visibility baseline with the adopted query basket
 
 - Status: Measuring
-- Measurement due date: 2026-09-21
+- 2026-10-08 measurement reconciliation: Complete unchanged scheduled basket: September 27 → October 4 query Mention Coverage 3/42 → 4/42; Citation Coverage 0/42 → 7/42 (9/126 cited snapshots). Zero-citation trough did not persist; no durable recovery established. Review October 11 scheduled sweep on October 12; no manual sweep. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
+- Measurement due date: 2026-10-12
+- Original due checkpoint (historical): 2026-09-21
 - Current September 10 result: authorized confirmation run `dc0e5f1c-7708-4edc-90be-47474349f809` completed at 17:37:00 UTC with 126 snapshots and unchanged query/provider/model/location sets. Mention Coverage is 6/42 versus 5/42 on August 27; non-brand Mention Share is 7/33 versus 5/29; Citation Coverage remains 3/42. The website-design consultation query gained both a mention and citation; the monthly-retainer query lost a citation but retained its mention. No query lost its August 27 mention. All 22 August 10-to-27 lost-mentioned queries remain absent. The confirmation task is complete; this is not evidence of recovery or a durable trend from only three comparable runs. See the implementation run for commercial-query diagnosis and limitations.
 - Category: AEO / measurement
 - Scope: the existing commercial query basket and provider set.
@@ -130,6 +136,7 @@ The September 10 instruction implemented the then-current backlog. The September
 ### SEO-004 — Page-specific content improvements on verified weak templates
 
 - Status: Measuring
+- 2026-10-08 measurement reconciliation: Complete original 27-day comparison reproduced exactly; two positions improved, two worsened, all four cohorts had zero clicks. Measurement receipt complete, impact inconclusive. Same-cohort monthly review November 1; separate later overlapping changes. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
 - Category: content quality; search intent; entity/schema
 - Scope: verified indexed commercial pages with measurable query proximity: `/water-damage-restoration/ppc/`, `/services/retargeting/`, `/services/web-design/`, and `/services/social-media-marketing/`.
 - Problem: these pages had meaningful impressions at positions 2.8-19.3 but produced no GSC clicks in the stored 2026-07-12 to 2026-08-07 window. The reviewed page-specific metadata/intent intervention is deployed, but no comparable post-deployment search window exists yet; the current dirty worktree proposes a separate rewrite on two of these pages.
@@ -141,7 +148,8 @@ The September 10 instruction implemented the then-current backlog. The September
 - Recommended change: make no additional content change in this check. Measure the already-deployed artifact; if the dirty rewrites are later approved and deployed, restart the post-deployment comparison window and verify the four pages again. Do not add FAQ/schema or rewrite whole templates for audit-score reasons.
 - Effort: Medium–High
 - Confidence: High for the snippet defects and search opportunity; Medium for ranking impact.
-- Measurement due date: 2026-09-21
+- Measurement due date: 2026-11-01
+- Original due checkpoint (historical): 2026-09-21
 - Verification: pre/post GSC query-page CTR and position over comparable 27-day windows, rendered snippet/content review, build/artifact validation, live parity, and later Canonry mention/citation checks. Deployed artifact parity passed live on 2026-08-21. The measured artifact remains unchanged, but the September 18 checkpoint was incomplete because GSC data ended September 15. Current measurement checkpoint: 2026-09-21, after the daily feed is expected to cover the complete August 22–September 17 post-live window; no search/AEO outcome is claimed yet.
 - 2026-08-25 recheck: all four live SEO-004 URLs still serve the reviewed page-specific title/description and remain indexable, canonical, one-H1, JSON-LD-valid, and stored `Submitted and indexed`. Dirty local H1/content drift remains unapproved and undeployed; no post-deployment search outcome is claimed.
 - 2026-08-31 recheck: the four SEO-004 URLs remain live, indexable, canonical, one-H1, JSON-LD-valid, and locally/live signal-aligned. No comparable search-performance window is available and no content change is recommended.
@@ -155,6 +163,8 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 ### SEO-005 — Consolidate core agency and PPC intent ownership
 
 - Status: Measuring
+- 2026-10-08 measurement reconciliation: Complete original 28-day exact-query comparison: generic PPC primary impression share 17.74% → 46.12%, agency and water-PPC ownership mixed, total cohort clicks 1 → 0. No causal ownership win. Keep Measuring; monthly same-cohort review November 1, original September 24 deadline preserved in history. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
+- Measurement due date: 2026-11-01
 - Category: search intent / cannibalization; internal-link weakness
 - Scope: homepage, `/services/`, `/services/ppc/`, `/water-damage-restoration/ppc/`, and supporting about/industry pages.
 - Problem: core commercial queries surface across too many pages, diluting the clearest landing-page signal, and the previously observed generic-to-specialist PPC contextual-link omission required repair. The link is now restored; the remaining item is measurement of intent ownership and query-page distribution.
@@ -177,6 +187,7 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 ### SEO-006 — Reconcile water-damage marketing article publication
 
 - Status: Measuring
+- 2026-10-08 measurement reconciliation: Full original 28-day post-window complete: exact article/query 1 impression, 1 click, position 94; article all-query context 29 impressions / 1 click. Sparse new-page evidence is inconclusive, no comparable pre-page zero inferred. Monthly same-cohort review November 1. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
 - Approval state: retrospectively approved on 2026-08-27 through the operator's instruction to complete the weekly plan. The 2026-08-24 production verification is the accepted baseline; no search/AEO outcome is claimed yet.
 - Category: search-intent/content gap; entity, citation, and AEO weakness.
 - Scope: query `water damage restoration marketing`; source article and expected production URL `/resources/water-damage-restoration-marketing/`; supporting industry, service, and resource links.
@@ -189,7 +200,8 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Confidence: Medium because intent and indexing evidence are strong, but no post-publication search or AEO improvement is established.
 - Implementation ID: `bab467b2b4b7eaef65e21c64b88d372740c62539` on `main`; `origin/main` contained the commit on 2026-08-24. The commit includes unrelated files, so it is not treated as an automation-scoped article commit.
 - Deployment expectation: `https://remediationrestorationmarketing.com/resources/water-damage-restoration-marketing/` is live-verified on 2026-08-24 and appears consistent with repository commit `bab467b`; Netlify exposed no stable provider build ID.
-- Measurement due date: 2026-09-21, using the accepted 2026-08-24 production verification as the baseline.
+- Measurement due date: 2026-11-01
+- Original due checkpoint (historical): 2026-09-21, using the accepted 2026-08-24 production verification as the baseline.
 - Verification method: approval record; production HTTP/indexability/canonical/render/schema and source-parity checks; exactly one visible FAQ block and one synchronized FAQPage schema source; internal-link resolution; comparable GSC query/page window; and a later operator-approved fixed-basket Canonry sweep reporting Mention Coverage/Share separately from Citation Coverage.
 - 2026-08-31 recheck: the article remains live, indexable, canonical, one-H1, JSON-LD-valid, sitemap-listed, and source/build/live aligned. Stored Google/Bing states and the zero mention/citation point remain unchanged; no outcome or rewrite is claimed.
 - 2026-08-31 weekly reconciliation: no visibility run exists after the article's 0/3 mention and 0/3 citation result for `water damage restoration marketing`; the 2026-09-21 measurement gate remains unchanged. No rewrite, duplicate article, or indexing request is approved.
@@ -199,6 +211,7 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 ### SEO-007 — Clarify social-media advertising intent and snippet
 
 - Status: Measuring
+- 2026-10-08 measurement reconciliation: Complete original equal 28-day comparison: exact paid-social query 37 → 26 impressions, zero clicks both windows, position 19.54 → 23.35. Sparse/confounded; no verified gain. Monthly same-cohort review November 1. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
 - Approval state: approved, deployed, and production-verified on 2026-08-27.
 - Category: search intent / content quality; high-impression weak CTR.
 - Scope: `/services/social-media-advertising/`; query `facebook ads for fire damage restoration` and closely matching restoration paid-social intent.
@@ -210,7 +223,8 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Effort: Low–Medium after the existing refactor settles.
 - Confidence: Medium–High for the snippet/intent defect; Medium for ranking or CTR impact.
 - Deployment commit/build ID: `0bc7e2bb7133950e1a3a3aee5e7ab100ec9e87ae`; Netlify build ID unavailable.
-- Measurement due date: 2026-09-24.
+- Measurement due date: 2026-11-01
+- Original due checkpoint (historical): 2026-09-24.
 - Verification method: reviewed diff; successful production build and postbuild AEO check; desktop/mobile rendered review with no overflow; no browser console warnings/errors; exact live title and 152-character description; self-canonical/indexable/one-H1/JSON-LD-valid output; zero local/live signal mismatches; fresh Google state `Submitted and indexed`. Measure comparable 28-day query-page GSC performance before claiming impact.
 - 2026-08-31 recheck: the page remains live with its approved title/description, self-canonical, one H1, valid JSON-LD, and local/live signal parity. No new content change or post-deployment outcome is claimed.
 - 2026-08-31 GSC reconciliation: `facebook ads for fire damage restoration` has 43 impressions at average position 18.93 on the exact page in the latest stored 2026-07-24 through 2026-08-22 window, versus 42 impressions at 17.48 in the overlapping window ending 2026-08-14. The small position movement is not an outcome call. Keep the deployed page stable through 2026-09-24; no additional copy or schema change is approved.
@@ -219,6 +233,7 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 ### SEO-008 — Strengthen fire-damage web-design intent with one contextual link
 
 - Status: Measuring
+- 2026-10-08 measurement reconciliation: Original full post-window September 11–October 8 remains incomplete: GSC through October 5 lacks October 6–8. Original October 8 due checkpoint reviewed; retain Measuring and use October 12 health after lag, with the original equal 28-day cohort. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
 - Approval state: approved by the operator's September 10 instruction to implement the backlog; implemented, deployed, and production-verified. No indexing request was made.
 - Category: internal-link weakness; search intent.
 - Scope: `/fire-damage-restoration/web-design/`; query `web design for fire damage restoration`; contextual source `/resources/fire-damage-restoration-marketing/`.
@@ -226,7 +241,8 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Evidence baseline: stored GSC query-page data for 2026-07-24 through 2026-08-22 shows 24 impressions, 0 surfaced row clicks, and average position 4.04 on the exact specialist URL, up from 14 impressions at position 3.86 in the overlapping window ending 2026-08-14. Fresh stored inspection marks the page `Submitted and indexed`; direct live review on 2026-08-31 returned 200, one H1, an indexable page, and title `Web Design for Fire Damage Restoration | R&R Marketing`. A read-only 96-page live link extraction counted 11 inbound links to the specialist URL versus 115 to `/services/web-design/`; repository evidence shows the fire-damage marketing guide currently links to the generic page.
 - Hypothesis: one relevant fire-guide-to-specialist contextual link can reinforce exact intent ownership without changing the page body, URL, indexability, or generic web-design ownership.
 - Deployment commit/build ID: link implementation `64429c1`, first live in Netlify deploy `6aa2e81785e7f400081ea057`; final verified artifact `84e67ea` / `6aa2e9136cdb4e00087de203`, including the schema parity correction.
-- Measurement due date: 2026-10-08, 28 days after the accepted September 10 live verification.
+- Measurement due date: 2026-10-12
+- Original due checkpoint (historical): 2026-10-08, 28 days after the accepted September 10 live verification.
 - Expected impact: improve consolidation and click/ranking opportunity for a query already averaging position 4, with limited risk to the broader web-design page.
 - Recommended change: implemented one contextual link using “fire damage restoration web design service” and `/fire-damage-restoration/web-design/`. Preserve it and the generic service page elsewhere through the measurement window; no broad template-link expansion is supported.
 - Effort: Low.
@@ -238,6 +254,7 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 ### SEO-009 — Publish a Local Services Ads guide for restoration companies
 
 - Status: Measuring
+- 2026-10-08 measurement reconciliation: Complete original equal 28-day windows: three exact queries on new article produced 6 impressions / zero clicks / position 18; all-query article context 8 impressions / zero clicks. Low sample and structural pre-page absence prevent impact validation. Monthly same-cohort review November 1. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
 - Approval state: **Auto-approved by weekly article automation on 2026-08-31** after the stored-evidence, winnability, duplication, factual-support, image, and validation gates passed.
 - Category: search-intent/content gap; internal-link support; entity, citation, and AEO weakness.
 - Scope: queries `how does local service ads work for damage restoration`, `local service ads for restoration companies`, and `restoration local service ads`; new canonical resource `/resources/local-services-ads-for-restoration-companies/`; supporting PPC, lead-tracking, web-design, reputation, SEO, retargeting, social-advertising, water-damage, and lead-generation pages.
@@ -249,7 +266,8 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Effort: Medium.
 - Confidence: Medium–High for the content and citation gap; Medium for organic/AEO impact because exact-query GSC demand is sparse and no post-publication comparison exists.
 - Deployment commit/build ID: article and required implementation safeguards committed as `1b13b66e4d6f4483b9bbc15f466847fbb965d0ce` on `main` and pushed to `origin/main` on 2026-08-31; the URL was production-verified on 2026-09-01, while a stable Netlify build ID remains unavailable.
-- Measurement due date: 2026-09-29, 28 days after the accepted 2026-09-01 production verification.
+- Measurement due date: 2026-11-01
+- Original due checkpoint (historical): 2026-09-29, 28 days after the accepted 2026-09-01 production verification.
 - Verification method: successful `astro check` and production build; rendered one-H1, BlogPosting, visible FAQ/FAQPage synchronization, author, image, sitemap, and internal-link checks; regression-automation production parity and indexability verification; then comparable GSC query/page results and a later operator-approved fixed-basket Canonry run with Mention Coverage/Share reported separately from Citation Coverage.
 - 2026-08-31 upstream-queue reconciliation: a direct read at 10:44 ET returned HTTP 404 for `/resources/local-services-ads-for-restoration-companies/`; the live sitemap still contained 96 URLs. Treat commit `1b13b66` as source-only and production verification as pending. This queue did not approve, implement, deploy, or rank the already-executed downstream article intervention.
 - 2026-09-01 production checkpoint: the URL returned 200, was present in the 97-URL live sitemap, was self-canonical and indexable, had one H1, and exposed `BlogPosting` and synchronized `FAQPage` schema. Those signals matched the current local build. This closes the deployment gate and starts measurement; it is not a ranking, traffic, mention, citation, or conversion result.
@@ -260,6 +278,7 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 ### SEO-010 — Publish a restoration agency selection guide
 
 - Status: Measuring
+- 2026-10-08 measurement reconciliation: Original full post-window September 9–October 6 lacks October 6 in stored GSC through October 5. Retain Measuring; October 9 health if data covers October 6, otherwise October 12. Original acceptance and 28-day cohort unchanged. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
 - Approval state: **Auto-approved by weekly article automation on 2026-09-07** after the stored Canonry opportunity, winnability, query-demand, duplication, factual-support, image, and validation gates passed.
 - Category: search-intent/content gap; internal-link support; entity, citation, and AEO weakness.
 - Scope: query `should i use a niche restoration agency or a general marketing firm`; supporting family `restoration marketing agency`; new canonical resource `/resources/restoration-marketing-agency-vs-generalist/`; homepage commercial intent remains unchanged.
@@ -271,7 +290,8 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - Effort: Medium.
 - Confidence: Medium–High for the distinct content and AEO gap; Medium for organic/AEO impact because the exact decision query has competitor evidence but no stored GSC impressions of its own.
 - Deployment commit/build ID: article and cover committed as `2fa365ec45451e323efbabab3a81c6b6734fd486` on `main` and pushed to `origin/main` on 2026-09-07; live verification accepted on 2026-09-08 against source HEAD `cddf474`; stable hosting build ID remains unavailable.
-- Measurement due date: 2026-10-06, 28 days after the accepted 2026-09-08 live checkpoint.
+- Measurement due date: 2026-10-09
+- Original due checkpoint (historical): 2026-10-06, 28 days after the accepted 2026-09-08 live checkpoint.
 - Verification method: successful `astro check`, production build/postbuild, rendered one-H1/BlogPosting/FAQ synchronization/author/image/sitemap/internal-link checks; regression-automation live availability and source/build/live parity; then exact query/page GSC results over a comparable 28-day window and a later separately authorized fixed-basket Canonry sweep reporting Mention Coverage/Share separately from Citation Coverage.
 
 ### SEO-011 — Measure homepage and services decision-support improvements
@@ -315,6 +335,7 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 ### SEO-013 — Restore fresh measurement and coordinate weekly article delivery
 
 - Status: Measuring
+- 2026-10-08 measurement reconciliation: Accepted delivery, full parity and this measurement receipt demonstrate manual follow-through. No scheduler run started after the latest October 8 prompt installation; unattended adopted execution remains unverified. Observe existing October 9 job and correlate prompt/run/repository/terminal proof; keep Measuring. See [exact evidence and limitations](runs/2026-10-08-overdue-measurements.md).
 - Approval state: approved by Matt's 2026-09-15 instruction to apply the pipeline assessment fixes, with the explicit correction that one new article per week remains required.
 - Category: measurement/configuration defect; automation coordination; repository validation defect.
 - Scope: Canonry project remediation-restoration-marketing, RnRMarketing SEO automations, shared runtime health and Accordion import/type-check baseline. No article or commercial-page copy change.
@@ -330,7 +351,8 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 - 2026-09-21 health checkpoint: the scheduled September 20 visibility run and technical audit completed, and the September 21 GSC/GA4 refresh completed. This health run occurred before the 09:30 Eastern coordinator checkpoint, so article delivery and unattended coordinator acceptance are not yet verified. The locked full checker passed validation and the 99-page/101-target surface but failed the deployed-revision gate and 12 local/live SEO-signal comparisons because current HEAD `ca74780` contains committed site changes not present in live `/build-info.json` (`c8698c8`). Classify this as deployment/parity lag, not a live crawlability regression; keep SEO-013 Measuring until the coordinator checkpoint and live parity are verified.
 - 2026-09-22 health checkpoint: the September 21 weekly coordinator task did not complete; Codex recorded a system error stating the selected model was at capacity. The native September 22 refresh completed GSC/Bing/GA4 reads, but Bing remained partial and the current GSC/GA4 freshness is now through September 20/22. The locked full checker again passed validation and the 99-page/101-target surface but failed the deployed-revision gate and the same 12 schema-only local/live comparisons because current HEAD `ca74780` remains absent from live `/build-info.json` (`c8698c8`). Treat this as deployment/parity lag plus an unattended-coordinator execution blocker, not a confirmed live crawlability regression. Keep SEO-013 Measuring; next checkpoint is the next successful coordinator run and live parity verification.
 - 2026-09-23 health checkpoint: the native refresh inspected Google coverage at 59 indexed / 44 not indexed / 0 deindexed across 103 URLs, completed Bing coverage at 41 indexed / 0 not indexed / 1 unknown across 42 URLs, and synced GA4 property 543995602. The latest fixed-basket visibility run and technical audit remain the September 20 results; no duplicate sweep or probe was run. The locked full checker again passed validation and the 99-page/101-target surface but failed the deployed-revision gate and the same 12 schema-only local/live comparisons because current HEAD `ca74780` remains absent from live `/build-info.json` (`c8698c8`). Treat this as deployment/parity lag plus the existing unattended-coordinator execution blocker, not a confirmed live crawlability regression. Keep SEO-013 Measuring; next checkpoint is the next successful coordinator run and live parity verification.
-- Measurement due date: 2026-09-21
+- Measurement due date: 2026-10-09
+- Original due checkpoint (historical): 2026-09-21
 - Verification method: successful daily fresh-data runs, September 20 complete 42×3 visibility sweep and technical audit, one September 21 article committed/pushed/live or explicit recoverable blocker, no concurrent lock owners, due items measured against complete data windows, zero Astro errors, passing tests/build, and live signal parity. Wednesday/Friday retries must not produce a second article in the same week. Keep this item Measuring until scheduled execution is observed.
 
 ## Reserve article candidates
