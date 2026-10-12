@@ -103,7 +103,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
       </div>
 
       <div class="rm-form-side">
-        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/thank-you/" data-success-redirect="/thank-you/" data-lead-phone-form data-request-receipt data-netlify="true" netlify-honeypot="bot-field">
+        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/.netlify/functions/submit-lead" data-success-redirect="/thank-you/" data-lead-phone-form data-request-receipt data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="Schedule Lead Form" />
           <!-- Register legacy /schedule/ fields too: Netlify uses one definition per form name. -->
           <input type="hidden" name="phone-country" value="US" />
@@ -552,6 +552,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
 
       const captureAbandonment = () => {
         if (window.rrTrackingDisabled || currentStep !== 2 || finalSubmissionStarted || identitySaved) return;
+        if (firstStepFields.some((field) => !field.value.trim() || !field.checkValidity())) return;
 
         const body = buildIdentityBody();
         if (typeof navigator.sendBeacon === "function" && navigator.sendBeacon("/.netlify/functions/submit-lead", body)) {
@@ -584,6 +585,16 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
           event.preventDefault();
           event.stopImmediatePropagation();
           advance();
+          return;
+        }
+        firstStepFields.forEach((field) => { field.value = field.value.trim(); });
+        const invalidIdentity = firstStepFields.find((field) => !field.value || !field.checkValidity());
+        if (invalidIdentity) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          showStep(1, false);
+          invalidIdentity.reportValidity();
+          invalidIdentity.focus();
           return;
         }
         leadStageField.value = "request";

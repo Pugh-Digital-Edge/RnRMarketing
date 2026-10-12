@@ -40,10 +40,10 @@ function setup(value, action = "/thank-you/", responseOk, options = {}) {
   let fetches = 0;
   const receipts = [], redirects = [];
   const context = {
-    Event, history: { state: null, replaceState() {} },
+    Event, crypto, history: { state: null, replaceState() {} },
     rememberAcceptedRequest: id => receipts.push(id),
     window: { rrTrackingDisabled: !!options.isolated, rrTestMode: !!options.testMode, location: {
-      hostname: options.hostname || 'example.test', assign: url => redirects.push(url),
+      pathname: '/restoration-marketing/', hostname: options.hostname || 'example.test', assign: url => redirects.push(url),
     } },
     document: { querySelectorAll: () => [form] },
     PHONE_VALIDATION_MESSAGE, validatePhoneNumber, URL, URLSearchParams,
@@ -114,7 +114,7 @@ test("forms explicitly targeting the function retain their existing async submis
   assert.equal(form.button.attributes['aria-busy'], 'true');
 });
 
-test("shared schedule form has one complete Netlify registration with the native success action", () => {
+test("shared schedule form has one complete Netlify registration with the validated native action", () => {
   const pages = ["../src/components/AdsLandingPage.astro", "../src/pages/schedule.astro"]
     .map(path => readFileSync(new URL(path, import.meta.url), "utf8"));
   const registrations = pages.flatMap(page => [...page.matchAll(/<form\b[^>]*>[\s\S]*?<\/form>/g)])
@@ -122,7 +122,7 @@ test("shared schedule form has one complete Netlify registration with the native
     .filter(form => /<form[^>]*name="Schedule Lead Form"[^>]*data-netlify="true"/.test(form));
   assert.equal(registrations.length, 1, "Duplicate registrations overwrite fields and the success action");
   const form = registrations[0];
-  assert.match(form, /action="\/thank-you\/"/);
+  assert.match(form, /action="\/\.netlify\/functions\/submit-lead"/);
   assert.match(form, /netlify-honeypot="bot-field"/);
   for (const name of ["form-name", "bot-field", "phone-country", "primary-service", "goals",
     "gclid", "gbraid", "wbraid", "utm-source", "utm-medium", "utm-campaign", "utm-term",
@@ -158,6 +158,14 @@ test('paid in-flight submissions are deduplicated and production QA cannot submi
   const qa = setup('(202) 555-0147', '/thank-you/', true, { accepted: true, isolated: true, testMode: true });
   assert.equal(qa.submit().defaultPrevented, true);
   assert.equal(qa.fetches, 0);
+});
+
+test('accepted request cannot be resubmitted while navigation is pending', async () => {
+  const s = setup('(202) 555-0147', '/.netlify/functions/submit-lead', true, { accepted: true, redirect: true });
+  await s.submitAndWait(); await s.submitAndWait();
+  assert.equal(s.fetches, 1);
+  assert.deepEqual(s.receipts, ['submission-1234']);
+  assert.deepEqual(s.redirects, ['/thank-you/']);
 });
 
 test('non-QA privacy/storage tracking suppression never blocks normal intake', async () => {

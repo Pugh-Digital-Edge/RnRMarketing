@@ -1,9 +1,9 @@
 /** Receipt of provider HTTP acknowledgment; never persisted, booked or qualified proof. */
 export const REQUEST_RECEIPT_KEY = 'rr_accepted_request';
-export function rememberAcceptedRequest(id: string) {
+export function rememberAcceptedRequest(id: string, formPage = '/restoration-marketing/') {
   try {
     sessionStorage.setItem(REQUEST_RECEIPT_KEY, JSON.stringify({
-      id, acceptedAt: Date.now(), test: !!window.rrTrackingDisabled,
+      id, formPage, acceptedAt: Date.now(), test: !!window.rrTrackingDisabled,
     }));
   } catch { /* Storage failure never blocks intake or navigation. */ }
 }
@@ -24,9 +24,11 @@ export function consumeAcceptedRequest() {
     };
     const tracking = analytics.rrTracking;
     if (!tracking || typeof analytics.gtag !== 'function') return;
+    const formPage = receipt.formPage || '/restoration-marketing/';
+    if (!['/restoration-marketing/', '/schedule/'].includes(formPage)) return;
     analytics.gtag('event', 'generate_lead', {
       send_to: tracking.ga4Id, form_id: 'lead-form', form_name: 'Schedule Lead Form',
-      form_page: '/restoration-marketing/', funnel_version: 'restoration_v2', form_step: 2,
+      form_page: formPage, ...(formPage === '/restoration-marketing/' ? { funnel_version: 'restoration_v2', form_step: 2 } : {}),
       lead_stage: 'request_accepted', receipt_source: 'netlify_http',
     });
     if (tracking.googleAdsId && tracking.leadConversionLabel) {

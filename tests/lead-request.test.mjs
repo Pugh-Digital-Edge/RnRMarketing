@@ -51,3 +51,12 @@ test('isolated receipts remain suppressed after leaving QA mode and unavailable 
   assert.doesNotThrow(() => { b.rememberAcceptedRequest('submission-1234'); b.consumeAcceptedRequest(); });
   assert.equal(b.events.length, 0);
 });
+
+test('legacy schedule conversions also require an accepted receipt and use the correct page', () => {
+  const s = setup(); s.rememberAcceptedRequest('submission-1234', '/schedule/');
+  s.consumeAcceptedRequest(); s.consumeAcceptedRequest();
+  assert.deepEqual(s.events.map(e => e[1]), ['generate_lead', 'conversion']);
+  assert.equal(s.events[0][2].form_page, '/schedule/');
+  const thanks = readFileSync(new URL('../src/pages/thank-you.astro', import.meta.url), 'utf8');
+  assert.doesNotMatch(thanks, /schedule_lead_submission_pending|shouldTrackLead|gtag\('event'/);
+});

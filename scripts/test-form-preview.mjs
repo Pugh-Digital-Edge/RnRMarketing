@@ -4,6 +4,7 @@ import http from 'node:http';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import submitLead from '../netlify/functions/submit-lead.mjs';
+import validateLead from '../netlify/edge-functions/validate-lead.js';
 
 const port = 4337;
 const origin = `http://127.0.0.1:${port}`;
@@ -30,6 +31,11 @@ http.createServer(async (req, res) => {
       return res.end(await result.text());
     }
     if (req.method === 'POST') {
+      const gated = await validateLead(new Request(url, { method: 'POST', headers: req.headers, body }), { next: () => undefined });
+      if (gated) {
+        res.writeHead(gated.status, Object.fromEntries(gated.headers));
+        return res.end(await gated.text());
+      }
       posts.push({ path: url.pathname, fields: Object.fromEntries(new URLSearchParams(body)), failed: fail });
       if (fail) { res.writeHead(503); return res.end('Simulated storage failure'); }
       if (url.pathname === '/') return res.end('Captured locally');

@@ -15,60 +15,7 @@ const bookingUrl = "https://calendar.google.com/calendar/appointments/schedules/
     import { consumeAcceptedRequest } from "../scripts/lead-request";
     consumeAcceptedRequest();
   </script>
-  <script is:inline>
-    (() => {
-      let shouldTrackLead = false;
 
-      try {
-        shouldTrackLead = window.sessionStorage.getItem('schedule_lead_submission_pending') === '1';
-        if (shouldTrackLead) {
-          window.sessionStorage.removeItem('schedule_lead_submission_pending');
-        }
-      } catch {
-        // Storage can be unavailable in privacy-restricted browsers.
-      }
-
-      if (window.rrTrackingDisabled || !shouldTrackLead || typeof window.gtag !== 'function') {
-        return;
-      }
-
-      let leadUserData = {};
-
-      try {
-        leadUserData = JSON.parse(window.sessionStorage.getItem('schedule_lead_user_data')) || {};
-        window.sessionStorage.removeItem('schedule_lead_user_data');
-      } catch {
-        // Storage can be unavailable in privacy-restricted browsers.
-      }
-
-      // Older paid-page pending flags are intents, not accepted requests.
-      if (typeof leadUserData.landing_page === 'string' && leadUserData.landing_page.replace(/\/$/, '') === '/restoration-marketing') return;
-      const attribution = window.rrAttribution || {};
-
-      window.gtag('event', 'generate_lead', {
-        send_to: window.rrTracking?.ga4Id,
-        form_id: 'lead-form',
-        form_page: leadUserData.landing_page || '',
-        ...(leadUserData.landing_page === '/restoration-marketing/' ? { funnel_version: 'restoration_v1', form_step: 2 } : {}),
-        event_category: 'conversion',
-        form_name: 'Schedule Lead Form',
-        lead_type: 'restoration_strategy_call',
-        landing_page: leadUserData.landing_page || attribution.landing_page || '',
-        lead_scope: leadUserData.lead_scope || '',
-        lead_budget: leadUserData.lead_budget || '',
-        gclid: attribution.gclid || '',
-        page_location: window.location.href,
-      });
-
-      const trackingConfig = window.rrTracking || {};
-
-      if (trackingConfig.googleAdsId && trackingConfig.leadConversionLabel) {
-        window.gtag('event', 'conversion', {
-          send_to: `${trackingConfig.googleAdsId}/${trackingConfig.leadConversionLabel}`,
-        });
-      }
-    })();
-  </script>
   <div class="thank-you">
     <div class="thank-you__content">
       <a class="thank-you__brand" href="/restoration-marketing/">Remediation &amp; Restoration Marketing</a>

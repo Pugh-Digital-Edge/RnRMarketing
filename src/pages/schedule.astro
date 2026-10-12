@@ -141,8 +141,11 @@ const faqSchema = {
       </div>
 
       <!-- AdsLandingPage registers this shared Netlify form and its complete field set. -->
-      <form id="lead-form" name="Schedule Lead Form" method="post" action="/.netlify/functions/submit-lead" data-success-redirect="/thank-you/" data-lead-phone-form netlify-honeypot="bot-field">
+      <form id="lead-form" name="Schedule Lead Form" method="post" action="/.netlify/functions/submit-lead" data-success-redirect="/thank-you/" data-lead-phone-form data-request-receipt netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="Schedule Lead Form" />
+        <input type="hidden" name="submission-id" data-submission-id />
+        <input type="hidden" name="lead-stage" value="request" />
+        <input type="hidden" name="landing-page" value="/schedule/" />
         <p hidden>
           <label>
             Do not fill this out if you are human:
