@@ -54,8 +54,11 @@ export function validateLeadFields(fields) {
     return { phone: phone.e164, email, stage, isRequest: stage === 'request' };
   }
   const message = fields.get(formName === 'Contact Form' ? 'Message' : 'message');
-  if (!message?.trim() || (formName === 'Contact Form' && !/^\d{5}(-\d{4})?$/.test(fields.get('zip') || ''))) {
-    return { error: 'Please complete your message and any required ZIP code.' };
+  const zip = fields.get('zip') || '';
+  // /contact/ explicitly offers optional ZIP; the homepage still requires it
+  // in its own UI. Both share this Netlify form name and server contract.
+  if (!message?.trim() || (formName === 'Contact Form' && zip && !/^\d{5}(-\d{4})?$/.test(zip))) {
+    return { error: 'Please complete your message and enter a valid ZIP code if supplied.' };
   }
   return { phone: phone.e164, email };
 }

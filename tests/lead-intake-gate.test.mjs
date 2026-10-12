@@ -106,3 +106,25 @@ test('native form multipart data uses the same validation and cannot weaken requ
     assert.equal(response.status, valid ? 303 : 422);
   }
 });
+
+test('contact page optional ZIP remains optional and supplied ZIP is validated', async t => {
+  let calls = 0;
+  t.mock.method(globalThis, 'fetch', async () => { calls++; return new Response('provider'); });
+  const contact = { 'form-name': 'Contact Form', name: 'QA Owner', email: 'owner@example.test', phone: '+12025550147', Message: 'QA goals' };
+  assert.equal((await submit(request(contact))).status, 200);
+  assert.equal((await submit(request({ ...contact, zip: '12345' }))).status, 200);
+  assert.equal((await submit(request({ ...contact, zip: 'bad' }))).status, 422);
+  assert.equal(calls, 2);
+});
+
+test('native contact/chat recovery retains multiline messages in escaped textareas', async t => {
+  t.mock.method(globalThis, 'fetch', async () => new Response('provider failure', { status: 503 }));
+  for (const [form, field] of [['Contact Form', 'Message'], ['Chat Widget Submission', 'message']]) {
+    const response = await submit(request({ 'form-name': form, name: 'QA', email: 'qa@example.test', phone: '+12025550147', [field]: 'First line\n</textarea><script>QA</script>' }, '/.netlify/functions/submit-lead', { accept: 'text/html' }));
+    const html = await response.text();
+    assert.match(html, /First line\n&lt;\/textarea&gt;&lt;script&gt;QA/);
+    assert.ok(html.includes(`<textarea required name="${field}">`));
+    assert.doesNotMatch(html, /<script>QA/);
+    if (form === 'Contact Form') assert.match(html, /<input type="text" name="zip"/);
+  }
+});
