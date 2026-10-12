@@ -46,6 +46,15 @@ test('no-JavaScript browser POST validates, generates an ID and redirects only a
   assert.equal(stored.get('phone'), '+12025550147');
 });
 
+test('server-generated IDs do not require a browser-style global crypto object', async t => {
+  t.mock.getter(globalThis, 'crypto', () => undefined);
+  t.mock.method(globalThis, 'fetch', async () => new Response('provider'));
+  const response = await submit(request({ ...fields, 'submission-id': '' }));
+  const receipt = await response.json();
+  assert.equal(receipt.stage, 'request_accepted');
+  assert.match(receipt.submissionId, /^[a-f0-9-]{36}$/);
+});
+
 test('native validation and provider errors preserve input safely for retry and never redirect', async t => {
   let calls = 0;
   t.mock.method(globalThis, 'fetch', async () => { calls++; return new Response('failed', { status: 503 }); });

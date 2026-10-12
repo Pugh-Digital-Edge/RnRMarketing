@@ -1,5 +1,6 @@
 import { readLeadFields, validateLeadFields } from "../../src/libs/lead-validation.js";
 import { leadHtml } from "../../src/libs/lead-html.js";
+import { randomUUID } from "node:crypto";
 
 export default async (request) => {
   if (request.method !== "POST") {
@@ -23,7 +24,7 @@ export default async (request) => {
   const { isRequest } = result;
   if (result.stage) {
     fields.set("lead-stage", result.stage);
-    if (!fields.get("submission-id")) fields.set("submission-id", crypto.randomUUID());
+    if (!fields.get("submission-id")) fields.set("submission-id", randomUUID());
   }
   const submissionId = fields.get("submission-id");
   fields.set("phone", result.phone);
