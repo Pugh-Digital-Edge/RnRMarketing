@@ -400,18 +400,21 @@ The weekly queue tracks the four page-level candidates under this umbrella as SE
 
 ### SEO-016 — CRM selection for restoration business management
 
-- Status: Candidate
-- Approval state: second evidence-supported reserve after SEO-015; not approved for the September 21–27 publication week.
+- Status: Measuring
+- Approval state: auto-approved on 2026-10-12 as the single article for the October 12–18 Eastern week under the standing weekly pipeline authorization.
 - Category: search-intent/content gap; operational measurement and lead-management guidance.
 - Scope: tracked query `best CRM software for restoration business management`; prospective decision framework for restoration-company owners, distinct from the lead-tracking service page.
 - Problem: the site explains lead tracking but does not provide an operator-focused CRM selection framework connecting intake, job stages, attribution, access controls, integrations, and reporting governance.
-- Evidence baseline: Canonry marks the query ownable with 0.8407 winnability and Medium action confidence; cited competitors include PushLeads, Restoration Inbound, and Diginebel. Reconciled October 5 evidence across the four latest scheduled runs is 0/12 mentioned and 0/12 cited. A current GSC `crm` query-family read returned no rows, so search demand is unavailable rather than zero.
+- Evidence baseline: Canonry marks the query ownable with 0.8407 winnability and Medium action confidence; cited competitors include PushLeads, Restoration Inbound, and Diginebel. The tracked query remained 0/12 mentioned and 0/12 cited across the four latest scheduled runs. Fresh exact-property GSC evidence through 2026-10-09 now contains 14 impressions and 0 clicks in the 90-day `crm` family, surfaced on `/services/lead-tracking/`, with observed positions roughly 71–79.
 - Hypothesis: a vendor-neutral selection and governance framework could serve distinct informational intent and create a qualified route into lead tracking without inventing vendor rankings or outcomes.
-- Expected impact: add a credible first-party answer source for an observed AEO gap; organic demand remains unproven.
-- Recommended change: keep as a reserve only. Revalidate attributable search demand, current primary vendor documentation, and overlap with the lead-tracking page before any future weekly auto-approval.
+- Expected impact: add a credible first-party answer source for an observed AEO gap and a qualified route into lead tracking. No ranking, citation, lead, revenue, or efficiency outcome is promised.
+- Recommended change: preserve the accepted vendor-neutral guide while measuring its exact query/page cohort. The guide uses current official vendor, CISA, FTC, and Google documentation without ranking products or inventing results.
 - Effort: Medium.
-- Confidence: Medium for the AEO/content gap; Low–Medium for organic impact until search demand is observed.
-- Verification method: fresh Canonry query/provider evidence, nonzero attributable search or other customer-demand evidence, duplication review, primary-source factual verification, release validation, live parity, and a later exact query/page comparison.
+- Confidence: Medium–High for the distinct gap; Medium for AEO impact; Low–Medium for organic impact because attributable demand is modest and positions are distant.
+- Implementation: article, 1,590×800 WebP cover, and coordinator receipt committed as `2ac884271517c24858aa035e88b380c2cef1aae3`. `npm run validate` passed with zero Astro errors, 39/39 tests, a successful 110-page build, and postbuild checks. Desktop/mobile rendering, FAQ/schema parity, image crops, internal links, and local sitemap inclusion passed.
+- Accepted live: locked full verification passed at 2026-10-12T14:56:10.772Z against deployed commit `2ac884271517c24858aa035e88b380c2cef1aae3`; the exact URL is HTTP 200, sitemap-listed, self-canonical, indexable, and in source/live parity. See [coordinator and acceptance receipt](runs/2026-10-12-weekly-coordinator.md).
+- Measurement due date: 2026-11-09, 28 days after accepted live verification.
+- Verification method: compare the exact CRM query/page cohort over an equal 28-day window after data lag, then use later scheduled fixed-basket observations for mention and citation evidence without changing the basket or claiming causality from one run.
 
 ### SEO-017 — Restoration marketing ROI measurement
 
