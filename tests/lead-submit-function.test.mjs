@@ -10,7 +10,7 @@ test('server receipt follows documented provider HTTP success and preserves form
  assert.equal(new URL(target).pathname, '/');
  assert.deepEqual(await response.json(), { ok: true, stage: 'request_accepted', submissionId: 'submission-1234', receiptSource: 'netlify_http' });
  assert.equal(payload.get('form-name'), 'Schedule Lead Form'); assert.equal(payload.get('phone'), '+12025550147'); assert.equal(payload.get('gclid'), 'QA-CLICK'); assert.equal(payload.get('monthly-budget'), '');
- assert.equal(payload.has('phone-country'), false);
+ assert.equal(payload.get('phone-country'), 'US');
 });
 test('provider error, JSON error and network failure are retryable and never emit receipts', async t => {
  for (const mode of ['http', 'json', 'network']) {
@@ -23,7 +23,7 @@ test('identity remains identity, incomplete final requests fail, and bot/test pa
  let calls = 0;
  t.mock.method(globalThis, 'fetch', async () => { calls++; return new Response('', { status: 200 }); });
  assert.deepEqual(await (await submit(request({ ...fields, 'lead-stage': 'identity', 'service-area': '' }))).json(), { ok: true });
- for (const patch of [{ 'submission-id': '' }, { email: 'invalid' }, { 'service-area': '' }]) assert.equal((await submit(request({ ...fields, ...patch }))).status, 422);
+ for (const patch of [{ 'submission-id': 'invalid' }, { email: 'invalid' }, { 'service-area': '' }]) assert.equal((await submit(request({ ...fields, ...patch }))).status, 422);
  assert.equal((await submit(request({ ...fields, 'bot-field': 'spam' }))).status, 200);
  assert.equal((await submit(request({ ...fields, 'test-flow': '1' }))).status, 200);
  assert.equal(calls, 1);

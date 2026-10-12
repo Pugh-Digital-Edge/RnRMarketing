@@ -49,12 +49,12 @@ test("backend stores the validated phone number as E.164", async () => {
     const response = await submitLead(new Request("https://example.test/.netlify/functions/submit-lead", {
       method: "POST",
       headers: { "content-type": "application/x-www-form-urlencoded" },
-      body: "form-name=Contact+Form&phone-country=US&phone=%28310%29+555-1234",
+      body: "form-name=Contact+Form&name=QA&email=qa%40example.test&zip=12345&Message=QA&phone-country=US&phone=%28310%29+555-1234",
     }));
 
     assert.equal(response.status, 200);
     assert.match(forwardedBody, /phone=%2B13105551234/);
-    assert.doesNotMatch(forwardedBody, /phone-country/);
+    assert.match(forwardedBody, /phone-country=US/);
   } finally {
     globalThis.fetch = previousFetch;
   }
@@ -72,7 +72,7 @@ test("backend preserves partial-lead stage and submission ID", async () => {
     const response = await submitLead(new Request("https://example.test/.netlify/functions/submit-lead", {
       method: "POST",
       headers: { "content-type": "application/x-www-form-urlencoded" },
-      body: "form-name=Schedule+Lead+Form&phone=%28202%29+555-0147&submission-id=lead-qa-123&lead-stage=identity&name=Mobile+QA",
+      body: "form-name=Schedule+Lead+Form&phone=%28202%29+555-0147&submission-id=lead-qa-123&lead-stage=identity&name=Mobile+QA&company=QA&email=qa%40example.test",
     }));
 
     assert.equal(response.status, 200);

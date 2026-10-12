@@ -11,6 +11,14 @@ function setupLeadForm(form: HTMLFormElement) {
   const submitButtons = form.querySelectorAll<HTMLButtonElement>("button[type='submit'], .cs-form-continue");
 
   if (!phone || !error) return;
+  const submissionId = form.querySelector<HTMLInputElement>("[data-submission-id]");
+  if (submissionId && !submissionId.value) {
+    submissionId.value = typeof history.state?.rrFormResponse === "string"
+      ? history.state.rrFormResponse
+      : typeof crypto.randomUUID === "function" ? crypto.randomUUID()
+      : `lead-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  }
+  if (submissionId && history.state?.rrFormResponse === submissionId.value) form.dataset.responseReceived = "true";
 
   if (country) {
     const countryNames = typeof Intl.DisplayNames === "function"
@@ -63,7 +71,7 @@ function setupLeadForm(form: HTMLFormElement) {
   validate();
 
   form.addEventListener("submit", async (event) => {
-    if (form.dataset.submitting === "true") { event.preventDefault(); return; }
+    if (form.dataset.submitting === "true" || form.dataset.responseReceived === "true") { event.preventDefault(); return; }
     touched = true;
     const result = validate();
     if (!result.valid || !result.e164) {
@@ -75,7 +83,7 @@ function setupLeadForm(form: HTMLFormElement) {
     phone.value = result.e164;
 
     // The paid form requires an explicit receipt from the existing function.
-    // Its native action remains the no-JavaScript fallback; other native forms post directly.
+    // Its native action uses the same validating function without JavaScript.
     const requestReceipt = form.hasAttribute("data-request-receipt");
     if (!requestReceipt && new URL(form.action).pathname !== endpoint) return;
 
@@ -117,7 +125,7 @@ function setupLeadForm(form: HTMLFormElement) {
         const receipt = await response.json();
         if (!id || receipt?.ok !== true || receipt.stage !== "request_accepted"
           || receipt.submissionId !== id || receipt.receiptSource !== "netlify_http") throw new Error("Invalid request receipt");
-        rememberAcceptedRequest(id);
+        rememberAcceptedRequest(id, window.location.pathname);
         form.dataset.responseReceived = "true";
         try { history.replaceState({ ...history.state, rrFormResponse: id }, ""); } catch { /* BFCache DOM flag remains. */ }
       }
