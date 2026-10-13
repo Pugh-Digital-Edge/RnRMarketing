@@ -75,6 +75,7 @@ The 1,590×800 cover is a people-free overhead restoration dispatch workspace: a
 - Focused source commit `2ac884271517c24858aa035e88b380c2cef1aae3` contains only the CRM guide, its cover, and this coordinator receipt and was pushed to `origin/main`.
 - The first post-push full check correctly held acceptance while production was still on the preceding revision. Production then deployed the exact source commit; no manual deployment, cache purge, or duplicate publication was triggered.
 - Locked `npm run seo:check -- full` passed at `2026-10-12T14:56:10.772Z` against deployed commit `2ac884271517c24858aa035e88b380c2cef1aae3`: 103/103 sitemap pages checked, 106 internal targets, 103 Markdown alternates, and zero failures.
+- Original accepted-live timestamp: `2026-10-12T14:58:13.2829446Z`, preserved in the designated-host fulfillment checkpoint.
 - Exact production URL: `https://remediationrestorationmarketing.com/resources/crm-for-restoration-companies/`.
 - Live acceptance confirms HTTP 200, sitemap membership, self-canonical and indexable output, source/content parity, BlogPosting and matching FAQPage output, the approved cover and alt text, and working internal links.
 - Rollback is the focused revert of source commit `2ac884271517c24858aa035e88b380c2cef1aae3`; no shared component, route template, redirect, navigation, tracking, or service page changed.
