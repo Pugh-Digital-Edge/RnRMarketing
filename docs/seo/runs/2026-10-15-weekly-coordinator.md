@@ -2,7 +2,7 @@
 
 ## Outcome
 
-SEO-016 already satisfies the single October 12–18 Eastern article obligation. The accepted CRM guide remains live and Measuring; this checkpoint did not draft, publish, send, merge, deploy, request indexing, change the query basket, or repeat delivery. The fulfillment owe replay was unchanged at `accepted_live` for stable attempt `weekly-coordinator-20261012-seo-016-v1` and original acceptance `2026-10-12T14:58:13.2829446Z`.
+SEO-016 already satisfies the single October 12–18 Eastern article obligation. The accepted CRM guide remains live at source commit `2ac884271517c24858aa035e88b380c2cef1aae3` and Measuring; this checkpoint did not draft, publish, send, merge, deploy, request indexing, change the query basket, or repeat delivery. The fulfillment owe replay was unchanged at `accepted_live` for stable attempt `weekly-coordinator-20261012-seo-016-v1` and original acceptance `2026-10-12T14:58:13.2829446Z`.
 
 ## Coordination and freshness
 
