@@ -1,6 +1,6 @@
 {
   "gate": "npm run validate",
-  "tests": 59,
+  "tests": 62,
   "failed": 0,
   "buildPages": 110,
   "waterDescriptionReach": [
@@ -16,9 +16,36 @@
   ],
   "ppcDisputedPercentageAbsent": true,
   "waterOnlyContentOverride": true,
-  "scopeChangedURLs": 10,
-  "browserVisual": "blocked by supported tool timeouts",
+  "scopeChangedURLs": 11,
+  "browserVisual": "22 captures across11 affected routes at1440/390; overflow and page-error checks pass; visual sample reviewed; not full WCAG",
   "tracking": "separate mocked source/function/VM fixtures pass; no delivery/qualified-outcome proof",
-  "validationLogSHA256": "6f4f6ea13b0ef497d1d66a6ae021e683f5a1ae5e0f283f4b1dfc64aa99e1f30f",
-  "production": "unchanged; deployment prohibited"
+  "validationLogSHA256": "29aa6e27dc7b2678f9df3a9d0c182b6b2477836a9d15ac016e73a617235ef6b6",
+  "production": "unchanged; deployment prohibited",
+  "renderedChangedURLs": [
+    "https://remediationrestorationmarketing.com/industries/",
+    "https://remediationrestorationmarketing.com/industries/water-damage-restoration/",
+    "https://remediationrestorationmarketing.com/services/ppc/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/lead-tracking/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/ppc/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/reputation-management/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/retargeting/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/seo/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-advertising/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-marketing/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/web-design/"
+  ],
+  "pagesCompared": 110,
+  "unchangedRoutes": 99,
+  "browserForms": "Both schedule flows pass keyboard/required/invalid-phone/failure-retry/receipt-success/repeat/reload/QA suppression against mocks; no vendor delivery proof",
+  "editorialCoverage": {
+    "reviewed": 2,
+    "pending": 103,
+    "excluded": 5
+  },
+  "fragmentScope": "Legacy live-ID result invalidated; parse5 exact-base source-build fragment evidence separate",
+  "frozenAnchorDestinationSetsMatchBaselineBuild": {
+    "pagesCompared": 110,
+    "differences": 0,
+    "qualification": "Local source corroboration; not a new live collection"
+  }
 }
