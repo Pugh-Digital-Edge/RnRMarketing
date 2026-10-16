@@ -38,7 +38,7 @@
     }
   ],
   "rowsDeduplicated": 8560,
-  "scope": "77 newly affected HTML URLs; original11URL/734cell cohort retained separately; no new retrieval",
+  "scope": "77 HTML URLs with semantic changes; original11URL/734cell cohort retained separately; no new retrieval",
   "comparisonRule": "Freeze28 complete pre-live days and compare28 complete post-live days after actual acceptance, excluding deployment day; same URL/query/country/device cells; missing rows unknown and await finality",
   "cohorts": [
     {

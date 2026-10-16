@@ -90,14 +90,16 @@
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "66ee567eb3fe545dd4af43b7deb6396fbeb04c3b0b6a882cc0dd02990cbba701",
-      "afterHTMLSHA256": "66ee567eb3fe545dd4af43b7deb6396fbeb04c3b0b6a882cc0dd02990cbba701"
+      "afterHTMLSHA256": "66ee567eb3fe545dd4af43b7deb6396fbeb04c3b0b6a882cc0dd02990cbba701",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/admin/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "14d4faed13d681793db0ec7d8d8104b7e0a1df268acee41427ba64fd3e921270",
-      "afterHTMLSHA256": "14d4faed13d681793db0ec7d8d8104b7e0a1df268acee41427ba64fd3e921270"
+      "afterHTMLSHA256": "14d4faed13d681793db0ec7d8d8104b7e0a1df268acee41427ba64fd3e921270",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/lead-tracking/",
@@ -106,7 +108,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "ecb793e950b2499130d03fb15c425d745dca567ee024b02ca1c7979af788886b",
-      "afterHTMLSHA256": "e4c00e2d112d49669d9e90ade9f37bcd2dc1773de74f89cde9e8d3a7121dee78"
+      "afterHTMLSHA256": "e4c00e2d112d49669d9e90ade9f37bcd2dc1773de74f89cde9e8d3a7121dee78",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/ppc/",
@@ -115,7 +118,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "c8685de7acb669539a7c44d0bff8db5132bb4cb0d5e6367bccb8440a391f4d05",
-      "afterHTMLSHA256": "e7af14d517e57e42c7dac8aaa9fdd997b3c4c2016c878422a69d1314c6b191f3"
+      "afterHTMLSHA256": "e7af14d517e57e42c7dac8aaa9fdd997b3c4c2016c878422a69d1314c6b191f3",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/reputation-management/",
@@ -124,7 +128,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "65d3ac97eb5c7e2ea8f759cc9260e162f35d426fd335d6e570d30475d7c870d1",
-      "afterHTMLSHA256": "aebcd816117e5f44403992c224f4b2fd84db9f7dbffb79fee6331bb67bd27bd2"
+      "afterHTMLSHA256": "aebcd816117e5f44403992c224f4b2fd84db9f7dbffb79fee6331bb67bd27bd2",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/retargeting/",
@@ -133,7 +138,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "d6b4ddc081db65e5cc0300384569c2280ed1d388bbd5b5a738a76e5b198a4554",
-      "afterHTMLSHA256": "1602d1d332d9663ae93a33af2cf3dea7c617972600277bc85aea32c4a09e78e8"
+      "afterHTMLSHA256": "1602d1d332d9663ae93a33af2cf3dea7c617972600277bc85aea32c4a09e78e8",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/seo/",
@@ -142,7 +148,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "9bb8818550e70e200480b7a540e68124abeb69d850549b6274ab0fedfe973712",
-      "afterHTMLSHA256": "acc547b85d7ac7f5f36bcd886ba18c29962953d0cf4643b456a921bd64edbda5"
+      "afterHTMLSHA256": "acc547b85d7ac7f5f36bcd886ba18c29962953d0cf4643b456a921bd64edbda5",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/social-media-advertising/",
@@ -151,7 +158,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "7e81514ed5f50eaf19cd056593a062fe1df86fd164c9e4d87dbe9acb85149af6",
-      "afterHTMLSHA256": "2c752e513fe187513e905429c0184e6523e4b8a9969790c0e751927f5a683ff6"
+      "afterHTMLSHA256": "2c752e513fe187513e905429c0184e6523e4b8a9969790c0e751927f5a683ff6",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/social-media-marketing/",
@@ -160,7 +168,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "88ff85cb952e7b93cab4e750bee58f4df2e5dd9706674d6eb0ba2b11d72432e4",
-      "afterHTMLSHA256": "4db3fd8342ca23f2a0a39ec35c18769f1d4a6994548d5f9d3c490d575c5a763a"
+      "afterHTMLSHA256": "4db3fd8342ca23f2a0a39ec35c18769f1d4a6994548d5f9d3c490d575c5a763a",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/web-design/",
@@ -169,35 +178,40 @@
         "text"
       ],
       "beforeHTMLSHA256": "fcb28a604f7c460fcbf6e316ba1b63293430606b7b8402550272309a73bae88d",
-      "afterHTMLSHA256": "8710cd5e81e0081cc03b5a0a0c7d9d1698c47b50b786fdb8dee6888a525cc04b"
+      "afterHTMLSHA256": "8710cd5e81e0081cc03b5a0a0c7d9d1698c47b50b786fdb8dee6888a525cc04b",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/case-studies/chicago-restoration-lead-growth/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "f84c655b26d567c620d1e025f2ccc1df94230941c69beb5c1cb22ca6db279803",
-      "afterHTMLSHA256": "f84c655b26d567c620d1e025f2ccc1df94230941c69beb5c1cb22ca6db279803"
+      "afterHTMLSHA256": "f84c655b26d567c620d1e025f2ccc1df94230941c69beb5c1cb22ca6db279803",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/case-studies/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "6f774644ee371673d3bd5b6e53f50bd25a11020449f406d4d9a2aa3e92ad9ce7",
-      "afterHTMLSHA256": "6f774644ee371673d3bd5b6e53f50bd25a11020449f406d4d9a2aa3e92ad9ce7"
+      "afterHTMLSHA256": "6f774644ee371673d3bd5b6e53f50bd25a11020449f406d4d9a2aa3e92ad9ce7",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/case-studies/kentucky-mold-water-damage-lead-growth/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "b1e371eb354b4d8ad63cdf23426da5d16f860cbfbb2013e4bd355db4b9ad593f",
-      "afterHTMLSHA256": "b1e371eb354b4d8ad63cdf23426da5d16f860cbfbb2013e4bd355db4b9ad593f"
+      "afterHTMLSHA256": "b1e371eb354b4d8ad63cdf23426da5d16f860cbfbb2013e4bd355db4b9ad593f",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/case-studies/michigan-restoration-organic-growth/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "7375b29cd545ae6aaff891ca6b877cb9291c2f927d4d0de2db9671a1ddfa4c29",
-      "afterHTMLSHA256": "7375b29cd545ae6aaff891ca6b877cb9291c2f927d4d0de2db9671a1ddfa4c29"
+      "afterHTMLSHA256": "7375b29cd545ae6aaff891ca6b877cb9291c2f927d4d0de2db9671a1ddfa4c29",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/commercial-restoration/lead-tracking/",
@@ -206,7 +220,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "68e4beb776a58673b1bde9d7cce7c1b157d555560fcb94540230df7915121a1d",
-      "afterHTMLSHA256": "a323386c78be0b7bd5ab420b4a4691ac6495b77fceda7b2a7fc798515ffca666"
+      "afterHTMLSHA256": "a323386c78be0b7bd5ab420b4a4691ac6495b77fceda7b2a7fc798515ffca666",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/commercial-restoration/ppc/",
@@ -215,7 +230,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "2284bbebb46cb56c4b2d70f14e21701b0e227ced40a3c33b947f62f7edc540e8",
-      "afterHTMLSHA256": "3019298a67049867f63f632f4613f4d92ce1d41ee09a8b6098fc00bcee4d3dc5"
+      "afterHTMLSHA256": "3019298a67049867f63f632f4613f4d92ce1d41ee09a8b6098fc00bcee4d3dc5",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/commercial-restoration/reputation-management/",
@@ -224,7 +240,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "f99b5d0a2063a9e0d3389aef37851e642b8e770a2683b61595db4ff00a4b50be",
-      "afterHTMLSHA256": "fbb5d27e64d0f681528f42ab9e928b36f8d1c983c3c582c72a2812e9221f8f34"
+      "afterHTMLSHA256": "fbb5d27e64d0f681528f42ab9e928b36f8d1c983c3c582c72a2812e9221f8f34",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/commercial-restoration/retargeting/",
@@ -233,7 +250,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "32cdaac144bddd210d60a22e2208bea1a0a12b985429ce0dbf7d5e822d9761e7",
-      "afterHTMLSHA256": "7642ab76327e963238658452cbf17b3b7821ab957565ae1bdd13a5180f192ba1"
+      "afterHTMLSHA256": "7642ab76327e963238658452cbf17b3b7821ab957565ae1bdd13a5180f192ba1",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/commercial-restoration/seo/",
@@ -242,7 +260,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "5913884e3a13489a8d46c00ec56114768bdaa53cc42dc225d0f798cc9683af3a",
-      "afterHTMLSHA256": "6d1d96fe915f741b27ff55968cabcc1c0d463c75b73d71781efd54a59a22247e"
+      "afterHTMLSHA256": "6d1d96fe915f741b27ff55968cabcc1c0d463c75b73d71781efd54a59a22247e",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/commercial-restoration/social-media-advertising/",
@@ -251,7 +270,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "a94006953576b0656fdcd62fa0f550f1a6180717975c83ef38434142b114cae0",
-      "afterHTMLSHA256": "43dca1176dd6a74077988f1fa14820c7824d5096b588153d1626f0037fb5ea30"
+      "afterHTMLSHA256": "43dca1176dd6a74077988f1fa14820c7824d5096b588153d1626f0037fb5ea30",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/commercial-restoration/social-media-marketing/",
@@ -260,7 +280,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "6e5b6800590c7d56221b3e7daf79583afb912e3247c6a5221d6a28780bc44942",
-      "afterHTMLSHA256": "5b8046e9341b4e148a2953533efae16b0a6c4048d5a633c478a7b8fc5c195cb4"
+      "afterHTMLSHA256": "5b8046e9341b4e148a2953533efae16b0a6c4048d5a633c478a7b8fc5c195cb4",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/commercial-restoration/web-design/",
@@ -269,14 +290,16 @@
         "text"
       ],
       "beforeHTMLSHA256": "c39775bf5a1a9574b4330e3563af56bcf493839a11c62dfade95e74b78b501de",
-      "afterHTMLSHA256": "747d8f333378127676650e78f2d9d57fb975076e82163eeef6b4df7eea12c73e"
+      "afterHTMLSHA256": "747d8f333378127676650e78f2d9d57fb975076e82163eeef6b4df7eea12c73e",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/contact/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "e942b9b67c9be215ff4c7cc963a63c5af1a0c9f2dc68764e74ac618c82d7fa5e",
-      "afterHTMLSHA256": "e942b9b67c9be215ff4c7cc963a63c5af1a0c9f2dc68764e74ac618c82d7fa5e"
+      "afterHTMLSHA256": "e942b9b67c9be215ff4c7cc963a63c5af1a0c9f2dc68764e74ac618c82d7fa5e",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/lead-tracking/",
@@ -285,7 +308,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "a0176c24158013180270de7fddb2ce6af8f09239d3522ea1ac7b2a6c895215ec",
-      "afterHTMLSHA256": "6929410c0d6044cac46e763e20a694297c0ddc400c5fafa55a99d72a2e5446eb"
+      "afterHTMLSHA256": "6929410c0d6044cac46e763e20a694297c0ddc400c5fafa55a99d72a2e5446eb",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/ppc/",
@@ -294,7 +318,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "be3bbd296170216aba723889c1b7de6752207385f3c96df6cc2b6b990db31b1d",
-      "afterHTMLSHA256": "bb7951552f444b50ba22487c30c515b03f1eb7223f340bbe3a5b8220b4ebb209"
+      "afterHTMLSHA256": "bb7951552f444b50ba22487c30c515b03f1eb7223f340bbe3a5b8220b4ebb209",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/reputation-management/",
@@ -303,7 +328,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "f708d65b01d4d52e5fa1f0cb868eca2b274c8daae3d3090e8a9d66a86fc151d8",
-      "afterHTMLSHA256": "1190b215ff603e14744d4fc02d206ca5a7abce08e83a7b7e004397b6f059fade"
+      "afterHTMLSHA256": "1190b215ff603e14744d4fc02d206ca5a7abce08e83a7b7e004397b6f059fade",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/retargeting/",
@@ -312,7 +338,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "7f904717253463c1a82fd5867b9eed47f637b852ecbcf0db9922e89adc3e2431",
-      "afterHTMLSHA256": "b7d715f5a6e4f1fc39e4d2863f0721aebfa91bedfc996a51886046fe05ae9907"
+      "afterHTMLSHA256": "b7d715f5a6e4f1fc39e4d2863f0721aebfa91bedfc996a51886046fe05ae9907",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/seo/",
@@ -321,7 +348,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "2721e4529151fe2a61cee099ed59846a29ecb2f2e726653d9a7ee4fcdbe0ed17",
-      "afterHTMLSHA256": "fb50a0f90f03a0aa34d63f5629b80b0300b3f1419d0065ddd89e115631a43633"
+      "afterHTMLSHA256": "fb50a0f90f03a0aa34d63f5629b80b0300b3f1419d0065ddd89e115631a43633",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/social-media-advertising/",
@@ -330,7 +358,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "7f87d2b2d6c4c2c18055dd5c008528f95c04b2c15395a22d0fd9b3c19c7ae9e0",
-      "afterHTMLSHA256": "cdcd2484b7aefb5b676b73e622e4542b07e3211cee0a530bc29685e6ecb146a1"
+      "afterHTMLSHA256": "cdcd2484b7aefb5b676b73e622e4542b07e3211cee0a530bc29685e6ecb146a1",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/social-media-marketing/",
@@ -339,7 +368,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "34966ebcc30be35d833953d804f5b1995d446480293d76875e4c5991aae4bf2f",
-      "afterHTMLSHA256": "9a3d7e77173d96e10743aaf591448a8820621ca9f1d5121144381dc1760faf23"
+      "afterHTMLSHA256": "9a3d7e77173d96e10743aaf591448a8820621ca9f1d5121144381dc1760faf23",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/web-design/",
@@ -348,7 +378,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "5b589aeecfc860fdd6eb56c5aad83ee7aa4883839feb549f50fcf8ee3fa29f59",
-      "afterHTMLSHA256": "8086beba679d0e643d9f2a8f990d6c91d1f74283f6beacf5ea3dbebcf393abb8"
+      "afterHTMLSHA256": "8086beba679d0e643d9f2a8f990d6c91d1f74283f6beacf5ea3dbebcf393abb8",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/",
@@ -357,7 +388,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "7154731baf3157a1eb4587d3293773b8d1b485df85c1cc47519ac41a52c8ca3a",
-      "afterHTMLSHA256": "ae1c71b26066309300aac3d2b9f36942c51c69c6df8a82cb082afbc714386329"
+      "afterHTMLSHA256": "ae1c71b26066309300aac3d2b9f36942c51c69c6df8a82cb082afbc714386329",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/industries/biohazard-cleanup/",
@@ -366,7 +398,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "d01d87fc49f27799e8b9ff55a4d70bd8ec711f901692a2762bf356059b8aad7d",
-      "afterHTMLSHA256": "1957344247ff745778aa9a749b03dbc31a3d4d8d34de1376af20611585e86134"
+      "afterHTMLSHA256": "1957344247ff745778aa9a749b03dbc31a3d4d8d34de1376af20611585e86134",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/industries/commercial-restoration/",
@@ -375,7 +408,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "795190484acab13701407912123c2f25cf90883b86b96fa3c883c42522500ca5",
-      "afterHTMLSHA256": "3d396b688eedb43af39dc305cf23f7765972558bf2d1a11920da7116639850d2"
+      "afterHTMLSHA256": "3d396b688eedb43af39dc305cf23f7765972558bf2d1a11920da7116639850d2",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/industries/fire-damage-restoration/",
@@ -384,14 +418,16 @@
         "text"
       ],
       "beforeHTMLSHA256": "1816e5664ddedb768f7a8e790022af8688e1abc5d74a6876480c77f3ec546a29",
-      "afterHTMLSHA256": "324efb0b545438a227505948647883aa7ab36eb241dbf3aeb0737e2cfa077041"
+      "afterHTMLSHA256": "324efb0b545438a227505948647883aa7ab36eb241dbf3aeb0737e2cfa077041",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/industries/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "fb7274b8d5afbcf90dbf67ff5569199a819f487a7af66ac2fac8e324801c78a6",
-      "afterHTMLSHA256": "fb7274b8d5afbcf90dbf67ff5569199a819f487a7af66ac2fac8e324801c78a6"
+      "afterHTMLSHA256": "fb7274b8d5afbcf90dbf67ff5569199a819f487a7af66ac2fac8e324801c78a6",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/industries/mold-remediation/",
@@ -400,7 +436,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "cf48d2d4b510a2d6697b223ca58e5c1b83a7083fbf1214f81119b500bc2cfb8e",
-      "afterHTMLSHA256": "ff7401456094a07b5c010f6bec41b0a8556330465e137cc7a85d85f0cbcdd8d8"
+      "afterHTMLSHA256": "ff7401456094a07b5c010f6bec41b0a8556330465e137cc7a85d85f0cbcdd8d8",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/industries/roof-damage-restoration/",
@@ -409,7 +446,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "53ca1685bcc194cd1219515e8a7637fc63eb3438a41967468ba8bb09b2cc6ec6",
-      "afterHTMLSHA256": "495e2802e8055899148be02237010757cb25f72f80cb9d31813d6a1d13b71d9c"
+      "afterHTMLSHA256": "495e2802e8055899148be02237010757cb25f72f80cb9d31813d6a1d13b71d9c",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/industries/sewage-cleanup/",
@@ -418,7 +456,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "d7280168deb924b8b1c4fdbff801ca693ae6bf21e023316dd21fd391a91a1e0f",
-      "afterHTMLSHA256": "e5c1cd05ec412f008e273205abb25b257c8b221424a25447cdb8f3868c42d7ae"
+      "afterHTMLSHA256": "e5c1cd05ec412f008e273205abb25b257c8b221424a25447cdb8f3868c42d7ae",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/industries/storm-damage-cleanup/",
@@ -427,7 +466,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "eeb48cfe5beff6e5259576e06c097736ef039b9f1edbb68e45916aa4fd3fbf6f",
-      "afterHTMLSHA256": "9da7d8a407ad097ddaef3c3e6bac4e54ea02b47cfafc3fbc1d414026dbaa1fa6"
+      "afterHTMLSHA256": "9da7d8a407ad097ddaef3c3e6bac4e54ea02b47cfafc3fbc1d414026dbaa1fa6",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/industries/water-damage-restoration/",
@@ -436,7 +476,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "f90d0ea6b34f7e3c5919ba39c70bd4e2ea357244f0d009ed26a63cf6c4a03668",
-      "afterHTMLSHA256": "5eed31e8fdb42345180b7b82e0ad99f55460a93c7340247067f15dad5ffc5cfa"
+      "afterHTMLSHA256": "5eed31e8fdb42345180b7b82e0ad99f55460a93c7340247067f15dad5ffc5cfa",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/mold-remediation/lead-tracking/",
@@ -445,7 +486,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "63d04a348f2d5fe1c9648af77dc47d5c5a8a606d1fcb45a05d1a367b2ebb2e25",
-      "afterHTMLSHA256": "0fe104a45c72a7de3553840a1668443141634d287e97616705a72c7217c8ebdb"
+      "afterHTMLSHA256": "0fe104a45c72a7de3553840a1668443141634d287e97616705a72c7217c8ebdb",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/mold-remediation/ppc/",
@@ -454,7 +496,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "6aff4b395c0fdd70fb2e7d324e9fa1df88dd94cd4b0f0e9810ed28f5bf31ad33",
-      "afterHTMLSHA256": "313aae5db052d19d084b5b8ebe08e66e22be77b21ca3ff6dedba952d2010db08"
+      "afterHTMLSHA256": "313aae5db052d19d084b5b8ebe08e66e22be77b21ca3ff6dedba952d2010db08",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/mold-remediation/reputation-management/",
@@ -463,7 +506,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "87b1160ad4263977f32b7fb0f7037f91c6c41d8a2aa0576281ee5c166cfa3d89",
-      "afterHTMLSHA256": "dde4a8b102b7d80dfd48334deb5c80de0e1de34063e34b99492bdec3f9162dec"
+      "afterHTMLSHA256": "dde4a8b102b7d80dfd48334deb5c80de0e1de34063e34b99492bdec3f9162dec",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/mold-remediation/retargeting/",
@@ -472,7 +516,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "6e981b46cecfe94cec8711a61a15ad95d81910689b54017cccc2c1e32cd226fd",
-      "afterHTMLSHA256": "d42b3d296608260a8d001eb31ea4ce8e9db41e1b141872491d7b7c723d78813c"
+      "afterHTMLSHA256": "d42b3d296608260a8d001eb31ea4ce8e9db41e1b141872491d7b7c723d78813c",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/mold-remediation/seo/",
@@ -481,7 +526,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "817ffaa4957b9edac910a865814a88751372270891edb627edf98688b5e9f3f1",
-      "afterHTMLSHA256": "77a881887dd03d201d067d617180fdacaa60b50f7c5f6a230eec547af902ef27"
+      "afterHTMLSHA256": "77a881887dd03d201d067d617180fdacaa60b50f7c5f6a230eec547af902ef27",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/mold-remediation/social-media-advertising/",
@@ -490,7 +536,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "8adec22b55e5620ee66875fbed8cf711584f97ea8b2ed021a738710f6683c924",
-      "afterHTMLSHA256": "c0e3fdf348c45a7783592a035405268e92513fc0cf339e33cda2472f41ceaa11"
+      "afterHTMLSHA256": "c0e3fdf348c45a7783592a035405268e92513fc0cf339e33cda2472f41ceaa11",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/mold-remediation/social-media-marketing/",
@@ -499,7 +546,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "f575c685f1e7dc9390e9cc87722756c004b27a73dfe21967ae8bc6461eedeb36",
-      "afterHTMLSHA256": "ee365314e2026f876300330322613fbbb2324a76e30d8de2da59e47659ec7b16"
+      "afterHTMLSHA256": "ee365314e2026f876300330322613fbbb2324a76e30d8de2da59e47659ec7b16",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/mold-remediation/web-design/",
@@ -508,63 +556,72 @@
         "text"
       ],
       "beforeHTMLSHA256": "d8e02c0cf2a79279f765a434034d8503b5d38221529547451b562191fc17aabe",
-      "afterHTMLSHA256": "a88c5bbf7067c0819931030a41cc35ae61776a13f3fa4d93c27678be85169ab6"
+      "afterHTMLSHA256": "a88c5bbf7067c0819931030a41cc35ae61776a13f3fa4d93c27678be85169ab6",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/privacy/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "d4845837da32866c5b3aef4a0a4ee5b3df7b1659ae0761a21940899af2b6f6bd",
-      "afterHTMLSHA256": "d4845837da32866c5b3aef4a0a4ee5b3df7b1659ae0761a21940899af2b6f6bd"
+      "afterHTMLSHA256": "d4845837da32866c5b3aef4a0a4ee5b3df7b1659ae0761a21940899af2b6f6bd",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/10-powerful-restoration-marketing-strategies-to-boost-your-business/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "60dd05975e479e5187c1db892e9744d513611b6d19658c630a613c55e9c64808",
-      "afterHTMLSHA256": "60dd05975e479e5187c1db892e9744d513611b6d19658c630a613c55e9c64808"
+      "afterHTMLSHA256": "60dd05975e479e5187c1db892e9744d513611b6d19658c630a613c55e9c64808",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/ai-visibility-checklist/download/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "bafa38dfb4f28955e8d94ed4fe018ed7347b9fdeb17b0803f9736ccfa69c3e6e",
-      "afterHTMLSHA256": "bafa38dfb4f28955e8d94ed4fe018ed7347b9fdeb17b0803f9736ccfa69c3e6e"
+      "afterHTMLSHA256": "bafa38dfb4f28955e8d94ed4fe018ed7347b9fdeb17b0803f9736ccfa69c3e6e",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/ai-visibility-checklist/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "c96406d28cfc95bc0f0e767f18a5cf19c955b3f75067768e126ebe3f7bba624a",
-      "afterHTMLSHA256": "c96406d28cfc95bc0f0e767f18a5cf19c955b3f75067768e126ebe3f7bba624a"
+      "afterHTMLSHA256": "c96406d28cfc95bc0f0e767f18a5cf19c955b3f75067768e126ebe3f7bba624a",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/crm-for-restoration-companies/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "b3309c7062fae7bc300aa6aefbbb8dc288385f410b86d28ed755da57476878f0",
-      "afterHTMLSHA256": "b3309c7062fae7bc300aa6aefbbb8dc288385f410b86d28ed755da57476878f0"
+      "afterHTMLSHA256": "b3309c7062fae7bc300aa6aefbbb8dc288385f410b86d28ed755da57476878f0",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/email-marketing-platforms-for-restoration-companies/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "34e790737418ad7352f90b0be7da443e736ae1b583540306c5e520835150eb9f",
-      "afterHTMLSHA256": "34e790737418ad7352f90b0be7da443e736ae1b583540306c5e520835150eb9f"
+      "afterHTMLSHA256": "34e790737418ad7352f90b0be7da443e736ae1b583540306c5e520835150eb9f",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/fire-damage-restoration-marketing/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "4e064e2ea3b3bddfa962c87654863e4b3b7f2b78b7380bdcb881325d19a2ccdf",
-      "afterHTMLSHA256": "4e064e2ea3b3bddfa962c87654863e4b3b7f2b78b7380bdcb881325d19a2ccdf"
+      "afterHTMLSHA256": "4e064e2ea3b3bddfa962c87654863e4b3b7f2b78b7380bdcb881325d19a2ccdf",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/google-ads-for-restoration-companies/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "3b3406c91f4a47aabd03da3c4da447374ce41dd29d33b3d78cf614e6c2d565e0",
-      "afterHTMLSHA256": "3b3406c91f4a47aabd03da3c4da447374ce41dd29d33b3d78cf614e6c2d565e0"
+      "afterHTMLSHA256": "3b3406c91f4a47aabd03da3c4da447374ce41dd29d33b3d78cf614e6c2d565e0",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/high-performance-restoration-websites-boost-your-google-page-speed/",
@@ -576,7 +633,8 @@
         "links"
       ],
       "beforeHTMLSHA256": "750fc9774f673163ba18c8b892c0d458639e2c75f447db83ba59802674d876a2",
-      "afterHTMLSHA256": "b2e61a80402ec7e646ae89fe0ec96871671c88b640846a233508b6b2f735e60d"
+      "afterHTMLSHA256": "b2e61a80402ec7e646ae89fe0ec96871671c88b640846a233508b6b2f735e60d",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/",
@@ -585,56 +643,64 @@
         "text"
       ],
       "beforeHTMLSHA256": "7fd4d22d50b6fb5cbc406d7d4830d893bae604628c4b3d0d6a0309d5838b52ca",
-      "afterHTMLSHA256": "ef57dee5c52d3e6f4d3e2a608dd146ab3adbeeaf57bdc841295d1302271ab1b2"
+      "afterHTMLSHA256": "ef57dee5c52d3e6f4d3e2a608dd146ab3adbeeaf57bdc841295d1302271ab1b2",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/local-services-ads-for-restoration-companies/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "7025161d2d4974efe852e875fbb0088b97b223090234df263fb8f49d8e3c54a2",
-      "afterHTMLSHA256": "7025161d2d4974efe852e875fbb0088b97b223090234df263fb8f49d8e3c54a2"
+      "afterHTMLSHA256": "7025161d2d4974efe852e875fbb0088b97b223090234df263fb8f49d8e3c54a2",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/mold-remediation-marketing/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "8adc497726975b171de3b69e8f88951c78e206e4e749923e804aef78176901af",
-      "afterHTMLSHA256": "8adc497726975b171de3b69e8f88951c78e206e4e749923e804aef78176901af"
+      "afterHTMLSHA256": "8adc497726975b171de3b69e8f88951c78e206e4e749923e804aef78176901af",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/restoration-marketing-agency-vs-generalist/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "fb3c7beb3c364addc66c212a512e2ae4684417414f2b65758c1f39b22a6d2483",
-      "afterHTMLSHA256": "fb3c7beb3c364addc66c212a512e2ae4684417414f2b65758c1f39b22a6d2483"
+      "afterHTMLSHA256": "fb3c7beb3c364addc66c212a512e2ae4684417414f2b65758c1f39b22a6d2483",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/restoration-marketing-roi/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "64794dd65292e1800653bdac0ea551cf1b1df794d9a580a4a5f2bcae3baa55bf",
-      "afterHTMLSHA256": "64794dd65292e1800653bdac0ea551cf1b1df794d9a580a4a5f2bcae3baa55bf"
+      "afterHTMLSHA256": "64794dd65292e1800653bdac0ea551cf1b1df794d9a580a4a5f2bcae3baa55bf",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/restoration-marketing-tips-for-your-restoration-company/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "0384521f0fcdb9bac47614afa7ad5ce32bf947efe213e14f90a07c117f5dfdf7",
-      "afterHTMLSHA256": "0384521f0fcdb9bac47614afa7ad5ce32bf947efe213e14f90a07c117f5dfdf7"
+      "afterHTMLSHA256": "0384521f0fcdb9bac47614afa7ad5ce32bf947efe213e14f90a07c117f5dfdf7",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/resources/water-damage-restoration-marketing/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "29cd4c6b63701e5aeca6da94759e73b18ade35e888a4ad71f9158108d216ea3e",
-      "afterHTMLSHA256": "29cd4c6b63701e5aeca6da94759e73b18ade35e888a4ad71f9158108d216ea3e"
+      "afterHTMLSHA256": "29cd4c6b63701e5aeca6da94759e73b18ade35e888a4ad71f9158108d216ea3e",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/restoration-marketing/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "5d2f4fcf9fea5d32eeb13a2e90bb6f751b3c2f3b696da641da561f14d8c02f70",
-      "afterHTMLSHA256": "5d2f4fcf9fea5d32eeb13a2e90bb6f751b3c2f3b696da641da561f14d8c02f70"
+      "afterHTMLSHA256": "5d2f4fcf9fea5d32eeb13a2e90bb6f751b3c2f3b696da641da561f14d8c02f70",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/lead-tracking/",
@@ -643,7 +709,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "9bb774daae9cc67e3abb67a55e4829602b3e42f84080ecf334bc1071b6210359",
-      "afterHTMLSHA256": "bb471cb0524a60d05d0ac84c517d26a21432500ac85d1b5f21ce6be9ebc26ad5"
+      "afterHTMLSHA256": "bb471cb0524a60d05d0ac84c517d26a21432500ac85d1b5f21ce6be9ebc26ad5",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/ppc/",
@@ -652,7 +719,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "87472b18ff1a97945ed25b915b5a94ebbb83284a62ae030c0ac112ef65f77b3b",
-      "afterHTMLSHA256": "40d6f3f0102c607d48b80235bf90d8e78116e596b71e0e33e18dc55c33bbdf91"
+      "afterHTMLSHA256": "40d6f3f0102c607d48b80235bf90d8e78116e596b71e0e33e18dc55c33bbdf91",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/reputation-management/",
@@ -661,7 +729,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "6f98c1558ed988a0bf6338b6b171119331a5b0a73d2b011129da2aaa0acdddd0",
-      "afterHTMLSHA256": "decd44aa6c300051c5954118fa2d16bc7ac087ab637b510fdaf34b03e5ab1d9c"
+      "afterHTMLSHA256": "decd44aa6c300051c5954118fa2d16bc7ac087ab637b510fdaf34b03e5ab1d9c",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/retargeting/",
@@ -670,7 +739,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "30290c68c0dce9908ffb97dfc5ac80973238db3d6c2c444fd933a660cc4c6393",
-      "afterHTMLSHA256": "51935825e429f31ba7f8b8d3381cdb34943266ca91eca9a9bab80a0b88c95c77"
+      "afterHTMLSHA256": "51935825e429f31ba7f8b8d3381cdb34943266ca91eca9a9bab80a0b88c95c77",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/seo/",
@@ -679,7 +749,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "6089e0d8c09a328dd43bade02df26b7a23e583f8ba315ada0494c62b818c247c",
-      "afterHTMLSHA256": "ea3882338a2858f79dcafb5a8582d829a439bec564261711a6a2de8f97f9c199"
+      "afterHTMLSHA256": "ea3882338a2858f79dcafb5a8582d829a439bec564261711a6a2de8f97f9c199",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/social-media-advertising/",
@@ -688,7 +759,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "265d7050fb870f812c34e9aed20a032f8a6165935aa1588b15a0244d1fa7f7eb",
-      "afterHTMLSHA256": "529447322c5571fe31b44f20b1ecba30ccf33df2735766425a9e292633848bae"
+      "afterHTMLSHA256": "529447322c5571fe31b44f20b1ecba30ccf33df2735766425a9e292633848bae",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/social-media-marketing/",
@@ -697,7 +769,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "e8506e89d930512af1fb98737962352b7445d630a42b23e841306d0c89277b6d",
-      "afterHTMLSHA256": "f07ac613f377d87ef6029d62c8c0f1c4e94f63c69bb99af4a52a63a176d0b13f"
+      "afterHTMLSHA256": "f07ac613f377d87ef6029d62c8c0f1c4e94f63c69bb99af4a52a63a176d0b13f",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/web-design/",
@@ -706,14 +779,16 @@
         "text"
       ],
       "beforeHTMLSHA256": "2cd022ed4ecfde60800beed97bfb957ffed1df167aaad8e6986c5785d0224c9c",
-      "afterHTMLSHA256": "1390764271958adad419639fd858b279d17d2a6eef023f3bcc378f0c4d0faee2"
+      "afterHTMLSHA256": "1390764271958adad419639fd858b279d17d2a6eef023f3bcc378f0c4d0faee2",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/schedule/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "91746719dde5a6c54b5a62f3b4bb02929f798f9eac5b259947008133a149c15e",
-      "afterHTMLSHA256": "91746719dde5a6c54b5a62f3b4bb02929f798f9eac5b259947008133a149c15e"
+      "afterHTMLSHA256": "91746719dde5a6c54b5a62f3b4bb02929f798f9eac5b259947008133a149c15e",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/services/",
@@ -722,56 +797,64 @@
         "text"
       ],
       "beforeHTMLSHA256": "323de38d165e19586bdc6683393de0f6ea1343c9ba05d4f0a943f9f3210dfcc7",
-      "afterHTMLSHA256": "c7327f659c022fbdc5f30fca99357ea9cc3123c92609fcc128e9a1ef11e656b9"
+      "afterHTMLSHA256": "c7327f659c022fbdc5f30fca99357ea9cc3123c92609fcc128e9a1ef11e656b9",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/services/lead-tracking/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "fe9694a7100166d8a705d31dd9d075cdfdff399326d51606b67f9b4484d2e841",
-      "afterHTMLSHA256": "6c73453a177a379e8080b71bfe0ec0136b8891eda6769a67bf8a8deba98f1c6c"
+      "afterHTMLSHA256": "6c73453a177a379e8080b71bfe0ec0136b8891eda6769a67bf8a8deba98f1c6c",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/services/ppc/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "f5eb37eefa291b30a142fc048e115a87dac04044118a8328ad0fd0df2a5b2c39",
-      "afterHTMLSHA256": "aa5cffd56f8f711ce97046c230f94ae3f7f3dc9ea753e6c5033805b46e3ed9ed"
+      "afterHTMLSHA256": "aa5cffd56f8f711ce97046c230f94ae3f7f3dc9ea753e6c5033805b46e3ed9ed",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/services/reputation-management/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "3a4256fca53701afebddf0457199d7127ff85b3e2473288a5346ecfade155564",
-      "afterHTMLSHA256": "00e3a7f0beb4142d907e5a378326966e068f782cf88f3f4a66af1cb401b90d67"
+      "afterHTMLSHA256": "00e3a7f0beb4142d907e5a378326966e068f782cf88f3f4a66af1cb401b90d67",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/services/retargeting/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "bad97bf471474abd314fa500a5973e880d82cf922cc32fed8201bfca73cca9ab",
-      "afterHTMLSHA256": "87a92a5bbdad0ea64431ba566284d67bd01298f888d3d023f33ddeaae87dc03b"
+      "afterHTMLSHA256": "87a92a5bbdad0ea64431ba566284d67bd01298f888d3d023f33ddeaae87dc03b",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/services/seo/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "243ea88039891e485add143b53cec43c46089a1945d7d3edacac8bb8bd7f5b33",
-      "afterHTMLSHA256": "66390c3ff889406bfc4986d9fb980e9e81ba685dca57346d6b7750e4cab7f6a0"
+      "afterHTMLSHA256": "66390c3ff889406bfc4986d9fb980e9e81ba685dca57346d6b7750e4cab7f6a0",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/services/social-media-advertising/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "f3b132b520e9722d2d5c180604947b8b337c9b6d5db3ff1c6f0ffae6c0e10224",
-      "afterHTMLSHA256": "9044ac70862e7118c7e7c8fc763f56c3d24f1f2d0017bcc33e17a75f6c318557"
+      "afterHTMLSHA256": "9044ac70862e7118c7e7c8fc763f56c3d24f1f2d0017bcc33e17a75f6c318557",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/services/social-media-marketing/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "c5f88a1c0132bcffb7f32cfda0bcea37ba11e2f7e1e1f97effb79a2858322567",
-      "afterHTMLSHA256": "1971f7eb28bf941681e7e91ca8909619aadda013e85ea1ccd75e97aa81573927"
+      "afterHTMLSHA256": "1971f7eb28bf941681e7e91ca8909619aadda013e85ea1ccd75e97aa81573927",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/services/web-design/",
@@ -781,7 +864,8 @@
         "links"
       ],
       "beforeHTMLSHA256": "61bdd3468a71b9949c1b01213e52edf48e5dd53c6d2bf6af2c8230cb408dd10a",
-      "afterHTMLSHA256": "985a63bf346ebcf8a3b90066b28ede5d8bff87b2f13a61e198cb6ed944df401d"
+      "afterHTMLSHA256": "985a63bf346ebcf8a3b90066b28ede5d8bff87b2f13a61e198cb6ed944df401d",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/sewage-cleanup/lead-tracking/",
@@ -790,7 +874,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "08e72f38343afd1e0ad5dcc76161138b316d859b7ee9682f655a088d3366b81b",
-      "afterHTMLSHA256": "f41922f0edd83bf7678603f74f955842b1f53f05ce8d16caf0254ce4e3ec3688"
+      "afterHTMLSHA256": "f41922f0edd83bf7678603f74f955842b1f53f05ce8d16caf0254ce4e3ec3688",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/sewage-cleanup/ppc/",
@@ -799,7 +884,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "d9a85fe57f9576e142fd81e2bf6816cd6ccaaace58a328fb3ef1a2666b57468a",
-      "afterHTMLSHA256": "a565d5f0860fcf847239f88b8d8cff4bb1bb491a80556ff08d2fc602d2342fdd"
+      "afterHTMLSHA256": "a565d5f0860fcf847239f88b8d8cff4bb1bb491a80556ff08d2fc602d2342fdd",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/sewage-cleanup/reputation-management/",
@@ -808,7 +894,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "4400b18efe2bdb0a104a893e17fcf2a3880b631420595ef63a70db9c8f678b7d",
-      "afterHTMLSHA256": "eadec0b9ec9b40c3e7da32bf83d202c96f1e3c5832551641b8247f0964250a62"
+      "afterHTMLSHA256": "eadec0b9ec9b40c3e7da32bf83d202c96f1e3c5832551641b8247f0964250a62",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/sewage-cleanup/retargeting/",
@@ -817,7 +904,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "bac168ee6b01b10dbe74588ecd415d0b6c72c79ecee01e2b3f68a88ef9d532c9",
-      "afterHTMLSHA256": "8ea9a2846393cef1b19140b56f206feaa663794d2bfa75ae9ad07f07fb0c6f53"
+      "afterHTMLSHA256": "8ea9a2846393cef1b19140b56f206feaa663794d2bfa75ae9ad07f07fb0c6f53",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/sewage-cleanup/seo/",
@@ -826,7 +914,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "74a1d978b1b8081e1472b8e83f56cf35a5df29dda9968310826b590801f50735",
-      "afterHTMLSHA256": "e6905a0473ea7af690f9a72d67601cdf0c9554f9031863602d56137d335ffe10"
+      "afterHTMLSHA256": "e6905a0473ea7af690f9a72d67601cdf0c9554f9031863602d56137d335ffe10",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/sewage-cleanup/social-media-advertising/",
@@ -835,7 +924,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "722b915f520e93b84214b767be6f77f350ee56713fcab2e5007ec3528190d8eb",
-      "afterHTMLSHA256": "2bc1626745b785f1013c09b62df13e0ffd00a805c8f8e956f9fe59940945ea03"
+      "afterHTMLSHA256": "2bc1626745b785f1013c09b62df13e0ffd00a805c8f8e956f9fe59940945ea03",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/sewage-cleanup/social-media-marketing/",
@@ -844,7 +934,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "9af0d9861f2b8e8dd63e4fc8412d7338fd88f6c1723086bcd305a83fcc10426a",
-      "afterHTMLSHA256": "6e4114bdba7d06d2b37f615bf8438b35b0a35fbbdc261995a1758b6255809c6c"
+      "afterHTMLSHA256": "6e4114bdba7d06d2b37f615bf8438b35b0a35fbbdc261995a1758b6255809c6c",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/sewage-cleanup/web-design/",
@@ -853,7 +944,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "844581596b4e6aa76eb751f4dc28c466fc2ced39e9f348e855c4598e529d4dca",
-      "afterHTMLSHA256": "087b587d42dcb352a74ab6f0cb289b3962fa44dd758b5fefff383396c1a03681"
+      "afterHTMLSHA256": "087b587d42dcb352a74ab6f0cb289b3962fa44dd758b5fefff383396c1a03681",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/lead-tracking/",
@@ -862,7 +954,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "9fe227bda8e21ecb95dc97c13ec55bc3709c60d126ed519ddae3f5fdbef2102a",
-      "afterHTMLSHA256": "07b7a8a00bc5fa3d2f0669e8ed4582e6d9d031be75bcb504f2746244c7372d79"
+      "afterHTMLSHA256": "07b7a8a00bc5fa3d2f0669e8ed4582e6d9d031be75bcb504f2746244c7372d79",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/ppc/",
@@ -871,7 +964,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "0bd0db44f9bf72f4741682475519c8aae4f1b37265f09747753f09b0793984dc",
-      "afterHTMLSHA256": "aceff296c6461561dc3fbce808eeb34d00a6e2ab53c8b6971e4dc4ff5c8f0965"
+      "afterHTMLSHA256": "aceff296c6461561dc3fbce808eeb34d00a6e2ab53c8b6971e4dc4ff5c8f0965",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/reputation-management/",
@@ -880,7 +974,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "847767567d21785b79338154b81e5224b0749aacda6caefb2745fe85e77ab825",
-      "afterHTMLSHA256": "40f3a565098a99c846c806af7219e3cd242daace70d8d75051e617a4bc53de6a"
+      "afterHTMLSHA256": "40f3a565098a99c846c806af7219e3cd242daace70d8d75051e617a4bc53de6a",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/retargeting/",
@@ -889,7 +984,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "68a4d8a5e381a94623db80ab8ec7301f76f1300fb3429c0f3f6374602cad3576",
-      "afterHTMLSHA256": "4fb11c9cd37d9e3e59d2aea190f114c90ef3bdb4b7f92ba5dd8300023c0697bf"
+      "afterHTMLSHA256": "4fb11c9cd37d9e3e59d2aea190f114c90ef3bdb4b7f92ba5dd8300023c0697bf",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/seo/",
@@ -898,7 +994,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "dced646acd87a48cd13e1eda2f8aaa87580306ac6126498ddcae7df7384ecbf3",
-      "afterHTMLSHA256": "db76dae061c3968ea70ac3ad0040f4f2db1f2096fb8ce4141703be5846eeca8b"
+      "afterHTMLSHA256": "db76dae061c3968ea70ac3ad0040f4f2db1f2096fb8ce4141703be5846eeca8b",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/social-media-advertising/",
@@ -907,7 +1004,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "570e692b3b97be9fceed9f086211fee1dcd9bc9bf73f4b38494c1f73c6e96953",
-      "afterHTMLSHA256": "6c984df7316f6f5e808f64ef1149f359be83a8c882395c9c787609f5678b4616"
+      "afterHTMLSHA256": "6c984df7316f6f5e808f64ef1149f359be83a8c882395c9c787609f5678b4616",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/social-media-marketing/",
@@ -916,7 +1014,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "54ce63271c75949575b0361baaf07e72572a9cecdb60c02415ecb1b37a7b4013",
-      "afterHTMLSHA256": "c4b7577d371cdc96f3c582ef4ecb930bd5e58720c96f7f01fc136872a8898e92"
+      "afterHTMLSHA256": "c4b7577d371cdc96f3c582ef4ecb930bd5e58720c96f7f01fc136872a8898e92",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/web-design/",
@@ -925,21 +1024,24 @@
         "text"
       ],
       "beforeHTMLSHA256": "4616e184bd7a46bc026b5102b842bbcca1131d880dd98739d4e545597c2434d9",
-      "afterHTMLSHA256": "550ac45e7498eb47ad054d7d8101b202c7109de7fdb7816d6fcd37b6a5566a4e"
+      "afterHTMLSHA256": "550ac45e7498eb47ad054d7d8101b202c7109de7fdb7816d6fcd37b6a5566a4e",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/thank-you/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "a5f222aba16f92d8d16998985c6be86863a0c34ffcd7fe244af6b9da53629f9e",
-      "afterHTMLSHA256": "a5f222aba16f92d8d16998985c6be86863a0c34ffcd7fe244af6b9da53629f9e"
+      "afterHTMLSHA256": "a5f222aba16f92d8d16998985c6be86863a0c34ffcd7fe244af6b9da53629f9e",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/tos/",
       "semanticChanged": false,
       "changedFields": [],
       "beforeHTMLSHA256": "495fa81541451306d309ea69ecc7da1289cf52dd54c5461a31176aff94d257f8",
-      "afterHTMLSHA256": "495fa81541451306d309ea69ecc7da1289cf52dd54c5461a31176aff94d257f8"
+      "afterHTMLSHA256": "495fa81541451306d309ea69ecc7da1289cf52dd54c5461a31176aff94d257f8",
+      "rawChanged": false
     },
     {
       "url": "https://remediationrestorationmarketing.com/water-damage-restoration/lead-tracking/",
@@ -948,7 +1050,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "2ca6a3c17a31c60610ab966d38d85f98bd83927785c57da96f4cd0065f88d27b",
-      "afterHTMLSHA256": "91b9729771e5c852182d7620f5483b7ea1582a94fa53858149f489af8cce2024"
+      "afterHTMLSHA256": "91b9729771e5c852182d7620f5483b7ea1582a94fa53858149f489af8cce2024",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/water-damage-restoration/ppc/",
@@ -957,7 +1060,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "08f3d68434e840bf4d664afd31e0ab68fbcebac5700fbfd3c1f043b6645f3795",
-      "afterHTMLSHA256": "e46c826cdcaea21cc2c89b8a7311b6d5458e8e5b70b98b409388b2f3b6831e5c"
+      "afterHTMLSHA256": "e46c826cdcaea21cc2c89b8a7311b6d5458e8e5b70b98b409388b2f3b6831e5c",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/water-damage-restoration/reputation-management/",
@@ -966,7 +1070,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "21648a7f4af30c729bc6d1dbde0f3d173da86ef4db395260507b180c783decc5",
-      "afterHTMLSHA256": "db1a1e83be5d13b005901ff3037a83561dc140cf0e7773d22726a0ae87e85e24"
+      "afterHTMLSHA256": "db1a1e83be5d13b005901ff3037a83561dc140cf0e7773d22726a0ae87e85e24",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/water-damage-restoration/retargeting/",
@@ -975,7 +1080,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "f9db5382d366ab24103615eae529316b654aba8314e2dafae236ec0df73e9f65",
-      "afterHTMLSHA256": "cd64f8fc212995f5f79014814483bb22f02304b044f98049e92a0ce7cfe1da45"
+      "afterHTMLSHA256": "cd64f8fc212995f5f79014814483bb22f02304b044f98049e92a0ce7cfe1da45",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/water-damage-restoration/seo/",
@@ -984,7 +1090,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "acefd254f59be5b940b8a3f59a80c04ce956cfd8e77dc903bdd2c4da9dac3e55",
-      "afterHTMLSHA256": "66f36bb31575fdbc9172145e6e24a9f893277d0add70aa65a5d6c6487ffc28f2"
+      "afterHTMLSHA256": "66f36bb31575fdbc9172145e6e24a9f893277d0add70aa65a5d6c6487ffc28f2",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-advertising/",
@@ -993,7 +1100,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "34d8324b0db20a6bf7010eddb358366cada47c5b5f8be63f0697a712a54caef8",
-      "afterHTMLSHA256": "03c9e86e29bea778385edf92f2cd90ecee2e6a26f2d7661d75779841c2a4e514"
+      "afterHTMLSHA256": "03c9e86e29bea778385edf92f2cd90ecee2e6a26f2d7661d75779841c2a4e514",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-marketing/",
@@ -1002,7 +1110,8 @@
         "text"
       ],
       "beforeHTMLSHA256": "c4def0d38308f3f9d9a7558be29cc6f40720e67dbfd9cfd4061947db4eca42b6",
-      "afterHTMLSHA256": "7e32a032bfbd00a63ad31e4b84751aacc8515debc852ee988096e81a611c6398"
+      "afterHTMLSHA256": "7e32a032bfbd00a63ad31e4b84751aacc8515debc852ee988096e81a611c6398",
+      "rawChanged": true
     },
     {
       "url": "https://remediationrestorationmarketing.com/water-damage-restoration/web-design/",
@@ -1011,7 +1120,21 @@
         "text"
       ],
       "beforeHTMLSHA256": "cbce7ebdd64d216db6e627e5deb782e81ab40370f4ac46dcbfff41b3bc260024",
-      "afterHTMLSHA256": "13046903b7cc11e861f8d1325a30f12e659ea5b37d45cc13ffb5123fc6ecfd81"
+      "afterHTMLSHA256": "13046903b7cc11e861f8d1325a30f12e659ea5b37d45cc13ffb5123fc6ecfd81",
+      "rawChanged": true
     }
-  ]
+  ],
+  "rawChanged": 84,
+  "rawIdentical": 26,
+  "semanticallyUnchanged": 33,
+  "rawOnlyURLs": [
+    "https://remediationrestorationmarketing.com/services/lead-tracking/",
+    "https://remediationrestorationmarketing.com/services/ppc/",
+    "https://remediationrestorationmarketing.com/services/reputation-management/",
+    "https://remediationrestorationmarketing.com/services/retargeting/",
+    "https://remediationrestorationmarketing.com/services/seo/",
+    "https://remediationrestorationmarketing.com/services/social-media-advertising/",
+    "https://remediationrestorationmarketing.com/services/social-media-marketing/"
+  ],
+  "projection": "Semantic fields: visible/text-node content excluding scripts/styles with whitespace normalized; parsed JSON-LD; metadata/canonical/alternate; all anchor hrefs. Byte counts use unmodified full HTML SHA256 and include whitespace."
 }

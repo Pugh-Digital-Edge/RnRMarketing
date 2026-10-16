@@ -2398,5 +2398,6 @@
     }
   ],
   "trackingCodeChanges": false,
-  "baselineCollection": "Original live snapshot and stored search rows reused; current local baseline captured before edits. No new production or paid collection."
+  "baselineCollection": "Original live snapshot and stored search rows reused; current local baseline captured before edits. No new production or paid collection.",
+  "HTMLScopeQualification": "77 semantic-change pages in this intervention plan,84 byte-changed follow-up pages. Seven extra raw-only pages contain one extra inter-element space, not an additional marketing intervention. Raw assessment and14 layout checks recorded separately."
 }
