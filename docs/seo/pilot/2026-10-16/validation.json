@@ -19,7 +19,7 @@
   "scopeChangedURLs": 11,
   "browserVisual": "22 captures across11 affected routes at1440/390; overflow and page-error checks pass; visual sample reviewed; not full WCAG",
   "tracking": "separate mocked source/function/VM fixtures pass; no delivery/qualified-outcome proof",
-  "validationLogSHA256": "29aa6e27dc7b2678f9df3a9d0c182b6b2477836a9d15ac016e73a617235ef6b6",
+  "validationLogSHA256": "6df2679d86bb8daa635f9584a55d09774e4e6dc79287879e4d077c3db12c21cb",
   "production": "unchanged; deployment prohibited",
   "renderedChangedURLs": [
     "https://remediationrestorationmarketing.com/industries/",
@@ -38,14 +38,17 @@
   "unchangedRoutes": 99,
   "browserForms": "Both schedule flows pass keyboard/required/invalid-phone/failure-retry/receipt-success/repeat/reload/QA suppression against mocks; no vendor delivery proof",
   "editorialCoverage": {
-    "reviewed": 2,
-    "pending": 103,
-    "excluded": 5
+    "assessed": 105,
+    "pending": 0,
+    "excluded": 5,
+    "quoteMismatches": 0
   },
   "fragmentScope": "Legacy live-ID result invalidated; parse5 exact-base source-build fragment evidence separate",
   "frozenAnchorDestinationSetsMatchBaselineBuild": {
     "pagesCompared": 110,
     "differences": 0,
     "qualification": "Local source corroboration; not a new live collection"
-  }
+  },
+  "editorialPassSiteChanges": 0,
+  "editorialQuoteCount": 454
 }
