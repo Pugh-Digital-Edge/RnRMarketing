@@ -1,0 +1,32 @@
+# Authorized SEO fixes and local review — October 16, 2026
+
+These changes are implemented in the draft PR after Matt's 16:01 UTC request to make the remaining changes and open them locally. No production release or SEO outcome is claimed. Original audit artifacts and the eleven-URL intervention remain frozen historical evidence. The current cumulative comparison is `cumulative-rendered-before-after.json`; the previous eleven-page comparison must not be read as current total scope.
+
+## What to review
+
+| URL / section | Before | Implemented now / review check |
+|---|---|---|
+| `/services/web-design/#web-design-scope` | Existing emergency UX, process, proof and technical depth; little purchase-scope guidance. | New broad-page-only section: repair versus rebuild, included work, migration inventory/redirect/canonical/contact checks, required client inputs and agreement-dependent access/handover. Confirm scope language reflects how proposals are agreed. No fixed price, deadline, ownership transfer or portfolio promise. |
+| Same section: contextual links | No links in this previously absent module. | Link to `/resources/restoration-marketing-agency-vs-generalist/` for proposal/access comparison and `/services/lead-tracking/` for contact versus qualified-inquiry definitions. Both local targets200, self-canonical and indexable; source links supported by existing guide content. |
+| Shared SEO card:74 exact URLs in `followup-intervention-plan.json` | “Proper SEO ensures your restoration company appears first...” | Factual service/local-search, technical discovery and qualified-inquiry wording. Markdown and mirrored JSON agree. Review any industry-service page such as `/fire-damage-restoration/seo/`; verify the SEO card reads naturally. One shared-source correction, not74 independent rewrites. |
+| `/resources/high-performance-restoration-websites-boost-your-google-page-speed/`: CDN section | “reduces latency and increases load time” plus unqualified outcome claims. | Corrected to reduced latency/load time for suitable cached assets; actual page measurement and cache/origin limitations explicit. |
+| Same article: intro, rankings/conversions, PPC, CTA and metadata | Unsourced BBC10%, AutoAnything12–13%, PPC46%/$2/80%; irrelevant Jeff Stockton reference; ranking certainty and promotional description. | Removed those statistics/reference without inventing replacements; explains performance and qualified outcomes separately. Description is factual. Editorial `updated` reflects this actual edit; original publication date preserved. Useful optimization and design material retained. |
+| `/resources/` excerpt | Inherited promise to shoot to Google's top. | Inherits corrected factual article description. Review article card. |
+| All103 sitemap URLs, `sitemap-0.xml` | Every URL stamped2026-08-10, including eight articles published later. | Omitted unsupported `lastmod` entirely. URL set, route structure, canonical/indexability and sitemap exclusions preserved. No date fabricated and no submission requested. |
+| `/fire-damage-restoration/ppc/` editorial evidence only | Assessment incorrectly called a water-only caveat adjacent. | Corrected JSON and derived CSV at547c430. Fire immediate-placement guarantee finding remains; no fire marketing-source edit in this batch. |
+
+Earlier implemented pilot remains: disputed PPC39% removed, water-family search guarantee replaced, water-PPC buying module and two links. Cumulative rendered union is79 changed HTML pages/31 unchanged; this batch alone77. All110 routes compared in both cases. Sitemap XML changes affect103 entries independently of HTML counts. No tracking code changed in either this follow-up or the earlier bounded pilot.
+
+## Validation and measurement
+
+Full gate:62 tests pass, zero Astro errors/warnings,110-page build. Browser:154 desktop/mobile checks across all77 newly affected pages, oneH1 each, no horizontal overflow/page errors, analytics disabled and no queued events;10 targeted screenshots. Inspected mobile scope and desktop CDN samples: readable layout; existing chat launcher can cover a small lower-viewport area. Not a full WCAG or field-performance assessment.
+
+Both `/schedule/` and `/restoration-marketing/` separately passed keyboard navigation, required/invalid-phone validation, mocked502 failure with retained inputs, matching receipt success, double-submit suppression, reload/no-repost and analytics suppression. Mock request payload field names and receipts are recorded in `followup-browser/forms-report.json`. No actual tracking code fix or vendor delivery/qualified-inquiry proof is implied.
+
+Expanded plan:77 per-page original live hash/time, captured pre-followup local hash, original exact-page search evidence and hypotheses in `followup-intervention-plan.json`;2,539 hashed query/country/device cells in `followup-query-cohort.json`. Original11-URL/734-cell plan is untouched; overlapping shared-card edits are an explicit confounder. Freeze28 complete pre-live days and compare28 complete post-live days only after actual accepted deployment, excluding deployment day and awaiting data finality. Missing rows remain unknown. Hold discretionary changes28days; no live-acceptance date yet.
+
+## Local preview and remaining work
+
+Review at **http://127.0.0.1:4337/services/web-design/#web-design-scope**, then article/resource and shared-card pages above. Existing local form-QA server remains running on loopback4337. Visible isolated Chromium148.0.7778.96 is open; current URL/title and screenshot confirmed. Chrome CUA timed out; Codex's browser request was queued without visible-open confirmation. The installed Chromium alternative works and blocks external traffic and submissions. Do not use preview interaction as production delivery evidence.
+
+Remaining priorities: P1 verify/remove inherited PPC instant-placement and unsupported industry capabilities; P1 obtain original dated client reports for remaining homepage/About/SEO claims; P2 correct schedule areaServed semantic type and align paid-social schema to visible verified scope; P2 select measured industry/service intent gaps without blanket rewrites; P3 deduplicate64 list IDs and add only useful contextual links. Stored indexing outcomes, fresh technical audit under cost/access guards, vendor delivery, qualified outcomes, CWV, full accessibility and post-release impact remain unverified. No paid collection, credentials, schedules, Ads, enrollment, merge or deployment changed.

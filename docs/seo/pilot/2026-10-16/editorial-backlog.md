@@ -1,5 +1,7 @@
 # Evidence-ranked editorial continuation
 
+**Implementation update:** Matt subsequently authorized fixes. RRM-ED-001 and RRM-ED-012 are implemented; RRM-ED-004 targeted factual/statistical corrections and RRM-ED-005 bounded web-design scope guidance/links are implemented. Remaining suggestions retain their original evidence limits. See [current changes, tests and review checklist](followup-review.md). This table preserves the pre-implementation assessment.
+
 This is the actionable continuation of the105-page review, not blanket authorization to rewrite or publish. Existing accepted-live IDs, frozen cohorts, cooldowns and November checkpoints remain. The tested eleven-page marketing change is preserved; this editorial pass adds no site copy, URL, schema or tracking changes. Each URL's distinct purpose, alignment, useful material, factual risk, CTA, overlap, links, quotations, dated search evidence and disposition are in `editorial-review.json` and `editorial-coverage.csv`.
 
 ## Bounded source fixes before further expansion

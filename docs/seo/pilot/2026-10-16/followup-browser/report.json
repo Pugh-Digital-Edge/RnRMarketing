@@ -1,0 +1,1251 @@
+{
+  "startedAt": "2026-10-16T16:06:38.097Z",
+  "mode": "headless Chromium QA",
+  "pages": [
+    {
+      "route": "/biohazard-cleanup/lead-tracking/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/ppc/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/reputation-management/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/retargeting/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/seo/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/social-media-advertising/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/social-media-marketing/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/web-design/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/lead-tracking/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/ppc/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/reputation-management/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/retargeting/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/seo/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/social-media-advertising/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/social-media-marketing/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/web-design/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/lead-tracking/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/ppc/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/reputation-management/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/retargeting/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/seo/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0,
+      "screenshot": "1440-_fire-damage-restoration_seo_.png"
+    },
+    {
+      "route": "/fire-damage-restoration/social-media-advertising/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/social-media-marketing/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/web-design/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/biohazard-cleanup/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/commercial-restoration/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/fire-damage-restoration/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/mold-remediation/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/roof-damage-restoration/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/sewage-cleanup/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/storm-damage-cleanup/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/water-damage-restoration/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/lead-tracking/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/ppc/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/reputation-management/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/retargeting/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/seo/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/social-media-advertising/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/social-media-marketing/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/web-design/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/resources/high-performance-restoration-websites-boost-your-google-page-speed/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0,
+      "screenshot": "1440-_resources_high-performance-restoration-websites-boost-your-google-page-speed_.png"
+    },
+    {
+      "route": "/resources/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0,
+      "screenshot": "1440-_resources_.png"
+    },
+    {
+      "route": "/roof-damage-restoration/lead-tracking/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/ppc/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/reputation-management/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/retargeting/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/seo/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/social-media-advertising/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/social-media-marketing/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/web-design/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/web-design/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0,
+      "screenshot": "1440-_services_web-design_.png"
+    },
+    {
+      "route": "/sewage-cleanup/lead-tracking/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/ppc/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/reputation-management/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/retargeting/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/seo/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/social-media-advertising/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/social-media-marketing/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/web-design/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/lead-tracking/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/ppc/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/reputation-management/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/retargeting/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/seo/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/social-media-advertising/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/social-media-marketing/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/web-design/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/lead-tracking/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/ppc/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0,
+      "screenshot": "1440-_water-damage-restoration_ppc_.png"
+    },
+    {
+      "route": "/water-damage-restoration/reputation-management/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/retargeting/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/seo/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/social-media-advertising/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/social-media-marketing/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/web-design/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/lead-tracking/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/ppc/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/reputation-management/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/retargeting/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/seo/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/social-media-advertising/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/social-media-marketing/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/biohazard-cleanup/web-design/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/lead-tracking/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/ppc/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/reputation-management/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/retargeting/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/seo/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/social-media-advertising/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/social-media-marketing/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/commercial-restoration/web-design/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/lead-tracking/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/ppc/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/reputation-management/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/retargeting/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/seo/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0,
+      "screenshot": "390-_fire-damage-restoration_seo_.png"
+    },
+    {
+      "route": "/fire-damage-restoration/social-media-advertising/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/social-media-marketing/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/fire-damage-restoration/web-design/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/biohazard-cleanup/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/commercial-restoration/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/fire-damage-restoration/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/mold-remediation/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/roof-damage-restoration/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/sewage-cleanup/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/storm-damage-cleanup/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/industries/water-damage-restoration/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/lead-tracking/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/ppc/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/reputation-management/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/retargeting/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/seo/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/social-media-advertising/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/social-media-marketing/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/mold-remediation/web-design/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/resources/high-performance-restoration-websites-boost-your-google-page-speed/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0,
+      "screenshot": "390-_resources_high-performance-restoration-websites-boost-your-google-page-speed_.png"
+    },
+    {
+      "route": "/resources/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0,
+      "screenshot": "390-_resources_.png"
+    },
+    {
+      "route": "/roof-damage-restoration/lead-tracking/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/ppc/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/reputation-management/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/retargeting/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/seo/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/social-media-advertising/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/social-media-marketing/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/roof-damage-restoration/web-design/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/web-design/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0,
+      "screenshot": "390-_services_web-design_.png"
+    },
+    {
+      "route": "/sewage-cleanup/lead-tracking/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/ppc/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/reputation-management/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/retargeting/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/seo/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/social-media-advertising/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/social-media-marketing/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/sewage-cleanup/web-design/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/lead-tracking/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/ppc/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/reputation-management/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/retargeting/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/seo/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/social-media-advertising/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/social-media-marketing/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/storm-damage-cleanup/web-design/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/lead-tracking/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/ppc/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0,
+      "screenshot": "390-_water-damage-restoration_ppc_.png"
+    },
+    {
+      "route": "/water-damage-restoration/reputation-management/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/retargeting/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/seo/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/social-media-advertising/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/social-media-marketing/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/water-damage-restoration/web-design/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    }
+  ],
+  "errors": [],
+  "externalBlocked": [],
+  "endedAt": "2026-10-16T16:06:46.757Z"
+}
