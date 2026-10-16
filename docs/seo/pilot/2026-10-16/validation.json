@@ -1,0 +1,24 @@
+{
+  "gate": "npm run validate",
+  "tests": 59,
+  "failed": 0,
+  "buildPages": 110,
+  "waterDescriptionReach": [
+    "/industries/water-damage-restoration/",
+    "/water-damage-restoration/lead-tracking/",
+    "/water-damage-restoration/ppc/",
+    "/water-damage-restoration/reputation-management/",
+    "/water-damage-restoration/retargeting/",
+    "/water-damage-restoration/seo/",
+    "/water-damage-restoration/social-media-advertising/",
+    "/water-damage-restoration/social-media-marketing/",
+    "/water-damage-restoration/web-design/"
+  ],
+  "ppcDisputedPercentageAbsent": true,
+  "waterOnlyContentOverride": true,
+  "scopeChangedURLs": 10,
+  "browserVisual": "blocked by supported tool timeouts",
+  "tracking": "separate mocked source/function/VM fixtures pass; no delivery/qualified-outcome proof",
+  "validationLogSHA256": "6f4f6ea13b0ef497d1d66a6ae021e683f5a1ae5e0f283f4b1dfc64aa99e1f30f",
+  "production": "unchanged; deployment prohibited"
+}
