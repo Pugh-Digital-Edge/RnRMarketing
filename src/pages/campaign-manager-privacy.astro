@@ -1,0 +1,60 @@
+---
+import client from '@data/client.json';
+const pageUrl = `https://${client.domain}/campaign-manager-privacy/`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RRM Campaign Manager — Privacy &amp; Data Deletion</title>
+    <meta name="description" content="How RRM Campaign Manager uses Meta advertising data and how to request deletion." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="alternate" type="text/markdown" href={`${pageUrl}index.md`} />
+    <link rel="alternate" type="text/plain" href="/llms.txt" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'WebPage',
+      name: 'RRM Campaign Manager privacy notice', url: pageUrl,
+      dateModified: '2026-10-17',
+    })} />
+  </head>
+  <body>
+    <main>
+      <a class="brand" href="/">{client.name}</a>
+      <h1>RRM Campaign Manager privacy notice</h1>
+      <p class="date">Updated October 17, 2026</p>
+      <p>RRM Campaign Manager is {client.name}'s agency tool for managing our advertising and advertising accounts that clients authorize us to manage through Meta's APIs. This notice covers the tool; our <a href="/privacy/">website privacy notice</a> covers website inquiries and website measurement.</p>
+
+      <h2>Information the tool processes</h2>
+      <p>Depending on the permissions and assets authorized in Meta, the tool processes account and business identifiers, account names, currency and timezone, Page and Instagram account identifiers, campaign and ad settings, ad copy and creative assets, budgets, delivery status, and advertising performance reports such as spend, impressions, clicks and reported conversion totals. It also uses access tokens to authenticate authorized API requests.</p>
+      <p>The current integration does not retrieve the contents of Meta lead forms. It is not a form for collecting insurance applications or personal health information.</p>
+
+      <h2>Purpose, storage and access</h2>
+      <p>We use this information to identify the correct client account, report on performance, troubleshoot delivery and measurement, and implement authorized advertising changes. Credentials are stored separately from versioned project files. Account data and execution records may be stored in agency working files and reporting systems. Authorized agency operators and service providers supporting this work may process the information. Client reports are intended for the corresponding client.</p>
+      <p>Meta receives API requests and handles its own platform records under its policies. We keep agency records needed to provide the service, document authorized work and resolve issues. A deletion request can cover stored reports and account records as well as ongoing access; we review the relevant records and explain any information that must be retained and why.</p>
+
+      <h2 id="data-deletion">Request data deletion or stop access</h2>
+      <ol>
+        <li>Email <a href={`mailto:${client.email}?subject=RRM%20Campaign%20Manager%20data%20deletion`}>{client.email}</a> with the subject <strong>RRM Campaign Manager data deletion</strong>.</li>
+        <li>Identify your business and the Meta ad account or Page involved, if known. Tell us whether you want stored app data deleted, ongoing access stopped, or both. Do not send an access token, password, identity document or sensitive customer information.</li>
+        <li>We will verify that you are authorized to make the request, identify the records in scope, and respond with the outcome or any further information needed. If records must be retained, we will explain the reason.</li>
+      </ol>
+      <p>You can also remove the app's access using the relevant app, business integration or business asset controls in Meta. Removing access stops future authorized use of that access; it does not itself delete agency copies of reports. Contact us to request deletion of those copies.</p>
+      <p>These instructions concern information held for RRM Campaign Manager. They do not delete your Meta account, campaigns or records that Meta maintains independently.</p>
+
+      <h2>Contact</h2>
+      <p>{client.name}<br /><a href={`mailto:${client.email}`}>{client.email}</a><br /><a href={`tel:${client.phoneForTel}`}>{client.phoneFormatted}</a></p>
+    </main>
+  </body>
+</html>
+<style>
+  :global(body) { margin: 0; background: #f5f7fa; color: #172b3d; font-family: system-ui, sans-serif; line-height: 1.7; }
+  main { max-width: 48rem; margin: 2rem auto; padding: clamp(1.25rem, 5vw, 3rem); background: white; border-radius: .75rem; }
+  h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); line-height: 1.2; }
+  h2 { margin-top: 2rem; font-size: 1.35rem; }
+  a { color: #075ca8; overflow-wrap: anywhere; }
+  li { margin-bottom: .75rem; }
+  .brand { font-weight: 650; }
+  .date { color: #526575; }
+</style>
