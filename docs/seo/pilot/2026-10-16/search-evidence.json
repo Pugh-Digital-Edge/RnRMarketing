@@ -1,0 +1,561 @@
+{
+  "retrievedAt": "2026-10-16T15:16:33.936229+00:00",
+  "period": {
+    "start": "2026-09-14",
+    "end": "2026-10-13",
+    "days": 30,
+    "calendar": "America/Los_Angeles"
+  },
+  "rows": 8560,
+  "matchingRows": 8560,
+  "uniqueQueries": 396,
+  "observedLandingPages": 28,
+  "queryRowTotals": {
+    "rows": 8560,
+    "impressions": 10925,
+    "clicks": 5,
+    "weightedPosition": 34.09
+  },
+  "propertyDaily": {
+    "clicks": 17,
+    "impressions": 10283,
+    "ctr": 0.0016532140425945736,
+    "days": 30,
+    "coveredFrom": "2026-09-14",
+    "coveredThrough": "2026-10-13",
+    "complete": true
+  },
+  "missingQueryRowsDoNotMeanZeroDemand": true,
+  "extraSearchURLs": [],
+  "multiPageQueryCount": 187,
+  "multiPageExamples": [
+    {
+      "query": "restoration marketing",
+      "pages": {
+        "https://remediationrestorationmarketing.com/": 280,
+        "https://remediationrestorationmarketing.com/services/": 118,
+        "https://remediationrestorationmarketing.com/resources/": 98,
+        "https://remediationrestorationmarketing.com/industries/": 18,
+        "https://remediationrestorationmarketing.com/case-studies/": 15,
+        "https://remediationrestorationmarketing.com/services/seo/": 3
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "how to market a restoration company",
+      "pages": {
+        "https://remediationrestorationmarketing.com/resources/": 181,
+        "https://remediationrestorationmarketing.com/services/": 112,
+        "https://remediationrestorationmarketing.com/industries/": 39
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "restoration marketing agency",
+      "pages": {
+        "https://remediationrestorationmarketing.com/": 187,
+        "https://remediationrestorationmarketing.com/services/": 72,
+        "https://remediationrestorationmarketing.com/industries/": 29,
+        "https://remediationrestorationmarketing.com/resources/": 21,
+        "https://remediationrestorationmarketing.com/services/web-design/": 1
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "seo for restoration companies",
+      "pages": {
+        "https://remediationrestorationmarketing.com/services/seo/": 218,
+        "https://remediationrestorationmarketing.com/biohazard-cleanup/seo/": 39
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "restoration ppc",
+      "pages": {
+        "https://remediationrestorationmarketing.com/water-damage-restoration/ppc/": 113,
+        "https://remediationrestorationmarketing.com/services/ppc/": 86,
+        "https://remediationrestorationmarketing.com/biohazard-cleanup/ppc/": 29
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "restoration ppc company",
+      "pages": {
+        "https://remediationrestorationmarketing.com/water-damage-restoration/ppc/": 85,
+        "https://remediationrestorationmarketing.com/services/ppc/": 75,
+        "https://remediationrestorationmarketing.com/biohazard-cleanup/ppc/": 23,
+        "https://remediationrestorationmarketing.com/": 10
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "disaster restoration marketing",
+      "pages": {
+        "https://remediationrestorationmarketing.com/": 95,
+        "https://remediationrestorationmarketing.com/services/": 48,
+        "https://remediationrestorationmarketing.com/industries/": 27,
+        "https://remediationrestorationmarketing.com/resources/": 20
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "restoration digital marketing",
+      "pages": {
+        "https://remediationrestorationmarketing.com/": 116,
+        "https://remediationrestorationmarketing.com/services/": 38,
+        "https://remediationrestorationmarketing.com/resources/": 31
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "water damage restoration ppc",
+      "pages": {
+        "https://remediationrestorationmarketing.com/water-damage-restoration/ppc/": 99,
+        "https://remediationrestorationmarketing.com/biohazard-cleanup/ppc/": 42,
+        "https://remediationrestorationmarketing.com/services/ppc/": 33
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "restoration seo",
+      "pages": {
+        "https://remediationrestorationmarketing.com/services/seo/": 161,
+        "https://remediationrestorationmarketing.com/biohazard-cleanup/seo/": 7,
+        "https://remediationrestorationmarketing.com/": 1
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "damage restoration marketing",
+      "pages": {
+        "https://remediationrestorationmarketing.com/": 101,
+        "https://remediationrestorationmarketing.com/resources/": 35,
+        "https://remediationrestorationmarketing.com/services/": 17,
+        "https://remediationrestorationmarketing.com/industries/": 14
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    },
+    {
+      "query": "restoration company marketing",
+      "pages": {
+        "https://remediationrestorationmarketing.com/": 69,
+        "https://remediationrestorationmarketing.com/services/": 40,
+        "https://remediationrestorationmarketing.com/resources/": 34,
+        "https://remediationrestorationmarketing.com/industries/": 17,
+        "https://remediationrestorationmarketing.com/case-studies/": 1
+      },
+      "interpretation": "multi-page exposure; inspect intent before calling cannibalization"
+    }
+  ],
+  "retargetingComposition": {
+    "countries": {
+      "ago": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 4.0
+      },
+      "arg": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 36.0
+      },
+      "aus": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 2.0
+      },
+      "aut": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 1.0
+      },
+      "aze": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 3.0
+      },
+      "bgd": {
+        "rows": 3,
+        "impressions": 3,
+        "clicks": 0,
+        "weightedPosition": 2.33
+      },
+      "bhr": {
+        "rows": 2,
+        "impressions": 2,
+        "clicks": 0,
+        "weightedPosition": 18.5
+      },
+      "blr": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 4.0
+      },
+      "bra": {
+        "rows": 8,
+        "impressions": 8,
+        "clicks": 0,
+        "weightedPosition": 8.12
+      },
+      "can": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 1.0
+      },
+      "col": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 3.0
+      },
+      "cri": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 1.0
+      },
+      "deu": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 1.0
+      },
+      "dom": {
+        "rows": 4,
+        "impressions": 9,
+        "clicks": 0,
+        "weightedPosition": 5.11
+      },
+      "ecu": {
+        "rows": 2,
+        "impressions": 2,
+        "clicks": 0,
+        "weightedPosition": 2.5
+      },
+      "esp": {
+        "rows": 4,
+        "impressions": 5,
+        "clicks": 0,
+        "weightedPosition": 8.6
+      },
+      "fra": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 1.0
+      },
+      "gbr": {
+        "rows": 5,
+        "impressions": 5,
+        "clicks": 0,
+        "weightedPosition": 30.4
+      },
+      "ind": {
+        "rows": 3,
+        "impressions": 3,
+        "clicks": 0,
+        "weightedPosition": 2.0
+      },
+      "isr": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 3.0
+      },
+      "ita": {
+        "rows": 2,
+        "impressions": 2,
+        "clicks": 0,
+        "weightedPosition": 1.5
+      },
+      "jpn": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 1.0
+      },
+      "lka": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 1.0
+      },
+      "mda": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 3.0
+      },
+      "mex": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 2.0
+      },
+      "mys": {
+        "rows": 2,
+        "impressions": 2,
+        "clicks": 0,
+        "weightedPosition": 40.0
+      },
+      "nld": {
+        "rows": 8,
+        "impressions": 8,
+        "clicks": 0,
+        "weightedPosition": 89.5
+      },
+      "npl": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 2.0
+      },
+      "pak": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 1.0
+      },
+      "pan": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 3.0
+      },
+      "pol": {
+        "rows": 4,
+        "impressions": 4,
+        "clicks": 0,
+        "weightedPosition": 21.0
+      },
+      "pry": {
+        "rows": 2,
+        "impressions": 2,
+        "clicks": 0,
+        "weightedPosition": 3.0
+      },
+      "sau": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 2.0
+      },
+      "swe": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 1.0
+      },
+      "tha": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 1.0
+      },
+      "tto": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 28.0
+      },
+      "tur": {
+        "rows": 2,
+        "impressions": 2,
+        "clicks": 0,
+        "weightedPosition": 24.5
+      },
+      "usa": {
+        "rows": 24,
+        "impressions": 28,
+        "clicks": 0,
+        "weightedPosition": 21.11
+      },
+      "uzb": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 3.0
+      },
+      "ven": {
+        "rows": 3,
+        "impressions": 3,
+        "clicks": 0,
+        "weightedPosition": 2.67
+      },
+      "vnm": {
+        "rows": 1,
+        "impressions": 1,
+        "clicks": 0,
+        "weightedPosition": 2.0
+      }
+    },
+    "devices": {
+      "DESKTOP": {
+        "rows": 55,
+        "impressions": 61,
+        "clicks": 0,
+        "weightedPosition": 24.74
+      },
+      "MOBILE": {
+        "rows": 48,
+        "impressions": 52,
+        "clicks": 0,
+        "weightedPosition": 9.6
+      }
+    },
+    "topQueries": [
+      {
+        "query": "retargeting for restoration companies",
+        "rows": 68,
+        "impressions": 77,
+        "clicks": 0,
+        "weightedPosition": 1.96
+      },
+      {
+        "query": "restauration marketing",
+        "rows": 8,
+        "impressions": 8,
+        "clicks": 0,
+        "weightedPosition": 89.5
+      },
+      {
+        "query": "restoration online marketing",
+        "rows": 7,
+        "impressions": 7,
+        "clicks": 0,
+        "weightedPosition": 35.43
+      },
+      {
+        "query": "restoration internet marketing",
+        "rows": 4,
+        "impressions": 4,
+        "clicks": 0,
+        "weightedPosition": 45.75
+      },
+      {
+        "query": "restoration media marketing",
+        "rows": 3,
+        "impressions": 3,
+        "clicks": 0,
+        "weightedPosition": 29.33
+      },
+      {
+        "query": "restoration website conversion",
+        "rows": 2,
+        "impressions": 3,
+        "clicks": 0,
+        "weightedPosition": 21.0
+      },
+      {
+        "query": "retargeting campaign for restoration companies",
+        "rows": 2,
+        "impressions": 2,
+        "clicks": 0,
+        "weightedPosition": 1.5
+      },
+      {
+        "query": "restoration marketing strategies",
+        "rows": 2,
+        "impressions": 2,
+        "clicks": 0,
+        "weightedPosition": 98.5
+      }
+    ]
+  },
+  "sourceSHA256": {
+    "canonry-performance.json": "97ed02a635ea2691c8f5d740724d61043322de331489a1c1af05cb6527bc9025",
+    "canonry-performance-2.json": "04d3002de185dd2f678e24dd3b56af69e9d5ed0311a0ac9f2b0571a89e3c3d2b",
+    "canonry-performance-2000.json": "fd365a43dfae6d7cffed555e5dfe564db335666301b59b41fc3512610ed98b34",
+    "canonry-performance-3000.json": "b9bf137f4413e6b144a7d332cfa059be6f9a9ad02d7857cad0a1cdeeaeb6fa95",
+    "canonry-performance-4000.json": "d578a13c073cf1f33d1841461b72693b9ef9151ec2491265c35faac5dad5c213",
+    "canonry-performance-5000.json": "a8b04cba909d79a0001ac5c3571740cec38b68143f6173873d50f957ab77d0a1",
+    "canonry-performance-6000.json": "61fadd864c15f690090233d7ed5fd78f55e9fd715a2220cec8dd1347b2de2176",
+    "canonry-performance-7000.json": "d347077e0573d3d779062f9cc491c85062868ff75d94bb6b9953ee2da9a7a7ed",
+    "canonry-performance-8000.json": "c479a06c019b5eb92984859d862b2c45969bf0e0d8a152d933b36f1294b3a6ea"
+  },
+  "inspectionCoverage": {
+    "uniqueURLs": 100,
+    "states": {
+      "URL is unknown to Google": 45,
+      "Submitted and indexed": 29,
+      "Crawled - currently not indexed": 26
+    }
+  },
+  "accessibilityStatic": {
+    "missingAlt": 0,
+    "headingSkips": []
+  },
+  "technicalAudit": {
+    "project": "remediation-restoration-marketing",
+    "hasCrawlData": true,
+    "legacyAuditAvailable": true,
+    "runId": "9d5befd9-7c55-4d37-bfee-3ead247003c1",
+    "inventorySummary": {
+      "scope": "selected-snapshot",
+      "total": 105,
+      "eligible": 104,
+      "excluded": 1,
+      "excludedReasons": [
+        {
+          "healthReason": "noindex",
+          "pages": 1,
+          "exampleUrl": "https://remediationrestorationmarketing.com/resources/ai-visibility-checklist/"
+        }
+      ]
+    },
+    "runStatus": "completed",
+    "requestedRootUrl": "https://remediationrestorationmarketing.com/",
+    "rootUrl": "https://remediationrestorationmarketing.com/",
+    "crawlSchemaVersion": "2.0",
+    "engineVersion": "7.2.0",
+    "normalizationVersion": "1.1.0",
+    "indexabilityVersion": "1.0.0",
+    "linkScoreVersion": "pagerank-1.0.0",
+    "effectiveOptions": {
+      "mode": "summary",
+      "sitemapUrl": null,
+      "maxPages": 50000,
+      "maxEdges": null,
+      "maxDepth": null,
+      "checkDeadLinks": false
+    },
+    "complete": true,
+    "termination": "complete",
+    "runSelection": {
+      "reason": "latest-date-complete",
+      "date": "2026-10-11",
+      "sameDateRunCount": 1,
+      "ambiguousDate": false,
+      "candidates": [
+        {
+          "runId": "9d5befd9-7c55-4d37-bfee-3ead247003c1",
+          "createdAt": "2026-10-11T23:00:12.473Z",
+          "complete": true,
+          "pages": 105
+        }
+      ],
+      "candidatesTruncated": false
+    },
+    "detailsAvailable": true,
+    "counts": {
+      "pagesDiscovered": 105,
+      "pagesFetched": 105,
+      "pagesEligible": 104,
+      "edges": 4063,
+      "findings": 0
+    },
+    "deadLinks": {
+      "state": "disabled"
+    }
+  },
+  "retrievalMeaning": "Export completed before this synthesis timestamp; individual CLI calls did not return collection timestamps.",
+  "dataState": "final/provisional state not returned; no unqualified before-after comparison",
+  "totalsComparability": "Query-row impressions 10,925 exceed property-daily 10,283; clicks 5 versus17. Distinct aggregation/storage populations unresolved; never sum/compare them as one total."
+}
