@@ -11,8 +11,8 @@ function setup() {
   const field = (name, value) => ({ name, value, required: true, dataset: {}, valid: true,
     checkValidity() { return this.valid && (!this.required || !!this.value); },
     reportValidity() { this.reported = true; }, focus() { this.focused = true; } });
-  const first = [field('name', 'QA Owner'), field('email', 'qa@example.test'), field('phone', '+12025550147'), field('company', 'QA Restoration')];
-  const second = [field('service-area', 'QA territory'), field('program-scope', 'not-sure')];
+  const first = [field('name', 'QA Owner'), field('email', 'qa@example.test')];
+  const second = [field('phone', '+12025550147'), field('company', 'QA Restoration'), field('service-area', 'QA territory'), field('program-scope', 'not-sure')];
   const step = fields => ({ hidden: false, querySelectorAll() { return fields; }, querySelector() { return { setAttribute() {}, focus() {} }; }, addEventListener() {} });
   const firstStep = step(first), secondStep = step(second);
   const id = { value: '' }, stage = { value: 'request' };
@@ -28,7 +28,7 @@ function setup() {
   };
   vm.runInNewContext(script, context);
   const event = () => ({ defaultPrevented: false, stopped: false, preventDefault() { this.defaultPrevented = true; }, stopImmediatePropagation() { this.stopped = true; } });
-  return { first, form, firstStep, secondStep, buttons, listeners, windowListeners, sent, event };
+  return { first, second, form, firstStep, secondStep, buttons, listeners, windowListeners, sent, event };
 }
 
 test('cleared hidden identity fields return to step one, focus the error and recover on correction', () => {
@@ -58,4 +58,21 @@ test('network error permits abandonment recovery but accepted/back-restored form
   s.listeners['lead-request-error'](); s.windowListeners.pagehide(); assert.equal(s.sent.length, 1);
   const accepted = setup(); accepted.buttons.next(); accepted.form.dataset.responseReceived = 'true';
   accepted.windowListeners.pageshow(); accepted.windowListeners.pagehide(); assert.equal(accepted.sent.length, 0);
+});
+
+
+test('two-field first step never captures recovery without valid phone and company', () => {
+  const s = setup();
+  s.second[0].value = ''; s.second[1].value = '';
+  s.buttons.next();
+  assert.equal(s.secondStep.hidden, false);
+  s.windowListeners.pagehide(); assert.equal(s.sent.length, 0);
+  s.second[0].value = '+12025550147';
+  s.windowListeners.pagehide(); assert.equal(s.sent.length, 0);
+  s.second[1].value = 'QA Restoration'; s.second[0].valid = false;
+  s.windowListeners.pagehide(); assert.equal(s.sent.length, 0);
+  s.second[0].valid = true;
+  s.windowListeners.pagehide(); s.windowListeners.pagehide();
+  assert.equal(s.sent.length, 1);
+  assert.equal(s.sent[0].get('lead-stage'), 'identity');
 });

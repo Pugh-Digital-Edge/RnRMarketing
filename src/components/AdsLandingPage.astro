@@ -76,7 +76,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
     <a class="rm-logo" href="#lead-form" aria-label="Remediation and Restoration Marketing, request a call">
       <Image src={logo} alt="Remediation & Restoration Marketing" width={209} height={40} />
     </a>
-    <a class="rm-header-cta" href="#lead-form">See the Plan for Your Territory</a>
+    <a class="rm-header-cta" href="#lead-form">Request Your Free Strategy Call</a>
   </header>
 
   <section class="rm-hero" aria-labelledby="rm-hero-title">
@@ -96,7 +96,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
         <h1 id="rm-hero-title">{heroTitle}</h1>
         <p class="rm-hero-text">{heroText}</p>
         <div class="rm-hero-action">
-          <a class="rm-hero-cta" href="#lead-form">See the Plan for Your Territory</a>
+          <a class="rm-hero-cta" href="#lead-form">Request Your Free Strategy Call</a>
           <p><strong>Free 30-minute strategy call with Matt Pugh.</strong> Discuss your territory, visibility, and priorities. Nothing to prepare.</p>
         </div>
         <p class="rm-hero-proof"><a href="#results"><strong>5 → 18 LSA leads</strong> · Chicago-area client · May–July 2026</a><small>Reported client outcome. Results vary.</small></p>
@@ -114,8 +114,8 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
           </p>
 
           <div class="rm-form-heading">
-            <h2>See the Plan for Your Territory</h2>
-            <p>Share your details and territory, then choose a free 30-minute call with Matt.</p>
+            <h2>Request Your Free Strategy Call</h2>
+            <p>Start with your name and email. Then tell us about your company and territory.</p>
           </div>
 
           <input type="hidden" name="gclid" data-attribution-field="gclid" />
@@ -133,7 +133,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
 
           <div class="rm-fields">
             <fieldset class="rm-form-step" data-form-step="1">
-              <legend>Your details</legend>
+              <legend>Your name and email</legend>
               <p class="rm-step-status" aria-hidden="true">Step 1 of 2</p>
               <div class="rm-step-fields">
                 <label>
@@ -144,6 +144,18 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
                   Email
                   <input required type="email" name="email" autocomplete="email" placeholder="you@company.com" />
                 </label>
+              </div>
+              <p class="rm-privacy-note">If you continue, your contact details may be saved when you leave so we can follow up, even without a final request. <a href="/privacy/">Privacy policy</a></p>
+              <button class="rm-step-next" type="button" data-step-next>
+                <span>Next: company &amp; territory</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
+              </button>
+            </fieldset>
+
+            <fieldset class="rm-form-step" data-form-step="2">
+              <legend>Complete your call request</legend>
+              <p class="rm-step-status" aria-hidden="true">Step 2 of 2</p>
+              <div class="rm-step-fields">
                 <div data-phone-field>
                   <label>Phone <input required type="tel" name="phone" data-phone-input aria-describedby="ads-phone-error" autocomplete="tel" inputmode="tel" placeholder="(310) 555-1234" /></label>
                   <p id="ads-phone-error" data-phone-error role="alert" hidden>Please enter a valid U.S. phone number, including the area code.</p>
@@ -152,21 +164,9 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
                   Company
                   <input required type="text" name="company" autocomplete="organization" placeholder="Company name" />
                 </label>
-              </div>
-              <p class="rm-privacy-note">If you continue, your contact details may be saved when you leave so we can follow up, even without a final request. <a href="/privacy/">Privacy policy</a></p>
-              <button class="rm-step-next" type="button" data-step-next>
-                <span>Continue</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
-              </button>
-            </fieldset>
-
-            <fieldset class="rm-form-step" data-form-step="2">
-              <legend>Your territory and priorities</legend>
-              <p class="rm-step-status" aria-hidden="true">Step 2 of 2</p>
-              <div class="rm-step-fields">
                 <label class="rm-full-field">
                   Service territory
-                  <span>We work with one restoration company per territory.</span>
+                  <span>One company per agreed territory, subject to availability.</span>
                   <input required type="text" name="service-area" autocomplete="address-level2" placeholder="City, state, or ZIP codes" />
                 </label>
                 <label>
@@ -185,7 +185,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
               <div class="rm-step-actions">
                 <button class="rm-step-back" type="button" data-step-back>Back</button>
                 <button class="rm-submit" type="submit">
-                  <span>See the Plan for Your Territory</span>
+                  <span>Request Your Free Strategy Call</span>
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
                 </button>
               </div>
@@ -232,7 +232,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
             <dd>Your first strategy call is with Matt, and our specialists support the work that follows.</dd>
           </div>
         </dl>
-        <a class="rm-text-cta" href="#lead-form">See the Plan for Your Territory <span aria-hidden="true">→</span></a>
+        <a class="rm-text-cta" href="#lead-form">Request Your Free Strategy Call <span aria-hidden="true">→</span></a>
       </div>
 
       <div class="rm-owner-panel">
@@ -279,7 +279,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
 
       <div class="rm-mid-cta">
         <p>One team manages the agreed marketing work. Your team owns customer follow-up and sales closing.</p>
-        <a href="#lead-form">See the Plan for Your Territory <span aria-hidden="true">→</span></a>
+        <a href="#lead-form">Request Your Free Strategy Call <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -389,7 +389,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
         <span>Territory availability</span>
         <p>Tell us where you work, and we will let you know if your territory is open.</p>
         <a class="rm-final-cta" href="#lead-form">
-          <span class="rm-final-cta-copy"><strong>See the Plan for Your Territory</strong><small>Free Lead Flow Acceleration Session</small></span>
+          <span class="rm-final-cta-copy"><strong>Request Your Free Strategy Call</strong><small>Free Lead Flow Acceleration Session</small></span>
           <span class="rm-final-cta-arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -407,7 +407,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
     </div>
   </footer>
 
-  <nav class="rm-mobile-cta is-hidden" aria-label="Quick contact"><a href={`tel:${client.phoneForTel}`}>Call Matt</a><a href="#lead-form">See the Plan for Your Territory</a></nav>
+  <nav class="rm-mobile-cta is-hidden" aria-label="Quick contact"><a href={`tel:${client.phoneForTel}`}>Call Matt</a><a href="#lead-form">Request Your Free Strategy Call</a></nav>
 </div>
 
 <script>
@@ -490,6 +490,10 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
         Array.from(step.querySelectorAll<HTMLInputElement | HTMLSelectElement>("input, select"));
       const firstStepFields = stepFields(firstStep);
       const secondStepFields = stepFields(secondStep);
+      // A smaller first step must never send an incomplete recovery identity.
+      // The server still requires all four contact fields for identity storage.
+      const identityFields = [...firstStepFields, ...secondStepFields]
+        .filter((field) => ["name", "email", "phone", "company"].includes(field.name));
       let currentStep = 1;
       let identitySaved = false;
       let finalSubmissionStarted = false;
@@ -552,7 +556,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
 
       const captureAbandonment = () => {
         if (window.rrTrackingDisabled || currentStep !== 2 || finalSubmissionStarted || identitySaved) return;
-        if (firstStepFields.some((field) => !field.value.trim() || !field.checkValidity())) return;
+        if (identityFields.some((field) => !field.value.trim() || !field.checkValidity())) return;
 
         const body = buildIdentityBody();
         if (typeof navigator.sendBeacon === "function" && navigator.sendBeacon("/.netlify/functions/submit-lead", body)) {
@@ -1273,6 +1277,11 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
   }
 
   @media (max-width: 48rem) {
+    .rm-hero-inner { padding-top: 1.5rem; gap: 1.25rem; }
+    .rm-hero h1 { max-width: 16ch; font-size: clamp(2.25rem, 9vw, 3.5rem); }
+    .rm-hero-action { margin-top: 0.85rem; }
+    .rm-hero-action .rm-hero-cta { display: none; }
+    .rm-hero-proof { margin: 0.85rem 0 0; }
     .rm-hero-copy { text-align: center; }
     .rm-hero h1,
     .rm-hero-text { margin-inline: auto; }

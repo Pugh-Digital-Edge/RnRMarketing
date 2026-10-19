@@ -38,20 +38,20 @@ function setup(value, action = "/thank-you/", responseOk, options = {}) {
     reset() { phone.value = ''; },
   };
   let fetches = 0;
-  const receipts = [], redirects = [];
+  const receipts = [], redirects = [], timeouts = [];
   const context = {
-    Event, crypto, history: { state: null, replaceState() {} },
+    Event, crypto, DOMException, AbortSignal: { timeout(ms) { timeouts.push(ms); return AbortSignal.timeout(ms); } }, history: { state: null, replaceState() {} },
     rememberAcceptedRequest: id => receipts.push(id),
     window: { rrTrackingDisabled: !!options.isolated, rrTestMode: !!options.testMode, location: {
-      pathname: '/restoration-marketing/', hostname: options.hostname || 'example.test', assign: url => redirects.push(url),
+      pathname: options.pathname || '/restoration-marketing/', hostname: options.hostname || 'example.test', assign: url => redirects.push(url),
     } },
     document: { querySelectorAll: () => [form] },
     PHONE_VALIDATION_MESSAGE, validatePhoneNumber, URL, URLSearchParams,
     FormData: class { forEach(callback) { callback(phone.value, "phone"); } },
-    fetch: () => { fetches++; return responseOk === 'reject' ? Promise.reject(Error('network')) : responseOk === undefined ? new Promise(() => {}) : Promise.resolve({ ok: responseOk, headers: { get: () => options.contentType || (options.accepted ? "application/json" : "text/html") }, json: async () => options.malformed ? Promise.reject(Error('bad JSON')) : options.receipt || { ok: true, stage: 'request_accepted', submissionId: 'submission-1234', receiptSource: 'netlify_http' } }); },
+    fetch: () => { fetches++; return responseOk === 'timeout' ? Promise.reject(new DOMException('Timed out', 'TimeoutError')) : responseOk === 'reject' ? Promise.reject(Error('network')) : responseOk === undefined ? new Promise(() => {}) : Promise.resolve({ ok: responseOk, headers: { get: () => options.contentType || (options.accepted ? "application/json" : "text/html") }, json: async () => options.malformed ? Promise.reject(Error('bad JSON')) : options.receipt || { ok: true, stage: 'request_accepted', submissionId: 'submission-1234', receiptSource: 'netlify_http' } }); },
   };
   vm.runInNewContext(script, context);
-  return { phone, button, error, status, receipts, redirects, get fetches() { return fetches; },
+  return { phone, button, error, status, receipts, redirects, timeouts, get fetches() { return fetches; },
     async submitAndWait() { await listeners.submit({ preventDefault() {} }); },
     submit() {
       const event = { defaultPrevented: false, preventDefault() { this.defaultPrevented = true; } };
@@ -67,6 +67,20 @@ test("native lead post normalizes phone without cancellation, fetch, or disablin
   assert.equal(form.phone.value, "+13105551234");
   assert.equal(form.button.disabled, false);
   assert.equal(form.fetches, 0);
+});
+
+test('paid acknowledgment timeout preserves input and permits retry without a receipt', async () => {
+  const s = setup('(202) 555-0147', '/.netlify/functions/submit-lead', 'timeout', { accepted: true, redirect: true });
+  await s.submitAndWait();
+  assert.deepEqual(s.timeouts, [15000]);
+  assert.equal(s.phone.value, '+12025550147');
+  assert.equal(s.button.disabled, false);
+  assert.equal(s.button.attributes['aria-busy'], undefined);
+  assert.match(s.status.textContent, /couldn't confirm your request in time/);
+  assert.deepEqual(s.receipts, []); assert.deepEqual(s.redirects, []);
+  await s.submitAndWait(); assert.equal(s.fetches, 2);
+  const legacy = setup('(202) 555-0147', '/.netlify/functions/submit-lead', false, { accepted: true, pathname: '/schedule/' });
+  await legacy.submitAndWait(); assert.deepEqual(legacy.timeouts, []);
 });
 
 test("async failure preserves entered phone and restores retry without a busy state", async () => {
