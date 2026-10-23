@@ -7,6 +7,6 @@ Title2: "Long-Term SEO Strategy for Sustained Growth"
 Description2: "<p class=\"cs-text\">We build your restoration company's online authority through targeted local SEO, strategic content creation, and technical optimization. Our approach focuses on ranking for emergency services while building lasting relationships with insurance companies and property managers. From optimizing service pages to creating location-specific content, we ensure your restoration company appears when and where it matters most.</p>"
 Image: "src/assets/images/services/seo1.jpg"
 Image2: "src/assets/images/services/seo2.jpg"
-ShortDescription: "Proper SEO ensures your restoration company appears first when property owners need emergency services. Let us help you capture more high-value restoration leads."
+ShortDescription: "Restoration SEO connects useful service and location pages with relevant local searches. We improve technical discovery, clear service information, and paths to qualified inquiries."
 IconName: "seo"
 ---

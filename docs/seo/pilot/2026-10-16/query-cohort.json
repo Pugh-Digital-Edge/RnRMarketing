@@ -1,0 +1,3780 @@
+{
+  "project": "remediation-restoration-marketing",
+  "property": "sc-domain:remediationrestorationmarketing.com",
+  "scope": "Frozen query SHA256+country+device cells for11 exact URLs. Each query digest is SHA256 of exact UTF8 query; raw text remains in pinned private exports. This is separate from dynamic page-aggregate monitoring.",
+  "comparisonRule": "Future rows must match exact URL and cell. Do not add new queries/countries/devices to this intervention. Missing/privacy-suppressed cells remain unavailable; finality and comparable complete windows required. Re-capture pre-live window at release, preserving this diagnostic baseline.",
+  "sourceHashes": {
+    "canonry-performance.json": "97ed02a635ea2691c8f5d740724d61043322de331489a1c1af05cb6527bc9025",
+    "canonry-performance-2.json": "04d3002de185dd2f678e24dd3b56af69e9d5ed0311a0ac9f2b0571a89e3c3d2b",
+    "canonry-performance-2000.json": "fd365a43dfae6d7cffed555e5dfe564db335666301b59b41fc3512610ed98b34",
+    "canonry-performance-3000.json": "b9bf137f4413e6b144a7d332cfa059be6f9a9ad02d7857cad0a1cdeeaeb6fa95",
+    "canonry-performance-4000.json": "d578a13c073cf1f33d1841461b72693b9ef9151ec2491265c35faac5dad5c213",
+    "canonry-performance-5000.json": "a8b04cba909d79a0001ac5c3571740cec38b68143f6173873d50f957ab77d0a1",
+    "canonry-performance-6000.json": "61fadd864c15f690090233d7ed5fd78f55e9fd715a2220cec8dd1347b2de2176",
+    "canonry-performance-7000.json": "d347077e0573d3d779062f9cc491c85062868ff75d94bb6b9953ee2da9a7a7ed",
+    "canonry-performance-8000.json": "c479a06c019b5eb92984859d862b2c45969bf0e0d8a152d933b36f1294b3a6ea"
+  },
+  "cohorts": [
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/water-damage-restoration/",
+      "queryCount": 0,
+      "cells": [],
+      "baselineRows": 0,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": true
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/services/ppc/",
+      "queryCount": 39,
+      "cells": [
+        {
+          "querySHA256": "040568def4b91eb9ce17c04b4e786149499fd8d3591ec2e2c8aab63d35d96c97",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "chl",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "ven",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "0a096c72ce00286f4c51c61dacf6724b84bd4340c969f3e83c778ed2b513b1ff",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "0a096c72ce00286f4c51c61dacf6724b84bd4340c969f3e83c778ed2b513b1ff",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "0ff3d4bca58ee274ca817e8923c522611a08591334d91a899c23f9c7c01f4e42",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "are",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "bgd",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "bgd",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "bhr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "chl",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "cri",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "deu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "deu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "dza",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "ecu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "fra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "gbr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "idn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "idn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "mex",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "mys",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "nld",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "pan",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "qat",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "rus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "tur",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "ven",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "zaf",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "2224609a72c0fd79fc0ad2bb0883f718c4c9d676bfef830afbcebb6db34d0764",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2224609a72c0fd79fc0ad2bb0883f718c4c9d676bfef830afbcebb6db34d0764",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "37bfc1989b56d1fa8eeb07c4af7c038b1f97abad4afb75d1d34151e9a1f09c49",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "aut",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "bgd",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "bhr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "bih",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "deu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "ecu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "esp",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "fra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "idn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "ind",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "irq",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "kor",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "mar",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "mex",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "mex",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "per",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "slv",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "ukr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "zaf",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "4291d619e2e5be451c08e8e77f5629b0cc9282646d986758b2e82d5b642477b4",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "435f0f8e9dff8f5575e6f69f4ac1b74534e599eb5c54598813bc343b8b65299b",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "435f0f8e9dff8f5575e6f69f4ac1b74534e599eb5c54598813bc343b8b65299b",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "cri",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "deu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "ecu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "fra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "idn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "ita",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "ita",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "pak",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "tha",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "tur",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "zaf",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "4866338af6052761598c24f0a181730a9fabb517cbdea523834f2b2db31a05e6",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "48caae5c456abdf88d49d763ffe0e9d10930c18d5e128743f97852159b91378a",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "48caae5c456abdf88d49d763ffe0e9d10930c18d5e128743f97852159b91378a",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "5153615b1dc3145e2bf31b069bcce20b72ec40f6425023168f41935f3bac5cbd",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5356e9a803eb1116ccfc13912e48891aa667223c51646783eab5d59a80d7d1cf",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5356e9a803eb1116ccfc13912e48891aa667223c51646783eab5d59a80d7d1cf",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "aze",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "bgd",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "bih",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "chl",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "col",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "col",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "cri",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "dnk",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "fra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "ind",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "irn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "ita",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "jor",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "mda",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "npl",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "pol",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "prt",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "pry",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "rus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "sau",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "tur",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "ukr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "ven",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "596cdb84c96e7178ddb01be6089daf03851a2dcdbf82566d042f37df9dfad161",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5bffab895541ac063bebbd200653d861306f05646e7bc146511922c7cdb2e325",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5bffab895541ac063bebbd200653d861306f05646e7bc146511922c7cdb2e325",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "6c024de65af81009dc2812485c2d7eb4dd4e91560649565aabf0a8f3085a9d23",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "6c024de65af81009dc2812485c2d7eb4dd4e91560649565aabf0a8f3085a9d23",
+          "country": "prt",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "6c024de65af81009dc2812485c2d7eb4dd4e91560649565aabf0a8f3085a9d23",
+          "country": "sau",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "6c024de65af81009dc2812485c2d7eb4dd4e91560649565aabf0a8f3085a9d23",
+          "country": "tur",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "6edf08160e6aae6072d7bf2f3315ec07a612d90c8b1be9b06efc4f8d4a531770",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "72b1ac7643a69500f5656916dee10f390b70cb11bcfb255c550f3d8d072a3fa9",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "7f0f9cc7ddc87d975b6285e86b7409ca20682ddab15278b9f2896d6b0eca9649",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8240d080c7b3e9727ddffe6a6e222a70526f10f0403cef8fc144af20f3c7a79c",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8240d080c7b3e9727ddffe6a6e222a70526f10f0403cef8fc144af20f3c7a79c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8240d080c7b3e9727ddffe6a6e222a70526f10f0403cef8fc144af20f3c7a79c",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "88ad3b4089efa0c86c6ed756160f949284dd0c445ca3308a8cf348b9ffec6b16",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "88ad3b4089efa0c86c6ed756160f949284dd0c445ca3308a8cf348b9ffec6b16",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "8906e5d9501943846f9ded970f2de1ce5e38a3e6a7f347ce09ba810e6434dc14",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8906e5d9501943846f9ded970f2de1ce5e38a3e6a7f347ce09ba810e6434dc14",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8906e5d9501943846f9ded970f2de1ce5e38a3e6a7f347ce09ba810e6434dc14",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "8ca45b06455b5820d861345ed5b46deec25b3de3ef3810dfc9b4559b0d9ba3ca",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8ca45b06455b5820d861345ed5b46deec25b3de3ef3810dfc9b4559b0d9ba3ca",
+          "country": "che",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8ca45b06455b5820d861345ed5b46deec25b3de3ef3810dfc9b4559b0d9ba3ca",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8ca45b06455b5820d861345ed5b46deec25b3de3ef3810dfc9b4559b0d9ba3ca",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8ca45b06455b5820d861345ed5b46deec25b3de3ef3810dfc9b4559b0d9ba3ca",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8ca45b06455b5820d861345ed5b46deec25b3de3ef3810dfc9b4559b0d9ba3ca",
+          "country": "sgp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8ca45b06455b5820d861345ed5b46deec25b3de3ef3810dfc9b4559b0d9ba3ca",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "are",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "bgd",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "chl",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "cri",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "deu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "esp",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "est",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "ita",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "mar",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "mex",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "nam",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "nld",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "nld",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "pak",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "prt",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "pry",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "rus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "syc",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "tur",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "ukr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "uzb",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "ven",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "95754eec5fc9b441a63a43997d2ce207b7b9197ffcc5fd4da439afce10318f96",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "95754eec5fc9b441a63a43997d2ce207b7b9197ffcc5fd4da439afce10318f96",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "95754eec5fc9b441a63a43997d2ce207b7b9197ffcc5fd4da439afce10318f96",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "95754eec5fc9b441a63a43997d2ce207b7b9197ffcc5fd4da439afce10318f96",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "alb",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "aze",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "bih",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "bol",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "col",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "col",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "dnk",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "dza",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "ecu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "gbr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "idn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "irn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "irq",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "ita",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "ken",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "mys",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "per",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "phl",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "phl",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "sur",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "ukr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2ecf28fd6cff4138b7894b1df87689f9556a0d53154f9963bd6b20ba42e8322",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b6c3b86e2840c6487a1b4896f7bdf970787252b1aa3dbed2a571128ed257a7b5",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "ago",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "alb",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "aut",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "bgd",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "blr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "chl",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "deu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "gbr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "mex",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "mys",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "pak",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "phl",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "ven",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "c8587da44113994c665461c39fbc5ba354cee8de369fd7a94fdff6dc84bfd1bf",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c92109a529a568f0e6ff702058daf5c8b8465976f7ee21e79a63f1ad82b0bc40",
+          "country": "grc",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c92109a529a568f0e6ff702058daf5c8b8465976f7ee21e79a63f1ad82b0bc40",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c9d7c56c024fa32efa447b5aba650448c792d302eb6491b84d073429c7b28eef",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d86b4d87c3a5ca4dcec0271c0fbab21ccbfe6fe938bf7416ec42bc1f8f341e08",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "f2b32ca4d3d475ee18d545646f0fa0395cf91accaa994fa8ed236fbe4a9ba4f9",
+          "country": "svn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "f2b32ca4d3d475ee18d545646f0fa0395cf91accaa994fa8ed236fbe4a9ba4f9",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "f2b32ca4d3d475ee18d545646f0fa0395cf91accaa994fa8ed236fbe4a9ba4f9",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "fc542aa7c73bfb2e0bea006ae7736bbbb4442b8a2dbe9a05757954a31d31b68d",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "fc542aa7c73bfb2e0bea006ae7736bbbb4442b8a2dbe9a05757954a31d31b68d",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "fc542aa7c73bfb2e0bea006ae7736bbbb4442b8a2dbe9a05757954a31d31b68d",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "fc542aa7c73bfb2e0bea006ae7736bbbb4442b8a2dbe9a05757954a31d31b68d",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "fe147313f08e5d381c75fc72758bc26b93b785e3cfb81725ae64ea744999e9c6",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "fe147313f08e5d381c75fc72758bc26b93b785e3cfb81725ae64ea744999e9c6",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "fe147313f08e5d381c75fc72758bc26b93b785e3cfb81725ae64ea744999e9c6",
+          "country": "usa",
+          "device": "DESKTOP"
+        }
+      ],
+      "baselineRows": 493,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": false
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/lead-tracking/",
+      "queryCount": 0,
+      "cells": [],
+      "baselineRows": 0,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": true
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/ppc/",
+      "queryCount": 54,
+      "cells": [
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "aus",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "aut",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "bes",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "bfa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "bih",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "chn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "col",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "cze",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "deu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "deu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "esp",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "fra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "gbr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "idn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "ind",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "npl",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "omn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "prt",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "srb",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "tto",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "tur",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "uzb",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "09072acff8ddc874a91ba0172bf50753928d4e909df8e9667bc81d69a459821c",
+          "country": "ven",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "0a096c72ce00286f4c51c61dacf6724b84bd4340c969f3e83c778ed2b513b1ff",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "0a096c72ce00286f4c51c61dacf6724b84bd4340c969f3e83c778ed2b513b1ff",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "0bd5ad379ccdd4ea9f9cef24b7d8c4efb4918d6a33d00556e61a9476a8d20073",
+          "country": "ind",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "0f043dca646baa1762e103f57c7a2febf02bb3b787fc185ae1fc451d28f454c4",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "bgd",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "chl",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "col",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "ecu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "ind",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "rus",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "rus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "12f4c21281c13d1f6b43ef4e348d7ece503d25fc45e45bb008fb01d9a18372b9",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "col",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "grc",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "ind",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "mex",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "rus",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "rus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "301efb4e801b099470146e4b7dcd346c20d359b895d6aa9b5d339e2eb5dcfdb5",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "301efb4e801b099470146e4b7dcd346c20d359b895d6aa9b5d339e2eb5dcfdb5",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "37bfc1989b56d1fa8eeb07c4af7c038b1f97abad4afb75d1d34151e9a1f09c49",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "397f2ea2eebf4a6608b97fbe7658cfcf076e1e39f3e59704d98280aa0277c5a3",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "397f2ea2eebf4a6608b97fbe7658cfcf076e1e39f3e59704d98280aa0277c5a3",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "aus",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "aut",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "bgd",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "bhr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "bih",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "col",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "deu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "deu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "ecu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "esp",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "idn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "irq",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "ita",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "jor",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "kgz",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "kor",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "mar",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "mex",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "per",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "prt",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "rus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "slv",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "tha",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "tur",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "ukr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "39f3f220241e8d6480cb041f0cba23a2f9c3dd3fd25d2d33eae834ee6286bc3b",
+          "country": "zaf",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "3a032f8590de31fa7edc1d573c0c63ac9d660c6811daf0aa3f17fcdef0163fdb",
+          "country": "aus",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "3a032f8590de31fa7edc1d573c0c63ac9d660c6811daf0aa3f17fcdef0163fdb",
+          "country": "nzl",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "42a0e79abddb02cf3ff10fe595fa4e6aeb9d618ada2a9da0142375e741e5202d",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "aut",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "bgd",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "col",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "deu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "deu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "ecu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "fra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "fra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "ind",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "irn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "irq",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "ita",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "ita",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "ken",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "mys",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "nld",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "nzl",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "pak",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "srb",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "tha",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "tun",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "ven",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "44e25b1e544b2441799127cc2ac6deb38367acf6ccaaf62094eca6cf85b7796b",
+          "country": "zaf",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "4866338af6052761598c24f0a181730a9fabb517cbdea523834f2b2db31a05e6",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "48b632232296dd8e290269c6006cdca0a4f4a61409b80d62e99e7ff1077a133e",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "48caae5c456abdf88d49d763ffe0e9d10930c18d5e128743f97852159b91378a",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "48caae5c456abdf88d49d763ffe0e9d10930c18d5e128743f97852159b91378a",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5356e9a803eb1116ccfc13912e48891aa667223c51646783eab5d59a80d7d1cf",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5356e9a803eb1116ccfc13912e48891aa667223c51646783eab5d59a80d7d1cf",
+          "country": "cze",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5356e9a803eb1116ccfc13912e48891aa667223c51646783eab5d59a80d7d1cf",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "aut",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "prt",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "55f862a9f427c05abe16629f48d5fb551570a2ca78a74c34edc7c87301166259",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "56b8e3349d8b339721eb6af248d3063d295470e9dd420f1e1f07839705beb2e1",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "56b8e3349d8b339721eb6af248d3063d295470e9dd420f1e1f07839705beb2e1",
+          "country": "esp",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "56b8e3349d8b339721eb6af248d3063d295470e9dd420f1e1f07839705beb2e1",
+          "country": "rus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "56b8e3349d8b339721eb6af248d3063d295470e9dd420f1e1f07839705beb2e1",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "56b8e3349d8b339721eb6af248d3063d295470e9dd420f1e1f07839705beb2e1",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "56b8e3349d8b339721eb6af248d3063d295470e9dd420f1e1f07839705beb2e1",
+          "country": "vnm",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "596cdb84c96e7178ddb01be6089daf03851a2dcdbf82566d042f37df9dfad161",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "596cdb84c96e7178ddb01be6089daf03851a2dcdbf82566d042f37df9dfad161",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "5bffab895541ac063bebbd200653d861306f05646e7bc146511922c7cdb2e325",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5bffab895541ac063bebbd200653d861306f05646e7bc146511922c7cdb2e325",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "605497b13f67f441c3e6c504e8b9f44c2763a040dfdd7dd82224ffe4b95eff90",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "66a083fd6814b114bdb47bca9df6e876c9ff42dd00becc79594f0f76a35d9b70",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "66a083fd6814b114bdb47bca9df6e876c9ff42dd00becc79594f0f76a35d9b70",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "6940fd9241a44d4b9ad37a3e1227114aac74ca3db81e531f129f6a2a2b135e8f",
+          "country": "jor",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "70b673c616ab566f389bf3de7b7c44220e38fe3e684270f7f958fed20267dcf2",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "72b1ac7643a69500f5656916dee10f390b70cb11bcfb255c550f3d8d072a3fa9",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "79e2ffe2bde9cc947c38518f30fb267249b4839987a6fd21140e4c081901fcc6",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "7f0f9cc7ddc87d975b6285e86b7409ca20682ddab15278b9f2896d6b0eca9649",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "7f0f9cc7ddc87d975b6285e86b7409ca20682ddab15278b9f2896d6b0eca9649",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "cri",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "idn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "irq",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "ita",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "jor",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "ltu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "nld",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "npl",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "pak",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "pak",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "rus",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "rus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "80f72ab730ac8ae203b80e62519cdda1e663de2a1bb75201e8ce274e10507529",
+          "country": "zaf",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8240d080c7b3e9727ddffe6a6e222a70526f10f0403cef8fc144af20f3c7a79c",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8240d080c7b3e9727ddffe6a6e222a70526f10f0403cef8fc144af20f3c7a79c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8240d080c7b3e9727ddffe6a6e222a70526f10f0403cef8fc144af20f3c7a79c",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "8714dbe0c5e57fbe35ccf6e4f158df19d5428178bd2db76bc7069849085c5b90",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8906e5d9501943846f9ded970f2de1ce5e38a3e6a7f347ce09ba810e6434dc14",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "are",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "aut",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "aze",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "bgd",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "chl",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "cri",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "deu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "esp",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "est",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "ita",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "kwt",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "mar",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "mex",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "nam",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "nld",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "nld",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "pak",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "prt",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "pry",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "rus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "syc",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "tur",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "ukr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "uzb",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "94d618251ef104f54a081738755d527eb0cd929b8600e38d78f320983f76fbe0",
+          "country": "ven",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "95754eec5fc9b441a63a43997d2ce207b7b9197ffcc5fd4da439afce10318f96",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "95754eec5fc9b441a63a43997d2ce207b7b9197ffcc5fd4da439afce10318f96",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "95754eec5fc9b441a63a43997d2ce207b7b9197ffcc5fd4da439afce10318f96",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "95754eec5fc9b441a63a43997d2ce207b7b9197ffcc5fd4da439afce10318f96",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "9c2195ab3f6137aedcb50000631e72d5f668a8b1ea5cc0b79561c5337bcc463e",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "9c2195ab3f6137aedcb50000631e72d5f668a8b1ea5cc0b79561c5337bcc463e",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "a72d4ca929d3b69a5fa908d8a32d8ca97a401e14485afd3215bbf06779e283f2",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "a99284b0591d19109c769357f3b48368494c1bc771ba46eae2bf9bde77c1fe41",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "acdb19373af352b41dfad2dc1672552f46f2b249d6c80b841024d9ea2dc6082c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "bol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "idn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "irq",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "tur",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b2bd242872186d2b70e68daa2774fc0e3d805fa9a1ee9c1d2d7e83f6b4867981",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b2ecf28fd6cff4138b7894b1df87689f9556a0d53154f9963bd6b20ba42e8322",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b3e59c235abe1eae49c07f8d3cd6a303c789d877cbd3f2b1a53f28568df0ef9c",
+          "country": "aus",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b3e59c235abe1eae49c07f8d3cd6a303c789d877cbd3f2b1a53f28568df0ef9c",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b3e59c235abe1eae49c07f8d3cd6a303c789d877cbd3f2b1a53f28568df0ef9c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "aut",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "bel",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "blr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "chl",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "deu",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "ecu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "gbr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "ind",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "irn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "jpn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "pak",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "srb",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "swe",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "ven",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b8b30cab21dc790c4620ac700ef25ca4773ee14ce737e85be9f0d344be9624c1",
+          "country": "zaf",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c2c411a6ba8345f631c0e461728c66cb327a609ba8a0e676f9cf0e6b3fccf36c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c92109a529a568f0e6ff702058daf5c8b8465976f7ee21e79a63f1ad82b0bc40",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c9d7c56c024fa32efa447b5aba650448c792d302eb6491b84d073429c7b28eef",
+          "country": "grc",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c9d7c56c024fa32efa447b5aba650448c792d302eb6491b84d073429c7b28eef",
+          "country": "ita",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c9d7c56c024fa32efa447b5aba650448c792d302eb6491b84d073429c7b28eef",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "caebbb48a65045194ddee71e1f9713e93ba6a0456f204f7e0713b7c026c02dc0",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "cb348294f3eb839d44f57719724698d2adfe50979ddb33dc333401cdef01818f",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "d1c976b1396adee4aada80ada2e56a466e40587df43109a707d9fd5e916dfa91",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "bgd",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "cri",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "esp",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "idn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "irq",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "mex",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "pol",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "pry",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "sau",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "tur",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "tur",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "vnm",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d467fea2400df16807513118a95f37246b7ca84e7b024646e6bf7fbd859f3a6a",
+          "country": "zaf",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d780e72fb7bbea9f9d46d4f819c94347380dc960395206605d66641175bd7264",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "de30e636e9951abfffb92d59009f0fe037eaf1efb663ebed107893938a6812bc",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "eba78b81c236ed451b4bfe690d7eb90b840fe316de52f5e0b6b3e94438dfd36c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "fc542aa7c73bfb2e0bea006ae7736bbbb4442b8a2dbe9a05757954a31d31b68d",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "fc542aa7c73bfb2e0bea006ae7736bbbb4442b8a2dbe9a05757954a31d31b68d",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "fc542aa7c73bfb2e0bea006ae7736bbbb4442b8a2dbe9a05757954a31d31b68d",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "fc542aa7c73bfb2e0bea006ae7736bbbb4442b8a2dbe9a05757954a31d31b68d",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "fe3aa716b49e712441980a5f977e58182bf6c1d0ab5248cc3c6493c3ac8506e7",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "fe3aa716b49e712441980a5f977e58182bf6c1d0ab5248cc3c6493c3ac8506e7",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "fe3aa716b49e712441980a5f977e58182bf6c1d0ab5248cc3c6493c3ac8506e7",
+          "country": "eth",
+          "device": "DESKTOP"
+        }
+      ],
+      "baselineRows": 608,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": false
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/reputation-management/",
+      "queryCount": 0,
+      "cells": [],
+      "baselineRows": 0,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": true
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/retargeting/",
+      "queryCount": 0,
+      "cells": [],
+      "baselineRows": 0,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": true
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/seo/",
+      "queryCount": 0,
+      "cells": [],
+      "baselineRows": 0,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": true
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-advertising/",
+      "queryCount": 0,
+      "cells": [],
+      "baselineRows": 0,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": true
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-marketing/",
+      "queryCount": 0,
+      "cells": [],
+      "baselineRows": 0,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": true
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/web-design/",
+      "queryCount": 0,
+      "cells": [],
+      "baselineRows": 0,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": true
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/",
+      "queryCount": 66,
+      "cells": [
+        {
+          "querySHA256": "0d8bc195857a1189546e68d8e3749de04bf2d9f2bfa29ed6333b36d14e126df1",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "0e8767dbf8d4de8542590dc97de681f3839a53ea82f40a5eeaa6f7213697eca5",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "13a994559a2f36030c558ab493f523da2d4c6a1eaf65f3a55cc60a9ba3d87aa1",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "1803535749010cc55351c905b42d891542be003190d8301d869aea4b76b4ddcb",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "1979bdea74d7b3710b04d0856cb989c1a8114a7ae1196bc9905feb2d3cfaf251",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2e6e2ec996b909685ceef47dc59ac40377e6443394877156787a239b6bdbbb3a",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2f1ef5f93168aeff3edfd6e6867806fe83fb89cc5cc905d88d301eaf20a06347",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "2f1ef5f93168aeff3edfd6e6867806fe83fb89cc5cc905d88d301eaf20a06347",
+          "country": "fra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "2f1ef5f93168aeff3edfd6e6867806fe83fb89cc5cc905d88d301eaf20a06347",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2f1ef5f93168aeff3edfd6e6867806fe83fb89cc5cc905d88d301eaf20a06347",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "2f1ef5f93168aeff3edfd6e6867806fe83fb89cc5cc905d88d301eaf20a06347",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "2f1ef5f93168aeff3edfd6e6867806fe83fb89cc5cc905d88d301eaf20a06347",
+          "country": "usa",
+          "device": "TABLET"
+        },
+        {
+          "querySHA256": "2f34e688370047ce8ee22aadbb7112b3ddb9dae8e121b4a9c414eb69fb75278e",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "343f2188db0e6866c4f4664f23592b28fc45b5ee1b02e58673fd463f9176f9b9",
+          "country": "aze",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "343f2188db0e6866c4f4664f23592b28fc45b5ee1b02e58673fd463f9176f9b9",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "39204510ececc3a0b90d677ef23270bc8a72e7aa0068f3eea651e801473906ab",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "401ea9780c56c66a8a69b65d8e353eda6f0d31a3fe94b6bcaba8527641acc887",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "4291d619e2e5be451c08e8e77f5629b0cc9282646d986758b2e82d5b642477b4",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "4808d6d238493d77ef6ea2978d626e8341c16c3310c09946c58b7572aede092e",
+          "country": "dom",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "4808d6d238493d77ef6ea2978d626e8341c16c3310c09946c58b7572aede092e",
+          "country": "esp",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "4808d6d238493d77ef6ea2978d626e8341c16c3310c09946c58b7572aede092e",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "4808d6d238493d77ef6ea2978d626e8341c16c3310c09946c58b7572aede092e",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "48ce39b132f270b0bab209a0628786981e669e077f342b38c431d3f3fe1d9c62",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "48ce39b132f270b0bab209a0628786981e669e077f342b38c431d3f3fe1d9c62",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "4c9ebedbd9b8615c3863ceccd345b2ea1d73a90ef7b1ae57f679151302087b3a",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "4d1033e0c11f0361b7bdd83fffcd57332746380b63b34ec17b219aeb8fc8b8a4",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "4ffe6a86c9594b46a0e524d32be98c4b19274b12c9604f162457e8bda87c47c2",
+          "country": "fra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "4ffe6a86c9594b46a0e524d32be98c4b19274b12c9604f162457e8bda87c47c2",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5297c515ceb3b12e9f003567c2321c647c5aab0b8c1a920c3b6930df8aa5575a",
+          "country": "aus",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5297c515ceb3b12e9f003567c2321c647c5aab0b8c1a920c3b6930df8aa5575a",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "5297c515ceb3b12e9f003567c2321c647c5aab0b8c1a920c3b6930df8aa5575a",
+          "country": "dom",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "5297c515ceb3b12e9f003567c2321c647c5aab0b8c1a920c3b6930df8aa5575a",
+          "country": "pak",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "5297c515ceb3b12e9f003567c2321c647c5aab0b8c1a920c3b6930df8aa5575a",
+          "country": "per",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "5297c515ceb3b12e9f003567c2321c647c5aab0b8c1a920c3b6930df8aa5575a",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5297c515ceb3b12e9f003567c2321c647c5aab0b8c1a920c3b6930df8aa5575a",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "57c9ff00762ff1613b82796a5d326c2921941b76f0b7d77db935f3386506f7ed",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "59e0de06286445820b08c23dc56846f3583d23e050b9761a751c7f93e7e433ec",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5db4ac670175ddeaba55166433b673420e24cd2e4660a90d84462c2e6d67355c",
+          "country": "col",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "5db4ac670175ddeaba55166433b673420e24cd2e4660a90d84462c2e6d67355c",
+          "country": "grc",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5db4ac670175ddeaba55166433b673420e24cd2e4660a90d84462c2e6d67355c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5e3fbc893192b660f1a330988e4d5bf99e8506ad9e31e92c6e741c6fd38937d4",
+          "country": "fra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "5e3fbc893192b660f1a330988e4d5bf99e8506ad9e31e92c6e741c6fd38937d4",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "5e3fbc893192b660f1a330988e4d5bf99e8506ad9e31e92c6e741c6fd38937d4",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "6311b6a692fb8d5998db55d0aadd27d10d84449d525d334d0c7d9eb7f57affc5",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "66ebddf345584707a5600ac486fe71ad6ad7da0e9fb74e9011b46ac9b930da47",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "685f3ea20f8480f7b1a64e46e5dc85d353c36c87e41241ce0e87d103252da20e",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "6f4962130442d812cae4b655cabd5e914f128c41e729757bea37fbf75bca2653",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "71eba1101873b3cb829c447377a380072b105b29624e0e1a1a65f031cd561d63",
+          "country": "col",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "71eba1101873b3cb829c447377a380072b105b29624e0e1a1a65f031cd561d63",
+          "country": "fra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "71eba1101873b3cb829c447377a380072b105b29624e0e1a1a65f031cd561d63",
+          "country": "gbr",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "71eba1101873b3cb829c447377a380072b105b29624e0e1a1a65f031cd561d63",
+          "country": "idn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "71eba1101873b3cb829c447377a380072b105b29624e0e1a1a65f031cd561d63",
+          "country": "kor",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "71eba1101873b3cb829c447377a380072b105b29624e0e1a1a65f031cd561d63",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "71eba1101873b3cb829c447377a380072b105b29624e0e1a1a65f031cd561d63",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "7205cb99edea1a9abfc0f3ebfebade11536ebf484e920c13116a5a0dc2ce4399",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "7205cb99edea1a9abfc0f3ebfebade11536ebf484e920c13116a5a0dc2ce4399",
+          "country": "isr",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "7205cb99edea1a9abfc0f3ebfebade11536ebf484e920c13116a5a0dc2ce4399",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "7205cb99edea1a9abfc0f3ebfebade11536ebf484e920c13116a5a0dc2ce4399",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "730446494b8d0688400fcbc77dbc13b33db3eb4ef7c93b6492f55bff344e7714",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "7ab288defd9ce4274a105e906437c759317fdbec03f55a880b33e6f8d9cdcbff",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "7ab288defd9ce4274a105e906437c759317fdbec03f55a880b33e6f8d9cdcbff",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "7ab288defd9ce4274a105e906437c759317fdbec03f55a880b33e6f8d9cdcbff",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "7ab288defd9ce4274a105e906437c759317fdbec03f55a880b33e6f8d9cdcbff",
+          "country": "rus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "7bb3694a585b0b42e6484e56a2e067ef0d1d959950fb5942a561138337cf5b17",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "7bb3694a585b0b42e6484e56a2e067ef0d1d959950fb5942a561138337cf5b17",
+          "country": "ecu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "7bb3694a585b0b42e6484e56a2e067ef0d1d959950fb5942a561138337cf5b17",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "7bb3694a585b0b42e6484e56a2e067ef0d1d959950fb5942a561138337cf5b17",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "7c2e3cfe1067e631fed371dc9a968aba809520e7e62d7189f9fee8c6705ceacb",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "87e9bb662634303aa9992882436025c50bb2c6cc922948c875106d427bd5852c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "880994e6313958a015665897898e1003d732312f64f793a438eeb85205b38c4e",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "880994e6313958a015665897898e1003d732312f64f793a438eeb85205b38c4e",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "8b03ce8efc5dfa4db4c6a9467ce17063ef4d39ad43e2e438c9fbfbee60ec9bcd",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "8e7de77f1ead888906b9327df9184d271128999069071fcf9729a175d4641260",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "91dbdd7b8b109b363d1faf6dfda2504cf4b1e5cc42a3390080cceb01e53ccaaf",
+          "country": "arg",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "91dbdd7b8b109b363d1faf6dfda2504cf4b1e5cc42a3390080cceb01e53ccaaf",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "91dbdd7b8b109b363d1faf6dfda2504cf4b1e5cc42a3390080cceb01e53ccaaf",
+          "country": "can",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "91dbdd7b8b109b363d1faf6dfda2504cf4b1e5cc42a3390080cceb01e53ccaaf",
+          "country": "ind",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "91dbdd7b8b109b363d1faf6dfda2504cf4b1e5cc42a3390080cceb01e53ccaaf",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "91dbdd7b8b109b363d1faf6dfda2504cf4b1e5cc42a3390080cceb01e53ccaaf",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "96a779447104a21910a909f79d22588b716760cf56b47f5ffc9315638796ee1f",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "aus",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "ecu",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "gtm",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "idn",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "irq",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "lbn",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "mar",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "tha",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "9e4d1ae108d50cfd818856151e100c38cea541ffeff2f87a63f161e6e044eb8f",
+          "country": "ven",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "a8749a2d7d00d5573c20d80e6f2e4965e54974fa5c734fd0d2eea08da3e0487e",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "a8749a2d7d00d5573c20d80e6f2e4965e54974fa5c734fd0d2eea08da3e0487e",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "a999b48ce67000becfb1de98a70cfac5a3b193822ea68ee3e7b1411e0b11c2e4",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "aaa3ffa1a502356589f2dc514b33804c1ae790814839172f189abdf1023edffe",
+          "country": "bra",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "aaa3ffa1a502356589f2dc514b33804c1ae790814839172f189abdf1023edffe",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "aaa3ffa1a502356589f2dc514b33804c1ae790814839172f189abdf1023edffe",
+          "country": "can",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "aaa3ffa1a502356589f2dc514b33804c1ae790814839172f189abdf1023edffe",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "aaa3ffa1a502356589f2dc514b33804c1ae790814839172f189abdf1023edffe",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "ac4c77f933265ce45ade9b8fc6c91affed6fd01dc9b77bc335f124467a182890",
+          "country": "arg",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "ac4c77f933265ce45ade9b8fc6c91affed6fd01dc9b77bc335f124467a182890",
+          "country": "blz",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "ac4c77f933265ce45ade9b8fc6c91affed6fd01dc9b77bc335f124467a182890",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "ac4c77f933265ce45ade9b8fc6c91affed6fd01dc9b77bc335f124467a182890",
+          "country": "hun",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "ac4c77f933265ce45ade9b8fc6c91affed6fd01dc9b77bc335f124467a182890",
+          "country": "ind",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "ac4c77f933265ce45ade9b8fc6c91affed6fd01dc9b77bc335f124467a182890",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "ac4c77f933265ce45ade9b8fc6c91affed6fd01dc9b77bc335f124467a182890",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "ae62e4678044460411ef5e956c03a4cea6de8f1f820dd50e733f6f8daa1e8bb3",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b0bfa35454398484b3db661df9d033fbc293c9074ac2edfe0a164121543fc2e0",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b3b7a24fa68db96bcdcb0deb1a99d05ed2482ada95fef781a34aa6898acd4111",
+          "country": "arg",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b3b7a24fa68db96bcdcb0deb1a99d05ed2482ada95fef781a34aa6898acd4111",
+          "country": "fra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "b3b7a24fa68db96bcdcb0deb1a99d05ed2482ada95fef781a34aa6898acd4111",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b3c416d00d31fb688309ab0dd26cd1df63b1083172c5d0acb12f7ce61704b286",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b456f952a79c087d7188a69d25da701026f44577e7dd91e82b0500be6718cd28",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "b962eecee6d1156120b7fac0f71112c936b5a90fdd97abdc3c48ffe0cf69fcd0",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "bd781d0d2c5fe2e2e55faa6ca7e595312419dd20f7190d4ecf51550eb4039169",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "bf26874e10b05b20fad9b0a482d4fe725f718ea243f946a7422f98aaada338b8",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c8ef8f52a290578d4c4bbf81dd5258d92dc2326cfd71b8e3da89940eadd8c7d4",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c8f072e30fcf4c005f377ad09c0691b5b720133d2ba0d71bfe4ebdc25b2ce5c2",
+          "country": "bra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "c8f072e30fcf4c005f377ad09c0691b5b720133d2ba0d71bfe4ebdc25b2ce5c2",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "c8f072e30fcf4c005f377ad09c0691b5b720133d2ba0d71bfe4ebdc25b2ce5c2",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "cd405eeec8c93969f0bb13ad0fdbf55ca75ff616426ef0dd8df3b3bf9f27e557",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d14ecb804aaf68dede0bb963e44b3f8d88e2dc03cc1b5476087d85b342c72ecf",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "d5e71b78a9e517972b1a8f47d233e7cc76efdc444bd34c0339766176dd24c7fe",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "dce4c7ca78e16f346097535a73d90556a7c2437e91cdfb8d41a6d51b9a9b404c",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "dd2ea07c3b5240500ff1729d1cfd2eb6dd0cc151e9321248fe6f00018a9216ab",
+          "country": "col",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "dd2ea07c3b5240500ff1729d1cfd2eb6dd0cc151e9321248fe6f00018a9216ab",
+          "country": "fra",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "dd2ea07c3b5240500ff1729d1cfd2eb6dd0cc151e9321248fe6f00018a9216ab",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "dd457baee05b48c5f42bdddb18af4aec73f7c7063748917e3e28e93e0bdfd4dd",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "dd531703e16a8189777f691587813e9a93aaeae229b6ad6a1ddf7a8b039cd043",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "e6b65fd6c5e3dc889b03bfc39efcac6142492666399cec7f1107f938f383f981",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "e8588be59cf56d20869da76b800e164d3411dda86e89b98c7645bb52ad374c5d",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "ec3bd40c546f9bb8a6f060945b5749ed86402e7d4cc775c4cf0520938761cbe1",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "ec3bd40c546f9bb8a6f060945b5749ed86402e7d4cc775c4cf0520938761cbe1",
+          "country": "usa",
+          "device": "MOBILE"
+        },
+        {
+          "querySHA256": "f58c28922171d237b7cba03eeca34e8d7d54002fd33c37c353f073cd282d9a02",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "f9da073ce347324276010d506655c0334d5281ee8cd1e68eeba051c8ba07858a",
+          "country": "usa",
+          "device": "DESKTOP"
+        },
+        {
+          "querySHA256": "fcabffc5e0d48c10a776b610945c5ef913eac40293cefb45386593e9666509b1",
+          "country": "usa",
+          "device": "DESKTOP"
+        }
+      ],
+      "baselineRows": 388,
+      "originalWindow": "2026-09-14/2026-10-13; America/Los_Angeles;30days",
+      "unavailable": false
+    }
+  ]
+}

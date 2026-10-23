@@ -20,13 +20,8 @@ export default defineConfig({
         const pathname = new URL(page).pathname;
         return !['/admin', '/admin/', '/privacy/', '/campaign-manager-privacy/', '/tos/', '/thank-you/', '/restoration-marketing/', '/resources/ai-visibility-checklist/', '/resources/ai-visibility-checklist/download/'].includes(pathname);
       },
-      // Keep sitemap freshness aligned with the editorial review date used by
-      // the shared WebPage schema. Resource pages provide their own date in
-      // their structured data when they are updated.
-      serialize(item) {
-        item.lastmod = '2026-08-10';
-        return item;
-      },
+      // Omit lastmod until each URL has a verified significant-update date.
+      // A shared review date does not establish when every page changed.
     }),
   ],
   trailingSlash: "always",
