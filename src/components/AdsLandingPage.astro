@@ -4,6 +4,7 @@ import mattImage from "@assets/images/matt.webp";
 import logo from "@assets/images/svg/rr-marketing-logo.svg";
 import client from "@data/client.json";
 import { offer, offerFaqs } from "@data/offer.js";
+import { bookingUrl } from "@data/booking.js";
 
 interface ServiceItem {
   title: string;
@@ -66,17 +67,23 @@ const {
 
 // Keep the landing page focused on the included website and plan; agreement
 // details remain in the shared terms used elsewhere.
-const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum commitment?"
-  ? { ...faq, answer: "Your custom website is included and yours from day one. We start with a three-month plan to build your site and get your marketing underway, then continue month to month." }
-  : faq);
+const landingFaqs = offerFaqs.map(faq => {
+  if (faq.question === "What is the minimum commitment?") {
+    return { ...faq, answer: "Your custom website is included and yours from day one. We start with a three-month plan to build your site and get your marketing underway, then continue month to month." };
+  }
+  if (faq.question === "What happens after we submit the form?") {
+    return { question: "What happens when I book?", answer: "Choose an available time in Google Calendar and enter your details to confirm. You will receive a calendar invitation for your 30-minute Google Meet call with Matt. Bring your questions; there is nothing to prepare." };
+  }
+  return faq;
+});
 ---
 
 <div class="rm-landing">
   <header class="rm-header">
-    <a class="rm-logo" href="#lead-form" aria-label="Remediation and Restoration Marketing, request a call">
+    <a class="rm-logo" href="/" aria-label="Remediation and Restoration Marketing home">
       <Image src={logo} alt="Remediation & Restoration Marketing" width={209} height={40} />
     </a>
-    <a class="rm-header-cta" href="#lead-form">Request Your Free Strategy Call</a>
+    <a class="rm-header-cta" href={bookingUrl} data-booking-placement="header">Book a Free Strategy Call</a>
   </header>
 
   <section class="rm-hero" aria-labelledby="rm-hero-title">
@@ -96,102 +103,22 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
         <h1 id="rm-hero-title">{heroTitle}</h1>
         <p class="rm-hero-text">{heroText}</p>
         <div class="rm-hero-action">
-          <a class="rm-hero-cta" href="#lead-form">Request Your Free Strategy Call</a>
+          <a class="rm-hero-cta" href={bookingUrl} data-booking-placement="hero">Book a Free Strategy Call</a>
           <p><strong>Free 30-minute strategy call with Matt Pugh.</strong> Discuss your territory, visibility, and priorities. Nothing to prepare.</p>
         </div>
         <p class="rm-hero-proof"><a href="#results"><strong>5 → 18 LSA leads</strong> · Chicago-area client · May–July 2026</a><small>Reported client outcome. Results vary.</small></p>
       </div>
 
-      <div class="rm-form-side">
-        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/.netlify/functions/submit-lead" data-success-redirect="/thank-you/" data-lead-phone-form data-request-receipt data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="Schedule Lead Form" />
-          <!-- Register legacy /schedule/ fields too: Netlify uses one definition per form name. -->
-          <input type="hidden" name="phone-country" value="US" />
-          <input type="hidden" name="primary-service" value="" />
-          <input type="hidden" name="goals" value="" />
-          <p hidden>
-            <label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-          </p>
-
-          <div class="rm-form-heading">
-            <h2>Request Your Free Strategy Call</h2>
-            <p>Start with your name and email. Then tell us about your company and territory.</p>
-          </div>
-
-          <input type="hidden" name="gclid" data-attribution-field="gclid" />
-          <input type="hidden" name="gbraid" data-attribution-field="gbraid" />
-          <input type="hidden" name="wbraid" data-attribution-field="wbraid" />
-          <input type="hidden" name="utm-source" data-attribution-field="utm_source" />
-          <input type="hidden" name="utm-medium" data-attribution-field="utm_medium" />
-          <input type="hidden" name="utm-campaign" data-attribution-field="utm_campaign" />
-          <input type="hidden" name="utm-term" data-attribution-field="utm_term" />
-          <input type="hidden" name="utm-content" data-attribution-field="utm_content" />
-          <input type="hidden" name="landing-page" data-attribution-field="landing_page" />
-          <input type="hidden" name="submission-id" data-submission-id />
-          <input type="hidden" name="lead-stage" value="request" data-lead-stage />
-          <p data-form-status role="status" aria-live="polite"></p>
-
-          <div class="rm-fields">
-            <fieldset class="rm-form-step" data-form-step="1">
-              <legend>Your name and email</legend>
-              <p class="rm-step-status" aria-hidden="true">Step 1 of 2</p>
-              <div class="rm-step-fields">
-                <label>
-                  Name
-                  <input required type="text" name="name" autocomplete="name" placeholder="Your full name" />
-                </label>
-                <label>
-                  Email
-                  <input required type="email" name="email" autocomplete="email" placeholder="you@company.com" />
-                </label>
-              </div>
-              <p class="rm-privacy-note">If you continue, your contact details may be saved when you leave so we can follow up, even without a final request. <a href="/privacy/">Privacy policy</a></p>
-              <button class="rm-step-next" type="button" data-step-next>
-                <span>Next: company &amp; territory</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
-              </button>
-            </fieldset>
-
-            <fieldset class="rm-form-step" data-form-step="2">
-              <legend>Complete your call request</legend>
-              <p class="rm-step-status" aria-hidden="true">Step 2 of 2</p>
-              <div class="rm-step-fields">
-                <div data-phone-field>
-                  <label>Phone <input required type="tel" name="phone" data-phone-input aria-describedby="ads-phone-error" autocomplete="tel" inputmode="tel" placeholder="(310) 555-1234" /></label>
-                  <p id="ads-phone-error" data-phone-error role="alert" hidden>Please enter a valid U.S. phone number, including the area code.</p>
-                </div>
-                <label>
-                  Company
-                  <input required type="text" name="company" autocomplete="organization" placeholder="Company name" />
-                </label>
-                <label class="rm-full-field">
-                  Service territory
-                  <span>One company per agreed territory, subject to availability.</span>
-                  <input required type="text" name="service-area" autocomplete="address-level2" placeholder="City, state, or ZIP codes" />
-                </label>
-                <label>
-                  What are you looking for?
-                  <select required name="program-scope">
-                    <option value="" selected disabled>Choose the closest fit</option>
-                    <option value="full-program">{offer.name}</option>
-                    <option value="paid-led">Mostly paid ads</option>
-                    <option value="single-service">One specific service</option>
-                    <option value="not-sure">Not sure yet</option>
-                  </select>
-                </label>
-                <input type="hidden" name="monthly-budget" value="" />
-              </div>
-
-              <div class="rm-step-actions">
-                <button class="rm-step-back" type="button" data-step-back>Back</button>
-                <button class="rm-submit" type="submit">
-                  <span>Request Your Free Strategy Call</span>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
-                </button>
-              </div>
-            </fieldset>
-          </div>
-
+      <section id="book-call" class="rm-booking" aria-labelledby="rm-booking-title" data-booking-panel>
+        <div class="rm-booking-heading">
+          <h2 id="rm-booking-title">Choose a time with Matt.</h2>
+          <p>A free 30-minute conversation about your restoration company and where you want to grow.</p>
+        </div>
+        <a class="rm-booking-button" href={bookingUrl} data-booking-placement="booking_panel">
+          <span>Book a Free Strategy Call</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
+        </a>
+        <p class="rm-booking-help">See available times first. Add your details when you reserve your call.</p>
           <ul class="rm-call-facts" aria-label="What to expect on the call">
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
@@ -206,10 +133,9 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
               <span><strong>Speak with Matt</strong>Directly with the founder</span>
             </li>
           </ul>
-          <p class="rm-takeaway">{offer.takeaway}</p>
-          <p class="rm-privacy-note">By submitting this form you agree that R &amp; R Marketing may contact you by email or phone about your strategy call. <a href="/privacy/">Privacy policy</a></p>
-        </form>
-      </div>
+        <p class="rm-takeaway">{offer.takeaway}</p>
+        <p class="rm-privacy-note">Booking is handled by Google Calendar. <a href="/privacy/">Privacy policy</a></p>
+      </section>
     </div>
   </section>
 
@@ -232,7 +158,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
             <dd>Your first strategy call is with Matt, and our specialists support the work that follows.</dd>
           </div>
         </dl>
-        <a class="rm-text-cta" href="#lead-form">Request Your Free Strategy Call <span aria-hidden="true">→</span></a>
+        <a class="rm-text-cta" href={bookingUrl} data-booking-placement="specialist">Book a Free Strategy Call <span aria-hidden="true">→</span></a>
       </div>
 
       <div class="rm-owner-panel">
@@ -279,7 +205,7 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
 
       <div class="rm-mid-cta">
         <p>One team manages the agreed marketing work. Your team owns customer follow-up and sales closing.</p>
-        <a href="#lead-form">Request Your Free Strategy Call <span aria-hidden="true">→</span></a>
+        <a href={bookingUrl} data-booking-placement="program">Book a Free Strategy Call <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -367,8 +293,8 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
         </ul>
       </div>
       <ol class="rm-call-steps">
-        <li><span>Tell us about your market</span><p>Share your company and service territory in the form.</p></li>
-        <li><span>Choose your session time</span><p>After submitting, use the calendar on the confirmation page to book your session with Matt.</p></li>
+        <li><span>Choose your session time</span><p>Open the calendar and pick a time that works for you.</p></li>
+        <li><span>Confirm your booking</span><p>Add your contact details when you reserve your time.</p></li>
         <li><span>Talk it through together</span><p>Spend 30 focused minutes with Matt. There is nothing you need to prepare.</p></li>
       </ol>
     </div>
@@ -387,9 +313,9 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
       </div>
       <div class="rm-final-action">
         <span>Territory availability</span>
-        <p>Tell us where you work, and we will let you know if your territory is open.</p>
-        <a class="rm-final-cta" href="#lead-form">
-          <span class="rm-final-cta-copy"><strong>Request Your Free Strategy Call</strong><small>Free Lead Flow Acceleration Session</small></span>
+        <p>Book a call to discuss your market and check territory availability with Matt.</p>
+        <a class="rm-final-cta" href={bookingUrl} data-booking-placement="final">
+          <span class="rm-final-cta-copy"><strong>Book a Free Strategy Call</strong><small>Free Lead Flow Acceleration Session</small></span>
           <span class="rm-final-cta-arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -407,11 +333,12 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
     </div>
   </footer>
 
-  <nav class="rm-mobile-cta is-hidden" aria-label="Quick contact"><a href={`tel:${client.phoneForTel}`}>Call Matt</a><a href="#lead-form">Request Your Free Strategy Call</a></nav>
+  <nav class="rm-mobile-cta is-hidden" aria-label="Quick contact"><a href={`tel:${client.phoneForTel}`}>Call Matt</a><a href={bookingUrl} data-booking-placement="mobile">Book a Free Strategy Call</a></nav>
 </div>
 
 <script>
-  import { setupLeadFunnel } from "../scripts/lead-funnel";
+  import { setupBookingClicks } from "../scripts/booking-clicks";
+  setupBookingClicks();
   // Until the rank-tracking file is in place, drop the whole figure rather than
   // showing a broken image on a page that carries paid traffic.
   const heatMapImage = document.querySelector<HTMLImageElement>("[data-heatmap-media]");
@@ -430,24 +357,24 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
     }
   }
 
-  const landingLeadForm = document.querySelector<HTMLFormElement>("#lead-form");
+  const bookingPanel = document.querySelector("[data-booking-panel]");
   const landingFinal = document.querySelector(".rm-final");
   const landingFooter = document.querySelector(".rm-footer");
   const stickyCta = document.querySelector(".rm-mobile-cta");
 
-  if (landingLeadForm && stickyCta && "IntersectionObserver" in window) {
-    let formIsVisible = true;
+  if (bookingPanel && stickyCta && "IntersectionObserver" in window) {
+    let bookingIsVisible = true;
     let finalIsVisible = false;
     let footerIsVisible = false;
-    const updateStickyCta = () => stickyCta.classList.toggle("is-hidden", formIsVisible || finalIsVisible || footerIsVisible);
-    const formObserver = new IntersectionObserver(
+    const updateStickyCta = () => stickyCta.classList.toggle("is-hidden", bookingIsVisible || finalIsVisible || footerIsVisible);
+    const bookingObserver = new IntersectionObserver(
       ([entry]) => {
-        formIsVisible = entry.isIntersecting;
+        bookingIsVisible = entry.isIntersecting;
         updateStickyCta();
       },
       { threshold: 0.1 },
     );
-    formObserver.observe(landingLeadForm);
+    bookingObserver.observe(bookingPanel);
 
     if (landingFinal) {
       const finalObserver = new IntersectionObserver(
@@ -472,150 +399,6 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
     }
   }
 
-  if (landingLeadForm) {
-    try {
-      sessionStorage.removeItem('schedule_lead_submission_pending');
-      sessionStorage.removeItem('schedule_lead_user_data');
-    } catch { /* Storage is optional; failed storage never grants acceptance. */ }
-    const funnel = setupLeadFunnel(landingLeadForm);
-    const firstStep = landingLeadForm.querySelector<HTMLElement>("[data-form-step='1']");
-    const secondStep = landingLeadForm.querySelector<HTMLElement>("[data-form-step='2']");
-    const nextButton = landingLeadForm.querySelector<HTMLButtonElement>("[data-step-next]");
-    const backButton = landingLeadForm.querySelector<HTMLButtonElement>("[data-step-back]");
-    const submissionIdField = landingLeadForm.querySelector<HTMLInputElement>("[data-submission-id]");
-    const leadStageField = landingLeadForm.querySelector<HTMLInputElement>("[data-lead-stage]");
-
-    if (firstStep && secondStep && nextButton && backButton && submissionIdField && leadStageField) {
-      const stepFields = (step: HTMLElement) =>
-        Array.from(step.querySelectorAll<HTMLInputElement | HTMLSelectElement>("input, select"));
-      const firstStepFields = stepFields(firstStep);
-      const secondStepFields = stepFields(secondStep);
-      // A smaller first step must never send an incomplete recovery identity.
-      // The server still requires all four contact fields for identity storage.
-      const identityFields = [...firstStepFields, ...secondStepFields]
-        .filter((field) => ["name", "email", "phone", "company"].includes(field.name));
-      let currentStep = 1;
-      let identitySaved = false;
-      let finalSubmissionStarted = false;
-
-      submissionIdField.value = typeof history.state?.rrFormResponse === "string"
-        ? history.state.rrFormResponse
-        : typeof crypto.randomUUID === "function"
-        ? crypto.randomUUID()
-        : `lead-${Date.now()}-${Math.random().toString(36).slice(2)}`;
-
-      if (history.state?.rrFormResponse === submissionIdField.value) {
-        landingLeadForm.dataset.responseReceived = "true";
-        finalSubmissionStarted = true;
-      }
-      const setRequired = (fields: Array<HTMLInputElement | HTMLSelectElement>, required: boolean) => {
-        fields.forEach((field) => {
-          if (field.dataset.stepRequired === "true") field.required = required;
-        });
-      };
-
-      [...firstStepFields, ...secondStepFields].forEach((field) => {
-        field.dataset.stepRequired = String(field.required);
-      });
-
-      const showStep = (step: 1 | 2, focus = true) => {
-        currentStep = step;
-        landingLeadForm.dataset.currentStep = String(step);
-        const showingFirst = step === 1;
-        firstStep.hidden = !showingFirst;
-        secondStep.hidden = showingFirst;
-        setRequired(firstStepFields, showingFirst);
-        setRequired(secondStepFields, !showingFirst);
-        if (!showingFirst) funnel?.stepTwoVisible();
-
-        if (focus) {
-          const heading = (showingFirst ? firstStep : secondStep).querySelector<HTMLElement>("legend");
-          heading?.setAttribute("tabindex", "-1");
-          heading?.focus();
-        }
-      };
-
-      const advance = () => {
-        const invalidField = firstStepFields.find((field) => !field.checkValidity());
-        if (invalidField) {
-          invalidField.reportValidity();
-          return;
-        }
-        showStep(2);
-      };
-
-      const buildIdentityBody = () => {
-        leadStageField.value = "identity";
-        const body = new URLSearchParams();
-        new FormData(landingLeadForm).forEach((value, key) => {
-          if (typeof value === "string") body.append(key, value);
-        });
-        leadStageField.value = "request";
-        return body;
-      };
-
-      const captureAbandonment = () => {
-        if (window.rrTrackingDisabled || currentStep !== 2 || finalSubmissionStarted || identitySaved) return;
-        if (identityFields.some((field) => !field.value.trim() || !field.checkValidity())) return;
-
-        const body = buildIdentityBody();
-        if (typeof navigator.sendBeacon === "function" && navigator.sendBeacon("/.netlify/functions/submit-lead", body)) {
-          identitySaved = true;
-          return;
-        }
-
-        identitySaved = true;
-        void fetch("/.netlify/functions/submit-lead", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body,
-          keepalive: true,
-        }).catch(() => {});
-      };
-
-      landingLeadForm.classList.add("is-stepped");
-      showStep(1, false);
-      nextButton.addEventListener("click", advance);
-      backButton.addEventListener("click", () => showStep(1));
-      firstStep.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-          event.preventDefault();
-          advance();
-        }
-      });
-      window.addEventListener("pagehide", captureAbandonment);
-      landingLeadForm.addEventListener("submit", (event) => {
-        if (currentStep === 1) {
-          event.preventDefault();
-          event.stopImmediatePropagation();
-          advance();
-          return;
-        }
-        firstStepFields.forEach((field) => { field.value = field.value.trim(); });
-        const invalidIdentity = firstStepFields.find((field) => !field.value || !field.checkValidity());
-        if (invalidIdentity) {
-          event.preventDefault();
-          event.stopImmediatePropagation();
-          showStep(1, false);
-          invalidIdentity.reportValidity();
-          invalidIdentity.focus();
-          return;
-        }
-        leadStageField.value = "request";
-      }, true);
-      // Observe the event after the form's phone-validation handler has run.
-      // Rejected submissions must remain eligible for abandonment capture.
-      window.addEventListener("submit", (event) => {
-        if (event.target === landingLeadForm) {
-          finalSubmissionStarted = landingLeadForm.dataset.submitting === "true" || !event.defaultPrevented;
-        }
-      });
-      landingLeadForm.addEventListener("lead-request-error", () => { finalSubmissionStarted = false; });
-      window.addEventListener("pageshow", () => {
-        finalSubmissionStarted = landingLeadForm.dataset.responseReceived === "true";
-      });
-    }
-  }
 </script>
 
 <style lang="less">
@@ -802,9 +585,8 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
   .rm-hero-action p { max-width: 48ch; color: #dce9f7 !important; font-size: 0.85rem; line-height: 1.55; }
   .rm-hero-action strong { color: #fff; display: block; }
 
-  .rm-form-side { align-self: start; }
-
-  .rm-form {
+  .rm-booking {
+    align-self: start;
     padding: clamp(1.25rem, 2.4vw, 1.8rem);
     background: var(--rm-chalk);
     color: var(--rm-ink);
@@ -812,178 +594,35 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
     border-radius: 0.55rem;
     box-shadow: 0 1.5rem 4rem rgba(0, 8, 30, 0.34);
   }
-
-  .rm-form-heading {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid var(--rm-line);
-  }
-
-  .rm-form.is-stepped[data-current-step="2"] .rm-form-heading { display: none; }
-  .rm-form [data-form-status]:empty { display: none; }
-
-  .rm-form-heading p {
-    margin-top: 0.55rem;
-    color: var(--rm-cobalt) !important;
-    font-size: 0.82rem;
-    line-height: 1.5;
-  }
-
-  .rm-form-heading h2 {
+  .rm-booking-heading h2 {
     color: var(--rm-ink) !important;
     font-size: clamp(1.5rem, 2.8vw, 2rem);
-    line-height: 1.08;
+    line-height: 1.15;
     letter-spacing: -0.035em !important;
+    text-wrap: balance;
   }
-
-  .rm-fields,
-  .rm-form-step,
-  .rm-step-fields { display: grid; gap: 0.75rem; }
-
-  .rm-step-fields { align-items: start; }
-  .rm-step-fields > * { min-width: 0; }
-  .rm-step-fields [data-phone-field] { align-content: start; }
-  .rm-form-step[data-form-step="2"] .rm-step-fields { grid-template-columns: minmax(0, 1fr); }
-
-  .rm-form-step {
-    min-width: 0;
-    padding: 0;
-    border: 0;
-  }
-
-  .rm-form-step[hidden] { display: none; }
-
-  .rm-form-step legend {
-    padding: 0;
-    margin-bottom: 0.4rem;
-    color: var(--rm-ink);
-    font-size: 0.95rem;
-    font-weight: 800;
-  }
-
-  .rm-step-status {
-    display: none;
-    color: #59667b;
-    font-size: 0.72rem;
-    font-weight: 700;
-  }
-
-  .rm-form.is-stepped .rm-step-status { display: block; }
-
-  .rm-fields label {
-    color: var(--rm-ink);
-    font-size: 0.78rem;
-    font-weight: 800;
-    display: grid;
-    align-content: start;
-    min-width: 0;
-    gap: 0.35rem;
-  }
-
-  .rm-fields label > span {
-    color: #59667b;
-    font-size: 0.72rem;
-    font-weight: 400;
-  }
-
-  .rm-fields input {
+  .rm-booking-heading p { margin-top: 0.75rem; color: #42516a !important; font-size: 0.95rem; line-height: 1.65; }
+  .rm-booking-button {
     width: 100%;
-    min-width: 0;
-    height: 3.15rem;
-    min-height: 3.15rem;
-    padding: 0.75rem 0.9rem;
-    border: 1px solid rgba(7, 26, 66, 0.3) !important;
-    border-radius: 0.25rem !important;
-    background: #fff !important;
-    color: var(--rm-ink);
-    font: inherit;
-    font-size: 1rem;
-  }
-
-  .rm-fields select {
-    width: 100%;
-    min-width: 0;
-    height: 3.15rem;
-    min-height: 3.15rem;
-    padding: 0.75rem 2.4rem 0.75rem 0.9rem;
-    border: 1px solid rgba(7, 26, 66, 0.3);
-    border-radius: 0.25rem;
-    background-color: #fff;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23071a42' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 0.85rem center;
-    background-size: 1.1rem;
-    color: var(--rm-ink);
-    font: inherit;
-    font-size: 1rem;
-    appearance: none;
-  }
-
-  .rm-fields select:invalid { color: #738096; }
-
-  .rm-optional {
-    margin-left: 0.35rem;
-    color: #7d8899 !important;
-    font-size: 0.68rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  .rm-fields input::placeholder { color: #738096; opacity: 1; }
-  .rm-fields input:focus,
-  .rm-fields select:focus { border-color: var(--rm-cobalt) !important; box-shadow: 0 0 0 4px rgba(35, 198, 213, 0.17) !important; }
-
-  .rm-step-next,
-  .rm-submit {
-    width: 100%;
-    min-height: 3.7rem;
-    margin-top: 0.5rem;
-    padding: 0.85rem 1rem;
-    border: 0;
+    min-height: 3.5rem;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1rem;
     border-radius: 0.25rem;
     background: var(--rm-mustard);
-    color: var(--rm-ink);
-    box-shadow: none;
+    color: var(--rm-ink) !important;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    font: inherit;
-    font-size: 0.84rem;
+    font-size: 0.9rem;
     font-weight: 800;
-    letter-spacing: 0;
-    text-transform: none;
+    text-align: center;
+    text-decoration: none;
     transition: background 0.2s ease;
   }
-
-  .rm-step-next { display: none; }
-  .rm-form.is-stepped .rm-step-next { display: flex; }
-
-
-  .rm-step-next:hover,
-  .rm-submit:hover { background: #f7c960; box-shadow: none; }
-  .rm-step-next:active,
-  .rm-submit:active { transform: translateY(0); }
-  .rm-step-next svg,
-  .rm-submit svg { width: 1.35rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-
-  .rm-step-actions { display: grid; gap: 0.65rem; }
-
-  .rm-step-back {
-    min-height: 2.75rem;
-    padding: 0.65rem 1rem;
-    border: 1px solid rgba(7, 26, 66, 0.3);
-    border-radius: 0.25rem;
-    background: transparent;
-    color: var(--rm-cobalt);
-    font: inherit;
-    font-size: 0.78rem;
-    font-weight: 800;
-  }
-
-  .rm-form:not(.is-stepped) .rm-step-back { display: none; }
-  .rm-step-actions .rm-submit { margin-top: 0; }
+  .rm-booking-button:hover { background: #f7c960; }
+  .rm-booking-button svg { width: 1.35rem; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .rm-booking-help { margin-top: 0.75rem; color: #42516a !important; font-size: 0.8rem; line-height: 1.6; text-align: center; }
 
   .rm-call-facts {
     margin-top: 1.4rem;
@@ -1245,10 +884,6 @@ const landingFaqs = offerFaqs.map(faq => faq.question === "What is the minimum c
   .rm-mobile-cta.is-hidden { opacity: 0; visibility: hidden; transform: translateY(1rem); pointer-events: none; }
 
   @media (min-width: 42rem) {
-    .rm-step-fields { grid-template-columns: 1fr 1fr; }
-    .rm-full-field { grid-column: 1 / -1; }
-    .rm-step-actions { grid-template-columns: auto minmax(0, 1fr); }
-    .rm-step-back { min-width: 6rem; }
     .rm-call-facts { grid-template-columns: repeat(3, 1fr); }
     .rm-footer-inner { grid-template-columns: auto 1fr auto; }
     .rm-legal { justify-content: end; }
