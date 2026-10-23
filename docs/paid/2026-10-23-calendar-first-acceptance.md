@@ -5,7 +5,31 @@ Owner: Codex on designated desktop MATT-GAMING-PC. Matt directly instructed
 after reviewing the calendar-first proposal. Scope is the existing paid landing
 page and appointment schedule, with the established free 30-minute Meet call.
 
-## Website delivered; Calendar field edit awaits sign-in
+## Completion addendum — Calendar form saved and verified
+
+After Matt completed Google sign-in and replied "its open", Codex edited the
+existing **Restoration Marketing Strategy Call with Matt Pugh** schedule under
+matt@remediationrestorationmarketing.com. Added exactly two booking items:
+
+- **Company website:** custom text question, Required selected.
+- **Phone number:** Google's native phone item, Required left unchecked.
+
+Saved once through Calendar's normal Save control. A newly opened public booking
+page then showed first name, last name, email, optional phone and company website.
+Read-only DOM inspection independently confirmed `required=true` for company
+website and `required=false` for phone. The check was completed before
+**2026-10-23T19:24:24Z**. The existing 30-minute Google Meet, title, description,
+availability, buffers, daily limit, reminders and email verification were not
+edited. No appointment or test lead was submitted; the inspection dialog was
+cancelled. No confirmation email delivery or conversion lift is claimed.
+
+Private screenshot: PPC reports
+`rr-marketing/20261023-calendar-first/calendar-form-live.png`.
+This completes the previously pending Calendar field edit. Website source and
+the measurement limitations below are unchanged; no website rebuild is required
+for this external setting and documentation-only addendum.
+
+## Website delivery and initial Calendar sign-in dependency (historical)
 
 - Paid-page implementation source:
   `cc98d3e0ce8514e8c6efbf181d9eda0f6a4573a7`.
@@ -78,9 +102,9 @@ Private evidence: configured PPC report storage
 screenshots, raw live HTML, structured live verification, stored Canonry evidence
 and validation/production-check logs. No credentials or lead data in this receipt.
 
-## Remaining owner and checkpoint
+## Owner and next checkpoint
 
-Matt: finish Google sign-in. Codex: add required company website and optional
-phone to this exact existing schedule, save and independently inspect the public
-booking dialog. Then verify real confirmed appointments manually before claiming
-booking lift or paid attribution. No new schedule or automatic restart.
+Codex: website and Calendar-form implementation verified and complete. Matt owns
+real appointment qualification. Review actual confirmed appointments manually
+alongside calendar clicks before claiming booking lift or paid attribution. The
+existing capped-test thresholds remain; no new schedule or automatic restart.
