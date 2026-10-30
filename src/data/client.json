@@ -4,12 +4,12 @@
 	"phoneForTel": "+1-717-420-1766",
 	"phoneFormatted": "+1 (717) 420-1766",
 	"address": {
-		"lineOne": "1000 Carlisle Street",
-		"lineTwo": "Ste 1625",
+		"lineOne": "1000 Carlisle St",
+		"lineTwo": "STE 1625",
 		"city": "Hanover",
 		"state": "PA",
 		"zip": "17331",
-		"mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
+		"mapLink": "https://www.google.com/maps/search/?api=1&query=1000%20Carlisle%20St%20STE%201625%2C%20Hanover%2C%20PA%2017331"
 	},
 	"domain": "remediationrestorationmarketing.com"
 }

@@ -116,6 +116,10 @@ function setupLeadForm(form: HTMLFormElement) {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body,
+        // Bound the paid-page wait. An aborted acknowledgment is unconfirmed,
+        // never an accepted request; preserve the same ID and values for retry.
+        ...(requestReceipt && window.location.pathname.replace(/\/$/, "") === "/restoration-marketing"
+          ? { signal: AbortSignal.timeout(15_000) } : {}),
       });
 
       if (!response.ok) throw new Error("Lead submission failed");
@@ -141,10 +145,12 @@ function setupLeadForm(form: HTMLFormElement) {
       const status = form.querySelector<HTMLElement>("[data-form-status]");
       if (status) status.textContent = "Thanks. Your message was sent.";
       validate();
-    } catch {
+    } catch (error) {
       form.dispatchEvent(new Event("lead-request-error"));
       const status = form.querySelector<HTMLElement>("[data-form-status]");
-      if (status) status.textContent = "Something went wrong. Please try again.";
+      if (status) status.textContent = error instanceof DOMException && error.name === "TimeoutError"
+        ? "We couldn't confirm your request in time. Please try again."
+        : "Something went wrong. Please try again.";
       submitButtons.forEach((button) => {
         button.disabled = false;
       });

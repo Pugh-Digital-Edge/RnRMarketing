@@ -61,6 +61,10 @@ components:
 
 # Design System: Remediation & Restoration Marketing
 
+## Calendar-first paid booking — October 23, 2026
+
+The paid page preserves the Cobalt Tile Hall composition and replaces its two-step inquiry form with a chalk booking panel. Every primary paid-page CTA opens the existing Google appointment schedule directly. The visitor selects a time and provides booking details there. No Calendar iframe is loaded on the landing page. The legacy /schedule/ inquiry and typed receipt conversion remain available; its complete Netlify registration now lives on that route. Calendar clicks use GA4 booking_calendar_click/calendar_v1 and never fire an Ads lead conversion. Confirmed bookings require Calendar evidence; the site cannot observe completion on Google's hosted page. This supersedes the form-first behavior described in the historical October 8 note below.
+
 ## Paid conversion surfaces — October 8, 2026
 
 The paid landing page keeps the Cobalt Tile Hall identity and outcome headline, with a compact hero, an explicit free 30-minute founder call beside the CTA, and less space before the first form action. Its six required fields remain contact-first across two steps; qualification, privacy disclosure and typed accepted-request tracking are unchanged. Describe restoration-focused expertise accurately, without claiming that the broader agency serves only restoration businesses. The confirmation page uses the conversion-only layout and a short introduction to expose the existing booking calendar sooner, plus a direct calendar link for visitors who prefer a separate tab. Request acceptance and confirmed booking remain distinct outcomes.
