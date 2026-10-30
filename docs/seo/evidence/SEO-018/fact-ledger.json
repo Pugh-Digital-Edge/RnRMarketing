@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "repository": "Pugh-Digital-Edge/RnRMarketing",
+  "article_id": "SEO-018",
+  "approved_revision": "auto-20261030-v1:reputation-management-for-restoration-companies",
+  "source_screening": {
+    "complete": true,
+    "checked_at": "2026-10-30T20:23:22Z",
+    "competitor_domains": [
+      "builtrightdigital.com",
+      "diginebel.com"
+    ],
+    "evidence_reference": "Competitor gap review and direct examination of source and final URL domains on 2026-10-30; competitor domains used for gap discovery only."
+  },
+  "facts": [
+    {
+      "fact_id": "F01",
+      "claim_key": "review-visibility",
+      "claim": "Google displays reviews beside a Business Profile in Maps and Search.",
+      "intended_section": "Why reviews matter",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/business/answer/3474122?hl=en",
+          "final_url": "https://support.google.com/business/answer/3474122?hl=en",
+          "publisher": "Google",
+          "source_title": "Tips to get more reviews",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google displays reviews beside a Business Profile in Maps and Search.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Why the Review Workflow Matters",
+          "article_quote": "Google displays customer reviews beside a Business Profile in Maps and Search",
+          "citation_url": "https://support.google.com/business/answer/3474122?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F02",
+      "claim_key": "request-link",
+      "claim": "Google lets businesses share a review request link or QR code with customers.",
+      "intended_section": "Request honest feedback",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/business/answer/3474122?hl=en",
+          "final_url": "https://support.google.com/business/answer/3474122?hl=en",
+          "publisher": "Google",
+          "source_title": "Tips to get more reviews",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google lets businesses share a review request link or QR code with customers.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Make an Honest Request Easy to Understand",
+          "article_quote": "Google lets businesses share a review request link or QR code with customers",
+          "citation_url": "https://support.google.com/business/answer/3474122?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F03",
+      "claim_key": "google-incentives",
+      "claim": "Google prohibits incentives in exchange for posting reviews, changing reviews, or removing negative reviews.",
+      "intended_section": "Request honest feedback",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/business/answer/3474122?hl=en",
+          "final_url": "https://support.google.com/business/answer/3474122?hl=en",
+          "publisher": "Google",
+          "source_title": "Tips to get more reviews",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google prohibits incentives in exchange for posting reviews, changing reviews, or removing negative reviews.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Make an Honest Request Easy to Understand",
+          "article_quote": "prohibits incentives in exchange for posting reviews, changing reviews, or removing negative reviews",
+          "citation_url": "https://support.google.com/business/answer/3474122?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F04",
+      "claim_key": "negative-selection",
+      "claim": "Google prohibits discouraging negative reviews and selectively soliciting positive reviews.",
+      "intended_section": "Request honest feedback",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/contributionpolicy/answer/7400114?hl=en",
+          "final_url": "https://support.google.com/contributionpolicy/answer/7400114?hl=en",
+          "publisher": "Google",
+          "source_title": "Prohibited & restricted content",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google prohibits discouraging negative reviews and selectively soliciting positive reviews.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Make an Honest Request Easy to Understand",
+          "article_quote": "Google prohibits discouraging negative reviews and selectively soliciting positive reviews.",
+          "citation_url": "https://support.google.com/contributionpolicy/answer/7400114?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F05",
+      "claim_key": "reviewer-pressure",
+      "claim": "Google prohibits pressuring reviewers to write on premises or requesting specific review content.",
+      "intended_section": "Request honest feedback",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/contributionpolicy/answer/7400114?hl=en",
+          "final_url": "https://support.google.com/contributionpolicy/answer/7400114?hl=en",
+          "publisher": "Google",
+          "source_title": "Prohibited & restricted content",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google prohibits pressuring reviewers to write on premises or requesting specific review content.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Make an Honest Request Easy to Understand",
+          "article_quote": "prohibits pressuring reviewers to write on premises or requesting specific review content.",
+          "citation_url": "https://support.google.com/contributionpolicy/answer/7400114?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F06",
+      "claim_key": "reply-privacy",
+      "claim": "Google recommends protecting private information in public review responses and moving complex matters to phone or email.",
+      "intended_section": "Respond and resolve",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/business/answer/3474122?hl=en",
+          "final_url": "https://support.google.com/business/answer/3474122?hl=en",
+          "publisher": "Google",
+          "source_title": "Tips to get more reviews",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google recommends protecting private information in public review responses and moving complex matters to phone or email.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Assign Every Public Reply an Owner",
+          "article_quote": "Google recommends protecting private information in public review responses and moving complex matters to phone or email",
+          "citation_url": "https://support.google.com/business/answer/3474122?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F07",
+      "claim_key": "business-verification",
+      "claim": "A business must verify its Google Business Profile before it can reply to reviews.",
+      "intended_section": "Respond and resolve",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/business/answer/3474050?hl=en",
+          "final_url": "https://support.google.com/business/answer/3474050?hl=en",
+          "publisher": "Google",
+          "source_title": "Manage customer reviews",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "A business must verify its Google Business Profile before it can reply to reviews.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Assign Every Public Reply an Owner",
+          "article_quote": "A business must verify its Google Business Profile before it can reply to reviews",
+          "citation_url": "https://support.google.com/business/answer/3474050?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F08",
+      "claim_key": "reviewer-notification",
+      "claim": "Google notifies the review author when a business replies.",
+      "intended_section": "Respond and resolve",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/business/answer/3474050?hl=en",
+          "final_url": "https://support.google.com/business/answer/3474050?hl=en",
+          "publisher": "Google",
+          "source_title": "Manage customer reviews",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google notifies the review author when a business replies.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Assign Every Public Reply an Owner",
+          "article_quote": "Google notifies the review author when a business replies",
+          "citation_url": "https://support.google.com/business/answer/3474050?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F09",
+      "claim_key": "report-policy",
+      "claim": "Google says reviews are eligible for removal only if they violate its policies; disagreement alone is not grounds for a report.",
+      "intended_section": "Handle problem reviews",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/business/answer/4596773?hl=en",
+          "final_url": "https://support.google.com/business/answer/4596773?hl=en",
+          "publisher": "Google",
+          "source_title": "Report inappropriate reviews on your Business Profile",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google says reviews are eligible for removal only if they violate its policies; disagreement alone is not grounds for a report.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Assign Every Public Reply an Owner",
+          "article_quote": "Google says reviews are eligible for removal only if they violate its policies; disagreement alone is not grounds for a report.",
+          "citation_url": "https://support.google.com/business/answer/4596773?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F10",
+      "claim_key": "one-time-appeal",
+      "claim": "Google allows a one-time appeal when a reported review is found not to qualify for removal.",
+      "intended_section": "Handle problem reviews",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/business/answer/4596773?hl=en",
+          "final_url": "https://support.google.com/business/answer/4596773?hl=en",
+          "publisher": "Google",
+          "source_title": "Report inappropriate reviews on your Business Profile",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google allows a one-time appeal when a reported review is found not to qualify for removal.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Assign Every Public Reply an Owner",
+          "article_quote": "allows a one-time appeal when a reported review is found not to qualify for removal.",
+          "citation_url": "https://support.google.com/business/answer/4596773?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F11",
+      "claim_key": "ftc-agency-liability",
+      "claim": "FTC staff says review-management agencies may be liable under the review rule when they create fake reviews or provide incentives conditioned on a particular sentiment.",
+      "intended_section": "Choose a review tool",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers",
+          "final_url": "https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers",
+          "publisher": "Federal Trade Commission",
+          "source_title": "The Consumer Reviews and Testimonials Rule: Questions and Answers",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "FTC staff says review-management agencies may be liable under the review rule when they create fake reviews or provide incentives conditioned on a particular sentiment.",
+          "checked_at": "2026-10-30T20:23:22Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Choose Tools by Workflow Fit",
+          "article_quote": "FTC staff says review-management agencies may be liable under the review rule when they create fake reviews or provide incentives conditioned on a particular sentiment",
+          "citation_url": "https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers"
+        }
+      ]
+    }
+  ],
+  "article_sha256": "77f4341ccd537f75ea1cb99bf77854d21f260f2b5a1f0ecfa84c0d424ce61e15",
+  "review": {
+    "reviewer_id": "/root/two_eagles_review",
+    "checked_at": "2026-10-30T20:28:43Z",
+    "distinct_useful_facts": true,
+    "sources_support_claims": true,
+    "no_competitor_sources": true,
+    "no_unsupported_client_claims": true,
+    "all_facts_used_and_cited": true
+  }
+}
