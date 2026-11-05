@@ -122,6 +122,11 @@ import { Image } from 'astro:assets';
                       </a>
                   </li>
                   <li class="cs-li">
+                      <a href="/website-audit/" class:list={["cs-li-link", { "cs-active": Astro.url.pathname.includes("/website-audit") }]}>
+                          Website Audit
+                      </a>
+                  </li>
+                  <li class="cs-li">
                       <a href="/contact/" class:list={["cs-li-link", { "cs-active": Astro.url.pathname.includes("/contact") }]}>
                           Contact
                       </a>
@@ -796,7 +801,7 @@ import { Image } from 'astro:assets';
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 3rem;
+    gap: clamp(0.7rem, 1.4vw, 1.4rem);
   }
   #cs-navigation .cs-li {
     list-style: none;

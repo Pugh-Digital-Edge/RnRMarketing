@@ -9,6 +9,12 @@
     "start": "astro dev",
     "build": "astro build && node scripts/postbuild-aeo.mjs",
     "preview": "astro preview",
+    "audit:preview": "node scripts/audit-local-preview.mjs",
+    "audit:preview:static": "node scripts/audit-preview.mjs",
+    "audit:local": "node scripts/audit-local-preview.mjs",
+    "audit:package-local": "node scripts/package-audit-local-preview.mjs",
+    "audit:test:postgres": "node scripts/audit-test-postgres.mjs",
+    "audit:preflight": "node scripts/audit-preflight.mjs",
     "test": "node --test tests/**/*.test.mjs",
     "check": "astro check",
     "validate": "npm run check && npm test && npm run build",
@@ -28,11 +34,14 @@
     "decap-server": "^3.1.2",
     "less": "^4.2.0",
     "libphonenumber-js": "^1.13.12",
+    "parse5": "^8.1.0",
+    "pg": "^8.23.1",
     "tailwindcss": "^3.4.14",
     "typescript": "^5.6.3"
   },
   "devDependencies": {
     "entities": "4.5.0",
+    "esbuild": "^0.27.7",
     "npm-run-all": "^4.1.5"
   }
 }
