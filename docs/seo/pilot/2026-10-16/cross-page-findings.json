@@ -1,0 +1,550 @@
+{
+  "scope": "Offline current rendered110-page source evidence; no new live collection",
+  "siteSource": "d8746a05cbe1a5afd23c808e98b7ac07a77761fd (marketing source unchanged from1d495528)",
+  "flags": {
+    "guaranteeFirst": [
+      "https://remediationrestorationmarketing.com/",
+      "https://remediationrestorationmarketing.com/biohazard-cleanup/lead-tracking/",
+      "https://remediationrestorationmarketing.com/biohazard-cleanup/ppc/",
+      "https://remediationrestorationmarketing.com/biohazard-cleanup/reputation-management/",
+      "https://remediationrestorationmarketing.com/biohazard-cleanup/retargeting/",
+      "https://remediationrestorationmarketing.com/biohazard-cleanup/seo/",
+      "https://remediationrestorationmarketing.com/biohazard-cleanup/social-media-advertising/",
+      "https://remediationrestorationmarketing.com/biohazard-cleanup/social-media-marketing/",
+      "https://remediationrestorationmarketing.com/biohazard-cleanup/web-design/",
+      "https://remediationrestorationmarketing.com/commercial-restoration/lead-tracking/",
+      "https://remediationrestorationmarketing.com/commercial-restoration/ppc/",
+      "https://remediationrestorationmarketing.com/commercial-restoration/reputation-management/",
+      "https://remediationrestorationmarketing.com/commercial-restoration/retargeting/",
+      "https://remediationrestorationmarketing.com/commercial-restoration/seo/",
+      "https://remediationrestorationmarketing.com/commercial-restoration/social-media-advertising/",
+      "https://remediationrestorationmarketing.com/commercial-restoration/social-media-marketing/",
+      "https://remediationrestorationmarketing.com/commercial-restoration/web-design/",
+      "https://remediationrestorationmarketing.com/fire-damage-restoration/lead-tracking/",
+      "https://remediationrestorationmarketing.com/fire-damage-restoration/ppc/",
+      "https://remediationrestorationmarketing.com/fire-damage-restoration/reputation-management/",
+      "https://remediationrestorationmarketing.com/fire-damage-restoration/retargeting/",
+      "https://remediationrestorationmarketing.com/fire-damage-restoration/seo/",
+      "https://remediationrestorationmarketing.com/fire-damage-restoration/social-media-advertising/",
+      "https://remediationrestorationmarketing.com/fire-damage-restoration/social-media-marketing/",
+      "https://remediationrestorationmarketing.com/fire-damage-restoration/web-design/",
+      "https://remediationrestorationmarketing.com/industries/biohazard-cleanup/",
+      "https://remediationrestorationmarketing.com/industries/commercial-restoration/",
+      "https://remediationrestorationmarketing.com/industries/fire-damage-restoration/",
+      "https://remediationrestorationmarketing.com/industries/mold-remediation/",
+      "https://remediationrestorationmarketing.com/industries/roof-damage-restoration/",
+      "https://remediationrestorationmarketing.com/industries/sewage-cleanup/",
+      "https://remediationrestorationmarketing.com/industries/storm-damage-cleanup/",
+      "https://remediationrestorationmarketing.com/industries/water-damage-restoration/",
+      "https://remediationrestorationmarketing.com/mold-remediation/lead-tracking/",
+      "https://remediationrestorationmarketing.com/mold-remediation/ppc/",
+      "https://remediationrestorationmarketing.com/mold-remediation/reputation-management/",
+      "https://remediationrestorationmarketing.com/mold-remediation/retargeting/",
+      "https://remediationrestorationmarketing.com/mold-remediation/seo/",
+      "https://remediationrestorationmarketing.com/mold-remediation/social-media-advertising/",
+      "https://remediationrestorationmarketing.com/mold-remediation/social-media-marketing/",
+      "https://remediationrestorationmarketing.com/mold-remediation/web-design/",
+      "https://remediationrestorationmarketing.com/roof-damage-restoration/lead-tracking/",
+      "https://remediationrestorationmarketing.com/roof-damage-restoration/ppc/",
+      "https://remediationrestorationmarketing.com/roof-damage-restoration/reputation-management/",
+      "https://remediationrestorationmarketing.com/roof-damage-restoration/retargeting/",
+      "https://remediationrestorationmarketing.com/roof-damage-restoration/seo/",
+      "https://remediationrestorationmarketing.com/roof-damage-restoration/social-media-advertising/",
+      "https://remediationrestorationmarketing.com/roof-damage-restoration/social-media-marketing/",
+      "https://remediationrestorationmarketing.com/roof-damage-restoration/web-design/",
+      "https://remediationrestorationmarketing.com/services/",
+      "https://remediationrestorationmarketing.com/sewage-cleanup/lead-tracking/",
+      "https://remediationrestorationmarketing.com/sewage-cleanup/ppc/",
+      "https://remediationrestorationmarketing.com/sewage-cleanup/reputation-management/",
+      "https://remediationrestorationmarketing.com/sewage-cleanup/retargeting/",
+      "https://remediationrestorationmarketing.com/sewage-cleanup/seo/",
+      "https://remediationrestorationmarketing.com/sewage-cleanup/social-media-advertising/",
+      "https://remediationrestorationmarketing.com/sewage-cleanup/social-media-marketing/",
+      "https://remediationrestorationmarketing.com/sewage-cleanup/web-design/",
+      "https://remediationrestorationmarketing.com/storm-damage-cleanup/lead-tracking/",
+      "https://remediationrestorationmarketing.com/storm-damage-cleanup/ppc/",
+      "https://remediationrestorationmarketing.com/storm-damage-cleanup/reputation-management/",
+      "https://remediationrestorationmarketing.com/storm-damage-cleanup/retargeting/",
+      "https://remediationrestorationmarketing.com/storm-damage-cleanup/seo/",
+      "https://remediationrestorationmarketing.com/storm-damage-cleanup/social-media-advertising/",
+      "https://remediationrestorationmarketing.com/storm-damage-cleanup/social-media-marketing/",
+      "https://remediationrestorationmarketing.com/storm-damage-cleanup/web-design/",
+      "https://remediationrestorationmarketing.com/water-damage-restoration/lead-tracking/",
+      "https://remediationrestorationmarketing.com/water-damage-restoration/ppc/",
+      "https://remediationrestorationmarketing.com/water-damage-restoration/reputation-management/",
+      "https://remediationrestorationmarketing.com/water-damage-restoration/retargeting/",
+      "https://remediationrestorationmarketing.com/water-damage-restoration/seo/",
+      "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-advertising/",
+      "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-marketing/",
+      "https://remediationrestorationmarketing.com/water-damage-restoration/web-design/"
+    ],
+    "duplicateHtmlIds": [
+      {
+        "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/lead-tracking/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/ppc/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/reputation-management/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/retargeting/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/seo/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/social-media-advertising/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/social-media-marketing/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/web-design/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/commercial-restoration/lead-tracking/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/commercial-restoration/ppc/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/commercial-restoration/reputation-management/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/commercial-restoration/retargeting/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/commercial-restoration/seo/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/commercial-restoration/social-media-advertising/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/commercial-restoration/social-media-marketing/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/commercial-restoration/web-design/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/lead-tracking/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/ppc/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/reputation-management/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/retargeting/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/seo/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/social-media-advertising/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/social-media-marketing/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/web-design/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/mold-remediation/lead-tracking/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/mold-remediation/ppc/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/mold-remediation/reputation-management/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/mold-remediation/retargeting/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/mold-remediation/seo/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/mold-remediation/social-media-advertising/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/mold-remediation/social-media-marketing/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/mold-remediation/web-design/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/lead-tracking/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/ppc/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/reputation-management/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/retargeting/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/seo/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/social-media-advertising/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/social-media-marketing/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/web-design/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/sewage-cleanup/lead-tracking/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/sewage-cleanup/ppc/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/sewage-cleanup/reputation-management/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/sewage-cleanup/retargeting/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/sewage-cleanup/seo/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/sewage-cleanup/social-media-advertising/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/sewage-cleanup/social-media-marketing/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/sewage-cleanup/web-design/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/lead-tracking/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/ppc/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/reputation-management/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/retargeting/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/seo/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/social-media-advertising/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/social-media-marketing/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/web-design/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/water-damage-restoration/lead-tracking/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/water-damage-restoration/ppc/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/water-damage-restoration/reputation-management/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/water-damage-restoration/retargeting/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/water-damage-restoration/seo/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-advertising/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-marketing/",
+        "ids": [
+          "list-1405"
+        ]
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/water-damage-restoration/web-design/",
+        "ids": [
+          "list-1405"
+        ]
+      }
+    ],
+    "schemaAreaAudience": [
+      {
+        "url": "https://remediationrestorationmarketing.com/schedule/",
+        "nodes": [
+          "Free Lead Flow Acceleration Session"
+        ]
+      }
+    ],
+    "sitemapDateBeforeArticlePublication": [
+      {
+        "url": "https://remediationrestorationmarketing.com/resources/crm-for-restoration-companies/",
+        "publications": [
+          "2026-10-12T14:55:00.000Z"
+        ],
+        "lastmod": "2026-08-10"
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/resources/email-marketing-platforms-for-restoration-companies/",
+        "publications": [
+          "2026-09-28T13:30:00.000Z"
+        ],
+        "lastmod": "2026-08-10"
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/resources/google-ads-for-restoration-companies/",
+        "publications": [
+          "2026-09-23T14:00:00.000Z"
+        ],
+        "lastmod": "2026-08-10"
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/resources/local-services-ads-for-restoration-companies/",
+        "publications": [
+          "2026-08-31T16:00:00.000Z"
+        ],
+        "lastmod": "2026-08-10"
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/resources/mold-remediation-marketing/",
+        "publications": [
+          "2026-09-14T14:30:00.000Z"
+        ],
+        "lastmod": "2026-08-10"
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/resources/restoration-marketing-agency-vs-generalist/",
+        "publications": [
+          "2026-09-07T16:00:00.000Z"
+        ],
+        "lastmod": "2026-08-10"
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/resources/restoration-marketing-roi/",
+        "publications": [
+          "2026-10-05T14:45:00.000Z"
+        ],
+        "lastmod": "2026-08-10"
+      },
+      {
+        "url": "https://remediationrestorationmarketing.com/resources/water-damage-restoration-marketing/",
+        "publications": [
+          "2026-08-17T16:00:00.000Z"
+        ],
+        "lastmod": "2026-08-10"
+      }
+    ]
+  },
+  "counts": {
+    "guaranteeFirst": 74,
+    "duplicateHtmlIds": 64,
+    "schemaAreaAudience": 1,
+    "sitemapDateBeforeArticlePublication": 8
+  },
+  "interpretation": {
+    "guaranteeFirst": "Unsupported certainty occurrence, not a ranking measurement; shared ShortDescription source supports a deduplicated fix batch",
+    "duplicateHtmlIds": "Real parsed element ID collisions; local DOM semantics, not measured WCAG failure rate",
+    "schemaAreaAudience": "Audience is not among schema.org areaServed expected value types; source-specific semantic issue, not a Google rich-results verdict",
+    "sitemapDateBeforeArticlePublication": "Fixed lastmod precedes published date; reflects generator mismatch rather than accurate per-page freshness"
+  },
+  "references": [
+    "https://schema.org/areaServed",
+    "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap"
+  ]
+}

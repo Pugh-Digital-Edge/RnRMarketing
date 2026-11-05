@@ -88,10 +88,10 @@ const guides: Record<string, ServiceGuide> = {
     ],
     evidence: {
       title: "What recent client reporting shows",
-      text: "One July 2026 account reported a $77.79 Local Services Ads cost per lead after a 39% month-over-month reduction. Results vary by market, category, budget, screening, and response handling.",
+      text: "One July 2026 account reported a $77.79 Local Services Ads cost per lead. Results vary by market, category, budget, screening, and response handling.",
       metrics: [
         { value: "$77.79", label: "reported July LSA cost per lead" },
-        { value: "39%", label: "reported monthly CPL reduction on one account" },
+        { value: "July 2026", label: "client reporting period" },
       ],
     },
     definitions: [
@@ -301,7 +301,7 @@ const guides: Record<string, ServiceGuide> = {
   },
 };
 
-const { service } = Astro.props as { service: keyof typeof guides };
+const { service, includeWebDesignScope = false } = Astro.props as { service: keyof typeof guides; includeWebDesignScope?: boolean };
 const guide = guides[service];
 const anchorPrefix = service === "seo" ? "restoration-seo" : service;
 
@@ -330,6 +330,22 @@ if (!guide) {
         </article>
       ))}
     </div>
+
+    {service === "web-design" && includeWebDesignScope && (
+      <section class="service-depth__process" id="web-design-scope" aria-labelledby="web-design-scope-heading">
+        <div>
+          <h2 id="web-design-scope-heading">Agree on the website scope before a rebuild</h2>
+          <p>A focused repair may be enough when the existing site can support the service pages and contact paths you need. A rebuild needs a plan for the content, access, and systems already supporting the business.</p>
+          <p>Use our <a href="/resources/restoration-marketing-agency-vs-generalist/">agency selection and access checklist</a> to compare responsibilities in the written proposal.</p>
+        </div>
+        <ol>
+          <li><h3>Define the included work</h3><p>Agree on the pages, service areas, contact forms, galleries, integrations, and review rounds. Identify what can be repaired and what needs redesigning before setting the project scope.</p></li>
+          <li><h3>Plan the migration</h3><p>Inventory existing URLs and useful content, map any necessary redirects, and check canonicals, indexing controls, mobile layouts, and contact paths before release. Keep working pages and tracking dependencies in view.</p></li>
+          <li><h3>Prepare the business inputs</h3><p>Confirm accurate services and territories, credentials, authorized photographs and reviews, contact routing, and access to the existing domain and website. Assign who supplies and approves each item.</p></li>
+          <li><h3>Document access and handover</h3><p>Confirm domain, hosting, content, account access, third-party costs, maintenance, and termination arrangements in the agreement. Platform permissions and licensed tools can differ; clarify them before work starts.</p><p>Our <a href="/services/lead-tracking/">lead-tracking service guide</a> explains the distinction between a contact action, a qualified inquiry, and booked work.</p></li>
+        </ol>
+      </section>
+    )}
 
     <div class="service-depth__process" id={`${anchorPrefix}-process`}>
       <div>

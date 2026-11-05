@@ -1,0 +1,121 @@
+{
+  "startedAt": "2026-10-16T16:16:06.472Z",
+  "mode": "headless Chromium QA",
+  "pages": [
+    {
+      "route": "/services/lead-tracking/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/ppc/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/reputation-management/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/retargeting/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/seo/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/social-media-advertising/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/social-media-marketing/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/lead-tracking/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/ppc/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/reputation-management/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/retargeting/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/seo/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/social-media-advertising/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    },
+    {
+      "route": "/services/social-media-marketing/",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "trackingDisabled": true,
+      "events": 0
+    }
+  ],
+  "errors": [],
+  "externalBlocked": [],
+  "endedAt": "2026-10-16T16:16:07.212Z"
+}

@@ -1,0 +1,159 @@
+{
+  "startedAt": "2026-10-16T16:07:07.738Z",
+  "head": "working draft after547c430; built after authorized followup source edits",
+  "runner": "Existing cached Playwright1.60.0 and installed Chromium; no installation",
+  "screens": [],
+  "forms": [
+    {
+      "route": "/schedule/",
+      "keyboardTabToEmail": true,
+      "keyboardContinue": true,
+      "requiredValidation": true,
+      "invalidPhoneBlocks": true,
+      "failureRetryPreservesEmail": true,
+      "matchingReceiptSuccess": true,
+      "doubleSubmitSuppressed": true,
+      "reloadNoResubmit": true,
+      "qaAnalyticsSuppressed": true,
+      "storageReceiptConsumed": true,
+      "provider": "local browser mock; no production forwarding"
+    },
+    {
+      "route": "/restoration-marketing/",
+      "keyboardTabToEmail": true,
+      "keyboardContinue": true,
+      "requiredValidation": true,
+      "invalidPhoneBlocks": true,
+      "failureRetryPreservesEmail": true,
+      "matchingReceiptSuccess": true,
+      "doubleSubmitSuppressed": true,
+      "reloadNoResubmit": true,
+      "qaAnalyticsSuppressed": true,
+      "storageReceiptConsumed": true,
+      "provider": "local browser mock; no production forwarding"
+    }
+  ],
+  "externalBlocked": [
+    {
+      "host": "i.ytimg.com",
+      "type": "image"
+    },
+    {
+      "host": "calendar.google.com",
+      "type": "document"
+    }
+  ],
+  "pageErrors": [],
+  "requests": [
+    {
+      "stage": "request",
+      "form": "Schedule Lead Form",
+      "fieldNames": [
+        "form-name",
+        "submission-id",
+        "lead-stage",
+        "landing-page",
+        "bot-field",
+        "name",
+        "email",
+        "phone-country",
+        "phone",
+        "service-area",
+        "company",
+        "primary-service",
+        "goals",
+        "test-flow"
+      ],
+      "testFlow": "1",
+      "failed": true
+    },
+    {
+      "stage": "request",
+      "form": "Schedule Lead Form",
+      "fieldNames": [
+        "form-name",
+        "submission-id",
+        "lead-stage",
+        "landing-page",
+        "bot-field",
+        "name",
+        "email",
+        "phone-country",
+        "phone",
+        "service-area",
+        "company",
+        "primary-service",
+        "goals",
+        "test-flow"
+      ],
+      "testFlow": "1",
+      "failed": false
+    },
+    {
+      "stage": "request",
+      "form": "Schedule Lead Form",
+      "fieldNames": [
+        "form-name",
+        "phone-country",
+        "primary-service",
+        "goals",
+        "bot-field",
+        "gclid",
+        "gbraid",
+        "wbraid",
+        "utm-source",
+        "utm-medium",
+        "utm-campaign",
+        "utm-term",
+        "utm-content",
+        "landing-page",
+        "submission-id",
+        "lead-stage",
+        "name",
+        "email",
+        "phone",
+        "company",
+        "service-area",
+        "program-scope",
+        "monthly-budget",
+        "test-flow"
+      ],
+      "testFlow": "1",
+      "failed": true
+    },
+    {
+      "stage": "request",
+      "form": "Schedule Lead Form",
+      "fieldNames": [
+        "form-name",
+        "phone-country",
+        "primary-service",
+        "goals",
+        "bot-field",
+        "gclid",
+        "gbraid",
+        "wbraid",
+        "utm-source",
+        "utm-medium",
+        "utm-campaign",
+        "utm-term",
+        "utm-content",
+        "landing-page",
+        "submission-id",
+        "lead-stage",
+        "name",
+        "email",
+        "phone",
+        "company",
+        "service-area",
+        "program-scope",
+        "monthly-budget",
+        "test-flow"
+      ],
+      "testFlow": "1",
+      "failed": false
+    }
+  ],
+  "completedAt": "2026-10-16T16:07:12.804Z",
+  "qualification": "Local mock providers; no vendor delivery, production analytics, leads or email. No tracking code change."
+}

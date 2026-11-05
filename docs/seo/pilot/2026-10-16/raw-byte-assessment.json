@@ -1,0 +1,210 @@
+{
+  "checkedAt": "2026-10-16T16:16:06.163624+00:00",
+  "source": "24bedd88cb3b1ae0a634a5bf248a8cc9e39d8277; no website source edits in byte review",
+  "cause": "ServiceDepth.astro added an opt-in web-design scope conditional before the existing process div. On seven other broad-service routes the false conditional produces one extra literal space between the closing work div and process div. Every other HTML token is identical. No CSS hash/class, script, attribute, DOM element, heading, text, metadata, schema or href difference exists on those raw-only routes.",
+  "qualification": "Whitespace is real HTML byte change, excluded by the normalized semantic projection. No source defect established. Broad PPC is semantic in the cumulative comparison because of the original percentage edit, leaving six cumulative raw-only pages.",
+  "reports": {
+    "followup": {
+      "semanticChanged": 77,
+      "semanticallyUnchanged": 33,
+      "rawChanged": 84,
+      "rawIdentical": 26,
+      "rawOnlyURLs": [
+        "https://remediationrestorationmarketing.com/services/lead-tracking/",
+        "https://remediationrestorationmarketing.com/services/ppc/",
+        "https://remediationrestorationmarketing.com/services/reputation-management/",
+        "https://remediationrestorationmarketing.com/services/retargeting/",
+        "https://remediationrestorationmarketing.com/services/seo/",
+        "https://remediationrestorationmarketing.com/services/social-media-advertising/",
+        "https://remediationrestorationmarketing.com/services/social-media-marketing/"
+      ],
+      "rawOnlyTokenDiffs": [
+        {
+          "url": "https://remediationrestorationmarketing.com/services/lead-tracking/",
+          "differences": [
+            {
+              "tokenIndex": 505,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"lead-tracking-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/ppc/",
+          "differences": [
+            {
+              "tokenIndex": 522,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"ppc-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/reputation-management/",
+          "differences": [
+            {
+              "tokenIndex": 510,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"reputation-management-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/retargeting/",
+          "differences": [
+            {
+              "tokenIndex": 513,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"retargeting-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/seo/",
+          "differences": [
+            {
+              "tokenIndex": 515,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"restoration-seo-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/social-media-advertising/",
+          "differences": [
+            {
+              "tokenIndex": 509,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"social-media-advertising-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/social-media-marketing/",
+          "differences": [
+            {
+              "tokenIndex": 513,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"social-media-marketing-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        }
+      ]
+    },
+    "cumulative": {
+      "semanticChanged": 79,
+      "semanticallyUnchanged": 31,
+      "rawChanged": 85,
+      "rawIdentical": 25,
+      "rawOnlyURLs": [
+        "https://remediationrestorationmarketing.com/services/lead-tracking/",
+        "https://remediationrestorationmarketing.com/services/reputation-management/",
+        "https://remediationrestorationmarketing.com/services/retargeting/",
+        "https://remediationrestorationmarketing.com/services/seo/",
+        "https://remediationrestorationmarketing.com/services/social-media-advertising/",
+        "https://remediationrestorationmarketing.com/services/social-media-marketing/"
+      ],
+      "rawOnlyTokenDiffs": [
+        {
+          "url": "https://remediationrestorationmarketing.com/services/lead-tracking/",
+          "differences": [
+            {
+              "tokenIndex": 505,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"lead-tracking-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/reputation-management/",
+          "differences": [
+            {
+              "tokenIndex": 510,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"reputation-management-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/retargeting/",
+          "differences": [
+            {
+              "tokenIndex": 513,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"retargeting-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/seo/",
+          "differences": [
+            {
+              "tokenIndex": 515,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"restoration-seo-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/social-media-advertising/",
+          "differences": [
+            {
+              "tokenIndex": 509,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"social-media-advertising-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        },
+        {
+          "url": "https://remediationrestorationmarketing.com/services/social-media-marketing/",
+          "differences": [
+            {
+              "tokenIndex": 513,
+              "before": " ",
+              "after": "  ",
+              "precedingHTMLToken": "</div>",
+              "followingHTMLToken": "<div class=\"service-depth__process\" id=\"social-media-marketing-process\" data-sy>"
+            }
+          ],
+          "allOtherTokensIdentical": true
+        }
+      ]
+    }
+  }
+}

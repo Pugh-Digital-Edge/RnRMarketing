@@ -1,0 +1,54 @@
+{
+  "gate": "npm run validate",
+  "tests": 62,
+  "failed": 0,
+  "buildPages": 110,
+  "waterDescriptionReach": [
+    "/industries/water-damage-restoration/",
+    "/water-damage-restoration/lead-tracking/",
+    "/water-damage-restoration/ppc/",
+    "/water-damage-restoration/reputation-management/",
+    "/water-damage-restoration/retargeting/",
+    "/water-damage-restoration/seo/",
+    "/water-damage-restoration/social-media-advertising/",
+    "/water-damage-restoration/social-media-marketing/",
+    "/water-damage-restoration/web-design/"
+  ],
+  "ppcDisputedPercentageAbsent": true,
+  "waterOnlyContentOverride": true,
+  "scopeChangedURLs": 11,
+  "browserVisual": "22 captures across11 affected routes at1440/390; overflow and page-error checks pass; visual sample reviewed; not full WCAG",
+  "tracking": "separate mocked source/function/VM fixtures pass; no delivery/qualified-outcome proof",
+  "validationLogSHA256": "6df2679d86bb8daa635f9584a55d09774e4e6dc79287879e4d077c3db12c21cb",
+  "production": "unchanged; deployment prohibited",
+  "renderedChangedURLs": [
+    "https://remediationrestorationmarketing.com/industries/",
+    "https://remediationrestorationmarketing.com/industries/water-damage-restoration/",
+    "https://remediationrestorationmarketing.com/services/ppc/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/lead-tracking/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/ppc/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/reputation-management/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/retargeting/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/seo/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-advertising/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-marketing/",
+    "https://remediationrestorationmarketing.com/water-damage-restoration/web-design/"
+  ],
+  "pagesCompared": 110,
+  "unchangedRoutes": 99,
+  "browserForms": "Both schedule flows pass keyboard/required/invalid-phone/failure-retry/receipt-success/repeat/reload/QA suppression against mocks; no vendor delivery proof",
+  "editorialCoverage": {
+    "assessed": 105,
+    "pending": 0,
+    "excluded": 5,
+    "quoteMismatches": 0
+  },
+  "fragmentScope": "Legacy live-ID result invalidated; parse5 exact-base source-build fragment evidence separate",
+  "frozenAnchorDestinationSetsMatchBaselineBuild": {
+    "pagesCompared": 110,
+    "differences": 0,
+    "qualification": "Local source corroboration; not a new live collection"
+  },
+  "editorialPassSiteChanges": 0,
+  "editorialQuoteCount": 454
+}

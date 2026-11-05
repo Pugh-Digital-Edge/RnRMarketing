@@ -1,0 +1,962 @@
+{
+  "snapshot_id": "f16f9646605caf7548831b11f8b345ffb6e79343b1da1018b372a7af2ba03f9d",
+  "observed_at": null,
+  "fetched_at": "2026-10-16T15:14:00Z",
+  "complete": false,
+  "kind": "local_build",
+  "count_accuracy": "lower_bound",
+  "pages": [
+    {
+      "url": "https://remediationrestorationmarketing.com/",
+      "body_inbound": 1,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 0,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/about/",
+      "body_inbound": 0,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/admin/",
+      "body_inbound": 0,
+      "template_inbound": 0,
+      "distinct_inbound": 0,
+      "depth": null,
+      "flags": [
+        "orphan_candidate_partial_scope",
+        "weak_body_inbound_review",
+        "unreachable_in_observed_graph"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/lead-tracking/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/ppc/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/reputation-management/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/retargeting/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/seo/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/social-media-advertising/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/social-media-marketing/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/biohazard-cleanup/web-design/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/case-studies/",
+      "body_inbound": 102,
+      "template_inbound": 106,
+      "distinct_inbound": 107,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/case-studies/chicago-restoration-lead-growth/",
+      "body_inbound": 99,
+      "template_inbound": 2,
+      "distinct_inbound": 101,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/case-studies/kentucky-mold-water-damage-lead-growth/",
+      "body_inbound": 99,
+      "template_inbound": 2,
+      "distinct_inbound": 101,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/case-studies/michigan-restoration-organic-growth/",
+      "body_inbound": 99,
+      "template_inbound": 2,
+      "distinct_inbound": 101,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/commercial-restoration/lead-tracking/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/commercial-restoration/ppc/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/commercial-restoration/reputation-management/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/commercial-restoration/retargeting/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/commercial-restoration/seo/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/commercial-restoration/social-media-advertising/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/commercial-restoration/social-media-marketing/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/commercial-restoration/web-design/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/contact/",
+      "body_inbound": 14,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/lead-tracking/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/ppc/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/reputation-management/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/retargeting/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/seo/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/social-media-advertising/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/social-media-marketing/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/fire-damage-restoration/web-design/",
+      "body_inbound": 9,
+      "template_inbound": 0,
+      "distinct_inbound": 9,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/",
+      "body_inbound": 0,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/biohazard-cleanup/",
+      "body_inbound": 1,
+      "template_inbound": 8,
+      "distinct_inbound": 9,
+      "depth": 2,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/commercial-restoration/",
+      "body_inbound": 1,
+      "template_inbound": 8,
+      "distinct_inbound": 9,
+      "depth": 2,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/fire-damage-restoration/",
+      "body_inbound": 3,
+      "template_inbound": 8,
+      "distinct_inbound": 11,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/mold-remediation/",
+      "body_inbound": 3,
+      "template_inbound": 8,
+      "distinct_inbound": 11,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/roof-damage-restoration/",
+      "body_inbound": 1,
+      "template_inbound": 8,
+      "distinct_inbound": 9,
+      "depth": 2,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/sewage-cleanup/",
+      "body_inbound": 1,
+      "template_inbound": 8,
+      "distinct_inbound": 9,
+      "depth": 2,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/storm-damage-cleanup/",
+      "body_inbound": 1,
+      "template_inbound": 8,
+      "distinct_inbound": 9,
+      "depth": 2,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/industries/water-damage-restoration/",
+      "body_inbound": 5,
+      "template_inbound": 8,
+      "distinct_inbound": 13,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/mold-remediation/lead-tracking/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/mold-remediation/ppc/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/mold-remediation/reputation-management/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/mold-remediation/retargeting/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/mold-remediation/seo/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/mold-remediation/social-media-advertising/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/mold-remediation/social-media-marketing/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/mold-remediation/web-design/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/privacy/",
+      "body_inbound": 3,
+      "template_inbound": 107,
+      "distinct_inbound": 107,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/",
+      "body_inbound": 76,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/10-powerful-restoration-marketing-strategies-to-boost-your-business/",
+      "body_inbound": 6,
+      "template_inbound": 12,
+      "distinct_inbound": 12,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/ai-visibility-checklist/",
+      "body_inbound": 78,
+      "template_inbound": 0,
+      "distinct_inbound": 78,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/ai-visibility-checklist/download/",
+      "body_inbound": 0,
+      "template_inbound": 0,
+      "distinct_inbound": 0,
+      "depth": null,
+      "flags": [
+        "orphan_candidate_partial_scope",
+        "weak_body_inbound_review",
+        "unreachable_in_observed_graph"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/crm-for-restoration-companies/",
+      "body_inbound": 76,
+      "template_inbound": 12,
+      "distinct_inbound": 87,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/email-marketing-platforms-for-restoration-companies/",
+      "body_inbound": 77,
+      "template_inbound": 12,
+      "distinct_inbound": 87,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/fire-damage-restoration-marketing/",
+      "body_inbound": 3,
+      "template_inbound": 12,
+      "distinct_inbound": 12,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/google-ads-for-restoration-companies/",
+      "body_inbound": 1,
+      "template_inbound": 12,
+      "distinct_inbound": 12,
+      "depth": 2,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/high-performance-restoration-websites-boost-your-google-page-speed/",
+      "body_inbound": 1,
+      "template_inbound": 12,
+      "distinct_inbound": 12,
+      "depth": 2,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/local-services-ads-for-restoration-companies/",
+      "body_inbound": 3,
+      "template_inbound": 12,
+      "distinct_inbound": 12,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/mold-remediation-marketing/",
+      "body_inbound": 1,
+      "template_inbound": 12,
+      "distinct_inbound": 12,
+      "depth": 2,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/restoration-marketing-agency-vs-generalist/",
+      "body_inbound": 2,
+      "template_inbound": 12,
+      "distinct_inbound": 12,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/restoration-marketing-roi/",
+      "body_inbound": 77,
+      "template_inbound": 12,
+      "distinct_inbound": 87,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/restoration-marketing-tips-for-your-restoration-company/",
+      "body_inbound": 4,
+      "template_inbound": 12,
+      "distinct_inbound": 12,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/resources/water-damage-restoration-marketing/",
+      "body_inbound": 2,
+      "template_inbound": 12,
+      "distinct_inbound": 12,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/restoration-marketing/",
+      "body_inbound": 1,
+      "template_inbound": 0,
+      "distinct_inbound": 1,
+      "depth": null,
+      "flags": [
+        "weak_body_inbound_review",
+        "unreachable_in_observed_graph"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/lead-tracking/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/ppc/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/reputation-management/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/retargeting/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/seo/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/social-media-advertising/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/social-media-marketing/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/roof-damage-restoration/web-design/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/schedule/",
+      "body_inbound": 91,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/services/",
+      "body_inbound": 73,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/services/lead-tracking/",
+      "body_inbound": 17,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/services/ppc/",
+      "body_inbound": 15,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/services/reputation-management/",
+      "body_inbound": 14,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/services/retargeting/",
+      "body_inbound": 9,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/services/seo/",
+      "body_inbound": 15,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/services/social-media-advertising/",
+      "body_inbound": 7,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/services/social-media-marketing/",
+      "body_inbound": 4,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/services/web-design/",
+      "body_inbound": 15,
+      "template_inbound": 106,
+      "distinct_inbound": 106,
+      "depth": 1,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/sewage-cleanup/lead-tracking/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/sewage-cleanup/ppc/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/sewage-cleanup/reputation-management/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/sewage-cleanup/retargeting/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/sewage-cleanup/seo/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/sewage-cleanup/social-media-advertising/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/sewage-cleanup/social-media-marketing/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/sewage-cleanup/web-design/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/lead-tracking/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/ppc/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/reputation-management/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/retargeting/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/seo/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/social-media-advertising/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/social-media-marketing/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/storm-damage-cleanup/web-design/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/thank-you/",
+      "body_inbound": 0,
+      "template_inbound": 0,
+      "distinct_inbound": 0,
+      "depth": null,
+      "flags": [
+        "orphan_candidate_partial_scope",
+        "weak_body_inbound_review",
+        "unreachable_in_observed_graph"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/tos/",
+      "body_inbound": 0,
+      "template_inbound": 107,
+      "distinct_inbound": 107,
+      "depth": 1,
+      "flags": [
+        "weak_body_inbound_review"
+      ]
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/lead-tracking/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/ppc/",
+      "body_inbound": 8,
+      "template_inbound": 1,
+      "distinct_inbound": 9,
+      "depth": 2,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/reputation-management/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/retargeting/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/seo/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-advertising/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/social-media-marketing/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    },
+    {
+      "url": "https://remediationrestorationmarketing.com/water-damage-restoration/web-design/",
+      "body_inbound": 8,
+      "template_inbound": 0,
+      "distinct_inbound": 8,
+      "depth": 3,
+      "flags": []
+    }
+  ],
+  "unresolved_links": [
+    {
+      "source": "https://remediationrestorationmarketing.com/resources/ai-visibility-checklist/download/",
+      "href": "/downloads/restoration-ai-visibility-checklist.pdf",
+      "region": "body",
+      "target": null,
+      "requested_url": "https://remediationrestorationmarketing.com/downloads/restoration-ai-visibility-checklist.pdf",
+      "effective_fragment": "",
+      "reason": "destination_not_observed"
+    },
+    {
+      "source": "https://remediationrestorationmarketing.com/thank-you/",
+      "href": "/downloads/restoration-ai-visibility-checklist.pdf",
+      "region": "body",
+      "target": null,
+      "requested_url": "https://remediationrestorationmarketing.com/downloads/restoration-ai-visibility-checklist.pdf",
+      "effective_fragment": "",
+      "reason": "destination_not_observed"
+    },
+    {
+      "source": "https://remediationrestorationmarketing.com/tos/",
+      "href": "https://remediationrestorationmarketing.com",
+      "region": "body",
+      "target": null,
+      "requested_url": "https://remediationrestorationmarketing.com",
+      "effective_fragment": "",
+      "reason": "destination_not_observed"
+    }
+  ],
+  "implementation_authorized": false,
+  "heuristics": {
+    "weak_body_inbound_below": 2,
+    "deep_above": 3
+  },
+  "interpretation": "PR10 offline local-build lower bounds; live GET crawl establishes separate current HTTP eligibility. No semantic target-map approval or ranking result supplied."
+}
