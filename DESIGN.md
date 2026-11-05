@@ -61,6 +61,12 @@ components:
 
 # Design System: Remediation & Restoration Marketing
 
+## Restored August paid form — November 3, 2026
+
+The paid page returns to its August 20–27 composition, the version that produced paid requests: the "One Team Running Every Part of Your Restoration Marketing." hero with a single-step chalk form beside it (name, email, phone, company, service territory, program scope and monthly budget), "Check my territory" actions throughout and the single mobile territory CTA. Claims use the reviewed wording: restoration-focused, not restoration-only, and channel rollout follows each client's plan. The results section keeps the current cards, Chicago heat map and TRW Contracting testimonial, plus the original client-reporting disclosure. The form posts through the existing validated function with a typed request receipt; /thank-you/ fires the Ads lead conversion. The single Netlify registration stays on /schedule/. This supersedes the calendar-first note below for the paid page.
+
+November 5 refinements: country and phone share one form row, and Company and Service territory are full rows at a fixed 3.15rem field height. The results band uses the live page's stacked pillar row without the August card top border. "What you can count on" becomes three equal white cards on the mist band. They cover agreement terms from `offer.js` (72-hour paid timing, website ownership, month to month after three months), so they don't repeat the territory and U.S.-team items in the specialist section.
+
 ## Calendar-first paid booking — October 23, 2026
 
 The paid page preserves the Cobalt Tile Hall composition and replaces its two-step inquiry form with a chalk booking panel. Every primary paid-page CTA opens the existing Google appointment schedule directly. The visitor selects a time and provides booking details there. No Calendar iframe is loaded on the landing page. The legacy /schedule/ inquiry and typed receipt conversion remain available; its complete Netlify registration now lives on that route. Calendar clicks use GA4 booking_calendar_click/calendar_v1 and never fire an Ads lead conversion. Confirmed bookings require Calendar evidence; the site cannot observe completion on Google's hosted page. This supersedes the form-first behavior described in the historical October 8 note below.

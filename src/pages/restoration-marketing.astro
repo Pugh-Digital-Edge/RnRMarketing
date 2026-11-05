@@ -5,9 +5,9 @@ import { offer, programServices } from "@data/offer.js";
 
 const bodyContract = `impeccable:contract 60015ef0
 THESIS: A restoration marketer should feel like a protected territory and a founder-led specialist agency, not an interchangeable agency brochure or a one-person consultancy.
-OWN-WORLD: Ink-navy territory grid, cobalt fields, chalk booking surface, cyan plot lines, mustard conversion control, and gently squared working panels.
-STORY: A restoration owner sees exact message match, understands the restoration-focused agency system, verifies reported client outcomes, de-risks the call, and books a founder-led strategy conversation directly in Google Calendar.
-FIRST VIEWPORT: A compact territory briefing pairs the outcome headline with an explicit free 30-minute founder call and a direct booking action; mobile preserves that reading order without oversized introductory spacing.
+OWN-WORLD: Ink-navy territory grid, cobalt fields, chalk form surface, cyan plot lines, mustard conversion control, and gently squared working panels.
+STORY: A restoration owner sees exact message match, understands the restoration-focused agency system, verifies reported client outcomes, de-risks the call, and requests a founder-led strategy conversation.
+FIRST VIEWPORT: A territory briefing fills the screen: oversized query-matched headline left, qualified form right, and 30-minute, zero-prep, founder-led facts at the decision point.
 FORM: Territory field briefing, grounded structure 5; seed key 60015ef0; approved comp .impeccable/mocks/restoration-marketing-comp-b.png.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md`;
 
@@ -15,18 +15,20 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 // a menu a visitor could order from.
 const services = programServices;
 
+// Territory and U.S.-team commitments already sit in the specialist section, so
+// these cover the agreement terms from @data/offer.js instead of repeating them.
 const proofItems = [
-  {
-    title: "One company per territory",
-    text: "We work with one restoration company per service territory, subject to availability.",
-  },
-  {
-    title: "100% U.S.-based team",
-    text: "Your work stays with our U.S.-based team. We do not outsource it.",
-  },
   {
     title: "Qualified leads can begin within 72 hours",
     text: "Paid campaigns can begin producing qualified leads within 72 hours of launch. Timing depends on your market, budget, and campaign readiness.",
+  },
+  {
+    title: "Your website is yours",
+    text: offer.ownership,
+  },
+  {
+    title: "Month to month after three months",
+    text: "Start with a three-month commitment that includes website development, then continue month to month.",
   },
 ];
 
@@ -80,17 +82,17 @@ const heatMap = {
 
 <BaseLayout
   title="Full-Service Restoration Marketing for One Company Per Territory"
-  description={`${offer.name}: website, paid search, local SEO and Google Business Profile, AI visibility, and lead tracking. Book your ${offer.session}.`}
-  dateModified="2026-10-02"
+  description="One team running every part of your restoration marketing: SEO, Google Business Profile, PPC and LSA, your website, and lead tracking. One restoration company per territory. Request a founder-led strategy call."
+  dateModified="2026-11-03"
   bodyContract={bodyContract}
   conversionOnly
   noindex
   eagerAnalytics
 >
   <AdsLandingPage
-    heroTitle="Restoration & Remediation Marketing"
-    heroText="A managed marketing program for restoration-company owners: website, local search, paid ads, and lead tracking. We manage the marketing; your team handles sales follow-up and closing."
-    servicesTitle={offer.name}
+    heroTitle="One Team Running Every Part of Your Restoration Marketing."
+    heroText="SEO, Google Business Profile, Local Services Ads, your website, and lead tracking, built and managed as one system by a restoration-focused agency. We take on one restoration company per service territory, subject to availability."
+    servicesTitle="What we take off your plate."
     servicesIntro={offer.summary}
     services={services}
     resultsTitle="The work behind the system."
