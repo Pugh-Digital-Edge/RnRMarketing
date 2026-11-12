@@ -44,6 +44,7 @@ const absoluteOpenGraphImage = openGraphImage.startsWith('http')
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
 <html lang="en" class={conversionOnly ? "conversion-page" : undefined}>
         <head>
+            <slot name="before-tracking" />
             <!-- Standard meta tags -->
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">

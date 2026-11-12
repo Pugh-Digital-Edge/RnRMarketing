@@ -3,8 +3,6 @@ import { Image } from "astro:assets";
 import mattImage from "@assets/images/matt.webp";
 import logo from "@assets/images/svg/rr-marketing-logo.svg";
 import client from "@data/client.json";
-import { offer, offerFaqs } from "@data/offer.js";
-import { bookingUrl } from "@data/booking.js";
 
 interface ServiceItem {
   title: string;
@@ -64,26 +62,14 @@ const {
   programNote,
   heatMap,
 } = Astro.props;
-
-// Keep the landing page focused on the included website and plan; agreement
-// details remain in the shared terms used elsewhere.
-const landingFaqs = offerFaqs.map(faq => {
-  if (faq.question === "What is the minimum commitment?") {
-    return { ...faq, answer: "Your custom website is included and yours from day one. We start with a three-month plan to build your site and get your marketing underway, then continue month to month." };
-  }
-  if (faq.question === "What happens after we submit the form?") {
-    return { question: "What happens when I book?", answer: "Choose an available time in Google Calendar and enter your details to confirm. You will receive a calendar invitation for your 30-minute Google Meet call with Matt. Bring your questions; there is nothing to prepare." };
-  }
-  return faq;
-});
 ---
 
 <div class="rm-landing">
   <header class="rm-header">
-    <a class="rm-logo" href="/" aria-label="Remediation and Restoration Marketing home">
+    <a class="rm-logo" href="#lead-form" aria-label="Remediation and Restoration Marketing, request a call">
       <Image src={logo} alt="Remediation & Restoration Marketing" width={209} height={40} />
     </a>
-    <a class="rm-header-cta" href={bookingUrl} data-booking-placement="header">Book a Free Strategy Call</a>
+    <a class="rm-header-cta" href="#lead-form">Check your territory</a>
   </header>
 
   <section class="rm-hero" aria-labelledby="rm-hero-title">
@@ -102,23 +88,89 @@ const landingFaqs = offerFaqs.map(faq => {
       <div class="rm-hero-copy">
         <h1 id="rm-hero-title">{heroTitle}</h1>
         <p class="rm-hero-text">{heroText}</p>
-        <div class="rm-hero-action">
-          <a class="rm-hero-cta" href={bookingUrl} data-booking-placement="hero">Book a Free Strategy Call</a>
-          <p><strong>Free 30-minute strategy call with Matt Pugh.</strong> Discuss your territory, visibility, and priorities. Nothing to prepare.</p>
+
+        <div class="rm-no-layers">
+          <span class="rm-founder-signal">Founder-led strategy</span>
+          <p><strong>Your first call is with Matt Pugh.</strong> Matt leads the conversation, and our U.S.-based specialist team supports the work that follows.</p>
         </div>
-        <p class="rm-hero-proof"><a href="#results"><strong>5 → 18 LSA leads</strong> · Chicago-area client · May–July 2026</a><small>Reported client outcome. Results vary.</small></p>
       </div>
 
-      <section id="book-call" class="rm-booking" aria-labelledby="rm-booking-title" data-booking-panel>
-        <div class="rm-booking-heading">
-          <h2 id="rm-booking-title">Choose a time with Matt.</h2>
-          <p>A free 30-minute conversation about your restoration company and where you want to grow.</p>
-        </div>
-        <a class="rm-booking-button" href={bookingUrl} data-booking-placement="booking_panel">
-          <span>Book a Free Strategy Call</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
-        </a>
-        <p class="rm-booking-help">See available times first. Add your details when you reserve your call.</p>
+      <div class="rm-form-side">
+        <form id="lead-form" class="rm-form" name="Schedule Lead Form" method="post" action="/.netlify/functions/submit-lead" data-success-redirect="/thank-you/" data-lead-phone-form data-request-receipt>
+          <input type="hidden" name="form-name" value="Schedule Lead Form" />
+          <p hidden>
+            <label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </p>
+
+          <div class="rm-form-heading">
+            <h2>Request your 30-minute strategy call</h2>
+            <p>You will speak directly with our founder, Matt Pugh.</p>
+          </div>
+
+          <input type="hidden" name="gclid" data-attribution-field="gclid" />
+          <input type="hidden" name="gbraid" data-attribution-field="gbraid" />
+          <input type="hidden" name="wbraid" data-attribution-field="wbraid" />
+          <input type="hidden" name="utm-source" data-attribution-field="utm_source" />
+          <input type="hidden" name="utm-medium" data-attribution-field="utm_medium" />
+          <input type="hidden" name="utm-campaign" data-attribution-field="utm_campaign" />
+          <input type="hidden" name="utm-term" data-attribution-field="utm_term" />
+          <input type="hidden" name="utm-content" data-attribution-field="utm_content" />
+          <input type="hidden" name="landing-page" data-attribution-field="landing_page" />
+          <input type="hidden" name="submission-id" data-submission-id />
+          <input type="hidden" name="lead-stage" value="request" />
+
+          <div class="rm-fields">
+            <label>
+              Name
+              <input required type="text" name="name" autocomplete="name" placeholder="Your full name" />
+            </label>
+            <label>
+              Email
+              <input required type="email" name="email" autocomplete="email" placeholder="you@company.com" />
+            </label>
+            <div class="rm-phone-row rm-full-field" data-phone-field>
+              <label>Country <select name="phone-country" data-phone-country aria-label="Phone number country"><option value="US">United States +1</option></select></label>
+              <label>Phone <input required type="tel" name="phone" data-phone-input aria-describedby="ads-phone-error" autocomplete="tel" inputmode="tel" placeholder="(310) 555-1234" /></label>
+              <p id="ads-phone-error" data-phone-error role="alert" hidden>Please enter a valid phone number, including the area code.</p>
+            </div>
+            <label class="rm-full-field">
+              Company
+              <input required type="text" name="company" autocomplete="organization" placeholder="Company name" />
+            </label>
+            <label class="rm-full-field">
+              Service territory
+              <span>We work with one restoration company per territory.</span>
+              <input required type="text" name="service-area" autocomplete="address-level2" placeholder="City, state, or ZIP codes" />
+            </label>
+            <label>
+              What are you looking for?
+              <select required name="program-scope">
+                <option value="" selected disabled>Choose one</option>
+                <option value="full-program">The full program</option>
+                <option value="paid-led">Mostly paid ads</option>
+                <option value="single-service">One specific service</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </label>
+            <label>
+              Monthly marketing budget
+              <select required name="monthly-budget">
+                <option value="" selected disabled>Choose a range</option>
+                <option value="under-2500">Under $2,500 / month</option>
+                <option value="2500-5000">$2,500 – $5,000 / month</option>
+                <option value="5000-10000">$5,000 – $10,000 / month</option>
+                <option value="10000-plus">$10,000+ / month</option>
+                <option value="undecided">Not decided yet</option>
+              </select>
+            </label>
+          </div>
+
+          <button class="rm-submit" type="submit">
+            <span>Check my territory</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" /></svg>
+          </button>
+          <p class="rm-form-status" data-form-status role="status" aria-live="polite"></p>
+
           <ul class="rm-call-facts" aria-label="What to expect on the call">
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
@@ -133,9 +185,9 @@ const landingFaqs = offerFaqs.map(faq => {
               <span><strong>Speak with Matt</strong>Directly with the founder</span>
             </li>
           </ul>
-        <p class="rm-takeaway">{offer.takeaway}</p>
-        <p class="rm-privacy-note">Booking is handled by Google Calendar. <a href="/privacy/">Privacy policy</a></p>
-      </section>
+          <p class="rm-privacy-note">By submitting this form you agree that R &amp; R Marketing may contact you by email or phone about your strategy call. <a href="/privacy/">Privacy policy</a></p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -158,7 +210,7 @@ const landingFaqs = offerFaqs.map(faq => {
             <dd>Your first strategy call is with Matt, and our specialists support the work that follows.</dd>
           </div>
         </dl>
-        <a class="rm-text-cta" href={bookingUrl} data-booking-placement="specialist">Book a Free Strategy Call <span aria-hidden="true">→</span></a>
+        <a class="rm-text-cta" href="#lead-form">See if your territory is available <span aria-hidden="true">→</span></a>
       </div>
 
       <div class="rm-owner-panel">
@@ -205,7 +257,7 @@ const landingFaqs = offerFaqs.map(faq => {
 
       <div class="rm-mid-cta">
         <p>One team manages the agreed marketing work. Your team owns customer follow-up and sales closing.</p>
-        <a href={bookingUrl} data-booking-placement="program">Book a Free Strategy Call <span aria-hidden="true">→</span></a>
+        <a href="#lead-form">Check your territory <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -260,6 +312,7 @@ const landingFaqs = offerFaqs.map(faq => {
       <div class="rm-results-footer">
         <blockquote class="rm-testimonial"><p>“Their expertise shows in everything they do, from our website's design to our targeted marketing campaigns.”</p><footer>Jason Fogus, Owner of TRW Contracting</footer></blockquote>
       </div>
+      <p class="rm-results-disclosure">Client names are withheld by agreement. Every figure above is taken from the client's own reporting for the stated window and is not a guarantee of future results.</p>
     </div>
   </section>
 
@@ -284,7 +337,7 @@ const landingFaqs = offerFaqs.map(faq => {
   <section id="how-it-works" class="rm-call" aria-labelledby="rm-call-title">
     <div class="rm-section-shell rm-call-grid">
       <div class="rm-call-copy">
-        <h2 id="rm-call-title">Your {offer.session}.</h2>
+        <h2 id="rm-call-title">Start with a real conversation.</h2>
         <p>Matt will look at your service territory, online visibility, and lead opportunities with you. You can ask questions, talk through what is not working, and decide whether R & R Marketing is the right fit.</p>
         <ul class="rm-call-topics" aria-label="What the call covers">
           <li>Your service territory</li>
@@ -293,29 +346,25 @@ const landingFaqs = offerFaqs.map(faq => {
         </ul>
       </div>
       <ol class="rm-call-steps">
-        <li><span>Choose your session time</span><p>Open the calendar and pick a time that works for you.</p></li>
-        <li><span>Confirm your booking</span><p>Add your contact details when you reserve your time.</p></li>
+        <li><span>Tell us about your market</span><p>Share your company and service territory in the form.</p></li>
+        <li><span>Matt reviews the details</span><p>He looks at your territory and follows up with the next step.</p></li>
         <li><span>Talk it through together</span><p>Spend 30 focused minutes with Matt. There is nothing you need to prepare.</p></li>
       </ol>
     </div>
   </section>
-
-  <section class="rm-faq" aria-labelledby="rm-faq-title"><div class="rm-section-shell"><h2 id="rm-faq-title">Know what you’re signing up for.</h2><div class="rm-faq-list">{landingFaqs.filter(faq => faq.question !== "How much does the program cost?").map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></div></section>
-
-  <section class="rm-checklist" aria-labelledby="rm-checklist-title"><div class="rm-section-shell"><h2 id="rm-checklist-title">Not ready for a call? Start here.</h2><p>Use our AI visibility checklist to review how clearly your restoration company can be found, understood, and cited. A practical self-check, with no custom audit or call required.</p><a href={offer.checklistPath}>Get the AI visibility checklist <span aria-hidden="true">→</span></a></div></section>
 
   <section class="rm-final" aria-labelledby="rm-final-title">
     <div class="rm-final-grid" aria-hidden="true"></div>
     <div class="rm-section-shell rm-final-inner">
       <div>
         <h2 id="rm-final-title">Your marketing agency should not work for your competition.</h2>
-        <p>We are your marketing partner, not a shared-lead marketplace. We work with one restoration company per agreed service territory, subject to availability. Let’s start by checking yours.</p>
+        <p>We work with one restoration company per service territory, subject to availability. Let’s start by checking yours.</p>
       </div>
       <div class="rm-final-action">
         <span>Territory availability</span>
-        <p>Book a call to discuss your market and check territory availability with Matt.</p>
-        <a class="rm-final-cta" href={bookingUrl} data-booking-placement="final">
-          <span class="rm-final-cta-copy"><strong>Book a Free Strategy Call</strong><small>Free Lead Flow Acceleration Session</small></span>
+        <p>Tell us where you work, and we will let you know if your territory is open.</p>
+        <a class="rm-final-cta" href="#lead-form">
+          <span class="rm-final-cta-copy"><strong>Check my territory</strong><small>Request a 30-minute strategy call</small></span>
           <span class="rm-final-cta-arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -333,12 +382,10 @@ const landingFaqs = offerFaqs.map(faq => {
     </div>
   </footer>
 
-  <nav class="rm-mobile-cta is-hidden" aria-label="Quick contact"><a href={`tel:${client.phoneForTel}`}>Call Matt</a><a href={bookingUrl} data-booking-placement="mobile">Book a Free Strategy Call</a></nav>
+  <a class="rm-mobile-cta is-hidden" href="#lead-form">Check territory & request a call</a>
 </div>
 
 <script>
-  import { setupBookingClicks } from "../scripts/booking-clicks";
-  setupBookingClicks();
   // Until the rank-tracking file is in place, drop the whole figure rather than
   // showing a broken image on a page that carries paid traffic.
   const heatMapImage = document.querySelector<HTMLImageElement>("[data-heatmap-media]");
@@ -357,24 +404,24 @@ const landingFaqs = offerFaqs.map(faq => {
     }
   }
 
-  const bookingPanel = document.querySelector("[data-booking-panel]");
+  const landingLeadForm = document.querySelector("#lead-form");
   const landingFinal = document.querySelector(".rm-final");
   const landingFooter = document.querySelector(".rm-footer");
   const stickyCta = document.querySelector(".rm-mobile-cta");
 
-  if (bookingPanel && stickyCta && "IntersectionObserver" in window) {
-    let bookingIsVisible = true;
+  if (landingLeadForm && stickyCta && "IntersectionObserver" in window) {
+    let formIsVisible = true;
     let finalIsVisible = false;
     let footerIsVisible = false;
-    const updateStickyCta = () => stickyCta.classList.toggle("is-hidden", bookingIsVisible || finalIsVisible || footerIsVisible);
-    const bookingObserver = new IntersectionObserver(
+    const updateStickyCta = () => stickyCta.classList.toggle("is-hidden", formIsVisible || finalIsVisible || footerIsVisible);
+    const formObserver = new IntersectionObserver(
       ([entry]) => {
-        bookingIsVisible = entry.isIntersecting;
+        formIsVisible = entry.isIntersecting;
         updateStickyCta();
       },
       { threshold: 0.1 },
     );
-    bookingObserver.observe(bookingPanel);
+    formObserver.observe(landingLeadForm);
 
     if (landingFinal) {
       const finalObserver = new IntersectionObserver(
@@ -398,35 +445,15 @@ const landingFaqs = offerFaqs.map(faq => {
       footerObserver.observe(landingFooter);
     }
   }
-
 </script>
 
 <style lang="less">
-  .rm-hero-proof { margin: 1.25rem 0; font-size: .92rem; line-height: 1.6; }
-  .rm-hero-proof a { color: #9cf4f2; text-decoration: underline; text-underline-offset: .2em; }
-  .rm-hero-proof small { display: block; color: #dce9f7; font-size: .75rem; }
-  .rm-takeaway { color: #42516a; font-size: .85rem; line-height: 1.65; margin-top: 1.5rem; }
+  .rm-form-status:empty { display: none; }
+  .rm-form-status { margin-top: 0.75rem; color: var(--rm-ink); font-size: 0.85rem; text-align: center; }
   .rm-results-footer { display: grid; gap: 1.5rem; padding: 2rem clamp(1.25rem, 3vw, 2rem) 0; align-items: start; }
   .rm-testimonial { margin: 0; min-width: 0; color: #071a42; }
   .rm-testimonial p { font-size: 1.15rem; line-height: 1.65; }
   .rm-testimonial footer { font-size: .85rem; margin-top: 1rem; color: #42516a; }
-  .rm-faq, .rm-checklist { padding: clamp(3rem, 6vw, 5rem) 1.25rem; background: #fbfcf8; }
-  .rm-faq h2, .rm-checklist h2 { color: #071a42; font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.2; }
-  .rm-faq h2 { text-align: center; }
-  .rm-faq-list { margin: 2rem auto 0; max-width: 52rem; }
-  .rm-faq details { border-bottom: 1px solid #acb9ca; }
-  .rm-faq summary { cursor: pointer; color: #071a42; font-weight: 700; padding: 1.5rem 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; list-style: none; line-height: 1.5; }
-  .rm-faq summary::-webkit-details-marker { display: none; }
-  .rm-faq summary::after { content: ''; width: .6rem; height: .6rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); flex-shrink: 0; margin: -.3rem .25rem 0; }
-  .rm-faq details[open] summary::after { transform: rotate(225deg); margin-top: .3rem; }
-  .rm-faq summary:focus-visible { outline: 2px solid #0b4aa2; outline-offset: -2px; }
-  .rm-faq p, .rm-checklist p { max-width: 70ch; color: #42516a; line-height: 1.75; margin: 1rem 0; }
-  .rm-faq details > p { margin: 0; padding: 1.25rem 1rem 1.75rem; }
-  .rm-checklist { background: #edf2f5; }
-  .rm-checklist a { color: #0b4aa2; text-decoration: underline; font-weight: 700; display: inline-block; padding-block: .75rem; }
-  .rm-mobile-cta a { color: inherit; display: flex; align-items: center; justify-content: center; min-height: 44px; flex: 1; padding: .3rem .6rem; }
-  .rm-mobile-cta a + a { border-left: 1px solid #071a42; }
-
   .rm-landing {
     --rm-ink: #071a42;
     --rm-cobalt: #0b4aa2;
@@ -461,7 +488,6 @@ const landingFaqs = offerFaqs.map(faq => {
   .rm-logo img { width: 100%; height: auto; filter: brightness(0) invert(1); display: block; }
 
   .rm-header-cta,
-  .rm-hero-cta,
   .rm-text-cta,
   .rm-mid-cta a,
   .rm-final-cta {
@@ -473,8 +499,7 @@ const landingFaqs = offerFaqs.map(faq => {
     text-decoration: none;
   }
 
-  .rm-header-cta,
-  .rm-hero-cta {
+  .rm-header-cta {
     color: var(--rm-ink) !important;
     background: var(--rm-mustard);
     padding: 0.9rem 1.1rem;
@@ -538,91 +563,197 @@ const landingFaqs = offerFaqs.map(faq => {
   .rm-hero-inner,
   .rm-section-shell,
   .rm-footer-inner {
-    width: calc(100% - 2rem); max-width: 80rem;
+    width: min(100% - 2rem, 80rem);
     margin-inline: auto;
   }
 
   .rm-hero-inner {
     min-height: inherit;
-    padding: clamp(2rem, 4vw, 3.5rem) 0;
+    padding: clamp(3rem, 8vw, 7rem) 0;
     position: relative;
     z-index: 1;
     display: grid;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
-  .rm-hero-copy { align-self: start; }
+  .rm-hero-copy { align-self: center; }
 
   .rm-hero h1 {
-    max-width: 14ch;
+    max-width: 11ch;
     color: #fff !important;
-    font-size: clamp(2.5rem, 5.6vw, 4.75rem);
-    line-height: 1.02;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.94;
     letter-spacing: -0.04em !important;
     text-wrap: balance;
   }
 
   .rm-hero-text {
     max-width: 62ch;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     color: rgba(255, 255, 255, 0.82) !important;
-    font-size: clamp(1rem, 1.5vw, 1.1rem);
-    line-height: 1.6;
+    font-size: clamp(1rem, 2vw, 1.18rem);
+    line-height: 1.7;
   }
 
-  .rm-hero-action {
-    margin-top: 1.25rem;
-    display: grid;
-    justify-items: start;
-    gap: 0.65rem;
-  }
-  .rm-hero-cta {
-    min-height: 3rem;
-    display: inline-flex;
+  .rm-no-layers {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 1rem;
   }
-  .rm-hero-action p { max-width: 48ch; color: #dce9f7 !important; font-size: 0.85rem; line-height: 1.55; }
-  .rm-hero-action strong { color: #fff; display: block; }
 
-  .rm-booking {
-    align-self: start;
-    padding: clamp(1.25rem, 2.4vw, 1.8rem);
+  .rm-founder-signal {
+    width: 7rem;
+    flex: none;
+    color: #9cf4f2;
+    display: grid;
+    gap: 0.65rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .rm-founder-signal::before {
+    content: "";
+    width: 3rem;
+    height: 1px;
+    background: var(--rm-cyan);
+  }
+
+  .rm-no-layers p { color: rgba(255, 255, 255, 0.74) !important; line-height: 1.55; }
+  .rm-no-layers strong { color: #fff; display: block; }
+
+  .rm-form-side { align-self: center; }
+
+  .rm-form {
+    padding: clamp(1.35rem, 4vw, 2.2rem);
     background: var(--rm-chalk);
     color: var(--rm-ink);
     border: 1px solid rgba(255, 255, 255, 0.42);
     border-radius: 0.55rem;
     box-shadow: 0 1.5rem 4rem rgba(0, 8, 30, 0.34);
   }
-  .rm-booking-heading h2 {
-    color: var(--rm-ink) !important;
-    font-size: clamp(1.5rem, 2.8vw, 2rem);
-    line-height: 1.15;
-    letter-spacing: -0.035em !important;
-    text-wrap: balance;
+
+  .rm-form-heading {
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--rm-line);
   }
-  .rm-booking-heading p { margin-top: 0.75rem; color: #42516a !important; font-size: 0.95rem; line-height: 1.65; }
-  .rm-booking-button {
+
+  .rm-form-heading p {
+    margin-top: 0.55rem;
+    color: var(--rm-cobalt) !important;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .rm-form-heading h2 {
+    color: var(--rm-ink) !important;
+    font-size: clamp(1.65rem, 4vw, 2.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em !important;
+  }
+
+  .rm-fields { display: grid; gap: 0.9rem; align-items: start; }
+  .rm-fields > * { min-width: 0; }
+
+  // Country and number share one row so neighbouring fields keep their height.
+  .rm-phone-row { display: grid; gap: 0.9rem; }
+  .rm-phone-row [data-phone-error] { grid-column: 1 / -1; color: #b42318; font-size: 0.75rem; }
+
+  .rm-fields label {
+    color: var(--rm-ink);
+    font-size: 0.78rem;
+    font-weight: 800;
+    display: grid;
+    align-content: start;
+    min-width: 0;
+    gap: 0.35rem;
+  }
+
+  .rm-fields label > span {
+    color: #59667b;
+    font-size: 0.72rem;
+    font-weight: 400;
+  }
+
+  .rm-fields input {
     width: 100%;
-    min-height: 3.5rem;
-    margin-top: 1.5rem;
-    padding: 0.9rem 1rem;
+    min-width: 0;
+    height: 3.15rem;
+    min-height: 3.15rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid rgba(7, 26, 66, 0.3) !important;
+    border-radius: 0.25rem !important;
+    background: #fff !important;
+    color: var(--rm-ink);
+    font: inherit;
+    font-size: 1rem;
+  }
+
+  .rm-fields select {
+    width: 100%;
+    min-width: 0;
+    height: 3.15rem;
+    min-height: 3.15rem;
+    padding: 0.75rem 2.4rem 0.75rem 0.9rem;
+    border: 1px solid rgba(7, 26, 66, 0.3);
+    border-radius: 0.25rem;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23071a42' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.85rem center;
+    background-size: 1.1rem;
+    color: var(--rm-ink);
+    font: inherit;
+    font-size: 1rem;
+    appearance: none;
+  }
+
+  .rm-fields select:invalid { color: #738096; }
+
+  .rm-optional {
+    margin-left: 0.35rem;
+    color: #7d8899 !important;
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .rm-fields input::placeholder { color: #738096; opacity: 1; }
+  .rm-fields input:focus,
+  .rm-fields select:focus { border-color: var(--rm-cobalt) !important; box-shadow: 0 0 0 4px rgba(35, 198, 213, 0.17) !important; }
+
+  .rm-submit {
+    width: 100%;
+    min-height: 3.7rem;
+    margin-top: 1.15rem;
+    padding: 0.85rem 1rem;
+    border: 0;
     border-radius: 0.25rem;
     background: var(--rm-mustard);
-    color: var(--rm-ink) !important;
+    color: var(--rm-ink);
+    box-shadow: 0 0.75rem 1.5rem rgba(7, 26, 66, 0.16);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    font-size: 0.9rem;
+    font: inherit;
+    font-size: 0.84rem;
     font-weight: 800;
-    text-align: center;
-    text-decoration: none;
-    transition: background 0.2s ease;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+    transition: transform 0.3s cubic-bezier(.19,1,.22,1), box-shadow 0.3s cubic-bezier(.19,1,.22,1), background 0.2s ease;
   }
-  .rm-booking-button:hover { background: #f7c960; }
-  .rm-booking-button svg { width: 1.35rem; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .rm-booking-help { margin-top: 0.75rem; color: #42516a !important; font-size: 0.8rem; line-height: 1.6; text-align: center; }
+
+  .rm-submit:hover { transform: translateY(-3px); background: #f7c960; box-shadow: 0 1rem 2rem rgba(7, 26, 66, 0.23); }
+  .rm-submit:active { transform: translateY(0); }
+  .rm-submit svg { width: 1.35rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
   .rm-call-facts {
     margin-top: 1.4rem;
@@ -728,6 +859,7 @@ const landingFaqs = offerFaqs.map(faq => {
   .rm-service-node { width: 2.9rem; height: 2.9rem; position: absolute; top: 0; left: 0; z-index: 1; border: 1px solid var(--rm-cyan); border-radius: 50%; background: var(--rm-ink); color: #9cf4f2; display: grid; place-items: center; font-size: 0.7rem; font-weight: 800; }
   .rm-service-copy h3 { color: #fff !important; font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -0.03em !important; }
   .rm-service-copy p { margin-top: 0.5rem; color: #c1cede !important; line-height: 1.65; }
+  .rm-service-detail { color: #82eeeb !important; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 
   .rm-mid-cta { margin-top: 1rem; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); display: grid; gap: 1rem; }
   .rm-mid-cta p { color: #fff !important; font-size: clamp(1.15rem, 3vw, 1.6rem); font-weight: 700; }
@@ -810,13 +942,14 @@ const landingFaqs = offerFaqs.map(faq => {
   .rm-heatmap-caption { margin-top: 0.85rem; color: #fff !important; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; }
   .rm-heatmap-note { margin-top: 0.85rem; color: #b9c7da !important; font-size: 0.85rem; line-height: 1.65; }
 
+  .rm-results-disclosure { max-width: 74ch; margin-top: 2rem; color: #6b788c !important; font-size: 0.74rem; line-height: 1.6; }
 
-  .rm-proof { background: var(--rm-mist); }
+  .rm-proof { background: var(--rm-mist); padding-block: clamp(4rem, 8vw, 6.5rem); }
   .rm-proof-title-wrap { max-width: 52rem; }
-  .rm-proof-title-wrap > p { margin-top: 1.25rem; max-width: 65ch; line-height: 1.7; }
-  .rm-proof-grid { margin-top: 3rem; border-top: 1px solid var(--rm-line); }
-  .rm-proof-grid article { padding: 1.7rem 0; border-bottom: 1px solid var(--rm-line); display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; align-content: start; gap: 0.5rem 1rem; }
-  .rm-proof-tick { width: 2.6rem; height: 2.6rem; grid-row: 1 / 3; border: 1px solid var(--rm-cobalt); border-radius: 50%; display: grid; place-items: center; }
+  .rm-proof-title-wrap > p { margin-top: 1.25rem; max-width: 65ch; color: #46566f; font-size: 1.05rem; line-height: 1.7; }
+  .rm-proof-grid { margin-top: clamp(2rem, 4vw, 3rem); display: grid; gap: 1rem; }
+  .rm-proof-grid article { padding: clamp(1.4rem, 3vw, 1.9rem); border: 1px solid var(--rm-line); border-radius: 0.55rem; background: #fff; display: grid; align-content: start; gap: 0.75rem; }
+  .rm-proof-tick { width: 2.6rem; height: 2.6rem; border: 1px solid var(--rm-cobalt); border-radius: 50%; background: rgba(11, 74, 162, 0.06); display: grid; place-items: center; }
   .rm-proof-tick svg { width: 1.3rem; fill: none; stroke: var(--rm-cobalt); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .rm-proof-grid h3 { color: var(--rm-ink) !important; font-size: 1.2rem; letter-spacing: -0.02em !important; }
   .rm-proof-grid p { color: #536176; line-height: 1.65; }
@@ -841,7 +974,7 @@ const landingFaqs = offerFaqs.map(faq => {
   .rm-final-action { padding-top: 1.25rem; border-top: 1px solid rgba(35, 198, 213, 0.65); }
   .rm-final-action > span { color: #9cf4f2; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
   .rm-final-action > p { margin-top: 0.65rem; color: #d6e5f5 !important; font-size: 0.92rem; line-height: 1.6; }
-  .rm-final-cta { width: 100%; min-height: 5.5rem; margin-top: 1.35rem; padding: 1rem 1.4rem; background: var(--rm-mustard); color: var(--rm-ink) !important; border-radius: 0.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; box-shadow: none; }
+  .rm-final-cta { width: 100%; min-height: 5.5rem; margin-top: 1.35rem; padding: 1rem 1.4rem; background: var(--rm-mustard); color: var(--rm-ink) !important; border-radius: 0.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; box-shadow: 0 1rem 2rem rgba(7,26,66,.24); }
   .rm-final-cta-copy { display: grid; gap: 0.3rem; }
   .rm-final-cta-copy strong { font-size: 0.88rem; }
   .rm-final-cta-copy small { font-size: 0.72rem; font-weight: 600; letter-spacing: 0; text-transform: none; }
@@ -884,6 +1017,9 @@ const landingFaqs = offerFaqs.map(faq => {
   .rm-mobile-cta.is-hidden { opacity: 0; visibility: hidden; transform: translateY(1rem); pointer-events: none; }
 
   @media (min-width: 42rem) {
+    .rm-fields { grid-template-columns: 1fr 1fr; }
+    .rm-full-field { grid-column: 1 / -1; }
+    .rm-phone-row { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); }
     .rm-call-facts { grid-template-columns: repeat(3, 1fr); }
     .rm-footer-inner { grid-template-columns: auto 1fr auto; }
     .rm-legal { justify-content: end; }
@@ -898,29 +1034,22 @@ const landingFaqs = offerFaqs.map(faq => {
     .rm-service-rail li { padding: 4.5rem 0 0; display: block; }
     .rm-service-node { left: 50%; transform: translateX(-50%); }
     .rm-service-copy { text-align: center; }
+    .rm-service-detail { margin-top: 1rem; text-align: center; }
     .rm-mid-cta { margin-top: 4rem; grid-template-columns: 1fr auto; align-items: center; }
     .rm-results-grid { grid-template-columns: repeat(3, 1fr); }
     .rm-heatmap { grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr); gap: clamp(2rem, 4vw, 3.5rem); }
-    .rm-results-footer { max-width: 48rem; }
-    .rm-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-    .rm-proof-grid article { padding: 2rem; border-right: 1px solid var(--rm-line); }
-    .rm-proof-grid article:first-child { padding-left: 0; }
-    .rm-proof-grid article:last-child { border-right: 0; padding-right: 0; }
+    .rm-proof-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     .rm-call-grid { grid-template-columns: minmax(0, 1fr) minmax(25rem, 0.82fr); gap: clamp(4rem, 7vw, 7rem); align-items: start; }
     .rm-final-inner { grid-template-columns: minmax(0, 1.05fr) minmax(24rem, 0.65fr); gap: clamp(4rem, 7vw, 7rem); }
     .rm-mobile-cta { display: none; }
   }
 
   @media (max-width: 48rem) {
-    .rm-hero-inner { padding-top: 1.5rem; gap: 1.25rem; }
-    .rm-hero h1 { max-width: 16ch; font-size: clamp(2.25rem, 9vw, 3.5rem); }
-    .rm-hero-action { margin-top: 0.85rem; }
-    .rm-hero-action .rm-hero-cta { display: none; }
-    .rm-hero-proof { margin: 0.85rem 0 0; }
     .rm-hero-copy { text-align: center; }
     .rm-hero h1,
     .rm-hero-text { margin-inline: auto; }
-    .rm-hero-action { justify-items: center; }
+    .rm-no-layers { flex-direction: column; justify-content: center; text-align: center; }
+    .rm-founder-signal { width: auto; justify-items: center; }
 
     .rm-system-intro { text-align: center; }
     .rm-system h2,
@@ -930,7 +1059,7 @@ const landingFaqs = offerFaqs.map(faq => {
     .rm-results-head { margin-inline: auto; text-align: center; }
     .rm-results h2,
     .rm-results-head > p { margin-inline: auto; }
-    .rm-results-footer { text-align: left; }
+    .rm-results-disclosure { margin-inline: auto; text-align: center; }
     .rm-program-pillars { justify-content: center; }
     .rm-program-note { text-align: center; }
 
@@ -950,6 +1079,7 @@ const landingFaqs = offerFaqs.map(faq => {
     .rm-header { gap: 0.75rem; }
     .rm-logo { width: min(9rem, 44vw); }
     .rm-header-cta { padding: 0.8rem 0.75rem; font-size: 0.68rem; }
+    .rm-founder-signal { width: auto; }
   }
 
   @media (prefers-reduced-motion: no-preference) {

@@ -17,6 +17,7 @@ related_targets: ["src/components/AdsLandingPage.astro"]
 - Memorable moment: “More Restoration Jobs. Less Time Chasing Leads.” sits on a plotted territory field beside a clear free 30-minute call and a direct calendar booking panel. On mobile the opening copy is compact and every booking action opens the real calendar.
 - Do not literalize: generated map availability, comparison copy, or any unsupported text in the comp.
 - Scheduling: paid CTAs link straight to Google Calendar; /thank-you/ still serves legacy accepted inquiries. Neither a calendar click nor an inquiry is a confirmed booking.
+- November 3, 2026 supersedes the Job, Primary action, Memorable moment and Scheduling lines above. The page restores the August 20–27 version that produced paid requests. The H1 is "One Team Running Every Part of Your Restoration Marketing.", with a single-step territory form in the hero (seven required fields including monthly budget) and "Check my territory" actions. Results keep the current cards, heat map and testimonial. The form posts through the validated function with a typed receipt, and /thank-you/ then offers the calendar. Claims stay restoration-focused, not restoration-only.
 
 ## Fidelity inventory
 
