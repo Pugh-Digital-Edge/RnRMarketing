@@ -1,0 +1,560 @@
+{
+  "repository": "Pugh-Digital-Edge/RnRMarketing",
+  "intervention_id": "SEO-019",
+  "owed_week": "2026-10-19",
+  "original_due": "2026-10-19T09:30:00-04:00",
+  "publication_week": "2026-11-09",
+  "approved_revision": "v1",
+  "attempt_id": "oldest-20261113-seo-019-20261019",
+  "reserved_at": "2026-11-13T22:25:16.205942+00:00",
+  "approval": {
+    "approved_by": "Matt",
+    "approved_at": "2026-11-13T22:06:27.807Z",
+    "decision_url": "https://app.notion.com/p/3e0d49a32caf81cb9594ed656e08cb19",
+    "repository": "Pugh-Digital-Edge/RnRMarketing",
+    "week_start": "2026-10-19",
+    "article_id": "SEO-019",
+    "publication_week": "2026-11-09"
+  },
+  "source_base": "f7b094fcab36d017ba3d4505d2d4258f2f96547e",
+  "article_sha256": "19bf1f18f26ca173e509505fca2b636589276594a27adc97eea0704a1f529d4f",
+  "cover_sha256": "ab35b316498af7512976b7d94f34c3a6e1f23612406171a0c145e2559d7d5905",
+  "author_model": "gpt-6.1-terra",
+  "author_started_at": "2026-11-13T22:25:58.359Z",
+  "author_completed_at": "2026-11-13T22:27:05.282Z",
+  "native_author_thread": "01a1d704-7d34-7502-8c4b-ebdb8644b6ac",
+  "native_rollout_sha256": "f3d6bbef4bf11377fbfc3ebbe7aefcc8afef8c46b60ad42ad5c74474b438d76e",
+  "fact_use_ledger": {
+    "schema_version": 1,
+    "repository": "Pugh-Digital-Edge/RnRMarketing",
+    "article_id": "SEO-019",
+    "approved_revision": "v1",
+    "source_screening": {
+      "complete": true,
+      "checked_at": "2026-11-13T21:31:43.458039Z",
+      "competitor_domains": [
+        "12amagency.com",
+        "7ten.marketing",
+        "99calls.com",
+        "bluecorona.com",
+        "brownbullmarketing.com",
+        "builtrightdigital.com",
+        "bullseyeinternet.com",
+        "clicksgeek.com",
+        "comradeweb.com",
+        "contractormarketingpros.net",
+        "diginebel.com",
+        "hookagency.com",
+        "itzdigital.co",
+        "pushleads.com",
+        "restorationinbound.com",
+        "restorationmarketers.com",
+        "resultcalls.com",
+        "thriveagency.com",
+        "turnkeyrestorationgroup.com",
+        "waterrestorationmarketing.com"
+      ],
+      "evidence_reference": "Private research evidence retained; SHA-256 fc631422fdad0c001e6db0886a7753941b5d93e231d708701747d867c4085ae9"
+    },
+    "facts": [
+      {
+        "fact_id": "F01",
+        "claim_key": "match",
+        "claim": "Google Ads keyword match types govern how closely a search must relate to a keyword for the ad to be considered.",
+        "intended_section": "Search mechanics",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://support.google.com/google-ads/answer/7478529?hl=en&ref_type=adv",
+            "final_url": "https://support.google.com/google-ads/answer/7478529?hl=en&ref_type=adv",
+            "publisher": "Google Ads Help",
+            "source_title": "About keyword matching options",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "Google Ads keyword match types govern how closely a search must relate to a keyword for the ad to be considered.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "What each channel can tell you",
+            "article_quote": "Google Ads keyword match types govern how closely a search must relate to a keyword for the ad to be considered.",
+            "citation_url": "https://support.google.com/google-ads/answer/7478529?hl=en&ref_type=adv"
+          }
+        ]
+      },
+      {
+        "fact_id": "F02",
+        "claim_key": "exact",
+        "claim": "Exact match can include searches with the same meaning or intent, not only identical wording.",
+        "intended_section": "Search mechanics",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://support.google.com/google-ads/answer/7478529?hl=en&ref_type=adv",
+            "final_url": "https://support.google.com/google-ads/answer/7478529?hl=en&ref_type=adv",
+            "publisher": "Google Ads Help",
+            "source_title": "About keyword matching options",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "Exact match can include searches with the same meaning or intent, not only identical wording.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "What each channel can tell you",
+            "article_quote": "Even exact match can include searches with the same meaning or intent, rather than only identical wording.",
+            "citation_url": "https://support.google.com/google-ads/answer/7478529?hl=en&ref_type=adv"
+          }
+        ]
+      },
+      {
+        "fact_id": "F03",
+        "claim_key": "negative",
+        "claim": "Negative keywords can exclude ads from searches containing specified terms.",
+        "intended_section": "Search controls",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://support.google.com/google-ads/answer/7478529?hl=en&ref_type=adv",
+            "final_url": "https://support.google.com/google-ads/answer/7478529?hl=en&ref_type=adv",
+            "publisher": "Google Ads Help",
+            "source_title": "About keyword matching options",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "Negative keywords can exclude ads from searches containing specified terms.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "What each channel can tell you",
+            "article_quote": "Google allows negative keywords to exclude ads from searches containing specified terms, but negative match rules differ from positive match rules.",
+            "citation_url": "https://support.google.com/google-ads/answer/7478529?hl=en&ref_type=adv"
+          }
+        ]
+      },
+      {
+        "fact_id": "F04",
+        "claim_key": "report",
+        "claim": "The search terms report lists sufficiently active searches that showed an ad; reported searches can differ from the keyword list.",
+        "intended_section": "Search controls",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://support.google.com/google-ads/answer/2472708?hl=en_us_us",
+            "final_url": "https://support.google.com/google-ads/answer/2472708?hl=en_us_us",
+            "publisher": "Google Ads Help",
+            "source_title": "About the search terms report",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "The search terms report lists sufficiently active searches that showed an ad; reported searches can differ from the keyword list.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "What each channel can tell you",
+            "article_quote": "lists sufficiently active searches that showed an ad, and those searches can differ from the keyword list.",
+            "citation_url": "https://support.google.com/google-ads/answer/2472708?hl=en_us_us"
+          }
+        ]
+      },
+      {
+        "fact_id": "F05",
+        "claim_key": "forms",
+        "claim": "Meta lead ads offer instant forms, website forms, calls and messaging as lead-collection experiences.",
+        "intended_section": "Social mechanics",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://www.facebookblueprint.com/student/activity/393363-generate-leads-across-meta-technologies?sid=67e90b3a-4170-4306-8191-69e4eefacb65&sid_i=22",
+            "final_url": "https://www.facebookblueprint.com/student/activity/393363-generate-leads-across-meta-technologies?sid=67e90b3a-4170-4306-8191-69e4eefacb65&sid_i=22",
+            "publisher": "Meta Blueprint",
+            "source_title": "Generate leads with forms, calls and messages",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "Meta lead ads offer instant forms, website forms, calls and messaging as lead-collection experiences.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "What each channel can tell you",
+            "article_quote": "describes instant forms, website forms, calls and messaging as available lead-ad experiences.",
+            "citation_url": "https://www.facebookblueprint.com/student/activity/393363-generate-leads-across-meta-technologies?sid=67e90b3a-4170-4306-8191-69e4eefacb65&sid_i=22"
+          }
+        ]
+      },
+      {
+        "fact_id": "F06",
+        "claim_key": "crm_optimization",
+        "claim": "Meta describes using the Conversions API for CRM to optimize lead campaigns for qualified leads.",
+        "intended_section": "Test constraints",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://www.facebookblueprint.com/student/activity/603002-improve-lead-quality-with-meta-conversions-api-for-crm?sid=0c6fde23-8d2a-4fc7-b9aa-3e3052378010&sid_i=1",
+            "final_url": "https://www.facebookblueprint.com/student/activity/603002-improve-lead-quality-with-meta-conversions-api-for-crm?sid=0c6fde23-8d2a-4fc7-b9aa-3e3052378010&sid_i=1",
+            "publisher": "Meta Blueprint",
+            "source_title": "Improve lead quality with Meta Conversions API for CRM",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "Meta describes using the Conversions API for CRM to optimize lead campaigns for qualified leads.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "Compare outcomes with the same definitions",
+            "article_quote": "describes lead-generation campaigns using instant or website forms and its Conversions API for CRM to optimize for qualified leads",
+            "citation_url": "https://www.facebookblueprint.com/student/activity/603002-improve-lead-quality-with-meta-conversions-api-for-crm?sid=0c6fde23-8d2a-4fc7-b9aa-3e3052378010&sid_i=1"
+          }
+        ]
+      },
+      {
+        "fact_id": "F07",
+        "claim_key": "crm_coverage",
+        "claim": "Meta advises monitoring integration status and lead coverage for that CRM connection.",
+        "intended_section": "Test constraints",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://www.facebookblueprint.com/student/activity/603002-improve-lead-quality-with-meta-conversions-api-for-crm?sid=0c6fde23-8d2a-4fc7-b9aa-3e3052378010&sid_i=1",
+            "final_url": "https://www.facebookblueprint.com/student/activity/603002-improve-lead-quality-with-meta-conversions-api-for-crm?sid=0c6fde23-8d2a-4fc7-b9aa-3e3052378010&sid_i=1",
+            "publisher": "Meta Blueprint",
+            "source_title": "Improve lead quality with Meta Conversions API for CRM",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "Meta advises monitoring integration status and lead coverage for that CRM connection.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "Compare outcomes with the same definitions",
+            "article_quote": "the same training advises monitoring integration status and lead coverage.",
+            "citation_url": "https://www.facebookblueprint.com/student/activity/603002-improve-lead-quality-with-meta-conversions-api-for-crm?sid=0c6fde23-8d2a-4fc7-b9aa-3e3052378010&sid_i=1"
+          }
+        ]
+      },
+      {
+        "fact_id": "F08",
+        "claim_key": "callthreshold",
+        "claim": "A Google Ads phone call conversion can depend on an advertiser-defined call-duration threshold; call counts can exceed conversion counts.",
+        "intended_section": "Comparable outcomes",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://support.google.com/google-ads/answer/7180997?hl=en",
+            "final_url": "https://support.google.com/google-ads/answer/7180997?hl=en",
+            "publisher": "Google Ads Help",
+            "source_title": "Analyze call reporting data",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "A Google Ads phone call conversion can depend on an advertiser-defined call-duration threshold; call counts can exceed conversion counts.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "Compare outcomes with the same definitions",
+            "article_quote": "A Google Ads call conversion can depend on an advertiser-defined call-duration threshold; total calls can exceed conversions.",
+            "citation_url": "https://support.google.com/google-ads/answer/7180997?hl=en"
+          }
+        ]
+      },
+      {
+        "fact_id": "F09",
+        "claim_key": "calltime",
+        "claim": "Google Ads reports a phone call on its occurrence date but a phone call conversion on the ad-click date.",
+        "intended_section": "Comparable outcomes",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://support.google.com/google-ads/answer/7180997?hl=en",
+            "final_url": "https://support.google.com/google-ads/answer/7180997?hl=en",
+            "publisher": "Google Ads Help",
+            "source_title": "Analyze call reporting data",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "Google Ads reports a phone call on its occurrence date but a phone call conversion on the ad-click date.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "Compare outcomes with the same definitions",
+            "article_quote": "Google also reports calls on the date they occur but call conversions on the date of the ad click, so dates can differ in a comparison.",
+            "citation_url": "https://support.google.com/google-ads/answer/7180997?hl=en"
+          }
+        ]
+      },
+      {
+        "fact_id": "F10",
+        "claim_key": "offline",
+        "claim": "Offline conversion imports can measure events that occur after an ad click or call, including an eventual offline sale.",
+        "intended_section": "Comparable outcomes",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://support.google.com/google-ads/answer/2998031?hl=en",
+            "final_url": "https://support.google.com/google-ads/answer/2998031?hl=en",
+            "publisher": "Google Ads Help",
+            "source_title": "About offline conversion imports",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "Offline conversion imports can measure events that occur after an ad click or call, including an eventual offline sale.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "Compare outcomes with the same definitions",
+            "article_quote": "explains that imported offline conversions can measure later events after an ad click or call.",
+            "citation_url": "https://support.google.com/google-ads/answer/2998031?hl=en"
+          }
+        ]
+      },
+      {
+        "fact_id": "F11",
+        "claim_key": "attribution",
+        "claim": "Attribution models determine how credit is assigned to touchpoints on the path to an important action.",
+        "intended_section": "Comparable outcomes",
+        "relevant": true,
+        "useful": true,
+        "sources": [
+          {
+            "url": "https://support.google.com/analytics/answer/16291112?hl=en",
+            "final_url": "https://support.google.com/analytics/answer/16291112?hl=en",
+            "publisher": "Google Analytics Help",
+            "source_title": "Change the reporting attribution model for key events",
+            "source_kind": "official_platform",
+            "is_competitor": false,
+            "supports_claim": true,
+            "support_kind": "paraphrase",
+            "support": "Attribution models determine how credit is assigned to touchpoints on the path to an important action.",
+            "checked_at": "2026-11-13T22:26:56.254050+00:00",
+            "source_date": null
+          }
+        ],
+        "uses": [
+          {
+            "section_heading": "Compare outcomes with the same definitions",
+            "article_quote": "Attribution models assign credit to touchpoints on a path to an important action",
+            "citation_url": "https://support.google.com/analytics/answer/16291112?hl=en"
+          }
+        ]
+      }
+    ],
+    "article_sha256": "19bf1f18f26ca173e509505fca2b636589276594a27adc97eea0704a1f529d4f",
+    "article_path": "src/content/blog/google-ads-vs-facebook-ads-for-fire-damage-restoration.md",
+    "attempt_id": "oldest-20261113-seo-019-20261019",
+    "author_source_check_at": "2026-11-13T22:26:56.254050+00:00",
+    "review": {
+      "reviewer_id": "/root/research_review_rrm_fr",
+      "checked_at": "2026-11-13T22:29:10.456703+00:00",
+      "repository": "Pugh-Digital-Edge/RnRMarketing",
+      "article_id": "SEO-019",
+      "approved_revision": "v1",
+      "attempt_id": "oldest-20261113-seo-019-20261019",
+      "article_sha256": "19bf1f18f26ca173e509505fca2b636589276594a27adc97eea0704a1f529d4f",
+      "disposition": "passed_substantive_final_review",
+      "distinct_useful_facts": true,
+      "sources_support_claims": true,
+      "no_competitor_sources": true,
+      "no_unsupported_client_claims": true,
+      "all_facts_used_and_cited": true,
+      "reviewed_fact_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08",
+        "F09",
+        "F10",
+        "F11"
+      ],
+      "scope": "Independent substantive review of exact post-reservation final article and fact-use ledger; not build, deployment, live acceptance or native author-model verification."
+    }
+  },
+  "independent_review": {
+    "reviewer_id": "/root/research_review_rrm_fr",
+    "checked_at": "2026-11-13T22:29:10.456703+00:00",
+    "repository": "Pugh-Digital-Edge/RnRMarketing",
+    "article_id": "SEO-019",
+    "approved_revision": "v1",
+    "attempt_id": "oldest-20261113-seo-019-20261019",
+    "article_sha256": "19bf1f18f26ca173e509505fca2b636589276594a27adc97eea0704a1f529d4f",
+    "disposition": "passed_substantive_final_review",
+    "distinct_useful_facts": true,
+    "sources_support_claims": true,
+    "no_competitor_sources": true,
+    "no_unsupported_client_claims": true,
+    "all_facts_used_and_cited": true,
+    "reviewed_fact_ids": [
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05",
+      "F06",
+      "F07",
+      "F08",
+      "F09",
+      "F10",
+      "F11"
+    ],
+    "scope": "Independent substantive review of exact post-reservation final article and fact-use ledger; not build, deployment, live acceptance or native author-model verification."
+  },
+  "release_gate": "npm run validate",
+  "release_gate_passed": true,
+  "local_visual_qa": {
+    "desktop": "1440x1000",
+    "mobile": "390x844",
+    "horizontal_overflow": false,
+    "broken_images": 0,
+    "h1_count": 1,
+    "schema_parse_errors": 0,
+    "reviewed": true
+  },
+  "measurement_plan": {
+    "plan_id": "SEO-019-20261113",
+    "intervention_id": "SEO-019",
+    "repository": "Pugh-Digital-Edge/RnRMarketing",
+    "owner": "Codex",
+    "hypothesis": "A comparison worksheet may earn relevant non-brand search visits and qualified restoration-marketing inquiries; evaluate the exact page/query cohort without implying causality.",
+    "cohort": {
+      "pages": [
+        "https://remediationrestorationmarketing.com/resources/google-ads-vs-facebook-ads-for-fire-damage-restoration/"
+      ],
+      "queries": [
+        "facebook ads for restoration companies",
+        "facebook ads vs google ads for fire damage leads",
+        "google ads for fire damage restoration"
+      ],
+      "gsc_property": "sc-domain:remediationrestorationmarketing.com",
+      "search_type": "web",
+      "country": "usa",
+      "devices": [
+        "DESKTOP",
+        "MOBILE",
+        "TABLET"
+      ],
+      "query_class": "non_brand"
+    },
+    "calendar": "America/Los_Angeles",
+    "change_at": "2026-11-13T22:54:57.323467+00:00",
+    "before_window": {
+      "start": "2026-10-16",
+      "end": "2026-11-12"
+    },
+    "after_window": {
+      "start": "2026-11-14",
+      "end": "2026-12-11"
+    },
+    "measurement_due": "2026-12-14",
+    "baseline_kind": "new_url_unavailable",
+    "baseline_limitation": "New exact URL returned HTTP 404 before publication. No verified exact-page/query prechange GSC, organic inquiry or qualified-outcome baseline is available. The HTTP observation establishes absence only, not zero traffic; topic research is separate context.",
+    "baseline": {
+      "gsc_property": "sc-domain:remediationrestorationmarketing.com",
+      "window": {
+        "start": "2026-10-16",
+        "end": "2026-11-12"
+      },
+      "coverage": "unavailable",
+      "truncated": false,
+      "latest_data_date": null,
+      "population": "exact_filtered_cohort",
+      "metrics": {
+        "clicks": null,
+        "impressions": null
+      },
+      "missing_reason": "New URL absent before publication; exact historical cohort unavailable. Stored project research through November 10 does not supply this page baseline.",
+      "attribution": {
+        "availability": "unavailable",
+        "reason": "No verified exact landing-page organic inquiries or independently qualified outcomes.",
+        "event_count": null,
+        "inquiry_count": null,
+        "qualified_count": null
+      },
+      "evidence": {
+        "url": "https://remediationrestorationmarketing.com/resources/google-ads-vs-facebook-ads-for-fire-damage-restoration/",
+        "sha256": "8514f0009a58c6e0acb5468f88037732b59b70af5e524f452e3bef8fb33effc5",
+        "observed_at": "2026-11-13T22:54:56.719494+00:00"
+      },
+      "cohort_id": "b5a731edcbdcbc2486d02b9332fde0c1d797720acfc1f5b3093d5bc3ba332c4b"
+    },
+    "cohort_id": "b5a731edcbdcbc2486d02b9332fde0c1d797720acfc1f5b3093d5bc3ba332c4b"
+  },
+  "measurement_qualification": {
+    "qualifications": [
+      "FINALIZED_SEARCH_DATA_NOT_VERIFIED",
+      "MISSING_SEARCH_METRICS",
+      "PARTIAL_OR_TRUNCATED_SEARCH_COHORT",
+      "RETROSPECTIVE_OR_MISSING_PRECHANGE_BASELINE",
+      "WINDOW_NOT_FULLY_AVAILABLE"
+    ],
+    "attribution": {
+      "inquiries": null,
+      "qualified_outcomes": null,
+      "qualification": "unavailable"
+    },
+    "cohort_id": "b5a731edcbdcbc2486d02b9332fde0c1d797720acfc1f5b3093d5bc3ba332c4b",
+    "before_window": {
+      "start": "2026-10-16",
+      "end": "2026-11-12"
+    },
+    "after_window": {
+      "start": "2026-11-14",
+      "end": "2026-12-11"
+    },
+    "measurement_due": "2026-12-14",
+    "outcome_claim": "none"
+  },
+  "live_status": "Awaiting publication and live verification; not accepted"
+}
