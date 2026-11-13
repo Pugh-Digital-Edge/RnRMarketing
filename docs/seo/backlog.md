@@ -461,3 +461,8 @@ Auto-approved by weekly article automation under the existing portfolio contract
 Post-reservation 6.1 Terra authorship and independent final review passed; 11 distinct cited facts. Native build and desktop/mobile QA passed. Exact preparation, research ledger, review and frozen measurement scope: [preflight](runs/2026-11-13-seo-019-preflight.json). Live URL: https://remediationrestorationmarketing.com/resources/google-ads-vs-facebook-ads-for-fire-damage-restoration/. Status: Awaiting live verification, not accepted.
 
 Hypothesis: A comparison worksheet may earn relevant non-brand search visits and qualified restoration-marketing inquiries; evaluate the exact page/query cohort without implying causality. Before October 16-November 12; after November 14-December 11; review due December 14. New-page baseline and organic/qualified outcomes unavailable, not zero. No claim of search improvement.
+
+
+### SEO-019 live acceptance - November 13
+
+Accepted live at 2026-11-13T23:02:08.781069+00:00; source `720a35fdbe985add7b8dac7eedbec1d784d59d9d`. [Immutable acceptance](runs/2026-11-13-seo-019-acceptance.md). Completes the original 2026-10-19 primary once. Status: Measuring; exact frozen-cohort review due December 14, 2026. Other debt and original dates remain unchanged.
