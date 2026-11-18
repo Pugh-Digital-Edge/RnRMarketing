@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "repository": "Pugh-Digital-Edge/RnRMarketing",
+  "article_id": "SEO-020",
+  "approved_revision": "proposed-v2",
+  "article_sha256": "a6d773727f10cc32c078ad5838051083c305889426b719d4f29530eef03e1f56",
+  "facts": [
+    {
+      "fact_id": "F01",
+      "claim_key": "manager_pay",
+      "claim": "BLS reports a May 2025 national median annual wage of $166,790 for marketing managers; this is an occupational benchmark, not a restoration-specific wage or hiring quote.",
+      "intended_section": "Wage context",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm",
+          "final_url": "https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm",
+          "publisher": "BLS",
+          "source_title": "Advertising, Promotions, and Marketing Managers",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "BLS reports a May 2025 national median annual wage of $166,790 for marketing managers; this is an occupational benchmark, not a restoration-specific wage or hiring quote.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": "2026-08-27"
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Match Capabilities and Backup to the Work",
+          "article_quote": "BLS reports a May 2025 national median annual wage of $166,790 for [marketing managers](https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm). All four figures above are national occupational wage context across employers, not restoration-specific salaries, local offers, total employment costs, or a requirement to hire four people. Do not add the medians together as the inevitable cost of an in-house option. Scope and actual candidates determine the work and pay to compare.",
+          "citation_url": "https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm"
+        }
+      ]
+    },
+    {
+      "fact_id": "F02",
+      "claim_key": "manager_work",
+      "claim": "BLS describes marketing manager duties including discussion of budgets and contracts, campaign planning, market research and directing staff.",
+      "intended_section": "Capacity and capabilities",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm",
+          "final_url": "https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm",
+          "publisher": "BLS",
+          "source_title": "Advertising, Promotions, and Marketing Managers",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "BLS describes marketing manager duties including discussion of budgets and contracts, campaign planning, market research and directing staff.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": "2026-08-27"
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Inventory the Work Before Choosing a Model",
+          "article_quote": "The [Bureau of Labor Statistics' marketing manager profile](https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm) describes work that includes discussing budgets and contracts, planning campaigns, researching markets, and directing staff. Use those functions to test a candidate's scope: a manager who coordinates specialists may not also have capacity to execute every technical task.",
+          "citation_url": "https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm"
+        }
+      ]
+    },
+    {
+      "fact_id": "F03",
+      "claim_key": "analyst",
+      "claim": "BLS reports a May 2025 national median annual wage of $78,760 for market research analysts; their duties include measuring marketing effectiveness and presenting findings.",
+      "intended_section": "Capacity and capabilities",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.bls.gov/ooh/business-and-financial/market-research-analysts.htm",
+          "final_url": "https://www.bls.gov/ooh/business-and-financial/market-research-analysts.htm",
+          "publisher": "BLS",
+          "source_title": "Market Research Analysts",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "BLS reports a May 2025 national median annual wage of $78,760 for market research analysts; their duties include measuring marketing effectiveness and presenting findings.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": "2026-08-27"
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Match Capabilities and Backup to the Work",
+          "article_quote": "BLS describes [market research analysts](https://www.bls.gov/ooh/business-and-financial/market-research-analysts.htm) as measuring marketing effectiveness and presenting findings; its May 2025 national median annual wage for that occupation was $78,760. For your worksheet, identify who can interpret the data, explain uncertainty, and recommend a decision—not just export a dashboard.",
+          "citation_url": "https://www.bls.gov/ooh/business-and-financial/market-research-analysts.htm"
+        }
+      ]
+    },
+    {
+      "fact_id": "F04",
+      "claim_key": "web",
+      "claim": "BLS reports a May 2025 national median annual wage of $92,650 for web developers; the occupation is distinct from marketing management.",
+      "intended_section": "Capacity and capabilities",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm",
+          "final_url": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm",
+          "publisher": "BLS",
+          "source_title": "Web Developers and Digital Designers",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "BLS reports a May 2025 national median annual wage of $92,650 for web developers; the occupation is distinct from marketing management.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": "2026-08-27"
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Match Capabilities and Backup to the Work",
+          "article_quote": "Website development is another capability to test. BLS reports a May 2025 national median annual wage of $92,650 for [web developers](https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm). Define who can make and check the specific site and tracking changes you need, and who can take over if that person is unavailable.",
+          "citation_url": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm"
+        }
+      ]
+    },
+    {
+      "fact_id": "F05",
+      "claim_key": "design",
+      "claim": "BLS reports a May 2025 national median annual wage of $62,960 for graphic designers; their work includes visual layouts, design revisions and error review.",
+      "intended_section": "Capacity and capabilities",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm",
+          "final_url": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm",
+          "publisher": "BLS",
+          "source_title": "Graphic Designers",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "BLS reports a May 2025 national median annual wage of $62,960 for graphic designers; their work includes visual layouts, design revisions and error review.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": "2026-10-29"
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Match Capabilities and Backup to the Work",
+          "article_quote": "For visual work, BLS reports a May 2025 national median annual wage of $62,960 for [graphic designers](https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm), whose duties include developing layouts, revising designs, and reviewing work for errors. Identify who prepares assets and who checks that service and territory claims are accurate before use.",
+          "citation_url": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm"
+        }
+      ]
+    },
+    {
+      "fact_id": "F06",
+      "claim_key": "ecec",
+      "claim": "In June 2026 BLS estimated private-industry compensation costs averaging $46.89 per hour worked, composed of $32.82 in wages and $14.07 in benefits; this is across occupations, not a specific hire.",
+      "intended_section": "Comparable cost",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.bls.gov/news.release/ecec.htm",
+          "final_url": "https://www.bls.gov/news.release/ecec.htm",
+          "publisher": "BLS",
+          "source_title": "Employer Costs for Employee Compensation, June 2026",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "In June 2026 BLS estimated private-industry compensation costs averaging $46.89 per hour worked, composed of $32.82 in wages and $14.07 in benefits; this is across occupations, not a specific hire.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": "2026-09-09"
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Compare the Same Scope and Period",
+          "article_quote": "across occupations at $46.89 per hour worked: $32.82 in wages and $14.07 in benefits.",
+          "citation_url": "https://www.bls.gov/news.release/ecec.htm"
+        }
+      ]
+    },
+    {
+      "fact_id": "F07",
+      "claim_key": "ecec_components",
+      "claim": "BLS categorizes benefits in its employer cost estimates as paid leave, supplemental pay, insurance, retirement and savings, and legally required benefits.",
+      "intended_section": "Comparable cost",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.bls.gov/news.release/ecec.htm",
+          "final_url": "https://www.bls.gov/news.release/ecec.htm",
+          "publisher": "BLS",
+          "source_title": "Employer Costs for Employee Compensation, June 2026",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "BLS categorizes benefits in its employer cost estimates as paid leave, supplemental pay, insurance, retirement and savings, and legally required benefits.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": "2026-09-09"
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Compare the Same Scope and Period",
+          "article_quote": "BLS groups the benefits in its [compensation estimates](https://www.bls.gov/news.release/ecec.htm) into paid leave, supplemental pay, insurance, retirement and savings, and legally required benefits. Use actual applicable costs in your worksheet and avoid counting the same employer-paid item twice, including legally required benefits already included in an aggregate.",
+          "citation_url": "https://www.bls.gov/news.release/ecec.htm"
+        }
+      ]
+    },
+    {
+      "fact_id": "F08",
+      "claim_key": "small_establishment",
+      "claim": "In June 2026 BLS estimated average private-industry compensation at establishments of 1–49 workers at $37.64 per hour worked, including $9.76 in benefits; this is not a restoration or manager-specific estimate.",
+      "intended_section": "Comparable cost",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.bls.gov/news.release/ecec.htm",
+          "final_url": "https://www.bls.gov/news.release/ecec.htm",
+          "publisher": "BLS",
+          "source_title": "Employer Costs for Employee Compensation, June 2026",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "In June 2026 BLS estimated average private-industry compensation at establishments of 1–49 workers at $37.64 per hour worked, including $9.76 in benefits; this is not a restoration or manager-specific estimate.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": "2026-09-09"
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Compare the Same Scope and Period",
+          "article_quote": "was $37.64 per hour worked, including $9.76 in benefits.",
+          "citation_url": "https://www.bls.gov/news.release/ecec.htm"
+        }
+      ]
+    },
+    {
+      "fact_id": "F09",
+      "claim_key": "tax",
+      "claim": "The IRS states employers generally withhold employee Social Security and Medicare taxes and pay the employer share; federal unemployment tax is reported and paid separately.",
+      "intended_section": "Comparable cost",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/understanding-employment-taxes",
+          "final_url": "https://www.irs.gov/businesses/small-businesses-self-employed/understanding-employment-taxes",
+          "publisher": "Internal Revenue Service",
+          "source_title": "Understanding employment taxes",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The IRS states employers generally withhold employee Social Security and Medicare taxes and pay the employer share; federal unemployment tax is reported and paid separately.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Compare the Same Scope and Period",
+          "article_quote": "The IRS explains that employers generally withhold employees' Social Security and Medicare taxes and pay an employer share; federal unemployment tax is reported and paid separately. Review its [employment-tax guidance](https://www.irs.gov/businesses/small-businesses-self-employed/understanding-employment-taxes) with your adviser. Gross employee pay already includes employee withholding: do not add that withholding again as an employer expense. Estimate applicable employer-paid costs separately.",
+          "citation_url": "https://www.irs.gov/businesses/small-businesses-self-employed/understanding-employment-taxes"
+        }
+      ]
+    },
+    {
+      "fact_id": "F10",
+      "claim_key": "payroll",
+      "claim": "SBA’s payroll planning guidance includes choosing who administers payroll, planning leave, and identifying applicable recordkeeping and reporting.",
+      "intended_section": "Coverage and implementation",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://legacy.sba.gov/business-guide/manage-your-business/hire-manage-employees",
+          "final_url": "https://legacy.sba.gov/business-guide/manage-your-business/hire-manage-employees",
+          "publisher": "U.S. Small Business Administration",
+          "source_title": "Hire and manage employees",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "SBA’s payroll planning guidance includes choosing who administers payroll, planning leave, and identifying applicable recordkeeping and reporting.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Compare the Same Scope and Period",
+          "article_quote": "The SBA's [payroll planning guide](https://legacy.sba.gov/business-guide/manage-your-business/hire-manage-employees) includes planning leave, choosing payroll administration, and identifying records and reporting. Put the time and cost of those responsibilities, recruiting, and backup coverage into the employee option where applicable.",
+          "citation_url": "https://legacy.sba.gov/business-guide/manage-your-business/hire-manage-employees"
+        }
+      ]
+    },
+    {
+      "fact_id": "F11",
+      "claim_key": "contract_class",
+      "claim": "For federal employment tax purposes the IRS considers behavioral control, financial control and the parties’ relationship when evaluating worker classification.",
+      "intended_section": "Comparable cost",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://www.irs.gov/taxtopics/tc762",
+          "final_url": "https://www.irs.gov/taxtopics/tc762",
+          "publisher": "Internal Revenue Service",
+          "source_title": "Topic no. 762, Independent contractor vs. employee",
+          "source_kind": "government",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "For federal employment tax purposes the IRS considers behavioral control, financial control and the parties’ relationship when evaluating worker classification.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Compare the Same Scope and Period",
+          "article_quote": "Calling a person a contractor does not settle their classification. For federal employment tax purposes, the IRS considers behavioral control, financial control, and the relationship between the parties in its [worker-classification guidance](https://www.irs.gov/taxtopics/tc762). Ask a qualified adviser to assess the actual arrangement and applicable rules before relying on a classification.",
+          "citation_url": "https://www.irs.gov/taxtopics/tc762"
+        }
+      ]
+    },
+    {
+      "fact_id": "F12",
+      "claim_key": "ads_permissions",
+      "claim": "Google Ads permits an account administrator to grant, change or remove users’ account access.",
+      "intended_section": "Continuity",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/6372672?hl=en_us_us",
+          "final_url": "https://support.google.com/google-ads/answer/6372672?hl=en_us_us",
+          "publisher": "Google Ads Help",
+          "source_title": "Manage access to your Google Ads account",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google Ads permits an account administrator to grant, change or remove users’ account access.",
+          "checked_at": "2026-11-17T22:07:06Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Decide Who Owns Each Handoff",
+          "article_quote": "For continuity, document access and transition responsibilities. Google says an administrator can grant, change, or remove users' access to an individual account in its [Google Ads access guide](https://support.google.com/google-ads/answer/6372672?hl=en_us_us). Assign an appropriate company administrator and review access when roles change, consistent with your security practices and agreements.",
+          "citation_url": "https://support.google.com/google-ads/answer/6372672?hl=en_us_us"
+        }
+      ]
+    }
+  ]
+}
