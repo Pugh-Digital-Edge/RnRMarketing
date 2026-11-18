@@ -1050,6 +1050,8 @@ const faqSchema = {
     if (event instanceof KeyboardEvent && event.key === "Enter" &&
         event.target instanceof HTMLInputElement && secondStep instanceof HTMLElement && secondStep.hidden) {
       event.preventDefault();
+      // Safari may report the IME confirmation after isComposing resets.
+      if (event.isComposing || event.keyCode === 229) return;
       showSecondStep();
     }
   });
