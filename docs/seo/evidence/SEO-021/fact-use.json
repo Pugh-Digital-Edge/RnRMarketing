@@ -1,0 +1,399 @@
+{
+  "article_id": "SEO-021",
+  "schema_version": 1,
+  "repository": "Pugh-Digital-Edge/RnRMarketing",
+  "facts": [
+    {
+      "fact_id": "F01",
+      "claim_key": "lead-creation-timezone",
+      "claim": "Google Ads API documents the Local Services lead creation timestamp in the Google Ads account’s time zone.",
+      "intended_section": "Build the weekly call ledger",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://developers.google.com/google-ads/api/fields/v26/local_services_lead",
+          "final_url": "https://developers.google.com/google-ads/api/fields/v26/local_services_lead",
+          "publisher": "Google for Developers",
+          "source_title": "Google Ads API v26: local_services_lead",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The creation_date_time field is output in the account's timezone. This supports explicitly aligning the times in the worksheet.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Set the review window and gather three records",
+          "article_quote": "specifies that its lead creation timestamp uses the Google Ads account time zone",
+          "citation_url": "https://developers.google.com/google-ads/api/fields/v26/local_services_lead"
+        }
+      ]
+    },
+    {
+      "fact_id": "F02",
+      "claim_key": "lead-record-identity",
+      "claim": "The Local Services Ads API assigns an ID to each lead.",
+      "intended_section": "Match records without double counting",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://developers.google.com/google-ads/api/fields/v26/local_services_lead",
+          "final_url": "https://developers.google.com/google-ads/api/fields/v26/local_services_lead",
+          "publisher": "Google for Developers",
+          "source_title": "Google Ads API v26: local_services_lead",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The local_services_lead.id field identifies the lead. Use the available source record reference rather than equating a phone ring or callback with a new lead.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Match calls to handling and dispatch",
+          "article_quote": "identifies each lead with an ID",
+          "citation_url": "https://developers.google.com/google-ads/api/fields/v26/local_services_lead"
+        }
+      ]
+    },
+    {
+      "fact_id": "F03",
+      "claim_key": "report-fields",
+      "claim": "Local Services reports allow a selected date range and show charged leads and spend by call, message or booking, alongside the amount of lead credits.",
+      "intended_section": "Pull the report and define the review period",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/6226265",
+          "final_url": "https://support.google.com/localservices/answer/6226265",
+          "publisher": "Google",
+          "source_title": "View reports on Local Services Ads",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Reports include a date range, charged leads and spend by lead channel, a filterable lead list, and credits.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Set the review window and gather three records",
+          "article_quote": "let you select a date range and show charged leads and spend by call, message, or booking, a filterable lead list, and lead credits",
+          "citation_url": "https://support.google.com/localservices/answer/6226265"
+        }
+      ]
+    },
+    {
+      "fact_id": "F04",
+      "claim_key": "record-billable-answered",
+      "claim": "A completed conversation from an answered call or a callback can qualify as a valid lead.",
+      "intended_section": "Explain mismatches between billing and dispatch",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/7195435",
+          "final_url": "https://support.google.com/localservices/answer/7195435",
+          "publisher": "Google",
+          "source_title": "How leads work",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google includes answered calls and callbacks during which the advertiser and potential customer speak.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Interpret billing without confusing it with intake",
+          "article_quote": "lists a conversation with a potential customer on an answered call or callback as a situation that can produce a valid lead",
+          "citation_url": "https://support.google.com/localservices/answer/7195435"
+        }
+      ]
+    },
+    {
+      "fact_id": "F05",
+      "claim_key": "missed-call-duration",
+      "claim": "Google identifies an unanswered in-hours call lasting more than 20 seconds as a scenario that can generate a valid lead.",
+      "intended_section": "Explain mismatches between billing and dispatch",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/7195435",
+          "final_url": "https://support.google.com/localservices/answer/7195435",
+          "publisher": "Google",
+          "source_title": "How leads work",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "An unanswered call during the business's hours lasting over 20 seconds may be a valid lead.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Interpret billing without confusing it with intake",
+          "article_quote": "identifies an unanswered call during the business’s hours lasting more than 20 seconds as a situation that can produce a valid lead",
+          "citation_url": "https://support.google.com/localservices/answer/7195435"
+        }
+      ]
+    },
+    {
+      "fact_id": "F06",
+      "claim_key": "ivr-routing-clock",
+      "claim": "With a keypress phone menu, an unanswered caller who hangs up before pressing a key is not charged under the menu rule, and the timer starts at the first keypress.",
+      "intended_section": "Explain mismatches between billing and dispatch",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/7195435",
+          "final_url": "https://support.google.com/localservices/answer/7195435",
+          "publisher": "Google",
+          "source_title": "How leads work",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The automated phone menu rule measures from the first keypress, and subsequent menu choices do not reset the timer.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Interpret billing without confusing it with intake",
+          "article_quote": "an unanswered caller who hangs up before pressing a key is not charged under that menu rule; its timer starts at the first keypress and later selections do not reset it",
+          "citation_url": "https://support.google.com/localservices/answer/7195435"
+        }
+      ]
+    },
+    {
+      "fact_id": "F07",
+      "claim_key": "answered-ring-rule",
+      "claim": "Google evaluates an answered call on the conversation even if the phone rang over 20 seconds.",
+      "intended_section": "Explain mismatches between billing and dispatch",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/7195435",
+          "final_url": "https://support.google.com/localservices/answer/7195435",
+          "publisher": "Google",
+          "source_title": "How leads work",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The unanswered call threshold is not a standalone reason to charge an answered call.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Interpret billing without confusing it with intake",
+          "article_quote": "evaluates the conversation rather than treating a ring longer than 20 seconds as a standalone reason to charge",
+          "citation_url": "https://support.google.com/localservices/answer/7195435"
+        }
+      ]
+    },
+    {
+      "fact_id": "F08",
+      "claim_key": "follow-up-window",
+      "claim": "Google says follow-ups after a charged lead from the same phone number or email are not billed again while interaction continues within 15 days.",
+      "intended_section": "Match records without double counting",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/7195435",
+          "final_url": "https://support.google.com/localservices/answer/7195435",
+          "publisher": "Google",
+          "source_title": "How leads work",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Same-contact follow-ups are covered if there is interaction within 15 days. A new contact after 15 days of inactivity can create a new lead.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Match calls to handling and dispatch",
+          "article_quote": "after a charged lead are not billed again while interaction continues within 15 days",
+          "citation_url": "https://support.google.com/localservices/answer/7195435"
+        }
+      ]
+    },
+    {
+      "fact_id": "F09",
+      "claim_key": "charge-state-values",
+      "claim": "Google identifies four lead charge statuses: Charged, Not charged, In review, and Credited.",
+      "intended_section": "Track open charge exceptions",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/15100654?hl=en",
+          "final_url": "https://support.google.com/localservices/answer/15100654?hl=en",
+          "publisher": "Google",
+          "source_title": "About Automated Local Services Ads lead credits",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The four dispositions distinguish leads never charged from leads charged and later credited, with a separate in-review indicator.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Interpret billing without confusing it with intake",
+          "article_quote": "distinguishes Not charged, Charged, In review, and Credited lead statuses",
+          "citation_url": "https://support.google.com/localservices/answer/15100654?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F10",
+      "claim_key": "credit-timing-invoice",
+      "claim": "Google says credits generally reach the account balance within 30 days while the original charge remains on the invoice.",
+      "intended_section": "Track open charge exceptions",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/15100654?hl=en",
+          "final_url": "https://support.google.com/localservices/answer/15100654?hl=en",
+          "publisher": "Google",
+          "source_title": "About Automated Local Services Ads lead credits",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google's credit help says credits in most cases apply within 30 days and the original invoice charge remains.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Interpret billing without confusing it with intake",
+          "article_quote": "credits are generally applied to the account balance within 30 days, while the original charge remains on the invoice",
+          "citation_url": "https://support.google.com/localservices/answer/15100654?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F11",
+      "claim_key": "unavailable-credit-reasons",
+      "claim": "Google no longer supports out-of-area and unserviced-job-type as credit reasons.",
+      "intended_section": "Route follow-up to the right owner",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/15100654?hl=en",
+          "final_url": "https://support.google.com/localservices/answer/15100654?hl=en",
+          "publisher": "Google",
+          "source_title": "About Automated Local Services Ads lead credits",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The removed credit reasons are geo not serviced and job type not serviced. Feedback and account-fit review are separate from assuming a reimbursement.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Interpret billing without confusing it with intake",
+          "article_quote": "no longer supports credits for job types or geographic areas not serviced",
+          "citation_url": "https://support.google.com/localservices/answer/15100654?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F12",
+      "claim_key": "lsa-booked-state",
+      "claim": "Google's own Mark Booked workflow is available in the U.S. and Canada, and can include job details for later filtering.",
+      "intended_section": "Separate billing from operational outcomes",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/6226265",
+          "final_url": "https://support.google.com/localservices/answer/6226265",
+          "publisher": "Google",
+          "source_title": "View reports on Local Services Ads",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Advertisers covered by this workflow can mark an LSA lead as booked and add details. Google notes the instructions do not apply to affiliate advertisers.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Resolve the booking mismatch and repeat",
+          "article_quote": "its Mark Booked feature is available in the U.S. and Canada and can include job details for later filtering",
+          "citation_url": "https://support.google.com/localservices/answer/6226265"
+        }
+      ]
+    },
+    {
+      "fact_id": "F13",
+      "claim_key": "feedback-channel",
+      "claim": "An advertiser can submit lead-quality feedback on an individual Local Services lead within its Leads page.",
+      "intended_section": "Route follow-up to the right owner",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/localservices/answer/15100654?hl=en",
+          "final_url": "https://support.google.com/localservices/answer/15100654?hl=en",
+          "publisher": "Google",
+          "source_title": "About Automated Local Services Ads lead credits",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google includes a Rate this lead feedback path in the Local Services Ads Leads page. Credit is not promised.",
+          "checked_at": "2026-11-18T02:12:02Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Interpret billing without confusing it with intake",
+          "article_quote": "offers individual lead-quality feedback from the Leads page",
+          "citation_url": "https://support.google.com/localservices/answer/15100654?hl=en"
+        }
+      ]
+    }
+  ],
+  "article_sha256": "dde599682b4d419f8a3e45ae35db537fa9ea6bff79c2ad13860c68ad96796e35",
+  "approved_revision": "auto-20261117-v1:local-services-ads-call-reconciliation-restoration-companies"
+}
