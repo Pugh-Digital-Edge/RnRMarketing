@@ -1,0 +1,429 @@
+{
+  "approved_revision": "auto-20261117-v1:retargeting-holdout-test-restoration-companies",
+  "schema_version": 1,
+  "article_id": "SEO-022",
+  "article_sha256": "05e0cf8885a6acb29766121526353f134c094d5f5b48844b6125b4f44840ba34",
+  "facts": [
+    {
+      "fact_id": "F01",
+      "claim_key": "measured-vs-heldback",
+      "claim": "User-based Conversion Lift compares conversions in a group that can see the measured ads with results in a group held back from those ads.",
+      "intended_section": "Describe what the test can answer",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12003020?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12003020?hl=en",
+          "publisher": "Google",
+          "source_title": "About Conversion Lift",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google describes treatment and control groups for downstream conversions.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Describe what the test can answer",
+          "article_quote": "a controlled comparison between a treatment group that can see the measured ads and a control group held back from them",
+          "citation_url": "https://support.google.com/google-ads/answer/12003020?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F02",
+      "claim_key": "selective-account-eligibility",
+      "claim": "Google does not offer Conversion Lift to every account and points advertisers to their account representative.",
+      "intended_section": "Check account and campaign eligibility",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The setup page explicitly notes limited availability and the representative contact.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Check account and campaign eligibility",
+          "article_quote": "Conversion Lift is not available to every account and directs advertisers to their Google account representative",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F03",
+      "claim_key": "observed-conversion-floor",
+      "claim": "The current U.S. Google user-based setup documentation specifies at least 1,000 observed conversions, excluding supplementary data from that threshold.",
+      "intended_section": "Check data and campaign eligibility",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The prerequisites distinguish observed conversions from supplementary conversions and state a floor of 1,000.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Check account and campaign eligibility",
+          "article_quote": "at least 1,000 observed conversions, excluding supplementary conversions from that threshold",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F04",
+      "claim_key": "published-budget-floor",
+      "claim": "Google's current U.S. user-based setup guidance lists a $5,000 USD minimum campaign budget for the study.",
+      "intended_section": "Check account and campaign eligibility",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The public Account threshold section labels $5,000 USD the minimum campaign budget.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Check account and campaign eligibility",
+          "article_quote": "a $5,000 USD minimum campaign budget",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F05",
+      "claim_key": "compatible-event-required",
+      "claim": "Google requires at least one compatible conversion action for the study.",
+      "intended_section": "Check the qualified-inquiry event",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The published account prerequisites include at least one compatible action.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Check the qualified-inquiry event",
+          "article_quote": "include at least one compatible conversion action",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F06",
+      "claim_key": "ga-web-import-ineligible",
+      "claim": "Google Analytics web conversion imports are not supported for user-based Conversion Lift.",
+      "intended_section": "Check the qualified-inquiry event",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google's unsupported setups table explicitly excludes GA web imports even when they contain user-provided data.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Check the qualified-inquiry event",
+          "article_quote": "excludes Google Analytics web conversion imports for this user-based study, even when they contain user-provided data",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F07",
+      "claim_key": "click-id-only-ineligible",
+      "claim": "Click-ID-only offline imports cannot support Google user-based Conversion Lift when a held-back person has no ad click to match.",
+      "intended_section": "Check the qualified-inquiry event",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The unsupported setups table explains why click-ID-only attribution misses people whose ads were withheld.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Check the qualified-inquiry event",
+          "article_quote": "excludes offline imports relying only on click IDs: a person held back from the measured ads may have no ad click to match",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F08",
+      "claim_key": "account-scope-power",
+      "claim": "Google's study power read uses account-level history, expected lift and planned settings including tracked actions, duration, budget and split.",
+      "intended_section": "Estimate the chance of a useful result",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The study power inputs use the selected account history, not manager-level totals, plus the study's chosen settings.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Estimate the chance of a useful result",
+          "article_quote": "uses account-level history, estimated lift and selected settings including conversion actions, duration, budget and holdback split",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F09",
+      "claim_key": "contamination-on-subset",
+      "claim": "When similar campaigns stay outside the study, people in the holdout may see those unmeasured ads, reducing the chances of detecting lift.",
+      "intended_section": "Document the comparison boundary",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google explains that holdback users can still encounter unmeasured campaigns when only a subset is included.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Document the comparison boundary",
+          "article_quote": "holdback users may still encounter unmeasured campaigns when only a subset is included, making lift harder to detect",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F10",
+      "claim_key": "holdout-duration-tradeoff",
+      "claim": "Google notes that a larger holdout may increase the measurement sample while forgoing more ad opportunities, and a small holdout may take longer.",
+      "intended_section": "Estimate the chance of a useful result",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The documented holdout tradeoff covers sample size, timing and opportunity cost.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Estimate the chance of a useful result",
+          "article_quote": "a larger holdback may increase the measurement sample while forgoing more ad opportunities, whereas a smaller holdback may require longer",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F11",
+      "claim_key": "lag-matters",
+      "claim": "Google recommends selecting a duration that captures the typical time from ad impression to the conversion being measured.",
+      "intended_section": "Estimate the chance of a useful result",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The Study duration guidance ties design to average conversion lag.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Estimate the chance of a useful result",
+          "article_quote": "the period should capture typical conversion lag",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F12",
+      "claim_key": "shallow-event-secondary",
+      "claim": "Google recommends using upper-funnel actions as secondary measures when bottom-funnel events lack volume.",
+      "intended_section": "Choose the primary inquiry and secondary diagnostics",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/12005564?hl=en",
+          "publisher": "Google",
+          "source_title": "Set up Conversion Lift based on users",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "The conversion categories guidance explicitly labels upper-funnel metrics secondary when bottom-funnel data is sparse.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Check the qualified-inquiry event",
+          "article_quote": "suggests upper-funnel actions as secondary measures when lower-funnel volume is sparse",
+          "citation_url": "https://support.google.com/google-ads/answer/12005564?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F13",
+      "claim_key": "interval-and-low-control",
+      "claim": "Low conversion counts in the control group can make relative lift appear very large, and Google provides an interval around the result.",
+      "intended_section": "Read outcomes after the study",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/14102450?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/14102450?hl=en",
+          "publisher": "Google",
+          "source_title": "Understand your Conversion Lift based on users measurement data",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google warns about large relative lift with low-control activity and describes credible/confidence intervals.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Read a final result against the decision rule",
+          "article_quote": "low control conversion counts can produce unusually large relative-lift estimates and provides confidence intervals to help interpret results",
+          "citation_url": "https://support.google.com/google-ads/answer/14102450?hl=en"
+        }
+      ]
+    },
+    {
+      "fact_id": "F15",
+      "claim_key": "wait-through-end",
+      "claim": "Google recommends waiting until a user-based study ends before relying on its cumulative results.",
+      "intended_section": "Read outcomes after the study",
+      "relevant": true,
+      "useful": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/14102450?hl=en",
+          "final_url": "https://support.google.com/google-ads/answer/14102450?hl=en",
+          "publisher": "Google",
+          "source_title": "Understand your Conversion Lift based on users measurement data",
+          "source_kind": "official_platform",
+          "is_competitor": false,
+          "supports_claim": true,
+          "support_kind": "paraphrase",
+          "support": "Google notes interim cumulative data can appear and recommends waiting to the end for the most accurate result.",
+          "checked_at": "2026-11-18T02:19:11Z",
+          "source_date": null
+        }
+      ],
+      "uses": [
+        {
+          "section_heading": "Read a final result against the decision rule",
+          "article_quote": "recommends waiting until the study ends for the most accurate lift result, even though cumulative results may appear during it",
+          "citation_url": "https://support.google.com/google-ads/answer/14102450?hl=en"
+        }
+      ]
+    }
+  ],
+  "repository": "Pugh-Digital-Edge/RnRMarketing"
+}
