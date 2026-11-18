@@ -31,14 +31,12 @@ Google says [same-number or same-email follow-ups](https://support.google.com/lo
 
 For each originating lead, record: **lead reference; normalized time and zone; handling result; charge status and credit snapshot with date; dispatch reference; booked status; unresolved owner; next review date.** Keep the platform booked marker and the dispatch result separately. Add a match-confidence note when needed. Use links or controlled IDs rather than customer details.
 
-The following rows are invented examples. They illustrate the procedure, not actual lead determinations or a claim that a credit is due.
+The four examples below use invented records and illustrate how to track exceptions. Verify billing and credits in your own account.
 
-| Lead / normalized time | Handling result | Charge and credit snapshot | Dispatch / booked status | Owner and next review |
-| --- | --- | --- | --- | --- |
-| L-101 / Mon 09:12 ET | In-hours missed call; no completed handoff found | Charged; no credit shown as of Mon | No dispatch record found; booking unknown | Intake manager: check log and follow-up; Tue |
-| L-102 / Tue 10:04 ET | Callback at 10:30 matched to original lead | Charged; callback retained on same row | D-202; appointment booked | Intake manager: confirm handoff; Wed |
-| L-103 / Wed 14:20 ET | Answered; disposition logged | Charged at first review; credited at next snapshot | D-203; not booked | Account owner: reconcile credit with report; next weekly review |
-| L-104 / Thu 11:15 ET | Answered; dispatcher logged inquiry | Charged; no credit shown at review | D-204 says not booked; platform marker says booked | Intake manager: establish actual outcome; account owner checks marker; Fri |
+1. **L-101 / Mon 09:12 ET.** In-hours missed call. No completed handoff found. Charged. No credit shown as of Mon. No dispatch record found. Booking unknown. The intake manager checks the log and follow-up on Tue.
+2. **L-102 / Tue 10:04 ET.** Callback at 10:30 matched to original lead. Charged. Callback retained on same row. D-202. Appointment booked. The intake manager confirms the handoff on Wed.
+3. **L-103 / Wed 14:20 ET.** Answered. Disposition logged. Charged at first review. Credited at next snapshot. D-203. Not booked. The account owner reconciles the credit with the report at the next weekly review.
+4. **L-104 / Thu 11:15 ET.** Answered. Dispatcher logged inquiry. Charged. No credit shown at review. D-204 says not booked. The platform marker says booked. The intake manager establishes the actual outcome. The account owner checks the marker on Fri.
 
 For L-101, “no dispatch record found” is an exception, not proof that nobody worked the call. Check the answering-service log and authorized notes for a callback, alternate spelling, or an entry outside the selected window. Record the result and next owner even if the match remains open.
 
